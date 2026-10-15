@@ -20,3 +20,5 @@ Planning only. Read `authoring/README.md` first. No DITA topics exist yet: write
 - **Windows builds.** Run the toolkit with `dita.bat` from PowerShell, not the Unix `dita` script from Git Bash. Use a pinned toolkit in a short, user-writable folder, not `C:\Program Files`.
 - **Never commit** `out/`, `.tools/` or downloaded tools. Pin tool versions by checksum in `build/tools.lock` once it exists.
 - **Branding.** Use the plugin's `neutral` branding. Never `official` (GOV.UK crown) or `nhs`: those identities are restricted.
+- **Theme.** The site and PDF use the app's Oxford and slate theme through `build/theme/ufti.css`. Colours live only in its tokens block. Never edit or rename the font files (their licence reserves the name). Run `pwsh build/theme/check-theme.ps1` after any stylesheet change.
+- **Screenshots.** Capture scripts live in the application repository, never here. Follow `authoring/screenshot-strategy.md`: emulators and simulators, release candidates only, Oxford and slate light, sample data only.

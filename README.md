@@ -37,7 +37,7 @@ The tools are the [DITA Open Toolkit](https://www.dita-ot.org/), the [iStandUK G
 |---|---|
 | [`authoring/`](authoring/README.md) | The authoring plan, standards and decision log. Not published. |
 | [`content/`](content/README.md) | DITA source: maps, topics, keys and images. Empty until the pilot slice. |
-| [`build/`](build/README.md) | Build configuration: filters, project files, theme and scripts. Empty until the toolchain work package. |
+| [`build/`](build/README.md) | Build configuration. Holds the [publisher theme](build/theme/README.md) (stylesheet and fonts). The rest arrives with the toolchain work package. |
 | [`LICENSE`](LICENSE), [`NOTICE`](NOTICE) | Apache License 2.0 and notice. |
 
 ## Start here

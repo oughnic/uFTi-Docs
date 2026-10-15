@@ -17,7 +17,7 @@ Part of the [authoring plan](authoring-plan.md). Status: Draft 0.2, 15 October 2
 | DEC-005 | Toolchain: DITA Open Toolkit, the iStandUK GOV.UK plugin, and its companion DesignSystemPDF for PDF/UA-1. | **Accepted** (toolkit and plugin by maintainer instruction. DesignSystemPDF is how the plugin produces PDF/UA.) | See [build and quality](build-and-quality.md). | Upgrades follow the pinning policy. |
 | DEC-006 | Output model: **one build per manual** (option A), with **one manual per device idiom**: Android phone, Android tablet, iPhone, iPad and Windows. | Proposed | Uses mainstream DITA-OT features, gives each reader a self-contained manual and PDF, and lets one topic and one image key serve every manual with no idiom labels in the text. | WP2 result, and Q16. |
 | DEC-007 | Good practice is single-sourced as a part of every manual and also published standalone, with contextual cues in tasks. | Proposed | DITA-OT 4.4 cannot link between separately built publications. Readers need guidance in context. WP2 also tests a link-out variant to limit duplication. | WP2, or if option B is chosen. |
-| DEC-008 | Branding: the plugin's `neutral` mode with a publisher stylesheet. Never `official` or `nhs`. | Proposed | Those identities are restricted to GOV.UK services and NHS organisations respectively. | n/a |
+| DEC-008 | Branding: the plugin's `neutral` mode with the publisher stylesheet in `build/theme/` (DEC-024). Never `official` or `nhs`. | Proposed | Those identities are restricted to GOV.UK services and NHS organisations respectively. | n/a |
 | DEC-009 | File names carry no type prefix, sit in area folders, and never change after publication. | Proposed | Names become URLs. | n/a |
 | DEC-010 | Writing style: the GOV.UK style guide as the base, British English, with project overrides. | Proposed | Matches the Design System the site uses, and its plain English approach. | WP3 style guide. |
 | DEC-011 | Screenshots are keys defined per manual. The key's link text is the alternative text. | **Accepted** (existing convention in the application repository's key maps) | Lets one topic serve every manual. | WP2 must prove alternative text reaches HTML and PDF. |
@@ -31,6 +31,9 @@ Part of the [authoring plan](authoring-plan.md). Status: Draft 0.2, 15 October 2
 | DEC-019 | Supported platforms: **Android** (phone and tablet idioms), **iOS** (iPhone and iPad idioms) and **Windows** (WinUI). Other MAUI heads are not documented. | **Accepted** (maintainer instruction, 15 October 2026) | The three platforms MAUI supports for uFTi. | The product team adds a supported platform. |
 | DEC-020 | **AI features of the app, and guidance on using AI tools, are out of scope** for now. | **Accepted** (maintainer instruction, 15 October 2026) | Maintainer instruction. | The product team wants them documented. |
 | DEC-021 | Waves: wave 1 is Android phone and Windows. Wave 2 is Android tablet, then iPhone and iPad. | Proposed | Wave 1 already has screenshot sets. Android tablet shares an operating system with wave 1. iOS needs a Mac and devices. | A Mac build host and devices are available, or priorities change. |
+| DEC-022 | **Screenshot capture scripts live in the application repository.** This repository holds the screen catalogue, the importer, the images and a manifest ([screenshot strategy](screenshot-strategy.md)). | **Accepted** (maintainer instruction, 15 October 2026) | The scripts need the app's automation identifiers and routes, which sit behind the disclosure boundary. | n/a |
+| DEC-023 | **Screenshots are captured on emulators and simulators** with pinned profiles (and on a clean Windows profile or virtual machine for Windows), **on release candidates only.** | **Accepted** (maintainer instruction, 15 October 2026) | Reproducible, no personal data, and no capture effort between releases. | A flow cannot run on an emulator, such as the iOS camera. That is handled as a per-screen exception. |
+| DEC-024 | **The documentation uses the app's Oxford and slate theme throughout.** Screenshots are captured in its light variant. The website and PDF use the publisher stylesheet in [`build/theme/`](../build/theme/README.md), with the theme's colours and fonts: Source Serif 4 and Atkinson Hyperlegible Next. | **Accepted** (maintainer instruction, 15 October 2026) | The manual looks like the app. Both fonts are open-licensed, and the colours are checked for WCAG 2.2 AA. | The app changes its theme or fonts. |
 
 ## 2. Open questions
 
@@ -44,9 +47,9 @@ Part of the [authoring plan](authoring-plan.md). Status: Draft 0.2, 15 October 2
 | Q10 | Should the colophon say the content is AI-assisted and human-reviewed? | Transparency. | Yes. | WP10 |
 | Q12 | What should `robots.txt` say about AI crawlers? The plugin's default allows all. | Content reuse policy. | Allow all. | WP10 |
 | Q13 | How are topic dates kept true? | `govuk.dates` and page metadata. | Dates off. | WP3 |
-| Q14 | Who captures screenshots, with what tooling, and how often? | Risks R3 and R12. | The maintainer, with scripted capture, on each release candidate. | WP4 |
 | Q15 | Does the app record DNA evidence? | Good practice theme 9. | No, so a short ethics and citation note only. | WP4 |
 | Q16 | Should phone and tablet have separate manuals (assumed), or share one manual per operating system? | Five outputs against three. Separate manuals let one topic and one image key serve every manual, with no idiom labels in the text. | Separate manuals. | WP2 and WP4 |
+| Q17 | Should the site follow the reader's dark-mode preference, using the theme's dark variant? | Every plugin and Design System component would need checking on dark, which needs a real build. | No. Light only for v1. | WP6 |
 
 ## 3. Answered questions
 
@@ -57,6 +60,7 @@ Part of the [authoring plan](authoring-plan.md). Status: Draft 0.2, 15 October 2
 | Q3 | Are AI-assisted features in scope? | No. | DEC-020 |
 | Q7 | Who owns the copyright? | Oughtibridge Ltd. | DEC-017 |
 | Q11 | Do both Windows heads ship to users? | No. Only Windows (WinUI) is supported. | DEC-019 |
+| Q14 | Who captures screenshots, with what tooling, and how often? | Scripts in the application repository, on emulators and simulators, on release candidates only. | DEC-022, DEC-023 |
 
 ## 4. Change history
 
@@ -64,3 +68,4 @@ Part of the [authoring plan](authoring-plan.md). Status: Draft 0.2, 15 October 2
 |---|---|
 | 15 October 2026 | Draft 0.1 created with the initial plan. |
 | 15 October 2026 | Draft 0.2. Maintainer decisions applied: supported platforms and idioms (DEC-019), AI out of scope (DEC-020), copyright holder (DEC-017) and branching model (DEC-016). Question Q16 added. |
+| 15 October 2026 | Screenshot decisions (DEC-022, DEC-023) and the Oxford and slate theme (DEC-024) recorded. Q14 answered. Question Q17 added. |

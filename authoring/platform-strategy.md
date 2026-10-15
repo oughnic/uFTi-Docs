@@ -88,7 +88,7 @@ Rules:
 
 ## 4. Screenshots as keys
 
-This generalises the convention already used in the existing key maps.
+This generalises the convention already used in the existing key maps. How screenshots are chosen, captured, imported and kept current is in the [screenshot strategy](screenshot-strategy.md).
 
 - **Every screenshot is a key** defined in its manual's key map. A topic refers to it with `<image keyref="img-person-view"/>`. The key definition's `linktext` is the alternative text.
 
@@ -102,9 +102,10 @@ This generalises the convention already used in the existing key maps.
 - **Key names** are `img-<area>-<what>`: lower case, hyphenated, and identical for the same screen on every device.
 - **File names are stable** when a screenshot is re-captured, so keys never change.
 - **Alternative text** says what the picture shows and why it matters. It does not start "Screenshot of". One sentence.
-- **Each key map records** the reference device or machine, its operating system version, the app version and the sample workspaces, in `data` elements. Use a real device of the idiom: a phone and a tablet for Android, an iPhone and an iPad for iOS.
+- **Each key map records** the reference device or machine, its operating system version, the app version and the sample workspaces, in `data` elements. Use an emulator or simulator of the idiom: a phone and a tablet for Android, an iPhone and an iPad for iOS (DEC-023).
 - **Key maps carry `@platform`,** so a build for another manual excludes them.
 - **Sample workspaces only.** See the [disclosure boundary](authoring-plan.md#74-disclosure-boundary-and-privacy).
+- **One theme.** Every screenshot is captured in the app's Oxford and slate theme, light variant, so the pictures match the site and PDF (DEC-024).
 - **No silent fallback.** A topic that shows a screen that does not exist on a device is filtered out for that manual. An unresolved image key is a build failure.
 - **Figures.** Use `fig` with a `title` when the text refers to the picture. Alternative text and caption must not repeat each other. No information may exist only in a picture. Prefer cropping and clear text to annotated callouts.
 

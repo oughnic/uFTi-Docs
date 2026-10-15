@@ -5,7 +5,7 @@
 | Status | Draft 0.2 |
 | Date | 15 October 2026 |
 | Scope | The uFTi .NET MAUI application on Android (phone and tablet), iOS (iPhone and iPad) and Windows. Web, command-line and AI-assistant integrations, and the app's AI features, are out of scope for now. |
-| Companion documents | [Platform strategy](platform-strategy.md) · [Good practice strategy](good-practice-strategy.md) · [Authoring standards](authoring-standards.md) · [Build and quality](build-and-quality.md) · [Decision log](decision-log.md) |
+| Companion documents | [Platform strategy](platform-strategy.md) · [Screenshot strategy](screenshot-strategy.md) · [Good practice strategy](good-practice-strategy.md) · [Authoring standards](authoring-standards.md) · [Build and quality](build-and-quality.md) · [Decision log](decision-log.md) |
 
 ## 1. Purpose and scope
 
@@ -226,7 +226,7 @@ This section is about how we write the documentation. It does not bring the app'
 
 - App issues and pull requests that change what a user sees carry a *docs impact* label. The repositories are separate, so this is a manual process.
 - On each release candidate: compare the app against the inventory, refresh affected screenshots, and update the "What is new" topic.
-- Screenshot refresh triggers: a label or layout change, a new or removed feature, and a major operating system update.
+- Screenshots are captured on release candidates only (DEC-023). What to look for: a label or layout change, a new or removed feature, and a major operating system update.
 - The manual describes the latest release. Earlier versions are kept as tagged releases (DEC-013).
 
 ## 8. Delivery plan
@@ -247,9 +247,9 @@ Sizes are relative (S, M, L, XL), not calendar estimates. WP7 measures the real 
 | WP1 | Toolchain and build pipeline | L | none | `build/tools.lock` pinning every tool by version and SHA-256. Bootstrap and build scripts for Windows (PowerShell) and CI (bash). A DITA-OT project file. A GitHub Actions workflow with the quality gates. A tiny throwaway fixture publication. | The fixture builds locally and in CI to a website and a PDF with zero warnings, and every gate in [build and quality, section 4](build-and-quality.md#4-quality-gates) runs green on it. |
 | WP2 | Platform strategy spike | M | WP1 | A prototype of three manuals (Android phone, Android tablet and Windows) by four topic kinds (shared, shared with a variant, platform-specific, image by key), so it exercises both idioms of one OS. A decision between the build models, and on separate or combined phone and tablet manuals (Q16). The good practice callout pattern. The platform chooser approach. | Decisions accepted in the log. The prototype builds for all three manuals. veraPDF passes PDF/UA-1 and there is no `DSPDF009W`. Alternative text from keys reaches HTML and PDF. |
 | WP3 | Standards, style guide and templates | M | none (parallel to WP1) | Full style guide. Terminology list. Templates for each topic type. Metadata vocabulary. Lint configuration. Contributor guide. | Adopted by the maintainers. Lint runs in CI against the templates. |
-| WP4 | Content inventory and information architecture | M | Access to the app. WP3 started. | Features observed on released builds on each reference platform, with AI features excluded. A measure of how far the tablet idiom differs from the phone idiom (navigation, layout, gestures). A topic inventory (id, title, type, chapter, platforms, priority, status, reviewer). Chapter map skeletons. | Every visible screen and feature maps to at least one planned topic. Reviewed with the product owner. |
-| WP5 | Import and sanitise the existing screenshot maps | S | WP2 | The existing key maps and screenshots for Android phone and Windows, brought in and sanitised. `AndroidMobile` is renamed `AndroidPhone`. The WPF map is not imported, because WPF is not a supported platform. | No internal identifiers, personal data or living people appear. Alternative text reviewed. A key coverage report exists. |
-| WP6 | Brand and site furniture | S | WP1 | Publisher stylesheet, logo, favicon, share image, footer links, phase banner and feedback link. | A neutral-branded build shows the uFTi identity. Contrast and target size pass axe-core. |
+| WP4 | Content inventory and information architecture | M | Access to the app. WP3 started. | Features observed on released builds on each reference platform, with AI features excluded. A measure of how far the tablet idiom differs from the phone idiom (navigation, layout, gestures). A topic inventory (id, title, type, chapter, platforms, priority, status, reviewer). Chapter map skeletons. The screen catalogue ([screenshot strategy](screenshot-strategy.md#3-the-screen-catalogue)). | Every visible screen and feature maps to at least one planned topic. Reviewed with the product owner. |
+| WP5 | Screenshot importer and the existing sets | M | WP2, WP4 started | The importer and the manifest format ([screenshot strategy, section 5](screenshot-strategy.md#5-import)). The existing key maps and screenshots for Android phone and Windows, brought in through it and sanitised. `AndroidMobile` is renamed `AndroidPhone`. The WPF map is not imported, because WPF is not a supported platform. | No internal identifiers, personal data or living people appear. Alternative text reviewed. The importer's report and a key coverage report exist. |
+| WP6 | Brand and site furniture | S | WP1 | The publisher stylesheet and fonts are drafted in [`build/theme/`](../build/theme/README.md). WP6 checks them on a real website and PDF, converts the fonts to WOFF2, and adds the logo, favicon, share image, footer links, phase banner and feedback link. | A neutral-branded build shows the uFTi identity. Contrast and target size pass axe-core. Fonts are embedded in the PDF. Figures fit a screen and a page. |
 | **Phase 2: Pilot** | | | | | |
 | WP7 | Pilot slice | L | WP1 to WP6 | Get started, People and Sources chapters, five good practice topics and a glossary starter, for the two reference platforms, Android phone and Windows (about 30 to 40 topics). | Published as a beta. The full review workflow has been exercised. Three to five novice usability sessions are done. Effort per topic is recorded. |
 | **Phase 3: Full coverage on reference platforms** | | | | | |
@@ -257,8 +257,8 @@ Sizes are relative (S, M, L, XL), not calendar estimates. WP7 measures the real 
 | WP9 | Good practice guide v1 | L | WP7, reviewer availability | All themes, contextual cues, learning path and checklists. | Genealogy review passed. Novice usability test passed. Every cue links to the guide. |
 | WP10 | Release readiness for v1.0 | M | WP8, WP9 | Accessibility statement. Colophon with licences and third-party notices. "What is new". Manual assistive technology pass. PDF reading-order check. Deployment. | All gates green. Manual checks logged. Site and PDFs published. |
 | **Phase 4: More platforms** | | | | | |
-| WP11 | Add Android tablet | M | WP10 | The tablet idiom's screenshot set and key map, idiom-specific topics and a DITAVAL filter. Follow the [onboarding checklist](platform-strategy.md#9-adding-a-platform). | Coverage report shows parity with Android phone. Gates green. |
-| WP12 | Add iPhone | M | WP10 | As WP11, for iOS. Needs a Mac build host and devices for screenshots. | Coverage report shows parity with the reference platforms. Gates green. |
+| WP11 | Add Android tablet | M | WP10 | The tablet idiom's screenshot set (captured on an emulator by scripts in the application repository) and key map, idiom-specific topics and a DITAVAL filter. Follow the [onboarding checklist](platform-strategy.md#9-adding-a-platform). | Coverage report shows parity with Android phone. Gates green. |
+| WP12 | Add iPhone | M | WP10 | As WP11, for iOS, captured on a simulator. Needs a Mac. | Coverage report shows parity with the reference platforms. Gates green. |
 | WP13 | Add iPad | M | WP12 | As WP11, building on the iPhone manual. | Coverage report shows parity with iPhone. Gates green. |
 | WP14 | Add a further platform | Deferred | WP10 | Only if the product team adds a supported platform. | Not planned. |
 | **Phase 5: Operate** | | | | | |
@@ -285,7 +285,8 @@ Sizes are relative (S, M, L, XL), not calendar estimates. WP7 measures the real 
 | R9 | Accessibility regressions. | Medium | High | Automated gates on every build. Manual assistive technology tests every release. |
 | R10 | One maintainer. | High | Medium | Docs as code. Scripted builds. Written standards. Small, well-described pull requests. |
 | R11 | Windows toolchain quirks: toolkit under a path with spaces, Unix script under Git Bash, long paths. | High | Low | A short, writable toolkit folder, `dita.bat`, documented in [build and quality](build-and-quality.md#2-local-environment). |
-| R12 | Screenshot capture effort across platforms. | High | Medium | Scripted capture. Stable names. Sample workspaces. Reference devices recorded in the key maps. |
+| R12 | Screenshot capture effort across platforms. | High | Medium | Scripted capture on emulators and simulators, on release candidates only (DEC-022, DEC-023). Stable names. Sample workspaces. Device profiles recorded in the manifest. See the [screenshot strategy](screenshot-strategy.md). |
+| R13 | The app's theme or fonts change and the manual drifts from the app. | Medium | Low | The theme tokens are one delimited block with the theme's name and version, which the application repository can regenerate. The capture manifest records the theme. Check at each release candidate. |
 
 ## 10. Decisions and open questions
 

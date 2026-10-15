@@ -25,6 +25,7 @@ flowchart LR
 |---|---|---|---|
 | **DITA Open Toolkit** | 4.4.1 (latest, 21 August 2026) | Processes the DITA | The plugin needs 4.4.1 or later. |
 | **Java** | 17 or later (21 LTS is fine) | Runs the toolkit and the PDF generator | |
+| **PowerShell** | 7 | Runs the build scripts and the theme checker | On every operating system. Preinstalled on GitHub-hosted runners. |
 | **iStandUK GOV.UK DITA plugin** `org.istanduk.gov-uk` | 1.3.0 (15 October 2026) | The `govuk` transtype: website, print document, page metadata, sitemap, `llms.txt` | Apache-2.0. It extends the toolkit's `html5` transtype. The registry entry we read listed versions up to 1.2.0, so install 1.3.0 from its release zip and verify the published SHA-256. |
 | **DesignSystemPDF** | 0.1.2 (15 October 2026) | Renders the print document as a tagged PDF/UA-1 file | A separate product, not a DITA-OT plugin. Java only. Releases carry a SHA-256 and a build provenance attestation (`gh attestation verify`). Bundles Noto Sans (SIL OFL 1.1). Known limit: right-to-left scripts are not rendered. |
 | **Pagefind** | 1.5.2 | Builds the site search index | Needed on the build machine only. Required in CI. Optional locally. |
@@ -60,7 +61,7 @@ Parameters live in a DITA-OT project file, one deliverable per publication. Each
 | Parameter | Planned value | Why |
 |---|---|---|
 | `--format` | `govuk` | The plugin's transtype. |
-| `govuk.branding` | `neutral` | `official` (the GOV.UK crown) is for genuine GOV.UK services only. `nhs` is for NHS organisations only. `istanduk` is for iStandUK. Neutral carries no restricted identity. Our own identity comes from a publisher stylesheet (`args.css`) and `govuk.css.assets` (DEC-008). |
+| `govuk.branding` | `neutral` | `official` (the GOV.UK crown) is for genuine GOV.UK services only. `nhs` is for NHS organisations only. `istanduk` is for iStandUK. Neutral carries no restricted identity. Our own identity comes from the publisher stylesheet in [`build/theme/`](../build/theme/README.md) (DEC-008, DEC-024). |
 | `govuk.service.name` | The manual's title | Masthead and footer. |
 | `govuk.phase`, `govuk.feedback.url` | `beta`, and the repository's issue form | A phase banner while the app is before 1.0. |
 | `govuk.homepage.layout`, `govuk.homepage.depth` | `auto`, `2` | `grouped` for a bookmap with several chapters. |
@@ -77,6 +78,8 @@ Parameters live in a DITA-OT project file, one deliverable per publication. Each
 | `govuk.organisation`, `govuk.organisation.url` | Set explicitly | Publisher metadata. |
 | `govuk.licence.url` | The Apache-2.0 licence address | Written as `rel="license"`. |
 | `govuk.og.image`, `govuk.favicon` | From WP6 | Share image and favicon. |
+| `args.css`, `args.cssroot`, `args.copycss` | `ufti.css`, the path of `build/theme`, `yes` | The publisher stylesheet. It is linked on every page and in the print document. A project file can give the path relative to itself. |
+| `govuk.css.assets`, `govuk.pdf.fonts` | `build/theme/assets`, `build/theme/assets/fonts` | The fonts the stylesheet names, hosted with the site (the policy `govuk.csp=meta` allows nothing else), and the same fonts for the PDF. |
 | `govuk.dates` | `no` | Until there is a reliable dating process (Q13). |
 | `govuk.csp` | `meta` | GitHub Pages cannot set HTTP headers. |
 | `govuk.footer.links` | Platform chooser, accessibility statement, source repository, licence | `label\|url` pairs separated by `;`. |
@@ -102,6 +105,7 @@ All gates run on every pull request. A failure blocks the merge.
 | Prose and spelling | Vale and spell check | No errors |
 | Structure lint | Project scripts ([authoring standards, section 13](authoring-standards.md#13-templates-and-linting)) | No violations |
 | Key and image coverage | Project scripts ([platform strategy, section 10](platform-strategy.md#10-consistency-checks)) | Zero unresolved keys or images |
+| Theme | `build/theme/check-theme.ps1` | Every colour pairing passes WCAG 2.2 AA, no colour sits outside the tokens, and the fonts and their licences are present |
 | Disclosure and secrets | Secret scanner and pattern check | No findings |
 | Page weight and determinism | Plugin's checks | Within budget. The same input gives the same output. |
 
