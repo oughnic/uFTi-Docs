@@ -155,6 +155,7 @@ Two ways to turn shared sources into per-manual publications:
 8. Build time and output size are recorded for a prototype of about 50 topics.
 9. B and the link-out variant are prototyped to the same level, or abandoned with reasons recorded.
 10. The separate-manual and combined-manual options for phone and tablet are compared, and Q16 is answered.
+11. The PDF uses the theme's fonts, not the generator's bundled fallback: headings in Source Serif 4 Semibold and text in Atkinson Hyperlegible Next, every font embedded, and figures fitting the page ([theme README](../build/theme/README.md#8-verification)).
 
 ## 7. Map patterns
 

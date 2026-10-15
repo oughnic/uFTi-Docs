@@ -2,7 +2,7 @@
 
 A stylesheet and fonts that give the website and the PDF the look of the uFTi app's **Oxford and slate** theme: its colours and its two typefaces, on top of the plugin's neutral branding.
 
-**Status: drafted and checked, not yet rendered against real plugin output.** The contrast and hygiene checks below pass. WP1 builds the pipeline and WP6 verifies the result on a real website and PDF (see [what is not yet verified](#8-what-is-not-yet-verified)).
+**Status: drafted, checked, and tested against the plugin's own stylesheets, but not yet on real plugin output.** The checks below pass, and a browser test on mock markup passed too. WP1 builds the pipeline and WP6 verifies the result on a real website and PDF (see [verification](#8-verification)).
 
 ## 1. What is here
 
@@ -33,7 +33,7 @@ The colours are the **light variant** of the app's theme, version 1.0.0, copied 
 | selection | `--ufti-selection` | Selected text |
 | success, warning, error and their containers | `--ufti-success`, and so on | Error and success text, the warning button, coloured tags |
 
-The Design System reads most of its colours from custom properties, so section 4 of the stylesheet sets those once. The plugin's own page furniture (masthead, sidebar, contents lists) sets colours directly, so section 5 overrides it rule by rule. Section 6 covers Design System components that use literal colours (buttons, tags, pagination).
+The Design System reads most of its colours from custom properties, so section 4 of the stylesheet sets those once. The plugin's own page furniture (masthead, sidebar, contents lists) sets colours directly, so section 5 overrides it rule by rule. Section 6 covers Design System components that use literal colours (buttons, tags, pagination). Section 7 repeats the same values as literals for the print document and the PDF.
 
 ## 3. Typography
 
@@ -94,7 +94,7 @@ What each parameter does:
 - **Type sizes, spacing and square corners.** The app rounds its corners and sets its own scale. The manual keeps the Design System's.
 - **Visited links.** One link colour in every state, so the sidebar, the contents lists and topic text agree. Links stay underlined, so colour is never the only cue.
 - **Tag colours with no role in the theme** (purple, teal, pink, magenta, turquoise).
-- **Dark mode.** Not included. See [section 8](#8-what-is-not-yet-verified).
+- **Dark mode.** Not included. See [section 8](#8-verification).
 
 ## 6. Checks
 
@@ -105,7 +105,7 @@ pwsh build/theme/check-theme.ps1
 It exits 1 on any failure, and WP1 puts it in CI. It checks:
 
 - **Contrast.** Every pairing the stylesheet uses meets WCAG 2.2 AA: 4.5:1 for text, 3:1 for boundaries. All 31 pass.
-- **No colour outside the tokens block**, except a line marked `ufti: literal`. Page-margin boxes may not resolve custom properties in every PDF formatter, so the page number repeats its colour as a literal.
+- **No colour outside the tokens block.** The one exception is the print section (7), which is written with literal values and **no `var()`**. The PDF generator never resolves CSS custom properties, and its layout engine may not, so a rule that relied on one would silently fall back to the Design System's own font and colours. Each literal names its token on its own line (`ufti: literal outline`), and the checker fails if a literal and its token differ. Thirty are checked.
 - **Every `var(--ufti-…)` names a defined token.**
 - **Every font file the stylesheet names exists**, and the licences are present.
 
@@ -162,10 +162,14 @@ All six have TrueType outlines and are static (not variable), which is what the 
 
 A page loads only the faces it uses. A typical page fetches about 400 KB of fonts. Converting to WOFF2 would roughly halve that: a follow-up for WP6, which needs a conversion tool in the build.
 
-## 8. What is not yet verified
+## 8. Verification
 
-- **Not yet rendered on real output.** The selectors come from the plugin's own stylesheet and its documentation, and the contrast is calculated, but no page has been built with this stylesheet. WP1 builds the pipeline, and WP6 looks at every component on a real build: masthead, sidebar, contents, notes, tables, tags, search, glossary, index, footer and the print document.
-- **The PDF.** Whether DesignSystemPDF finds the fonts by their `@font-face` rules or only through `govuk.pdf.fonts`, whether the Semibold alias resolves, and that every font is embedded (a PDF/UA requirement) all need a real build. WP2's exit criteria include it.
+**Done.** The stylesheet was loaded in a browser together with the plugin's real stylesheets (Design System 6.5.1, the plugin's own, and its neutral overlay), on mock markup built from the plugin's documented class names. All six fonts and the Semibold alias loaded. The masthead, sidebar, headings, links, notes, tables, tags, buttons, code, figures and footer took the theme's colours and faces, and the Design System's yellow focus colour was untouched. A 1080 by 2400 phone screenshot was held to 40 rem at its true proportions. Across the 47 pieces of rendered text the lowest contrast was 7.01:1, with no failures. The test found one gap, the search button falling back to Arial, and it is fixed.
+
+**Not yet verified**
+
+- **Real plugin output.** The markup was a mock. WP1 builds the pipeline, and WP6 looks at every component on a real build: masthead, sidebar, contents, notes, tables, tags, search, glossary, index, footer and the print document.
+- **The PDF.** The print rules are literal and name the fonts as the generator reads them from the files ("Source Serif 4 Semibold" for the semibold face). But a real build must confirm that the PDF uses Atkinson and Source Serif rather than the generator's bundled Noto Sans, that headings use the Semibold face, that every font is embedded (a PDF/UA requirement), and that figures fit the page. WP2's exit criteria include it.
 - **Dark mode.** The app's theme has a dark variant. The site does not follow the reader's dark preference yet: it needs every plugin and Design System component checked on dark, which needs a real build to do properly (Q17).
 
 ## 9. Keeping in step with the app

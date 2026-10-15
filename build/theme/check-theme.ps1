@@ -6,8 +6,9 @@
 .DESCRIPTION
   1. Contrast: every foreground and background pairing the stylesheet uses meets WCAG 2.2 AA
      (4.5:1 for text, 3:1 for boundaries and other non-text parts).
-  2. Hygiene: no hex colour outside the tokens block (a line marked "ufti: literal" is exempt),
-     every var(--ufti-...) names a defined token, and every font file the stylesheet names exists.
+  2. Hygiene: no hex colour outside the tokens block, except a print-section literal that names
+     its token ("ufti: literal <token>") and equals it; no var() in the print section; every
+     var(--ufti-...) names a defined token; and every font file the stylesheet names exists.
 
   Exits 0 when everything passes and 1 otherwise. Copyright 2026 Oughtibridge Ltd, Apache-2.0.
 
@@ -129,13 +130,37 @@ if ($Markdown) {
 
 # ---- Hygiene ---------------------------------------------------------------------------------
 
-# 1. No hex colour outside the tokens block, except on a line marked "ufti: literal".
+# 1. No hex colour outside the tokens block, except a literal that names its token on the same line
+#    ("ufti: literal <token>") and equals it. A font-family literal must end with its token's stack.
 $outside = $text.Remove($block.Index, $block.Length)
-$kept = ($outside -split "`r?`n") | Where-Object { $_ -notmatch 'ufti: literal' }
-$stripped = [regex]::Replace(($kept -join "`n"), '/\*.*?\*/', '', 'Singleline')
-foreach ($m in [regex]::Matches($stripped, '(?<![\w#-])#(?:[0-9A-Fa-f]{8}|[0-9A-Fa-f]{6}|[0-9A-Fa-f]{3})\b')) {
-    $failures.Add("Hygiene: hex colour $($m.Value) outside the tokens block. Use a token, or mark the line 'ufti: literal'.")
+$marked = [regex]::Replace($outside, '/\*(?<c>.*?)\*/', {
+        param($m)
+        if ($m.Groups['c'].Value -match 'ufti: literal\s+(?<t>[a-z0-9-]+)') { return "/*LIT:$($Matches['t'])*/" }
+        return ' '
+    }, 'Singleline')
+$squash = { param($s) ($s -replace '\s+', ' ').Trim() }
+$literals = 0
+foreach ($line in ($marked -split "`r?`n")) {
+    $tok = $null
+    if ($line -match '/\*LIT:(?<t>[a-z0-9-]+)\*/') { $tok = $Matches['t'] }
+    $code = [regex]::Replace($line, '/\*LIT:[a-z0-9-]+\*/', '')
+    foreach ($m in [regex]::Matches($code, '(?<![\w#-])#(?:[0-9A-Fa-f]{8}|[0-9A-Fa-f]{6}|[0-9A-Fa-f]{3})\b')) {
+        if (-not $tok) { $failures.Add("Hygiene: hex colour $($m.Value) outside the tokens block. Use a token, or add 'ufti: literal <token>' on the line."); continue }
+        if (-not $tokens.ContainsKey($tok)) { $failures.Add("Hygiene: 'ufti: literal $tok' names a token that is not defined."); continue }
+        $literals++
+        if ($m.Value -ine $tokens[$tok]) { $failures.Add("Hygiene: literal $($m.Value) is marked as '$tok', which is $($tokens[$tok]).") }
+    }
+    if ($tok -and $tokens.ContainsKey($tok) -and $code -match 'font-family:\s*(?<v>[^;]+);') {
+        $literals++
+        if (-not (& $squash $Matches['v']).EndsWith((& $squash $tokens[$tok]))) { $failures.Add("Hygiene: the font-family literal does not end with the stack of '$tok'.") }
+    }
 }
+Write-Output ("Literals checked against their tokens: {0}" -f $literals)
+
+# 1b. Section 7 serves a PDF engine that may not resolve custom properties: no var() there.
+$s7 = $text.IndexOf('/* ===== 7.')
+if ($s7 -lt 0) { $failures.Add('Hygiene: section 7 (print document and PDF) not found.') }
+elseif ([regex]::Replace($text.Substring($s7), '/\*.*?\*/', '', 'Singleline') -match 'var\(') { $failures.Add('Hygiene: var() used in section 7, which must be literal.') }
 
 # 2. Every var(--ufti-...) names a defined token.
 foreach ($m in [regex]::Matches($text, 'var\(--ufti-(?<n>[a-z0-9-]+)')) {

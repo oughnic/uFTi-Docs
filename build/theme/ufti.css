@@ -14,7 +14,8 @@
  *
  * Rules for editing it
  *   1. Colours come from the tokens in section 1 and nowhere else. No hex colour outside the tokens
- *      block, except on a line marked "ufti: literal". check-theme.ps1 enforces this.
+ *      block, except a literal in section 7 that names its token on the same line ("ufti: literal
+ *      <token>") and equals it. Section 7 uses no var(). check-theme.ps1 enforces both.
  *   2. Do not restyle focus states. The Design System's yellow focus is kept on purpose.
  *   3. Do not change type sizes. They stay the Design System's.
  *   4. Run check-theme.ps1 after any change. It checks the contrast of every pairing used here.
@@ -444,23 +445,149 @@ pre.pre {
 
 /* ===== 7. Print document and PDF ===== */
 
-/* The print document is the whole publication in one file, and DesignSystemPDF renders it. The
- * Semibold face is asked for by its own name, which the generator finds in the fonts folder. */
+/* DesignSystemPDF lays the print document out with Open HTML to PDF, an engine descended from Flying
+ * Saucer. The generator does not resolve CSS custom properties, and the engine may not either, so
+ * every rule in this section is written with literal values and no var(). Each literal names the token
+ * it copies, on its own line ("ufti: literal <token>"), and check-theme.ps1 fails if a literal and its
+ * token ever differ. The rules also apply when the print document is opened in a browser, where they
+ * give the same result as section 5. */
+
+.app-print {
+  color: #1B2430; /* ufti: literal on-surface */
+  font-family: "Atkinson Hyperlegible Next", Arial, "Helvetica Neue", Helvetica, sans-serif; /* ufti: literal font-text */
+}
+
+/* Every Design System class that sets its own font and can appear in the print document. */
+.app-print .govuk-body,
+.app-print .govuk-body-l,
+.app-print .govuk-body-lead,
+.app-print .govuk-body-m,
+.app-print .govuk-body-s,
+.app-print .govuk-caption-l,
+.app-print .govuk-caption-m,
+.app-print .govuk-caption-xl,
+.app-print .govuk-details,
+.app-print .govuk-heading-s,
+.app-print .govuk-hint,
+.app-print .govuk-inset-text,
+.app-print .govuk-link,
+.app-print .govuk-list,
+.app-print .govuk-summary-list,
+.app-print .govuk-table,
+.app-print .govuk-tag,
+.app-print .govuk-warning-text {
+  font-family: "Atkinson Hyperlegible Next", Arial, "Helvetica Neue", Helvetica, sans-serif; /* ufti: literal font-text */
+}
+
+/* Display type. The Semibold file names itself "Source Serif 4 Semibold", which is how the generator
+ * finds it in the fonts folder, so the weight is 400: that name already is the semibold face. */
 .app-print .govuk-heading-xl,
 .app-print .govuk-heading-l,
 .app-print .govuk-heading-m {
-  font-family: "Source Serif 4 Semibold", var(--ufti-font-display);
+  font-family: "Source Serif 4 Semibold", "Source Serif 4", Georgia, "Times New Roman", serif; /* ufti: literal font-display */
   font-weight: 400;
 }
 
-.app-print .app-print-cover,
-.app-print .app-print-chapter,
-.app-print .app-print-endnotes {
-  border-color: var(--ufti-outline);
+/* Code keeps the plugin's monospace stack. */
+.app-print pre,
+.app-print code,
+.app-print samp,
+.app-print kbd {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
 }
 
-/* The same limit on paper: no figure taller than about half a page, so a phone screenshot never
- * fills one. */
+/* Links, and secondary text */
+.app-print a:link,
+.app-print a:visited {
+  color: #1E3A5F; /* ufti: literal link */
+}
+
+.app-print .govuk-hint,
+.app-print .govuk-caption-l,
+.app-print .govuk-caption-m,
+.app-print .govuk-caption-xl,
+.app-print .app-index-see,
+.app-print .app-attribution,
+.app-print .app-page-dates,
+.app-print #main-content .responsibleParty,
+.app-print #main-content blockquote.lq cite,
+.app-print #main-content .menucascade abbr {
+  color: #4B5563; /* ufti: literal on-surface-muted */
+}
+
+/* Rules and edges */
+.app-print .govuk-inset-text,
+.app-print .govuk-details__text,
+.app-print #main-content blockquote.lq {
+  border-left-color: #7C8694; /* ufti: literal outline */
+}
+
+.app-print .govuk-table__cell,
+.app-print .govuk-table__header,
+.app-print .govuk-summary-list__row,
+.app-print .govuk-section-break--visible,
+.app-print .app-az-letter,
+.app-print .app-print-cover {
+  border-bottom-color: #7C8694; /* ufti: literal outline */
+}
+
+.app-print .app-print-chapter,
+.app-print .app-print-endnotes,
+.app-print ul.ullinks,
+.app-print ul.linklist {
+  border-top-color: #7C8694; /* ufti: literal outline */
+}
+
+.app-print figure.app-screenshot img {
+  border-color: #7C8694; /* ufti: literal outline */
+}
+
+.app-print #main-content figcaption {
+  color: #1B2430; /* ufti: literal on-surface */
+}
+
+.app-print pre.codeblock,
+.app-print pre.pre {
+  border-color: #7C8694; /* ufti: literal outline */
+  background-color: #E9EDF2; /* ufti: literal surface-container */
+  color: #1B2430; /* ufti: literal on-surface */
+}
+
+/* The warning icon: a dark disc with a light mark. */
+.app-print .govuk-warning-text__icon {
+  border-color: #1B2430; /* ufti: literal on-surface */
+  background-color: #1B2430; /* ufti: literal on-surface */
+  color: #FFFFFF; /* ufti: literal surface-raised */
+}
+
+/* Tags */
+.app-print .govuk-tag {
+  background-color: #D5E2F2; /* ufti: literal primary-container */
+  color: #12263F; /* ufti: literal on-primary-container */
+}
+
+.app-print .govuk-tag--green {
+  background-color: #D9EEDD; /* ufti: literal success-container */
+  color: #1E4D2C; /* ufti: literal on-success-container */
+}
+
+.app-print .govuk-tag--red {
+  background-color: #F7DEDB; /* ufti: literal error-container */
+  color: #7A1F18; /* ufti: literal on-error-container */
+}
+
+.app-print .govuk-tag--orange,
+.app-print .govuk-tag--yellow {
+  background-color: #F6E7C6; /* ufti: literal warning-container */
+  color: #5E3D00; /* ufti: literal on-warning-container */
+}
+
+.app-print .govuk-tag--grey {
+  background-color: #E9EDF2; /* ufti: literal surface-container */
+  color: #1B2430; /* ufti: literal on-surface */
+}
+
+/* No figure taller than about half a page, so a phone screenshot never fills one. */
 .app-print #main-content figure img {
   max-height: 110mm;
 }
@@ -469,15 +596,14 @@ pre.pre {
 @media print {
   .govuk-template,
   .govuk-template__body {
-    background-color: var(--ufti-surface-raised);
+    background-color: #FFFFFF; /* ufti: literal surface-raised */
   }
 }
 
-/* The page number. Page margin boxes may not resolve custom properties in every formatter, so this
- * one rule repeats the token values as literals. */
+/* The page number, in the margin box print.css adds it to. */
 @page {
   @bottom-right {
-    font-family: "Atkinson Hyperlegible Next", Arial, sans-serif; /* ufti: literal */
-    color: #4B5563; /* ufti: literal (on-surface-muted) */
+    font-family: "Atkinson Hyperlegible Next", Arial, "Helvetica Neue", Helvetica, sans-serif; /* ufti: literal font-text */
+    color: #4B5563; /* ufti: literal on-surface-muted */
   }
 }
