@@ -11,7 +11,7 @@ Planning and standards for the uFTi user documentation. These files guide author
 | [build-and-quality.md](build-and-quality.md) | Which tools build the outputs, and which checks must pass before anything is published? |
 | [decision-log.md](decision-log.md) | What has been decided, what is proposed, and what still needs an answer? |
 
-**Status:** Draft 0.1, 15 October 2026. Nothing here is final until its entry in the decision log is marked *Accepted*.
+**Status:** Draft 0.2, 15 October 2026. Nothing here is final until its entry in the decision log is marked *Accepted*.
 
 ## Reading order
 

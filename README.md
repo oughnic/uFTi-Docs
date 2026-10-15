@@ -15,9 +15,9 @@ Because not every reader will know family history research good practice, the do
 
 ## Scope
 
-In scope for now: the **uFTi .NET MAUI application** on each platform it runs on.
+In scope for now: the **uFTi .NET MAUI application** on its three supported platforms, **Android**, **iOS** and **Windows**. Android and iOS each cover both phone and tablet, so there are five manuals.
 
-Out of scope for now: the other uFTi surfaces (web, command line and AI-assistant integrations). They may become separate publications later.
+Out of scope for now: the app's AI features, and the other uFTi surfaces (web, command line and AI-assistant integrations). They may be added later.
 
 ## How it is built
 
@@ -48,7 +48,7 @@ The tools are the [DITA Open Toolkit](https://www.dita-ot.org/), the [iStandUK G
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). While the repository is in its planning phase, please open an issue before sending changes.
+See [CONTRIBUTING.md](CONTRIBUTING.md). Work happens on the default branch, `dev`. The `main` branch holds releases. While the repository is in its planning phase, please open an issue before sending changes.
 
 ## Licence
 

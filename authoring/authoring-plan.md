@@ -2,9 +2,9 @@
 
 | | |
 |---|---|
-| Status | Draft 0.1 |
+| Status | Draft 0.2 |
 | Date | 15 October 2026 |
-| Scope | The uFTi .NET MAUI application on all its platforms. Web, command-line and AI-assistant integrations are out of scope for now. |
+| Scope | The uFTi .NET MAUI application on Android (phone and tablet), iOS (iPhone and iPad) and Windows. Web, command-line and AI-assistant integrations, and the app's AI features, are out of scope for now. |
 | Companion documents | [Platform strategy](platform-strategy.md) · [Good practice strategy](good-practice-strategy.md) · [Authoring standards](authoring-standards.md) · [Build and quality](build-and-quality.md) · [Decision log](decision-log.md) |
 
 ## 1. Purpose and scope
@@ -15,8 +15,8 @@ Give people who use uFTi a manual they can trust: task-based, correct for the pl
 
 ### 1.2 In scope
 
-- The **uFTi MAUI application** on every platform it runs on (see the [platform catalogue](platform-strategy.md#2-platform-catalogue)).
-- Every feature a user can reach in a released build, including any AI-assisted features that appear in the app (confirmed by the inventory in WP4).
+- The **uFTi MAUI application** on its three supported platforms: Android, iOS and Windows (WinUI). Android and iOS each cover both the phone and the tablet idiom (see the [platform catalogue](platform-strategy.md#2-platform-catalogue)).
+- Every feature a user can reach in a released build, except AI features (confirmed by the inventory in WP4).
 - Good practice guidance for family history research, linked to the features that support it.
 
 ### 1.3 Out of scope for now
@@ -24,6 +24,8 @@ Give people who use uFTi a manual they can trust: task-based, correct for the pl
 | Item | Why, and what happens next |
 |---|---|
 | uFTi web app and service, command-line tools, AI-assistant integrations | Deferred (DEC-002). The folder layout and attribute vocabulary leave room for each to become its own publication later, through a new `@product` value and new maps. |
+| AI features of the app, and guidance on using AI tools | Deferred (DEC-020). The inventory excludes them. Where one appears on a documented screen, the topic describes the screen without it. |
+| Other MAUI platform heads | Only Android, iOS and Windows (WinUI) are supported platforms (DEC-019). Other heads are not documented. |
 | Developer, architecture and API documentation | Different audience and a different repository. |
 | Marketing and sales material | Not a user manual concern. |
 | Research tutorials by record type (census, parish registers, wills and so on) | We teach method and record keeping. For record types we link to authoritative guides. |
@@ -33,9 +35,9 @@ Give people who use uFTi a manual they can trust: task-based, correct for the pl
 
 | Output | For | Formats | Notes |
 |---|---|---|---|
-| **uFTi user manual: *platform*** (one per platform) | People using uFTi on that platform | Website and PDF/UA-1 | The same topics serve every platform. Platform-specific text and screenshots are selected at build time. |
+| **uFTi user manual: *platform*** (one per device idiom: Android phone, Android tablet, iPhone, iPad and Windows) | People using uFTi on that device | Website and PDF/UA-1 | The same topics serve every manual. Platform-specific text and screenshots are selected at build time. |
 | **Family history good practice guide** | Anyone, including people new to research | Website and PDF/UA-1 | Platform-neutral. Also included as a part of each platform manual (DEC-007). |
-| **Platform chooser** | First-time visitors | Website home page | Links to each manual and to the guide. |
+| **Platform chooser** | First-time visitors | Website home page | Links to each manual, grouped by platform, and to the guide. |
 
 ### 1.5 Success criteria
 
@@ -102,7 +104,7 @@ Built from the existing screenshot set and the app's visible navigation. WP4 rep
 | 14 | Reference | Glossary, keyboard shortcuts, event types, date formats, file types, platform differences | reference, glossentry | Medium |
 | GP | Good practice guide | Shared by every manual: see [good practice strategy](good-practice-strategy.md) | concept, task, reference | None |
 
-Screens for chapters 2 to 10 appear in the existing screenshot set. Chapters 11 to 13, and the settings part of chapter 12, are candidates to confirm against the app.
+Screens for chapters 2 to 10 appear in the existing screenshot set. Chapters 11 to 13, and the settings part of chapter 12, are candidates to confirm against the app. Screens that mention AI features are documented without them.
 
 ### 3.4 Good practice inside the manual
 
@@ -125,10 +127,11 @@ Roughly 100 to 150 manual topics, 40 to 60 good practice topics and 30 to 50 glo
 
 Full detail is in the [platform strategy](platform-strategy.md). In summary:
 
-- **One manual per platform, assembled from shared topics.** A reader on Android never wades through Windows instructions.
+- **Three supported platforms:** Android, iOS and Windows (WinUI). Android and iOS each cater for the phone and the tablet idiom (DEC-019).
+- **One manual per device idiom, assembled from shared topics:** Android phone, Android tablet, iPhone, iPad and Windows. A reader on an iPad never wades through iPhone or Windows instructions.
 - **Differences are handled in this order:** neutral wording, then keys (screenshots, UI labels), then small `@platform` variants, then platform-specific topics.
-- **Proposed output model:** one build per platform from the shared sources (DEC-006). WP2 proves it against a branch-filtered single-site alternative before we commit.
-- **Waves.** Wave 1 (reference platforms): Android phone and Windows (WinUI), the two heads that build on Windows today. Wave 2: Windows (WPF), whose screenshot set already exists, then iOS and macOS, which need a Mac build host. Wave 3: any remaining heads, as the product team confirms them.
+- **Proposed output model:** one build per manual from the shared sources (DEC-006). WP2 proves it against a branch-filtered single-site alternative before we commit. Q16 asks whether phone and tablet should instead share one manual per operating system.
+- **Waves.** Wave 1, the reference platforms: Android phone and Windows, which already have screenshot sets. Wave 2: Android tablet, then iPhone and iPad, which need a Mac build host and devices (DEC-021).
 
 ## 5. Good practice guidance
 
@@ -210,7 +213,7 @@ This repository is public. The application repository is private.
 
 ### 7.5 AI-assisted drafting
 
-AI assistance may be used to draft topics, check terminology and consistency, suggest alternative text and triage lint output. The rules:
+This section is about how we write the documentation. It does not bring the app's AI features into scope (DEC-020). AI assistance may be used to draft topics, check terminology and consistency, suggest alternative text and triage lint output. The rules:
 
 1. AI works from the approved inventory and observed behaviour. It does not invent features, screens or labels.
 2. Every AI-drafted task is performed on the platform before merge.
@@ -232,35 +235,38 @@ AI assistance may be used to draft topics, check terminology and consistency, su
 flowchart LR
     P1["Phase 1<br/>Foundations<br/>WP1 to WP6"] --> P2["Phase 2<br/>Pilot slice<br/>WP7"]
     P2 --> P3["Phase 3<br/>Full coverage on<br/>reference platforms<br/>WP8 to WP10"]
-    P3 --> P4["Phase 4<br/>More platforms<br/>WP11 to WP14"]
+    P3 --> P4["Phase 4<br/>More manuals<br/>WP11 to WP13"]
     P3 --> P5["Phase 5<br/>Operate<br/>WP15"]
 ```
 
-Sizes are relative (S, M, L, XL), not calendar estimates. WP7 measures the real effort per topic. After that, WP8 to WP14 are re-estimated.
+Sizes are relative (S, M, L, XL), not calendar estimates. WP7 measures the real effort per topic. After that, WP8 to WP13 are re-estimated.
 
 | ID | Work package | Size | Depends on | Deliverables | Done when |
 |---|---|---|---|---|---|
 | **Phase 1: Foundations** | | | | | |
 | WP1 | Toolchain and build pipeline | L | none | `build/tools.lock` pinning every tool by version and SHA-256. Bootstrap and build scripts for Windows (PowerShell) and CI (bash). A DITA-OT project file. A GitHub Actions workflow with the quality gates. A tiny throwaway fixture publication. | The fixture builds locally and in CI to a website and a PDF with zero warnings, and every gate in [build and quality, section 4](build-and-quality.md#4-quality-gates) runs green on it. |
-| WP2 | Platform strategy spike | M | WP1 | A prototype of three platforms by four topic kinds (shared, shared with a variant, platform-specific, image by key). A decision between the build models. The good practice callout pattern. The platform chooser approach. | Decision accepted in the log. The prototype builds for all three platforms. veraPDF passes PDF/UA-1 and there is no `DSPDF009W`. Alternative text from keys reaches HTML and PDF. |
+| WP2 | Platform strategy spike | M | WP1 | A prototype of three manuals (Android phone, Android tablet and Windows) by four topic kinds (shared, shared with a variant, platform-specific, image by key), so it exercises both idioms of one OS. A decision between the build models, and on separate or combined phone and tablet manuals (Q16). The good practice callout pattern. The platform chooser approach. | Decisions accepted in the log. The prototype builds for all three manuals. veraPDF passes PDF/UA-1 and there is no `DSPDF009W`. Alternative text from keys reaches HTML and PDF. |
 | WP3 | Standards, style guide and templates | M | none (parallel to WP1) | Full style guide. Terminology list. Templates for each topic type. Metadata vocabulary. Lint configuration. Contributor guide. | Adopted by the maintainers. Lint runs in CI against the templates. |
-| WP4 | Content inventory and information architecture | M | Access to the app. WP3 started. | Features observed on released builds on each reference platform. A topic inventory (id, title, type, chapter, platforms, priority, status, reviewer). Chapter map skeletons. | Every visible screen and feature maps to at least one planned topic. Reviewed with the product owner. |
-| WP5 | Import and sanitise the existing screenshot maps | S | WP2 | The three existing platform key maps and their screenshots, brought in and sanitised. | No internal identifiers, personal data or living people appear. Alternative text reviewed. A key coverage report exists. |
+| WP4 | Content inventory and information architecture | M | Access to the app. WP3 started. | Features observed on released builds on each reference platform, with AI features excluded. A measure of how far the tablet idiom differs from the phone idiom (navigation, layout, gestures). A topic inventory (id, title, type, chapter, platforms, priority, status, reviewer). Chapter map skeletons. | Every visible screen and feature maps to at least one planned topic. Reviewed with the product owner. |
+| WP5 | Import and sanitise the existing screenshot maps | S | WP2 | The existing key maps and screenshots for Android phone and Windows, brought in and sanitised. `AndroidMobile` is renamed `AndroidPhone`. The WPF map is not imported, because WPF is not a supported platform. | No internal identifiers, personal data or living people appear. Alternative text reviewed. A key coverage report exists. |
 | WP6 | Brand and site furniture | S | WP1 | Publisher stylesheet, logo, favicon, share image, footer links, phase banner and feedback link. | A neutral-branded build shows the uFTi identity. Contrast and target size pass axe-core. |
 | **Phase 2: Pilot** | | | | | |
-| WP7 | Pilot slice | L | WP1 to WP6 | Get started, People and Sources chapters, five good practice topics and a glossary starter, for the two reference platforms (about 30 to 40 topics). | Published as a beta. The full review workflow has been exercised. Three to five novice usability sessions are done. Effort per topic is recorded. |
+| WP7 | Pilot slice | L | WP1 to WP6 | Get started, People and Sources chapters, five good practice topics and a glossary starter, for the two reference platforms, Android phone and Windows (about 30 to 40 topics). | Published as a beta. The full review workflow has been exercised. Three to five novice usability sessions are done. Effort per topic is recorded. |
 | **Phase 3: Full coverage on reference platforms** | | | | | |
 | WP8 | Core manual chapters | XL | WP7 | All remaining chapters, reference topics, troubleshooting and glossary. | Inventory coverage is 100% for in-scope features on the reference platforms. |
 | WP9 | Good practice guide v1 | L | WP7, reviewer availability | All themes, contextual cues, learning path and checklists. | Genealogy review passed. Novice usability test passed. Every cue links to the guide. |
 | WP10 | Release readiness for v1.0 | M | WP8, WP9 | Accessibility statement. Colophon with licences and third-party notices. "What is new". Manual assistive technology pass. PDF reading-order check. Deployment. | All gates green. Manual checks logged. Site and PDFs published. |
 | **Phase 4: More platforms** | | | | | |
-| WP11 to WP14 | Add a platform: Windows (WPF), iOS, macOS, others as confirmed | S to M each | WP10 | Follow the [onboarding checklist](platform-strategy.md#9-adding-a-platform). | Coverage report shows parity with the reference platforms. Gates green. |
+| WP11 | Add Android tablet | M | WP10 | The tablet idiom's screenshot set and key map, idiom-specific topics and a DITAVAL filter. Follow the [onboarding checklist](platform-strategy.md#9-adding-a-platform). | Coverage report shows parity with Android phone. Gates green. |
+| WP12 | Add iPhone | M | WP10 | As WP11, for iOS. Needs a Mac build host and devices for screenshots. | Coverage report shows parity with the reference platforms. Gates green. |
+| WP13 | Add iPad | M | WP12 | As WP11, building on the iPhone manual. | Coverage report shows parity with iPhone. Gates green. |
+| WP14 | Add a further platform | Deferred | WP10 | Only if the product team adds a supported platform. | Not planned. |
 | **Phase 5: Operate** | | | | | |
 | WP15 | Operate and maintain | Ongoing | WP10 | Docs-impact process. Screenshot refresh. Periodic good practice review. Tool upgrade policy. | The cadence has been followed for two app releases. |
 | WP16 | Localisation (Spanish) | Optional | WP10, Q6 | Translation workflow and first translated publication. | Decided in Q6. |
 | WP17 | Other uFTi surfaces | Deferred | DEC-002 | Scoping only. | Not planned. |
 
-**Milestones.** M1 toolchain proven (WP1, WP2). M2 standards in place (WP3, WP4). M3 pilot published as a beta (WP5 to WP7). M4 v1.0 on the reference platforms (WP8 to WP10). M5 further platforms (WP11 to WP14).
+**Milestones.** M1 toolchain proven (WP1, WP2). M2 standards in place (WP3, WP4). M3 pilot published as a beta (WP5 to WP7). M4 v1.0 on the reference platforms (WP8 to WP10). M5 further manuals (WP11 to WP13).
 
 **Parallelism.** WP1, WP3 and WP4 can start together. WP2 follows WP1. WP5 and WP6 follow WP2.
 
@@ -271,8 +277,8 @@ Sizes are relative (S, M, L, XL), not calendar estimates. WP7 measures the real 
 | R1 | The plugin (v1.x) and the PDF generator (0.x) are young and moving fast. | High | Medium | Pin by version and checksum. Upgrade deliberately. Run the gates on every upgrade. Report issues upstream. |
 | R2 | DITA-OT 4.4 behaviours: keys inside a submap included by key are not resolved. Chunking has defects. | Certain | Medium | Include submaps by `href` only. Avoid `chunk="to-content"`. The standards forbid both. |
 | R3 | Pre-release app UI changes, so documentation goes stale. | High | High | Screenshots as keys with stable names. Capture from release candidates. Docs-impact process. Document only stable features. Beta phase banner. |
-| R4 | Platform multiplication: N platforms by M topics. | Medium | High | Single-source. Variant thresholds. Coverage report. Add platforms in waves. |
-| R5 | Some platform heads change or are withdrawn. | Medium | Low | Keep each platform in its own folders so removal is cheap. Document only confirmed heads. |
+| R4 | Platform multiplication: five manuals by many topics. | Medium | High | Single-source. Variant thresholds. Coverage report. Add manuals in waves. |
+| R5 | The tablet idiom's UI diverges from, or converges with, the phone's as the app evolves. | Medium | Medium | Measure the difference in WP4. Review the idiom split at each release. Keep each manual in its own folders so a split or merge is cheap. |
 | R6 | Good practice advice is wrong, outdated or legally unsafe. | Medium | High | Cite authorities. Genealogy and expert review. Review cycle. No legal advice. |
 | R7 | Copyright of third-party standards, images or text. | Low | High | Paraphrase and cite. Only our own screenshots. Bundled fonts under open licences. |
 | R8 | Accidental disclosure from the private repository into the public one. | Medium | High | The [disclosure boundary](#74-disclosure-boundary-and-privacy), sanitised imports, secret scan, reviewer checklist. |
@@ -283,16 +289,19 @@ Sizes are relative (S, M, L, XL), not calendar estimates. WP7 measures the real 
 
 ## 10. Decisions and open questions
 
-Everything decided, proposed or open is in the [decision log](decision-log.md). The questions that most affect the start of work:
+Everything decided, proposed or open is in the [decision log](decision-log.md).
+
+**Settled on 15 October 2026:** the supported platforms and idioms (DEC-019), AI out of scope (DEC-020), the copyright holder (DEC-017) and the branching model (DEC-016).
+
+The open questions that most affect the start of work:
 
 | Q | Question | Default if unanswered |
 |---|---|---|
-| Q1 | Which platforms are supported in v1? | Android phone and Windows (WinUI) first, then the rest as confirmed. |
-| Q2 | Are phone and tablet separate manuals? | No. One manual per operating system and head. |
-| Q3 | Are AI-assisted features visible in the app in scope? | Yes, as far as they are visible at release. |
+| Q16 | Should phone and tablet have separate manuals, or share one manual per operating system? | Separate manuals, five in all. WP2 and WP4 test this. |
 | Q4 | Where is the site hosted? | GitHub Pages, with a platform chooser at the root. |
 | Q5 | Which brand assets (logo, colours) are available? | A plain masthead with the service name until supplied. |
 | Q6 | Is Spanish needed, and when? | Not for v1. |
+| Q8 | Who reviews good practice content? | The maintainer, with a volunteer genealogist to be found. |
 
 ## 11. References
 

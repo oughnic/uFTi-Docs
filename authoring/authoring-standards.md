@@ -2,7 +2,7 @@
 
 How DITA is written in this repository. This is the short version. WP3 expands it into a full style guide, terminology list and templates.
 
-Part of the [authoring plan](authoring-plan.md). Status: Draft 0.1, 15 October 2026. Decisions are tracked in the [decision log](decision-log.md).
+Part of the [authoring plan](authoring-plan.md). Status: Draft 0.2, 15 October 2026. Decisions are tracked in the [decision log](decision-log.md).
 
 Much of this follows the plugin's own guide for people who write DITA for it, [SOURCE-SYSTEMS.md](https://github.com/iStandUK/govuk-dita-plugin/blob/main/docs/SOURCE-SYSTEMS.md), because following it means the website, search, print version, PDF and page metadata all come out right without editing the output.
 

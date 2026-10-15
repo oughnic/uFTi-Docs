@@ -7,7 +7,7 @@ Thank you for helping to improve the uFTi documentation.
 ## Ground rules
 
 - **Issue first.** Describe the change or the gap. Small, focused pull requests are easier to review.
-- **Branches.** Branch from `main` as `docs/<issue-number>-<short-slug>` and open a pull request that closes the issue.
+- **Branches.** `dev` is the working branch and `main` holds releases. Branch from `dev` as `docs/<issue-number>-<short-slug>` and open a pull request into `dev` that closes the issue. Maintainers cut releases from `dev` into `main`.
 - **Describe observable behaviour only.** The documentation covers what a released uFTi build does. Do not paste source code, internal design documents, issue numbers from other repositories, build identifiers or details of unreleased features.
 - **No real family data.** Screenshots and examples use the sample workspaces only. Never include information about living people.
 - **Follow the standards** in [authoring/authoring-standards.md](authoring/authoring-standards.md): DITA 1.3, topic-based, accessible, British English.

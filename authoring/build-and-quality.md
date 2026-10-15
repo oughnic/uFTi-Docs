@@ -2,7 +2,7 @@
 
 Which tools build the outputs, and which checks must pass before anything is published.
 
-Part of the [authoring plan](authoring-plan.md). Status: Draft 0.1, 15 October 2026. Decisions are tracked in the [decision log](decision-log.md).
+Part of the [authoring plan](authoring-plan.md). Status: Draft 0.2, 15 October 2026. Decisions are tracked in the [decision log](decision-log.md).
 
 Everything here is **planned**. WP1 builds it. Versions and behaviours were checked against the upstream projects on 15 October 2026. Check them again at the start of WP1.
 
@@ -107,7 +107,7 @@ All gates run on every pull request. A failure blocks the merge.
 
 **Manual checks before each release**
 
-- Screen reader pass on the real platform: NVDA and Narrator on Windows, TalkBack on Android, VoiceOver on iOS and macOS.
+- Screen reader pass on each real device: NVDA and Narrator on Windows, TalkBack on an Android phone and tablet, VoiceOver on an iPhone and iPad.
 - Keyboard-only pass on the website.
 - Zoom to 400% and reflow. Forced colours and high contrast.
 - The PDF in Acrobat with the Tags and Reading Order panes, and in the PDF Accessibility Checker (PAC).
@@ -120,12 +120,12 @@ Planned for GitHub Actions, in WP1.
 
 | Job | Runs | Purpose |
 |---|---|---|
-| `lint` | Every push and pull request | Prose, structure, vocabulary, secrets. Fast. |
-| `build` | A matrix: each platform manual, the good practice guide, the platform chooser | Install pinned tools from cache. Build site and PDF into `out/<slug>`. Upload as an artefact. |
+| `lint` | Pushes to `dev`, `main`, `release/**` and `hotfix/**`, and every pull request | Prose, structure, vocabulary, secrets. Fast. |
+| `build` | A matrix: the five manuals, the good practice guide and the platform chooser | Install pinned tools from cache. Build site and PDF into `out/<slug>`. Upload as an artefact. |
 | `check` | After `build`, per output | HTML, axe-core, links, metadata, veraPDF, determinism, page weight. |
 | `coverage` | Once | Key and image coverage, applicability matrix. |
-| `deploy` | `main` only | Assemble the root with the chooser, publish to GitHub Pages. |
-| `release` | On a version tag | Attach PDFs, a zipped site, SHA-256 checksums and the applicability matrix to a GitHub release. |
+| `deploy` | `main` only, so only releases are published | Assemble the root with the chooser, publish to GitHub Pages. |
+| `release` | On a version tag on `main` | Attach PDFs, a zipped site, SHA-256 checksums and the applicability matrix to a GitHub release. |
 
 Practices:
 
@@ -140,17 +140,19 @@ Practices:
 **Versioning**
 
 - The manual's version follows the app's `MAJOR.MINOR.PATCH` and appears as `vrm` in the map metadata.
-- Tag `vX.Y.Z` in this repository when the manual for app version X.Y.Z is released.
+- Tag `vX.Y.Z` on `main` when the manual for app version X.Y.Z is released.
 - Before 1.0 the manual is a beta, and the phase banner says so.
-- `main` is always buildable and is published as "latest". Tagged releases are archived as PDFs and a zipped site. Whether earlier versions stay online is DEC-013.
+- `dev` is always buildable. Its builds are CI artefacts and are not published. `main` holds the latest release and is what GitHub Pages publishes. Tagged releases are archived as PDFs and a zipped site. Whether earlier versions stay online is DEC-013.
 
 **Release steps**
 
 1. Confirm the app release candidate.
-2. Refresh screenshots and compare the app with the inventory.
-3. Update the "What is new" topic.
-4. Run every gate and the manual checks.
-5. Tag, publish and attach the artefacts.
+2. Cut `release/X.Y.Z` from `dev`.
+3. Refresh screenshots and compare the app with the inventory.
+4. Update the "What is new" topic.
+5. Run every gate and the manual checks.
+6. Merge `release/X.Y.Z` into `main` by pull request, then tag `vX.Y.Z`. The `release` and `deploy` jobs attach the artefacts and publish the site.
+7. Merge `main` back into `dev`.
 
 **Hosting.** A GitHub Pages project site: `https://oughnic.github.io/uFTi-Docs/`, with the platform chooser at the root, each manual at `/<slug>/` and the guide at `/good-practice/` (DEC-014). Pages cannot set HTTP headers, so the site uses `govuk.csp=meta`. A custom domain can follow (Q4). The plugin's sites are static, with no cookies, no third-party requests and no analytics, so readers are not tracked. Feedback arrives through the repository's issues.
 
@@ -158,8 +160,8 @@ Practices:
 
 ## 7. Repository hygiene
 
-- **Default branch** `main`, protected: pull requests required, CI green (DEC-016).
-- **Branch names** `docs/<issue>-<slug>`. Commit messages follow `type(scope): subject`.
+- **Branches** (DEC-016). `dev` is the default and integration branch. `main` holds releases only. Both are protected, set up in WP1: pull requests required and CI green.
+- **Work branches** are `docs/<issue>-<slug>` from `dev` (use `feat/` or `fix/` for tooling), merged by pull request into `dev`. Releases go through `release/X.Y.Z` into `main`. Urgent fixes use `hotfix/<slug>` from `main`, merged into `main` and back into `dev`. Commit messages follow `type(scope): subject`.
 - **Labels:** `docs-impact`, `good-practice`, `needs-review-genealogy`, `a11y`, `platform-<slug>` and `wp-<n>`.
 - **Secret scanning and push protection** switched on.
 - **`SECURITY.md`** added in WP1, covering how to report a private-data leak or an accessibility barrier.
