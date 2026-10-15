@@ -1,0 +1,9 @@
+uFTi-Docs
+Copyright 2026 Nicholas Oughtibridge
+
+This repository contains the DITA source and build configuration for the
+uFTi user documentation.
+
+The documentation is built with the DITA Open Toolkit and the iStandUK
+GOV.UK DITA plugin (org.istanduk.gov-uk), both licensed under the Apache
+License, Version 2.0. Neither is distributed in this repository.
