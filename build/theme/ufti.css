@@ -1,0 +1,474 @@
+/*
+ * uFTi publisher stylesheet for the govuk transformation.
+ * Copyright 2026 Oughtibridge Ltd. Licensed under the Apache License, Version 2.0.
+ * The fonts it names are licensed separately: see assets/licences/.
+ *
+ * What it does
+ *   Gives the website and the print document (and so the PDF) the colours and typefaces of the uFTi
+ *   app's "Oxford and slate" theme, on top of the plugin's neutral branding.
+ *
+ * How to use it (the project-file form and the reasons are in README.md)
+ *   -Dargs.css=ufti.css -Dargs.cssroot=<absolute path of build/theme> -Dargs.copycss=yes
+ *   -Dgovuk.css.assets=<absolute path of build/theme/assets>
+ *   -Dgovuk.pdf.fonts=<absolute path of build/theme/assets/fonts>
+ *
+ * Rules for editing it
+ *   1. Colours come from the tokens in section 1 and nowhere else. No hex colour outside the tokens
+ *      block, except on a line marked "ufti: literal". check-theme.ps1 enforces this.
+ *   2. Do not restyle focus states. The Design System's yellow focus is kept on purpose.
+ *   3. Do not change type sizes. They stay the Design System's.
+ *   4. Run check-theme.ps1 after any change. It checks the contrast of every pairing used here.
+ *
+ * It is linked after the Design System's and the plugin's stylesheets, so a rule here beats a rule of
+ * equal weight in theirs.
+ */
+
+/* ===== 1. Tokens ===== */
+
+/* BEGIN TOKENS: theme oxford-slate 1.0.0, light variant.
+ * Taken from the app's theme definition. Replace this block as a whole when the theme changes,
+ * and update the version above. Do not edit values by hand. */
+:root {
+  --ufti-surface: #F5F7FA;
+  --ufti-surface-container: #E9EDF2;
+  --ufti-surface-raised: #FFFFFF;
+  --ufti-on-surface: #1B2430;
+  --ufti-on-surface-muted: #4B5563;
+  --ufti-outline: #7C8694;
+  --ufti-outline-strong: #5B6572;
+  --ufti-primary: #1E3A5F;
+  --ufti-on-primary: #FFFFFF;
+  --ufti-primary-container: #D5E2F2;
+  --ufti-on-primary-container: #12263F;
+  --ufti-link: #1E3A5F;
+  --ufti-focus-ring: #1E3A5F;
+  --ufti-selection: #DBE6F3;
+  --ufti-scrim: #12182199;
+  --ufti-signature: #1E3A5F;
+  --ufti-success: #2E6B3F;
+  --ufti-on-success: #FFFFFF;
+  --ufti-success-container: #D9EEDD;
+  --ufti-on-success-container: #1E4D2C;
+  --ufti-warning: #8A5A00;
+  --ufti-on-warning: #FFFFFF;
+  --ufti-warning-container: #F6E7C6;
+  --ufti-on-warning-container: #5E3D00;
+  --ufti-error: #A42E25;
+  --ufti-on-error: #FFFFFF;
+  --ufti-error-container: #F7DEDB;
+  --ufti-on-error-container: #7A1F18;
+  --ufti-info: #1F5F8A;
+  --ufti-on-info: #FFFFFF;
+  --ufti-info-container: #D8E8F3;
+  --ufti-on-info-container: #15425F;
+  --ufti-evidence-sound: #2E6B3F;
+  --ufti-evidence-uncertain: #8A5A00;
+  --ufti-evidence-unsourced: #1F5F8A;
+  --ufti-conflict: #A42E25;
+  --ufti-font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --ufti-font-text: "Atkinson Hyperlegible Next", Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+/* END TOKENS */
+
+/* ===== 2. Fonts ===== */
+
+/* Hosted with the site (govuk.css.assets), because govuk.csp=meta loads fonts from the site only.
+ * Both families are licensed under the SIL Open Font License 1.1: see assets/licences/. */
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/AtkinsonHyperlegibleNext-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/AtkinsonHyperlegibleNext-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/AtkinsonHyperlegibleNext-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/SourceSerif4-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/SourceSerif4-It.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/SourceSerif4-Semibold.ttf") format("truetype");
+}
+
+/* The Semibold file names itself "Source Serif 4 Semibold" (its family is "Source Serif 4" only in
+ * the typographic name). This alias lets the print document ask for it by that name, so the PDF
+ * generator finds the right face. */
+@font-face {
+  font-family: "Source Serif 4 Semibold";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/SourceSerif4-Semibold.ttf") format("truetype");
+}
+
+/* ===== 3. Typography ===== */
+
+/* The Design System sets its font on every govuk- class, so one rule on body is not enough. */
+body,
+.govuk-template [class*="govuk-"] {
+  font-family: var(--ufti-font-text);
+}
+
+/* Display type, as in the app: the page title and the first three heading levels, and the masthead's
+ * name. Everything else, including smaller headings and bold text, is the text face. */
+.govuk-template .govuk-heading-xl,
+.govuk-template .govuk-heading-l,
+.govuk-template .govuk-heading-m,
+.app-masthead__title {
+  font-family: var(--ufti-font-display);
+  font-weight: 600;
+}
+
+/* Code keeps the plugin's monospace stack. Type sizes stay the Design System's. */
+
+/* ===== 4. Design System properties ===== */
+
+/* The Design System reads most of its colours from these properties. The focus properties
+ * (--govuk-focus-colour and --govuk-focus-text-colour) are left alone on purpose. */
+:root {
+  color-scheme: light;
+
+  --govuk-text-colour: var(--ufti-on-surface);
+  --govuk-surface-text-colour: var(--ufti-on-surface);
+  --govuk-print-text-colour: var(--ufti-on-surface);
+  --govuk-secondary-text-colour: var(--ufti-on-surface-muted);
+  --govuk-inverse-text-colour: var(--ufti-on-primary);
+
+  --govuk-body-background-colour: var(--ufti-surface-raised);
+  --govuk-template-background-colour: var(--ufti-surface);
+  --govuk-surface-background-colour: var(--ufti-surface);
+  --govuk-hover-colour: var(--ufti-surface-container);
+
+  --govuk-border-colour: var(--ufti-outline);
+  --govuk-surface-border-colour: var(--ufti-outline);
+  --govuk-input-border-colour: var(--ufti-outline-strong);
+
+  --govuk-brand-colour: var(--ufti-primary);
+
+  /* One link colour in every state: the plugin's own links (sidebar, contents) have no visited
+   * state, so the Design System's purple would make links inconsistent. Links stay underlined. */
+  --govuk-link-colour: var(--ufti-link);
+  --govuk-link-visited-colour: var(--ufti-link);
+  --govuk-link-hover-colour: var(--ufti-on-primary-container);
+  --govuk-link-active-colour: var(--ufti-on-surface);
+
+  --govuk-error-colour: var(--ufti-error);
+  --govuk-success-colour: var(--ufti-success);
+}
+
+::selection {
+  background: var(--ufti-selection);
+  color: var(--ufti-on-surface);
+}
+
+/* ===== 5. The plugin's page furniture ===== */
+
+.app-masthead {
+  background: var(--ufti-primary);
+}
+
+.app-masthead__title {
+  color: var(--ufti-on-primary);
+}
+
+@media (min-width: 48.0625em) {
+  .app-sidebar {
+    border-right-color: var(--ufti-outline);
+  }
+}
+
+/* Links: the sidebar, the contents lists, related links, and links the toolkit generates in topic text. */
+.app-sidebar__nav a,
+.ullinks a,
+.linklist a,
+.related-links a,
+.app-contents a,
+#main-content a:not([class]) {
+  color: var(--ufti-link);
+}
+
+.app-sidebar__nav a:hover,
+.ullinks a:hover,
+.linklist a:hover,
+.related-links a:hover,
+.app-contents a:hover,
+#main-content a:not([class]):hover {
+  color: var(--ufti-on-primary-container);
+}
+
+/* Keep the Design System's focus state in charge when a link is both focused and pointed at. */
+.app-sidebar__nav a:focus,
+.ullinks a:focus,
+.linklist a:focus,
+.related-links a:focus,
+.app-contents a:focus,
+#main-content a:not([class]):focus {
+  color: var(--govuk-focus-text-colour);
+}
+
+.app-sidebar__nav li.active > a,
+.app-sidebar__nav li > span {
+  color: var(--ufti-on-surface);
+}
+
+.app-nav__caret {
+  color: var(--ufti-on-surface-muted);
+}
+
+.app-sidebar__toggle {
+  border-color: var(--ufti-outline-strong);
+  background: var(--ufti-surface-container);
+  color: var(--ufti-on-surface);
+}
+
+ul.ullinks,
+ul.linklist {
+  border-top-color: var(--ufti-outline);
+}
+
+.app-az-letter {
+  border-bottom-color: var(--ufti-outline);
+}
+
+#main-content dl.dl dt.dthd,
+#main-content dl.dl dd.ddhd {
+  border-bottom-color: var(--ufti-outline);
+}
+
+/* Secondary text */
+.app-index-see,
+.app-attribution,
+.app-page-dates,
+.app-footer__attribution,
+#main-content .responsibleParty,
+#main-content blockquote.lq cite,
+#main-content .menucascade abbr {
+  color: var(--ufti-on-surface-muted);
+}
+
+.app-content-stripped {
+  border-color: var(--ufti-on-surface-muted);
+  color: var(--ufti-on-surface-muted);
+}
+
+/* Figures: a screenshot keeps a visible edge, because the app's own surface is nearly white. */
+#main-content figcaption {
+  color: var(--ufti-on-surface);
+}
+
+#main-content figure img {
+  background: var(--ufti-surface-raised);
+  /* A phone screenshot is tall and narrow: keep any figure from outgrowing a screen. */
+  max-height: 40rem;
+}
+
+figure.app-screenshot img {
+  border-color: var(--ufti-outline);
+}
+
+pre.codeblock,
+pre.pre {
+  border-color: var(--ufti-outline);
+  background: var(--ufti-surface-container);
+  color: var(--ufti-on-surface);
+}
+
+#main-content blockquote.lq {
+  border-left-color: var(--ufti-outline);
+  color: var(--ufti-on-surface);
+}
+
+.app-hazard {
+  border-color: var(--ufti-on-surface);
+}
+
+.app-hazard__banner {
+  background: var(--ufti-on-surface);
+  color: var(--ufti-surface-raised);
+}
+
+.app-hazard__icon {
+  border-color: var(--ufti-surface-raised);
+}
+
+/* The search results take their look from the component's own custom properties. */
+.app-search .pagefind-ui {
+  --pagefind-ui-font: var(--ufti-font-text);
+  --pagefind-ui-primary: var(--ufti-primary);
+  --pagefind-ui-text: var(--ufti-on-surface);
+  --pagefind-ui-background: var(--ufti-surface-raised);
+  --pagefind-ui-border: var(--ufti-outline-strong);
+  --pagefind-ui-tag: var(--ufti-surface-container);
+}
+
+/* ===== 6. Design System components with literal colours ===== */
+
+.govuk-button {
+  background-color: var(--ufti-primary);
+  box-shadow: 0 2px 0 var(--ufti-on-primary-container);
+}
+
+.govuk-button,
+.govuk-button:active,
+.govuk-button:hover,
+.govuk-button:link,
+.govuk-button:visited {
+  color: var(--ufti-on-primary);
+}
+
+.govuk-button:hover {
+  background-color: var(--ufti-on-primary-container);
+}
+
+.govuk-button[disabled]:hover {
+  background-color: var(--ufti-primary);
+}
+
+.govuk-button--secondary {
+  background-color: var(--ufti-surface-container);
+  box-shadow: 0 2px 0 var(--ufti-outline-strong);
+}
+
+.govuk-button--secondary,
+.govuk-button--secondary:active,
+.govuk-button--secondary:hover,
+.govuk-button--secondary:link,
+.govuk-button--secondary:visited {
+  color: var(--ufti-primary);
+}
+
+.govuk-button--secondary:hover {
+  background-color: var(--ufti-primary-container);
+}
+
+.govuk-button--secondary:hover[disabled] {
+  background-color: var(--ufti-surface-container);
+}
+
+.govuk-button--warning {
+  background-color: var(--ufti-error);
+  box-shadow: 0 2px 0 var(--ufti-on-error-container);
+}
+
+.govuk-button--warning:hover {
+  background-color: var(--ufti-on-error-container);
+}
+
+.govuk-button--warning:hover[disabled] {
+  background-color: var(--ufti-error);
+}
+
+/* Tags, and so the phase banner's tag. The colours without a role in the theme are left alone. */
+.govuk-tag {
+  background-color: var(--ufti-primary-container);
+  color: var(--ufti-on-primary-container);
+}
+
+.govuk-tag--green {
+  background-color: var(--ufti-success-container);
+  color: var(--ufti-on-success-container);
+}
+
+.govuk-tag--red {
+  background-color: var(--ufti-error-container);
+  color: var(--ufti-on-error-container);
+}
+
+.govuk-tag--orange,
+.govuk-tag--yellow {
+  background-color: var(--ufti-warning-container);
+  color: var(--ufti-on-warning-container);
+}
+
+.govuk-tag--grey {
+  background-color: var(--ufti-surface-container);
+  color: var(--ufti-on-surface);
+}
+
+/* Pagination hover. The current page and the ellipsis keep their own states. */
+.govuk-pagination__item:hover,
+.govuk-pagination__next:hover,
+.govuk-pagination__prev:hover {
+  background-color: var(--ufti-surface-container);
+}
+
+.govuk-pagination__item--current:hover {
+  background-color: var(--govuk-link-colour);
+}
+
+.govuk-pagination__item--ellipsis:hover {
+  background-color: transparent;
+}
+
+/* ===== 7. Print document and PDF ===== */
+
+/* The print document is the whole publication in one file, and DesignSystemPDF renders it. The
+ * Semibold face is asked for by its own name, which the generator finds in the fonts folder. */
+.app-print .govuk-heading-xl,
+.app-print .govuk-heading-l,
+.app-print .govuk-heading-m {
+  font-family: "Source Serif 4 Semibold", var(--ufti-font-display);
+  font-weight: 400;
+}
+
+.app-print .app-print-cover,
+.app-print .app-print-chapter,
+.app-print .app-print-endnotes {
+  border-color: var(--ufti-outline);
+}
+
+/* The same limit on paper: no figure taller than about half a page, so a phone screenshot never
+ * fills one. */
+.app-print #main-content figure img {
+  max-height: 110mm;
+}
+
+/* Paper is white, whatever the page-edge colour is on screen. */
+@media print {
+  .govuk-template,
+  .govuk-template__body {
+    background-color: var(--ufti-surface-raised);
+  }
+}
+
+/* The page number. Page margin boxes may not resolve custom properties in every formatter, so this
+ * one rule repeats the token values as literals. */
+@page {
+  @bottom-right {
+    font-family: "Atkinson Hyperlegible Next", Arial, sans-serif; /* ufti: literal */
+    color: #4B5563; /* ufti: literal (on-surface-muted) */
+  }
+}
