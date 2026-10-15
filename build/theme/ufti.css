@@ -142,6 +142,15 @@ body,
   font-family: var(--ufti-font-text);
 }
 
+/* Browsers do not give form controls the page font, and the plugin's search button has no
+ * govuk- class to catch it. */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
 /* Display type, as in the app: the page title and the first three heading levels, and the masthead's
  * name. Everything else, including smaller headings and bold text, is the text face. */
 .govuk-template .govuk-heading-xl,
