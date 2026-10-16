@@ -15,6 +15,7 @@ Planning and standards for the uFTi user documentation. These files guide author
 | [build-and-quality.md](build-and-quality.md) | Which tools build the outputs, and which checks must pass before anything is published? |
 | [decision-log.md](decision-log.md) | What has been decided, what is proposed, and what still needs an answer? |
 | [review-draft-0.3.md](review-draft-0.3.md) | What was wrong with Draft 0.3, and what changed because of it? |
+| [journeys/](journeys/README.md) | What are people trying to do, and what does the ten-minute Quick Start look like? WP0's journeys, Quick Start outlines, task finder, help-target list and session plan. |
 
 **Status:** Draft 0.4, 16 October 2026. Nothing here is final until its entry in the decision log is marked *Accepted*.
 
