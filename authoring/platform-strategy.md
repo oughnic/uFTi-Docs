@@ -2,7 +2,7 @@
 
 How we document one application on several platforms and device idioms without copying content.
 
-Part of the [authoring plan](authoring-plan.md). Status: Draft 0.2, 15 October 2026. Decisions are tracked in the [decision log](decision-log.md).
+Part of the [authoring plan](authoring-plan.md). Status: Draft 0.3, 16 October 2026. Decisions are tracked in the [decision log](decision-log.md).
 
 ## 1. Principles
 
@@ -102,9 +102,9 @@ This generalises the convention already used in the existing key maps. How scree
 - **Key names** are `img-<area>-<what>`: lower case, hyphenated, and identical for the same screen on every device.
 - **File names are stable** when a screenshot is re-captured, so keys never change.
 - **Alternative text** says what the picture shows and why it matters. It does not start "Screenshot of". One sentence.
-- **Each key map records** the reference device or machine, its operating system version, the app version and the sample workspaces, in `data` elements. Use an emulator or simulator of the idiom: a phone and a tablet for Android, an iPhone and an iPad for iOS (DEC-023).
+- **Each key map records** the reference device or machine, its operating system version, the app version and the dataset, in `data` elements. Use an emulator or simulator of the idiom: a phone and a tablet for Android, an iPhone and an iPad for iOS (DEC-023).
 - **Key maps carry `@platform`,** so a build for another manual excludes them.
-- **Sample workspaces only.** See the [disclosure boundary](authoring-plan.md#74-disclosure-boundary-and-privacy).
+- **The Brontë dataset only.** See the [dataset strategy](dataset-strategy.md) and the [disclosure boundary](authoring-plan.md#74-disclosure-boundary-and-privacy).
 - **One theme.** Every screenshot is captured in the app's Oxford and slate theme, light variant, so the pictures match the site and PDF (DEC-024).
 - **No silent fallback.** A topic that shows a screen that does not exist on a device is filtered out for that manual. An unresolved image key is a build failure.
 - **Figures.** Use `fig` with a `title` when the text refers to the picture. Alternative text and caption must not repeat each other. No information may exist only in a picture. Prefer cropping and clear text to annotated callouts.
@@ -207,7 +207,7 @@ The same steps add a new device idiom of a supported platform.
 1. Confirm it is a supported platform (DEC-019). A new platform is a product decision.
 2. Add it to the [catalogue](#2-platform-catalogue) and record it in the decision log.
 3. Choose a reference device or machine of that idiom. Record its operating system and the app version.
-4. Prepare the sample workspaces. Capture screenshots to the stable names. Write the key map, with `linktext` for every image.
+4. Replay the Brontë journey on the device, capture screenshots to the stable names ([dataset strategy](dataset-strategy.md)), and write the key map, with `linktext` for every image.
 5. Add a DITAVAL file, a project entry and a CI matrix entry.
 6. Run the coverage report ([section 10](#10-consistency-checks)). List missing keys and topics.
 7. Write platform-specific topics using the checklist in [section 8](#8-what-usually-differs-between-platforms).

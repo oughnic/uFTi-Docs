@@ -2,7 +2,7 @@
 
 What has been decided, what is proposed, and what still needs an answer.
 
-Part of the [authoring plan](authoring-plan.md). Status: Draft 0.2, 15 October 2026.
+Part of the [authoring plan](authoring-plan.md). Status: Draft 0.3, 16 October 2026.
 
 **How to use this log.** A decision is *Proposed* until the maintainer accepts it in a pull request, which changes its status to *Accepted* and records the date. Questions stay open until answered, and the answer becomes a decision. When a decision changes, edit its row and note why. Do not delete history.
 
@@ -21,7 +21,7 @@ Part of the [authoring plan](authoring-plan.md). Status: Draft 0.2, 15 October 2
 | DEC-009 | File names carry no type prefix, sit in area folders, and never change after publication. | Proposed | Names become URLs. | n/a |
 | DEC-010 | Writing style: the GOV.UK style guide as the base, British English, with project overrides. | Proposed | Matches the Design System the site uses, and its plain English approach. | WP3 style guide. |
 | DEC-011 | Screenshots are keys defined per manual. The key's link text is the alternative text. | **Accepted** (existing convention in the application repository's key maps) | Lets one topic serve every manual. | WP2 must prove alternative text reaches HTML and PDF. |
-| DEC-012 | Disclosure boundary: only observable behaviour of released builds, and sample data only ([plan, section 7.4](authoring-plan.md#74-disclosure-boundary-and-privacy)). | Proposed | This repository is public and the application repository is private. | n/a |
+| DEC-012 | Disclosure boundary: only observable behaviour of released builds, and sample data only, which is the Brontë dataset by default (DEC-025) ([plan, section 7.4](authoring-plan.md#74-disclosure-boundary-and-privacy)). | Proposed | This repository is public and the application repository is private. | n/a |
 | DEC-013 | The manual describes the latest release, which is what `main` holds. Earlier versions are kept as tagged releases (PDF and zipped site). Whether they stay online is open. | Proposed | Avoids version conditionals in the source. | The support policy for old app versions is known. |
 | DEC-014 | Host on GitHub Pages, publishing from `main` only: the chooser at the root, each manual at `/<slug>/`. | Proposed | Free for public repositories. Static output suits it. Only releases are published. | Q4. |
 | DEC-015 | Use a pinned toolkit in a short, user-writable folder, run through `dita.bat`. Not `C:\Program Files`. | Proposed | Plugin installation needs write access, and the Windows launcher has path-length limits. | n/a |
@@ -34,6 +34,7 @@ Part of the [authoring plan](authoring-plan.md). Status: Draft 0.2, 15 October 2
 | DEC-022 | **Screenshot capture scripts live in the application repository.** This repository holds the screen catalogue, the importer, the images and a manifest ([screenshot strategy](screenshot-strategy.md)). | **Accepted** (maintainer instruction, 15 October 2026) | The scripts need the app's automation identifiers and routes, which sit behind the disclosure boundary. | n/a |
 | DEC-023 | **Screenshots are captured on emulators and simulators** with pinned profiles (and on a clean Windows profile or virtual machine for Windows), **on release candidates only.** | **Accepted** (maintainer instruction, 15 October 2026) | Reproducible, no personal data, and no capture effort between releases. | A flow cannot run on an emulator, such as the iOS camera. That is handled as a per-screen exception. |
 | DEC-024 | **The documentation uses the app's Oxford and slate theme throughout.** Screenshots are captured in its light variant. The website and PDF use the publisher stylesheet in [`build/theme/`](../build/theme/README.md), with the theme's colours and fonts: Source Serif 4 and Atkinson Hyperlegible Next. | **Accepted** (maintainer instruction, 15 October 2026) | The manual looks like the app. Both fonts are open-licensed, and the colours are checked for WCAG 2.2 AA. | The app changes its theme or fonts. |
+| DEC-025 | **The documentation's running example is a small illustrative dataset about the family of the Reverend Patrick Brontë of Haworth and his literary children,** built by using the manual's own process: performing its tasks, in order, in the app. It shows the journey from creating a workspace to enriched people, families, notes, events, sources and repositories ([dataset strategy](dataset-strategy.md)). | **Accepted** (maintainer instruction, 16 October 2026) | One consistent story. Every task is verified by doing it. The family is well documented and long dead, and gives real examples for the good practice guide. | WP4b cannot verify enough of it, or the app team supplies a different sample. |
 
 ## 2. Open questions
 
@@ -50,6 +51,10 @@ Part of the [authoring plan](authoring-plan.md). Status: Draft 0.2, 15 October 2
 | Q15 | Does the app record DNA evidence? | Good practice theme 9. | No, so a short ethics and citation note only. | WP4 |
 | Q16 | Should phone and tablet have separate manuals (assumed), or share one manual per operating system? | Five outputs against three. Separate manuals let one topic and one image key serve every manual, with no idiom labels in the text. | Separate manuals. | WP2 and WP4 |
 | Q17 | Should the site follow the reader's dark-mode preference, using the theme's dark variant? | Every plugin and Design System component would need checking on dark, which needs a real build. | No. Light only for v1. | WP6 |
+| Q18 | Where do the saved stage states and the finished workspace live, and may readers download them? | A download needs a narrow exception to the rule that ignores `*.ged`, `*.gdz` and `*.gedzip`. | The specification lives here. The saved states live here too, under one allowed path, and are offered as downloads. | WP4b |
+| Q19 | Does the app bundle the finished workspace as a built-in sample? | An app decision. The manual works either way. | Left to the app team. | WP4b |
+| Q20 | Who checks the dataset's facts as a second reader, and which sources can they reach? | Nothing enters the dataset without a checked source. | The maintainer and the volunteer genealogist (Q8), using public sources only. | WP4b |
+| Q21 | Do we extend the core with Patrick's and Maria's parents, Maria's sister and household servants? | A three-generation view and a census household need them. | No, unless a topic needs them. | WP4b |
 
 ## 3. Answered questions
 
@@ -69,3 +74,4 @@ Part of the [authoring plan](authoring-plan.md). Status: Draft 0.2, 15 October 2
 | 15 October 2026 | Draft 0.1 created with the initial plan. |
 | 15 October 2026 | Draft 0.2. Maintainer decisions applied: supported platforms and idioms (DEC-019), AI out of scope (DEC-020), copyright holder (DEC-017) and branching model (DEC-016). Question Q16 added. |
 | 15 October 2026 | Screenshot decisions (DEC-022, DEC-023) and the Oxford and slate theme (DEC-024) recorded. Q14 answered. Question Q17 added. |
+| 16 October 2026 | Draft 0.3. The Brontë family dataset is the running example (DEC-025), built by using the manual's own process. Dataset strategy added, with WP4b and risk R14. Questions Q18 to Q21 added. |

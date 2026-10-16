@@ -7,12 +7,13 @@ Planning and standards for the uFTi user documentation. These files guide author
 | [authoring-plan.md](authoring-plan.md) | What are we building, for whom, in what order, and how will we know it is done? |
 | [platform-strategy.md](platform-strategy.md) | How do we document one app on several platforms without copying content? |
 | [screenshot-strategy.md](screenshot-strategy.md) | How are screenshots chosen, captured, imported, reviewed and kept current? |
+| [dataset-strategy.md](dataset-strategy.md) | What is the worked example, and how do we build and check it? |
 | [good-practice-strategy.md](good-practice-strategy.md) | How do we teach family history research good practice to readers who are new to it? |
 | [authoring-standards.md](authoring-standards.md) | How is DITA written here: structure, naming, markup, metadata, accessibility, style? |
 | [build-and-quality.md](build-and-quality.md) | Which tools build the outputs, and which checks must pass before anything is published? |
 | [decision-log.md](decision-log.md) | What has been decided, what is proposed, and what still needs an answer? |
 
-**Status:** Draft 0.2, 15 October 2026. Nothing here is final until its entry in the decision log is marked *Accepted*.
+**Status:** Draft 0.3, 16 October 2026. Nothing here is final until its entry in the decision log is marked *Accepted*.
 
 ## Reading order
 

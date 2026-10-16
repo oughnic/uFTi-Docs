@@ -2,7 +2,7 @@
 
 How DITA is written in this repository. This is the short version. WP3 expands it into a full style guide, terminology list and templates.
 
-Part of the [authoring plan](authoring-plan.md). Status: Draft 0.2, 15 October 2026. Decisions are tracked in the [decision log](decision-log.md).
+Part of the [authoring plan](authoring-plan.md). Status: Draft 0.3, 16 October 2026. Decisions are tracked in the [decision log](decision-log.md).
 
 Much of this follows the plugin's own guide for people who write DITA for it, [SOURCE-SYSTEMS.md](https://github.com/iStandUK/govuk-dita-plugin/blob/main/docs/SOURCE-SYSTEMS.md), because following it means the website, search, print version, PDF and page metadata all come out right without editing the output.
 
@@ -104,7 +104,7 @@ The plugin renders neutral notes (`note`, `tip`, `remember`) as inset text, and 
 - **No decorative images.** If an image needs no description, it does not belong.
 - **No text in images,** no information only in a picture, and no cues that rely on colour alone.
 - **Figures** use `fig` with a `title`. The caption must not repeat the alternative text.
-- **Screenshot capture** follows the [screenshot strategy](screenshot-strategy.md): scripted, on a pinned emulator, simulator or clean Windows profile, in the Oxford and slate theme, light variant (dark only in the topic about appearance), with sample workspaces only, a normalised status bar, and one size and scaling per manual. No device frames.
+- **Screenshot capture** follows the [screenshot strategy](screenshot-strategy.md): scripted, on a pinned emulator, simulator or clean Windows profile, in the Oxford and slate theme, light variant (dark only in the topic about appearance), showing the Brontë dataset only, a normalised status bar, and one size and scaling per manual. No device frames.
 - **Tables** have a header row (`thead`) and a `title`, a simple structure, no layout tables, and few columns so they read on a phone. A table or figure that needs a landscape page in the PDF uses `outputclass="landscape"`.
 - **Audio and video** are not used for now. If added, captions and transcripts are mandatory.
 
@@ -153,7 +153,7 @@ Metadata goes in the topic's `prolog`. The DTD fixes the order of elements. Patt
 
 Publication-wide facts go in `bookmeta`, or in `topicmeta` for a plain map: the publisher organisation, the book's `critdates`, the edition, the copyright year and owner (`bookrights`), and the language.
 
-Platform key maps carry `prodinfo` with the product name, version and platform, plus `data` entries for the reference device and sample workspaces, as the existing key maps do.
+Platform key maps carry `prodinfo` with the product name, version and platform, plus `data` entries for the reference device and the dataset, as the existing key maps do.
 
 The licence, site address and organisation URL are **build parameters**, not source.
 
@@ -190,7 +190,7 @@ The base is the [GOV.UK style guide](https://www.gov.uk/guidance/style-guide) an
 - **Capitalisation.** Sentence case in headings. UI labels exactly as on screen. The product name is always written **uFTi**, including at the start of a sentence.
 - **Terminology.** One term for one concept. The WP3 terminology list fixes terms such as "workspace". Research terms are defined in the glossary.
 - **Inclusive language.** Do not assume how many parents a person has, or their gender, partner or family shape. Never blame the reader.
-- **Sample data.** Use the same names from the sample workspaces consistently.
+- **The worked example.** Use the people and places of the Brontë dataset consistently, spelt as the dataset spells them: Brontë with the diaeresis in text, and `bronte` in file names and keys. Invent no other people ([dataset strategy](dataset-strategy.md)).
 
 ## 12. Localisation readiness
 

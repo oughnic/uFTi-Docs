@@ -17,6 +17,7 @@ content/
   glossary/          glossentry topics
   keys/              shared key maps: product facts, versions, UI labels, terms
   images/            shared diagrams
+  sample-data/bronte/  the Brontë dataset: its specification and verification log (WP4b)
 ```
 
 Conventions for names, identifiers and markup are in [authoring-standards.md](../authoring/authoring-standards.md).

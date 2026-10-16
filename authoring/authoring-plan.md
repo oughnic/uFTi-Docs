@@ -2,10 +2,10 @@
 
 | | |
 |---|---|
-| Status | Draft 0.2 |
-| Date | 15 October 2026 |
+| Status | Draft 0.3 |
+| Date | 16 October 2026 |
 | Scope | The uFTi .NET MAUI application on Android (phone and tablet), iOS (iPhone and iPad) and Windows. Web, command-line and AI-assistant integrations, and the app's AI features, are out of scope for now. |
-| Companion documents | [Platform strategy](platform-strategy.md) · [Screenshot strategy](screenshot-strategy.md) · [Good practice strategy](good-practice-strategy.md) · [Authoring standards](authoring-standards.md) · [Build and quality](build-and-quality.md) · [Decision log](decision-log.md) |
+| Companion documents | [Platform strategy](platform-strategy.md) · [Screenshot strategy](screenshot-strategy.md) · [Dataset strategy](dataset-strategy.md) · [Good practice strategy](good-practice-strategy.md) · [Authoring standards](authoring-standards.md) · [Build and quality](build-and-quality.md) · [Decision log](decision-log.md) |
 
 ## 1. Purpose and scope
 
@@ -47,6 +47,7 @@ Give people who use uFTi a manual they can trust: task-based, correct for the pl
 4. A first-time family historian can complete the "first family tree" tutorial unaided. We test this with three to five people before v1.0.
 5. A reader on any platform can reach the right manual in two steps from the home page, and can search it.
 6. Nothing private is published (see [section 7.4](#74-disclosure-boundary-and-privacy)).
+7. The tutorial, the task examples, the screenshots and the guide's worked examples all use one dataset, and every fact in it traces to a source we checked ([dataset strategy](dataset-strategy.md)).
 
 ## 2. Audiences
 
@@ -88,7 +89,7 @@ Built from the existing screenshot set and the app's visible navigation. WP4 rep
 | # | Chapter | Purpose | Main topic types | Platform variance |
 |---|---|---|---|---|
 | 0 | Front matter | About this manual, who it is for, conventions, what is new, accessibility information | concept, reference | Low |
-| 1 | Get started | Install, first launch, a tour, the sample workspace, the first-tree tutorial | task, concept | **High** |
+| 1 | Get started | Install, first launch, a tour, and the first-tree tutorial that builds the Brontë workspace | task, concept | **High** |
 | 2 | Workspaces and files | Create, open and switch workspaces. Import and export GEDCOM. Back up. | task, concept, reference | Medium |
 | 3 | Find and browse | Search, refine results, the family tree view, moving around | task, concept | Medium |
 | 4 | People | View, add, edit and remove a person. Names, sex and gender fields. | task, concept, reference | Medium |
@@ -123,6 +124,17 @@ Good practice is not a separate world. It appears in four places: contextual cue
 
 Roughly 100 to 150 manual topics, 40 to 60 good practice topics and 30 to 50 glossary entries, with about three-quarters of the manual shared across platforms. This is a guess to size the work. WP4 replaces it.
 
+### 3.7 A running example
+
+The manual teaches with one worked example: a small illustrative dataset about the family of the Reverend Patrick Brontë of Haworth and his literary children (DEC-025). It lets us show the whole user journey with one story, from creating a workspace, through adding and enriching people and families, to notes, events, sources and repositories.
+
+- **Built by using the process.** The dataset is not prepared and loaded. Authors build it by performing the manual's own tasks, in order, in the app. A topic's steps are the steps they took, and the capture scripts replay the same journey to make the screenshots.
+- **One story everywhere.** The same people appear in the tutorial, the task examples, the screenshots and the good practice guide.
+- **Accurate by rule.** Every fact traces to a source we checked, and nothing is invented. It is an example for learning, not a complete genealogy of the family.
+- **Safe by construction.** Everyone in it died long ago, and none of Patrick's children is known to have left children, so no living person appears. WP4b confirms this from sources.
+
+The scope, the eight journey stages, the sourcing rules and how it is built are in the [dataset strategy](dataset-strategy.md).
+
 ## 4. Platforms
 
 Full detail is in the [platform strategy](platform-strategy.md). In summary:
@@ -140,6 +152,7 @@ Full detail is in the [good practice strategy](good-practice-strategy.md). In su
 - A dedicated guide, contextual cues in tasks, a learning path for newcomers, checklists and glossary entries.
 - **Boundary:** we teach research method and record keeping. We do not write record-type tutorials. We link to authorities for those.
 - Content rests on recognised standards (such as the Genealogical Proof Standard), is paraphrased and cited, and is reviewed by an experienced genealogist. Legal and ethical topics get expert review.
+- **Worked examples** come from the same dataset as the tutorial, so a reader meets the same people in the guide ([dataset strategy](dataset-strategy.md)).
 
 ## 6. Semantic structure and metadata
 
@@ -192,7 +205,7 @@ A topic is done when:
 - [ ] Every step has been performed on each platform it applies to, on a released or release-candidate build, by someone other than the author.
 - [ ] Technical review is done, and genealogy review where it applies.
 - [ ] Accessibility and plain-language review is done. Lint, spelling and automated gates pass.
-- [ ] It uses sample data only and contains nothing private.
+- [ ] Its examples come from the Brontë dataset, and it contains nothing private.
 
 ### 7.4 Disclosure boundary and privacy
 
@@ -202,11 +215,11 @@ This repository is public. The application repository is private.
 |---|---|
 | Behaviour a user can observe in a released build | Source code or snippets, project or class names |
 | UI labels as they appear on screen | Internal design documents or architecture decision records |
-| Screenshots of sample workspaces | Issue or pull request numbers, build or CI identifiers, local paths |
+| Screenshots of the Brontë dataset, and of other named sample workspaces | Issue or pull request numbers, build or CI identifiers, local paths |
 | Published standards and public guidance | Unreleased features, security details |
 | | Real family data, or any information about living people |
 
-- Screenshots and examples show fictional characters or people who died long ago. They never show living people, public figures included. WP5 checks the existing sample workspaces and screenshots against this rule.
+- Screenshots and examples show people who died long ago, or plainly fictional ones. They never show living people, public figures included. The Brontë dataset is the default ([dataset strategy](dataset-strategy.md#9-privacy-and-care)). WP4b confirms it contains no living person, and WP4 checks any other sample workspace against this rule.
 - Anything imported from the application repository (WP5) is sanitised first.
 - The pull request checklist includes a scan for the "not allowed" patterns, plus a secret scan in CI.
 - `*.ged`, `*.gdz` and `*.gedzip` files are git-ignored as a safety net.
@@ -248,13 +261,14 @@ Sizes are relative (S, M, L, XL), not calendar estimates. WP7 measures the real 
 | WP2 | Platform strategy spike | M | WP1 | A prototype of three manuals (Android phone, Android tablet and Windows) by four topic kinds (shared, shared with a variant, platform-specific, image by key), so it exercises both idioms of one OS. A decision between the build models, and on separate or combined phone and tablet manuals (Q16). The good practice callout pattern. The platform chooser approach. | Decisions accepted in the log. The prototype builds for all three manuals. veraPDF passes PDF/UA-1 and there is no `DSPDF009W`. Alternative text from keys reaches HTML and PDF. The PDF uses and embeds the theme's fonts. |
 | WP3 | Standards, style guide and templates | M | none (parallel to WP1) | Full style guide. Terminology list. Templates for each topic type. Metadata vocabulary. Lint configuration. Contributor guide. | Adopted by the maintainers. Lint runs in CI against the templates. |
 | WP4 | Content inventory and information architecture | M | Access to the app. WP3 started. | Features observed on released builds on each reference platform, with AI features excluded. A measure of how far the tablet idiom differs from the phone idiom (navigation, layout, gestures). A topic inventory (id, title, type, chapter, platforms, priority, status, reviewer). Chapter map skeletons. The screen catalogue ([screenshot strategy](screenshot-strategy.md#3-the-screen-catalogue)). | Every visible screen and feature maps to at least one planned topic. Reviewed with the product owner. |
-| WP5 | Screenshot importer and the existing sets | M | WP2, WP4 started | The importer and the manifest format ([screenshot strategy, section 5](screenshot-strategy.md#5-import)). The existing key maps and screenshots for Android phone and Windows, brought in through it and sanitised. `AndroidMobile` is renamed `AndroidPhone`. The WPF map is not imported, because WPF is not a supported platform. | No internal identifiers, personal data or living people appear. Alternative text reviewed. The importer's report and a key coverage report exist. |
+| WP4b | Illustrative dataset specification | M | WP3, WP4 started | The Brontë dataset specification ([dataset strategy](dataset-strategy.md)): every person, family, event, note, repository, source and media item, each tied to a journey stage and to a row in the verification log. The stage map. The first checked set: people and families. The allow-list of people for screenshots. | Every item has a complete, checked row in the verification log. It is confirmed from sources that no living person appears. A second reader has checked the specification (Q20). |
+| WP5 | Screenshot importer and the existing key maps | M | WP2, WP4 started | The importer and the manifest format ([screenshot strategy, section 5](screenshot-strategy.md#5-import)). The existing key maps for Android phone and Windows, brought in through it with their key names and alternative-text patterns. Their pictures show the app's older sample workspaces, so they are left behind and replaced by captures of the Brontë dataset. `AndroidMobile` is renamed `AndroidPhone`. The WPF map is not imported, because WPF is not a supported platform. | No internal identifiers, personal data or living people appear. Alternative text reviewed. The importer's report and a key coverage report exist. |
 | WP6 | Brand and site furniture | S | WP1 | The publisher stylesheet and fonts are drafted in [`build/theme/`](../build/theme/README.md). WP6 checks them on a real website and PDF, converts the fonts to WOFF2, and adds the logo, favicon, share image, footer links, phase banner and feedback link. | A neutral-branded build shows the uFTi identity. Contrast and target size pass axe-core. Fonts are embedded in the PDF. Figures fit a screen and a page. |
 | **Phase 2: Pilot** | | | | | |
-| WP7 | Pilot slice | L | WP1 to WP6 | Get started, People and Sources chapters, five good practice topics and a glossary starter, for the two reference platforms, Android phone and Windows (about 30 to 40 topics). | Published as a beta. The full review workflow has been exercised. Three to five novice usability sessions are done. Effort per topic is recorded. |
+| WP7 | Pilot slice | L | WP1 to WP6 | Get started, People and Sources chapters, five good practice topics and a glossary starter, for the two reference platforms, Android phone and Windows (about 30 to 40 topics). Written by performing the tasks on the Brontë dataset: stages 1 to 3 and 6. | Published as a beta. The full review workflow has been exercised. Three to five novice usability sessions are done. Effort per topic is recorded. Stages 1 to 3 and 6 replay on both platforms and produce their saved states. |
 | **Phase 3: Full coverage on reference platforms** | | | | | |
-| WP8 | Core manual chapters | XL | WP7 | All remaining chapters, reference topics, troubleshooting and glossary. | Inventory coverage is 100% for in-scope features on the reference platforms. |
-| WP9 | Good practice guide v1 | L | WP7, reviewer availability | All themes, contextual cues, learning path and checklists. | Genealogy review passed. Novice usability test passed. Every cue links to the guide. |
+| WP8 | Core manual chapters | XL | WP7 | All remaining chapters, reference topics, troubleshooting and glossary. Completes the dataset: stages 4, 5, 7 and 8. | Inventory coverage is 100% for in-scope features on the reference platforms. |
+| WP9 | Good practice guide v1 | L | WP7, reviewer availability | All themes, contextual cues, learning path and checklists, with worked examples drawn from the Brontë dataset. | Genealogy review passed. Novice usability test passed. Every cue links to the guide. |
 | WP10 | Release readiness for v1.0 | M | WP8, WP9 | Accessibility statement. Colophon with licences and third-party notices. "What is new". Manual assistive technology pass. PDF reading-order check. Deployment. | All gates green. Manual checks logged. Site and PDFs published. |
 | **Phase 4: More platforms** | | | | | |
 | WP11 | Add Android tablet | M | WP10 | The tablet idiom's screenshot set (captured on an emulator by scripts in the application repository) and key map, idiom-specific topics and a DITAVAL filter. Follow the [onboarding checklist](platform-strategy.md#9-adding-a-platform). | Coverage report shows parity with Android phone. Gates green. |
@@ -285,14 +299,17 @@ Sizes are relative (S, M, L, XL), not calendar estimates. WP7 measures the real 
 | R9 | Accessibility regressions. | Medium | High | Automated gates on every build. Manual assistive technology tests every release. |
 | R10 | One maintainer. | High | Medium | Docs as code. Scripted builds. Written standards. Small, well-described pull requests. |
 | R11 | Windows toolchain quirks: toolkit under a path with spaces, Unix script under Git Bash, long paths. | High | Low | A short, writable toolkit folder, `dita.bat`, documented in [build and quality](build-and-quality.md#2-local-environment). |
-| R12 | Screenshot capture effort across platforms. | High | Medium | Scripted capture on emulators and simulators, on release candidates only (DEC-022, DEC-023). Stable names. Sample workspaces. Device profiles recorded in the manifest. See the [screenshot strategy](screenshot-strategy.md). |
+| R12 | Screenshot capture effort across platforms. | High | Medium | Scripted capture on emulators and simulators, on release candidates only (DEC-022, DEC-023). Stable names. One dataset ([dataset strategy](dataset-strategy.md)). Device profiles recorded in the manifest. See the [screenshot strategy](screenshot-strategy.md). |
 | R13 | The app's theme or fonts change and the manual drifts from the app. | Medium | Low | The theme tokens are one delimited block with the theme's name and version, which the application repository can regenerate. The capture manifest records the theme. Check at each release candidate. |
+| R14 | The dataset has an error, an unchecked claim, or text or an image we may not reuse. | Medium | High | The verification log: nothing enters without a checked source (DEC-025). Notes in our own words. Public-domain or openly licensed media only, with the licence recorded. A second reader checks the specification (Q20). |
 
 ## 10. Decisions and open questions
 
 Everything decided, proposed or open is in the [decision log](decision-log.md).
 
 **Settled on 15 October 2026:** the supported platforms and idioms (DEC-019), AI out of scope (DEC-020), the copyright holder (DEC-017) and the branching model (DEC-016).
+
+**Settled on 16 October 2026:** the Brontë family dataset as the manual's running example (DEC-025).
 
 The open questions that most affect the start of work:
 
@@ -303,6 +320,7 @@ The open questions that most affect the start of work:
 | Q5 | Which brand assets (logo, colours) are available? | A plain masthead with the service name until supplied. |
 | Q6 | Is Spanish needed, and when? | Not for v1. |
 | Q8 | Who reviews good practice content? | The maintainer, with a volunteer genealogist to be found. |
+| Q20 | Who checks the dataset's facts as a second reader, and which sources can they reach? | The maintainer and the volunteer genealogist (Q8), using public sources only. |
 
 ## 11. References
 

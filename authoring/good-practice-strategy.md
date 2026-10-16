@@ -2,7 +2,7 @@
 
 How we teach family history research good practice to readers who are new to it.
 
-Part of the [authoring plan](authoring-plan.md). Status: Draft 0.2, 15 October 2026. Decisions are tracked in the [decision log](decision-log.md).
+Part of the [authoring plan](authoring-plan.md). Status: Draft 0.3, 16 October 2026. Decisions are tracked in the [decision log](decision-log.md).
 
 ## 1. Why this content exists
 
@@ -104,7 +104,7 @@ Rules:
 ## 8. Writing and review rules
 
 - **A fixed shape for guide concepts,** using ordinary DITA sections with standard titles: *Why it matters*, *What to do*, *Example*, *Common mistakes*, *In uFTi*, *Further reading*. No specialisation. A lint rule checks the titles.
-- **Examples** come from the sample workspaces or are plainly invented. They never use real private individuals.
+- **Examples** come from the Brontë dataset ([dataset strategy](dataset-strategy.md)), so a reader meets the same people in the guide as in the tutorial. Where an idea needs a case the dataset does not have, use a plainly fictional example. Never use a real private individual.
 - **Length.** Aim for 500 words or fewer per concept.
 - **Terms.** Link the first use of a research term in a topic to its glossary entry.
 - **Accessibility.** Worked examples are text, not images. Tables have header rows.

@@ -9,7 +9,7 @@ Thank you for helping to improve the uFTi documentation.
 - **Issue first.** Describe the change or the gap. Small, focused pull requests are easier to review.
 - **Branches.** `dev` is the working branch and `main` holds releases. Branch from `dev` as `docs/<issue-number>-<short-slug>` and open a pull request into `dev` that closes the issue. Maintainers cut releases from `dev` into `main`.
 - **Describe observable behaviour only.** The documentation covers what a released uFTi build does. Do not paste source code, internal design documents, issue numbers from other repositories, build identifiers or details of unreleased features.
-- **No real family data.** Screenshots and examples use the sample workspaces only. Never include information about living people.
+- **No real family data.** Screenshots and examples use the illustrative Brontë dataset, and the app's other sample workspaces only where the plan says so. Never include information about living people.
 - **Follow the standards** in [authoring/authoring-standards.md](authoring/authoring-standards.md): DITA 1.3, topic-based, accessible, British English.
 - **Record decisions.** If a change settles or alters a decision, update [authoring/decision-log.md](authoring/decision-log.md) in the same pull request.
 

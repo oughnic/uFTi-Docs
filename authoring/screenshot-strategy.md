@@ -2,7 +2,7 @@
 
 How screenshots are chosen, captured, imported, reviewed and kept current.
 
-Part of the [authoring plan](authoring-plan.md). Status: Draft 0.2, 15 October 2026. Decisions are tracked in the [decision log](decision-log.md).
+Part of the [authoring plan](authoring-plan.md). Status: Draft 0.3, 16 October 2026. Decisions are tracked in the [decision log](decision-log.md).
 
 ## 1. Decisions
 
@@ -12,6 +12,7 @@ Part of the [authoring plan](authoring-plan.md). Status: Draft 0.2, 15 October 2
 | What are screenshots captured on? | **Emulators and simulators** with pinned profiles on mobile, and a clean Windows profile or virtual machine at a fixed window size on Windows. | DEC-023 |
 | When are they captured? | On **release candidates only**. | DEC-023 |
 | Which theme? | The app's **Oxford and slate** theme, light variant, in every screenshot. | DEC-024 |
+| Which data? | The **Brontë dataset**, built by replaying the manual's journey stage by stage ([dataset strategy](dataset-strategy.md)). | DEC-025 |
 
 ## 2. Principles
 
@@ -19,7 +20,7 @@ Part of the [authoring plan](authoring-plan.md). Status: Draft 0.2, 15 October 2
 2. **Generated, not hand-made.** A script captures every screenshot the same way each time.
 3. **Keys.** Every screenshot is a key with human-written alternative text ([platform strategy, section 4](platform-strategy.md#4-screenshots-as-keys)).
 4. **Only what changed is committed.** A re-capture that changes nothing visible changes nothing in Git.
-5. **Sample data only.** No real family data and no living people ([disclosure boundary](authoring-plan.md#74-disclosure-boundary-and-privacy)).
+5. **The Brontë dataset only.** The pictures show the illustrative dataset the manual builds as it teaches, and any other sample workspace is named in the catalogue. No real family data and no living people ([disclosure boundary](authoring-plan.md#74-disclosure-boundary-and-privacy)).
 6. **One look.** The screenshots, the website and the PDF all use the Oxford and slate theme, so the manual looks like the app ([theme](../build/theme/README.md)).
 
 ## 3. The screen catalogue
@@ -29,8 +30,8 @@ One public-safe list, in this repository, of every screenshot a manual may use. 
 | Field | Meaning |
 |---|---|
 | `key` | The image key, such as `img-person-view`. The same key in every manual that has the screen. |
-| `state` | The screen and its state in plain words: "Person page, view mode, Victoria Hanover, Queen workspace". It says what to show, not how to get there. |
-| `workspace`, `focus` | The sample workspace and the person or record in focus. The focus must be on the allow-list of historical or fictional people. |
+| `state` | The screen and its state in plain words: "Person page, view mode, Charlotte Brontë, after stage 4". It says what to show, not how to get there. |
+| `workspace`, `stage`, `focus` | The workspace (the Brontë dataset, unless a larger sample is approved), the journey stage at which the screen is captured (1 to 8, [dataset strategy, section 5](dataset-strategy.md#5-the-journey)), and the person or record in focus. The focus must be on the allow-list: a person in the dataset specification, or one approved from another named sample workspace. |
 | `manuals` | The manuals that have this screen. |
 | `orientation` | Portrait or landscape. Phones are portrait. Tablets are landscape unless the layout changes in portrait. |
 | `capture` | `in-app` (the app's own capture), `os` (an operating system dialog) or `device` (needs a physical device, an exception). |
@@ -58,13 +59,15 @@ Every capture run sets these explicitly. It never relies on the machine's defaul
 
 - the **Oxford and slate theme, light variant**, chosen in the app's preferences (the dark variant appears once per manual, in the appearance topic);
 - **en-GB**, and default text size and display scaling;
-- a **throwaway app-data folder** holding only the sample workspaces, so the app starts in a known state;
+- a **throwaway app-data folder** that starts empty, or at the saved state of the stage being captured, so the app starts in a known state;
 - a **normalised status bar** on mobile, using the emulator's status-bar override (a fixed clock, full battery and signal, no notifications);
 - screens whose content does not depend on today's date or on random order. The catalogue flags any that do.
 
 Profiles are pinned in the catalogue and recorded in the manifest. Changing a profile means re-capturing that whole manual.
 
 ### 4.3 How a screen is captured
+
+**Replay the journey.** A run starts from an empty app and replays the manual's journey stage by stage ([dataset strategy, section 6](dataset-strategy.md#6-how-it-is-built)). It captures each catalogue screen at its stage and exports the saved state at the end of each stage. So the pictures, the topics' steps and the dataset all come from the same run, and a replay that fails means a topic's steps are out of date.
 
 Navigate by route, not by simulated taps, which can be unreliable. Capture inside the app where the app's tooling allows it. That captures the app's own rendering, so status bars and notifications should not appear (WP2 confirms this on Android). Use operating-system capture only for operating-system dialogs, such as a permission prompt or a file picker.
 
@@ -80,11 +83,12 @@ A folder per manual, holding `<name>.png` for each key (`img-person-view` is `pe
   "app": { "version": "0.1.0", "build": "release-candidate" },
   "theme": { "name": "oxford-slate", "version": "1.0.0", "variant": "light" },
   "locale": "en-GB",
+  "dataset": { "name": "bronte", "specification": "..." },
   "device": { "kind": "emulator", "profile": "...", "os": "...", "width": 1080, "height": 2400, "orientation": "portrait" },
   "captured": "YYYY-MM-DD",
   "images": [
     { "key": "img-person-view", "file": "person-view.png", "sha256": "...", "width": 1080, "height": 2400,
-      "workspace": "Queen", "focus": "Victoria Hanover", "capture": "in-app" }
+      "stage": 4, "workspace": "Brontë family of Haworth", "focus": "Charlotte Brontë", "capture": "in-app" }
   ]
 }
 ```
@@ -94,7 +98,7 @@ A folder per manual, holding `<name>.png` for each key (`img-person-view` is `pe
 An importer script in this repository (WP5) takes a capture folder and:
 
 1. **validates** it against the catalogue: every key the manual should have is present, nothing else is, and the theme, variant, locale and device profile are the expected ones, or it stops;
-2. **checks privacy:** the focus person is on the allow-list;
+2. **checks privacy:** the focus person is on the allow-list, which is the people in the dataset specification plus any approved from another named sample workspace;
 3. **strips metadata** from the PNG files, then caps the width (about 1080 pixels for phones and 1600 for tablets and Windows, to be confirmed) and **optimises losslessly**;
 4. **compares each image with the committed one** with a small tolerance, so anti-aliasing noise does not count as a change;
 5. **writes only what changed**, and updates the manifest, including the app version each image was last verified against;
@@ -136,9 +140,10 @@ Optimised PNG files in Git, changed files only, with no Git LFS to start. Five m
 |---|---|---|
 | Screen catalogue | This repository | WP4 |
 | Importer, manifest format, key-map update | This repository | WP5 |
-| Capture scenarios and the run script | Application repository | Tracked there, one per manual as it joins (wave 1 first) |
+| The dataset specification and verification log | This repository | WP4b |
+| Journey replay and capture scenarios, and the run script | Application repository | Tracked there, one per manual as it joins (wave 1 first) |
 | Emulator, simulator and clean-profile setup | Application repository and the maintainer's machines | With each manual |
-| Existing Android phone and Windows sets, sanitised | This repository | WP5 |
+| Existing Android phone and Windows key maps, kept for their key names (the pictures show other samples and are replaced by Brontë captures) | This repository | WP5 |
 | Verifying the PDF size and layout of figures | This repository | WP6 |
 
 ## 11. Open points
