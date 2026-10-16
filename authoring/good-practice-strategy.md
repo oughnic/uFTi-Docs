@@ -2,7 +2,7 @@
 
 How we teach family history research good practice to readers who are new to it.
 
-Part of the [authoring plan](authoring-plan.md). Status: Draft 0.2, 15 October 2026. Decisions are tracked in the [decision log](decision-log.md).
+Part of the [authoring plan](authoring-plan.md). Status: Draft 0.4, 16 October 2026. Decisions are tracked in the [decision log](decision-log.md).
 
 ## 1. Why this content exists
 
@@ -13,6 +13,7 @@ uFTi has features that support good method: sources, repositories, citations, re
 ## 2. Principles
 
 - **Help, do not lecture.** Advice appears where the reader is making a decision.
+- **Never required reading.** The guide is optional depth. A cue in a task is one line and one link, and nobody has to read the guide to use the app (DEC-026).
 - **Method over trivia.** How to decide what to believe, what to record and what to share.
 - **Show how uFTi supports it.** Every piece of guidance ends with links to the tasks that put it into practice.
 - **Cite authorities. Do not invent rules.**
@@ -32,7 +33,7 @@ uFTi has features that support good method: sources, repositories, citations, re
 | Handling uncertainty | Legal advice |
 | Privacy and ethics, especially for living people | Medical genetics guidance |
 | Sharing, export, backup and preservation | Commercial endorsements |
-| Recording DNA evidence (only if the app supports it) | AI tools and AI features (deferred, DEC-020) |
+| The risks and issues of DNA testing, in one topic (DEC-037) | How to use DNA, or recording DNA as evidence (DEC-037). AI tools and AI features (DEC-020). |
 
 Out-of-scope subjects get a short pointer to an authoritative guide, except AI, which is simply not covered. The link check covers those links.
 
@@ -60,11 +61,11 @@ Provisional. WP4 turns this into an inventory of about 40 to 60 topics.
 | 2 | **Sources and evidence** | Original, derivative and authored sources. Primary and secondary information. Direct, indirect and negative evidence. Judging reliability. What "reasonably exhaustive" means. Recording where you looked. | concept, reference | Sources, repositories, evidence reconciliation, research notes |
 | 3 | **Citing sources** | Why cite. What a good citation holds. Citing online records, images, family stories and DNA results. Keeping a consistent style. | concept, task, reference | Source and citation fields, repositories |
 | 4 | **Recording facts accurately** | Names and their variants. Dates and uncertainty. Calendars, including the 1752 change in Britain. Places and boundaries that change. Relationship types: biological, adoptive, step, foster. Ages and approximations. | concept, task, reference | Complex dates (quality, precision, calendar), places, name fields, relationship types |
-| 5 | **Analysing and concluding** | Comparing evidence. Resolving conflicts. Same name, same person? Separating a hypothesis from a conclusion. Why not to copy unsourced online trees. Writing down a conclusion. | concept, task | Reconcile evidence, quality fields, notes |
+| 5 | **Analysing and concluding** | Managing a research thread: the question, the evidence for and against, and a conclusion with its confidence, or a thread left open. Comparing evidence. Resolving conflicts, and the common ones: an age understated at marriage, overstated at enlistment, or rounded down in the 1841 census. Same name, same person? Separating a hypothesis from a conclusion. Why not to copy unsourced online trees. Writing down a conclusion. | concept, task | Reconcile evidence, quality fields, research notes |
 | 6 | **Looking after your tree** | Regular checks. Duplicates and careful merging. Sanity checks on dates and ages. Backups. | concept, task, reference | Checks, duplicates, backup (candidate) |
 | 7 | **Privacy and ethics** | Living people. Sensitive findings. Permission and sharing. Data protection basics. Copyright of records and images. | concept, reference | Export and privacy options (to confirm) |
 | 8 | **Sharing and keeping your research** | Choosing an export format. GEDCOM and its limits. Preserving media and notes. Passing it on. | concept, task | GEDCOM export, packaged exports (to confirm) |
-| 9 | **DNA evidence** | What DNA can and cannot show. Consent. Unexpected results. Recording DNA as evidence. | concept | Only if the app supports it (Q15) |
+| 9 | **DNA: risks and issues** | One topic only (DEC-037): what a test cannot prove, consent, privacy, unexpected results, and who else a result affects. No how-to, and no recording of DNA. | concept | None |
 ## 6. How research stages map to uFTi
 
 This follows the five elements of the Genealogical Proof Standard (research reasonably exhaustively, cite sources, analyse and correlate evidence, resolve conflicts, write a sound conclusion), summarised in our own words.
@@ -74,7 +75,7 @@ This follows the five elements of the Genealogical Proof Standard (research reas
 | Plan | What do I want to find out? | Research notes |
 | Collect | What have I found, and where? | Sources, repositories, media |
 | Cite | Could someone else find it again? | Citations |
-| Analyse | What does this evidence say? Do sources agree? | Reconcile evidence, date quality, notes |
+| Analyse | What does this evidence say? Do sources agree? Which thread does it belong to? | Reconcile evidence, date quality, research notes |
 | Conclude | What do I believe, and how sure am I? | Events and facts, quality fields, notes |
 | Share | What can I safely share? | Export, privacy options |
 | Maintain | Is my tree still sound? | Checks, backups |
@@ -104,7 +105,9 @@ Rules:
 ## 8. Writing and review rules
 
 - **A fixed shape for guide concepts,** using ordinary DITA sections with standard titles: *Why it matters*, *What to do*, *Example*, *Common mistakes*, *In uFTi*, *Further reading*. No specialisation. A lint rule checks the titles.
-- **Examples** come from the sample workspaces or are plainly invented. They never use real private individuals.
+- **Reading level.** The same targets as the manual (DEC-029): plain words, short sentences, and a glossary entry for every term.
+- **Four routes.** Each key idea has a diagram, the concept, a task on the dataset and a checklist (DEC-035).
+- **Examples** come from the Brontë dataset ([dataset strategy](dataset-strategy.md)), so a reader meets the same people in the guide as in the tutorial. Where an idea needs a case the dataset does not have, use a plainly fictional example. Never use a real private individual.
 - **Length.** Aim for 500 words or fewer per concept.
 - **Terms.** Link the first use of a research term in a topic to its glossary entry.
 - **Accessibility.** Worked examples are text, not images. Tables have header rows.
@@ -126,7 +129,6 @@ Family history touches adoption, illegitimacy, unexpected parentage, same-sex re
 
 | Point | Where decided |
 |---|---|
-| Does the app record DNA evidence? | Q15 |
 | Who reviews the guide, and who reviews legal and data protection topics? | Q8 |
 | Which callout pattern do we use for cues? | WP2 |
 | Is the guide also published standalone? | DEC-007 |

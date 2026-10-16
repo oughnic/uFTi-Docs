@@ -2,7 +2,7 @@
 
 How we document one application on several platforms and device idioms without copying content.
 
-Part of the [authoring plan](authoring-plan.md). Status: Draft 0.2, 15 October 2026. Decisions are tracked in the [decision log](decision-log.md).
+Part of the [authoring plan](authoring-plan.md). Status: Draft 0.4, 16 October 2026. Decisions are tracked in the [decision log](decision-log.md).
 
 ## 1. Principles
 
@@ -11,7 +11,7 @@ Part of the [authoring plan](authoring-plan.md). Status: Draft 0.2, 15 October 2
 3. **One reader, one device.** Each manual mentions only the platform and device idiom the reader is using.
 4. **Use the cheapest mechanism that keeps the text readable.** The ladder in [section 3](#3-reuse-levels) says which.
 5. **Nothing is silently missing.** A missing screenshot, label or topic for a manual fails the build or shows up in a report.
-6. **Manuals are cheap to add and remove.** Doing so touches that manual's folders and build configuration, not shared topics.
+6. **Idiom first, platform at the edges.** Topics are written for phone, tablet or desktop. The operating system matters only for getting, updating and keeping the app, and for what it provides around it ([section 2.3](#23-idiom-first-platform-at-the-edges)).
 
 ## 2. Platform catalogue
 
@@ -66,6 +66,18 @@ The app adapts to the device idiom, so layout, navigation and available space ca
 - **Measure before assuming.** WP4 measures how far the tablet idiom differs: navigation chrome, layouts, gestures and multi-window behaviour. WP2 prototypes both idioms of one operating system.
 - **The alternative (Q16).** One manual per operating system covering both idioms means fewer outputs. But every figure and variant must then be labelled by idiom in the source, and readers see content for a device they are not using.
 
+### 2.3 Idiom first, platform at the edges
+
+What a reader does on a phone differs from what they do on a tablet or a desktop: the layout, the navigation chrome, the gestures, how much fits on the screen. What differs between Android and iOS, or between either and Windows, sits at the edges: getting the app, updating it, permissions, where files live, the operating system's accessibility features, backup and sharing. So (DEC-032):
+
+- **Write for an idiom.** A topic is written for phone, tablet or desktop, with the group tokens `Phone`, `Tablet`, `Desktop`, `Touch` and `Pointer`. A reader never sees another idiom's instructions.
+- **Platform only at the edges.** The platform and device tokens (`Android`, `iOS`, `WindowsWinUI` and the five device tokens) are used for the edge list in [section 8](#8-what-usually-differs-between-platforms) and nowhere else. Lint flags a platform token in a topic outside that list.
+- **Outputs stay one per device,** because a reader's device is one platform and one idiom, and installation is platform-specific.
+- **The chooser asks "What are you using uFTi on?"** and lists devices, not operating systems.
+- **The Quick Start is the sharpest case.** Its first and sixth pages (get it, keep it safe) are platform-specific; the rest are idiom-specific.
+
+Q16, whether phone and tablet get separate manuals, is unchanged: this decides how topics are written, not how many manuals there are.
+
 ## 3. Reuse levels
 
 Use the first level that works. Idiom differences use the same ladder as platform differences.
@@ -102,9 +114,9 @@ This generalises the convention already used in the existing key maps. How scree
 - **Key names** are `img-<area>-<what>`: lower case, hyphenated, and identical for the same screen on every device.
 - **File names are stable** when a screenshot is re-captured, so keys never change.
 - **Alternative text** says what the picture shows and why it matters. It does not start "Screenshot of". One sentence.
-- **Each key map records** the reference device or machine, its operating system version, the app version and the sample workspaces, in `data` elements. Use an emulator or simulator of the idiom: a phone and a tablet for Android, an iPhone and an iPad for iOS (DEC-023).
+- **Each key map records** the reference device or machine, its operating system version, the app version and the dataset, in `data` elements. Use an emulator or simulator of the idiom: a phone and a tablet for Android, an iPhone and an iPad for iOS (DEC-023).
 - **Key maps carry `@platform`,** so a build for another manual excludes them.
-- **Sample workspaces only.** See the [disclosure boundary](authoring-plan.md#74-disclosure-boundary-and-privacy).
+- **The Brontë dataset only.** See the [dataset strategy](dataset-strategy.md) and the [disclosure boundary](authoring-plan.md#74-disclosure-boundary-and-privacy).
 - **One theme.** Every screenshot is captured in the app's Oxford and slate theme, light variant, so the pictures match the site and PDF (DEC-024).
 - **No silent fallback.** A topic that shows a screen that does not exist on a device is filtered out for that manual. An unresolved image key is a build failure.
 - **Figures.** Use `fig` with a `title` when the text refers to the picture. Alternative text and caption must not repeat each other. No information may exist only in a picture. Prefer cropping and clear text to annotated callouts.
@@ -207,7 +219,7 @@ The same steps add a new device idiom of a supported platform.
 1. Confirm it is a supported platform (DEC-019). A new platform is a product decision.
 2. Add it to the [catalogue](#2-platform-catalogue) and record it in the decision log.
 3. Choose a reference device or machine of that idiom. Record its operating system and the app version.
-4. Prepare the sample workspaces. Capture screenshots to the stable names. Write the key map, with `linktext` for every image.
+4. Replay the Brontë journey on the device, capture screenshots to the stable names ([dataset strategy](dataset-strategy.md)), and write the key map, with `linktext` for every image.
 5. Add a DITAVAL file, a project entry and a CI matrix entry.
 6. Run the coverage report ([section 10](#10-consistency-checks)). List missing keys and topics.
 7. Write platform-specific topics using the checklist in [section 8](#8-what-usually-differs-between-platforms).

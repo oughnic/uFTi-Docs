@@ -2,7 +2,7 @@
 
 How DITA is written in this repository. This is the short version. WP3 expands it into a full style guide, terminology list and templates.
 
-Part of the [authoring plan](authoring-plan.md). Status: Draft 0.2, 15 October 2026. Decisions are tracked in the [decision log](decision-log.md).
+Part of the [authoring plan](authoring-plan.md). Status: Draft 0.4, 16 October 2026. Decisions are tracked in the [decision log](decision-log.md).
 
 Much of this follows the plugin's own guide for people who write DITA for it, [SOURCE-SYSTEMS.md](https://github.com/iStandUK/govuk-dita-plugin/blob/main/docs/SOURCE-SYSTEMS.md), because following it means the website, search, print version, PDF and page metadata all come out right without editing the output.
 
@@ -18,6 +18,8 @@ Much of this follows the plugin's own guide for people who write DITA for it, [S
 - **One topic per file.** The root element's `id` matches the file name.
 - **`outputclass`** only for effects the plugin documents, currently `search-ignore`, `search-demote` and `landscape`. Classes carry styling, not meaning. Never record a topic's type or status in `outputclass`.
 - **Forbidden:** `mapref` by key, keys that name maps, and `chunk="to-content"` (both trigger known DITA-OT 4.4 defects).
+- **No GEDCOM tags, structures or file contents** anywhere: not in a topic, a glossary entry, a table or an example (DEC-030). They are not human-centred. The field reference is generated from the GEDCOM 7 structure definitions in plain words, keyed by the label on screen. Lint fails on a tag pattern.
+- **No statements about price, "free", "forever", accounts, sign-in or where data is stored** (DEC-040). Those facts live on ufti.com and in keys.
 - **Workflow is not recorded in the source.** No `@status` or `@rev` for review state. Use pull requests and issues.
 
 ## 2. Topic-based authoring rules
@@ -74,6 +76,8 @@ Much of this follows the plugin's own guide for people who write DITA for it, [S
 | **Troubleshooting** | One problem per topic. `condition` for what the reader sees, then `troubleSolution` with `cause` and `remedy`. |
 | **Glossary entry** | `glossterm`, a one- or two-sentence `glossdef`, and `glossAlt` for acronyms and abbreviations. Singular form. Synonyms as keywords. |
 | **Chapter introduction** | A short concept saying what the chapter covers. Its short description doubles as the home page summary. |
+| **Quick Start page** | A `task` (or a short `concept`) under 150 words with one picture, in the Quick Start bookmap. Steps first. One link at the end. |
+| **Key concept set** | For each key concept, four linked pieces: a diagram (see), the concept (read), a task on the Brontë dataset (do) and a checklist (check) (DEC-035). The relationship table links them. |
 
 Good practice concepts add a fixed set of section titles ([good practice strategy, section 8](good-practice-strategy.md#8-writing-and-review-rules)).
 
@@ -99,12 +103,12 @@ The plugin renders neutral notes (`note`, `tip`, `remember`) as inset text, and 
 ## 7. Images, figures and tables
 
 - **Screenshots** are PNG, optimised, and referenced by key ([platform strategy, section 4](platform-strategy.md#4-screenshots-as-keys)).
-- **Diagrams** are SVG with a `title` and a `desc`, and no text that cannot be translated.
+- **Diagrams** are SVG, inlined by the plugin through `svg-container` and `svgref` so that links inside them work (DEC-036). Rules: a `title` and a `desc`; real text, not outlines, so it can be read, searched and translated; the theme's colours as literal values from the tokens block; links to topics by relative address (file names are stable), checked by the SVG link check; a text list of the same links follows the diagram, because the PDF keeps the picture but loses the links, and because a screen reader needs the route; no information only in the picture; no more than about twelve nodes, or split it. The diagram template is in WP3.
 - **Alternative text is mandatory** on every image. For screenshots it is the key's `linktext`. Describe the purpose, not the appearance. Never start "Image of" or "Screenshot of". The PDF generator warns (`DSPDF009W`) when it is missing, and the PDF then fails PDF/UA.
 - **No decorative images.** If an image needs no description, it does not belong.
 - **No text in images,** no information only in a picture, and no cues that rely on colour alone.
 - **Figures** use `fig` with a `title`. The caption must not repeat the alternative text.
-- **Screenshot capture** follows the [screenshot strategy](screenshot-strategy.md): scripted, on a pinned emulator, simulator or clean Windows profile, in the Oxford and slate theme, light variant (dark only in the topic about appearance), with sample workspaces only, a normalised status bar, and one size and scaling per manual. No device frames.
+- **Screenshot capture** follows the [screenshot strategy](screenshot-strategy.md): scripted, on a pinned emulator, simulator or clean Windows profile, in the Oxford and slate theme, light variant (dark only in the topic about appearance), showing the Brontë dataset only, a normalised status bar, and one size and scaling per manual. No device frames.
 - **Tables** have a header row (`thead`) and a `title`, a simple structure, no layout tables, and few columns so they read on a phone. A table or figure that needs a landscape page in the PDF uses `outputclass="landscape"`.
 - **Audio and video** are not used for now. If added, captions and transcripts are mandatory.
 
@@ -146,14 +150,14 @@ Metadata goes in the topic's `prolog`. The DTD fixes the order of elements. Patt
 | `keywords` | Real aliases only: other names, abbreviations, former names. **Never the title's own words.** The plugin drops a keyword that only repeats a title word. |
 | `audience` | `experiencelevel` of `novice`, `general` or `expert`, only where it helps a reader choose. It becomes a search filter. |
 | `critdates` | `created` and `revised`, **only when true**. Set by the author on a substantive change. Never batch-stamped. Do not give dates in both `bookmeta` and topics. The site shows no dates until a reliable process exists (Q13). |
-| `resourceid` | Optional stable feature identifier, such as `people.edit`, for traceability. Never an issue number. |
+| `resourceid` | For a topic that documents a screen: `appname="ufti"` and `appid` set to the screen's stable identifier. The help map is generated from it (DEC-028), so every screen topic must have one. Never an issue number. |
 | `data` | A name with a prefix from Dublin Core, DCAT, ADMS, SKOS and similar vocabularies is read as metadata, and written to the page where the plugin has a mapping for it. A name that is not a real term of those vocabularies is reported (`GOVK011W`) and dropped. A name with no prefix is ours and is not metadata. |
 
 ### 9.2 In a map
 
 Publication-wide facts go in `bookmeta`, or in `topicmeta` for a plain map: the publisher organisation, the book's `critdates`, the edition, the copyright year and owner (`bookrights`), and the language.
 
-Platform key maps carry `prodinfo` with the product name, version and platform, plus `data` entries for the reference device and sample workspaces, as the existing key maps do.
+Platform key maps carry `prodinfo` with the product name, version and platform, plus `data` entries for the reference device and the dataset, as the existing key maps do.
 
 The licence, site address and organisation URL are **build parameters**, not source.
 
@@ -182,6 +186,7 @@ The plugin supplies landmarks, a skip link, focus states and contrast. It cannot
 The base is the [GOV.UK style guide](https://www.gov.uk/guidance/style-guide) and content design principles, with project overrides recorded in the WP3 style guide (DEC-010).
 
 - **British English** (en-GB).
+- **Reading level** (DEC-029). Written for an average 11-year-old. Targets per topic: Flesch Reading Ease 70 or more, Flesch-Kincaid grade 6 or lower, an average sentence of 15 words or fewer and none over 25. Prefer words of one or two syllables. One idea per sentence. Vale measures every topic in CI; a topic over the line fails unless each exception is a UI label, a proper name or a term with a glossary entry. These measures are for English. Spanish uses the Fernández-Huerta and Szigriszt-Pazos measures, set in WP16.
 - **Voice.** Second person ("you"), active, present tense. Steps use the imperative.
 - **Sentences.** Short, one idea each.
 - **Neutral verbs.** "Select", "open", "enter" and "choose" work for touch and pointer. Avoid "click", "tap" and "press" except in platform-specific text.
@@ -190,7 +195,7 @@ The base is the [GOV.UK style guide](https://www.gov.uk/guidance/style-guide) an
 - **Capitalisation.** Sentence case in headings. UI labels exactly as on screen. The product name is always written **uFTi**, including at the start of a sentence.
 - **Terminology.** One term for one concept. The WP3 terminology list fixes terms such as "workspace". Research terms are defined in the glossary.
 - **Inclusive language.** Do not assume how many parents a person has, or their gender, partner or family shape. Never blame the reader.
-- **Sample data.** Use the same names from the sample workspaces consistently.
+- **The worked example.** Use the people and places of the Brontë dataset consistently, spelt as the dataset spells them: Brontë with the diaeresis in text, and `bronte` in file names and keys. Invent no other people ([dataset strategy](dataset-strategy.md)).
 
 ## 12. Localisation readiness
 
@@ -202,6 +207,7 @@ We write only British English for now (Q6), but we write so that translation is 
 - Avoid idioms and culture-specific examples.
 - No text inside images, and no translatable text trapped in SVG.
 - Write dates and numbers unambiguously.
+- Reading-level measures differ by language. Each edition sets its own in the style guide.
 
 ## 13. Templates and linting
 
@@ -209,6 +215,6 @@ WP3 delivers:
 
 - **Templates** for concept, task, reference, troubleshooting, glossary entry, chapter introduction, good practice concept and platform key map.
 - **Prose lint** with Vale, using a project style based on the rules above, and British English spelling.
-- **Structure lint** that checks: file name pattern, `id` matches file name, title and short description present, short description length, `category` from the list, alternative text present, `@platform` values in the catalogue, the variant budget, key resolution, no `mapref` by key, no `chunk="to-content"`, no positional words, good practice section titles, and the "not allowed" disclosure patterns.
+- **Structure lint** that checks: file name pattern, `id` matches file name, title and short description present, short description length, `category` from the list, alternative text present, `@platform` values in the catalogue, the variant budget, key resolution, no `mapref` by key, no `chunk="to-content"`, no positional words, good practice section titles, the "not allowed" disclosure patterns, GEDCOM tag patterns (DEC-030), business-model words (DEC-040), a help identifier on every screen topic (DEC-028), and the targets of links inside SVG diagrams (DEC-036).
 
 The checks run locally and in CI ([build and quality](build-and-quality.md)).

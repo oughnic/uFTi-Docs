@@ -2,7 +2,7 @@
 
 Which tools build the outputs, and which checks must pass before anything is published.
 
-Part of the [authoring plan](authoring-plan.md). Status: Draft 0.2, 15 October 2026. Decisions are tracked in the [decision log](decision-log.md).
+Part of the [authoring plan](authoring-plan.md). Status: Draft 0.4, 16 October 2026. Decisions are tracked in the [decision log](decision-log.md).
 
 Everything here is **planned**. WP1 builds it. Versions and behaviours were checked against the upstream projects on 15 October 2026. Check them again at the start of WP1.
 
@@ -33,7 +33,7 @@ flowchart LR
 | **Nu HTML Checker** | Pin in WP1 | HTML validity | |
 | **axe-core** with a headless browser | Pin in WP1 | WCAG 2.2 AA checks on built pages | The plugin repository ships a runner we can pin by tag. |
 | **Link and metadata checkers** | Plugin repository tools at tag `v1.3.0` | Internal links, page metadata | Fetched in CI, pinned by tag and checksum. |
-| **Vale**, spell checker | Pin in WP1 | Prose lint and British English spelling | |
+| **Vale** with its readability rules, and a spell checker | Pin in WP1 | Prose lint, the reading-level targets (DEC-029) and British English spelling | The readability rules compute Flesch Reading Ease and Flesch-Kincaid grade per file. |
 | **Secret scanner** (such as gitleaks) | Pin in WP1 | Keeps secrets and private material out of a public repository | |
 
 **Pinning policy**
@@ -71,7 +71,7 @@ Parameters live in a DITA-OT project file, one deliverable per publication. Each
 | `govuk.pdf.paper`, `govuk.print.toc.depth` | `A4`, `3` | |
 | `govuk.pdf.name` | `ufti-user-manual-<slug>` | The PDF's file name. |
 | `govuk.print.max-topics` | Set above our topic count | The default is 500. Above it the print document and PDF are skipped with a warning. |
-| `govuk.site.url` | The published address of each publication | Needed for `sitemap.xml`, `llms.txt`, canonical links and Open Graph URLs. |
+| `govuk.site.url` | `https://ufti.com/docs/<device>/` for each manual and `https://ufti.com/good-practice/` for the guide (DEC-033) | Needed for `sitemap.xml`, `llms.txt`, canonical links and Open Graph URLs. |
 | `govuk.sitemap`, `govuk.llms` | `auto` | On when the site URL is set. |
 | `govuk.metadata` | `basic` | Open Graph, Dublin Core, canonical, previous, next and licence links. |
 | `govuk.metadata.persons` | `no` | No person's name is published. |
@@ -82,6 +82,7 @@ Parameters live in a DITA-OT project file, one deliverable per publication. Each
 | `govuk.css.assets`, `govuk.pdf.fonts` | `build/theme/assets`, `build/theme/assets/fonts` | The fonts the stylesheet names, hosted with the site (the policy `govuk.csp=meta` allows nothing else), and the same fonts for the PDF. |
 | `govuk.dates` | `no` | Until there is a reliable dating process (Q13). |
 | `govuk.csp` | `meta` | GitHub Pages cannot set HTTP headers. |
+| `govuk.embed` | `yes` | The embedded view that the app's help panel frames (DEC-028). Ignored under official or NHS branding, which we never use. |
 | `govuk.footer.links` | Platform chooser, accessibility statement, source repository, licence | `label\|url` pairs separated by `;`. |
 | `govuk.content.warnings` | `yes` | Reports scripts, remote images and embeds. The build never fails on content, so the gates read the warnings. |
 
@@ -107,6 +108,11 @@ All gates run on every pull request. A failure blocks the merge.
 | Key and image coverage | Project scripts ([platform strategy, section 10](platform-strategy.md#10-consistency-checks)) | Zero unresolved keys or images |
 | Theme | `build/theme/check-theme.ps1` | Every colour pairing passes WCAG 2.2 AA, no colour sits outside the tokens, and the fonts and their licences are present |
 | Disclosure and secrets | Secret scanner and pattern check | No findings |
+| Reading level | Vale readability rules | Every topic within the targets (DEC-029), or every exception is a UI label, a proper name or a glossary term |
+| Human-centred text | Lint | No GEDCOM tag or structure pattern (DEC-030), and no business-model words (DEC-040), in any topic |
+| Diagram links | SVG link check | Every link inside an inlined SVG resolves |
+| Help map coverage | Project script | Every screen in the inventory has a help target (DEC-028) |
+| Plugin independence | Smoke build with the toolkit's stock `html5` transformation | The sources build without the plugin (DEC-042); its warnings are reported, not gated |
 | Page weight and determinism | Plugin's checks | Within budget. The same input gives the same output. |
 
 **Manual checks before each release**
@@ -125,7 +131,7 @@ Planned for GitHub Actions, in WP1.
 | Job | Runs | Purpose |
 |---|---|---|
 | `lint` | Pushes to `dev`, `main`, `release/**` and `hotfix/**`, and every pull request | Prose, structure, vocabulary, secrets. Fast. |
-| `build` | A matrix: the five manuals, the good practice guide and the platform chooser | Install pinned tools from cache. Build site and PDF into `out/<slug>`. Upload as an artefact. |
+| `build` | A matrix: the five manuals and their Quick Starts, the good practice guide, the device chooser and the ufti.com pages | Install pinned tools from cache. Build site and PDF into `out/<slug>`. Upload as an artefact. |
 | `check` | After `build`, per output | HTML, axe-core, links, metadata, veraPDF, determinism, page weight. |
 | `coverage` | Once | Key and image coverage, applicability matrix. |
 | `deploy` | `main` only, so only releases are published | Assemble the root with the chooser, publish to GitHub Pages. |
@@ -158,7 +164,7 @@ Practices:
 6. Merge `release/X.Y.Z` into `main` by pull request, then tag `vX.Y.Z`. The `release` and `deploy` jobs attach the artefacts and publish the site.
 7. Merge `main` back into `dev`.
 
-**Hosting.** A GitHub Pages project site: `https://oughnic.github.io/uFTi-Docs/`, with the platform chooser at the root, each manual at `/<slug>/` and the guide at `/good-practice/` (DEC-014). Pages cannot set HTTP headers, so the site uses `govuk.csp=meta`. A custom domain can follow (Q4). The plugin's sites are static, with no cookies, no third-party requests and no analytics, so readers are not tracked. Feedback arrives through the repository's issues.
+**Hosting.** The site lives at ufti.com (DEC-033): marketing pages at the root, each manual at `/docs/<device>/` and the guide at `/good-practice/` ([site strategy](site-strategy.md)). GitHub Pages serves the custom domain until headers, redirects or logs are needed (Q26). Pages cannot set HTTP headers, so the site uses `govuk.csp=meta`. The plugin's sites are static, with no cookies, no third-party requests and no analytics (DEC-043), so readers are not tracked. Feedback arrives through the feedback link and the repository's issues.
 
 **Licences and notices.** Our own content is Apache-2.0. The generated site includes GOV.UK Frontend (MIT, Crown copyright) and the PDFs embed Noto fonts (SIL OFL 1.1). The colophon (WP10) lists these, and the plugin's notice files travel with the output.
 

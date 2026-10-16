@@ -12,7 +12,13 @@ Planning only. Read `authoring/README.md` first. No DITA topics exist yet: write
 
 - **Scope is the MAUI app only** until the user widens it: Android, iOS and Windows (WinUI), with Android and iOS each covering phone and tablet, so five manuals. Web, command-line and AI-assistant (MCP) surfaces, and the app's AI features, are out of scope.
 - **This repository is public; the application repository is private.** Never paste material from the application repository: source, design documents, issue or PR numbers, CI or build identifiers, unreleased features. Document observable behaviour of released builds only.
-- **Sample data only.** Screenshots and examples use the sample workspaces. `*.ged`, `*.gdz` and `*.gedzip` are git-ignored on purpose; do not force-add them.
+- **The Brontë dataset.** Screenshots and examples use the illustrative dataset in `authoring/dataset-strategy.md`, built by performing the manual's own tasks. It shows research as it is: every claim has its evidence in the register, contradictions are recorded as competing evidence rather than excluded, nothing is invented, and notes are in our own words: never copy text from biographies, Wikipedia or museum pages. Never real family data. `*.ged`, `*.gdz` and `*.gedzip` are git-ignored on purpose; do not force-add them.
+- **Who it is for.** People who do not read manuals come first: the Quick Start, in-app help and the words on screen before the full manual (`authoring/content-model.md`).
+- **Reading level.** Write for an average 11-year-old: short sentences, plain words, a glossary entry for every term (DEC-029).
+- **Never show GEDCOM tags, structures or file contents** (DEC-030). Describe people, families, facts and sources in human terms.
+- **Never state** price, "free", "forever", accounts, sign-in or where data is stored (DEC-040). Sync and AI do not appear until they ship.
+- **DNA:** one topic on risks and issues, nothing more (DEC-037). **Video:** never embedded (DEC-034).
+- **Idiom first.** Write for phone, tablet or desktop; use platform tokens only for installing, updating, permissions, files, accessibility features and backup (DEC-032).
 - **Keep the decision log in sync.** Any decision made or changed goes into `authoring/decision-log.md` in the same change.
 - **Branches.** `dev` is the default and integration branch. `main` holds releases only. Open an issue first, work on `docs/<issue>-<slug>` branches from `dev`, and open pull requests into `dev`. Releases go through `release/X.Y.Z` into `main`, tagged `vX.Y.Z`.
 - **DITA rules.** Standard DITA 1.3 only: no specialisation, no Markdown topics. Follow `authoring/authoring-standards.md`. Include submaps with `mapref href`, never `mapref keyref`; avoid `chunk="to-content"`.
@@ -21,4 +27,4 @@ Planning only. Read `authoring/README.md` first. No DITA topics exist yet: write
 - **Never commit** `out/`, `.tools/` or downloaded tools. Pin tool versions by checksum in `build/tools.lock` once it exists.
 - **Branding.** Use the plugin's `neutral` branding. Never `official` (GOV.UK crown) or `nhs`: those identities are restricted.
 - **Theme.** The site and PDF use the app's Oxford and slate theme through `build/theme/ufti.css`. Colours live only in its tokens block. Never edit or rename the font files (their licence reserves the name). Run `pwsh build/theme/check-theme.ps1` after any stylesheet change.
-- **Screenshots.** Capture scripts live in the application repository, never here. Follow `authoring/screenshot-strategy.md`: emulators and simulators, release candidates only, Oxford and slate light, sample data only.
+- **Screenshots.** Capture scripts live in the application repository, never here. Follow `authoring/screenshot-strategy.md`: emulators and simulators, release candidates only, Oxford and slate light, the Brontë dataset only.

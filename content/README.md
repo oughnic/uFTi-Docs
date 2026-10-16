@@ -17,6 +17,9 @@ content/
   glossary/          glossentry topics
   keys/              shared key maps: product facts, versions, UI labels, terms
   images/            shared diagrams
+  quick-start/       the Quick Start pages, one folder per device idiom
+  diagrams/          clickable SVG diagrams
+  sample-data/bronte/  the Brontë dataset: its specification and evidence register (WP4b)
 ```
 
 Conventions for names, identifiers and markup are in [authoring-standards.md](../authoring/authoring-standards.md).
