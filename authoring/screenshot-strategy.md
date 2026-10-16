@@ -2,7 +2,7 @@
 
 How screenshots are chosen, captured, imported, reviewed and kept current.
 
-Part of the [authoring plan](authoring-plan.md). Status: Draft 0.3, 16 October 2026. Decisions are tracked in the [decision log](decision-log.md).
+Part of the [authoring plan](authoring-plan.md). Status: Draft 0.4, 16 October 2026. Decisions are tracked in the [decision log](decision-log.md).
 
 ## 1. Decisions
 
@@ -13,6 +13,7 @@ Part of the [authoring plan](authoring-plan.md). Status: Draft 0.3, 16 October 2
 | When are they captured? | On **release candidates only**. | DEC-023 |
 | Which theme? | The app's **Oxford and slate** theme, light variant, in every screenshot. | DEC-024 |
 | Which data? | The **Brontë dataset**, built by replaying the manual's journey stage by stage ([dataset strategy](dataset-strategy.md)). | DEC-025 |
+| Video? | **Never embedded.** Linked only, if made at all ([section 11](#11-video-and-animation)). | DEC-034 |
 
 ## 2. Principles
 
@@ -93,6 +94,10 @@ A folder per manual, holding `<name>.png` for each key (`img-person-view` is `pe
 }
 ```
 
+### 4.5 Manual capture fallback
+
+If the replay scripts are not ready, or one screen is needed urgently, a person captures it by hand, following the catalogue entry exactly: the same device profile, theme, locale, workspace stage and focus, the emulator's status-bar override, and the same file name. The importer treats a hand capture like any other. The manifest records `"capture": "manual"` and who captured it, so the next scripted run replaces it. Documentation is never blocked by automation (R12, R17).
+
 ## 5. Import
 
 An importer script in this repository (WP5) takes a capture folder and:
@@ -146,7 +151,19 @@ Optimised PNG files in Git, changed files only, with no Git LFS to start. Five m
 | Existing Android phone and Windows key maps, kept for their key names (the pictures show other samples and are replaced by Brontë captures) | This repository | WP5 |
 | Verifying the PDF size and layout of figures | This repository | WP6 |
 
-## 11. Open points
+## 11. Video and animation
+
+Video is never embedded in the manual (DEC-034). The plugin has no video component, an embedded object is reported as a build warning that the gates treat as failure, and hosting video would change the site's size and its no-third-party stance. The manual stands without video.
+
+If video is wanted later (Q25, WP18), it is made and used like this:
+
+- **Hosted elsewhere and linked.** A link opens the video on its host. The page carries a poster image from the screen catalogue and a one-line description. No embed, no autoplay.
+- **Two kinds only.** Short silent clips (five to ten seconds) that show a gesture or a transition the text cannot, and narrated overviews (one to three minutes) for the Quick Start and the guide.
+- **Made by the same replay.** The capture scripts record the screen while they replay a stage (emulator and simulator recording, or a screen recorder on Windows), so a clip is as reproducible as a screenshot and tied to the same release candidate.
+- **Accessible.** Captions, a transcript on the page, no information only in the video, and the reading-level targets for narration.
+- **Budgeted.** No more than ten clips per idiom, refreshed only when the screen they show changes.
+
+## 12. Open points
 
 | Point | Where decided |
 |---|---|
@@ -154,3 +171,4 @@ Optimised PNG files in Git, changed files only, with no Git LFS to start. Five m
 | Does in-app capture on Android leave out the status bar? | WP2 |
 | Width caps and the comparison tolerance | WP5 |
 | Does a feature need a physical device (`device`)? | Per screen, in WP4 |
+| Video: whether at all, and on which host | Q25 |

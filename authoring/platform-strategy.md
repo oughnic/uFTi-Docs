@@ -2,7 +2,7 @@
 
 How we document one application on several platforms and device idioms without copying content.
 
-Part of the [authoring plan](authoring-plan.md). Status: Draft 0.3, 16 October 2026. Decisions are tracked in the [decision log](decision-log.md).
+Part of the [authoring plan](authoring-plan.md). Status: Draft 0.4, 16 October 2026. Decisions are tracked in the [decision log](decision-log.md).
 
 ## 1. Principles
 
@@ -11,7 +11,7 @@ Part of the [authoring plan](authoring-plan.md). Status: Draft 0.3, 16 October 2
 3. **One reader, one device.** Each manual mentions only the platform and device idiom the reader is using.
 4. **Use the cheapest mechanism that keeps the text readable.** The ladder in [section 3](#3-reuse-levels) says which.
 5. **Nothing is silently missing.** A missing screenshot, label or topic for a manual fails the build or shows up in a report.
-6. **Manuals are cheap to add and remove.** Doing so touches that manual's folders and build configuration, not shared topics.
+6. **Idiom first, platform at the edges.** Topics are written for phone, tablet or desktop. The operating system matters only for getting, updating and keeping the app, and for what it provides around it ([section 2.3](#23-idiom-first-platform-at-the-edges)).
 
 ## 2. Platform catalogue
 
@@ -65,6 +65,18 @@ The app adapts to the device idiom, so layout, navigation and available space ca
 - **Idiom-specific text is written for a reader who already knows their device.** It carries no "on a tablet" labels. If Q16 flips to one manual per operating system, those variants would need labels added.
 - **Measure before assuming.** WP4 measures how far the tablet idiom differs: navigation chrome, layouts, gestures and multi-window behaviour. WP2 prototypes both idioms of one operating system.
 - **The alternative (Q16).** One manual per operating system covering both idioms means fewer outputs. But every figure and variant must then be labelled by idiom in the source, and readers see content for a device they are not using.
+
+### 2.3 Idiom first, platform at the edges
+
+What a reader does on a phone differs from what they do on a tablet or a desktop: the layout, the navigation chrome, the gestures, how much fits on the screen. What differs between Android and iOS, or between either and Windows, sits at the edges: getting the app, updating it, permissions, where files live, the operating system's accessibility features, backup and sharing. So (DEC-032):
+
+- **Write for an idiom.** A topic is written for phone, tablet or desktop, with the group tokens `Phone`, `Tablet`, `Desktop`, `Touch` and `Pointer`. A reader never sees another idiom's instructions.
+- **Platform only at the edges.** The platform and device tokens (`Android`, `iOS`, `WindowsWinUI` and the five device tokens) are used for the edge list in [section 8](#8-what-usually-differs-between-platforms) and nowhere else. Lint flags a platform token in a topic outside that list.
+- **Outputs stay one per device,** because a reader's device is one platform and one idiom, and installation is platform-specific.
+- **The chooser asks "What are you using uFTi on?"** and lists devices, not operating systems.
+- **The Quick Start is the sharpest case.** Its first and sixth pages (get it, keep it safe) are platform-specific; the rest are idiom-specific.
+
+Q16, whether phone and tablet get separate manuals, is unchanged: this decides how topics are written, not how many manuals there are.
 
 ## 3. Reuse levels
 

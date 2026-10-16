@@ -13,7 +13,9 @@ From one set of DITA topics, the build will produce for each supported platform:
 
 Because not every reader will know family history research good practice, the documentation also includes practical guidance on researching well, linked to the features that support it.
 
-The manual teaches through one worked example: a small dataset about the family of the Reverend Patrick Brontë of Haworth and his literary children. It is built step by step as the manual's own tasks are written, so a reader can follow the whole journey from creating a workspace to adding people, families, notes, events, sources and repositories.
+The manual teaches through one worked example: a small dataset about the family of the Reverend Patrick Brontë of Haworth and his literary children. It is built step by step as the manual's own tasks are written, so a reader can follow the whole journey from creating a workspace to adding people, families, notes, events, sources and repositories. It shows research as it really is, with evidence that disagrees and questions left open.
+
+The documentation is designed for people who do not read manuals: a ten-minute Quick Start per device, a help button in the app that opens the right page, and plain language an 11-year-old can follow. The site will live at ufti.com, with the manuals under it.
 
 ## Scope
 
