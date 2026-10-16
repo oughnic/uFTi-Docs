@@ -1,5 +1,5 @@
 uFTi-Docs
-Copyright 2026 Nicholas Oughtibridge
+Copyright 2026 Oughtibridge Ltd
 
 This repository contains the DITA source and build configuration for the
 uFTi user documentation.
@@ -7,3 +7,9 @@ uFTi user documentation.
 The documentation is built with the DITA Open Toolkit and the iStandUK
 GOV.UK DITA plugin (org.istanduk.gov-uk), both licensed under the Apache
 License, Version 2.0. Neither is distributed in this repository.
+
+build/theme/assets/fonts contains Atkinson Hyperlegible Next (Copyright 2020-2024
+The Atkinson Hyperlegible Next Project Authors) and Source Serif 4 (Copyright
+2014-2023 Adobe, with Reserved Font Name "Source"). Both are licensed under the
+SIL Open Font License, Version 1.1, not the Apache License. Their licences are
+in build/theme/assets/licences.

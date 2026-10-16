@@ -2,7 +2,7 @@
 
 How we teach family history research good practice to readers who are new to it.
 
-Part of the [authoring plan](authoring-plan.md). Status: Draft 0.1, 15 October 2026. Decisions are tracked in the [decision log](decision-log.md).
+Part of the [authoring plan](authoring-plan.md). Status: Draft 0.2, 15 October 2026. Decisions are tracked in the [decision log](decision-log.md).
 
 ## 1. Why this content exists
 
@@ -32,10 +32,9 @@ uFTi has features that support good method: sources, repositories, citations, re
 | Handling uncertainty | Legal advice |
 | Privacy and ethics, especially for living people | Medical genetics guidance |
 | Sharing, export, backup and preservation | Commercial endorsements |
-| Responsible use of AI assistance (if present in the app) | |
-| Recording DNA evidence (only if the app supports it) | |
+| Recording DNA evidence (only if the app supports it) | AI tools and AI features (deferred, DEC-020) |
 
-Out-of-scope subjects get a short pointer to an authoritative guide. The link check covers those links.
+Out-of-scope subjects get a short pointer to an authoritative guide, except AI, which is simply not covered. The link check covers those links.
 
 ## 4. Where good practice appears
 
@@ -59,15 +58,13 @@ Provisional. WP4 turns this into an inventory of about 40 to 60 topics.
 |---|---|---|---|---|
 | 1 | **Start well** | Start with yourself and work backwards. Collect what the family already has. Set a research question. Keep a research log. | concept, task | Workspaces, research notes |
 | 2 | **Sources and evidence** | Original, derivative and authored sources. Primary and secondary information. Direct, indirect and negative evidence. Judging reliability. What "reasonably exhaustive" means. Recording where you looked. | concept, reference | Sources, repositories, evidence reconciliation, research notes |
-| 3 | **Citing sources** | Why cite. What a good citation holds. Citing online records, images, family stories, DNA results and AI output. Keeping a consistent style. | concept, task, reference | Source and citation fields, repositories |
+| 3 | **Citing sources** | Why cite. What a good citation holds. Citing online records, images, family stories and DNA results. Keeping a consistent style. | concept, task, reference | Source and citation fields, repositories |
 | 4 | **Recording facts accurately** | Names and their variants. Dates and uncertainty. Calendars, including the 1752 change in Britain. Places and boundaries that change. Relationship types: biological, adoptive, step, foster. Ages and approximations. | concept, task, reference | Complex dates (quality, precision, calendar), places, name fields, relationship types |
 | 5 | **Analysing and concluding** | Comparing evidence. Resolving conflicts. Same name, same person? Separating a hypothesis from a conclusion. Why not to copy unsourced online trees. Writing down a conclusion. | concept, task | Reconcile evidence, quality fields, notes |
 | 6 | **Looking after your tree** | Regular checks. Duplicates and careful merging. Sanity checks on dates and ages. Backups. | concept, task, reference | Checks, duplicates, backup (candidate) |
 | 7 | **Privacy and ethics** | Living people. Sensitive findings. Permission and sharing. Data protection basics. Copyright of records and images. | concept, reference | Export and privacy options (to confirm) |
 | 8 | **Sharing and keeping your research** | Choosing an export format. GEDCOM and its limits. Preserving media and notes. Passing it on. | concept, task | GEDCOM export, packaged exports (to confirm) |
 | 9 | **DNA evidence** | What DNA can and cannot show. Consent. Unexpected results. Recording DNA as evidence. | concept | Only if the app supports it (Q15) |
-| 10 | **Using AI assistance well** | Treat output as a lead, not evidence. Check against sources. Do not cite AI as a source for a fact. Where processing happens. Common failures: invented people, records and citations. | concept, task | AI-assisted features visible in the app (Q3) |
-
 ## 6. How research stages map to uFTi
 
 This follows the five elements of the Genealogical Proof Standard (research reasonably exhaustively, cite sources, analyse and correlate evidence, resolve conflicts, write a sound conclusion), summarised in our own words.
@@ -129,7 +126,6 @@ Family history touches adoption, illegitimacy, unexpected parentage, same-sex re
 
 | Point | Where decided |
 |---|---|
-| Are AI-assisted features visible in the app, and so in scope? | Q3 |
 | Does the app record DNA evidence? | Q15 |
 | Who reviews the guide, and who reviews legal and data protection topics? | Q8 |
 | Which callout pattern do we use for cues? | WP2 |

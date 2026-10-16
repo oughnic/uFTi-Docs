@@ -15,9 +15,9 @@ Because not every reader will know family history research good practice, the do
 
 ## Scope
 
-In scope for now: the **uFTi .NET MAUI application** on each platform it runs on.
+In scope for now: the **uFTi .NET MAUI application** on its three supported platforms, **Android**, **iOS** and **Windows**. Android and iOS each cover both phone and tablet, so there are five manuals.
 
-Out of scope for now: the other uFTi surfaces (web, command line and AI-assistant integrations). They may become separate publications later.
+Out of scope for now: the app's AI features, and the other uFTi surfaces (web, command line and AI-assistant integrations). They may be added later.
 
 ## How it is built
 
@@ -37,7 +37,7 @@ The tools are the [DITA Open Toolkit](https://www.dita-ot.org/), the [iStandUK G
 |---|---|
 | [`authoring/`](authoring/README.md) | The authoring plan, standards and decision log. Not published. |
 | [`content/`](content/README.md) | DITA source: maps, topics, keys and images. Empty until the pilot slice. |
-| [`build/`](build/README.md) | Build configuration: filters, project files, theme and scripts. Empty until the toolchain work package. |
+| [`build/`](build/README.md) | Build configuration. Holds the [publisher theme](build/theme/README.md) (stylesheet and fonts). The rest arrives with the toolchain work package. |
 | [`LICENSE`](LICENSE), [`NOTICE`](NOTICE) | Apache License 2.0 and notice. |
 
 ## Start here
@@ -48,7 +48,7 @@ The tools are the [DITA Open Toolkit](https://www.dita-ot.org/), the [iStandUK G
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). While the repository is in its planning phase, please open an issue before sending changes.
+See [CONTRIBUTING.md](CONTRIBUTING.md). Work happens on the default branch, `dev`. The `main` branch holds releases. While the repository is in its planning phase, please open an issue before sending changes.
 
 ## Licence
 

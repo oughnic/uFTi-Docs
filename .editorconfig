@@ -14,6 +14,10 @@ indent_size = unset
 [*.{ps1,psm1}]
 indent_size = 4
 
+# Vendored licence texts stay exactly as their authors published them.
+[build/theme/assets/licences/*]
+trim_trailing_whitespace = false
+
 [*.{bat,cmd}]
 end_of_line = crlf
 
