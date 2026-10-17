@@ -1,42 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
-<!-- The words on screen in the Windows app (authoring standards, section 6), exactly as the app
-     prints them, read from app version 0.1.0.1 on 17 October 2026. Topics use
-     <uicontrol keyref="ui-..."/> and never type a label inline, so a label that changes is corrected
-     here once. They sit in this map, not in a shared one, because they were read from the Windows app
-     only; a label moves to content/keys/ when a second device shows the same wording. -->
+<!-- Words on screen that only the Windows app shows (authoring standards, section 6), exactly as the
+     app prints them, read from app version 0.1.0.1 on 17 October 2026. The labels both devices show
+     are in content/keys/ui-labels.ditamap. This map is included first, so a definition here wins. -->
 <map id="windows-ui-labels" xml:lang="en-GB">
-  <!-- the menu at the left, and the screens it opens -->
-  <keydef keys="ui-workspaces"><topicmeta><keywords><keyword>Workspaces</keyword></keywords></topicmeta></keydef>
-  <keydef keys="ui-person"><topicmeta><keywords><keyword>Person</keyword></keywords></topicmeta></keydef>
-  <keydef keys="ui-family"><topicmeta><keywords><keyword>Family</keyword></keywords></topicmeta></keydef>
-  <keydef keys="ui-facts"><topicmeta><keywords><keyword>Facts</keyword></keywords></topicmeta></keydef>
-  <keydef keys="ui-notes"><topicmeta><keywords><keyword>Notes</keyword></keywords></topicmeta></keydef>
-  <keydef keys="ui-pedigree"><topicmeta><keywords><keyword>Pedigree</keyword></keywords></topicmeta></keydef>
-  <!-- the top bar -->
-  <keydef keys="ui-add"><topicmeta><keywords><keyword>+</keyword></keywords></topicmeta></keydef>
-  <keydef keys="ui-add-a-record"><topicmeta><keywords><keyword>Add a record</keyword></keywords></topicmeta></keydef>
-  <!-- the Workspaces screen -->
-  <keydef keys="ui-create-workspace"><topicmeta><keywords><keyword>Create workspace</keyword></keywords></topicmeta></keydef>
-  <keydef keys="ui-add-from-file"><topicmeta><keywords><keyword>Add from file…</keyword></keywords></topicmeta></keydef>
-  <keydef keys="ui-new-workspace"><topicmeta><keywords><keyword>New workspace</keyword></keywords></topicmeta></keydef>
-  <keydef keys="ui-create"><topicmeta><keywords><keyword>Create</keyword></keywords></topicmeta></keydef>
-  <keydef keys="ui-save-as"><topicmeta><keywords><keyword>Save as…</keyword></keywords></topicmeta></keydef>
-  <keydef keys="ui-save-workspace-as"><topicmeta><keywords><keyword>Save workspace as</keyword></keywords></topicmeta></keydef>
-  <keydef keys="ui-gedcom-file"><topicmeta><keywords><keyword>GEDCOM file (.ged)</keyword></keywords></topicmeta></keydef>
-  <keydef keys="ui-gedzip-archive"><topicmeta><keywords><keyword>GEDZIP archive (.gdz) — includes media</keyword></keywords></topicmeta></keydef>
-  <!-- the New person form -->
   <keydef keys="ui-new-person"><topicmeta><keywords><keyword>New person</keyword></keywords></topicmeta></keydef>
-  <keydef keys="ui-given-names"><topicmeta><keywords><keyword>Given name(s)</keyword></keywords></topicmeta></keydef>
-  <keydef keys="ui-surname"><topicmeta><keywords><keyword>Surname</keyword></keywords></topicmeta></keydef>
-  <keydef keys="ui-sex"><topicmeta><keywords><keyword>Sex</keyword></keywords></topicmeta></keydef>
-  <keydef keys="ui-save"><topicmeta><keywords><keyword>Save</keyword></keywords></topicmeta></keydef>
-  <!-- a person's page and its sources -->
-  <keydef keys="ui-birth"><topicmeta><keywords><keyword>Birth</keyword></keywords></topicmeta></keydef>
-  <keydef keys="ui-sources"><topicmeta><keywords><keyword>Sources</keyword></keywords></topicmeta></keydef>
-  <keydef keys="ui-add-source"><topicmeta><keywords><keyword>Add source</keyword></keywords></topicmeta></keydef>
-  <keydef keys="ui-add-a-new-source"><topicmeta><keywords><keyword>Add a new source</keyword></keywords></topicmeta></keydef>
-  <keydef keys="ui-title"><topicmeta><keywords><keyword>Title</keyword></keywords></topicmeta></keydef>
-  <keydef keys="ui-save-source"><topicmeta><keywords><keyword>Save source</keyword></keywords></topicmeta></keydef>
-  <keydef keys="ui-done"><topicmeta><keywords><keyword>Done</keyword></keywords></topicmeta></keydef>
 </map>

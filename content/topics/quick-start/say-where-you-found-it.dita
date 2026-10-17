@@ -21,6 +21,7 @@
   <taskbody>
     <prereq>
       <p>Open the page of a person who has a birth date.</p>
+      <p platform="Touch">To find a person, type their name in the search box and choose <uicontrol keyref="ui-search"/>. Then choose the card with their name.</p>
     </prereq>
     <steps>
       <step>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="add-your-first-person" xml:lang="en-GB">
+  <title>Add your first person</title>
+  <shortdesc>Make your own workspace and add yourself, or someone you know well.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-17"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Get started</category>
+      <keywords>
+        <keyword>new person</keyword>
+        <keyword>start a tree</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="workspaces.create"/>
+    <resourceid appname="ufti" appid="people.edit"/>
+  </prolog>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>On <uicontrol keyref="ui-workspaces"/>, choose <uicontrol keyref="ui-create-workspace"/>.</cmd>
+        <stepresult>
+          <p>A small box named <wintitle keyref="ui-new-workspace"/> opens.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Keep the name that is there, or type a name of your own.</cmd>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-create"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-add"/> at the top right.</cmd>
+        <stepresult>
+          <p>A sheet named <uicontrol keyref="ui-add-a-record"/> opens.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Under <uicontrol keyref="ui-add-a-new-person"/>, choose <uicontrol keyref="ui-basic-details"/>. Then choose <uicontrol keyref="ui-add-button"/>.</cmd>
+        <stepresult>
+          <p>The form for a new person opens.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Type a first name in <uicontrol keyref="ui-given-names"/>. Type a last name in <uicontrol keyref="ui-surname"/>.</cmd>
+        <info>
+          <p>Start with yourself, or someone you know well. Only the first name is needed.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-save"/>.</cmd>
+        <stepresult>
+          <p>A short message says Saved.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Type the name in the search box, then choose <uicontrol keyref="ui-search"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Choose the card with the person's name.</cmd>
+        <stepresult>
+          <p>The page for that person opens.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>That is your first person. <keyword keyref="product-name"/> saves your work as you go.</p>
+      <fig>
+        <image keyref="img-person-add"/>
+      </fig>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="look-around"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

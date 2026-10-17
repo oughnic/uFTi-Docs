@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!-- The Android phone manual's pictures (platform strategy, section 4). Key names are the same in
+     every manual, so one topic serves them all. A key's link text is the picture's alternative text
+     (DEC-011): one sentence about what the picture shows and why it matters. The importer
+     (build/scripts/Import-Screenshots.ps1) writes the files and keeps this map in step; it never
+     rewrites alternative text. -->
+<map id="android-phone-images" xml:lang="en-GB">
+  <topicmeta>
+    <prodinfo>
+      <prodname>uFTi</prodname>
+      <vrmlist><vrm version="0.1.0 (1)"/></vrmlist>
+      <platform>Android phone</platform>
+    </prodinfo>
+    <data name="reference-device" value="physical, Samsung Galaxy A41 (SM-A415F), Android 12 (SDK 31), arm64-v8a, 420 dpi, 3-button navigation; display size default; font scale set to 1.0 for the captures (the phone had 1.1), 1080 x 2400, portrait"/>
+    <data name="dataset" value="bronte"/>
+  </topicmeta>
+  <keydef keys="img-start-first-run" href="../images/start-first-run.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The Workspaces screen, with the Create workspace and Add from file buttons under its heading</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-person-add" href="../images/person-add.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The form for a new person, with Patrick typed in the Given name(s) box and Brontë in the Surname box</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-nav-main" href="../images/nav-main.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>Search results for Bront, one card for each Brontë, with the bar of five tabs along the bottom of the screen</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-citation-add" href="../images/citation-add.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The Add source form, with the title of a book typed in the Title box</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-workspace-export" href="../images/workspace-export.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The two choices for saving a workspace as a file, with a Cancel button, over the Workspaces screen</linktext></topicmeta>
+  </keydef>
+</map>

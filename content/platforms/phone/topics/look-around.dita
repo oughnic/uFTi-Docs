@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="look-around" xml:lang="en-GB">
+  <title>Look around</title>
+  <shortdesc>See what the five tabs and the search box do for the person you added.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-17"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Get started</category>
+      <keywords>
+        <keyword>navigation</keyword>
+        <keyword>tabs</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="search"/>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p>Add a person first.</p>
+    </prereq>
+    <context>
+      <p>The bar along the bottom of the screen shows the main places. Most of them show the person you are looking at.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-person"/>.</cmd>
+        <info>
+          <p>It shows that person's page.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-facts"/>.</cmd>
+        <info>
+          <p>It lists the <term keyref="term-fact">facts</term> for that person.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-family"/>.</cmd>
+        <info>
+          <p>It draws a tree, which the screen calls a <term keyref="term-pedigree">pedigree</term>.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-more"/>.</cmd>
+        <info>
+          <p>It lists <uicontrol keyref="ui-notes"/> and some other places. They are for later.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Type a few letters of a name in the search box, then choose <uicontrol keyref="ui-search"/>.</cmd>
+        <info>
+          <p>The results are the only list of people. Choose a card to open that person.</p>
+        </info>
+      </step>
+    </steps>
+    <result>
+      <p>To go back one screen, choose the back arrow at the top left.</p>
+      <fig>
+        <image keyref="img-nav-main"/>
+      </fig>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="say-where-you-found-it"/>.</p>
+    </postreq>
+  </taskbody>
+</task>
