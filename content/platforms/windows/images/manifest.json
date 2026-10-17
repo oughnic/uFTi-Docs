@@ -1,0 +1,94 @@
+{
+  "manual": "windows",
+  "app": {
+    "version": "0.1.0.1 (1)"
+  },
+  "theme": {
+    "name": "oxford-slate",
+    "variant": "light"
+  },
+  "locale": "en-GB",
+  "dataset": {
+    "name": "bronte"
+  },
+  "device": {
+    "kind": "desktop window (WinUI, unpackaged development build)",
+    "os": "windows 10.0.26200",
+    "width": 1267,
+    "height": 793,
+    "orientation": "landscape"
+  },
+  "captured": "2026-10-17",
+  "images": [
+    {
+      "key": "img-citation-add",
+      "file": "citation-add.png",
+      "sha256": "a51cae89b10d470bc23a88650c27e1f206a57292d00e2cce1d3103338a4b52b0",
+      "width": 1267,
+      "height": 761,
+      "stage": 6,
+      "workspace": "Brontë family of Haworth",
+      "focus": "Charlotte Brontë",
+      "capture": "in-app",
+      "crop": null,
+      "verifiedAppVersion": "0.1.0.1 (1)"
+    },
+    {
+      "key": "img-person-add",
+      "file": "person-add.png",
+      "sha256": "36e3ac936fc24c2b34e5914b2ec1cb9cad0934afe04a7b0e3144c8d20f44f72f",
+      "width": 1267,
+      "height": 761,
+      "stage": 1,
+      "workspace": "Brontë family of Haworth",
+      "focus": "Patrick Brontë",
+      "capture": "in-app",
+      "crop": {
+        "x": 0,
+        "y": 32,
+        "width": 1267,
+        "height": 761,
+        "reason": "Removes the black band the in-app capture leaves where the title bar is."
+      },
+      "verifiedAppVersion": "0.1.0.1 (1)"
+    },
+    {
+      "key": "img-person-view",
+      "file": "person-view.png",
+      "sha256": "6d9944d024f51a542429fcb6c2bd52a846ae2e64763704dc458971b0efa44672",
+      "width": 1267,
+      "height": 761,
+      "stage": 6,
+      "workspace": "Brontë family of Haworth",
+      "focus": "Charlotte Brontë",
+      "capture": "in-app",
+      "crop": {
+        "x": 0,
+        "y": 32,
+        "width": 1267,
+        "height": 761,
+        "reason": "Removes the black band the in-app capture leaves where the title bar is."
+      },
+      "verifiedAppVersion": "0.1.0.1 (1)"
+    },
+    {
+      "key": "img-start-first-run",
+      "file": "start-first-run.png",
+      "sha256": "d83c2417a53ac4a570b9130d17ce7e3348ac522b25561735bff1e654af9bf1d3",
+      "width": 505,
+      "height": 115,
+      "stage": 0,
+      "workspace": "none",
+      "focus": "none",
+      "capture": "in-app",
+      "crop": {
+        "x": 195,
+        "y": 125,
+        "width": 505,
+        "height": 115,
+        "reason": "Keeps the heading and the two buttons. The capture also shows the app's own sample workspaces, a workspace name and file paths: none of them is the Brontë dataset, and a path would say where files are kept (DEC-040)."
+      },
+      "verifiedAppVersion": "0.1.0.1 (1)"
+    }
+  ]
+}

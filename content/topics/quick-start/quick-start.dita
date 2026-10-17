@@ -2,7 +2,7 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="quick-start" xml:lang="en-GB">
   <title>Quick Start</title>
-  <shortdesc>Seven short pages that take you from opening uFTi to your first person, with its source and a copy.</shortdesc>
+  <shortdesc>Six short pages that take you from opening uFTi to your first person, with its source and a copy.</shortdesc>
   <prolog>
     <critdates>
       <created date="2026-10-17"/>
@@ -13,6 +13,6 @@
     </metadata>
   </prolog>
   <conbody>
-    <p>This takes about ten minutes. Each page has a few steps and one picture. Do them in order.</p>
+    <p>This takes about ten minutes. Each page has a few steps. Do them in order.</p>
   </conbody>
 </concept>

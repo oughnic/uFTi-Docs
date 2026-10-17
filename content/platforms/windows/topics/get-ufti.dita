@@ -36,13 +36,13 @@
       </step>
     </steps>
     <result>
-      <p>You see a sample workspace, <keyword keyref="ui-workspace-bronte"/>. It is there to practise in.</p>
+      <p>This is where your trees live. You may see some sample workspaces already. You do not need them.</p>
       <fig>
         <image keyref="img-start-first-run"/>
       </fig>
     </result>
     <postreq>
-      <p>Next: <xref keyref="look-around"/>.</p>
+      <p>Next: <xref keyref="add-your-first-person"/>.</p>
     </postreq>
   </taskbody>
 </task>

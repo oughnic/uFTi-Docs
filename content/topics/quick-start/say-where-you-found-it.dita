@@ -2,7 +2,7 @@
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
 <task id="say-where-you-found-it" xml:lang="en-GB">
   <title>Say where you found it</title>
-  <shortdesc>Add a source to one fact, so you always know why you believe it.</shortdesc>
+  <shortdesc>Add a source to a fact, so you always know why you believe it.</shortdesc>
   <prolog>
     <critdates>
       <created date="2026-10-17"/>
@@ -19,31 +19,40 @@
     <resourceid appname="ufti" appid="citations.edit"/>
   </prolog>
   <taskbody>
+    <prereq>
+      <p>Open the page of a person who has a birth date.</p>
+    </prereq>
     <steps>
       <step>
-        <cmd>On the person's page, open the birth.</cmd>
+        <cmd>Choose the small chip beside <uicontrol keyref="ui-birth"/>.</cmd>
         <info>
-          <p>If there is no birth, add one with <uicontrol keyref="ui-add"/>.</p>
+          <p>It shows a number and a plus sign, such as 0 +.</p>
         </info>
-      </step>
-      <step>
-        <cmd>Choose <uicontrol keyref="ui-add-source"/>.</cmd>
-      </step>
-      <step>
-        <cmd>Choose <uicontrol keyref="ui-new-source"/>. Type where you know this from.</cmd>
-        <info>
-          <p>For example, <userinput>My birth certificate</userinput> or <userinput>Mum told me</userinput>.</p>
-        </info>
-      </step>
-      <step>
-        <cmd>Choose <uicontrol keyref="ui-save"/>.</cmd>
         <stepresult>
-          <p>The birth now shows its <term keyref="term-source">source</term>.</p>
+          <p>A screen named <uicontrol keyref="ui-sources"/> opens.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-add-source"/>, then <uicontrol keyref="ui-add-a-new-source"/>.</cmd>
+      </step>
+      <step>
+        <cmd>In <uicontrol keyref="ui-title"/>, type where you know this from.</cmd>
+        <info>
+          <p>For example, <userinput>My birth certificate</userinput> or <userinput>Mum told me</userinput>. Only this box is needed.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-save-source"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-done"/>, then <uicontrol keyref="ui-done"/> again.</cmd>
+        <stepresult>
+          <p>The number on the chip goes up by one.</p>
         </stepresult>
       </step>
     </steps>
     <result>
-      <p>In the Brontë sample, every fact has a source. Later, when two records disagree, this is how you will know what to believe.</p>
+      <p>The fact now has a <term keyref="term-source">source</term>. Later, when two records disagree, this is how you will know what to believe.</p>
       <fig>
         <image keyref="img-citation-add"/>
       </fig>

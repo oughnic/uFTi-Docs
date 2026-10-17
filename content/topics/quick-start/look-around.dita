@@ -2,7 +2,7 @@
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
 <task id="look-around" xml:lang="en-GB">
   <title>Look around</title>
-  <shortdesc>See what the main screens are for.</shortdesc>
+  <shortdesc>See what the main menu items show for the person you added.</shortdesc>
   <prolog>
     <critdates>
       <created date="2026-10-17"/>
@@ -15,60 +15,55 @@
         <keyword>menu</keyword>
       </keywords>
     </metadata>
+    <resourceid appname="ufti" appid="people.view"/>
   </prolog>
   <taskbody>
     <prereq>
-      <p>Open a workspace.</p>
+      <p>Add a person first.</p>
     </prereq>
     <context>
-      <p>Every workspace has the same main screens. They are in the menu at the side.</p>
+      <p>The menu at the left shows the main places. Most of them show the person you are looking at.</p>
     </context>
     <steps>
       <step>
-        <cmd>Open <uicontrol keyref="ui-people"/>.</cmd>
+        <cmd>Choose <uicontrol keyref="ui-person"/>.</cmd>
         <info>
-          <p>It lists everyone in the tree.</p>
+          <p>It shows that person's page.</p>
         </info>
       </step>
       <step>
-        <cmd>Open <uicontrol keyref="ui-families"/>.</cmd>
+        <cmd>Choose <uicontrol keyref="ui-facts"/>.</cmd>
         <info>
-          <p>It shows couples and their children.</p>
+          <p>It lists the <term keyref="term-fact">facts</term> for that person.</p>
         </info>
       </step>
       <step>
-        <cmd>Open <uicontrol keyref="ui-tree"/>.</cmd>
+        <cmd>Choose <uicontrol keyref="ui-notes"/>.</cmd>
         <info>
-          <p>It draws the family as a picture.</p>
+          <p>It shows the notes for that person.</p>
         </info>
       </step>
       <step>
-        <cmd>Open <uicontrol keyref="ui-sources"/>.</cmd>
+        <cmd>Choose <uicontrol keyref="ui-family"/>.</cmd>
         <info>
-          <p>It lists where each fact came from.</p>
+          <p>It draws a tree, which the screen calls a <term keyref="term-pedigree">pedigree</term>.</p>
         </info>
       </step>
       <step>
-        <cmd>Choose <uicontrol keyref="ui-add"/>.</cmd>
+        <cmd>Choose <uicontrol keyref="ui-add"/> at the top right.</cmd>
         <info>
-          <p>It adds a person, a family, a source and more.</p>
-        </info>
-      </step>
-      <step>
-        <cmd>Choose <uicontrol keyref="ui-help"/>.</cmd>
-        <info>
-          <p>It opens the page about the screen you are on.</p>
+          <p>A sheet named <uicontrol keyref="ui-add-a-record"/> lists what you can add.</p>
         </info>
       </step>
     </steps>
     <result>
-      <p platform="Pointer">With a keyboard, <userinput>Tab</userinput> moves between controls. <userinput>Enter</userinput> chooses one.</p>
+      <p>The other menu items are for later. To go back one screen, choose the back arrow.</p>
       <fig>
-        <image keyref="img-nav-main"/>
+        <image keyref="img-person-view"/>
       </fig>
     </result>
     <postreq>
-      <p>Next: <xref keyref="explore-a-family"/>.</p>
+      <p>Next: <xref keyref="say-where-you-found-it"/>.</p>
     </postreq>
   </taskbody>
 </task>

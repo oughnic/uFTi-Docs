@@ -15,6 +15,9 @@
        expected key is present, and that every key has alternative text in the key map;
     3. checks privacy: the focus of every picture is a person on the allow-list in
        content/sample-data/bronte/allow-list.md, or the sample workspace itself;
+    3a. applies the crops the manual's own crops.json asks for (content/platforms/<manual>/images/crops.json:
+       for a key, the rectangle to keep, the reason, and what is left in view), so that a capture artefact
+       such as a black title-bar band, or a part of the screen that may not be shown, never reaches a page;
     4. strips every PNG chunk that is not needed to draw the picture (text, time, profile, physical
        size and the like), caps the width, and compresses the picture again without losing a pixel;
     5. writes each file to content/platforms/<manual>/images/ only if its bytes differ from the one
@@ -41,6 +44,10 @@
 .PARAMETER MaxWidth
   The widest a picture may be, in pixels. Default: 1080 for the phone manuals, 1600 for the others.
 
+.PARAMETER Only
+  Import only these keys from the capture and leave the rest in the capture folder (a capture can hold
+  pictures the manual does not use). Every key the manual expects must still be among them.
+
 .PARAMETER AddNewKeys
   Accept a key the key map does not have yet: its key definition is added with alternative text that
   fails the lint until a person writes it. Without this switch an unknown key is an error.
@@ -58,6 +65,7 @@ param(
     [string]$Capture = (Join-Path ([Environment]::GetFolderPath('LocalApplicationData')) 'ufti-docs-work' 'handoff' 'windows'),
     [string]$Manual,
     [int]$MaxWidth,
+    [string[]]$Only,
     [switch]$AddNewKeys,
     [string]$ReportPath
 )
@@ -183,6 +191,21 @@ public static class UftiPng
 '@
 }
 
+function Get-PngBytesCropped {
+    # Keeps one rectangle of a PNG (System.Drawing, Windows). Stops if it is not inside the picture.
+    param([byte[]]$Bytes, $Crop, $Info)
+    $x = [int]$Crop.x; $y = [int]$Crop.y; $w = [int]$Crop.width; $h = [int]$Crop.height
+    if ($x -lt 0 -or $y -lt 0 -or $w -le 0 -or $h -le 0 -or $x + $w -gt $Info.Width -or $y + $h -gt $Info.Height) { throw "the crop $x,$y,$w,$h is not inside the $($Info.Width) x $($Info.Height) picture" }
+    if (-not $IsWindows) { throw 'cropping needs System.Drawing, which runs on Windows only' }
+    Add-Type -AssemblyName System.Drawing
+    $in = [System.IO.MemoryStream]::new($Bytes)
+    $src = [System.Drawing.Bitmap]::new($in)
+    try {
+        $dst = $src.Clone([System.Drawing.Rectangle]::new($x, $y, $w, $h), [System.Drawing.Imaging.PixelFormat]::Format32bppArgb)
+        try { $out = [System.IO.MemoryStream]::new(); $dst.Save($out, [System.Drawing.Imaging.ImageFormat]::Png); , $out.ToArray() } finally { $dst.Dispose() }
+    } finally { $src.Dispose(); $in.Dispose() }
+}
+
 function Get-PngBytesResized {
     # Scales a PNG down to the given width with System.Drawing (Windows). The caller cleans the result.
     param([byte[]]$Bytes, [int]$Width)
@@ -212,8 +235,10 @@ function Get-PngBytesResized {
 # ---- Read the capture ------------------------------------------------------------------------------
 
 $Capture = [System.IO.Path]::GetFullPath($Capture)
-$manifestPath = Join-Path $Capture 'manifest.json'
-$screensDir = Join-Path $Capture 'screens'
+# the manifest sits in the capture folder or, as the capture scripts leave it, beside the pictures
+$screensDir = if (Test-Path -LiteralPath (Join-Path $Capture 'screens')) { Join-Path $Capture 'screens' } else { $Capture }
+$manifestPath = @((Join-Path $Capture 'manifest.json'), (Join-Path $screensDir 'manifest.json')) | Where-Object { Test-Path -LiteralPath $_ } | Select-Object -First 1
+if (-not $manifestPath) { $manifestPath = Join-Path $Capture 'manifest.json' }
 Write-UftiStep "Import screenshots from $Capture"
 if (-not (Test-Path -LiteralPath $manifestPath)) { Write-UftiProblem "No manifest.json in $Capture"; exit 1 }
 if (-not (Test-Path -LiteralPath $screensDir)) { Write-UftiProblem "No screens folder in $Capture"; exit 1 }
@@ -280,11 +305,19 @@ $deviceInfo = Get-Prop $manifest 'device'
 if ($deviceInfo) {
     # a physical phone must not leave its serial number (or any other identifier) in this repository
     foreach ($pr in $deviceInfo.PSObject.Properties) { if ($pr.Name -match '(?i)serial|imei|udid|android.?id|adb') { Fail "the manifest's device holds '$($pr.Name)': take identifiers out of the manifest before importing" } }
-    if ((Get-Prop $deviceInfo 'kind') -notin 'emulator', 'simulator', 'physical', 'virtual machine', 'clean profile') { Fail "device.kind is '$(Get-Prop $deviceInfo 'kind')': one of emulator, simulator, physical, virtual machine, clean profile" }
+    if ((Get-Prop $deviceInfo 'kind') -notmatch '^(emulator|simulator|physical|virtual machine|clean profile|desktop window)') { Fail "device.kind is '$(Get-Prop $deviceInfo 'kind')': it starts with emulator, simulator, physical, virtual machine, clean profile or desktop window" }
 }
 $appVersion = Get-Prop (Get-Prop $manifest 'app') 'version'
 if (-not $appVersion) { Fail 'the manifest has no app.version' }
 $images = @(Get-Prop $manifest 'images')
+$allImages = $images
+if ($Only) {
+    $Only = @($Only | ForEach-Object { $_ -split ',' } | Where-Object { $_ })   # pwsh -File passes a comma list as one string
+    foreach ($o in $Only) { if (@($images | ForEach-Object { $_.key }) -notcontains $o) { Fail "-Only names $o, which is not in the capture" } }
+    $images = @($images | Where-Object { $Only -contains $_.key })
+}
+$cropsPath = Join-Path $imagesDir 'crops.json'
+$crops = if (Test-Path -LiteralPath $cropsPath) { Get-Content -LiteralPath $cropsPath -Raw | ConvertFrom-Json -Depth 8 } else { $null }
 if ($images.Count -eq 0) { Fail 'the manifest lists no pictures' }
 
 $plan = [System.Collections.Generic.List[object]]::new()
@@ -306,15 +339,22 @@ foreach ($im in $images) {
         elseif (($alt -split '(?<=[.!?])\s+').Count -gt 1) { Fail "$key`: the alternative text is more than one sentence" }
     }
     # the focus (privacy): a person on the allow-list, or the sample workspace
+    $crop = if ($crops) { Get-Prop $crops $key } else { $null }
+    $showsNoData = [bool]($crop -and (Get-Prop $crop 'shows'))   # a crop that leaves controls only: no person, no workspace
     $focus = [string](Get-Prop $im 'focus')
     $focusId = [string](Get-Prop $im 'focusId')
-    if (-not $focus -and -not $focusId) { Fail "$key has no focus in the manifest: name the person or the workspace the picture shows" }
+    # "Charlotte Brontë (P05)" and "Patrick Brontë (P01), being added" name a person and, in brackets, the id
+    if ($focus -match '\((P\d{2})\)') { if (-not $focusId) { $focusId = $Matches[1] }; $focus = ($focus -replace '\s*\(P\d{2}\).*$', '').Trim() }
+    if ($showsNoData -and $focus -match '^none') { $focus = ''; $focusId = '' }
+    elseif ($focus -match '^none') { Fail "$key shows no person, but nothing in crops.json says it shows only controls" }
+    if ($showsNoData) { }
+    elseif (-not $focus -and -not $focusId) { Fail "$key has no focus in the manifest: name the person or the workspace the picture shows" }
     else {
         if ($focus -and -not $allow.Names.Contains($focus.Normalize())) { Fail "$key`: the focus '$focus' is not on the allow-list (content/sample-data/bronte/allow-list.md)" }
         if ($focusId -and -not $allow.Ids.Contains($focusId)) { Fail "$key`: the focus id '$focusId' is not on the allow-list" }
     }
     $ws = [string](Get-Prop $im 'workspace')
-    if ($ws -and $ws.Normalize() -ne 'Brontë family of Haworth'.Normalize()) { Fail "$key`: the workspace is '$ws'; pictures show the Brontë dataset only" }
+    if (-not $showsNoData -and $ws -and $ws.Normalize() -ne 'Brontë family of Haworth'.Normalize()) { Fail "$key`: the workspace is '$ws'; pictures show the Brontë dataset only" }
     # the file
     $src = Join-Path $screensDir $file
     if (-not (Test-Path -LiteralPath $src)) { Fail "$key`: $file is not in the screens folder"; continue }
@@ -324,11 +364,11 @@ foreach ($im in $images) {
     try { $info = [UftiPng]::Inspect($bytes) } catch { Fail "$key`: $($_.Exception.Message)"; continue }
     if ((Get-Prop $im 'width') -and [int](Get-Prop $im 'width') -ne $info.Width) { Fail "$key`: the manifest says $(Get-Prop $im 'width') pixels wide, the file is $($info.Width)"; continue }
     if ((Get-Prop $im 'height') -and [int](Get-Prop $im 'height') -ne $info.Height) { Fail "$key`: the manifest says $(Get-Prop $im 'height') pixels high, the file is $($info.Height)"; continue }
-    $plan.Add([pscustomobject]@{ Key = $key; File = $file; Source = $src; Bytes = $bytes; Info = $info; Entry = $im; IsNew = $isNew })
+    $plan.Add([pscustomobject]@{ Key = $key; File = $file; Source = $src; Bytes = $bytes; Info = $info; Entry = $im; IsNew = $isNew; Crop = $crop; Focus = $focus })
 }
 $missing = @($expected.Keys | Where-Object { -not $seen.Contains($_) })
 foreach ($k in $missing) { Fail "$k is expected by the manual but not in the capture" }
-$strayFiles = @(Get-ChildItem -LiteralPath $screensDir -Filter '*.png' -File | Where-Object { @($plan.File) -notcontains $_.Name -and ($images | ForEach-Object { ($_.key -replace '^img-', '') + '.png' }) -notcontains $_.Name })
+$strayFiles = @(Get-ChildItem -LiteralPath $screensDir -Filter '*.png' -File | Where-Object { @($plan | ForEach-Object { $_.File }) -notcontains $_.Name -and ($allImages | ForEach-Object { ($_.key -replace '^img-', '') + '.png' }) -notcontains $_.Name })
 foreach ($f in $strayFiles) { Fail "$($f.Name) is in the screens folder but not in the manifest" }
 
 if ($failures.Count) {
@@ -342,7 +382,9 @@ $results = [System.Collections.Generic.List[object]]::new()
 foreach ($p in $plan) {
     $bytes = $p.Bytes
     $resized = $false
-    if ($p.Info.Width -gt $MaxWidth) { $bytes = Get-PngBytesResized $bytes $MaxWidth; $resized = $true }
+    if ($p.Crop) { $bytes = Get-PngBytesCropped $bytes $p.Crop $p.Info }
+    $outWidth = if ($p.Crop) { [int]$p.Crop.width } else { $p.Info.Width }
+    if ($outWidth -gt $MaxWidth) { $bytes = Get-PngBytesResized $bytes $MaxWidth; $resized = $true }
     $clean = [UftiPng]::Clean($bytes)
     $target = Join-Path $imagesDir $p.File
     $status = 'new'
@@ -352,11 +394,11 @@ foreach ($p in $plan) {
     $results.Add([pscustomobject]@{
         Key = $p.Key; File = $p.File; Status = $status; Resized = $resized; Dropped = @($clean.Dropped | Sort-Object -Unique)
         Width = $clean.Width; Height = $clean.Height; Before = $p.Info.BytesBefore; After = $clean.BytesAfter
-        Bytes = $clean.Bytes; Target = $target; Entry = $p.Entry; Sha = ([System.BitConverter]::ToString([System.Security.Cryptography.SHA256]::HashData([byte[]]$clean.Bytes)) -replace '-', '').ToLowerInvariant()
+        Bytes = $clean.Bytes; Target = $target; Entry = $p.Entry; Crop = $p.Crop; Focus = $p.Focus; Sha = ([System.BitConverter]::ToString([System.Security.Cryptography.SHA256]::HashData([byte[]]$clean.Bytes)) -replace '-', '').ToLowerInvariant()
     })
 }
 $orphans = @()
-if (Test-Path -LiteralPath $imagesDir) { $orphans = @(Get-ChildItem -LiteralPath $imagesDir -Filter '*.png' -File | Where-Object { @($results.File) -notcontains $_.Name } | ForEach-Object { $_.Name }) }
+if (Test-Path -LiteralPath $imagesDir) { $orphans = @(Get-ChildItem -LiteralPath $imagesDir -Filter '*.png' -File | Where-Object { @($results | ForEach-Object { $_.File }) -notcontains $_.Name } | ForEach-Object { $_.Name }) }
 
 # ---- Write ------------------------------------------------------------------------------------------
 
@@ -374,7 +416,7 @@ if ($PSCmdlet.ShouldProcess((Rel $imagesDir), "write $(@($results | Where-Object
     $text = [regex]::Replace($text, '<vrm version="[^"]*"/>', "<vrm version=""$appVersion""/>")
     $device = Get-Prop $manifest 'device'
     if ($device) {
-        $desc = (@((Get-Prop $device 'kind'), (Get-Prop $device 'profile'), (Get-Prop $device 'os'), $(if ((Get-Prop $device 'width') -and (Get-Prop $device 'height')) { "$(Get-Prop $device 'width') x $(Get-Prop $device 'height')" }), (Get-Prop $device 'orientation')) | Where-Object { $_ }) -join ', '
+        $desc = (@(((Get-Prop $device 'kind') -replace '\s*\(.*\)', ''), (Get-Prop $device 'profile'), $(if ((Get-Prop $device 'width') -and (Get-Prop $device 'height')) { "$(Get-Prop $device 'width') x $(Get-Prop $device 'height')" }), (Get-Prop $device 'orientation')) | Where-Object { $_ }) -join ', '
         $desc = [System.Security.SecurityElement]::Escape($desc)
         $text = [regex]::Replace($text, '(<data name="reference-device" value=")[^"]*(")', { param($m) $m.Groups[1].Value + $desc + $m.Groups[2].Value })
     }
@@ -390,7 +432,7 @@ if ($PSCmdlet.ShouldProcess((Rel $imagesDir), "write $(@($results | Where-Object
         device = $(if ($device) { [ordered]@{ kind = (Get-Prop $device 'kind'); os = (Get-Prop $device 'os'); width = (Get-Prop $device 'width'); height = (Get-Prop $device 'height'); orientation = (Get-Prop $device 'orientation') } })
         captured = (Get-Prop $manifest 'captured')
         images = @($results | Sort-Object Key | ForEach-Object {
-            [ordered]@{ key = $_.Key; file = $_.File; sha256 = $_.Sha; width = $_.Width; height = $_.Height; stage = (Get-Prop $_.Entry 'stage'); workspace = (Get-Prop $_.Entry 'workspace'); focus = (Get-Prop $_.Entry 'focus'); capture = (Get-Prop $_.Entry 'capture'); verifiedAppVersion = $appVersion }
+            [ordered]@{ key = $_.Key; file = $_.File; sha256 = $_.Sha; width = $_.Width; height = $_.Height; stage = (Get-Prop $_.Entry 'stage'); workspace = $(if ($_.Crop -and (Get-Prop $_.Crop 'shows')) { 'none' } else { 'Brontë family of Haworth' }); focus = $(if ($_.Focus) { $_.Focus } else { 'none' }); capture = (Get-Prop $_.Entry 'capture'); crop = $(if ($_.Crop) { [ordered]@{ x = $_.Crop.x; y = $_.Crop.y; width = $_.Crop.width; height = $_.Crop.height; reason = (Get-Prop $_.Crop 'reason') } }); verifiedAppVersion = $appVersion }
         })
     }
     [System.IO.File]::WriteAllText((Join-Path $imagesDir 'manifest.json'), (($out | ConvertTo-Json -Depth 8) + "`n"), [System.Text.UTF8Encoding]::new($false))

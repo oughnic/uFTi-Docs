@@ -2,7 +2,7 @@
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
 <task id="keep-it-safe" xml:lang="en-GB">
   <title>Keep it safe</title>
-  <shortdesc>Make a copy of your tree and keep it somewhere else.</shortdesc>
+  <shortdesc>Save a copy of your tree as a file, and keep it somewhere else too.</shortdesc>
   <prolog>
     <critdates>
       <created date="2026-10-17"/>
@@ -20,23 +20,27 @@
   <taskbody>
     <steps>
       <step>
-        <cmd>Go to <uicontrol keyref="ui-workspaces"/>.</cmd>
+        <cmd>Open <uicontrol keyref="ui-workspaces"/>.</cmd>
       </step>
       <step>
-        <cmd>Open the menu for your workspace. Choose <uicontrol keyref="ui-export"/>.</cmd>
+        <cmd>On the card for your tree, choose <uicontrol keyref="ui-save-as"/>.</cmd>
+        <stepresult>
+          <p>A small sheet named <wintitle keyref="ui-save-workspace-as"/> opens.</p>
+        </stepresult>
       </step>
       <step>
-        <cmd>Choose a family tree file.</cmd>
+        <cmd>Choose how to save your tree.</cmd>
+        <choices>
+          <choice><uicontrol keyref="ui-gedcom-file"/> saves your tree as a family tree file.</choice>
+          <choice><uicontrol keyref="ui-gedzip-archive"/> saves it with any pictures as well.</choice>
+        </choices>
       </step>
       <step>
-        <cmd>Choose where to save it, such as a folder in Documents or a USB stick. Choose <uicontrol keyref="ui-save"/>.</cmd>
+        <cmd>When Windows asks where to put the file, choose a folder you will remember.</cmd>
       </step>
     </steps>
     <result>
-      <p>You now have a copy. If something goes wrong, you can get your tree back. Make a new copy after you add a lot.</p>
-      <fig>
-        <image keyref="img-workspace-export"/>
-      </fig>
+      <p>You now have a copy. Make a new copy after you add a lot. Keep one on a USB stick or another drive too.</p>
     </result>
     <postreq>
       <p>Next: <xref keyref="what-next"/>.</p>

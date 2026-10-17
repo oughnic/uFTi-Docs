@@ -1,0 +1,15 @@
+{
+  "img-start-first-run": {
+    "x": 195, "y": 125, "width": 505, "height": 115,
+    "shows": "controls only",
+    "reason": "Keeps the heading and the two buttons. The capture also shows the app's own sample workspaces, a workspace name and file paths: none of them is the Brontë dataset, and a path would say where files are kept (DEC-040)."
+  },
+  "img-person-add": {
+    "x": 0, "y": 32, "width": 1267, "height": 761,
+    "reason": "Removes the black band the in-app capture leaves where the title bar is."
+  },
+  "img-person-view": {
+    "x": 0, "y": 32, "width": 1267, "height": 761,
+    "reason": "Removes the black band the in-app capture leaves where the title bar is."
+  }
+}

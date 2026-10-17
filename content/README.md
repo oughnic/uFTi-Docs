@@ -10,13 +10,13 @@ The DITA source for the documentation: maps, topics, keys and images.
 content/
   ufti-quick-start-windows.ditamap   the Windows Quick Start as its own publication
   ufti-manual-windows.ditamap        the Windows manual: the Start here chapter so far
-  maps/structure/quick-start.ditamap the seven pages in order, shared by both
-  topics/quick-start/                the pages written for the idiom (2 to 5 and 7), the chapter
+  maps/structure/quick-start.ditamap the Quick Start pages in order, shared by both
+  topics/quick-start/                the pages written for the idiom, the chapter
                                      introduction, and "Five things to know"
-  platforms/windows/topics/          the pages for one platform (1 and 6)
+  platforms/windows/topics/          the pages for one platform (getting the app, keeping a copy)
   platforms/windows/keys/            the manual's own keys: pictures (images.ditamap) and the words on
                                      screen (ui-labels.ditamap)
-  platforms/windows/images/          its pictures, written by build/scripts/Import-Screenshots.ps1
+  platforms/windows/images/          its pictures and crops.json (what was cropped, and why), written by build/scripts/Import-Screenshots.ps1
   keys/product.ditamap               product facts shared by every manual
   glossary/                          one glossentry per term
   sample-data/bronte/                the Brontë dataset: its specification and evidence register (WP4b)

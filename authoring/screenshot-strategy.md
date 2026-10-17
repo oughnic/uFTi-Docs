@@ -106,7 +106,7 @@ An importer script in this repository (WP5) takes a capture folder and:
 
 1. **validates** it against the catalogue: every key the manual should have is present, nothing else is, and the theme, variant, locale and device profile are the expected ones, or it stops;
 2. **checks privacy:** the focus person is on the allow-list, which is the people in the dataset specification plus any approved from another named sample workspace;
-3. **strips metadata** from the PNG files, then caps the width (about 1080 pixels for phones and 1600 for tablets and Windows, to be confirmed) and **optimises losslessly**;
+3. **crops** where the manual's own `crops.json` (beside its pictures) says so, for a capture artefact such as the black band an in-app capture leaves where the title bar is, or for a part of the screen that may not be shown (the app's own sample workspaces, a file path); the crop and its reason are recorded in the manifest (DEC-091). **Strips metadata** from the PNG files, then caps the width (about 1080 pixels for phones and 1600 for tablets and Windows, to be confirmed) and **optimises losslessly**;
 4. **compares each image with the committed one** with a small tolerance, so anti-aliasing noise does not count as a change;
 5. **writes only what changed**, and updates the manifest, including the app version each image was last verified against;
 6. **updates the manual's key map,** keeping existing alternative text, and gives each new key a placeholder that fails the build until a person writes it;

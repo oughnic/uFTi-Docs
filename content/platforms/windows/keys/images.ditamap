@@ -9,31 +9,22 @@
   <topicmeta>
     <prodinfo>
       <prodname>uFTi</prodname>
-      <vrmlist><vrm version="0.0"/></vrmlist>
+      <vrmlist><vrm version="0.1.0.1 (1)"/></vrmlist>
       <platform>Windows</platform>
     </prodinfo>
-    <data name="reference-device" value="set by the importer from the capture manifest"/>
+    <data name="reference-device" value="desktop window, Windows 11 Pro 10.0.26200 on ARM64, display scaling 200%, 1267 x 793, landscape"/>
     <data name="dataset" value="bronte"/>
   </topicmeta>
   <keydef keys="img-start-first-run" href="../images/start-first-run.png" format="png" scope="local" platform="WindowsWinUI">
-    <topicmeta><linktext>The first screen of uFTi, with the list of workspaces and the sample workspace Brontë family of Haworth</linktext></topicmeta>
-  </keydef>
-  <keydef keys="img-nav-main" href="../images/nav-main.png" format="png" scope="local" platform="WindowsWinUI">
-    <topicmeta><linktext>The menu at the side of an open workspace, listing People, Families, Tree and Sources</linktext></topicmeta>
-  </keydef>
-  <keydef keys="img-person-view" href="../images/person-view.png" format="png" scope="local" platform="WindowsWinUI">
-    <topicmeta><linktext>The page for Charlotte Brontë, showing her birth, marriage and death, each with its source</linktext></topicmeta>
+    <topicmeta><linktext>The Workspaces screen, with the Create workspace and Add from file buttons under its heading</linktext></topicmeta>
   </keydef>
   <keydef keys="img-person-add" href="../images/person-add.png" format="png" scope="local" platform="WindowsWinUI">
-    <topicmeta><linktext>The form for a new person, filled in with the name Patrick Brontë</linktext></topicmeta>
+    <topicmeta><linktext>The New person form, with Patrick typed in the Given name(s) box and Brontë in the Surname box</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-person-view" href="../images/person-view.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>Charlotte Brontë's page, with the menu at the left and a small chip beside Identity, Birth and Death that counts the sources</linktext></topicmeta>
   </keydef>
   <keydef keys="img-citation-add" href="../images/citation-add.png" format="png" scope="local" platform="WindowsWinUI">
-    <topicmeta><linktext>Adding a source to Charlotte Brontë's birth</linktext></topicmeta>
-  </keydef>
-  <keydef keys="img-workspace-export" href="../images/workspace-export.png" format="png" scope="local" platform="WindowsWinUI">
-    <topicmeta><linktext>The choices for exporting a workspace</linktext></topicmeta>
-  </keydef>
-  <keydef keys="img-tree-view" href="../images/tree-view.png" format="png" scope="local" platform="WindowsWinUI">
-    <topicmeta><linktext>The family tree around Patrick and Maria Brontë and their six children</linktext></topicmeta>
+    <topicmeta><linktext>The Add source form, with the title of a book typed in the Title box</linktext></topicmeta>
   </keydef>
 </map>
