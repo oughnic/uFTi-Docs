@@ -174,10 +174,10 @@ Two ways to turn shared sources into per-manual publications:
 Proposed. WP2 finalises them.
 
 ```text
-content/maps/
-  ufti-manual-<slug>.ditamap     one bookmap per manual, five in all
+content/
+  ufti-manual-<slug>.ditamap     one bookmap per manual, five in all, at the root (see below)
   good-practice-guide.ditamap    the standalone guide
-  structure/                     shared chapter maps, one per chapter
+content/maps/structure/          shared chapter maps, one per chapter
 content/platforms/
   <slug>/keys/, images/          each manual's own key map and screenshots
   <token>/topics/                platform-specific topics, in a folder named for the
@@ -185,7 +185,8 @@ content/platforms/
                                  across OSs (phone, tablet) or a single manual (ipad, ...)
 ```
 
-- **One root map per publication.** Include submaps with `<mapref href="...">`. **Never** `mapref keyref`, and never define keys that name maps. DITA-OT 4.4.1 does not resolve keys inside a submap included by key, and the toolkit gives no warning (the plugin does).
+- **One root map per publication, at the root of the publication's folder.** DITA-OT takes the root map's folder as the input directory: a topic or image above it is built with `DOTJ036W`, the plugin does not inline a diagram from there (`GOVK005W`), and the plugin's relative links then miss. `args.input.dir` does not change this (WP1 tested it on the command line and in a project file). So the bookmaps sit at `content/`, and every topic, key map, image and diagram sits beneath them (DEC-045).
+- Include submaps with `<mapref href="...">`. **Never** `mapref keyref`, and never define keys that name maps. DITA-OT 4.4.1 does not resolve keys inside a submap included by key, and the toolkit gives no warning (the plugin does).
 - **A manual's bookmap** has front matter, chapters and back matter. Each chapter's `href` is a chapter-introduction topic, and its children come from a shared chapter map. A bookmap does not allow `mapref` or `keydef` at its top level: put them inside chapters and front or back matter.
 - **The manual's key map** is included first, as a resource-only map, so its keys take priority.
 - **Platform-specific topics** are referenced from the shared chapter maps with `@platform` on the `topicref`.

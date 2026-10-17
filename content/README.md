@@ -10,7 +10,10 @@ This is a proposal. WP2 confirms or changes it (see [platform strategy, section 
 
 ```text
 content/
-  maps/              publication maps and bookmaps, one per platform plus the good practice guide
+  ufti-manual-<slug>.ditamap   one bookmap per manual, at the root: the toolkit and the plugin treat
+                               the root map's folder as the publication, and nothing may sit above it
+  good-practice-guide.ditamap  the standalone guide
+  maps/structure/    shared chapter maps, one per chapter, included from the bookmaps
   topics/            platform-neutral topics, one folder per area (people, sources, ...)
   platforms/<slug>/  keys/, images/ and topics/ that exist for one platform only
   good-practice/     topics for the good practice guide

@@ -2,7 +2,7 @@
 
 A stylesheet and fonts that give the website and the PDF the look of the uFTi app's **Oxford and slate** theme: its colours and its two typefaces, on top of the plugin's neutral branding.
 
-**Status: drafted, checked, and tested against the plugin's own stylesheets, but not yet on real plugin output.** The checks below pass, and a browser test on mock markup passed too. WP1 builds the pipeline and WP6 verifies the result on a real website and PDF (see [verification](#8-verification)).
+**Status: built into real plugin output and a real PDF by WP1, and verified there** (see [verification](#8-verification)). The checks below pass, and the theme is wired into every build through `build/projects/common.xml`. WP6 looks at every component on a real build and adds the logo, favicon and share image.
 
 ## 1. What is here
 
@@ -69,7 +69,7 @@ The build takes one stylesheet and copies the files it refers to. In a DITA-OT p
 </project>
 ```
 
-This assumes the project file is in `build/projects/`. WP1 confirms that `param` accepts `href` for folders. If it does not, use `value` with an absolute path: `args.cssroot` must be a full path, because a relative one is not read from the folder you run the command in.
+This is what `build/projects/common.xml` does, with two details found in WP1: a folder is given with `path` rather than `href` (`path="../theme"`, resolved relative to the project file, which the toolkit then passes as a full path), and `args.csspath` is set to `theme`, so the stylesheet, the fonts and the licences land together under `theme/` in the output. On the command line `args.cssroot` must be a full path, because a relative one is not read from the folder you run the command in.
 
 The same on a command line, on Windows:
 
@@ -164,13 +164,25 @@ A page loads only the faces it uses. A typical page fetches about 400 KB of font
 
 ## 8. Verification
 
-**Done.** The stylesheet was loaded in a browser together with the plugin's real stylesheets (Design System 6.5.1, the plugin's own, and its neutral overlay), on mock markup built from the plugin's documented class names. All six fonts and the Semibold alias loaded. The masthead, sidebar, headings, links, notes, tables, tags, buttons, code, figures and footer took the theme's colours and faces, and the Design System's yellow focus colour was untouched. A 1080 by 2400 phone screenshot was held to 40 rem at its true proportions. Across the 47 pieces of rendered text the lowest contrast was 7.01:1, with no failures. The test found one gap, the search button falling back to Arial, and it is fixed.
+**On mock markup (15 October 2026).** The stylesheet was loaded in a browser together with the plugin's real stylesheets (Design System 6.5.1, the plugin's own, and its neutral overlay), on mock markup built from the plugin's documented class names. All six fonts and the Semibold alias loaded. The masthead, sidebar, headings, links, notes, tables, tags, buttons, code, figures and footer took the theme's colours and faces, and the Design System's yellow focus colour was untouched. Across the 47 pieces of rendered text the lowest contrast was 7.01:1, with no failures. The test found one gap, the search button falling back to Arial, and it is fixed.
+
+**On a real build (WP1, 17 October 2026).** The WP1 fixture, three manuals built with plugin 1.3.0 and DesignSystemPDF 0.1.2 through `build/projects/common.xml`, served over HTTP and opened in a Chromium browser, and the PDFs read with PDFBox and veraPDF (`build/scripts/check-output.ps1`, gates `theme`, `theme-browser`, `pdf-fonts` and `pdf-ua`):
+
+| What | Result |
+|---|---|
+| The stylesheet | Linked on every page after the Design System's, the plugin's and the neutral overlay, at `theme/ufti.css`, with 76 rules loaded. The six fonts and both licences are copied beside it by `govuk.css.assets`. |
+| Fonts on the website | Every face a page uses loads from the site's own files: on a task page Atkinson Hyperlegible Next 400 and 700 and Source Serif 4 600. `document.fonts.check('600 16px "Source Serif 4"')` is true. |
+| Headings | `h1` and the masthead title compute to Source Serif 4 at weight 600; body text to Atkinson Hyperlegible Next at 400; text inside the inlined diagram to Atkinson. |
+| Figures on the website | A 1080 by 2400 placeholder picture renders at 288 by 640 pixels: held to 40 rem at its true proportions. |
+| Fonts in the PDF | Every font embedded: `AtkinsonHyperlegibleNext-Regular`, `AtkinsonHyperlegibleNext-Bold`, `SourceSerif4-Semibold` and, for code, the generator's `NotoSansMono-Regular`. Headings use the Semibold face. No Noto Sans for text. |
+| Figures in the PDF | The 110 mm cap holds: the phone picture is drawn at 49 by 110 mm, the tablet picture at 69 by 110 mm, the Windows picture at 174 by 98 mm, each on an A4 page. |
+| PDF/UA | PDF/UA-1 passes in veraPDF 1.30.3 for all three PDFs, with no `DSPDF009W`. PDF/UA-2 fails, as advisory. |
 
 **Not yet verified**
 
-- **Real plugin output.** The markup was a mock. WP1 builds the pipeline, and WP6 looks at every component on a real build: masthead, sidebar, contents, notes, tables, tags, search, glossary, index, footer and the print document.
-- **The PDF.** The print rules are literal and name the fonts as the generator reads them from the files ("Source Serif 4 Semibold" for the semibold face). But a real build must confirm that the PDF uses Atkinson and Source Serif rather than the generator's bundled Noto Sans, that headings use the Semibold face, that every font is embedded (a PDF/UA requirement), and that figures fit the page. WP2's exit criteria include it.
-- **Dark mode.** The app's theme has a dark variant. The site does not follow the reader's dark preference yet: it needs every plugin and Design System component checked on dark, which needs a real build to do properly (Q17).
+- **Every component.** The fixture has a task, concepts, a glossary, a figure, a diagram, a note-free page and the print document. WP6 looks at notes, tables, tags, search results, the index and the footer on a real build with more content.
+- **Dark mode.** The app's theme has a dark variant. The site does not follow the reader's dark preference yet: it needs every plugin and Design System component checked on dark (Q17).
+- **WOFF2.** The fonts are served as TrueType; converting them is WP6's.
 
 ## 9. Keeping in step with the app
 
