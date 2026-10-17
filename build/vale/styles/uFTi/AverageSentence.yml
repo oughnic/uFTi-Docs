@@ -1,0 +1,7 @@
+# DEC-029: an average sentence of 15 words or fewer, per topic.
+extends: metric
+message: "The average sentence is %s words. Keep it to 15 or fewer (DEC-029)."
+level: error
+formula: |
+  words / sentences
+condition: "> 15.0"
