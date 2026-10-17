@@ -1,0 +1,16 @@
+# Authoring standards, section 11: words to avoid.
+extends: existence
+message: "Avoid '%s' (authoring standards, section 11)."
+level: error
+ignorecase: true
+tokens:
+  - simply
+  - just
+  - easy
+  - easily
+  - obviously
+  - please
+  - via
+  - 'e\.g\.'
+  - 'i\.e\.'
+  - 'etc\.'

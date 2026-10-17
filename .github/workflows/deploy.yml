@@ -1,0 +1,77 @@
+# Publishes the site to GitHub Pages from main only, so only releases are published (DEC-014,
+# DEC-016). Nothing is published until the first real publication project exists:
+# build/projects/site.xml arrives with the pilot slice (WP7), and the fixture is never published.
+# Pages must be enabled for the repository with "GitHub Actions" as its source.
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  PUBLISH_PROJECT: site
+
+jobs:
+  build:
+    name: build the site
+    runs-on: ubuntu-24.04
+    outputs:
+      publish: ${{ steps.build.outputs.publish }}
+    steps:
+      - name: Check out
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Java
+        uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6.1.0
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Pinned tools (cached by the lock file)
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .tools
+          key: tools-build-${{ runner.os }}-${{ hashFiles('build/tools.lock') }}
+      - name: Bootstrap the toolkit, the plugin, DesignSystemPDF and Pagefind
+        run: build/scripts/bootstrap.sh --build-only
+      - name: Build the publications
+        id: build
+        run: |
+          if [ ! -f "build/projects/$PUBLISH_PROJECT.xml" ]; then
+            echo "::notice::No build/projects/$PUBLISH_PROJECT.xml yet, so nothing is published. The first manual (WP7) adds it."
+            echo "publish=no" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          build/scripts/build.sh --project "$PUBLISH_PROJECT" --output site
+          rm -rf site/logs site/temp
+          echo "publish=yes" >> "$GITHUB_OUTPUT"
+      - name: Pages
+        if: steps.build.outputs.publish == 'yes'
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+      - name: Upload the site
+        if: steps.build.outputs.publish == 'yes'
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: site
+
+  deploy:
+    name: deploy to GitHub Pages
+    needs: build
+    if: needs.build.outputs.publish == 'yes'
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

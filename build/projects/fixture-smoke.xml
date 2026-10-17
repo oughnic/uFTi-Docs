@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The plugin-independence smoke build (DEC-042): the same maps and filters through the toolkit's
+     stock html5 transformation, with no plugin parameters. Its warnings are reported, not gated. -->
+<project xmlns="https://www.dita-ot.org/project">
+  <publication transtype="html5" id="stock-html5">
+    <param name="nav-toc" value="partial"/>
+  </publication>
+  <deliverable id="smoke-android-phone">
+    <context>
+      <input href="../fixtures/wp1/ufti-fixture-android-phone.ditamap"/>
+      <profile><ditaval href="../ditaval/android-phone.ditaval"/></profile>
+    </context>
+    <output href="smoke-android-phone"/>
+    <publication idref="stock-html5"/>
+  </deliverable>
+  <deliverable id="smoke-android-tablet">
+    <context>
+      <input href="../fixtures/wp1/ufti-fixture-android-tablet.ditamap"/>
+      <profile><ditaval href="../ditaval/android-tablet.ditaval"/></profile>
+    </context>
+    <output href="smoke-android-tablet"/>
+    <publication idref="stock-html5"/>
+  </deliverable>
+  <deliverable id="smoke-windows">
+    <context>
+      <input href="../fixtures/wp1/ufti-fixture-windows.ditamap"/>
+      <profile><ditaval href="../ditaval/windows.ditaval"/></profile>
+    </context>
+    <output href="smoke-windows"/>
+    <publication idref="stock-html5"/>
+  </deliverable>
+</project>

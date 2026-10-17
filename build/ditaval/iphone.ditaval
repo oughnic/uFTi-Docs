@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Filter for the iPhone manual (platform strategy, section 2.1). Every @platform value is
+     excluded unless this manual owns it. An element with no @platform is always included.
+     Tokens are case-sensitive and never renamed once published. -->
+<val>
+  <prop att="platform" action="exclude"/>
+  <prop att="platform" val="iPhone" action="include"/>
+  <prop att="platform" val="iOS" action="include"/>
+  <prop att="platform" val="Phone" action="include"/>
+  <prop att="platform" val="Mobile" action="include"/>
+  <prop att="platform" val="Touch" action="include"/>
+</val>

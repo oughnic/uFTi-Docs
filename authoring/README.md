@@ -27,5 +27,5 @@ Planning and standards for the uFTi user documentation. These files guide author
 ## Keeping these documents current
 
 - When a decision is made or changed, update the decision log in the same change.
-- Facts about tools (versions, parameters, known limits) were checked against the upstream projects on 15 October 2026. Check them again at the start of WP1.
+- Facts about tools (versions, parameters, known limits) were checked against the upstream projects on 15 October 2026, and again on 17 October 2026 at the start of WP1, when they were pinned in `build/tools.lock`. Check them monthly.
 - Section numbers are linked from elsewhere in the repository. If you renumber a section, search for links to it.

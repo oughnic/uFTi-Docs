@@ -1,5 +1,6 @@
-# Build output and DITA-OT scratch
+# Build output and DITA-OT scratch (out-again and out-all are second builds for the determinism gate)
 /out/
+/out-*/
 /temp/
 /.dita-ot/
 *.log

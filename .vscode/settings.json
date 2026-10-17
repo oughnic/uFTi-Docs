@@ -1,0 +1,13 @@
+{
+  // Visual Studio Code with the Red Hat XML extension validates DITA against the toolkit's DTDs
+  // through the toolkit's own OASIS catalogue (bootstrap puts the toolkit in .tools/).
+  "xml.catalogs": [".tools/dita-ot-4.4.1/catalog-dita.xml"],
+  "xml.validation.enabled": true,
+  "files.associations": {
+    "*.dita": "xml",
+    "*.ditamap": "xml",
+    "*.ditaval": "xml"
+  },
+  "files.eol": "\n",
+  "vale.valeCLI.config": ".vale.ini"
+}

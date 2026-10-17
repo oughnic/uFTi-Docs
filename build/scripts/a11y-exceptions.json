@@ -1,0 +1,11 @@
+{
+  "_comment": "Documented exceptions for the axe-core gate (a11y.mjs). Each names an axe rule, a CSS selector for the elements it covers, the reason, and when it was added. Remove an entry as soon as its cause is fixed upstream.",
+  "exceptions": [
+    {
+      "rule": "nested-interactive",
+      "selector": "svg[role=\"img\"]:has(a)",
+      "reason": "Plugin 1.3.0 gives every inlined diagram role=img, so a clickable diagram's links count as interactive content nested in an image. Readers using assistive technology reach the same links in the list that follows every diagram (DEC-036, DEC-051). Remove when the plugin gives a diagram with links another role.",
+      "added": "2026-10-17"
+    }
+  ]
+}

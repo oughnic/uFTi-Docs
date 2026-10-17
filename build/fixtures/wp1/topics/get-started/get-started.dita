@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="get-started" xml:lang="en-GB">
+  <title>Get started</title>
+  <shortdesc>Make your first workspace and add the first person to your family tree.</shortdesc>
+  <prolog>
+    <metadata>
+      <category>Get started</category>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p>This chapter shows you the first things to do in <keyword keyref="product-name"/>. You make a workspace. Then you add one person. The example is the Reverend Patrick Brontë of Haworth.</p>
+  </conbody>
+</concept>

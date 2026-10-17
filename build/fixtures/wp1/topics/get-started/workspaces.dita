@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<!-- A shared topic: identical in every manual. -->
+<concept id="workspaces" xml:lang="en-GB">
+  <title>Workspaces</title>
+  <shortdesc>A workspace is one family tree: its people, families, events, sources and notes.</shortdesc>
+  <prolog>
+    <metadata>
+      <category>Concept</category>
+      <keywords>
+        <keyword>family tree file</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p>A <term keyref="term-workspace">workspace</term> is one family tree. You can keep more than one. For example, one for the Brontë family and one for your own.</p>
+    <section>
+      <title>What a workspace holds</title>
+      <ul>
+        <li>People, such as Patrick Brontë and Maria Branwell.</li>
+        <li>Families, which link people together.</li>
+        <li>Events, such as a birth or a marriage, with a date and a place.</li>
+        <li>Sources, which say where each fact came from.</li>
+        <li>Notes in your own words.</li>
+      </ul>
+    </section>
+  </conbody>
+</concept>

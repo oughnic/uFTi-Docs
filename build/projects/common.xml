@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The parameters every manual shares (build and quality, section 3). A deliverable's project file
+     includes this one and refers to the publication by id, overriding what differs per manual.
+     Paths in href and path attributes are relative to this file. -->
+<project xmlns="https://www.dita-ot.org/project">
+  <publication transtype="govuk" id="ufti-manual">
+    <!-- Identity. Neutral branding only (DEC-008); our look comes from the publisher theme. -->
+    <param name="govuk.branding" value="neutral"/>
+    <param name="govuk.phase" value="beta"/>
+    <param name="govuk.feedback.url" value="https://github.com/oughnic/uFTi-Docs/issues/new"/>
+    <param name="govuk.homepage.layout" value="auto"/>
+    <param name="govuk.homepage.depth" value="2"/>
+    <param name="govuk.footer.links" value="Choose your device|https://ufti.com/docs/;Accessibility statement|https://ufti.com/accessibility/;Source|https://github.com/oughnic/uFTi-Docs;Licence|https://www.apache.org/licenses/LICENSE-2.0"/>
+    <!-- Search, print and PDF are required, so a missing tool stops the build instead of leaving a
+         gap. Bootstrap installs Pagefind and DesignSystemPDF on every machine. -->
+    <param name="govuk.search" value="yes"/>
+    <param name="govuk.print" value="yes"/>
+    <param name="govuk.print.toc.depth" value="3"/>
+    <param name="govuk.print.max-topics" value="2000"/>
+    <param name="govuk.pdf" value="yes"/>
+    <param name="govuk.pdf.paper" value="A4"/>
+    <!-- Metadata. No person is named (DEC-029 family of rules: nothing internal, nobody named). -->
+    <param name="govuk.sitemap" value="auto"/>
+    <param name="govuk.llms" value="auto"/>
+    <param name="govuk.metadata" value="basic"/>
+    <param name="govuk.metadata.persons" value="no"/>
+    <param name="govuk.organisation" value="Oughtibridge Ltd"/>
+    <param name="govuk.organisation.url" value="https://ufti.com/"/>
+    <param name="govuk.licence.url" value="https://www.apache.org/licenses/LICENSE-2.0"/>
+    <param name="govuk.dates" value="no"/>
+    <!-- Hosting: GitHub Pages cannot set headers (govuk.csp=meta); the app's help panel frames pages. -->
+    <param name="govuk.csp" value="meta"/>
+    <param name="govuk.embed" value="yes"/>
+    <param name="govuk.content.warnings" value="yes"/>
+    <!-- The publisher theme (build/theme/README.md, section 4): the stylesheet, its fonts and
+         licences copied beside it under theme/, and the same fonts for the PDF. -->
+    <param name="args.css" value="ufti.css"/>
+    <param name="args.cssroot" path="../theme"/>
+    <param name="args.copycss" value="yes"/>
+    <param name="args.csspath" value="theme"/>
+    <param name="govuk.css.assets" path="../theme/assets"/>
+    <param name="govuk.pdf.fonts" path="../theme/assets/fonts"/>
+  </publication>
+</project>

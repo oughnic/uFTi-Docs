@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!-- Shared keys: the product name and the words on screen (authoring standards, section 6). -->
+<map id="product-keys" xml:lang="en-GB">
+  <keydef keys="product-name">
+    <topicmeta>
+      <keywords><keyword translate="no">uFTi</keyword></keywords>
+    </topicmeta>
+  </keydef>
+  <keydef keys="ui-add-person">
+    <topicmeta>
+      <keywords><keyword>Add person</keyword></keywords>
+    </topicmeta>
+  </keydef>
+</map>
