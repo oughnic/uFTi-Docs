@@ -276,6 +276,12 @@ if ((Get-Prop $theme 'name') -ne 'oxford-slate') { Fail "theme is '$(Get-Prop $t
 if ((Get-Prop $theme 'variant') -ne 'light') { Fail "theme variant is '$(Get-Prop $theme 'variant')': pictures are captured in the light variant (DEC-024)" }
 if ((Get-Prop $manifest 'locale') -ne 'en-GB') { Fail "locale is '$(Get-Prop $manifest 'locale')': pictures are captured in en-GB" }
 if ((Get-Prop (Get-Prop $manifest 'dataset') 'name') -ne 'bronte') { Fail "dataset is '$(Get-Prop (Get-Prop $manifest 'dataset') 'name')': pictures show the Brontë dataset only (DEC-025)" }
+$deviceInfo = Get-Prop $manifest 'device'
+if ($deviceInfo) {
+    # a physical phone must not leave its serial number (or any other identifier) in this repository
+    foreach ($pr in $deviceInfo.PSObject.Properties) { if ($pr.Name -match '(?i)serial|imei|udid|android.?id|adb') { Fail "the manifest's device holds '$($pr.Name)': take identifiers out of the manifest before importing" } }
+    if ((Get-Prop $deviceInfo 'kind') -notin 'emulator', 'simulator', 'physical', 'virtual machine', 'clean profile') { Fail "device.kind is '$(Get-Prop $deviceInfo 'kind')': one of emulator, simulator, physical, virtual machine, clean profile" }
+}
 $appVersion = Get-Prop (Get-Prop $manifest 'app') 'version'
 if (-not $appVersion) { Fail 'the manifest has no app.version' }
 $images = @(Get-Prop $manifest 'images')

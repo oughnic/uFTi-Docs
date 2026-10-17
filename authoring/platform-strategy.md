@@ -25,6 +25,14 @@ uFTi is one .NET MAUI application. Three platforms are supported (DEC-019): **An
 | `iPhone` | `iphone` | uFTi user manual: iPhone | iOS, phone | None | 2 |
 | `iPad` | `ipad` | uFTi user manual: iPad | iOS, tablet | None | 2 |
 
+**Reference devices.** The device or machine each manual's pictures are captured on. The key map records it (section 4).
+
+| Manual | Reference device | Notes |
+|---|---|---|
+| Android phone | Samsung Galaxy A41, model SM-A415F, Android 12, 1080 by 2400 pixels at 420 dpi, portrait. A physical phone (DEC-088). | Captured in the app, so the picture has no status bar, notification or other app. The serial number is never recorded here. |
+| Windows | A clean Windows profile or virtual machine at a fixed window size, landscape (DEC-023). | A generic user name, so no personal path or name appears. |
+| Android tablet, iPhone, iPad | An emulator or simulator, pinned when the manual joins (DEC-023). | Not chosen yet. |
+
 Notes:
 
 - **The supported platforms are decided** (DEC-019). Other MAUI heads are not supported and are not documented. The existing WPF key map is not imported.
@@ -114,7 +122,7 @@ This generalises the convention already used in the existing key maps. How scree
 - **Key names** are `img-<area>-<what>`: lower case, hyphenated, and identical for the same screen on every device.
 - **File names are stable** when a screenshot is re-captured, so keys never change.
 - **Alternative text** says what the picture shows and why it matters. It does not start "Screenshot of". One sentence.
-- **Each key map records** the reference device or machine, its operating system version, the app version and the dataset, in `data` elements. Use an emulator or simulator of the idiom: a phone and a tablet for Android, an iPhone and an iPad for iOS (DEC-023).
+- **Each key map records** the reference device or machine, its operating system version, the app version and the dataset, in `data` elements. Use an emulator or simulator of the idiom: a tablet for Android, an iPhone and an iPad for iOS (DEC-023). The Android phone is the exception: its reference device is a physical phone (DEC-088).
 - **Key maps carry `@platform`,** so a build for another manual excludes them.
 - **The Brontë dataset only.** See the [dataset strategy](dataset-strategy.md) and the [disclosure boundary](authoring-plan.md#74-disclosure-boundary-and-privacy).
 - **One theme.** Every screenshot is captured in the app's Oxford and slate theme, light variant, so the pictures match the site and PDF (DEC-024).

@@ -2,7 +2,7 @@
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
 <task id="get-ufti" xml:lang="en-GB">
   <title>Get uFTi</title>
-  <shortdesc>Open uFTi for the first time and see the sample workspace.</shortdesc>
+  <shortdesc>Download uFTi, install it and open it for the first time.</shortdesc>
   <prolog>
     <critdates>
       <created date="2026-10-17"/>
@@ -12,6 +12,7 @@
       <category>Get started</category>
       <keywords>
         <keyword>install</keyword>
+        <keyword>download</keyword>
       </keywords>
     </metadata>
     <resourceid appname="ufti" appid="workspaces.list"/>
@@ -22,7 +23,13 @@
     </context>
     <steps>
       <step>
-        <cmd>Open <keyword keyref="product-name"/>.</cmd>
+        <cmd>Download the installer from the Get <keyword keyref="product-name"/> page on the <keyword keyref="product-name"/> website.</cmd>
+      </step>
+      <step>
+        <cmd>Run the installer.</cmd>
+      </step>
+      <step>
+        <cmd>Open <keyword keyref="product-name"/> from the Start menu.</cmd>
         <stepresult>
           <p>The <uicontrol keyref="ui-workspaces"/> screen opens.</p>
         </stepresult>
