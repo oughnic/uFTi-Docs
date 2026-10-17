@@ -175,7 +175,9 @@ Gate 'metadata' {
 }
 
 Gate 'a11y' {
-    $r = Invoke-Node 'run.mjs' @($dir)
+    # the plugin's runner's libraries, through our wrapper, which knows the documented exceptions
+    foreach ($f in 'a11y.mjs', 'a11y-exceptions.json') { Copy-Item -LiteralPath (Join-Path $PSScriptRoot $f) -Destination (Join-Path $P.A11y $f) -Force -ErrorAction SilentlyContinue }
+    $r = Invoke-Node 'a11y.mjs' @($dir)
     if ($null -eq $r) { return $null }
     Save-Report 'axe.txt' $r.Output
     $r.ExitCode -eq 0
@@ -204,9 +206,12 @@ Gate 'pdf-fonts' {
     if ($pdfFiles.Count -eq 0) { throw 'no PDF in the output' }
     $lib = Join-Path $P.DesignSystemPdfHome 'lib'
     if (-not (Test-Path -LiteralPath $lib)) { throw "DesignSystemPDF is not installed (its PDFBox is used to read the PDF): run bootstrap.ps1 -Only designsystempdf" }
+    # the class path spelt out: pwsh on Linux expands a wildcard argument into several
+    $cp = (Get-ChildItem -LiteralPath $lib -Filter '*.jar' | ForEach-Object { $_.FullName }) -join [System.IO.Path]::PathSeparator
     $ok = $true
     foreach ($pdf in $pdfFiles) {
-        $r = Invoke-UftiProcess -FilePath 'java' -ArgumentList @('-cp', (Join-Path $lib '*'), (Join-Path $PSScriptRoot 'PdfReport.java'), $pdf.FullName, '--require-font', 'SourceSerif4-Semibold', '--require-font', 'AtkinsonHyperlegibleNext-Regular') -WorkingDirectory $root
+        # the 110 mm cap is the theme's own print rule for figures (build/theme/README.md, section 3)
+        $r = Invoke-UftiProcess -FilePath 'java' -ArgumentList @('-cp', $cp, (Join-Path $PSScriptRoot 'PdfReport.java'), $pdf.FullName, '--require-font', 'SourceSerif4-Semibold', '--require-font', 'AtkinsonHyperlegibleNext-Regular', '--max-image-height-mm', '110') -WorkingDirectory $root
         Save-Report "pdf-report-$($pdf.BaseName).txt" $r.Output
         if ($r.ExitCode -ne 0) { $ok = $false }
     }

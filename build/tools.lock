@@ -157,12 +157,19 @@ upstream-check = gitleaks_8.30.1_checksums.txt in the release
 
 [plugin-tools]
 # The plugin repository's checkers (build and quality, section 1), fetched file by file at the
-# plugin's release tag and verified by checksum: internal links, page metadata, page weight, and
-# the axe-core runner with its exact dependency versions (Playwright 1.64.0, axe-core 4.13.0).
+# plugin's release tag and verified by checksum: internal links, page metadata (with the plugin's
+# own metadata tables, which the checker reads from beside itself), page weight, and the axe-core
+# runner's dependency versions (Playwright 1.64.0, axe-core 4.13.0), which build/scripts/a11y.mjs
+# runs with the documented exceptions.
 tag = v1.3.0
 base = https://raw.githubusercontent.com/iStandUK/govuk-dita-plugin/v1.3.0/
 file.tools/check_links.py = 57bec8940e39c9f1ce487dc96b677bc13e2658d53ca615ea19f34f730f624c2e
 file.tools/check_metadata.py = c207fd6caa65d57487a59b65efc6a1ff6c749a7afcfd068bccee443958e3e1a0
+file.org.istanduk.gov-uk/resource/metadata/schemes.xml = b937643e75f972d9bc99c2781976600636145bcc3fcb91a0385edf4b510c4984
+file.org.istanduk.gov-uk/resource/metadata/links.xml = a47bfde11f682f17004f06a57d59c854d56a345309356df8e6d667075bfb0c0d
+file.org.istanduk.gov-uk/resource/metadata/opengraph.xml = 33f3e7127308a59babb6bc2be97459c55ace3d0f2b5aae7481c5b1cd28a982a3
+file.org.istanduk.gov-uk/resource/metadata/dublincore.xml = 323ee00313dacb07937d9f7474eb91c2a8fda77fc863926594bcaf80bb32839d
+file.org.istanduk.gov-uk/resource/metadata/vocabularies.xml = e780aca033545f25acef2aa67aef62ec4496629b160241c6604d2b12211b8af1
 file.tools/page_weight.py = 83f536910af9bfc5a163056cf341a8656d9530e3d5f79984e5633201d3888ead
 file.tools/a11y/run.mjs = f10b75991b309e8120e6429de7ffbb0ef79215d3637c622681ce995c8c9af3d3
 file.tools/a11y/package.json = 5f0c09548dc7dbcce0a9da1e0c113e5f6fb1c532c6e54f7e5084a05235f130ae

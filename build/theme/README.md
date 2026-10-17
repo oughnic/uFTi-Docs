@@ -177,6 +177,7 @@ A page loads only the faces it uses. A typical page fetches about 400 KB of font
 | Fonts in the PDF | Every font embedded: `AtkinsonHyperlegibleNext-Regular`, `AtkinsonHyperlegibleNext-Bold`, `SourceSerif4-Semibold` and, for code, the generator's `NotoSansMono-Regular`. Headings use the Semibold face. No Noto Sans for text. |
 | Figures in the PDF | The 110 mm cap holds: the phone picture is drawn at 49 by 110 mm, the tablet picture at 69 by 110 mm, the Windows picture at 174 by 98 mm, each on an A4 page. |
 | PDF/UA | PDF/UA-1 passes in veraPDF 1.30.3 for all three PDFs, with no `DSPDF009W`. PDF/UA-2 fails, as advisory. |
+| axe-core (WCAG 2.2 AA) | Two findings on the plugin's output, neither in the theme's colours or faces: related links set too close to touch (`target-size`), which the stylesheet now fixes with a 24 px box per link; and a clickable diagram's links nested in an element the plugin marks `role="img"` (`nested-interactive`), accepted as a documented exception until the plugin changes (DEC-054). |
 
 **Not yet verified**
 
