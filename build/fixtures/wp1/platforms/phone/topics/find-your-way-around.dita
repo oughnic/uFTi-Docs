@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<!-- An idiom-specific topic: it is in the phone manuals only (platform="Phone" on its topicref). It
+     carries no "on a phone" label, because a phone reader already knows their device (DEC-032). -->
+<concept id="find-your-way-around" xml:lang="en-GB">
+  <title>Find your way around</title>
+  <shortdesc>The tabs at the bottom of the screen take you to people, families and sources.</shortdesc>
+  <prolog>
+    <metadata>
+      <category>Get started</category>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p>The screen is small, so the main parts of <keyword keyref="product-name"/> sit behind tabs at the bottom. Select a tab to open that part. The tab you are in is marked.</p>
+  </conbody>
+</concept>

@@ -1,0 +1,7 @@
+# Authoring standards, section 2: no positional references. A reader may arrive from search.
+extends: existence
+message: "'%s' is a positional reference. Link to the topic instead (authoring standards, section 2)."
+level: error
+ignorecase: true
+raw:
+  - '\b(see|shown|described|listed|mentioned|given) (above|below)\b|\b(previous|next|following|earlier|later) (section|chapter|page|topic)\b|\bas (described|mentioned|explained|noted) (earlier|before|previously|above|below)\b'

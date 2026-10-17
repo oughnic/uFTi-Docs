@@ -1,0 +1,220 @@
+# The quality gates (build and quality, sections 4 and 5): lint, a build per manual, the checks
+# on each output, the stock-html5 smoke build (DEC-042), and the Windows PowerShell path.
+# Third-party actions are pinned to full commit SHAs. Permissions are read-only.
+name: CI
+
+on:
+  push:
+    branches: [dev, main, 'release/**', 'hotfix/**']
+  pull_request:
+  schedule:
+    # Weekly, against the pinned versions: catches drift in what we fetch upstream.
+    - cron: '17 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+env:
+  JAVA_DISTRIBUTION: temurin
+  JAVA_VERSION: '21'
+
+jobs:
+  lint:
+    name: lint
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0 # the secret scanner reads the whole history
+      - name: Java
+        uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6.1.0
+        with:
+          distribution: ${{ env.JAVA_DISTRIBUTION }}
+          java-version: ${{ env.JAVA_VERSION }}
+      - name: Pinned tools (cached by the lock file)
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .tools
+          key: tools-source-${{ runner.os }}-${{ hashFiles('build/tools.lock') }}
+      - name: Bootstrap the toolkit, Vale and gitleaks
+        run: build/scripts/bootstrap.sh --only dita-ot,vale,gitleaks
+      - name: Source gates (theme, structure lint, prose and reading level, secrets)
+        run: pwsh -NoProfile -File build/scripts/check-source.ps1
+      - name: Applicability matrix
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: applicability-matrix
+          path: out/applicability-matrix.csv
+          if-no-files-found: ignore
+
+  build:
+    name: build (${{ matrix.slug }})
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        slug: [android-phone, android-tablet, windows]
+    steps:
+      - name: Check out
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Java
+        uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6.1.0
+        with:
+          distribution: ${{ env.JAVA_DISTRIBUTION }}
+          java-version: ${{ env.JAVA_VERSION }}
+      - name: Pinned tools (cached by the lock file)
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .tools
+          key: tools-build-${{ runner.os }}-${{ hashFiles('build/tools.lock') }}
+      - name: Bootstrap the toolkit, the plugin, DesignSystemPDF and Pagefind
+        run: build/scripts/bootstrap.sh --build-only
+      - name: Build the website and the PDF
+        run: build/scripts/build.sh --project fixture-${{ matrix.slug }}
+      - name: Build again
+        run: build/scripts/build.sh --project fixture-${{ matrix.slug }} --output out-again
+      - name: The same input gives the same output
+        # Pagefind's index is left out: its bytes differ between runs on identical pages (DEC-053)
+        run: diff -r -x pagefind out/fixture-${{ matrix.slug }} out-again/fixture-${{ matrix.slug }} && echo "byte for byte the same, the search index aside"
+      - name: Keep the output
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: site-${{ matrix.slug }}
+          path: |
+            out/fixture-${{ matrix.slug }}
+            out/logs
+          if-no-files-found: error
+
+  check:
+    name: check (${{ matrix.slug }})
+    needs: build
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        slug: [android-phone, android-tablet, windows]
+    steps:
+      - name: Check out
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Java
+        uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6.1.0
+        with:
+          distribution: ${{ env.JAVA_DISTRIBUTION }}
+          java-version: ${{ env.JAVA_VERSION }}
+      - name: Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '22'
+      - name: Pinned tools (cached by the lock file)
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .tools
+          key: tools-check-${{ runner.os }}-${{ hashFiles('build/tools.lock') }}
+      - name: Playwright's browser (cached by the lock file)
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('build/tools.lock') }}
+      - name: Bootstrap the checkers
+        run: build/scripts/bootstrap.sh --only designsystempdf,verapdf,vnu,plugin-tools
+      - name: Install the accessibility runner
+        working-directory: .tools/plugin-tools/tools/a11y
+        run: |
+          npm ci --no-audit --no-fund
+          npx playwright install --with-deps chromium
+          touch .chromium-installed
+      - name: The built output
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: site-${{ matrix.slug }}
+          path: out
+      - name: Output gates
+        run: pwsh -NoProfile -File build/scripts/check-output.ps1 -Deliverable fixture-${{ matrix.slug }}
+      - name: Reports
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: reports-${{ matrix.slug }}
+          path: out/reports
+          if-no-files-found: ignore
+
+  smoke:
+    name: smoke (stock html5, DEC-042)
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Java
+        uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6.1.0
+        with:
+          distribution: ${{ env.JAVA_DISTRIBUTION }}
+          java-version: ${{ env.JAVA_VERSION }}
+      - name: Pinned tools (cached by the lock file)
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .tools
+          key: tools-source-${{ runner.os }}-${{ hashFiles('build/tools.lock') }}
+      - name: Bootstrap the toolkit alone
+        run: build/scripts/bootstrap.sh --only dita-ot
+      - name: Build with the toolkit's stock html5 transformation
+        run: build/scripts/build.sh --project fixture-smoke --smoke
+      - name: Keep the log
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: smoke-log
+          path: out/logs
+          if-no-files-found: ignore
+
+  windows:
+    name: build on Windows (PowerShell)
+    runs-on: windows-2025
+    env:
+      # a short path inside the workspace, so the cache step below finds it (the scripts default to
+      # %LOCALAPPDATA%\ufti-tools on Windows, because a deep checkout overruns dita.bat's command line)
+      UFTI_TOOLS: ${{ github.workspace }}\.tools
+    steps:
+      - name: Check out
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Java
+        uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6.1.0
+        with:
+          distribution: ${{ env.JAVA_DISTRIBUTION }}
+          java-version: ${{ env.JAVA_VERSION }}
+      - name: Pinned tools (cached by the lock file)
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .tools
+          key: tools-build-${{ runner.os }}-${{ hashFiles('build/tools.lock') }}
+      - name: Bootstrap with PowerShell
+        shell: pwsh
+        run: build/scripts/bootstrap.ps1 -BuildOnly
+      - name: Build with dita.bat
+        shell: pwsh
+        run: build/scripts/build.ps1 -Project fixture-android-phone
+
+  ci:
+    # One check for branch protection to require.
+    name: ci
+    if: always()
+    needs: [lint, build, check, smoke, windows]
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Every job passed
+        if: contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled')
+        run: |
+          echo "a job failed or was cancelled: ${{ toJSON(needs) }}"
+          exit 1
+      - name: Green
+        run: echo "every job passed"

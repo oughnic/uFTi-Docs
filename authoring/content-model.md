@@ -71,6 +71,8 @@ Candidate journeys, to be confirmed in WP0:
 
 What the journeys decide: the Quick Start's "what next" links, the order of chapters, the task finder, the in-app help map, and which topics are written first.
 
+The journeys are drafted in [`journeys/`](journeys/README.md), with the Quick Start outlines for the wave-1 devices, the "Five things to know" outline, the task finder, the help-target list and the plan for the novice sessions (WP0, [issue #6](https://github.com/oughnic/uFTi-Docs/issues/6)).
+
 ## 5. In-app help
 
 The app opens the right page for the screen the person is on (DEC-028). That reaches the people who will never look for a manual.

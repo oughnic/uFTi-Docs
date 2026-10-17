@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!-- The shared chapter map: the same navigation for every manual. A topic that exists for one
+     idiom only carries @platform on its topicref, here and in the relationship table. -->
+<map id="get-started-structure" xml:lang="en-GB">
+  <topicref href="../../topics/get-started/workspaces.dita" keys="workspaces"/>
+  <topicref href="../../topics/get-started/your-first-steps.dita" keys="your-first-steps"/>
+  <topicref href="../../topics/get-started/add-a-person.dita" keys="add-a-person"/>
+  <topicref href="../../platforms/phone/topics/find-your-way-around.dita" keys="find-your-way-around" platform="Phone"/>
+  <reltable>
+    <relheader>
+      <relcolspec type="concept"/>
+      <relcolspec type="task"/>
+    </relheader>
+    <relrow>
+      <relcell>
+        <topicref keyref="workspaces"/>
+        <topicref keyref="find-your-way-around" platform="Phone"/>
+      </relcell>
+      <relcell>
+        <topicref keyref="add-a-person"/>
+      </relcell>
+    </relrow>
+  </reltable>
+</map>

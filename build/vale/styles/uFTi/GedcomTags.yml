@@ -1,0 +1,7 @@
+# DEC-030: never show GEDCOM tags, structures or file contents.
+extends: existence
+message: "'%s' looks like a GEDCOM tag or structure. Describe people, families, facts and sources in human terms (DEC-030)."
+level: error
+ignorecase: false
+raw:
+  - '\b(INDI|FAM|HEAD|TRLR|SUBM|REPO|SOUR|OBJE|SNOTE|BIRT|DEAT|BURI|MARR|CHIL|HUSB|WIFE|FAMC|FAMS|GEDC|PLAC|EVEN|RESI|BAPM|OCCU)\b|@[A-Za-z0-9_]+@|(^|\s)[0-9] (HEAD|INDI|FAM|SOUR|REPO|OBJE|NOTE|SUBM|TRLR)\b'

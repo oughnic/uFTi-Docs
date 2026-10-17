@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!-- A shared task with one inline variant (@platform on a phrase, idiom tokens only) and a picture
+     referenced by key, whose alternative text comes from the key's link text (DEC-011). -->
+<task id="add-a-person" xml:lang="en-GB">
+  <title>Add a person</title>
+  <shortdesc>Add Patrick Brontë as the first person in your workspace.</shortdesc>
+  <prolog>
+    <metadata>
+      <category>How-to</category>
+    </metadata>
+    <resourceid appname="ufti" appid="people.add"/>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p>You have opened a workspace.</p>
+    </prereq>
+    <context>
+      <p>Every family tree starts with one person. You add the rest from there.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Open the <uicontrol>People</uicontrol> list.</cmd>
+      </step>
+      <step>
+        <cmd>Select <uicontrol keyref="ui-add-person"/>.</cmd>
+        <info>
+          <p><ph platform="Touch">The button sits at the bottom of the list.</ph><ph platform="Pointer">The button sits in the toolbar. You can also press the Insert key.</ph></p>
+        </info>
+      </step>
+      <step>
+        <cmd>Enter the name <userinput>Patrick Brontë</userinput>.</cmd>
+      </step>
+      <step>
+        <cmd>Select <uicontrol>Save</uicontrol>.</cmd>
+        <stepresult>
+          <p>The person page opens.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>Patrick is now in your workspace.</p>
+      <fig>
+        <title>Patrick's person page after you save</title>
+        <image keyref="img-person-view"/>
+      </fig>
+    </result>
+    <postreq>
+      <p>Next, add a source that says where his name came from.</p>
+    </postreq>
+  </taskbody>
+</task>

@@ -20,7 +20,7 @@ The workspace name "Brontë family of Haworth" and the author as submitter may a
 
 ## Not yet allowed
 
-The extension people in [people.md](people.md#extensions-not-in-the-core-dec-046) (Elizabeth Branwell, Tabitha Aykroyd, Martha Brown, the two sets of parents) are not allowed until they are added to the core with their own evidence and privacy rows.
+The extension people in [people.md](people.md#extensions-not-in-the-core-dec-061) (Elizabeth Branwell, Tabitha Aykroyd, Martha Brown, the two sets of parents) are not allowed until they are added to the core with their own evidence and privacy rows.
 
 People from the app's other sample workspaces are allowed only when WP4 approves them by name from a named sample workspace, as the screenshot strategy provides.
 

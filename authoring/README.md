@@ -15,6 +15,7 @@ Planning and standards for the uFTi user documentation. These files guide author
 | [build-and-quality.md](build-and-quality.md) | Which tools build the outputs, and which checks must pass before anything is published? |
 | [decision-log.md](decision-log.md) | What has been decided, what is proposed, and what still needs an answer? |
 | [review-draft-0.3.md](review-draft-0.3.md) | What was wrong with Draft 0.3, and what changed because of it? |
+| [journeys/](journeys/README.md) | What are people trying to do, and what does the ten-minute Quick Start look like? WP0's journeys, Quick Start outlines, task finder, help-target list and session plan. |
 
 **Status:** Draft 0.4, 16 October 2026. Nothing here is final until its entry in the decision log is marked *Accepted*.
 
@@ -27,5 +28,5 @@ Planning and standards for the uFTi user documentation. These files guide author
 ## Keeping these documents current
 
 - When a decision is made or changed, update the decision log in the same change.
-- Facts about tools (versions, parameters, known limits) were checked against the upstream projects on 15 October 2026. Check them again at the start of WP1.
+- Facts about tools (versions, parameters, known limits) were checked against the upstream projects on 15 October 2026, and again on 17 October 2026 at the start of WP1, when they were pinned in `build/tools.lock`. Check them monthly.
 - Section numbers are linked from elsewhere in the repository. If you renumber a section, search for links to it.
