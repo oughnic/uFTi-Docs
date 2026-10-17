@@ -15,7 +15,7 @@
     "kind": "desktop window (WinUI, unpackaged development build)",
     "os": "windows 10.0.26200",
     "width": 1267,
-    "height": 793,
+    "height": 761,
     "orientation": "landscape"
   },
   "captured": "2026-10-17",
@@ -23,7 +23,7 @@
     {
       "key": "img-citation-add",
       "file": "citation-add.png",
-      "sha256": "a51cae89b10d470bc23a88650c27e1f206a57292d00e2cce1d3103338a4b52b0",
+      "sha256": "20e82435693fbb47f117f57e53e69659f7c38648b39932d1e426e0110af60c12",
       "width": 1267,
       "height": 761,
       "stage": 6,
@@ -43,19 +43,13 @@
       "workspace": "Brontë family of Haworth",
       "focus": "Patrick Brontë",
       "capture": "in-app",
-      "crop": {
-        "x": 0,
-        "y": 32,
-        "width": 1267,
-        "height": 761,
-        "reason": "Removes the black band the in-app capture leaves where the title bar is."
-      },
+      "crop": null,
       "verifiedAppVersion": "0.1.0.1 (1)"
     },
     {
       "key": "img-person-view",
       "file": "person-view.png",
-      "sha256": "6d9944d024f51a542429fcb6c2bd52a846ae2e64763704dc458971b0efa44672",
+      "sha256": "6bcaea2b9c9a781d1b592a9021e594622fc19918ad4b0199654bb2a82dccc41d",
       "width": 1267,
       "height": 761,
       "stage": 6,
@@ -74,19 +68,19 @@
     {
       "key": "img-start-first-run",
       "file": "start-first-run.png",
-      "sha256": "d83c2417a53ac4a570b9130d17ce7e3348ac522b25561735bff1e654af9bf1d3",
+      "sha256": "b4bc977b095503bccb9714c307734221e554f04267ca7249d3d112fd890d5ba5",
       "width": 505,
-      "height": 115,
+      "height": 95,
       "stage": 0,
       "workspace": "none",
       "focus": "none",
       "capture": "in-app",
       "crop": {
         "x": 195,
-        "y": 125,
+        "y": 105,
         "width": 505,
-        "height": 115,
-        "reason": "Keeps the heading and the two buttons. The capture also shows the app's own sample workspaces, a workspace name and file paths: none of them is the Brontë dataset, and a path would say where files are kept (DEC-040)."
+        "height": 95,
+        "reason": "Keeps the heading and the two buttons. The first launch shows the app's own sample workspaces with file paths, and a screen with the samples removed shows a message about opening a family tree file; neither is the Brontë dataset or the route the page teaches (DEC-040)."
       },
       "verifiedAppVersion": "0.1.0.1 (1)"
     }

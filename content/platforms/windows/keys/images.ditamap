@@ -12,7 +12,7 @@
       <vrmlist><vrm version="0.1.0.1 (1)"/></vrmlist>
       <platform>Windows</platform>
     </prodinfo>
-    <data name="reference-device" value="desktop window, Windows 11 Pro 10.0.26200 on ARM64, display scaling 200%, 1267 x 793, landscape"/>
+    <data name="reference-device" value="desktop window, Windows 11 Pro 10.0.26200 on ARM64, display scaling 200%, 1267 x 761, landscape"/>
     <data name="dataset" value="bronte"/>
   </topicmeta>
   <keydef keys="img-start-first-run" href="../images/start-first-run.png" format="png" scope="local" platform="WindowsWinUI">
