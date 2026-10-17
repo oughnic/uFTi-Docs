@@ -74,7 +74,7 @@ Each row in [evidence-register.md](evidence-register.md) has:
 
 ## How the build script reads this
 
-The reference workspace is built from this specification through the app's own tools (DEC-039), stage by stage, by a script in the application repository. The files are Markdown tables with one record per row and a stable id in the first column (DEC-045), so a script can parse them without a second format. The build order is the stage column: a record enters the workspace at the stage its row names, and the saved state at the end of each stage includes every record of that stage and earlier. The replayed workspace from the capture scripts must match it at the end of each stage.
+The reference workspace is built from this specification through the app's own tools (DEC-039), stage by stage, by a script in the application repository. The files are Markdown tables with one record per row and a stable id in the first column (DEC-060), so a script can parse them without a second format. The build order is the stage column: a record enters the workspace at the stage its row names, and the saved state at the end of each stage includes every record of that stage and earlier. The replayed workspace from the capture scripts must match it at the end of each stage.
 
 ## Licensing
 

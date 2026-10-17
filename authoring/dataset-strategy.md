@@ -32,7 +32,7 @@ It is used for:
 ## 3. Scope
 
 - **Core, about ten people.** Patrick Brontë. His wife Maria, born Branwell. Their six children: Maria, Elizabeth, Charlotte, Branwell, Emily and Anne. Arthur Bell Nicholls, Charlotte's husband. Two families: Patrick and Maria with their children, and Charlotte and Arthur.
-- **Extensions, only if a topic needs them (Q21, answered by DEC-046).** Maria's sister Elizabeth Branwell, who joined the household. Patrick's and Maria's parents, for a three-generation view. Household servants named in a census return. They are listed in the specification with the evidence already found, and enter the core only when a topic needs them.
+- **Extensions, only if a topic needs them (Q21, answered by DEC-061).** Maria's sister Elizabeth Branwell, who joined the household. Patrick's and Maria's parents, for a three-generation view. Household servants named in a census return. They are listed in the specification with the evidence already found, and enter the core only when a topic needs them.
 - **Real size (WP4b).** 9 people and 5 extension candidates, 2 families, 85 event rows, 17 notes, 10 repositories, 31 sources consulted, 4 media placeholders, 5 research threads, 12 smaller discrepancies and 6 negative searches. The specification is in [`content/sample-data/bronte/`](../content/sample-data/bronte/README.md).
 - **Larger samples.** A few topics need more than a small tree, such as a five-generation view or search across thousands of people. For those, WP4 decides between extending this dataset upwards and using one of the app's larger sample workspaces. Either must pass the same privacy rules ([section 9](#9-privacy-and-care)).
 - **Out of scope.** Settling debates that scholars have not settled: where a debate is useful for teaching, it is recorded as an open thread. Speculation about private lives. Living relatives of the family.
@@ -96,9 +96,9 @@ The dataset, the topics and the screenshots come from the same run, so they cann
 
 | Piece | Where |
 |---|---|
-| The specification and the evidence register, as plain text | This repository, in [`content/sample-data/bronte/`](../content/sample-data/bronte/README.md): Markdown tables, one record per row with a stable id, and prose in sections keyed by id (DEC-045). |
+| The specification and the evidence register, as plain text | This repository, in [`content/sample-data/bronte/`](../content/sample-data/bronte/README.md): Markdown tables, one record per row with a stable id, and prose in sections keyed by id (DEC-060). |
 | The replay scripts and the MCP build script | The application repository (DEC-022, DEC-039) |
-| The saved stage states and the finished workspace, as packaged exports | This repository, under `content/sample-data/bronte/stages/`, with a narrow exception to the rule that ignores `*.ged`, `*.gdz` and `*.gedzip` for that path only, added when WP7 produces the first state (DEC-048, proposed; answers Q18). |
+| The saved stage states and the finished workspace, as packaged exports | This repository, under `content/sample-data/bronte/stages/`, with a narrow exception to the rule that ignores `*.ged`, `*.gdz` and `*.gedzip` for that path only, added when WP7 produces the first state (DEC-063, proposed; answers Q18). |
 | A built-in sample in the app | The application repository. An app decision (Q19), and one the Quick Start depends on. |
 
 ## 8. Evidence, sources and licensing
@@ -106,7 +106,7 @@ The dataset, the topics and the screenshots come from the same run, so they cann
 This is a teaching dataset, so it has to be honest about what is known and how. It also has to model the practice the good practice guide teaches, which is managing evidence, not collecting facts.
 
 1. **Nothing is invented.** Uncertain is not invented: an uncertain claim goes in with its evidence and its doubt. A claim with no evidence at all stays out.
-2. **The evidence register.** For each claim, each piece of evidence: the source, how it was consulted (the original, an image, a transcription, an index, a published work), its reference, what it says, its quality (original, derivative or authored; primary or secondary information), who checked it and when. And the claim's status: confirmed by independent evidence; sources disagree, thread open; sources disagree, concluded, with the reasoning; single source; searched and not found. WP4b created it as [`evidence-register.md`](../content/sample-data/bronte/evidence-register.md) (DEC-047): 101 claims, every row marked "Draft" until the second reader (Q20) has checked it. Nothing enters the dataset without its evidence. Two records that come from one informant count as one piece of evidence. An uncertain date is a range with its thread, never a guess.
+2. **The evidence register.** For each claim, each piece of evidence: the source, how it was consulted (the original, an image, a transcription, an index, a published work), its reference, what it says, its quality (original, derivative or authored; primary or secondary information), who checked it and when. And the claim's status: confirmed by independent evidence; sources disagree, thread open; sources disagree, concluded, with the reasoning; single source; searched and not found. WP4b created it as [`evidence-register.md`](../content/sample-data/bronte/evidence-register.md) (DEC-062): 101 claims, every row marked "Draft" until the second reader (Q20) has checked it. Nothing enters the dataset without its evidence. Two records that come from one informant count as one piece of evidence. An uncertain date is a range with its thread, never a guess.
 3. **Contradictions are data.** When sources disagree, record both, record the thread that weighs them, and never choose silently. A conclusion says which evidence it rests on and how confident we are. A thread can stay open.
 4. **Negative searches are recorded.** Looking and not finding is evidence about the search.
 5. **Cite what you used.** If we saw a transcription or an index rather than the original record, the citation says so and does not claim the original as seen.
@@ -177,8 +177,8 @@ WP16 gathers more candidates, checks them against the criteria, and records the 
 
 | Point | Where decided |
 |---|---|
-| Where do the saved states and finished workspace live, and may readers download them? | Q18; proposed answer DEC-048 |
+| Where do the saved states and finished workspace live, and may readers download them? | Q18; proposed answer DEC-063 |
 | Does the app bundle the finished workspace as a built-in sample? The Quick Start depends on it. | Q19 |
 | Who checks the evidence as a second reader, and which sources can they reach? | Q20. The second read of the WP4b register is pending; the items that most need it are listed in [teaching-moments.md](../content/sample-data/bronte/teaching-moments.md#what-could-not-be-verified) |
-| Do we extend the core with parents and servants? | Q21; proposed answer DEC-046: not in the core, listed as extension candidates |
+| Do we extend the core with parents and servants? | Q21; proposed answer DEC-061: not in the core, listed as extension candidates |
 | Which family for the Spanish edition, and who reviews it? | Q23, in WP16 |

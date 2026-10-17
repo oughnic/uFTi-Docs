@@ -40,7 +40,7 @@ These are the names the manual uses to show name fields and sound-alike search (
 
 Sex is recorded as the sources imply from relationship words (wife, daughter, son, husband). No source was needed beyond those already cited for each person.
 
-## Extensions, not in the core (DEC-046)
+## Extensions, not in the core (DEC-061)
 
 Listed so that WP8 can add them if the census household form or a three-generation view needs them. They are **not** on the [allow-list](allow-list.md) until they are added to the core with their own register rows.
 
