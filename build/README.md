@@ -8,7 +8,8 @@ build/
   ditaval/         one DITAVAL filter per manual, from the tokens-per-manual table
   projects/        DITA-OT project files: common.xml (the parameters every manual shares) and one
                    deliverable per manual; fixture*.xml build the WP1 fixture, fixture-smoke.xml the
-                   stock-html5 smoke build (DEC-042)
+                   stock-html5 smoke build (DEC-042); quick-start-windows.xml and manual-windows.xml build
+                   the first real content (WP7)
   scripts/         bootstrap, build, lint and check scripts (PowerShell everywhere; bash twins of
                    bootstrap and build for CI, Linux and macOS)
   theme/           the publisher stylesheet, its fonts and licences, and the theme checker
@@ -44,6 +45,7 @@ jwebserver -d (Resolve-Path out/fixture-android-phone) -p 8000
 |---|---|---|
 | `check-source.ps1` | The theme checker, the structure lint (`lint.ps1`), Vale (prose, British spelling and the reading-level targets of DEC-029) and gitleaks over the whole history | The toolkit (Vale converts DITA with it), Vale, gitleaks |
 | `check-output.ps1 -Deliverable <name>` | Over one built deliverable: build messages, HTML validity, one `h1` and one `main` per page, internal links, page metadata, axe-core at WCAG 2.2 AA, PDF/UA-1 with veraPDF (PDF/UA-2 advisory), fonts embedded and figures within the page and the theme's 110 mm cap (`PdfReport.java`), alternative text, the theme's stylesheet, fonts and licences in the output, the theme in a real browser (`theme-probe.mjs`), page weight, and determinism against a second build (`-CompareWith`; the search index is left out, because Pagefind's bytes differ between runs) | Java tools from the bootstrap; Python and Node for the plugin repository's checkers, or Docker for the pinned containers in `tools.lock`; `-AllowSkips` accepts a gate that cannot run |
+| `Import-Screenshots.ps1` | Not a gate: imports a capture folder into one manual's pictures, after checking the manifest, the keys, the alternative text and the privacy allow-list; strips, caps and compresses the PNG files (DEC-085). `-WhatIf` runs the checks only | PowerShell 7; Windows to resize |
 | `lint.ps1` | File names, identifiers, metadata, platform tokens, keys and images per manual, diagram links, disclosure patterns, orphans and the help-map inventory; writes `out/applicability-matrix.csv` | Nothing beyond PowerShell |
 
 The axe-core gate runs through `scripts/a11y.mjs`, which uses the plugin repository's pinned Playwright and axe-core and fails on every WCAG 2.2 AA violation except those in `scripts/a11y-exceptions.json`: each entry names the rule, the elements, the reason and the date (DEC-054). Keep that list short and remove an entry as soon as its cause is fixed upstream.

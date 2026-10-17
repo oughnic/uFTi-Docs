@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary Entry//EN" "glossentry.dtd">
+<glossentry id="export" xml:lang="en-GB">
+  <glossterm>export</glossterm>
+  <glossdef>Make a copy of your tree as a file. You can keep the file somewhere else.</glossdef>
+</glossentry>

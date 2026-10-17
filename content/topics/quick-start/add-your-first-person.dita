@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="add-your-first-person" xml:lang="en-GB">
+  <title>Add your first person</title>
+  <shortdesc>Start your own workspace and add yourself, or someone you know well.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-17"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Get started</category>
+      <keywords>
+        <keyword>new person</keyword>
+        <keyword>start a tree</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="people.edit"/>
+  </prolog>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>Go back to <uicontrol keyref="ui-workspaces"/>. Choose <uicontrol keyref="ui-new-workspace"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Give it a name, such as <userinput>My family</userinput>.</cmd>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-add"/>, then <uicontrol keyref="ui-person"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Type a first name and a last name.</cmd>
+        <info>
+          <p>If you know the birth date, add it. If not, leave it blank.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-save"/>.</cmd>
+        <stepresult>
+          <p>The page for that person opens.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>That is your first person. Everything else in <keyword keyref="product-name"/> hangs off people like this one.</p>
+      <fig>
+        <image keyref="img-person-add"/>
+      </fig>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="say-where-you-found-it"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

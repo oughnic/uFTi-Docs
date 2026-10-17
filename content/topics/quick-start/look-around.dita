@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="look-around" xml:lang="en-GB">
+  <title>Look around</title>
+  <shortdesc>See what the main screens are for.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-17"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Get started</category>
+      <keywords>
+        <keyword>navigation</keyword>
+        <keyword>menu</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p>Open a workspace.</p>
+    </prereq>
+    <context>
+      <p>Every workspace has the same main screens. They are in the menu at the side.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Open <uicontrol keyref="ui-people"/>.</cmd>
+        <info>
+          <p>It lists everyone in the tree.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Open <uicontrol keyref="ui-families"/>.</cmd>
+        <info>
+          <p>It shows couples and their children.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Open <uicontrol keyref="ui-tree"/>.</cmd>
+        <info>
+          <p>It draws the family as a picture.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Open <uicontrol keyref="ui-sources"/>.</cmd>
+        <info>
+          <p>It lists where each fact came from.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-add"/>.</cmd>
+        <info>
+          <p>It adds a person, a family, a source and more.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-help"/>.</cmd>
+        <info>
+          <p>It opens the page about the screen you are on.</p>
+        </info>
+      </step>
+    </steps>
+    <result>
+      <p platform="Pointer">With a keyboard, <userinput>Tab</userinput> moves between controls. <userinput>Enter</userinput> chooses one.</p>
+      <fig>
+        <image keyref="img-nav-main"/>
+      </fig>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="explore-a-family"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="five-things-to-know" xml:lang="en-GB">
+  <title>Five things to know</title>
+  <shortdesc>The five ideas behind uFTi, in two minutes.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-17"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Concept</category>
+      <keywords>
+        <keyword>basics</keyword>
+        <keyword>ideas</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <section>
+      <title>A workspace is one family tree</title>
+      <p>You can have more than one. <keyword keyref="ui-workspace-bronte"/> is a sample workspace to practise in. Your own tree goes in a workspace you make.</p>
+    </section>
+    <section>
+      <title>People and families</title>
+      <p>Add a person for each relative. A family joins a couple and their children. Join people into families, and <keyword keyref="product-name"/> draws the tree for you.</p>
+    </section>
+    <section>
+      <title>Facts and sources</title>
+      <p>A fact is something you record, such as a birth with its date. A source is where you found it. It can be a certificate, a census page, or what someone told you. Add a source to each fact. Then you will always know why you believe it.</p>
+    </section>
+    <section>
+      <title>Saving and copies</title>
+      <p><keyword keyref="product-name"/> saves your work as you go. To keep it safe, make a copy. Export your tree as a file and keep it somewhere else. Do it again after a big session.</p>
+    </section>
+    <section>
+      <title>Getting help</title>
+      <p>Choose <uicontrol keyref="ui-help"/> on any screen to read about it. Practise in the sample workspace first.</p>
+    </section>
+  </conbody>
+</concept>

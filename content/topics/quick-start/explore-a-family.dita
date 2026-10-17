@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="explore-a-family" xml:lang="en-GB">
+  <title>Explore a family</title>
+  <shortdesc>Open the sample workspace and meet Charlotte Brontë, her father and her family.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-17"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Get started</category>
+      <keywords>
+        <keyword>sample</keyword>
+        <keyword>example tree</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="people.view"/>
+  </prolog>
+  <taskbody>
+    <context>
+      <p>The sample is there to practise in. Look around as much as you like.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>On <uicontrol keyref="ui-workspaces"/>, open <uicontrol keyref="ui-workspace-bronte"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Open <uicontrol keyref="ui-people"/>, then find Charlotte Brontë.</cmd>
+      </step>
+      <step>
+        <cmd>Open her page.</cmd>
+        <stepresult>
+          <p>You see her birth, her marriage and her death. Each <term keyref="term-fact">fact</term> shows where it was found.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose her father, Patrick.</cmd>
+        <stepresult>
+          <p>His page opens.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Open <uicontrol keyref="ui-tree"/>.</cmd>
+        <stepresult>
+          <p>You see Patrick, Maria and their six children.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <fig>
+        <image keyref="img-person-view"/>
+      </fig>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="add-your-first-person"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

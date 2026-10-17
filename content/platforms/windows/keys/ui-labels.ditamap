@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!-- The words on screen in the Windows app (authoring standards, section 6). Topics use
+     <uicontrol keyref="ui-..."/>, so a label is corrected here once. Each label is as it appears on
+     screen. They sit in this map, not in a shared one, because they were read from the Windows
+     app only; a label moves to content/keys/ when a second platform shows the same wording. -->
+<map id="windows-ui-labels" xml:lang="en-GB">
+  <keydef keys="ui-workspaces"><topicmeta><keywords><keyword>Workspaces</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-new-workspace"><topicmeta><keywords><keyword>New workspace</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-workspace-bronte"><topicmeta><keywords><keyword>Brontë family of Haworth</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-people"><topicmeta><keywords><keyword>People</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-families"><topicmeta><keywords><keyword>Families</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-tree"><topicmeta><keywords><keyword>Tree</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-sources"><topicmeta><keywords><keyword>Sources</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-add"><topicmeta><keywords><keyword>+</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-person"><topicmeta><keywords><keyword>Person</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-save"><topicmeta><keywords><keyword>Save</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-add-source"><topicmeta><keywords><keyword>Add source</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-new-source"><topicmeta><keywords><keyword>New source</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-export"><topicmeta><keywords><keyword>Export</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-back"><topicmeta><keywords><keyword>Back</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-help"><topicmeta><keywords><keyword>Help</keyword></keywords></topicmeta></keydef>
+</map>

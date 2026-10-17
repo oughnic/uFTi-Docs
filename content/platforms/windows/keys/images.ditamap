@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!-- The Windows manual's pictures (platform strategy, section 4). Key names are the same in every
+     manual, so one topic serves them all. A key's link text is the picture's alternative text
+     (DEC-011): one sentence about what the picture shows and why it matters. The importer
+     (build/scripts/Import-Screenshots.ps1) writes the files and keeps this map in step; it never
+     rewrites alternative text. -->
+<map id="windows-images" xml:lang="en-GB">
+  <topicmeta>
+    <prodinfo>
+      <prodname>uFTi</prodname>
+      <vrmlist><vrm version="0.0"/></vrmlist>
+      <platform>Windows</platform>
+    </prodinfo>
+    <data name="reference-device" value="set by the importer from the capture manifest"/>
+    <data name="dataset" value="bronte"/>
+  </topicmeta>
+  <keydef keys="img-start-first-run" href="../images/start-first-run.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The first screen of uFTi, with the list of workspaces and the sample workspace Brontë family of Haworth</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-nav-main" href="../images/nav-main.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The menu at the side of an open workspace, listing People, Families, Tree and Sources</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-person-view" href="../images/person-view.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The page for Charlotte Brontë, showing her birth, marriage and death, each with its source</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-person-add" href="../images/person-add.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The form for a new person, filled in with the name Patrick Brontë</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-citation-add" href="../images/citation-add.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>Adding a source to Charlotte Brontë's birth</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-workspace-export" href="../images/workspace-export.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The choices for exporting a workspace</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-tree-view" href="../images/tree-view.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The family tree around Patrick and Maria Brontë and their six children</linktext></topicmeta>
+  </keydef>
+</map>

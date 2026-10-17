@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!-- The Quick Start, seven pages in order, shared by every manual (content model, section 3). Pages
+     1 and 6 are for one platform each, so their topicrefs carry the platform token; the other five
+     are written for the idiom and are shared. Another platform adds its own pages 1 and 6 here.
+     Keys sit on the topicrefs and match the file names. -->
+<map id="quick-start-structure" xml:lang="en-GB">
+  <topicref href="../../platforms/windows/topics/get-ufti.dita" keys="get-ufti" platform="WindowsWinUI"/>
+  <topicref href="../../topics/quick-start/look-around.dita" keys="look-around"/>
+  <topicref href="../../topics/quick-start/explore-a-family.dita" keys="explore-a-family"/>
+  <topicref href="../../topics/quick-start/add-your-first-person.dita" keys="add-your-first-person"/>
+  <topicref href="../../topics/quick-start/say-where-you-found-it.dita" keys="say-where-you-found-it"/>
+  <topicref href="../../platforms/windows/topics/keep-it-safe.dita" keys="keep-it-safe" platform="WindowsWinUI"/>
+  <topicref href="../../topics/quick-start/what-next.dita" keys="what-next"/>
+</map>

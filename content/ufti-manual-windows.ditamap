@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
+<!-- The Windows manual (platform strategy, section 7): one bookmap at the root of the content
+     folder (DEC-045). It holds the Start here chapter so far; the chapters of the authoring plan
+     (section 3.4) join as they are written. The Quick Start is included by mapref href, and is
+     also its own publication in ufti-quick-start-windows.ditamap. -->
+<bookmap id="ufti-manual-windows" xml:lang="en-GB">
+  <booktitle>
+    <mainbooktitle>uFTi user manual: Windows</mainbooktitle>
+  </booktitle>
+  <bookmeta>
+    <publisherinformation>
+      <organization>Oughtibridge Ltd</organization>
+    </publisherinformation>
+    <bookrights>
+      <copyrfirst><year>2026</year></copyrfirst>
+      <bookowner><organization>Oughtibridge Ltd</organization></bookowner>
+    </bookrights>
+  </bookmeta>
+  <frontmatter>
+    <booklists>
+      <toc/>
+    </booklists>
+  </frontmatter>
+  <chapter href="topics/quick-start/quick-start.dita" keys="quick-start">
+    <mapref href="platforms/windows/keys/images.ditamap" platform="WindowsWinUI" processing-role="resource-only"/>
+    <mapref href="platforms/windows/keys/ui-labels.ditamap" platform="WindowsWinUI" processing-role="resource-only"/>
+    <mapref href="keys/product.ditamap" processing-role="resource-only"/>
+    <mapref href="maps/structure/quick-start.ditamap"/>
+  </chapter>
+  <chapter href="topics/quick-start/five-things-to-know.dita" keys="five-things-to-know"/>
+  <backmatter>
+    <booklists>
+      <glossarylist>
+        <topicref href="glossary/export.dita" keys="term-export"/>
+        <topicref href="glossary/fact.dita" keys="term-fact"/>
+        <topicref href="glossary/source.dita" keys="term-source"/>
+        <topicref href="glossary/workspace.dita" keys="term-workspace"/>
+      </glossarylist>
+    </booklists>
+  </backmatter>
+</bookmap>

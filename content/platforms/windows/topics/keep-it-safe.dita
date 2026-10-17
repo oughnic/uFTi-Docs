@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="keep-it-safe" xml:lang="en-GB">
+  <title>Keep it safe</title>
+  <shortdesc>Make a copy of your tree and keep it somewhere else.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-17"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Get started</category>
+      <keywords>
+        <keyword>backup</keyword>
+        <keyword>copy</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="workspaces.export"/>
+  </prolog>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>Go to <uicontrol keyref="ui-workspaces"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Open the menu for your workspace. Choose <uicontrol keyref="ui-export"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Choose a family tree file.</cmd>
+      </step>
+      <step>
+        <cmd>Choose where to save it, such as a folder in Documents or a USB stick. Choose <uicontrol keyref="ui-save"/>.</cmd>
+      </step>
+    </steps>
+    <result>
+      <p>You now have a copy. If something goes wrong, you can get your tree back. Make a new copy after you add a lot.</p>
+      <fig>
+        <image keyref="img-workspace-export"/>
+      </fig>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="what-next"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

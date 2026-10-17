@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="say-where-you-found-it" xml:lang="en-GB">
+  <title>Say where you found it</title>
+  <shortdesc>Add a source to one fact, so you always know why you believe it.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-17"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Get started</category>
+      <keywords>
+        <keyword>citation</keyword>
+        <keyword>evidence</keyword>
+        <keyword>reference</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="citations.edit"/>
+  </prolog>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>On the person's page, open the birth.</cmd>
+        <info>
+          <p>If there is no birth, add one with <uicontrol keyref="ui-add"/>.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-add-source"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-new-source"/>. Type where you know this from.</cmd>
+        <info>
+          <p>For example, <userinput>My birth certificate</userinput> or <userinput>Mum told me</userinput>.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-save"/>.</cmd>
+        <stepresult>
+          <p>The birth now shows its <term keyref="term-source">source</term>.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>In the Brontë sample, every fact has a source. Later, when two records disagree, this is how you will know what to believe.</p>
+      <fig>
+        <image keyref="img-citation-add"/>
+      </fig>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="keep-it-safe"/>.</p>
+    </postreq>
+  </taskbody>
+</task>
