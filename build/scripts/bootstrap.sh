@@ -74,7 +74,7 @@ fetch() { # tool [url-key] -> path of the verified download
   size=$(lock_get "$tool" "${key/url/size}"); sha=$(lock_get "$tool" "${key/url/sha256}")
   name=$(basename "$url"); dest="$DL/$name"
   if [ -f "$dest" ] && [ -n "$sha" ] && [ "$sha" != PENDING ] && [ "$(sha256 "$dest")" = "$sha" ]; then
-    echo "  $name: already downloaded and verified"; printf '%s' "$dest"; return
+    echo "  $name: already downloaded and verified" >&2; printf '%s' "$dest"; return
   fi
   echo "  downloading $url" >&2
   curl -fsSL --retry 3 -o "$dest.part" "$url"
