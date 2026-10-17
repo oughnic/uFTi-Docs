@@ -28,7 +28,7 @@ Part of the [authoring plan](../authoring-plan.md#8-delivery-plan), work package
 2. Run the sessions from the [session plan](novice-session-plan.md). It needs nothing else.
 3. Write up the findings as the plan says, in this folder.
 4. Revise the journeys, the Quick Start outlines, the task finder and the help-target list from the findings.
-5. Accept them into the plan. The proposed decisions DEC-045 to DEC-048 then become accepted, and the chapter order in [section 5](#5-what-the-journeys-decide) replaces the provisional outline in the plan.
+5. Accept them into the plan. The proposed decisions DEC-056 to DEC-059 then become accepted, and the chapter order in [section 5](#5-what-the-journeys-decide) replaces the provisional outline in the plan.
 6. Pass the findings about the app's own first-run experience to the app team.
 
 WP0 is done when all six steps are done ([plan, section 8](../authoring-plan.md#8-delivery-plan)).
@@ -54,7 +54,7 @@ The content model gives the journeys five things to decide. They are the Quick S
 
 ### 5.1 The Quick Start's what-next links
 
-Seven journeys become three links and the task finder (DEC-046).
+Seven journeys become three links and the task finder (DEC-057).
 
 | Link on page 7 | Journeys | Opens |
 |---|---|---|
