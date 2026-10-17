@@ -1,0 +1,10 @@
+# Keeps the pinned actions current (build and quality, section 5). The tools in build/tools.lock
+# are upgraded by hand, by pull request, with every gate run.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    labels: [toolchain]
