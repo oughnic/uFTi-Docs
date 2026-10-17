@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- One deliverable: the Windows fixture manual. Build it with
+     build/scripts/build.ps1 -Project fixture-windows (or build.sh). -->
+<project xmlns="https://www.dita-ot.org/project">
+  <include href="common.xml"/>
+  <deliverable id="fixture-windows">
+    <context>
+      <input href="../fixtures/wp1/ufti-fixture-windows.ditamap"/>
+      <profile>
+        <ditaval href="../ditaval/windows.ditaval"/>
+      </profile>
+    </context>
+    <output href="fixture-windows"/>
+    <publication idref="ufti-manual">
+      <param name="govuk.service.name" value="uFTi fixture: Windows"/>
+      <param name="govuk.site.url" value="https://ufti.com/docs/windows/"/>
+      <param name="govuk.pdf.name" value="ufti-fixture-windows"/>
+    </publication>
+  </deliverable>
+</project>

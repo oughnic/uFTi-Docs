@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Filter for the Windows manual (platform strategy, section 2.1). Every @platform value is
+     excluded unless this manual owns it. An element with no @platform is always included.
+     Tokens are case-sensitive and never renamed once published. -->
+<val>
+  <prop att="platform" action="exclude"/>
+  <prop att="platform" val="WindowsWinUI" action="include"/>
+  <prop att="platform" val="Desktop" action="include"/>
+  <prop att="platform" val="Pointer" action="include"/>
+</val>
