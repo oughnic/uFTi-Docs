@@ -30,7 +30,7 @@ pwsh build/scripts/build.ps1 -Project fixture
 
 `bootstrap.ps1` reads `tools.lock`, downloads each tool from its pinned address, refuses any file whose size or checksum differs, and installs: the DITA Open Toolkit with the GOV.UK plugin, DesignSystemPDF, Pagefind, veraPDF, the Nu HTML Checker, Vale, gitleaks and the plugin repository's checkers. `-BuildOnly` installs the first four. It is safe to run again. On Linux and macOS, `build/scripts/bootstrap.sh` and `build.sh` do the same.
 
-`build.ps1 -Project <name>` builds one project file from `build/projects/` with `dita --project`, keeps the log under `out/logs/`, and fails on any `GOVK`, `DOTX`, `DOTJ`, `DOTA` or `DSPDF` warning, error or fatal message, and on `DOTJ047I` (an unresolved key). Each deliverable lands in `out/<deliverable>/`: the website, `print.html`, and the PDF.
+`build.ps1 -Project <name>` builds one project file from `build/projects/` with `dita --project --verbose`, keeps the full log under `out/logs/` (the console shows only the messages), and fails on any `GOVK`, `DOTX`, `DOTJ`, `DOTA` or `DSPDF` warning, error or fatal message, and on `DOTJ047I`, an unresolved key, which the toolkit logs only at the verbose level. Each deliverable lands in `out/<deliverable>/`: the website, `print.html`, and the PDF.
 
 Preview a site with Java's own static server (search needs HTTP, not a file path):
 
