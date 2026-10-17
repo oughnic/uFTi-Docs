@@ -25,6 +25,7 @@
   <chapter href="topics/quick-start/quick-start.dita" keys="quick-start">
     <mapref href="platforms/windows/keys/images.ditamap" platform="WindowsWinUI" processing-role="resource-only"/>
     <mapref href="platforms/windows/keys/ui-labels.ditamap" platform="WindowsWinUI" processing-role="resource-only"/>
+    <mapref href="keys/ui-labels.ditamap" processing-role="resource-only"/>
     <mapref href="keys/product.ditamap" processing-role="resource-only"/>
     <mapref href="maps/structure/quick-start.ditamap"/>
   </chapter>

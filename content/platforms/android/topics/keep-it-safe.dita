@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="keep-it-safe" xml:lang="en-GB">
+  <title>Keep it safe</title>
+  <shortdesc>Save a copy of your tree as a file, and keep it somewhere else too.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-17"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Get started</category>
+      <keywords>
+        <keyword>backup</keyword>
+        <keyword>copy</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="workspaces.export"/>
+  </prolog>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>Choose the <uicontrol keyref="ui-workspaces"/> tab.</cmd>
+      </step>
+      <step>
+        <cmd>On the card for your tree, choose <uicontrol keyref="ui-save-as"/>.</cmd>
+        <stepresult>
+          <p>A small box named <wintitle keyref="ui-save-workspace-as"/> opens.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose how to save your tree.</cmd>
+        <choices>
+          <choice><uicontrol keyref="ui-gedcom-file"/> saves your tree as a family tree file.</choice>
+          <choice><uicontrol keyref="ui-gedzip-archive"/> saves it with any pictures as well.</choice>
+        </choices>
+      </step>
+      <step>
+        <cmd>When Android asks where to put the file, choose a place you will remember, such as Downloads. Then choose Save.</cmd>
+      </step>
+    </steps>
+    <result>
+      <p>You now have a copy. Make a new copy after you add a lot. <keyword keyref="product-name"/> does not send the file for you. To email it, find it in the Files app. Keep a copy off your phone too.</p>
+      <fig>
+        <image keyref="img-workspace-export"/>
+      </fig>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="what-next"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

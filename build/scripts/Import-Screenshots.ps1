@@ -340,21 +340,26 @@ foreach ($im in $images) {
     }
     # the focus (privacy): a person on the allow-list, or the sample workspace
     $crop = if ($crops) { Get-Prop $crops $key } else { $null }
-    $showsNoData = [bool]($crop -and (Get-Prop $crop 'shows'))   # a crop that leaves controls only: no person, no workspace
+    # what crops.json says about the picture: "shows" (controls only: no person and no workspace), or
+    # "noFocus" (no one person is the subject) and "workspaceHidden" (the crop hides the workspace name)
+    $noFocus = [bool]($crop -and ((Get-Prop $crop 'noFocus') -or (Get-Prop $crop 'shows')))
+    $wsHidden = [bool]($crop -and ((Get-Prop $crop 'workspaceHidden') -or (Get-Prop $crop 'shows')))
+    $hasRect = [bool]($crop -and ($null -ne (Get-Prop $crop 'x')))
     $focus = [string](Get-Prop $im 'focus')
     $focusId = [string](Get-Prop $im 'focusId')
     # "Charlotte Brontë (P05)" and "Patrick Brontë (P01), being added" name a person and, in brackets, the id
     if ($focus -match '\((P\d{2})\)') { if (-not $focusId) { $focusId = $Matches[1] }; $focus = ($focus -replace '\s*\(P\d{2}\).*$', '').Trim() }
-    if ($showsNoData -and $focus -match '^none') { $focus = ''; $focusId = '' }
+    if ($noFocus -and $focus -match '^none') { $focus = ''; $focusId = '' }
     elseif ($focus -match '^none') { Fail "$key shows no person, but nothing in crops.json says it shows only controls" }
-    if ($showsNoData) { }
+    if ($noFocus) { }
     elseif (-not $focus -and -not $focusId) { Fail "$key has no focus in the manifest: name the person or the workspace the picture shows" }
     else {
         if ($focus -and -not $allow.Names.Contains($focus.Normalize())) { Fail "$key`: the focus '$focus' is not on the allow-list (content/sample-data/bronte/allow-list.md)" }
         if ($focusId -and -not $allow.Ids.Contains($focusId)) { Fail "$key`: the focus id '$focusId' is not on the allow-list" }
     }
     $ws = [string](Get-Prop $im 'workspace')
-    if (-not $showsNoData -and $ws -and $ws.Normalize() -ne 'Brontë family of Haworth'.Normalize()) { Fail "$key`: the workspace is '$ws'; pictures show the Brontë dataset only" }
+    $wsName = (($ws -replace '\s*\(.*$', '') -replace '-', ' ').Trim()   # "Brontë-family-of-Haworth (shown as ...)": the app prints hyphens
+    if (-not $wsHidden -and $ws -and $wsName.Normalize() -ne 'Brontë family of Haworth'.Normalize()) { Fail "$key`: the workspace is '$ws'; pictures show the Brontë dataset only" }
     # the file
     $src = Join-Path $screensDir $file
     if (-not (Test-Path -LiteralPath $src)) { Fail "$key`: $file is not in the screens folder"; continue }
@@ -364,7 +369,7 @@ foreach ($im in $images) {
     try { $info = [UftiPng]::Inspect($bytes) } catch { Fail "$key`: $($_.Exception.Message)"; continue }
     if ((Get-Prop $im 'width') -and [int](Get-Prop $im 'width') -ne $info.Width) { Fail "$key`: the manifest says $(Get-Prop $im 'width') pixels wide, the file is $($info.Width)"; continue }
     if ((Get-Prop $im 'height') -and [int](Get-Prop $im 'height') -ne $info.Height) { Fail "$key`: the manifest says $(Get-Prop $im 'height') pixels high, the file is $($info.Height)"; continue }
-    $plan.Add([pscustomobject]@{ Key = $key; File = $file; Source = $src; Bytes = $bytes; Info = $info; Entry = $im; IsNew = $isNew; Crop = $crop; Focus = $focus })
+    $plan.Add([pscustomobject]@{ Key = $key; File = $file; Source = $src; Bytes = $bytes; Info = $info; Entry = $im; IsNew = $isNew; Crop = $(if ($hasRect) { $crop } else { $null }); Note = $crop; Focus = $focus })
 }
 $missing = @($expected.Keys | Where-Object { -not $seen.Contains($_) })
 foreach ($k in $missing) { Fail "$k is expected by the manual but not in the capture" }
@@ -394,7 +399,7 @@ foreach ($p in $plan) {
     $results.Add([pscustomobject]@{
         Key = $p.Key; File = $p.File; Status = $status; Resized = $resized; Dropped = @($clean.Dropped | Sort-Object -Unique)
         Width = $clean.Width; Height = $clean.Height; Before = $p.Info.BytesBefore; After = $clean.BytesAfter
-        Bytes = $clean.Bytes; Target = $target; Entry = $p.Entry; Crop = $p.Crop; Focus = $p.Focus; Sha = ([System.BitConverter]::ToString([System.Security.Cryptography.SHA256]::HashData([byte[]]$clean.Bytes)) -replace '-', '').ToLowerInvariant()
+        Bytes = $clean.Bytes; Target = $target; Entry = $p.Entry; Crop = $p.Crop; Note = $p.Note; Focus = $p.Focus; Sha = ([System.BitConverter]::ToString([System.Security.Cryptography.SHA256]::HashData([byte[]]$clean.Bytes)) -replace '-', '').ToLowerInvariant()
     })
 }
 $orphans = @()
@@ -432,7 +437,7 @@ if ($PSCmdlet.ShouldProcess((Rel $imagesDir), "write $(@($results | Where-Object
         device = $(if ($device) { [ordered]@{ kind = (Get-Prop $device 'kind'); os = (Get-Prop $device 'os'); width = (Get-Prop $device 'width'); height = (Get-Prop $device 'height'); orientation = (Get-Prop $device 'orientation') } })
         captured = (Get-Prop $manifest 'captured')
         images = @($results | Sort-Object Key | ForEach-Object {
-            [ordered]@{ key = $_.Key; file = $_.File; sha256 = $_.Sha; width = $_.Width; height = $_.Height; stage = (Get-Prop $_.Entry 'stage'); workspace = $(if ($_.Crop -and (Get-Prop $_.Crop 'shows')) { 'none' } else { 'Brontë family of Haworth' }); focus = $(if ($_.Focus) { $_.Focus } else { 'none' }); capture = (Get-Prop $_.Entry 'capture'); crop = $(if ($_.Crop) { [ordered]@{ x = $_.Crop.x; y = $_.Crop.y; width = $_.Crop.width; height = $_.Crop.height; reason = (Get-Prop $_.Crop 'reason') } }); verifiedAppVersion = $appVersion }
+            [ordered]@{ key = $_.Key; file = $_.File; sha256 = $_.Sha; width = $_.Width; height = $_.Height; stage = (Get-Prop $_.Entry 'stage'); workspace = $(if ($_.Note -and ((Get-Prop $_.Note 'workspaceHidden') -or (Get-Prop $_.Note 'shows'))) { 'not shown' } else { 'Brontë family of Haworth' }); focus = $(if ($_.Focus) { $_.Focus } else { 'none' }); capture = (Get-Prop $_.Entry 'capture'); crop = $(if ($_.Crop) { [ordered]@{ x = $_.Crop.x; y = $_.Crop.y; width = $_.Crop.width; height = $_.Crop.height; reason = (Get-Prop $_.Crop 'reason') } }); verifiedAppVersion = $appVersion }
         })
     }
     [System.IO.File]::WriteAllText((Join-Path $imagesDir 'manifest.json'), (($out | ConvertTo-Json -Depth 8) + "`n"), [System.Text.UTF8Encoding]::new($false))
