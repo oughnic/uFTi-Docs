@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!-- The Windows manual's image keys (platform strategy, section 4). Key names are the same in every
+     manual, so one topic serves them all. The key's link text is the alternative text (DEC-011).
+     The pictures are drawn placeholders, not screenshots: the fixture never shows the app. -->
+<map id="windows-images" xml:lang="en-GB">
+  <topicmeta>
+    <prodinfo>
+      <prodname>uFTi</prodname>
+      <vrmlist><vrm version="0.0"/></vrmlist>
+      <platform>Windows</platform>
+    </prodinfo>
+    <data name="reference-device" value="placeholder: no device, no app build"/>
+    <data name="dataset" value="placeholder: no data shown"/>
+  </topicmeta>
+  <keydef keys="img-person-view" href="../images/person-view.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta>
+      <linktext>The person page on Windows, with the list of people on the left and the person on the right</linktext>
+    </topicmeta>
+  </keydef>
+</map>

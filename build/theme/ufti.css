@@ -269,6 +269,16 @@ ul.linklist {
   border-top-color: var(--ufti-outline);
 }
 
+/* Related links and link lists: room to touch. The plugin's lists set the links in plain lines,
+   closer than the 24 px that WCAG 2.2 asks of a target (axe-core target-size), so each link gets
+   a box of its own, at least 24 px tall. */
+.linklist a,
+.related-links a {
+  display: inline-block;
+  min-height: 1.5rem;
+  padding-block: 2px;
+}
+
 .app-az-letter {
   border-bottom-color: var(--ufti-outline);
 }

@@ -1,0 +1,23 @@
+# DEC-040: topics never state price, "free", "forever", accounts, sign-in or where data lives.
+extends: existence
+message: "'%s' is a business-model word. Topics never state price, 'free', accounts, sign-in or where data lives (DEC-040)."
+level: error
+ignorecase: true
+tokens:
+  - free
+  - forever
+  - price
+  - prices
+  - pricing
+  - subscription
+  - subscribe
+  - account
+  - accounts
+  - sign in
+  - sign-in
+  - signin
+  - log in
+  - log-in
+  - login
+  - cloud
+  - server

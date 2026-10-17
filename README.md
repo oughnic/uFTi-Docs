@@ -2,7 +2,7 @@
 
 User documentation for **uFTi** (Understand Your Family Tree Information), a family tree application.
 
-> **Status: planning.** This repository holds the authoring plan and project scaffolding. No documentation topics have been written yet and nothing is published.
+> **Status: planning, with the build pipeline in place.** This repository holds the authoring plan, the toolchain that builds and checks the documentation, and a throwaway fixture that proves it. No documentation topics have been written yet and nothing is published.
 
 ## What this will produce
 
@@ -41,7 +41,7 @@ The tools are the [DITA Open Toolkit](https://www.dita-ot.org/), the [iStandUK G
 |---|---|
 | [`authoring/`](authoring/README.md) | The authoring plan, standards and decision log. Not published. |
 | [`content/`](content/README.md) | DITA source: maps, topics, keys and images. Empty until the pilot slice. |
-| [`build/`](build/README.md) | Build configuration. Holds the [publisher theme](build/theme/README.md) (stylesheet and fonts). The rest arrives with the toolchain work package. |
+| [`build/`](build/README.md) | The build pipeline: pinned tools (`tools.lock`), bootstrap, build and check scripts, DITA-OT project files, the DITAVAL filters, the [publisher theme](build/theme/README.md), the Vale styles and a throwaway fixture. |
 | [`LICENSE`](LICENSE), [`NOTICE`](NOTICE) | Apache License 2.0 and notice. |
 
 ## Start here

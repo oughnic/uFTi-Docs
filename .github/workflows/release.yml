@@ -1,0 +1,76 @@
+# A version tag on main (vX.Y.Z, DEC-016) makes a GitHub release with the PDFs, a zipped site per
+# publication, SHA-256 checksums and the applicability matrix (build and quality, section 5).
+# The publications come from build/projects/site.xml, which arrives with the pilot slice (WP7).
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+env:
+  PUBLISH_PROJECT: site
+
+jobs:
+  release:
+    name: release ${{ github.ref_name }}
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write # to create the release and attach its files
+    steps:
+      - name: Check out
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - name: The tag is on main
+        run: |
+          git fetch origin main
+          git merge-base --is-ancestor "$GITHUB_SHA" origin/main || { echo "::error::${{ github.ref_name }} is not on main: releases are tagged on main only (DEC-016)"; exit 1; }
+      - name: Java
+        uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6.1.0
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Pinned tools (cached by the lock file)
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .tools
+          key: tools-release-${{ runner.os }}-${{ hashFiles('build/tools.lock') }}
+      - name: Bootstrap the toolkit, the plugin, DesignSystemPDF, Pagefind and veraPDF
+        run: build/scripts/bootstrap.sh --only dita-ot,govuk-plugin,designsystempdf,pagefind,verapdf
+      - name: Build the publications
+        run: |
+          [ -f "build/projects/$PUBLISH_PROJECT.xml" ] || { echo "::error::No build/projects/$PUBLISH_PROJECT.xml: nothing to release"; exit 1; }
+          build/scripts/build.sh --project "$PUBLISH_PROJECT" --output out
+      - name: Every PDF is PDF/UA-1
+        run: |
+          export PATH="$PWD/.tools/verapdf:$PATH"
+          status=0
+          for pdf in out/*/*.pdf; do
+            verapdf --flavour ua1 --format text "$pdf" > "$pdf.ua1.txt" || true
+            grep -q '^PASS ' "$pdf.ua1.txt" && echo "PASS $pdf" || { echo "::error::$pdf is not PDF/UA-1"; cat "$pdf.ua1.txt"; status=1; }
+          done
+          exit $status
+      - name: Applicability matrix
+        run: pwsh -NoProfile -File build/scripts/lint.ps1 -Source content -Matrix out/applicability-matrix.csv || true
+      - name: Assemble the release files
+        run: |
+          mkdir -p release
+          for d in out/*/; do
+            name=$(basename "$d")
+            case "$name" in logs|temp|reports) continue ;; esac
+            cp "$d"*.pdf release/ 2> /dev/null || true
+            (cd "$d" && zip -qr "../../release/$name-site-${{ github.ref_name }}.zip" . -x '*.ua1.txt')
+          done
+          cp out/applicability-matrix.csv release/ 2> /dev/null || true
+          (cd release && sha256sum -- * > SHA256SUMS)
+          ls -l release
+      - name: Create the GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${{ github.ref_name }}" --verify-tag --title "uFTi documentation ${{ github.ref_name }}" \
+            --notes "The website (zipped, one per publication), the PDF/UA-1 documents, SHA-256 checksums and the applicability matrix for ${{ github.ref_name }}." \
+            release/*

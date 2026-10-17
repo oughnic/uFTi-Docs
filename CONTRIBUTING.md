@@ -2,7 +2,7 @@
 
 Thank you for helping to improve the uFTi documentation.
 
-**Current state:** the repository is in its planning phase and holds no documentation topics yet. For now, please open an issue to discuss an idea before sending anything. Once the toolchain work package has landed (see the [authoring plan](authoring/authoring-plan.md#8-delivery-plan)), this guide will gain build and review instructions.
+**Current state:** the repository holds the plan and the build pipeline, and no documentation topics yet. Please open an issue to discuss an idea before sending anything. To build and check what is here, see [build/README.md](build/README.md): `pwsh build/scripts/bootstrap.ps1`, then `pwsh build/scripts/build.ps1 -Project fixture`, then `check-source.ps1` and `check-output.ps1`. Every pull request runs the same gates in CI, and a build warning fails it.
 
 ## Ground rules
 

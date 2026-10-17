@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
+<!-- The WP1 fixture: a throwaway publication that proves the pipeline. It is never published,
+     and its text is a stand-in that does not describe the app. One bookmap per manual at the publication's root, so every file it reaches is inside the input directory
+     (platform strategy, section 7); the manual's own key map comes first, resource-only. -->
+<bookmap id="ufti-fixture-android-tablet" xml:lang="en-GB">
+  <booktitle>
+    <mainbooktitle>uFTi fixture: Android tablet</mainbooktitle>
+    <booktitlealt>A tiny test publication for the build pipeline. It is not the manual.</booktitlealt>
+  </booktitle>
+  <bookmeta>
+    <publisherinformation>
+      <organization>Oughtibridge Ltd</organization>
+    </publisherinformation>
+    <bookid>
+      <edition>Fixture</edition>
+    </bookid>
+    <bookrights>
+      <copyrfirst><year>2026</year></copyrfirst>
+      <bookowner><organization>Oughtibridge Ltd</organization></bookowner>
+    </bookrights>
+  </bookmeta>
+  <frontmatter>
+    <booklists>
+      <toc/>
+    </booklists>
+  </frontmatter>
+  <chapter href="topics/get-started/get-started.dita" keys="get-started">
+    <mapref href="platforms/android-tablet/keys/images.ditamap" platform="AndroidTablet" processing-role="resource-only"/>
+    <mapref href="keys/product.ditamap" processing-role="resource-only"/>
+    <mapref href="maps/structure/get-started.ditamap"/>
+  </chapter>
+  <backmatter>
+    <booklists>
+      <glossarylist>
+        <topicref href="glossary/workspace.dita" keys="term-workspace"/>
+      </glossarylist>
+    </booklists>
+  </backmatter>
+</bookmap>

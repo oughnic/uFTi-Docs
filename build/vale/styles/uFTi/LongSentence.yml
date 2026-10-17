@@ -1,0 +1,8 @@
+# DEC-029: no sentence over 25 words.
+extends: metric
+message: "This sentence has %s words. Keep every sentence to 25 or fewer (DEC-029)."
+level: error
+scope: sentence
+formula: |
+  words
+condition: "> 25.0"

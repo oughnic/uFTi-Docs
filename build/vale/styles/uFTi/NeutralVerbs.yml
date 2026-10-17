@@ -1,0 +1,10 @@
+# Authoring standards, section 11: "select", "open", "enter" and "choose" work for touch and
+# pointer. "Click", "tap" and "press" belong only in platform-specific text, so this is a warning.
+extends: existence
+message: "'%s' is for one kind of device. Prefer 'select', 'open', 'enter' or 'choose' unless the text is platform-specific."
+level: warning
+ignorecase: true
+tokens:
+  - click
+  - tap
+  - press

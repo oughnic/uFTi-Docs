@@ -1,0 +1,7 @@
+# British English spelling (DEC-010), with SCOWL's en_GB-ise dictionary (config/dictionaries).
+# Names and terms the dictionary lacks go in config/vocabularies/uFTi/accept.txt.
+extends: spelling
+message: "'%s' is not in the British English dictionary. Spell it the British way, or add a name or a term to the vocabulary."
+level: error
+dictionaries:
+  - en_GB

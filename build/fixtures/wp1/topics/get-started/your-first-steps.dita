@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<!-- A shared topic with a clickable diagram (DEC-036). The diagram is inlined, so its links work on
+     the website. The list that follows it gives the same links for the PDF and for screen readers. -->
+<concept id="your-first-steps" xml:lang="en-GB">
+  <title>Your first steps</title>
+  <shortdesc>The two steps from an empty workspace to your first person.</shortdesc>
+  <prolog>
+    <metadata>
+      <category>Get started</category>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p>Follow the steps in order. Select a step in the picture to open its page.</p>
+    <fig>
+      <title>The first steps</title>
+      <svg-container>
+        <svgref href="../../images/first-steps.svg"/>
+      </svg-container>
+    </fig>
+    <p>The same steps as a list:</p>
+    <ol>
+      <li><xref keyref="workspaces"/></li>
+      <li><xref keyref="add-a-person"/></li>
+    </ol>
+  </conbody>
+</concept>
