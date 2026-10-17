@@ -71,7 +71,7 @@ function Get-Docker { if (-not $script:dockerChecked) { $script:docker = Find-Uf
 function ConvertTo-ContainerPath {
     param([string]$HostPath)
     $full = [System.IO.Path]::GetFullPath($HostPath)
-    if ($full.StartsWith($root, [System.StringComparison]::OrdinalIgnoreCase)) { return '/work' + ([System.IO.Path]::GetRelativePath($root, $full) -replace '\\', '/' -replace '^\.$', '') -replace '/$', '' }
+    if ($full.StartsWith($root, [System.StringComparison]::OrdinalIgnoreCase)) { $rel = [System.IO.Path]::GetRelativePath($root, $full) -replace '\\', '/'; return $(if ($rel -eq '.') { '/work' } else { "/work/$rel" }) }
     if ($full.StartsWith($ToolsDir, [System.StringComparison]::OrdinalIgnoreCase)) { return '/tools/' + ([System.IO.Path]::GetRelativePath($ToolsDir, $full) -replace '\\', '/') }
     throw "$HostPath is outside the repository and the tools folder, so it cannot be mounted"
 }

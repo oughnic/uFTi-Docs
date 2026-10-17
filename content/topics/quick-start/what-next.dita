@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="what-next" xml:lang="en-GB">
+  <title>What next</title>
+  <shortdesc>You have a tree, a person, a fact with its source and a copy. Choose where to go from here.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-17"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Get started</category>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p>Well done. What do you want to do now?</p>
+    <ul>
+      <li>Record more of what you have found. <xref keyref="say-where-you-found-it"/> shows how.</li>
+      <li>Learn the ideas behind it all. Read <xref keyref="five-things-to-know"/>. It takes two minutes.</li>
+    </ul>
+  </conbody>
+</concept>

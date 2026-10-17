@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="get-ufti" xml:lang="en-GB">
+  <title>Get uFTi</title>
+  <shortdesc>Download uFTi, install it and open it for the first time.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-17"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Get started</category>
+      <keywords>
+        <keyword>install</keyword>
+        <keyword>download</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="workspaces.list"/>
+  </prolog>
+  <taskbody>
+    <context>
+      <p>A <term keyref="term-workspace">workspace</term> is one family tree.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Download the installer from the Get <keyword keyref="product-name"/> page on the <keyword keyref="product-name"/> website.</cmd>
+      </step>
+      <step>
+        <cmd>Run the installer.</cmd>
+      </step>
+      <step>
+        <cmd>Open <keyword keyref="product-name"/> from the Start menu.</cmd>
+        <stepresult>
+          <p>The <uicontrol keyref="ui-workspaces"/> screen opens.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>This is where your trees live. You may see some sample workspaces already. You do not need them.</p>
+      <fig>
+        <image keyref="img-start-first-run"/>
+      </fig>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="add-your-first-person"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

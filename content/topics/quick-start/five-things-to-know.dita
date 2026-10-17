@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="five-things-to-know" xml:lang="en-GB">
+  <title>Five things to know</title>
+  <shortdesc>The five ideas behind uFTi, in two minutes.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-17"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Concept</category>
+      <keywords>
+        <keyword>basics</keyword>
+        <keyword>ideas</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <section>
+      <title>A workspace is one family tree</title>
+      <p>You can have more than one. Each shows as a card on the <uicontrol keyref="ui-workspaces"/> screen. Make a new workspace for each tree.</p>
+    </section>
+    <section>
+      <title>People and families</title>
+      <p>Add a person for each relative. A family joins a couple. <keyword keyref="product-name"/> draws a tree from your families. Choose <uicontrol keyref="ui-family"/> to see it.</p>
+    </section>
+    <section>
+      <title>Facts and sources</title>
+      <p>A fact is something you record, such as a birth with its date. A source is where you found it. It can be a certificate, a census page, or what someone told you. A small chip beside each heading on a person's page counts the sources. Choose the chip to add one. Then you will always know why you believe a fact.</p>
+    </section>
+    <section>
+      <title>Saving and copies</title>
+      <p><keyword keyref="product-name"/> saves your work as you go. To keep a copy, choose <uicontrol keyref="ui-save-as"/> on your workspace's card. Keep the file somewhere else too. Do it again after a big session.</p>
+    </section>
+    <section>
+      <title>Getting help</title>
+      <p>Look in this guide when you are stuck. Use its search box, and type the words you would say. Practise in a workspace you make for the purpose.</p>
+    </section>
+  </conbody>
+</concept>

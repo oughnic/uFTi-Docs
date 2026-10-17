@@ -239,7 +239,7 @@ foreach ($src in $Source) {
     if ($maps.Count -eq 0) { Write-Host "  $src`: no maps, skipped"; continue }
     Write-UftiStep "Lint $src"
     # file and folder names
-    foreach ($f in Get-ChildItem -LiteralPath $srcRoot -Recurse -File) {
+    foreach ($f in Get-ChildItem -LiteralPath $srcRoot -Recurse -File | Where-Object { $_.Extension -ne '.md' }) {   # Markdown documents (README.md, the dataset) are not DITA sources
         if ($f.Name -notmatch '^[a-z0-9][a-z0-9-]*(\.[a-z0-9]+)+$') { Fail "file name is not lower case with hyphens" (Rel $f.FullName) }
     }
     foreach ($d in Get-ChildItem -LiteralPath $srcRoot -Recurse -Directory) {
@@ -266,14 +266,17 @@ foreach ($src in $Source) {
     $usedSvgs = [System.Collections.Generic.HashSet[string]]::new()
     $imageKeysByManual = [ordered]@{}
     $included = @{}
-    foreach ($slug in $manuals.Keys) {
-        $rootMap = @($maps | Where-Object { $_.Name -like "*-$slug.ditamap" -and $_.Directory.FullName -eq $srcRoot })
-        if ($rootMap.Count -eq 0) { continue }
-        if ($rootMap.Count -gt 1) { Fail "more than one root map for $slug" (Rel $srcRoot); continue }
+    # a manual may have several root maps at the publication root (its manual, its Quick Start):
+    # each is a publication of its own, so each is read on its own and the topics are pooled
+    $roots = foreach ($slug in $manuals.Keys) {
+        foreach ($rm in @($maps | Where-Object { $_.Name -like "*-$slug.ditamap" -and $_.Directory.FullName -eq $srcRoot } | Sort-Object Name)) { [pscustomobject]@{ Slug = $slug; Map = $rm } }
+    }
+    foreach ($r in $roots) {
+        $slug = $r.Slug
         $tokens = $manuals[$slug]
-        $m = Read-Manual $rootMap[0].FullName $tokens
-        Write-Host "  $slug`: $($m.Topics.Count) topics, $($m.Keys.Count) keys ($($tokens -join ' '))"
-        $included[$slug] = $m.Topics
+        $m = Read-Manual $r.Map.FullName $tokens
+        Write-Host "  $slug`: $($r.Map.Name): $($m.Topics.Count) topics, $($m.Keys.Count) keys ($($tokens -join ' '))"
+        $included[$slug] = @(@($(if ($included.ContainsKey($slug)) { $included[$slug] })) + @($m.Topics) | Where-Object { $_ } | Select-Object -Unique)
         foreach ($t in $m.Topics) { [void]$used.Add($t) }
         # keys the maps themselves use (relationship tables, keyref topicrefs)
         foreach ($kr in $m.KeyRefs) { if (-not $m.Keys.Contains($kr.Key)) { Fail "key '$($kr.Key)' is not defined in the $slug manual" (Rel $kr.File) } }
@@ -299,7 +302,7 @@ foreach ($src in $Source) {
                 Test-Svg $svgPath $tp
             }
         }
-        $imageKeysByManual[$slug] = @($m.Keys.Keys | Where-Object { $_ -like 'img-*' })
+        $imageKeysByManual[$slug] = @(@($(if ($imageKeysByManual.Contains($slug)) { $imageKeysByManual[$slug] })) + @($m.Keys.Keys | Where-Object { $_ -like 'img-*' }) | Where-Object { $_ } | Select-Object -Unique)
     }
     if ($included.Count -eq 0) { Fail "no root bookmap named ufti-*-<slug>.ditamap at the publication root" (Rel $srcRoot); continue }
     # the applicability matrix, orphans, image key parity

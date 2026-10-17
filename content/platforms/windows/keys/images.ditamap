@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!-- The Windows manual's pictures (platform strategy, section 4). Key names are the same in every
+     manual, so one topic serves them all. A key's link text is the picture's alternative text
+     (DEC-011): one sentence about what the picture shows and why it matters. The importer
+     (build/scripts/Import-Screenshots.ps1) writes the files and keeps this map in step; it never
+     rewrites alternative text. -->
+<map id="windows-images" xml:lang="en-GB">
+  <topicmeta>
+    <prodinfo>
+      <prodname>uFTi</prodname>
+      <vrmlist><vrm version="0.1.0.1 (1)"/></vrmlist>
+      <platform>Windows</platform>
+    </prodinfo>
+    <data name="reference-device" value="desktop window, Windows 11 Pro 10.0.26200 on ARM64, display scaling 200%, 1267 x 761, landscape"/>
+    <data name="dataset" value="bronte"/>
+  </topicmeta>
+  <keydef keys="img-start-first-run" href="../images/start-first-run.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The Workspaces screen, with the Create workspace and Add from file buttons under its heading</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-person-add" href="../images/person-add.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The New person form, with Patrick typed in the Given name(s) box and Brontë in the Surname box</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-person-view" href="../images/person-view.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>Charlotte Brontë's page, with the menu at the left and a small chip beside Identity, Birth and Death that counts the sources</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-citation-add" href="../images/citation-add.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The Add source form, with the title of a book typed in the Title box</linktext></topicmeta>
+  </keydef>
+</map>
