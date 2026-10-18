@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE troubleshooting PUBLIC "-//OASIS//DTD DITA Troubleshooting//EN" "troubleshooting.dtd">
+<!-- TROUBLESHOOTING TEMPLATE (authoring standards, section 5). One problem in each topic. Copy this
+     file, then:
+       1. Name the file for the symptom: photo-does-not-appear.dita. Make the id the same.
+       2. Title: the symptom, in the words a reader would say, in sentence case.
+       3. condition: what the reader sees. cause: why it happens, in one or two sentences. remedy: steps
+          that fix it, in the imperative, with the same rules as a task. Several causes are several
+          troubleSolution elements.
+       4. Never blame the reader. If a mistake is easy to make, say so.
+       5. Link the task the reader was doing from the relationship table, not from here. -->
+<troubleshooting id="template-troubleshooting" xml:lang="en-GB">
+  <title>A change does not stay</title>
+  <shortdesc>What to do when you save a change and it is gone when you come back.</shortdesc>
+  <prolog>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Troubleshooting</category>
+      <keywords>
+        <keyword>lost edit</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <troublebody>
+    <condition>
+      <p>You make a change and choose <uicontrol keyref="ui-save"/>. Later the old words are back.</p>
+    </condition>
+    <troubleSolution>
+      <cause>
+        <p>You may have closed the form before the change was saved. Many people do this.</p>
+      </cause>
+      <remedy>
+        <steps>
+          <step>
+            <cmd>Open the form again.</cmd>
+          </step>
+          <step>
+            <cmd>Make the change, then choose <uicontrol keyref="ui-save"/>.</cmd>
+            <stepresult>
+              <p>A short message says Saved.</p>
+            </stepresult>
+          </step>
+        </steps>
+      </remedy>
+    </troubleSolution>
+  </troublebody>
+</troubleshooting>

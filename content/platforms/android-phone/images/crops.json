@@ -1,0 +1,24 @@
+{
+  "img-start-first-run": {
+    "x": 55, "y": 295, "width": 745, "height": 225,
+    "shows": "controls only",
+    "reason": "Keeps the heading and the two buttons. The first launch shows the app's own sample workspaces with file paths, and the screen with the samples removed shows a message about opening a family tree file; neither is the Brontë dataset or the route the page teaches (DEC-040)."
+  },
+  "img-person-add": {
+    "x": 0, "y": 520, "width": 1080, "height": 1662,
+    "workspaceHidden": true,
+    "reason": "Leaves out the top of the screen: the button that fills the form from a document (an AI feature, which the documentation leaves out, DEC-020) and the name of the workspace, which is not the Brontë workspace."
+  },
+  "img-nav-main": {
+    "noFocus": true,
+    "reason": "No crop. The subject is a list of people from a search, all of them on the allow-list, not one person."
+  },
+  "img-citation-add": {
+    "x": 0, "y": 0, "width": 1060, "height": 2184,
+    "reason": "Removes a thin sliver of another element at the right edge of the capture."
+  },
+  "img-workspace-export": {
+    "noFocus": true,
+    "reason": "No crop. The subject is the box of choices. The card behind it is hidden by the box, so no file path shows."
+  }
+}

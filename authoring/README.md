@@ -11,7 +11,10 @@ Planning and standards for the uFTi user documentation. These files guide author
 | [dataset-strategy.md](dataset-strategy.md) | What is the worked example, and how do we build and check it? |
 | [good-practice-strategy.md](good-practice-strategy.md) | How do we teach family history research good practice to readers who are new to it? |
 | [site-strategy.md](site-strategy.md) | What does ufti.com hold, where do the manuals sit, and what collateral is needed? |
-| [authoring-standards.md](authoring-standards.md) | How is DITA written here: structure, naming, markup, metadata, accessibility, style? |
+| [authoring-standards.md](authoring-standards.md) | How is DITA written here: structure, naming, markup, metadata, accessibility? Which rule is checked by what? |
+| [style-guide.md](style-guide.md) | How do the words read: the reading level for an average 11-year-old, sentences, words, dates, tone, and how Vale measures them? |
+| [terminology.md](terminology.md) | What is the plain word for each label the app prints and each term we use, and which labels have we asked the app team to change? |
+| [metadata-vocabulary.md](metadata-vocabulary.md) | Which values go in a topic's and a map's metadata, and what is a help identifier? |
 | [build-and-quality.md](build-and-quality.md) | Which tools build the outputs, and which checks must pass before anything is published? |
 | [decision-log.md](decision-log.md) | What has been decided, what is proposed, and what still needs an answer? |
 | [review-draft-0.3.md](review-draft-0.3.md) | What was wrong with Draft 0.3, and what changed because of it? |

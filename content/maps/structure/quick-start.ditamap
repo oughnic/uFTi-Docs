@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!-- The Quick Start in order, shared by every manual (content model, section 3). A page that depends
+     on the platform (getting the app, keeping a copy) or on the device idiom (adding a person, looking
+     around) has one topic per platform or idiom, each topicref carrying its token and the same key,
+     so a manual sees only its own. The page that is the same everywhere (sources, what next) is shared.
+     Keys sit on the topicrefs and match the file names. -->
+<map id="quick-start-structure" xml:lang="en-GB">
+  <topicref href="../../platforms/windows/topics/get-ufti.dita" keys="get-ufti" platform="WindowsWinUI"/>
+  <topicref href="../../platforms/android/topics/get-ufti.dita" keys="get-ufti" platform="Android"/>
+  <topicref href="../../platforms/desktop/topics/add-your-first-person.dita" keys="add-your-first-person" platform="Desktop"/>
+  <topicref href="../../platforms/phone/topics/add-your-first-person.dita" keys="add-your-first-person" platform="Phone"/>
+  <topicref href="../../platforms/desktop/topics/look-around.dita" keys="look-around" platform="Desktop"/>
+  <topicref href="../../platforms/phone/topics/look-around.dita" keys="look-around" platform="Phone"/>
+  <topicref href="../../topics/quick-start/say-where-you-found-it.dita" keys="say-where-you-found-it"/>
+  <topicref href="../../platforms/windows/topics/keep-it-safe.dita" keys="keep-it-safe" platform="WindowsWinUI"/>
+  <topicref href="../../platforms/android/topics/keep-it-safe.dita" keys="keep-it-safe" platform="Android"/>
+  <topicref href="../../topics/quick-start/what-next.dita" keys="what-next"/>
+</map>

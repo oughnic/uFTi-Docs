@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<!-- KEY CONCEPT SET TEMPLATE, the READ piece (DEC-035). The concept in words: what it is and why it
+     matters, in 500 words or fewer, with no procedure. It follows the concept template. -->
+<concept id="template-key-concept-read" xml:lang="en-GB">
+  <title>The idea in words</title>
+  <shortdesc>What the idea is, and why it helps you.</shortdesc>
+  <prolog>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Concept</category>
+      <keywords>
+        <keyword>explanation</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p>Say what the idea is in one sentence. Then say why it matters to the reader.</p>
+    <section>
+      <title>An example</title>
+      <p>Show one example from the Brontë dataset, in words.</p>
+    </section>
+  </conbody>
+</concept>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="add-your-first-person" xml:lang="en-GB">
+  <title>Add your first person</title>
+  <shortdesc>Make your own workspace and add yourself, or someone you know well.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-17"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Get started</category>
+      <keywords>
+        <keyword>new person</keyword>
+        <keyword>start a tree</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="workspaces.create"/>
+    <resourceid appname="ufti" appid="people.edit"/>
+  </prolog>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>On <uicontrol keyref="ui-workspaces"/>, choose <uicontrol keyref="ui-create-workspace"/>.</cmd>
+        <stepresult>
+          <p>A small window named <wintitle keyref="ui-new-workspace"/> opens.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Type a name for your tree, such as <userinput>My family</userinput>.</cmd>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-create"/>.</cmd>
+        <stepresult>
+          <p>The <uicontrol keyref="ui-new-person"/> form opens.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Type a first name in <uicontrol keyref="ui-given-names"/>. Type a last name in <uicontrol keyref="ui-surname"/>.</cmd>
+        <info>
+          <p>Start with yourself, or someone you know well. Only the first name is needed. If you know the birth date, type it too.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-save"/>.</cmd>
+        <stepresult>
+          <p>The page for that person opens.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>That is your first person. <keyword keyref="product-name"/> saves your work as you go.</p>
+      <fig>
+        <image keyref="img-person-add"/>
+      </fig>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="look-around"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

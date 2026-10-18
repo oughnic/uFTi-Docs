@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<!-- REFERENCE TEMPLATE (authoring standards, section 5). A reference is for looking things up. Copy
+     this file, then:
+       1. Name the file for a noun phrase: event-types.dita. Make the id the same.
+       2. A table has a title and a header row, a simple structure, and few columns so it reads on a
+          phone. Order the rows in a way a reader can scan. No layout tables.
+       3. For field descriptions, a properties list is an alternative to a table.
+       4. Name every field by the label on screen, by key, and describe it in plain words. Never show
+          a file tag or a line of a file (DEC-030).
+       5. A table that needs a landscape page in the PDF takes outputclass="landscape". -->
+<reference id="template-reference" xml:lang="en-GB">
+  <title>Fields on a person</title>
+  <shortdesc>What each box on a person's form is for.</shortdesc>
+  <prolog>
+    <metadata>
+      <audience type="user" experiencelevel="general"/>
+      <category>Reference</category>
+      <keywords>
+        <keyword>boxes</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <refbody>
+    <table>
+      <title>The boxes on a person's form</title>
+      <tgroup cols="2">
+        <colspec colname="c1" colwidth="1*"/>
+        <colspec colname="c2" colwidth="3*"/>
+        <thead>
+          <row>
+            <entry>Box</entry>
+            <entry>What to put in it</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry><uicontrol keyref="ui-given-names"/></entry>
+            <entry>The first and middle names, in the order the person used them.</entry>
+          </row>
+          <row>
+            <entry><uicontrol keyref="ui-surname"/></entry>
+            <entry>The family name.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </refbody>
+</reference>

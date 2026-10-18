@@ -9,7 +9,7 @@ Part of the [authoring plan](authoring-plan.md). Status: Draft 0.4, 16 October 2
 | Question | Decision | Log |
 |---|---|---|
 | Where do the capture scripts live? | In the **application repository**. | DEC-022 |
-| What are screenshots captured on? | **Emulators and simulators** with pinned profiles on mobile, and a clean Windows profile or virtual machine at a fixed window size on Windows. | DEC-023 |
+| What are screenshots captured on? | **Emulators and simulators** with pinned profiles on mobile, and a clean Windows profile or virtual machine at a fixed window size on Windows. **Exception: the Android phone is captured on one physical phone** ([section 4.2](#42-the-environment)). | DEC-023, DEC-088 |
 | When are they captured? | On **release candidates only**. | DEC-023 |
 | Which theme? | The app's **Oxford and slate** theme, light variant, in every screenshot. | DEC-024 |
 | Which data? | The **Brontë dataset**, built by replaying the manual's journey stage by stage ([dataset strategy](dataset-strategy.md)). | DEC-025 |
@@ -50,7 +50,7 @@ The scenario scripts need the app's automation identifiers and routes. Those are
 
 | Manual | Captured on | Notes |
 |---|---|---|
-| Android phone | A phone emulator, current stable Android | Pinned device profile. Portrait. |
+| Android phone | **A physical phone: the maintainer's Samsung Galaxy A41, model SM-A415F, Android 12, 1080 by 2400 pixels at 420 dpi, portrait** (DEC-088) | The emulator on the Arm authoring machine proved unreliable. The phone is the pinned profile. Its serial number never appears in this repository. |
 | Android tablet | A tablet emulator | Pinned profile. Landscape. |
 | iPhone | An iPhone simulator | Needs a Mac. |
 | iPad | An iPad simulator | Needs a Mac. Landscape. |
@@ -61,7 +61,7 @@ Every capture run sets these explicitly. It never relies on the machine's defaul
 - the **Oxford and slate theme, light variant**, chosen in the app's preferences (the dark variant appears once per manual, in the appearance topic);
 - **en-GB**, and default text size and display scaling;
 - a **throwaway app-data folder** that starts empty, or at the saved state of the stage being captured, so the app starts in a known state;
-- a **normalised status bar** on mobile, using the emulator's status-bar override (a fixed clock, full battery and signal, no notifications);
+- a **normalised status bar** on an emulator or simulator, using its status-bar override (a fixed clock, full battery and signal, no notifications). A physical phone has no override, so it is captured **in the app** (section 4.3), which leaves out the status bar, notifications and any other app;
 - screens whose content does not depend on today's date or on random order. The catalogue flags any that do.
 
 Profiles are pinned in the catalogue and recorded in the manifest. Changing a profile means re-capturing that whole manual.
@@ -72,7 +72,9 @@ Profiles are pinned in the catalogue and recorded in the manifest. Changing a pr
 
 Navigate by route, not by simulated taps, which can be unreliable. Capture inside the app where the app's tooling allows it. That captures the app's own rendering, so status bars and notifications should not appear (WP2 confirms this on Android). Use operating-system capture only for operating-system dialogs, such as a permission prompt or a file picker.
 
-**What an emulator cannot do.** The iOS Simulator has no camera, so camera flows on iPhone and iPad are described in words, without a screenshot. A physical-device capture is an exception the maintainer approves per screen, and the catalogue marks it `device`.
+**The physical phone (Android phone only, DEC-088).** The capture shows the app's own view, captured by the app, so no status bar, notification or other app is in the picture. The manifest says `"kind": "physical"` and carries no serial number, and the importer refuses a manifest that has one. The tablet, iPhone and iPad keep the emulator and simulator plan. An `os` capture of a dialog on the phone is still a screenshot of the phone's own screen, so it needs the same care: check it for notifications and personal information before it enters a capture folder.
+
+**What an emulator cannot do.** The iOS Simulator has no camera, so camera flows on iPhone and iPad are described in words, without a screenshot. A physical-device capture is an exception the maintainer approves per screen, and the catalogue marks it `device`. The one standing exception is the Android phone, whose reference device is physical, so its screens need no per-screen approval.
 
 ### 4.4 What a run produces
 
@@ -104,7 +106,7 @@ An importer script in this repository (WP5) takes a capture folder and:
 
 1. **validates** it against the catalogue: every key the manual should have is present, nothing else is, and the theme, variant, locale and device profile are the expected ones, or it stops;
 2. **checks privacy:** the focus person is on the allow-list, which is the people in the dataset specification plus any approved from another named sample workspace;
-3. **strips metadata** from the PNG files, then caps the width (about 1080 pixels for phones and 1600 for tablets and Windows, to be confirmed) and **optimises losslessly**;
+3. **crops** where the manual's own `crops.json` (beside its pictures) says so, for a capture artefact such as the black band an in-app capture leaves where the title bar is, or for a part of the screen that may not be shown (the app's own sample workspaces, a file path); the crop and its reason are recorded in the manifest (DEC-091). **Strips metadata** from the PNG files, then caps the width (about 1080 pixels for phones and 1600 for tablets and Windows, to be confirmed) and **optimises losslessly**;
 4. **compares each image with the committed one** with a small tolerance, so anti-aliasing noise does not count as a change;
 5. **writes only what changed**, and updates the manifest, including the app version each image was last verified against;
 6. **updates the manual's key map,** keeping existing alternative text, and gives each new key a placeholder that fails the build until a person writes it;
@@ -167,7 +169,7 @@ If video is wanted later (Q25, WP18), it is made and used like this:
 
 | Point | Where decided |
 |---|---|
-| Which emulator and simulator profiles? | WP4, then pinned in the catalogue |
+| Which emulator and simulator profiles (the Android phone is pinned: DEC-088)? | WP4, then pinned in the catalogue |
 | Does in-app capture on Android leave out the status bar? | WP2 |
 | Width caps and the comparison tolerance | WP5 |
 | Does a feature need a physical device (`device`)? | Per screen, in WP4 |

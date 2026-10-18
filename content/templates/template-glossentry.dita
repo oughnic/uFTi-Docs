@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary Entry//EN" "glossentry.dtd">
+<!-- GLOSSARY ENTRY TEMPLATE (authoring standards, section 5; style guide, section 6). Every hard word
+     has an entry. Copy this file, then:
+       1. Name the file for the term, in the singular: workspace.dita. Make the id the same.
+       2. glossterm: the term in lower case, in the singular, unless it is a name.
+       3. glossdef: one or two short sentences in plain words. Say what the thing is, not what it is
+          like. Use only words an 11-year-old knows, or words that have their own entry.
+       4. Acronyms and abbreviations take a glossBody with a glossAlt (see the comment below).
+       5. Add the entry to the glossary list in the bookmap with a key of term- and the file name, and
+          use <term keyref="term-..."/> on the first use of the word in a topic.
+       6. Never a file tag or a line of a file (DEC-030). Never a statement about price (DEC-040). -->
+<glossentry id="template-glossentry" xml:lang="en-GB">
+  <glossterm>thing</glossterm>
+  <glossdef>Something you keep in a workspace. It can be a person, a family or a source.</glossdef>
+  <!-- For an abbreviation, add after the glossdef:
+       <glossBody><glossAlt><glossAcronym>ABC</glossAcronym></glossAlt></glossBody> -->
+</glossentry>

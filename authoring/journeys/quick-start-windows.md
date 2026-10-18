@@ -1,5 +1,7 @@
 # Quick Start outline: Windows
 
+**Superseded in part.** The first walk of the real Windows app changed the route: the written Windows Quick Start has six pages in another order, with the app's own labels. See DEC-089 to DEC-092 in the [decision log](../decision-log.md), which also lists what is waiting on the app. This outline stays as the plan the walk tested.
+
 Part of [WP0](README.md). Status: draft for testing, 16 October 2026. The shape is set by the [content model, section 3](../content-model.md#3-the-quick-start): seven pages, ten minutes, each under 150 words with one picture. Pages 1 and 6 are for Windows. The rest are for the desktop idiom ([platform strategy, section 2.3](../platform-strategy.md#23-idiom-first-platform-at-the-edges)).
 
 Pages 3, 4, 5 and 7 are the same topics as in the [Android phone outline](quick-start-android-phone.md), with Windows pictures. Their text is repeated here so this outline reads on its own. Keep the two files in step. Labels in **bold** are what we expect to see on screen. WP4 confirms every one against the app. Page 3 depends on Q19, the bundled sample.

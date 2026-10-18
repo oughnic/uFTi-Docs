@@ -13,3 +13,16 @@ The Atkinson Hyperlegible Next Project Authors) and Source Serif 4 (Copyright
 2014-2023 Adobe, with Reserved Font Name "Source"). Both are licensed under the
 SIL Open Font License, Version 1.1, not the Apache License. Their licences are
 in build/theme/assets/licences.
+
+build/vale/styles/Readability contains the Readability style for Vale (version 0.2.0, Copyright
+2026 Joseph Kato), licensed under the MIT License. Its licence is in
+build/vale/styles/Readability/LICENSE.
+
+build/vale/styles/config/dictionaries contains the en_GB-ise (British English, "ise" spelling)
+Hunspell dictionary, version 2020.12.07, derived from SCOWL (Spell Checker Oriented Word Lists,
+Copyright 2000-2018 Kevin Atkinson and others) and packaged by wooorm/dictionaries. It is licensed
+under permissive licences (a BSD-style licence, with the notices of the word lists it draws on).
+The full notice, with every copyright statement, is in
+build/vale/styles/config/dictionaries/en_GB-LICENSE.txt.
+
+Neither is part of the published documentation. They are tools for checking the source.

@@ -1,0 +1,107 @@
+{
+  "manual": "android-phone",
+  "app": {
+    "version": "0.1.0 (1)"
+  },
+  "theme": {
+    "name": "oxford-slate",
+    "variant": "light"
+  },
+  "locale": "en-GB",
+  "dataset": {
+    "name": "bronte"
+  },
+  "device": {
+    "kind": "physical",
+    "os": "android 12 (SDK 31)",
+    "width": 1080,
+    "height": 2400,
+    "orientation": "portrait"
+  },
+  "captured": "2026-10-17",
+  "images": [
+    {
+      "key": "img-citation-add",
+      "file": "citation-add.png",
+      "sha256": "e9411f54c39492d2fec6783cc12140ebe0a93449dcb6b22b2ad347ca095236b3",
+      "width": 1060,
+      "height": 2184,
+      "stage": 6,
+      "workspace": "Brontë family of Haworth",
+      "focus": "Charlotte Brontë",
+      "capture": "in-app (modal sheets and dialogs by adb screencap)",
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "width": 1060,
+        "height": 2184,
+        "reason": "Removes a thin sliver of another element at the right edge of the capture."
+      },
+      "verifiedAppVersion": "0.1.0 (1)"
+    },
+    {
+      "key": "img-nav-main",
+      "file": "nav-main.png",
+      "sha256": "35689ecb0b7f7bf4f8426b98b7006836fba37285992f80a58f69dcb2e6279fa6",
+      "width": 1080,
+      "height": 2182,
+      "stage": 2,
+      "workspace": "Brontë family of Haworth",
+      "focus": "none",
+      "capture": "in-app (modal sheets and dialogs by adb screencap)",
+      "crop": null,
+      "verifiedAppVersion": "0.1.0 (1)"
+    },
+    {
+      "key": "img-person-add",
+      "file": "person-add.png",
+      "sha256": "b9dfd805efb2c5e9ed4a198d55180ea7118c94d2aeae73d8608f2f22a9f1b5bb",
+      "width": 1080,
+      "height": 1662,
+      "stage": 1,
+      "workspace": "not shown",
+      "focus": "Patrick Brontë",
+      "capture": "in-app (modal sheets and dialogs by adb screencap)",
+      "crop": {
+        "x": 0,
+        "y": 520,
+        "width": 1080,
+        "height": 1662,
+        "reason": "Leaves out the top of the screen: the button that fills the form from a document (an AI feature, which the documentation leaves out, DEC-020) and the name of the workspace, which is not the Brontë workspace."
+      },
+      "verifiedAppVersion": "0.1.0 (1)"
+    },
+    {
+      "key": "img-start-first-run",
+      "file": "start-first-run.png",
+      "sha256": "6cfd6eba05abb098d16a115e417bff3da3d20912e22a961a7933f72bffca88f5",
+      "width": 745,
+      "height": 225,
+      "stage": 0,
+      "workspace": "not shown",
+      "focus": "none",
+      "capture": "in-app (modal sheets and dialogs by adb screencap)",
+      "crop": {
+        "x": 55,
+        "y": 295,
+        "width": 745,
+        "height": 225,
+        "reason": "Keeps the heading and the two buttons. The first launch shows the app's own sample workspaces with file paths, and the screen with the samples removed shows a message about opening a family tree file; neither is the Brontë dataset or the route the page teaches (DEC-040)."
+      },
+      "verifiedAppVersion": "0.1.0 (1)"
+    },
+    {
+      "key": "img-workspace-export",
+      "file": "workspace-export.png",
+      "sha256": "2b2ab262313930b4f28de519030b499941593fbfc601fc5bf20d4d17768f405d",
+      "width": 1080,
+      "height": 2184,
+      "stage": 3,
+      "workspace": "Brontë family of Haworth",
+      "focus": "none",
+      "capture": "in-app (modal sheets and dialogs by adb screencap)",
+      "crop": null,
+      "verifiedAppVersion": "0.1.0 (1)"
+    }
+  ]
+}

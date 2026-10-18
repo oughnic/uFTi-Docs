@@ -6,7 +6,7 @@ The user documentation for the **uFTi MAUI application**, authored in DITA 1.3 a
 
 ## Status
 
-Planning only. Read `authoring/README.md` first. No DITA topics exist yet: write content only when the user asks, following the delivery plan in `authoring/authoring-plan.md`.
+The plan, the toolchain and the first content (the Windows and Android phone Quick Starts) exist. Read `authoring/README.md` first. Write content only when the user asks, following the delivery plan in `authoring/authoring-plan.md`, starting from a template in `content/templates/`. The rules are in `authoring/authoring-standards.md`, `authoring/style-guide.md`, `authoring/terminology.md` and `authoring/metadata-vocabulary.md`; `pwsh build/scripts/check-source.ps1` enforces them, and `pwsh build/scripts/test-source-rules.ps1` proves the rules.
 
 ## Standing instructions
 
