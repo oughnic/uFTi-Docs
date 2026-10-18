@@ -73,10 +73,13 @@ Write-Host "  output:  $outDir"
 Write-Host "  tools:   $($onPath -join '; ')"
 
 $started = Get-Date
-$r = Invoke-UftiProcess -FilePath $P.Dita -ArgumentList @("--project=$projectFile", "--output=$outDir", "--temp=$temp") -WorkingDirectory $root -LogPath $log
+# --verbose, because the toolkit logs an unresolved key (DOTJ047I) at its information level, which
+# the default level never prints. The full log goes to the file; the console shows the messages.
+$r = Invoke-UftiProcess -FilePath $P.Dita -ArgumentList @("--project=$projectFile", "--output=$outDir", "--temp=$temp", '--verbose') -WorkingDirectory $root -LogPath $log -Quiet
 $took = [int]((Get-Date) - $started).TotalSeconds
 if (Test-Path -LiteralPath $temp) { Remove-Item -LiteralPath $temp -Recurse -Force -ErrorAction SilentlyContinue }
-Write-Host "`n  log: $log ($took s)"
+$r.Output | Where-Object { $_ -match '\[(GOVK|DOTX|DOTJ|DOTA|DSPDF)\d{3}[WEFI]\]|^\s*(govuk:|Warning|Error|BUILD|Exception)' -and $_ -notmatch '\[DOTJ\d{3}I\]' -or $_ -match '\[DOTJ047I\]' } | ForEach-Object { Write-Host "  $_" }
+Write-Host "`n  log: $log ($took s, $($r.Output.Count) lines)"
 
 $m = Get-UftiBuildMessages -Lines $r.Output
 $codes = @($m.Gated | ForEach-Object { if ($_ -match '\[((GOVK|DOTX|DOTJ|DOTA|DSPDF)\d{3}[WEFI])\]') { $Matches[1] } else { 'other' } } | Group-Object | ForEach-Object { "$($_.Name) x$($_.Count)" })

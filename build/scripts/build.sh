@@ -60,10 +60,13 @@ outputs_of "$project_file" | sort -u | while read -r href; do
   case "$target" in "$out_dir"/*) rm -rf "$target"; echo "  cleared: $target" ;; esac
 done
 started=$(date +%s)
-(cd "$root" && "$dita" "--project=$project_file" "--output=$out_dir" "--temp=$temp" 2>&1 | tee "$log")
-code=${PIPESTATUS[0]}
+# --verbose, because the toolkit logs an unresolved key (DOTJ047I) at its information level, which
+# the default level never prints. The full log goes to the file; the console shows the messages.
+(cd "$root" && "$dita" "--project=$project_file" "--output=$out_dir" "--temp=$temp" --verbose > "$log" 2>&1)
+code=$?
 rm -rf "$temp"
-echo; echo "  log: $log ($(( $(date +%s) - started )) s)"
+grep -E '\[(GOVK|DOTX|DOTJ|DOTA|DSPDF)[0-9]{3}[WEF]\]|\[DOTJ047I\]|^\s*(govuk:|Warning|Error|BUILD|Exception)' "$log" | sed 's/^/  /' || true
+echo; echo "  log: $log ($(( $(date +%s) - started )) s, $(wc -l < "$log" | tr -d ' ') lines)"
 
 # The gated messages: warnings, errors, fatal messages, DOTJ047I, and the toolkit's own failures.
 gated=$(grep -E '\[(GOVK|DOTX|DOTJ|DOTA|DSPDF)[0-9]{3}[WEF]\]|\[DOTJ047I\]|^\s*(BUILD FAILED|Error:|\[ERROR\]|Exception in thread)' "$log" || true)

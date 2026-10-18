@@ -206,7 +206,8 @@ function Get-UftiBuildMessages {
       Codes look like [GOVK001W], [DOTX008W], [DOTJ047I], [DSPDF009W]. Warnings, errors and fatal
       messages fail a build (build and quality, section 4). One info message is treated as a
       failure too: DOTJ047I, an unresolved key, because the plan requires zero unresolved keys and
-      the toolkit reports it at info level only.
+      the toolkit reports it at the information level only, which the build scripts enable with
+      --verbose (the default level prints nothing for it). The source lint checks keys as well.
     #>
     param([AllowNull()][AllowEmptyCollection()][string[]]$Lines)
     $gated = [System.Collections.Generic.List[string]]::new()
