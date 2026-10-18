@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="which-file-to-send" xml:lang="en-GB">
+  <title>Which file to send</title>
+  <shortdesc>Send the copy you saved yourself, and not the other files beside your tree, so your family gets the tree you meant to share.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-18"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Concept</category>
+      <keywords>
+        <keyword>share</keyword>
+        <keyword>email</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p>To share your tree, send a copy that you saved with <uicontrol keyref="ui-save-as"/>. <xref keyref="keep-it-safe"/> shows how to make one.</p>
+    <p>Do not send the files that <keyword keyref="product-name"/> keeps beside your tree. The <term keyref="term-backup">backup</term> is an old version of your tree. The file with V7 in its name is a second copy of it. Sending the wrong one sends an old tree or a second copy.</p>
+    <p>A saved copy stays as it was when you made it. Make a new one before you send, if you have added anything since. <xref keyref="files-beside-your-tree"/> says what each file is.</p>
+  </conbody>
+</concept>

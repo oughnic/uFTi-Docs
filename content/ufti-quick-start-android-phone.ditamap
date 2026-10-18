@@ -34,6 +34,7 @@
     <booklists>
       <glossarylist>
         <topicref href="glossary/fact.dita" keys="term-fact"/>
+        <topicref href="glossary/family-tree-file.dita" keys="term-family-tree-file"/>
         <topicref href="glossary/pedigree.dita" keys="term-pedigree"/>
         <topicref href="glossary/source.dita" keys="term-source"/>
         <topicref href="glossary/workspace.dita" keys="term-workspace"/>

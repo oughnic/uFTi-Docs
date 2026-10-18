@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="files-beside-your-tree" xml:lang="en-GB">
+  <title>Files beside your tree</title>
+  <shortdesc>The files you may see beside your tree: the tree itself, its backup, and the file with V7 in its name.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-18"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Reference</category>
+      <keywords>
+        <keyword>backup</keyword>
+        <keyword>V7</keyword>
+        <keyword>extra files</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <refbody>
+    <section>
+      <p>When you open a family tree file, you may see more files beside it. <keyword keyref="product-name"/> makes the extra files for you. You do not need to open them or change them.</p>
+    </section>
+    <table>
+      <title>The files you may see beside your tree</title>
+      <tgroup cols="3">
+        <colspec colname="c1" colwidth="2*"/>
+        <colspec colname="c2" colwidth="3*"/>
+        <colspec colname="c3" colwidth="2*"/>
+        <thead>
+          <row>
+            <entry>File</entry>
+            <entry>What it is</entry>
+            <entry>Send it to family?</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>Your tree, such as <filepath>Brontë family.ged</filepath></entry>
+            <entry>The file you opened. <keyword keyref="product-name"/> saves your changes to it.</entry>
+            <entry>Send a saved copy instead.</entry>
+          </row>
+          <row>
+            <entry>The <term keyref="term-backup">backup</term>. Its name is the name of your tree, with the word backup, the date and the time added in brackets.</entry>
+            <entry>An older copy of your tree. <keyword keyref="product-name"/> makes one the first time it saves after you start the app.</entry>
+            <entry>No. It is an old version.</entry>
+          </row>
+          <row>
+            <entry>The file with V7 in its name, such as <filepath>Brontë family.V7.ged</filepath></entry>
+            <entry>The same tree again, as a version 7 family tree file, which is what V7 means. <keyword keyref="product-name"/> writes it again each time it saves.</entry>
+            <entry>No. It is a second copy.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <section>
+      <p>You may see more than one backup, because <keyword keyref="product-name"/> makes a new one each time you start the app and save. A backup is a family tree file too, so you can open one if you need your older tree.</p>
+      <p>A file that ends in <filepath>.gdz</filepath> holds pictures as well. It does not get a file with V7 in its name.</p>
+      <p>To make the copy that you send, choose <uicontrol keyref="ui-save-as"/> on the card for your tree. <xref keyref="which-file-to-send"/> says more.</p>
+    </section>
+  </refbody>
+</reference>

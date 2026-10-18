@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="opened-files-and-copies" xml:lang="en-GB">
+  <title>Opened files and copies</title>
+  <shortdesc>On a computer, uFTi works on the file you open, so make a copy first if you want the original left alone.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-18"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Concept</category>
+      <keywords>
+        <keyword>original file</keyword>
+        <keyword>overwrite</keyword>
+        <keyword>save as</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p>When you open a family tree file, <keyword keyref="product-name"/> works on that file. It does not make a copy for itself. It saves each change to the file you opened.</p>
+    <section>
+      <title>Leave the original alone</title>
+      <p>The file you open changes as you work. If you want the original left alone, work on a copy. Make the copy before you change anything. Then open the copy, and keep the original safe.</p>
+    </section>
+    <section>
+      <title>Make a copy</title>
+      <p>Choose <uicontrol keyref="ui-save-as"/> on the card for your tree. <keyword keyref="product-name"/> asks where to put the copy, and then tells you where it went.</p>
+      <p>A copy made this way is a <term keyref="term-saved-copy">saved copy</term>. It is a file of its own, and it stays as it was when you made it. <keyword keyref="product-name"/> does not move you to the copy. It keeps working on the file you opened. To work on the copy, open it.</p>
+    </section>
+    <section>
+      <title>Files beside your tree</title>
+      <p><keyword keyref="product-name"/> also keeps other files beside your tree. One kind is a <term keyref="term-backup">backup</term>, an older copy of your tree. Another has V7 in its name and holds the same tree again. <keyword keyref="product-name"/> makes them for you. <xref keyref="files-beside-your-tree"/> says what each one is.</p>
+    </section>
+    <section>
+      <title>Sending your tree</title>
+      <p>Send a copy that you saved, and not one of the other files. <xref keyref="which-file-to-send"/> says why.</p>
+    </section>
+  </conbody>
+</concept>

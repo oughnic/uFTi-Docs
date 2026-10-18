@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary Entry//EN" "glossentry.dtd">
+<glossentry id="backup" xml:lang="en-GB">
+  <glossterm>backup</glossterm>
+  <glossdef>An older copy of your family tree file, which the app makes for you. It is made the first time the app saves after you start it.</glossdef>
+</glossentry>
