@@ -1,0 +1,12 @@
+# Terminology list: one word for one idea. These are the words readers should not meet where the app
+# or the glossary has a plainer one (authoring/terminology.md). A label printed on screen is always
+# kept as it is, so this never applies to the word inside a label.
+extends: substitution
+message: "Say '%s' instead of '%s' (terminology list)."
+level: warning
+ignorecase: true
+swap:
+  application: app
+  database: workspace
+  genealogy: family history
+  genealogical: family history

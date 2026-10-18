@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<!-- CHAPTER INTRODUCTION TEMPLATE (authoring standards, section 5). The first topic of a chapter. Its
+     short description doubles as the summary on the home page, so write it for a reader who has not
+     opened the chapter. Copy this file, then:
+       1. Name the file for the chapter: people.dita. Make the id the same.
+       2. Say in two or three sentences what the chapter covers and who it is for. No list of the
+          topics: the contents list does that.
+       3. The chapter's map links to it as the first topicref, and holds the relationship table. -->
+<concept id="template-chapter-introduction" xml:lang="en-GB">
+  <title>People</title>
+  <shortdesc>How to add the people in your family tree and keep what you know about them.</shortdesc>
+  <prolog>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Concept</category>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p>Say what the chapter covers, in plain words. Say who it is for and what they can do when they have read it.</p>
+  </conbody>
+</concept>

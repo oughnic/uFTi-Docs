@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!-- KEY CONCEPT SET TEMPLATE, the DO piece (DEC-035). A task the reader follows in the app on the
+     Brontë dataset. It follows the task template. Use only people and facts the dataset records. -->
+<task id="template-key-concept-do" xml:lang="en-GB">
+  <title>Try the idea</title>
+  <shortdesc>Try the idea on a person from the Brontë family.</shortdesc>
+  <prolog>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>practice</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="area.screen"/>
+  </prolog>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>Open the page of Charlotte Brontë.</cmd>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-add-source"/>.</cmd>
+        <stepresult>
+          <p>Say what the reader sees.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>Say what is now true.</p>
+    </result>
+  </taskbody>
+</task>

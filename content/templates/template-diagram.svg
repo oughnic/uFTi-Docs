@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CLICKABLE DIAGRAM TEMPLATE (DEC-036, DEC-051; authoring standards, section 7). The plugin inlines this
+     file into the page that shows it, through svg-container and svgref in the topic. Rules:
+       - A title and a desc. The title names the diagram. The desc says what the picture shows, in
+         plain words, so the diagram makes sense without seeing it. role="img" on the svg.
+       - No aria-labelledby and no aria-describedby: the plugin prefixes every id when it inlines the
+         file, so they would point at nothing.
+       - Real text in text elements, never outlines, so it can be read, searched and translated.
+       - Colours are the hex values of the theme's tokens block in build/theme/ufti.css, and no others.
+       - Links are written relative to the page that shows the diagram, as .html addresses. The lint
+         resolves each one to a topic and fails if it does not reach one.
+       - Twelve nodes at most. Split a bigger diagram.
+       - No information only in the picture, and none by colour alone. The topic that shows this
+         diagram lists every link again as text, because the PDF keeps the picture and loses the links,
+         and because a screen reader needs the route. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 640 140" width="640" height="140" role="img">
+  <title>Three ways to learn one idea</title>
+  <desc>Three boxes in a row. The first says Read, the second says Do and the third says Check. Each box links to its page.</desc>
+  <style>
+    .box { fill: #D5E2F2; stroke: #1E3A5F; stroke-width: 2; }
+    .label { font-family: "Atkinson Hyperlegible Next", Arial, sans-serif; font-size: 20px; fill: #12263F; text-anchor: middle; }
+    a:hover .box, a:focus .box { fill: #1E3A5F; }
+    a:hover .label, a:focus .label { fill: #FFFFFF; }
+  </style>
+  <a href="template-key-concept-read.html">
+    <rect class="box" x="20" y="30" width="180" height="80" rx="4"/>
+    <text class="label" x="110" y="78">Read</text>
+  </a>
+  <a href="template-key-concept-do.html">
+    <rect class="box" x="230" y="30" width="180" height="80" rx="4"/>
+    <text class="label" x="320" y="78">Do</text>
+  </a>
+  <a href="template-key-concept-check.html">
+    <rect class="box" x="440" y="30" width="180" height="80" rx="4"/>
+    <text class="label" x="530" y="78">Check</text>
+  </a>
+</svg>

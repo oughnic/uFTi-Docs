@@ -1,0 +1,9 @@
+# Authoring standards, section 10: name the control, not where it sits. Position changes with the
+# screen size, the language and the reader's settings, and a screen reader does not give it. A cue
+# is allowed when the name alone would not find the control, so this is advice.
+extends: existence
+message: "'%s' says where a control sits. Prefer its name (authoring standards, section 10)."
+level: warning
+ignorecase: true
+raw:
+  - '\b((on|to|at|in|from) the (far )?(top|bottom|upper|lower)[ -](left|right)|on the (far )?(left|right)([- ]hand)?( side)?|the (left|right)[- ]hand (side|edge|corner)|(top|bottom|upper|lower)[ -](left|right) corner)\b'

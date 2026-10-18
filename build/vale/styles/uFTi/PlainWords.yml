@@ -1,0 +1,29 @@
+# Style guide, section 5: prefer the plain word. This is advice, because a plain word is not always
+# the right one, and the reading-level measures already catch a page full of long words.
+extends: substitution
+message: "Consider '%s' instead of '%s' (style guide, section 5)."
+level: warning
+ignorecase: true
+swap:
+  utilise: use
+  utilize: use
+  commence: start
+  terminate: end
+  prior to: before
+  in order to: to
+  ensure: make sure
+  approximately: about
+  a number of: some
+  in the event that: if
+  subsequently: then
+  assist: help
+  locate: find
+  numerous: many
+  purchase: buy
+  attempt: try
+  regarding: about
+  sufficient: enough
+  obtain: get
+  indicate: show
+  modify: change
+  therefore: so

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<!-- CONCEPT TEMPLATE (authoring standards, section 5). A concept explains an idea. It holds no
+     procedure: a task does that. Copy this file, then:
+       1. Name the file for a noun phrase: workspaces.dita. Make the id the same.
+       2. Title: a noun phrase in sentence case. Short description: one sentence.
+       3. Open with one paragraph that says what the idea is and why the reader cares.
+       4. Use titled sections. Aim for 500 words or fewer. Split anything longer.
+       5. Explain each hard word once, in plain words, and link it to its glossary entry on first use
+          with <term keyref="term-..."/>.
+       6. A diagram needs a title, a description, and a text list of the same links (see the diagram
+          template). Never put information only in a picture.
+       7. Related links come from the relationship table in the chapter map. Do not write them here.
+     A concept is linked from the tasks that need it. It is never in the way of them. -->
+<concept id="template-concept" xml:lang="en-GB">
+  <title>Things</title>
+  <shortdesc>What a thing is, and why it helps you keep your family history in order.</shortdesc>
+  <prolog>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Concept</category>
+      <keywords>
+        <keyword>idea</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p>Say what the idea is in one sentence. Then say why it matters to the reader.</p>
+    <section>
+      <title>What it looks like</title>
+      <p>Describe what the reader sees, with the label from the app by key: <uicontrol keyref="ui-facts"/>.</p>
+    </section>
+    <section>
+      <title>Why it helps</title>
+      <p>Give one reason, with one example from the Brontë dataset.</p>
+    </section>
+  </conbody>
+</concept>

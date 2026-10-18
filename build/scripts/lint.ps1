@@ -18,11 +18,26 @@
 
 .PARAMETER Matrix
   Where to write the applicability matrix. Default out/applicability-matrix.csv.
+
+.PARAMETER Strict
+  Also apply the rules that only real content must meet: labels by key (DEC-090) and the
+  terminology list's coverage of every label key. The `content` folder is always strict. The
+  throwaway fixture is not. test-source-rules.ps1 passes this switch for its small publications.
+
+.PARAMETER Terminology
+  The terminology list that every ui-* label key must appear in (strict sources only).
+  Default authoring/terminology.md.
+
+.PARAMETER ThemeCss
+  The stylesheet whose tokens block holds the colours a diagram may use. Default build/theme/ufti.css.
 #>
 [CmdletBinding()]
 param(
     [string[]]$Source = @('build/fixtures/wp1', 'content'),
-    [string]$Matrix = 'out/applicability-matrix.csv'
+    [string]$Matrix = 'out/applicability-matrix.csv',
+    [switch]$Strict,
+    [string]$Terminology = 'authoring/terminology.md',
+    [string]$ThemeCss = 'build/theme/ufti.css'
 )
 
 Set-StrictMode -Version Latest
@@ -131,6 +146,14 @@ function Read-Manual {
 
 $categories = @('Get started', 'How-to', 'Concept', 'Reference', 'Troubleshooting', 'Good practice', 'Glossary')
 $topicTypes = @('concept', 'task', 'reference', 'troubleshooting', 'glossentry')
+$doctypes = @{ concept = 'DITA Concept'; task = 'DITA Task'; reference = 'DITA Reference'; troubleshooting = 'DITA Troubleshooting'; glossentry = 'DITA Glossary Entry'; map = 'DITA Map'; bookmap = 'DITA BookMap' }
+$outputclasses = @('search-ignore', 'search-demote', 'landscape')                       # authoring standards, section 1
+$experienceLevels = @('novice', 'general', 'expert')                                    # metadata vocabulary
+$guideSections = @('Why it matters', 'What to do', 'Example', 'Common mistakes', 'In uFTi', 'Further reading')   # good practice strategy, section 8
+$forbiddenElements = @('object', 'video', 'audio', 'draft-comment', 'required-cleanup')  # DEC-034 and no workflow in the source
+$weakLinkText = '^(click here|here|read more|more|link|this link|this page|this)$'
+$shortdescOpeners = '^(This|In this|Here)\s+(topic|task|page|section|chapter|guide|article)\b'
+$helpIdPattern = '^[a-z][a-z0-9-]*(\.[a-z][a-z0-9-]*)*$'                               # area.screen, lower case (metadata vocabulary)
 $disclosure = @(
     @{ Pattern = '[A-Za-z]:\\Users\\|/home/[a-z]|/Users/[a-z]'; Why = 'a local path' },
     @{ Pattern = 'github\.com/(?!oughnic/uFTi-Docs)[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+'; Why = 'another repository' },
@@ -138,46 +161,151 @@ $disclosure = @(
     @{ Pattern = '\b(TODO|FIXME|XXX)\b'; Why = 'a work marker' }
 )
 
+function Get-Words { param([string]$Text) @(($Text -split '\s+') | Where-Object { $_ }).Count }
+
+# the colours a diagram may use: the theme's tokens block, and nowhere else
+$tokensPath = if ([System.IO.Path]::IsPathRooted($ThemeCss)) { $ThemeCss } else { Join-Path $root $ThemeCss }
+$tokenColours = @()
+if (Test-Path -LiteralPath $tokensPath) {
+    $css = Get-Content -LiteralPath $tokensPath -Raw
+    $block = [regex]::Match($css, '(?s)BEGIN TOKENS.*?END TOKENS').Value
+    $tokenColours = @([regex]::Matches($block, '#[0-9A-Fa-f]{6}(?![0-9A-Fa-f])') | ForEach-Object { $_.Value.ToUpperInvariant() } | Sort-Object -Unique)
+}
+
+function Test-FileHeader {
+    # The XML declaration, and a standard OASIS DOCTYPE that names the root element (DITA 1.3,
+    # no specialisation).
+    param([string]$Raw, [string]$RootName, [string]$Rel)
+    if ($Raw -notmatch '^﻿?<\?xml version="1\.0" encoding="UTF-8"\?>') { Fail "the file does not start with the XML declaration <?xml version=""1.0"" encoding=""UTF-8""?>" $Rel }
+    $m = [regex]::Match($Raw, '<!DOCTYPE\s+(\S+)\s+PUBLIC\s+"([^"]*)"')
+    if (-not $m.Success) { Fail "no standard DOCTYPE: DITA 1.3 is written with the OASIS DTD (authoring standards, section 1)" $Rel; return }
+    if ($m.Groups[1].Value -ne $RootName) { Fail "the DOCTYPE names '$($m.Groups[1].Value)' but the root element is '$RootName'" $Rel }
+    elseif ($doctypes.ContainsKey($RootName) -and $m.Groups[2].Value -ne "-//OASIS//DTD $($doctypes[$RootName])//EN") { Fail "the DOCTYPE '$($m.Groups[2].Value)' is not the standard one for '$RootName' (no specialisation)" $Rel }
+}
+
 function Test-Topic {
-    param([string]$Path, [string]$SourceRoot)
+    param([string]$Path, [string]$SourceRoot, [bool]$IsStrict)
     $rel = Rel $Path
     $stem = [System.IO.Path]::GetFileNameWithoutExtension($Path)
     $doc = Read-Xml $Path
     $rootEl = $doc.DocumentElement
     if ($topicTypes -notcontains $rootEl.LocalName) { Fail "root element '$($rootEl.LocalName)' is not one of $($topicTypes -join ', ')" $rel; return $null }
+    $rawText = Get-Content -LiteralPath $Path -Raw
+    Test-FileHeader $rawText $rootEl.LocalName $rel
     if ($rootEl.GetAttribute('id') -ne $stem) { Fail "id '$($rootEl.GetAttribute('id'))' does not match the file name '$stem'" $rel }
     if ($rootEl.GetAttribute('xml:lang') -ne 'en-GB') { Fail "xml:lang is not en-GB on the root element" $rel }
     $isGloss = $rootEl.LocalName -eq 'glossentry'
     $titleNode = if ($isGloss) { $rootEl.SelectSingleNode('glossterm') } else { $rootEl.SelectSingleNode('title') }
+    $titleText = ''
     if (-not $titleNode -or -not $titleNode.InnerText.Trim()) { Fail "no title" $rel }
-    elseif ($titleNode.InnerText.Trim().Length -gt 70) { Fail "title is longer than 70 characters" $rel }
-    elseif ($titleNode.InnerText.Trim() -match '\.$') { Fail "title ends with a full stop" $rel }
+    else {
+        $titleText = $titleNode.InnerText.Trim()
+        if ($titleText.Length -gt 70) { Fail "title is longer than 70 characters" $rel }
+        if ($titleText -match '\.$') { Fail "title ends with a full stop" $rel }
+        if ($titleText -match '^(\d+[\.\)]?\s|(chapter|section|part|step)\s+\d+\b)') { Fail "title starts with a number ('$titleText'): the build numbers chapters and sections" $rel }
+    }
+    $body = $rootEl.SelectSingleNode('conbody|taskbody|refbody|troublebody')
+    $category = $null
     if (-not $isGloss) {
         $sd = $rootEl.SelectSingleNode('shortdesc')
         if (-not $sd -or -not $sd.InnerText.Trim()) { Fail "no shortdesc" $rel }
-        elseif (($sd.InnerText.Trim() -split '\s+').Count -gt 30) { Fail "shortdesc is over 30 words; aim for 25 or fewer" $rel }
+        else {
+            $sdText = ($sd.InnerText.Trim() -replace '\s+', ' ')
+            if ((Get-Words $sdText) -gt 30) { Fail "shortdesc is over 30 words; aim for 25 or fewer" $rel }
+            if ($sdText -match $shortdescOpeners) { Fail "shortdesc begins 'This topic' or the like: say what the topic is or does (authoring standards, section 4)" $rel }
+            if ($titleText -and $sdText.TrimEnd('.') -ieq $titleText) { Fail "shortdesc only repeats the title" $rel }
+            if ($sdText -match '[.!?]\s+\S') { Fail "shortdesc is more than one sentence (authoring standards, section 4)" $rel }
+        }
         $cat = $rootEl.SelectSingleNode('prolog/metadata/category')
         if (-not $cat) { Fail "no category in prolog/metadata (one of: $($categories -join ', '))" $rel }
         elseif ($categories -notcontains $cat.InnerText.Trim()) { Fail "category '$($cat.InnerText.Trim())' is not in the controlled list" $rel }
-        $titleWords = @(($titleNode.InnerText.ToLowerInvariant() -split '[^a-z0-9]+') | Where-Object { $_ })
+        else { $category = $cat.InnerText.Trim() }
+        $titleWords = @(($titleText.ToLowerInvariant() -split '[^a-z0-9]+') | Where-Object { $_ })
         foreach ($kw in $rootEl.SelectNodes('prolog/metadata/keywords/keyword')) {
             $w = @(($kw.InnerText.ToLowerInvariant() -split '[^a-z0-9]+') | Where-Object { $_ })
             if ($w.Count -eq 1 -and $titleWords -contains $w[0]) { Fail "keyword '$($kw.InnerText)' only repeats a word of the title" $rel }
         }
+        foreach ($au in $rootEl.SelectNodes('prolog/metadata/audience')) {
+            if ($au.GetAttribute('type') -and $au.GetAttribute('type') -ne 'user') { Fail "audience type '$($au.GetAttribute('type'))': use type=""user""" $rel }
+            $lvl = $au.GetAttribute('experiencelevel')
+            if ($lvl -and $experienceLevels -notcontains $lvl) { Fail "audience experiencelevel '$lvl' is not one of $($experienceLevels -join ', ')" $rel }
+        }
+    }
+    # dates only when true: a real date, not in the future, and revised no earlier than created
+    $created = $null
+    foreach ($d in $rootEl.SelectNodes('prolog/critdates/created | prolog/critdates/revised')) {
+        $v = if ($d.LocalName -eq 'created') { $d.GetAttribute('date') } else { $d.GetAttribute('modified') }
+        $parsed = [datetime]::MinValue
+        if (-not [datetime]::TryParseExact($v, 'yyyy-MM-dd', [cultureinfo]::InvariantCulture, [System.Globalization.DateTimeStyles]::None, [ref]$parsed)) { Fail "critdates $($d.LocalName) '$v' is not a date written YYYY-MM-DD" $rel; continue }
+        if ($parsed.Date -gt [datetime]::UtcNow.Date) { Fail "critdates $($d.LocalName) '$v' is in the future" $rel }
+        if ($d.LocalName -eq 'created') { $created = $parsed } elseif ($created -and $parsed -lt $created) { Fail "critdates revised '$v' is before created" $rel }
     }
     # metadata never names a person; a screen identifier is ours
-    foreach ($r in $rootEl.SelectNodes('prolog/resourceid')) { if ($r.GetAttribute('appname') -ne 'ufti') { Fail "resourceid appname must be 'ufti'" $rel } }
+    $helpIds = @()
+    foreach ($r in $rootEl.SelectNodes('prolog/resourceid')) {
+        if ($r.GetAttribute('appname') -ne 'ufti') { Fail "resourceid appname must be 'ufti'" $rel }
+        $aid = $r.GetAttribute('appid')
+        if ($aid -notmatch $helpIdPattern) { Fail "help identifier '$aid' is not area.screen in lower case with hyphens (metadata vocabulary)" $rel } else { $helpIds += $aid }
+    }
     foreach ($a in $rootEl.SelectNodes('prolog/author')) { Fail "a person or author in metadata ('$($a.InnerText)'): metadata names nobody" $rel }
     # markup rules
     foreach ($e in $rootEl.SelectNodes('//*[@chunk]')) { if ($e.GetAttribute('chunk') -match 'to-content') { Fail "chunk='to-content' is forbidden" $rel } }
+    foreach ($e in $rootEl.SelectNodes('//*[@outputclass]')) {
+        foreach ($c in ($e.GetAttribute('outputclass') -split '\s+' | Where-Object { $_ })) { if ($outputclasses -notcontains $c) { Fail "outputclass '$c' is not one the plugin documents ($($outputclasses -join ', '))" $rel } }
+    }
+    foreach ($e in $rootEl.SelectNodes('//*[@status]')) { Fail "@status on <$($e.LocalName)>: workflow is recorded in issues and pull requests, never in the source" $rel }
+    foreach ($name in $forbiddenElements) { if ($rootEl.SelectNodes("//$name").Count) { Fail "<$name> is not used (video and objects: DEC-034; comments and clean-up markers are workflow)" $rel } }
     foreach ($x in $rootEl.SelectNodes('//xref[@href] | //link[@href]')) {
         if ($x.GetAttribute('scope') -ne 'external' -and $x.GetAttribute('href') -match '\.dita') { Fail "link to a topic by href ('$($x.GetAttribute('href'))'): link by keyref" $rel }
         if ($x.GetAttribute('scope') -eq 'external' -and $x.GetAttribute('format') -ne 'html') { Fail "external link without format='html'" $rel }
+    }
+    foreach ($x in $rootEl.SelectNodes('//xref')) {
+        $lt = ($x.InnerText -replace '\s+', ' ').Trim()
+        if ($lt -match $weakLinkText) { Fail "link text '$lt' means nothing out of context (authoring standards, section 8)" $rel }
+        if ($lt -match '^https?://') { Fail "link text is a bare address ('$lt')" $rel }
     }
     foreach ($img in $rootEl.SelectNodes('//image')) {
         $alt = $img.SelectSingleNode('alt')
         if (-not $img.GetAttribute('keyref') -and (-not $alt -or -not $alt.InnerText.Trim())) { Fail "image without alternative text (an alt element, or a keyref whose key has linktext)" $rel }
         if ($alt -and $alt.InnerText -match '^\s*(Image|Screenshot|Picture) of') { Fail "alternative text starts 'Image of' or 'Screenshot of'" $rel }
+        if ($img.GetAttribute('href')) { Fail "image by href ('$($img.GetAttribute('href'))'): pictures are referenced by key (platform strategy, section 4)" $rel }
+        if ($img.GetAttribute('placement') -ne 'inline' -and -not $img.SelectSingleNode('ancestor::fig')) { Fail "image outside a fig: the theme caps the height of a figure's picture in the PDF (DEC-082)" $rel }
+    }
+    foreach ($tb in $rootEl.SelectNodes('//table')) {
+        if (-not $tb.SelectSingleNode('title')) { Fail "table without a title (authoring standards, section 7)" $rel }
+        if (-not $tb.SelectSingleNode('tgroup/thead')) { Fail "table without a header row (thead)" $rel }
+    }
+    foreach ($tb in $rootEl.SelectNodes('//simpletable')) { if (-not $tb.SelectSingleNode('sthead')) { Fail "simple table without a header row (sthead)" $rel } }
+    # the shape of each topic type (authoring standards, section 5)
+    switch ($rootEl.LocalName) {
+        'task' {
+            $steps = @($rootEl.SelectNodes('taskbody/steps/step | taskbody/steps-unordered/step'))
+            if (-not $rootEl.SelectSingleNode('taskbody/steps | taskbody/steps-unordered')) { Fail "a task has steps: put them first (authoring standards, section 5)" $rel }
+            if ($steps.Count -gt 9) { Fail "$($steps.Count) steps: at most nine, so split the task" $rel }
+            foreach ($cmd in $rootEl.SelectNodes('taskbody/steps/step/cmd | taskbody/steps-unordered/step/cmd')) {
+                $n = Get-Words $cmd.InnerText
+                if ($n -gt 25) { Fail "a step command of $n words: keep it to 25 or fewer and move detail to info" $rel }
+            }
+            foreach ($tb in $rootEl.SelectNodes('taskbody/steps//table | taskbody/steps//simpletable')) { Fail "a table inside a step (authoring standards, section 5)" $rel; break }
+        }
+        'concept' {
+            if ($body -and (Get-Words $body.InnerText) -gt 500) { Fail "a concept of $(Get-Words $body.InnerText) words: aim for 500 or fewer, and split it" $rel }
+            if ($category -eq 'Good practice') {
+                foreach ($s in $rootEl.SelectNodes('conbody/section/title')) { if ($guideSections -notcontains $s.InnerText.Trim()) { Fail "good practice section title '$($s.InnerText.Trim())' is not one of: $($guideSections -join ', ')" $rel } }
+            }
+        }
+        'troubleshooting' {
+            if (-not $rootEl.SelectSingleNode('troublebody/condition')) { Fail "a troubleshooting topic needs a condition: what the reader sees" $rel }
+            if (-not $rootEl.SelectSingleNode('troublebody/troubleSolution/cause') -or -not $rootEl.SelectSingleNode('troublebody/troubleSolution/remedy')) { Fail "a troubleshooting topic needs a troubleSolution with a cause and a remedy" $rel }
+        }
+        'glossentry' { if (-not $rootEl.SelectSingleNode('glossdef')) { Fail "a glossary entry needs a glossdef" $rel } }
+    }
+    if ($category -eq 'Get started' -and $body -and (Get-Words $body.InnerText) -gt 150) { Fail "a Get started page of $(Get-Words $body.InnerText) words: Quick Start pages stay under 150" $rel }
+    # a task that tells the reader what to select on a screen documents that screen: it carries the help identifier (DEC-028)
+    if ($rootEl.LocalName -eq 'task' -and $helpIds.Count -eq 0 -and $rootEl.SelectSingleNode('//uicontrol | //wintitle')) { Fail "a task that names controls on a screen has no resourceid help identifier (DEC-028)" $rel }
+    # labels come from keys, so a label that changes is corrected once (DEC-090)
+    if ($IsStrict) {
+        foreach ($u in $rootEl.SelectNodes('//uicontrol[not(@keyref)] | //wintitle[not(@keyref)]')) { Fail "label typed inline ('$($u.InnerText.Trim())'): use a keyref to ui-* (DEC-090)" $rel; break }
     }
     # platform tokens
     $platforms = [System.Collections.Generic.HashSet[string]]::new()
@@ -192,18 +320,19 @@ function Test-Topic {
     foreach ($e in $rootEl.SelectNodes('//*[@props or @otherprops or @audience or @rev]')) { Fail "conditional attribute other than @platform on <$($e.LocalName)> (platform strategy, section 2.1)" $rel }
     if ($platforms.Count -gt 3) { Fail "more than three @platform variants in one topic ($($platforms.Count)): split it (variant budget)" $rel }
     # disclosure patterns, in text and comments alike
-    $raw = Get-Content -LiteralPath $Path -Raw
+    $raw = $rawText
     foreach ($d in $disclosure) { $mm = [regex]::Match($raw, $d.Pattern); if ($mm.Success) { Fail "looks like $($d.Why): '$($mm.Value)'" $rel } }
     # what the topic needs: keys, diagrams
     $keyrefs = @($rootEl.SelectNodes('//*[@keyref]') | ForEach-Object { $_.GetAttribute('keyref') -replace '/.*$', '' } | Sort-Object -Unique)
     $svgs = @($rootEl.SelectNodes('//svgref[@href]') | ForEach-Object { $_.GetAttribute('href') })
-    [pscustomobject]@{ Path = $Path; Rel = $rel; KeyRefs = $keyrefs; Svgs = $svgs; ResourceIds = @($rootEl.SelectNodes('prolog/resourceid') | ForEach-Object { $_.GetAttribute('appid') }); Platforms = @($platforms) }
+    [pscustomobject]@{ Path = $Path; Rel = $rel; Title = $titleText; KeyRefs = $keyrefs; Svgs = $svgs; XrefCount = @($rootEl.SelectNodes('//xref[@keyref or @href] | //link[@keyref or @href]')).Count; ResourceIds = $helpIds; Platforms = @($platforms) }
 }
 
 function Test-Svg {
-    # A diagram: a title and a description, real text, and links that resolve from the page that
-    # shows it (the plugin inlines the file and leaves cross-document links as written).
-    param([string]$SvgPath, [string]$FromTopic)
+    # A diagram: a title and a description, real text, theme colours, and links that resolve from the
+    # page that shows it (the plugin inlines the file and leaves cross-document links as written).
+    # Every link also appears in the topic's text list, because the PDF loses the links.
+    param([string]$SvgPath, [string]$FromTopic, [int]$ListedLinks)
     $rel = Rel $SvgPath
     $doc = Read-Xml $SvgPath
     $ns = [System.Xml.XmlNamespaceManager]::new($doc.NameTable); $ns.AddNamespace('s', 'http://www.w3.org/2000/svg'); $ns.AddNamespace('xlink', 'http://www.w3.org/1999/xlink')
@@ -212,8 +341,16 @@ function Test-Svg {
     if (-not $doc.SelectSingleNode('//s:text', $ns)) { Fail "diagram has no text element: text must be real text, not outlines" $rel }
     if ($doc.SelectSingleNode('//s:script | //s:foreignObject', $ns)) { Fail "diagram carries a script or foreignObject" $rel }
     foreach ($a in 'aria-labelledby', 'aria-describedby') { if ($doc.SelectSingleNode("//*[@$a]")) { Fail "diagram uses $a, which points at nothing once the plugin prefixes the ids: use title and desc, and let the figure title name it" $rel } }
+    $svgRaw = Get-Content -LiteralPath $SvgPath -Raw
+    if ($tokenColours.Count) {
+        foreach ($c in ([regex]::Matches($svgRaw, '#[0-9A-Fa-f]{3,8}(?![0-9A-Za-z])') | ForEach-Object { $_.Value.ToUpperInvariant() } | Sort-Object -Unique)) {
+            if ($tokenColours -notcontains $c) { Fail "colour $c is not a token of the theme (build/theme/ufti.css): use the tokens' values as written" $rel }
+        }
+    }
+    if ($svgRaw -match '(?i)\brgba?\(|\bhsla?\(|(fill|stroke|color)\s*[:=]\s*"?(red|green|blue|yellow|orange|purple|pink|brown|black|white|gr[ae]y)\b') { Fail "a colour that is not written as one of the theme's hex values" $rel }
     $ids = @($doc.SelectNodes('//*[@id]') | ForEach-Object { $_.GetAttribute('id') })
     $pageDir = Split-Path -Parent $FromTopic
+    $targets = [System.Collections.Generic.HashSet[string]]::new()
     foreach ($a in $doc.SelectNodes('//s:a', $ns)) {
         $h = $a.GetAttribute('href'); if (-not $h) { $h = $a.GetAttribute('href', 'http://www.w3.org/1999/xlink') }
         if (-not $h) { Fail "a link in the diagram has no href" $rel; continue }
@@ -221,8 +358,29 @@ function Test-Svg {
         if ($h -match '^javascript:') { Fail "a link that runs code: $h" $rel; continue }
         $file, $frag = $h -split '#', 2
         if (-not $file) { if ($ids -notcontains $frag) { Fail "fragment link #$frag has no target in the diagram" $rel }; continue }
+        [void]$targets.Add($file)
         $target = [System.IO.Path]::GetFullPath((Join-Path $pageDir ($file -replace '\.html$', '.dita')))
         if (-not (Test-Path -LiteralPath $target)) { Fail "link '$h' does not reach a topic from $(Rel $FromTopic) (written as an .html address relative to that page)" $rel }
+    }
+    if ($ListedLinks -lt $targets.Count) { Fail "the diagram links to $($targets.Count) page(s) but $(Rel $FromTopic) lists ${ListedLinks}: a text list of the same links must follow the diagram (the PDF loses the links)" $rel }
+}
+
+function Test-KeyNames {
+    # Key naming (authoring standards, section 3): a topic's key is its file name, a glossary entry's
+    # is term- and its file name, a picture's starts img-, and a word or fact starts ui- or product-.
+    param([string]$MapPath)
+    $rel = Rel $MapPath
+    $doc = Read-Xml $MapPath
+    foreach ($e in $doc.SelectNodes('//*[@keys]')) {
+        $href = $e.GetAttribute('href')
+        foreach ($k in ($e.GetAttribute('keys') -split '\s+' | Where-Object { $_ })) {
+            if ($href -match '\.dita(#.*)?$') {
+                $stem = [System.IO.Path]::GetFileNameWithoutExtension(($href -split '#')[0])
+                if ($k -ne $stem -and $k -ne "term-$stem") { Fail "key '$k' on '$href': a topic's key is its file name ('$stem'), or term-$stem for a glossary entry" $rel }
+            }
+            elseif ($href -match '\.(png|svg|jpg|jpeg)$') { if ($k -notlike 'img-*') { Fail "key '$k' names a picture: picture keys start img-" $rel } }
+            elseif (-not $href -and $e.SelectSingleNode('topicmeta/keywords/keyword')) { if ($k -notlike 'ui-*' -and $k -notlike 'product-*') { Fail "key '$k' holds a word: label keys start ui-, product facts start product-" $rel } }
+        }
     }
 }
 
@@ -238,6 +396,9 @@ foreach ($src in $Source) {
     $maps = @(Get-ChildItem -LiteralPath $srcRoot -Recurse -Filter '*.ditamap')
     if ($maps.Count -eq 0) { Write-Host "  $src`: no maps, skipped"; continue }
     Write-UftiStep "Lint $src"
+    $strictSource = $Strict.IsPresent -or ((Rel $srcRoot) -eq 'content')
+    $templateDir = (Join-Path $srcRoot 'templates') + [System.IO.Path]::DirectorySeparatorChar   # templates are checked as topics but belong to no manual (DEC-073)
+    function Test-IsTemplate { param([string]$Path) $Path.StartsWith($templateDir, [System.StringComparison]::OrdinalIgnoreCase) }
     # file and folder names
     foreach ($f in Get-ChildItem -LiteralPath $srcRoot -Recurse -File | Where-Object { $_.Extension -ne '.md' }) {   # Markdown documents (README.md, the dataset) are not DITA sources
         if ($f.Name -notmatch '^[a-z0-9][a-z0-9-]*(\.[a-z0-9]+)+$') { Fail "file name is not lower case with hyphens" (Rel $f.FullName) }
@@ -248,7 +409,7 @@ foreach ($src in $Source) {
     # topics
     $topics = @{}
     foreach ($f in Get-ChildItem -LiteralPath $srcRoot -Recurse -Filter '*.dita') {
-        $t = Test-Topic $f.FullName $srcRoot
+        $t = Test-Topic $f.FullName $srcRoot $strictSource
         if ($t) { $topics[$f.FullName] = $t }
         $checked++
     }
@@ -258,6 +419,15 @@ foreach ($src in $Source) {
         if ($raw -match 'chunk="[^"]*to-content') { Fail "chunk='to-content' is forbidden" (Rel $mp.FullName) }
         if ($raw -match '<mapref[^>]*\skeyref=') { Fail "mapref by key is forbidden" (Rel $mp.FullName) }
         if ($raw -match 'xml:lang="(?!en-GB)') { Fail "xml:lang is not en-GB" (Rel $mp.FullName) }
+        $mapDoc = Read-Xml $mp.FullName
+        if ($mapDoc.DocumentElement.GetAttribute('xml:lang') -ne 'en-GB') { Fail "the root element has no xml:lang=""en-GB""" (Rel $mp.FullName) }
+        Test-FileHeader $raw $mapDoc.DocumentElement.LocalName (Rel $mp.FullName)
+        Test-KeyNames $mp.FullName
+        if ($mapDoc.SelectSingleNode('//authorinformation | //person | //personname')) { Fail "a person in a map's metadata: metadata names nobody (authoring standards, section 9.3)" (Rel $mp.FullName) }
+        if ($mapDoc.DocumentElement.LocalName -eq 'bookmap' -and -not (Test-IsTemplate $mp.FullName)) {
+            if (-not $mapDoc.SelectSingleNode('/bookmap/bookmeta/publisherinformation/organization')) { Fail "a bookmap names its publisher organisation in bookmeta (authoring standards, section 9.2)" (Rel $mp.FullName) }
+            if (-not $mapDoc.SelectSingleNode('/bookmap/bookmeta/bookrights/bookowner')) { Fail "a bookmap names the owner of its copyright in bookmeta/bookrights (authoring standards, section 9.2)" (Rel $mp.FullName) }
+        }
         foreach ($d in $disclosure) { $mm = [regex]::Match($raw, $d.Pattern); if ($mm.Success) { Fail "looks like $($d.Why): '$($mm.Value)'" (Rel $mp.FullName) } }
     }
     # each manual: its root bookmap is named for its slug
@@ -280,6 +450,19 @@ foreach ($src in $Source) {
         foreach ($t in $m.Topics) { [void]$used.Add($t) }
         # keys the maps themselves use (relationship tables, keyref topicrefs)
         foreach ($kr in $m.KeyRefs) { if (-not $m.Keys.Contains($kr.Key)) { Fail "key '$($kr.Key)' is not defined in the $slug manual" (Rel $kr.File) } }
+        # titles are unique within a publication, and a help identifier names one topic (DEC-028)
+        $titlesSeen = @{}
+        $helpIdsSeen = @{}
+        foreach ($tp in $m.Topics) {
+            if (-not $topics.ContainsKey($tp)) { continue }
+            $info = $topics[$tp]
+            if ($info.Title) {
+                if ($titlesSeen.ContainsKey($info.Title)) { Fail "title '$($info.Title)' is also the title of $($titlesSeen[$info.Title]) in the $slug manual" $info.Rel } else { $titlesSeen[$info.Title] = $info.Rel }
+            }
+            foreach ($hid in $info.ResourceIds) {
+                if ($helpIdsSeen.ContainsKey($hid)) { Fail "help identifier '$hid' is also claimed by $($helpIdsSeen[$hid]) in the $slug manual: one identifier, one topic" $info.Rel } else { $helpIdsSeen[$hid] = $info.Rel }
+            }
+        }
         # keys the topics use, and images
         foreach ($tp in $m.Topics) {
             if (-not $topics.ContainsKey($tp)) { continue }
@@ -299,7 +482,7 @@ foreach ($src in $Source) {
                 $svgPath = [System.IO.Path]::GetFullPath((Join-Path (Split-Path -Parent $tp) $s))
                 if (-not (Test-Path -LiteralPath $svgPath)) { Fail "diagram not found: $s" $info.Rel; continue }
                 [void]$usedSvgs.Add($svgPath)
-                Test-Svg $svgPath $tp
+                Test-Svg $svgPath $tp $info.XrefCount
             }
         }
         $imageKeysByManual[$slug] = @(@($(if ($imageKeysByManual.Contains($slug)) { $imageKeysByManual[$slug] })) + @($m.Keys.Keys | Where-Object { $_ -like 'img-*' }) | Where-Object { $_ } | Select-Object -Unique)
@@ -307,12 +490,41 @@ foreach ($src in $Source) {
     if ($included.Count -eq 0) { Fail "no root bookmap named ufti-*-<slug>.ditamap at the publication root" (Rel $srcRoot); continue }
     # the applicability matrix, orphans, image key parity
     foreach ($tp in ($topics.Keys | Sort-Object)) {
+        if (Test-IsTemplate $tp) {
+            # a template is never published: it is in no manual's navigation (DEC-073)
+            if ($used.Contains($tp)) { Fail "a template is in a manual's navigation, so it would be published" (Rel $tp) }
+            $info = $topics[$tp]
+            foreach ($s in $info.Svgs) {
+                $svgPath = [System.IO.Path]::GetFullPath((Join-Path (Split-Path -Parent $tp) $s))
+                if (-not (Test-Path -LiteralPath $svgPath)) { Fail "diagram not found: $s" $info.Rel; continue }
+                [void]$usedSvgs.Add($svgPath)
+                Test-Svg $svgPath $tp $info.XrefCount
+            }
+            continue
+        }
         $cells = foreach ($slug in $manuals.Keys) { if ($included.ContainsKey($slug) -and $included[$slug] -contains $tp) { 'included' } elseif ($included.ContainsKey($slug)) { 'excluded' } else { 'no manual' } }
         $matrixRows.Add((Rel $tp) + ',' + ($cells -join ','))
         if (-not $used.Contains($tp)) { Fail "orphan: the topic is in no manual's navigation" (Rel $tp) }
     }
-    foreach ($png in Get-ChildItem -LiteralPath $srcRoot -Recurse -Filter '*.png') { if (-not $usedImages.Contains($png.FullName)) { Fail "orphan: no key uses this picture" (Rel $png.FullName) } }
-    foreach ($svg in Get-ChildItem -LiteralPath $srcRoot -Recurse -Filter '*.svg') { if (-not $usedSvgs.Contains($svg.FullName)) { Fail "orphan: no topic shows this diagram" (Rel $svg.FullName) } }
+    foreach ($png in Get-ChildItem -LiteralPath $srcRoot -Recurse -Filter '*.png') {
+        if (-not $usedImages.Contains($png.FullName)) { Fail "orphan: no key uses this picture" (Rel $png.FullName) }
+        if ((Rel $png.FullName) -notmatch '/platforms/[a-z0-9-]+/images/[^/]+$') { Fail "a screenshot belongs in platforms/<manual>/images/ (authoring standards, section 3)" (Rel $png.FullName) }
+    }
+    foreach ($svg in Get-ChildItem -LiteralPath $srcRoot -Recurse -Filter '*.svg') {
+        if (-not $usedSvgs.Contains($svg.FullName)) { Fail "orphan: no topic shows this diagram" (Rel $svg.FullName) }
+        if ((Rel $svg.FullName) -notmatch '/(images|diagrams)/[^/]+$' -and -not (Test-IsTemplate $svg.FullName)) { Fail "a diagram belongs in an images/ or diagrams/ folder (authoring standards, section 3)" (Rel $svg.FullName) }
+    }
+    # the terminology list covers every label key (strict sources: the real content)
+    if ($strictSource) {
+        $termPath = if ([System.IO.Path]::IsPathRooted($Terminology)) { $Terminology } else { Join-Path $root $Terminology }
+        if (-not (Test-Path -LiteralPath $termPath)) { Fail "the terminology list $Terminology does not exist" }
+        else {
+            $listed = @([regex]::Matches((Get-Content -LiteralPath $termPath -Raw), '`(ui-[a-z0-9-]+)`') | ForEach-Object { $_.Groups[1].Value } | Sort-Object -Unique)
+            $labelKeys = @()
+            foreach ($mp in $maps) { $labelKeys += @((Read-Xml $mp.FullName).SelectNodes('//*[@keys]') | ForEach-Object { $_.GetAttribute('keys') -split '\s+' } | Where-Object { $_ -like 'ui-*' }) }
+            foreach ($k in ($labelKeys | Sort-Object -Unique)) { if ($listed -notcontains $k) { Fail "label key '$k' is not in the terminology list ($Terminology)" } }
+        }
+    }
     $allImageKeys = @($imageKeysByManual.Values | ForEach-Object { $_ } | Sort-Object -Unique)
     foreach ($slug in $imageKeysByManual.Keys) { $missing = @($allImageKeys | Where-Object { $imageKeysByManual[$slug] -notcontains $_ }); if ($missing) { Note "$slug defines no image key for: $($missing -join ', ')" } }
     # idiom parity for one operating system: expected only for idiom-specific topics

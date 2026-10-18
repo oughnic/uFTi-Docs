@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!-- QUICK START PAGE TEMPLATE (content model, section 3; DEC-057, DEC-080, DEC-082). One page, one job,
+     under 150 words in the body, in the Quick Start bookmap. Copy this file, then:
+       1. Steps first. Add a context only when the reader needs a reason; most pages need none.
+       2. One picture, in a fig with no title, and a result that says what has changed.
+       3. One "Next:" link at the end, by key, to the next page of the Quick Start. The pages are not
+          in a relationship table, because a table links both ways.
+       4. A page that depends on the platform (getting the app, keeping a copy) lives in
+          platforms/<platform>/topics/. A page that depends on the device (phone, desktop) lives in
+          platforms/<idiom>/topics/. A page the same everywhere lives in topics/quick-start/. See the
+          variant template for how one key serves them all.
+       5. Category is "Get started". The help identifier names the screen the page is about.
+       6. Say nothing about price, accounts or where data is kept (DEC-040).
+     Everything else follows the task template. -->
+<task id="template-quick-start-page" xml:lang="en-GB">
+  <title>Do the first thing</title>
+  <shortdesc>Do the first thing, so you can do the next.</shortdesc>
+  <prolog>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Get started</category>
+    </metadata>
+    <resourceid appname="ufti" appid="area.screen"/>
+  </prolog>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-add"/>.</cmd>
+        <stepresult>
+          <p>A sheet named <uicontrol keyref="ui-add-a-record"/> opens.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-save"/>.</cmd>
+      </step>
+    </steps>
+    <result>
+      <p>Say what has changed, in one sentence.</p>
+      <fig>
+        <image keyref="img-template-picture"/>
+      </fig>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="template-task"/>.</p>
+    </postreq>
+  </taskbody>
+</task>
