@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!-- KEY CONCEPT SET MAP TEMPLATE (DEC-035). Part of a shared chapter map: the four pieces, and the
+     relationship table that links them. A table links in both directions, so each piece links to the
+     other three. This file is a pattern to copy from. It is in no manual. -->
+<map id="template-key-concept-set" xml:lang="en-GB">
+  <topicref href="template-key-concept-see.dita" keys="template-key-concept-see"/>
+  <topicref href="template-key-concept-read.dita" keys="template-key-concept-read"/>
+  <topicref href="template-key-concept-do.dita" keys="template-key-concept-do"/>
+  <topicref href="template-key-concept-check.dita" keys="template-key-concept-check"/>
+  <reltable>
+    <relheader>
+      <relcolspec type="concept"/>
+      <relcolspec type="task"/>
+      <relcolspec type="reference"/>
+    </relheader>
+    <relrow>
+      <relcell>
+        <topicref keyref="template-key-concept-see"/>
+        <topicref keyref="template-key-concept-read"/>
+      </relcell>
+      <relcell>
+        <topicref keyref="template-key-concept-do"/>
+      </relcell>
+      <relcell>
+        <topicref keyref="template-key-concept-check"/>
+      </relcell>
+    </relrow>
+  </reltable>
+</map>

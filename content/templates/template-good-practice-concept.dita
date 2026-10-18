@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<!-- GOOD PRACTICE CONCEPT TEMPLATE (good practice strategy, sections 4 and 8). A short idea about doing
+     family history well. The section titles are fixed, and the lint checks them. Keep the order. Copy
+     this file, then:
+       1. Name the file for the idea: original-and-derivative-sources.dita. Make the id the same.
+       2. Aim for 500 words or fewer, in plain words, with a glossary entry for every research term.
+       3. Examples come from the Brontë dataset. Where the dataset has no such case, use a plainly
+          fictional example. Never a real private person.
+       4. Say what a study of sources found, and cite where, in Further reading. Paraphrase. Never copy.
+       5. A named genealogist reviews every guide topic (Q8). Record the review in the pull request. -->
+<concept id="template-good-practice-concept" xml:lang="en-GB">
+  <title>Check a record before you trust it</title>
+  <shortdesc>Three questions that help you decide how far to trust a record.</shortdesc>
+  <prolog>
+    <metadata>
+      <audience type="user" experiencelevel="general"/>
+      <category>Good practice</category>
+      <keywords>
+        <keyword>evidence</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <section>
+      <title>Why it matters</title>
+      <p>Say why this idea helps the reader. Keep it to a few sentences.</p>
+    </section>
+    <section>
+      <title>What to do</title>
+      <p>Say what the reader can do. Link the task in the app from the relationship table.</p>
+    </section>
+    <section>
+      <title>Example</title>
+      <p>Show one worked example from the Brontë dataset, using only what the register records.</p>
+    </section>
+    <section>
+      <title>Common mistakes</title>
+      <p>Name one mistake that many people make. Never blame the reader.</p>
+    </section>
+    <section>
+      <title>In uFTi</title>
+      <p>Say where <keyword keyref="product-name"/> helps, with the label by key: <uicontrol keyref="ui-add-source"/>.</p>
+    </section>
+    <section>
+      <title>Further reading</title>
+      <p>Link the standard or the guide this idea comes from. Say if a link is paid or for members only.</p>
+    </section>
+  </conbody>
+</concept>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!-- IDIOM VARIANT TEMPLATE, desktop half (DEC-032, DEC-080, DEC-093). A page that differs by device
+     idiom has one topic for each idiom. All of them share one file name, one id, one title and one
+     key. Each sits in platforms/<idiom>/topics/, and the shared map points at each with a platform
+     token on its topicref (see template-variants.ditamap). A manual then sees only its own, so a
+     link by key goes to the right page on every device.
+       - Idiom folders and tokens: desktop (Desktop), phone (Phone), tablet (Tablet).
+       - Platform folders and tokens, for installing, updating, permissions, files, accessibility and
+         backup only: windows (WindowsWinUI), android (Android), ios (iOS).
+       - Write for the idiom. Say "choose", never "click" or "tap" (the pointer and touch differ only
+         in the words of the steps). Mention the keyboard in a desktop topic.
+       - A page that differs by less than a third is not two topics. Keep one topic and put at most
+         three inline variants in it, with platform="Touch" or platform="Pointer" on a phrase.
+     Copy this file and its pair together, and keep their ids, titles and keys the same. -->
+<task id="template-variant" xml:lang="en-GB">
+  <title>Find a thing</title>
+  <shortdesc>Find a thing by typing a few letters of its name.</shortdesc>
+  <prolog>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>look up</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="area.search"/>
+  </prolog>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>Select the search box. You can also use the keys Ctrl and F.</cmd>
+      </step>
+      <step>
+        <cmd>Type a few letters of the name, then choose <uicontrol keyref="ui-search"/>.</cmd>
+        <stepresult>
+          <p>The results show a card for each match.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <postreq>
+      <p>Next: <xref keyref="template-task"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

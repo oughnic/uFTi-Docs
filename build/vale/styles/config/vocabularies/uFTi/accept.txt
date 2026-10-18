@@ -6,3 +6,5 @@ Branwell
 Oughtibridge
 workspace
 workspaces
+Ctrl
+Esc

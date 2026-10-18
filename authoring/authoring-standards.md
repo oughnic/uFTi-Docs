@@ -1,6 +1,6 @@
 # Authoring standards
 
-How DITA is written in this repository. This is the short version. WP3 expands it into a full style guide, terminology list and templates.
+How DITA is written in this repository: structure, naming, markup, metadata and accessibility. The words are in the [style guide](style-guide.md), the plain word for each label and term in the [terminology list](terminology.md), the metadata values in the [metadata vocabulary](metadata-vocabulary.md), and the starting points in the [templates](../content/templates/README.md).
 
 Part of the [authoring plan](authoring-plan.md). Status: Draft 0.4, 16 October 2026. Decisions are tracked in the [decision log](decision-log.md).
 
@@ -103,11 +103,11 @@ The plugin renders neutral notes (`note`, `tip`, `remember`) as inset text, and 
 ## 7. Images, figures and tables
 
 - **Screenshots** are PNG, optimised, and referenced by key ([platform strategy, section 4](platform-strategy.md#4-screenshots-as-keys)).
-- **Diagrams** are SVG, inlined by the plugin through `svg-container` and `svgref` so that links inside them work (DEC-036). Rules: a `title` and a `desc`; real text, not outlines, so it can be read, searched and translated; the theme's colours as literal values from the tokens block; links to topics by relative address (file names are stable), checked by the SVG link check; a text list of the same links follows the diagram, because the PDF keeps the picture but loses the links, and because a screen reader needs the route; no information only in the picture; no more than about twelve nodes, or split it. The diagram template is in WP3.
+- **Diagrams** are SVG, inlined by the plugin through `svg-container` and `svgref` so that links inside them work (DEC-036). Rules: a `title` and a `desc`; real text, not outlines, so it can be read, searched and translated; the theme's colours as literal values from the tokens block; links to topics by relative address (file names are stable), checked by the SVG link check; a text list of the same links follows the diagram, because the PDF keeps the picture but loses the links, and because a screen reader needs the route; no information only in the picture; no more than about twelve nodes, or split it. The [diagram template](../content/templates/template-diagram.svg) shows all of it.
 - **Alternative text is mandatory** on every image. For screenshots it is the key's `linktext`. Describe the purpose, not the appearance. Never start "Image of" or "Screenshot of". The PDF generator warns (`DSPDF009W`) when it is missing, and the PDF then fails PDF/UA.
 - **No decorative images.** If an image needs no description, it does not belong.
 - **No text in images,** no information only in a picture, and no cues that rely on colour alone.
-- **Figures** use `fig` with a `title`. The caption must not repeat the alternative text.
+- **Figures.** Every picture sits in a `fig` (DEC-082, DEC-074): the theme caps a figure's picture to the page in the PDF, and a bare `image` is not capped. The lint fails an `image` outside a `fig`. A screenshot's `fig` has no title, because a caption that repeats the alternative text only adds words. A diagram's `fig` has a title, which names it.
 - **Screenshot capture** follows the [screenshot strategy](screenshot-strategy.md): scripted, on a pinned emulator, simulator or clean Windows profile, in the Oxford and slate theme, light variant (dark only in the topic about appearance), showing the Brontë dataset only, a normalised status bar, and one size and scaling per manual. No device frames.
 - **Tables** have a header row (`thead`) and a `title`, a simple structure, no layout tables, and few columns so they read on a phone. A table or figure that needs a landscape page in the PDF uses `outputclass="landscape"`.
 - **Audio and video** are not used for now. If added, captions and transcripts are mandatory.
@@ -126,7 +126,7 @@ The plugin renders neutral notes (`note`, `tip`, `remember`) as inset text, and 
 
 ### 9.1 In a topic
 
-Metadata goes in the topic's `prolog`. The DTD fixes the order of elements. Pattern:
+Metadata goes in the topic's `prolog`. The DTD fixes the order of elements. The values and the help identifier's shape are in the [metadata vocabulary](metadata-vocabulary.md). Pattern:
 
 ```xml
 <prolog>
@@ -183,19 +183,18 @@ The plugin supplies landmarks, a skip link, focus states and contrast. It cannot
 
 ## 11. Writing style
 
-The base is the [GOV.UK style guide](https://www.gov.uk/guidance/style-guide) and content design principles, with project overrides recorded in the WP3 style guide (DEC-010).
+The full rules are in the [style guide](style-guide.md); the plain word for each label and term is in the [terminology list](terminology.md). The base is the [GOV.UK style guide](https://www.gov.uk/guidance/style-guide) and content design principles, with the project overrides the style guide records (DEC-010, DEC-070). In short:
 
-- **British English** (en-GB).
-- **Reading level** (DEC-029). Written for an average 11-year-old. Targets per topic: Flesch Reading Ease 70 or more, Flesch-Kincaid grade 6 or lower, an average sentence of 15 words or fewer and none over 25. Prefer words of one or two syllables. One idea per sentence. Vale measures every topic in CI; a topic over the line fails unless each exception is a UI label, a proper name or a term with a glossary entry. These measures are for English. Spanish uses the Fernández-Huerta and Szigriszt-Pazos measures, set in WP16.
-- **Voice.** Second person ("you"), active, present tense. Steps use the imperative.
-- **Sentences.** Short, one idea each.
-- **Neutral verbs.** "Select", "open", "enter" and "choose" work for touch and pointer. Avoid "click", "tap" and "press" except in platform-specific text.
+- **British English** (en-GB), with the examples leaning to the United Kingdom (DEC-078).
+- **Reading level** (DEC-029). Written for an average 11-year-old. Per topic: Flesch reading ease 70 or more, Flesch-Kincaid grade 6 or lower, an average sentence of 15 words or fewer and none over 25. Vale measures every topic in CI and an error fails the build. The targets stayed as they were after the Quick Start was measured (DEC-071). English measures do not apply to Spanish, which has its own (WP16).
+- **Voice.** Second person ("you"), active, present tense. Steps use the imperative. One idea in a sentence.
+- **Neutral verbs.** "Choose", "select", "open", "enter" and "type" work for touch and pointer. Avoid "click", "tap" and "press" except in text for one device.
 - **Avoid** "simply", "just", "easy", "obviously", "please", "via", "e.g.", "i.e." and "etc.".
-- **Dates and numbers** follow the GOV.UK style guide, for example 1 January 2026.
-- **Capitalisation.** Sentence case in headings. UI labels exactly as on screen. The product name is always written **uFTi**, including at the start of a sentence.
-- **Terminology.** One term for one concept. The WP3 terminology list fixes terms such as "workspace". Research terms are defined in the glossary.
-- **Inclusive language.** Do not assume how many parents a person has, or their gender, partner or family shape. Never blame the reader.
-- **The worked example.** Use the people and places of the Brontë dataset consistently, spelt as the dataset spells them: Brontë with the diaeresis in text, and `bronte` in file names and keys. Invent no other people ([dataset strategy](dataset-strategy.md)).
+- **Name the control,** never its colour or its position.
+- **Dates** are written 1 January 2026. The product is always written **uFTi**.
+- **Terminology.** One term for one concept, from the terminology list. A label is printed as the app prints it, from a key (DEC-090). A hard word is explained once and has a glossary entry.
+- **Inclusive language.** Assume nothing about a family. Never blame the reader.
+- **The worked example.** The people and places of the Brontë dataset, spelt as the dataset spells them: Brontë with the diaeresis in text, and `bronte` in file names and keys. Invent no other people ([dataset strategy](dataset-strategy.md)).
 
 ## 12. Localisation readiness
 
@@ -211,10 +210,80 @@ We write only British English for now (Q6), but we write so that translation is 
 
 ## 13. Templates and linting
 
-WP3 delivers:
+WP3 delivered (DEC-070 to DEC-079):
 
-- **Templates** for concept, task, reference, troubleshooting, glossary entry, chapter introduction, good practice concept and platform key map.
-- **Prose lint** with Vale, using a project style based on the rules above, and British English spelling.
-- **Structure lint** that checks: file name pattern, `id` matches file name, title and short description present, short description length, `category` from the list, alternative text present, `@platform` values in the catalogue, the variant budget, key resolution, no `mapref` by key, no `chunk="to-content"`, no positional words, good practice section titles, the "not allowed" disclosure patterns, GEDCOM tag patterns (DEC-030), business-model words (DEC-040), a help identifier on every screen topic (DEC-028), and the targets of links inside SVG diagrams (DEC-036).
+- **Templates** in [`content/templates/`](../content/templates/README.md) for every topic type, the Quick Start page, an idiom variant, the key concept set, the clickable diagram and the platform key maps. They are in no map, and the lint and Vale check them like topics.
+- **The [style guide](style-guide.md), the [terminology list](terminology.md) and the [metadata vocabulary](metadata-vocabulary.md).**
+- **Prose lint** with Vale (`.vale.ini`, `build/vale/styles/uFTi/`): reading level, British spelling, and the words the standards rule out or advise against.
+- **Structure lint** (`build/scripts/lint.ps1`).
+- **A test for every machine-checked rule** (`build/scripts/test-source-rules.ps1`): a small publication or a few sentences that break the rule, which must fail. It also builds every template with the toolkit, which validates it against the DITA 1.3 DTD. CI runs it in the `lint` job.
 
-The checks run locally and in CI ([build and quality](build-and-quality.md)).
+The checks run locally with `pwsh build/scripts/check-source.ps1` and in CI ([build and quality](build-and-quality.md)).
+
+### 13.1 Which rules are checked, and by what
+
+"Before" means the check existed when WP1 delivered the toolchain. "WP3" means this work package added it, with a failing test. "Review" means a person checks it and no machine can.
+
+| Standard | Rule | Checked by |
+|---|---|---|
+| 1 | DITA 1.3 DTD; the toolkit validates every file | Build (before); lint also fails a DOCTYPE that is not the standard one for the root (WP3) |
+| 1 | Topic types limited to the five; no specialisation | Lint (before); the DOCTYPE check (WP3) |
+| 1 | UTF-8 with an XML declaration | Lint (WP3) |
+| 1 | `xml:lang="en-GB"` on every topic | Lint (before) |
+| 1 | `xml:lang="en-GB"` on every map | Lint rejects a wrong value (before) and a missing one (WP3) |
+| 1 | `id` matches the file name | Lint (before) |
+| 1 | `outputclass` only `search-ignore`, `search-demote`, `landscape` | Lint (WP3) |
+| 1 | No `mapref` by key, no key that names a map, no `chunk="to-content"` | Lint (before) |
+| 1 | No GEDCOM tags; no price, accounts or "free" | Vale `GedcomTags`, `BusinessModel` (before) |
+| 1 | No workflow in the source | Lint rejects `@rev` (before) and `@status`, `draft-comment`, `required-cleanup` (WP3) |
+| 1 | No Markdown topics, no Lightweight DITA | Review |
+| 2 | No positional references | Vale `Positional` (before) |
+| 2 | No numbers in titles | Lint (WP3) |
+| 2 | Links by key | Lint (before) |
+| 2 | Size: a task of nine steps or fewer, a concept of 500 words or fewer | Lint (WP3) |
+| 2 | Every topic has a title, a short description, `xml:lang` and metadata | Lint (before) |
+| 2 | Standalone; one purpose; prerequisites; reuse; minimalism | Review |
+| 3 | File and folder names lower case with hyphens | Lint (before) |
+| 3 | Topic keys are the file name; glossary keys `term-`; picture keys `img-`; label keys `ui-`; product keys `product-` | Lint (WP3) |
+| 3 | Screenshots in `platforms/<manual>/images/`, diagrams in `images/` or `diagrams/` | Lint (WP3) |
+| 3 | A manual's root bookmap is named for its slug | Lint (before) |
+| 3 | Names never change after publication; verb-first task names; folders at most two levels deep | Review |
+| 4 | Title 70 characters or fewer, no full stop | Lint (before) |
+| 4 | Titles unique within a publication | Lint (WP3) |
+| 4 | Short description present and 30 words or fewer | Lint (before) |
+| 4 | Short description is one sentence, does not begin "This topic", does not repeat the title | Lint (WP3) |
+| 4 | Sentence case; imperative task titles | Review |
+| 5 | A task has steps; each `cmd` is 25 words or fewer; no table in a step | Lint (WP3) |
+| 5 | A reference table has a title and a header row | Lint (WP3) |
+| 5 | A troubleshooting topic has a condition, a cause and a remedy; a glossary entry has a definition | Lint (WP3) |
+| 5 | A Quick Start ("Get started") page is under 150 words | Lint (WP3) |
+| 5 | Good practice concepts use the fixed section titles | Lint (WP3) |
+| 6 | Labels by key, never typed (DEC-090) | Lint, in real content (WP3) |
+| 6 | Product name written uFTi | Vale `ProductName` (WP3) |
+| 6 | The other inline markup rules | Review |
+| 7 | Alternative text on every image, not starting "Image of" | Lint (before) |
+| 7 | Pictures by key, every picture in a `fig` | Lint (WP3) |
+| 7 | A diagram has a title, a description and real text, and no script or `aria-labelledby` | Lint (before) |
+| 7 | A diagram's links reach topics; its colours are the theme's tokens; every link is listed again as text | Links: lint (before). Colours and list: lint (WP3) |
+| 7 | A table has a title and a header row | Lint (WP3) |
+| 7 | No video or audio, no object | Lint (WP3) |
+| 7 | Screenshot capture rules | Importer (before) and review |
+| 8 | External links `scope="external" format="html"` | Lint (before) |
+| 8 | Link text means something out of context | Lint (WP3) |
+| 8 | Relationship tables; content references; no links between publications | Review |
+| 9 | `category` from the list; keywords not the title's own words | Lint (before) |
+| 9 | `audience`, `critdates` valid; `resourceid` shape, unique, and present on a task that names controls | Lint (WP3) |
+| 9 | `resourceid` appname is `ufti`; a topic's metadata names nobody | Lint (before) |
+| 9 | A bookmap names its publisher and copyright owner; a map names nobody | Lint (WP3) |
+| 10 | Control named, not its colour | Vale `ColourCues` (WP3) |
+| 10 | Control named, not its place | Vale `PositionCues`, a warning (WP3) |
+| 10 | Headings, keyboard instructions, accessibility statement | Review |
+| 10 | PDF/UA, page accessibility | Output checks (before) |
+| 11 | Reading ease, grade, average and longest sentence | Vale (before); `ReadingEase` and `GradeLevel` restate the two Flesch rules with true messages (WP3) |
+| 11 | Words to avoid; neutral verbs; British spelling | Vale `Avoid`, `NeutralVerbs`, `Spelling` (before) |
+| 11 | Dates the GOV.UK way | Vale `Dates` (WP3) |
+| 11 | Plain words; one term for one idea | Vale `PlainWords`, `Terminology`, warnings (WP3); the terminology list's coverage of every label key, by lint (WP3) |
+| 11 | Inclusive language; tone | Review |
+| 12 | Localisation readiness | Review |
+
+Rules that only a person can check are in the [style guide's checklist](style-guide.md#11-checklist-for-the-plain-language-reviewer) and the [definition of done](authoring-plan.md#73-definition-of-done).

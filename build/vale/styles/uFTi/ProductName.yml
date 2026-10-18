@@ -1,0 +1,22 @@
+# Style guide, section 8: the product name is always written uFTi, including at the start of a
+# sentence and in a heading. Every other casing is wrong.
+extends: substitution
+message: "Write the product name as '%[1]s', not '%[2]s'."
+level: error
+ignorecase: false
+swap:
+  ufti: uFTi
+  uftI: uFTi
+  ufTi: uFTi
+  ufTI: uFTi
+  uFti: uFTi
+  uFtI: uFTi
+  uFTI: uFTi
+  Ufti: uFTi
+  UftI: uFTi
+  UfTi: uFTi
+  UfTI: uFTi
+  UFti: uFTi
+  UFtI: uFTi
+  UFTi: uFTi
+  UFTI: uFTi

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!-- IDIOM VARIANT MAP TEMPLATE (DEC-080, DEC-093). Part of a shared chapter map. Each idiom's topic has
+     the same key, and a platform token that the manual's filter keeps or drops. A key sits on the
+     topicref and matches the file name. Never use a map for the variants, a key that names a map, or a
+     mapref by key. This file is a pattern to copy from: it is in no manual. -->
+<map id="template-variants" xml:lang="en-GB">
+  <topicref href="platforms/desktop/topics/template-variant.dita" keys="template-variant" platform="Desktop"/>
+  <topicref href="platforms/phone/topics/template-variant.dita" keys="template-variant" platform="Phone"/>
+</map>

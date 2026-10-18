@@ -1,0 +1,8 @@
+# Authoring standards, section 10: an instruction names the control, never its colour. A reader may
+# not see colour at all.
+extends: existence
+message: "'%s' points at a control by its colour. Name the control instead (authoring standards, section 10)."
+level: error
+ignorecase: true
+raw:
+  - '\b(red|green|blue|yellow|orange|pink|purple|grey|gray|black|white|brown)\s+(button|icon|link|chip|arrow|box|text|badge|circle|tab|bar|label|tick|cross|dot)\b'

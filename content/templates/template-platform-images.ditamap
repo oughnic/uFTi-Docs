@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!-- PLATFORM PICTURE KEYS TEMPLATE (platform strategy, section 4; DEC-011, DEC-082, DEC-085). Copy to
+     platforms/<manual>/keys/images.ditamap. The picture importer (build/scripts/Import-Screenshots.ps1)
+     writes the files and keeps this map in step, but it never writes alternative text: you do.
+       - A key starts img- and is the same in every manual, so one topic serves all of them.
+       - The linktext is the picture's alternative text: one sentence about what the picture shows and
+         why it matters. Never start "Image of" or "Screenshot of".
+       - The href points at ../images/<name>.png, in the manual's own images folder.
+       - topicmeta carries the product, its version and the platform, and data for the reference device
+         and the dataset, as the existing key maps do. -->
+<map id="template-platform-images" xml:lang="en-GB">
+  <topicmeta>
+    <prodinfo>
+      <prodname>uFTi</prodname>
+      <vrmlist><vrm version="0.1.0"/></vrmlist>
+      <platform>Platform and device</platform>
+    </prodinfo>
+    <data name="dataset" value="bronte"/>
+  </topicmeta>
+  <keydef keys="img-template-picture" href="../images/template-picture.png" format="png" scope="local">
+    <topicmeta><linktext>The form for a new person, with a name typed in the first box</linktext></topicmeta>
+  </keydef>
+</map>

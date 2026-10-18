@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<!-- KEY CONCEPT SET TEMPLATE, the SEE piece (DEC-035, DEC-036). Every key concept is offered four ways:
+     see (a diagram), read (the concept), do (a task on the Brontë dataset) and check (a short
+     checklist). The four are linked by one relationship table (see template-key-concept-set.ditamap),
+     so each links to the others and back. Readers are not sorted into learning styles: all four are
+     there for everyone. Copy the four files together and rename them for the idea.
+     This piece shows the diagram in a fig with a title, then lists the same links as text. -->
+<concept id="template-key-concept-see" xml:lang="en-GB">
+  <title>Ideas at a glance</title>
+  <shortdesc>See the idea in one picture, with a link to each way of learning it.</shortdesc>
+  <prolog>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Concept</category>
+      <keywords>
+        <keyword>diagram</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p>Select a box to open its page.</p>
+    <fig>
+      <title>Three ways to learn one idea</title>
+      <svg-container>
+        <svgref href="template-diagram.svg"/>
+      </svg-container>
+    </fig>
+    <p>The same pages as a list:</p>
+    <ul>
+      <li><xref keyref="template-key-concept-read"/></li>
+      <li><xref keyref="template-key-concept-do"/></li>
+      <li><xref keyref="template-key-concept-check"/></li>
+    </ul>
+  </conbody>
+</concept>

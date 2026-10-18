@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!-- TASK TEMPLATE (authoring standards, section 5; style guide). Copy this file, then:
+       1. Name the file for the verb and the thing: add-a-person.dita. Make the id the same, without .dita.
+       2. Title: an imperative verb, in sentence case, no number, 70 characters or fewer.
+       3. Short description: one sentence, 25 words or fewer. Do not begin "This topic". Do not repeat the title.
+       4. Steps come first. One action in each cmd, in the imperative, 25 words or fewer. At most nine steps.
+          Name every control by key: <uicontrol keyref="ui-..."/>. Never type a label. Say what the
+          reader will see in stepresult, and put essential detail in info. No tables inside steps.
+       5. Delete prereq if there is no real prerequisite. Keep context to one or two sentences.
+       6. The picture sits inside a fig with no title. Its alternative text is the key's linktext, so write
+          it in the key map, not here. Show the result, not the first step.
+       7. End with one "Next:" link by key. Add the help identifier in resourceid: area.screen, in lower
+          case, taken from authoring/journeys/help-targets.md. One identifier names one topic.
+       8. Add created in critdates only on the day you write the topic, and revised only when it is true.
+       9. Keywords are aliases a reader might search for, never the words of the title.
+     Platform words (Windows, Android) belong only in topics under platforms/. Write for the device. -->
+<task id="template-task" xml:lang="en-GB">
+  <title>Add a thing</title>
+  <shortdesc>Add a thing to your workspace, so you can find it again.</shortdesc>
+  <prolog>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>new thing</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="area.screen"/>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p>Open the page of the person you want to change.</p>
+    </prereq>
+    <context>
+      <p>Say when and why the reader does this, in one or two short sentences.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-add"/>.</cmd>
+        <stepresult>
+          <p>A sheet named <uicontrol keyref="ui-add-a-record"/> opens.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Type a name in <uicontrol keyref="ui-title"/>.</cmd>
+        <info>
+          <p>Say only what the reader needs. For example, <userinput>My birth certificate</userinput>.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-save"/>.</cmd>
+      </step>
+    </steps>
+    <result>
+      <p>Say what is now true, in one sentence.</p>
+      <fig>
+        <image keyref="img-template-picture"/>
+      </fig>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="template-quick-start-page"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

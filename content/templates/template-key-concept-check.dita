@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<!-- KEY CONCEPT SET TEMPLATE, the CHECK piece (DEC-035). A short checklist of questions the reader can
+     ask, in a reference topic. Three to five items, each a plain question. -->
+<reference id="template-key-concept-check" xml:lang="en-GB">
+  <title>Check the idea</title>
+  <shortdesc>Three questions to ask yourself before you move on.</shortdesc>
+  <prolog>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Reference</category>
+      <keywords>
+        <keyword>checklist</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <refbody>
+    <section>
+      <title>Questions to ask</title>
+      <ul>
+        <li>Can you say what the idea is in one sentence?</li>
+        <li>Did you try it on the Brontë dataset?</li>
+        <li>Do you know where to look if it goes wrong?</li>
+      </ul>
+    </section>
+  </refbody>
+</reference>

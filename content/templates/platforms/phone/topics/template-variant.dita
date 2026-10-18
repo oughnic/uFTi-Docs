@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!-- IDIOM VARIANT TEMPLATE, phone half. See the desktop half for the rules. The id, the title and the
+     key are the same as in the desktop topic. The steps are for a touch screen with one hand. -->
+<task id="template-variant" xml:lang="en-GB">
+  <title>Find a thing</title>
+  <shortdesc>Find a thing by typing a few letters of its name.</shortdesc>
+  <prolog>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>look up</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="area.search"/>
+  </prolog>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>Select the search box.</cmd>
+        <stepresult>
+          <p>The keyboard opens.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Type a few letters of the name, then choose <uicontrol keyref="ui-search"/>.</cmd>
+        <stepresult>
+          <p>The results show a card for each match.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <postreq>
+      <p>Next: <xref keyref="template-task"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

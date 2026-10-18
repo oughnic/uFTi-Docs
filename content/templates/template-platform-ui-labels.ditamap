@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!-- PLATFORM LABEL KEYS TEMPLATE (authoring standards, section 6; DEC-090, DEC-094). Copy to
+     platforms/<manual>/keys/ui-labels.ditamap. It holds only the words that one manual's app words
+     differently from the others. Words every device shows are in content/keys/ui-labels.ditamap.
+       - A key starts ui- and is named for the label: ui-add-a-record.
+       - The keyword is the label exactly as the app prints it, even where it is jargon. Never tidy it.
+       - Say in the comment which app version and day the labels were read from.
+       - A manual includes its own key map first (resource-only), so its definition wins.
+       - Add every new key to the terminology list (authoring/terminology.md), or the lint fails. -->
+<map id="template-platform-ui-labels" xml:lang="en-GB">
+  <keydef keys="ui-more"><topicmeta><keywords><keyword>More</keyword></keywords></topicmeta></keydef>
+</map>

@@ -1,0 +1,9 @@
+# Style guide, section 9: dates are written the GOV.UK way, as 1 January 2026. No ordinals, no month
+# before the day, no slashes, no numeric year-month-day and no abbreviated month in prose.
+# (Vale joins the entries of `raw` into one pattern, so the alternatives are one entry.)
+extends: existence
+message: "'%s' is not written the GOV.UK way. Write a date as 1 January 2026 (style guide, section 9)."
+level: error
+ignorecase: false
+raw:
+  - '\b(\d{1,2}(st|nd|rd|th)\s+(of\s+)?(January|February|March|April|May|June|July|August|September|October|November|December)|(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}|\d{1,2}/\d{1,2}/\d{2,4}|\d{4}-\d{2}-\d{2}|\d{1,2}\s+(Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec))\b'
