@@ -377,6 +377,9 @@ $valeCases = @(
     @{ Name = 'a word to avoid'; Check = 'uFTi.Avoid'; Text = 'Just choose Save.' }
     @{ Name = 'a positional reference'; Check = 'uFTi.Positional'; Text = 'As described above, choose Save.' }
     @{ Name = 'a sentence over 25 words'; Check = 'uFTi.LongSentence'; Text = ((Words 30) -replace '\.$', '') + '.' }
+    @{ Name = 'hard words lower the reading ease'; Check = 'uFTi.ReadingEase'; Text = 'Understanding comprehensive documentation requires considerable concentration.' }
+    @{ Name = 'hard words raise the grade'; Check = 'uFTi.GradeLevel'; Text = 'Understanding comprehensive documentation requires considerable concentration.' }
+    @{ Name = 'a long average sentence'; Check = 'uFTi.AverageSentence'; Text = (Words 24) + ' ' + (Words 24) }
     @{ Name = 'a spelling mistake'; Check = 'uFTi.Spelling'; Text = 'Choose the colour of the dashbord.' }
     @{ Name = 'an American spelling'; Check = 'uFTi.Spelling'; Text = 'Choose the color you like.' }
 )
@@ -410,10 +413,10 @@ if ($Only -contains 'vale') {
     $valeDir = Join-Path $work 'vale'
     New-Item -ItemType Directory -Path $valeDir | Out-Null
     function Get-ValeChecks {
-        param([string]$Sentence)
-        $f = Join-Path $valeDir "probe-$([guid]::NewGuid().ToString('N').Substring(0, 6)).dita"
+        param([string]$Sentence, [string]$Config = (Join-Path $root '.vale.ini'), [string]$Name = "probe-$([guid]::NewGuid().ToString('N').Substring(0, 6))")
+        $f = Join-Path $valeDir "$Name.dita"
         New-ValeTopic $f $Sentence
-        $json = & $P.Vale --config (Join-Path $root '.vale.ini') --output=JSON --no-wrap $f 2>$null | Out-String
+        $json = & $P.Vale --config $Config --output=JSON --no-wrap $f 2>$null | Out-String
         $parsed = $json | ConvertFrom-Json
         @($parsed.PSObject.Properties | ForEach-Object { $_.Value } | ForEach-Object { $_.Check } | Sort-Object -Unique)
     }
@@ -426,6 +429,18 @@ if ($Only -contains 'vale') {
         if ($Filter -and $c.Name -notlike "*$Filter*") { continue }
         $found = Get-ValeChecks $c.Text
         Record 'vale' "$($c.Name) raises $($c.Check)" ($found -contains $c.Check) "raised: $($found -join ', ')"
+    }
+    # an exception for one file (DEC-029, .vale.ini): a section for that file switches a rule off, and only for it
+    if (-not $Filter -or 'exception' -like "*$Filter*") {
+        $iniText = (Get-Content (Join-Path $root '.vale.ini') -Raw) -replace '(?m)^StylesPath = .*$', ('StylesPath = ' + (Join-Path $root 'build/vale/styles').Replace([char]92, [char]47))
+        $iniText += "`n[*probe-excepted.dita]`nuFTi.LongSentence = NO`n"
+        $excIni = Join-Path $valeDir 'exception.vale.ini'
+        [System.IO.File]::WriteAllText($excIni, $iniText)
+        $long = ((Words 30) -replace '.$', '') + '.'
+        $with = Get-ValeChecks $long $excIni 'probe-excepted'
+        $without = Get-ValeChecks $long $excIni 'probe-other'
+        Record 'vale' 'an exception section for one file switches a rule off for that file' ($with -notcontains 'uFTi.LongSentence') "still raised: $($with -join ', ')"
+        Record 'vale' 'an exception section leaves the rule on for other files' ($without -contains 'uFTi.LongSentence') "raised: $($without -join ', ')"
     }
 }
 

@@ -22,6 +22,8 @@ content/
                                      build/scripts/Import-Screenshots.ps1
   keys/                              product facts, and the words on screen that every device shows
   glossary/                          one glossentry per term
+  templates/                         starting points for every kind of topic, map and diagram; in no
+                                     map, so never published (WP3, templates/README.md)
   sample-data/bronte/                the Brontë dataset: its specification and evidence register (WP4b)
 ```
 
