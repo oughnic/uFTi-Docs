@@ -1,0 +1,186 @@
+0 HEAD
+1 GEDC
+2 VERS 7.0
+1 SCHMA
+2 TAG _UFTIFORM https://ufti.com/gedcom/extensions/_UFTIFORM
+2 TAG _UFTORIG https://ufti.com/gedcom/extensions/_UFTORIG
+1 DATE 19 Oct 2026
+1 SOUR uFTi
+2 VERS 0.1.0
+2 CORP Oughtibridge Ltd
+2 COPR 2026 Oughtibridge Ltd
+2 NAME
+0 @I1@ INDI
+1 NAME Patrick /Brontë/
+2 GIVN Patrick
+2 SURN Brontë
+1 SEX M
+1 @EDDFDAB79B40D@ BIRT
+2 DATE 17 MAR 1777
+2 PLAC County Down, Ireland
+1 @E23E00D164F15@ DEAT
+2 DATE 7 JUN 1861
+2 PLAC Haworth, Yorkshire
+1 FAMS @F1@
+1 _UFTIFORM com.ufti.person-basic
+2 VERS 1.7.0
+1 EXID 24567111-8a3a-42de-a371-c0840962582f
+2 TYPE https://app.ufti.com/ns/submission
+0 @I2@ INDI
+1 NAME Maria /Branwell/
+2 GIVN Maria
+2 SURN Branwell
+1 SEX F
+1 @E6C4DA4A29EB6@ BIRT
+2 DATE 1783
+2 PLAC Penzance, Cornwall
+1 @E66A8DD79FF8E@ DEAT
+2 DATE 15 SEP 1821
+2 PLAC Haworth, Yorkshire
+1 FAMS @F1@
+1 _UFTIFORM com.ufti.person-basic
+2 VERS 1.7.0
+1 EXID 42bcc23b-5536-4ed1-8221-66b178ea5d91
+2 TYPE https://app.ufti.com/ns/submission
+0 @I3@ INDI
+1 NAME Maria /Brontë/
+2 GIVN Maria
+2 SURN Brontë
+1 SEX F
+1 @E5A88401A0FF8@ BIRT
+2 DATE BET 1813 AND 1814
+2 PLAC Hartshead, Yorkshire
+1 @E7EE57CE7021A@ DEAT
+2 DATE 6 MAY 1825
+2 PLAC Haworth, Yorkshire
+1 FAMC @F1@
+1 _UFTIFORM com.ufti.person-basic
+2 VERS 1.7.0
+1 EXID 42bcc23b-5536-4ed1-8221-66b178ea5d91
+2 TYPE https://app.ufti.com/ns/submission
+0 @I4@ INDI
+1 NAME Elizabeth /Brontë/
+2 GIVN Elizabeth
+2 SURN Brontë
+1 SEX F
+1 @E9D873696C996@ BIRT
+2 DATE BET 1814 AND 1815
+2 PLAC Hartshead, Yorkshire
+1 @E4BE0F6AA049D@ DEAT
+2 DATE 15 JUN 1825
+2 PLAC Haworth, Yorkshire
+1 FAMC @F1@
+1 _UFTIFORM com.ufti.person-basic
+2 VERS 1.7.0
+1 EXID 42bcc23b-5536-4ed1-8221-66b178ea5d91
+2 TYPE https://app.ufti.com/ns/submission
+0 @I5@ INDI
+1 NAME Charlotte /Brontë/
+2 GIVN Charlotte
+2 SURN Brontë
+1 SEX F
+1 @EEECEA9B32E87@ BIRT
+2 DATE 21 APR 1816
+2 PLAC Thornton, near Bradford, Yorkshire
+1 @EEABFC00FDD98@ DEAT
+2 DATE 31 MAR 1855
+2 PLAC Haworth, Yorkshire
+1 FAMC @F1@
+1 FAMS @F2@
+1 _UFTIFORM com.ufti.person-basic
+2 VERS 1.7.0
+1 EXID 42bcc23b-5536-4ed1-8221-66b178ea5d91
+2 TYPE https://app.ufti.com/ns/submission
+0 @I6@ INDI
+1 NAME Patrick Branwell /Brontë/
+2 GIVN Patrick Branwell
+2 SURN Brontë
+1 SEX M
+1 @EBFBF1DDA016C@ BIRT
+2 DATE 1817
+2 PLAC Thornton, near Bradford, Yorkshire
+1 @E58ED35B06AE6@ DEAT
+2 DATE 24 SEP 1848
+2 PLAC Haworth, Yorkshire
+1 FAMC @F1@
+1 _UFTIFORM com.ufti.person-basic
+2 VERS 1.7.0
+1 EXID 42bcc23b-5536-4ed1-8221-66b178ea5d91
+2 TYPE https://app.ufti.com/ns/submission
+0 @I7@ INDI
+1 NAME Emily Jane /Brontë/
+2 GIVN Emily Jane
+2 SURN Brontë
+1 SEX F
+1 @E549EECE6A4D5@ BIRT
+2 DATE 1818
+2 PLAC Thornton, near Bradford, Yorkshire
+1 @E2D4B87324D8F@ DEAT
+2 DATE 19 DEC 1848
+2 PLAC Haworth, Yorkshire
+1 FAMC @F1@
+1 _UFTIFORM com.ufti.person-basic
+2 VERS 1.7.0
+1 EXID 42bcc23b-5536-4ed1-8221-66b178ea5d91
+2 TYPE https://app.ufti.com/ns/submission
+0 @I8@ INDI
+1 NAME Anne /Brontë/
+2 GIVN Anne
+2 SURN Brontë
+1 SEX F
+1 @EB96E8565CE59@ BIRT
+2 DATE BET 1819 AND 1820
+2 PLAC Thornton, near Bradford, Yorkshire
+1 @E09522DD167A4@ DEAT
+2 DATE 28 MAY 1849
+2 PLAC Scarborough, Yorkshire
+1 FAMC @F1@
+1 _UFTIFORM com.ufti.person-basic
+2 VERS 1.7.0
+1 EXID 42bcc23b-5536-4ed1-8221-66b178ea5d91
+2 TYPE https://app.ufti.com/ns/submission
+0 @I9@ INDI
+1 NAME Arthur Bell /Nicholls/
+2 GIVN Arthur Bell
+2 SURN Nicholls
+1 SEX M
+1 @E1E981271C673@ BIRT
+2 DATE BET 1817 AND 1819
+2 PLAC Killead, County Antrim, Ireland
+1 @EB7A198F66C7D@ DEAT
+2 DATE DEC 1906
+2 PLAC Banagher, King's County (now County Offaly), Ireland
+1 FAMS @F2@
+1 _UFTIFORM com.ufti.person-basic
+2 VERS 1.7.0
+1 EXID 5ed43669-8d55-463c-8840-10334bf21a13
+2 TYPE https://app.ufti.com/ns/submission
+0 @F1@ FAM
+1 HUSB @I1@
+1 WIFE @I2@
+1 CHIL @I3@
+1 CHIL @I4@
+1 CHIL @I5@
+1 CHIL @I6@
+1 CHIL @I7@
+1 CHIL @I8@
+1 @E7F190703E84A@ MARR
+2 DATE 29 DEC 1812
+2 PLAC St Oswald's church, Guiseley, Yorkshire
+1 _UFTIFORM com.ufti.family-basic
+2 VERS 1.4.0
+1 EXID 42bcc23b-5536-4ed1-8221-66b178ea5d91
+2 TYPE https://app.ufti.com/ns/submission
+0 @F2@ FAM
+1 HUSB @I9@
+1 WIFE @I5@
+1 @E3F8FC529848F@ MARR
+2 DATE 29 JUN 1854
+2 PLAC Haworth church, Yorkshire
+1 _UFTIFORM com.ufti.marriage-register
+2 VERS 1.8.0
+1 EXID 5ed43669-8d55-463c-8840-10334bf21a13
+2 TYPE https://app.ufti.com/ns/submission
+1 EXID 5ed43669-8d55-463c-8840-10334bf21a13
+2 TYPE https://app.ufti.com/ns/submission
+0 TRLR

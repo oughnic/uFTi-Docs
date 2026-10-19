@@ -31,3 +31,7 @@ __pycache__/
 *.gdz
 *.gedzip
 /private/
+
+# The one allowed place (DEC-111): the Brontë sample files the app bundles. Only *.ged, and
+# build/scripts/check-samples.ps1 checks everything committed there.
+!/content/sample-data/bronte/stages/*.ged

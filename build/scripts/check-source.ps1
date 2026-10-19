@@ -2,7 +2,7 @@
 <#
 .SYNOPSIS
   The source gates: the theme checker, the structure lint, Vale (prose, spelling and the
-  reading level) and the secret scanner.
+  reading level), the secret scanner and the sample-file gate.
 
 .DESCRIPTION
   Runs everything that needs no build output (build and quality, section 4). Vale converts each
@@ -13,7 +13,7 @@
   Folders holding DITA sources. Default: build/fixtures/wp1 and content.
 
 .PARAMETER Skip
-  Gates to leave out: theme, lint, vale, secrets.
+  Gates to leave out: theme, lint, vale, secrets, samples.
 #>
 [CmdletBinding()]
 param(
@@ -60,6 +60,12 @@ Gate 'secrets' {
     # the whole history: a secret that was committed and removed is still a leak in a public repository
     $r = Invoke-UftiProcess -FilePath $P.Gitleaks -ArgumentList @('git', '--no-banner', '--redact', '--exit-code', '1', $root) -WorkingDirectory $root
     $r.ExitCode -eq 0
+}
+
+Gate 'samples' {
+    # family tree files only in the one allowed folder, and nobody in them who could be living (DEC-111)
+    & (Join-Path $PSScriptRoot 'check-samples.ps1')
+    $LASTEXITCODE -eq 0
 }
 
 Write-Host ''

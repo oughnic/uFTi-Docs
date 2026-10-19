@@ -16,14 +16,14 @@
   Copyright 2026 Oughtibridge Ltd, Apache-2.0.
 
 .PARAMETER Only
-  Run only these parts: lint, vale, templates. Default: all three.
+  Run only these parts: lint, vale, templates, samples. Default: all four.
 
 .PARAMETER Filter
   Run only the cases whose name contains this text.
 #>
 [CmdletBinding()]
 param(
-    [ValidateSet('lint', 'vale', 'templates')][string[]]$Only = @('lint', 'vale', 'templates'),
+    [ValidateSet('lint', 'vale', 'templates', 'samples')][string[]]$Only = @('lint', 'vale', 'templates', 'samples'),
     [string]$Filter = '',
     [string]$ToolsDir
 )
@@ -480,6 +480,72 @@ if ($Only -contains 'templates') {
         if ($Filter -and $name -notlike "*$Filter*") { continue }
         $v = Test-Validates ($name -replace '\.dita$', '') @($t)
         Record 'templates' "$name is valid DITA 1.3" $v.Ok (($v.Bad | Select-Object -First 3) -join "`n       ")
+    }
+}
+
+# ---- The sample-file gate (DEC-111) -------------------------------------------------------------
+
+if ($Only -contains 'samples') {
+    Write-UftiStep 'Samples: family tree data stays in one folder, and nobody in it could be living'
+    $gate = Join-Path $PSScriptRoot 'check-samples.ps1'
+    $allowList = Join-Path $root 'content/sample-data/bronte/allow-list.md'
+    $stagesRel = 'content/sample-data/bronte/stages'
+    $goodTree = @'
+0 HEAD
+1 CHAR UTF-8
+1 GEDC
+2 VERS 5.5.1
+0 @I1@ INDI
+1 NAME Patrick /Brontë/
+1 SEX M
+1 BIRT
+2 DATE 17 MAR 1777
+1 DEAT
+2 DATE 7 JUN 1861
+1 FAMS @F1@
+0 @I2@ INDI
+1 NAME Maria /Branwell/
+1 SEX F
+1 DEAT
+2 DATE 15 SEP 1821
+1 FAMS @F1@
+0 @F1@ FAM
+1 HUSB @I1@
+1 WIFE @I2@
+1 MARR
+2 DATE 29 DEC 1812
+0 TRLR
+'@
+    $goodTree = $goodTree.Replace("`r`n", "`n")
+    function Invoke-Samples {
+        # a small repository of its own: the gate reads what is tracked, so the files are added with -f
+        param([hashtable]$Files)
+        $dir = Join-Path $work ('samples-' + [guid]::NewGuid().ToString('N').Substring(0, 6))
+        New-Item -ItemType Directory -Path $dir | Out-Null
+        & git -C $dir init -q 2>&1 | Out-Null
+        Write-File $dir 'content/sample-data/bronte/allow-list.md' ([System.IO.File]::ReadAllText($allowList))
+        foreach ($k in $Files.Keys) { Write-File $dir $k $Files[$k] }
+        & git -C $dir add -f -A 2>&1 | Out-Null
+        $out = & pwsh -NoProfile -File $gate -Root $dir 2>&1 | ForEach-Object { "$_" }
+        [pscustomobject]@{ Exit = $LASTEXITCODE; Text = ($out -join "`n") }
+    }
+    $sampleCases = @(
+        @{ Name = 'two allowed people who died long ago'; Pass = $true; Expect = ''; Files = @{ "$stagesRel/sample.ged" = $goodTree } }
+        @{ Name = 'a family tree file outside the allowed folder'; Pass = $false; Expect = 'outside'; Files = @{ "$stagesRel/sample.ged" = $goodTree; 'content/other/tree.ged' = $goodTree } }
+        @{ Name = 'an archive in the allowed folder'; Pass = $false; Expect = 'archive is not allowed'; Files = @{ "$stagesRel/sample.ged" = $goodTree; "$stagesRel/sample.gdz" = 'not read' } }
+        @{ Name = 'a person with no death date'; Pass = $false; Expect = 'no death date'; Files = @{ "$stagesRel/sample.ged" = $goodTree.Replace("1 DEAT`n2 DATE 15 SEP 1821`n", '') } }
+        @{ Name = 'a person who died after 1930'; Pass = $false; Expect = 'died after 1930'; Files = @{ "$stagesRel/sample.ged" = $goodTree.Replace('15 SEP 1821', '15 SEP 1985') } }
+        @{ Name = 'a person who is not on the allow-list'; Pass = $false; Expect = 'not on the allow-list'; Files = @{ "$stagesRel/sample.ged" = $goodTree.Replace('Maria /Branwell/', 'Someone /Else/') } }
+        @{ Name = 'a submitter record'; Pass = $false; Expect = 'submitter record'; Files = @{ "$stagesRel/sample.ged" = $goodTree.Replace('0 TRLR', "0 @U1@ SUBM`n1 NAME A Person`n0 TRLR") } }
+        @{ Name = 'an email address'; Pass = $false; Expect = 'email address'; Files = @{ "$stagesRel/sample.ged" = $goodTree.Replace('1 SEX M', "1 SEX M`n1 NOTE write to a.person@example.com") } }
+        @{ Name = 'a file path'; Pass = $false; Expect = 'file path'; Files = @{ "$stagesRel/sample.ged" = $goodTree.Replace('1 SEX M', "1 SEX M`n1 NOTE saved at C:\Users\someone\tree.ged") } }
+        @{ Name = 'a file without a trailer'; Pass = $false; Expect = 'trailer'; Files = @{ "$stagesRel/sample.ged" = $goodTree.Replace("`n0 TRLR", '') } }
+    )
+    foreach ($c in $sampleCases) {
+        if ($Filter -and $c.Name -notlike "*$Filter*") { continue }
+        $r = Invoke-Samples $c.Files
+        if ($c.Pass) { Record 'samples' "$($c.Name) passes" ($r.Exit -eq 0) "expected exit 0; got exit $($r.Exit):`n$($r.Text)" }
+        else { Record 'samples' "$($c.Name) fails" ($r.Exit -eq 1 -and $r.Text -match $c.Expect) "expected exit 1 with '$($c.Expect)'; got exit $($r.Exit):`n$((($r.Text -split "`n") | Select-Object -First 4) -join "`n")" }
     }
 }
 
