@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary Entry//EN" "glossentry.dtd">
+<glossentry id="family-tree-file" xml:lang="en-GB">
+  <glossterm>family tree file</glossterm>
+  <glossdef>A file that holds a whole family tree, with its people, families, facts and sources. You can open one, save one and send one.</glossdef>
+</glossentry>

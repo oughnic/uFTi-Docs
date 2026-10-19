@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!-- The chapter "Bring in, share and keep safe" so far (the journeys' proposed chapter, README section
+     5.2), shared by every manual. The pages that differ by device idiom have one topic per idiom, each
+     topicref carrying its token and the same key, so a manual sees only its own (DEC-093). The token
+     Mobile is the widest true one: a phone and a tablet behave alike. The reference for the files
+     beside a tree exists on a computer only, because a phone keeps nothing a reader can see beside
+     the tree. Keys sit on the topicrefs and match the file names. -->
+<map id="bring-in-share-and-keep-safe-structure" xml:lang="en-GB">
+  <topicref href="../../platforms/desktop/topics/opened-files-and-copies.dita" keys="opened-files-and-copies" platform="Desktop"/>
+  <topicref href="../../platforms/phone/topics/opened-files-and-copies.dita" keys="opened-files-and-copies" platform="Mobile"/>
+  <topicref href="../../platforms/desktop/topics/which-file-to-send.dita" keys="which-file-to-send" platform="Desktop"/>
+  <topicref href="../../platforms/phone/topics/which-file-to-send.dita" keys="which-file-to-send" platform="Mobile"/>
+  <topicref href="../../platforms/desktop/topics/files-beside-your-tree.dita" keys="files-beside-your-tree" platform="Desktop"/>
+</map>

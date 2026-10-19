@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="bring-in-share-and-keep-safe" xml:lang="en-GB">
+  <title>Bring in, share and keep safe</title>
+  <shortdesc>What uFTi does with a file you open, how to keep a copy safe, and which file to send to family.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-18"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Concept</category>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p>Your tree may have started in another program. Your family may want a copy. This chapter is for both. It explains what <keyword keyref="product-name"/> does with a file you open. It also says which file to keep and which to send.</p>
+  </conbody>
+</concept>

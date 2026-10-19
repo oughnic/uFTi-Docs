@@ -6,6 +6,7 @@
   <prolog>
     <critdates>
       <created date="2026-10-17"/>
+      <revised modified="2026-10-18"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -31,7 +32,7 @@
       <step>
         <cmd>Choose how to save your tree.</cmd>
         <choices>
-          <choice><uicontrol keyref="ui-gedcom-file"/> saves your tree as a family tree file.</choice>
+          <choice><uicontrol keyref="ui-gedcom-file"/> saves your tree as a <term keyref="term-family-tree-file">family tree file</term>.</choice>
           <choice><uicontrol keyref="ui-gedzip-archive"/> saves it with any pictures as well.</choice>
         </choices>
       </step>
@@ -41,6 +42,7 @@
     </steps>
     <result>
       <p>You now have a copy. Make a new copy after you add a lot. <keyword keyref="product-name"/> does not send the file for you. To email it, find it in the Files app. Keep a copy off your phone too.</p>
+      <note>If you opened a file from another program, <keyword keyref="product-name"/> keeps its own copy of it. The file you chose does not change. Keep that file safe too.</note>
       <fig>
         <image keyref="img-workspace-export"/>
       </fig>

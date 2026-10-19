@@ -98,10 +98,11 @@ These are not labels in a key map. The pages do not repeat them.
 | The *Citation reference* box on the source form | Pages tell the reader to fill in *Title* only, because the box does not keep what is typed (DEC-090). | **Asked** (a fix, not a new word) |
 | File paths printed on cards | Pictures are cropped so no path shows (DEC-091, DEC-096). | **Asked** (DEC-097) |
 | The button that fills a form from a document | Not used. It is an AI feature, which is out of scope (DEC-020, DEC-096). | **Asked** (DEC-097): a plain label |
+| The line the app shows after a file opens on a phone or tablet, and the summary it shows of what came in | Not quoted, because the wording has not been walked. The pages say only that the app says so in one line (DEC-102). | none |
 
 ## 3. Domain terms
 
-The words the documentation uses for the ideas behind the app. A term in bold needs a glossary entry before a topic uses it. The four entries that exist are in [`content/glossary/`](../content/glossary/).
+The words the documentation uses for the ideas behind the app. A term in bold needs a glossary entry before a topic uses it. The seven entries that exist are in [`content/glossary/`](../content/glossary/).
 
 | Say | It means | Glossary entry | Do not say |
 |---|---|---|---|
@@ -112,8 +113,9 @@ The words the documentation uses for the ideas behind the app. A term in bold ne
 | **fact** | Something you record about a person, such as a birth with its date. The menu says *Facts*. | `fact` | event, attribute, field |
 | **source** | Where you found a fact: a certificate, a census page, or what someone told you. | `source` | citation, reference, evidence |
 | **pedigree** | The name the screen gives to the tree it draws. | `pedigree` | pedigree chart |
-| family tree file | A file that holds a whole family tree. Use it for a GEDCOM file. | none yet (WP9) | GEDCOM file, tree file, export file |
-| saved copy | A family tree file you keep as a copy of a workspace. | none | backup, export, archive (unless the label says so) |
+| **family tree file** | A file that holds a whole family tree. Use it for a GEDCOM file. | `family-tree-file` | GEDCOM file, tree file, export file |
+| **saved copy** | A family tree file you make with *Save as…*. It stays as it was when you made it. | `saved-copy` | export, archive (unless the label says so). Not *backup*: that is the file the app makes for itself |
+| **backup** | An older copy of a family tree file that the app makes for itself, the first time it saves after you start it. The word is in the file's name, so the page uses it (DEC-103). | `backup` | saved copy (that is the one you make), export |
 | **citation** | The exact place in a source where a fact is found, such as a page. Use it only when the app or a good practice topic needs it. | needed (WP9) | reference |
 | **repository** | Where a source is kept: an archive, a library or a website. | needed (WP9) | archive (as a label) |
 | **submitter** | The person who made the tree. | needed (WP9) | creator, author |

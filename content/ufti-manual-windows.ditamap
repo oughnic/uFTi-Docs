@@ -30,11 +30,17 @@
     <mapref href="maps/structure/quick-start.ditamap"/>
   </chapter>
   <chapter href="topics/quick-start/five-things-to-know.dita" keys="five-things-to-know"/>
+  <chapter href="topics/workspaces/bring-in-share-and-keep-safe.dita" keys="bring-in-share-and-keep-safe">
+    <mapref href="maps/structure/bring-in-share-and-keep-safe.ditamap"/>
+  </chapter>
   <backmatter>
     <booklists>
       <glossarylist>
+        <topicref href="glossary/backup.dita" keys="term-backup"/>
         <topicref href="glossary/fact.dita" keys="term-fact"/>
+        <topicref href="glossary/family-tree-file.dita" keys="term-family-tree-file"/>
         <topicref href="glossary/pedigree.dita" keys="term-pedigree"/>
+        <topicref href="glossary/saved-copy.dita" keys="term-saved-copy"/>
         <topicref href="glossary/source.dita" keys="term-source"/>
         <topicref href="glossary/workspace.dita" keys="term-workspace"/>
       </glossarylist>
