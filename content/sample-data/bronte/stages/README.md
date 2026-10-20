@@ -13,7 +13,7 @@ Both are kept byte for byte, with the line endings the app wrote (`.gitattribute
 
 **The name to show on screen:** Brontë family of Haworth.
 
-**What it holds.** The nine people of the core specification, with their births, deaths and places. The family of Patrick Brontë and Maria Branwell, with their six children and their marriage of 29 December 1812. The family of Charlotte Brontë and Arthur Bell Nicholls, with their marriage of 29 June 1854. Twenty events in all: nine births, nine deaths and two marriages. Where the sources disagree about a year, the birth is a range (Maria, Elizabeth, Anne and Arthur). Arthur's death is in December 1906, with no day.
+**What it holds.** The nine people of the core specification, with their births, deaths and places. The family of Patrick Brontë and Maria Branwell, with their six children and their marriage of 29 December 1812. The family of Charlotte Brontë and Arthur Bell Nicholls, with their marriage of 29 June 1854. Twenty events in all: nine births, nine deaths and two marriages. Where the sources disagree about a year, the birth is a range (Maria, Elizabeth, Anne and Arthur). Arthur's death is in December 1906, with no day, at Banagher. The register entry gives 2 December 1906 at Banagher (C147), which a later stage can use.
 
 **What it leaves out.** Baptisms and burials, notes, repositories, sources and the evidence for each fact, the alternative dates in the specification, and the other names the family used (Brunty, Currer Bell and so on). Maria is entered under the name Maria Branwell, and each place has its county added. This is stage 3 of the journey, not the finished workspace. A fuller file from a later stage replaces it as a data change (DEC-112).
 

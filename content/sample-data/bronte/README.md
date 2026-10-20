@@ -15,7 +15,7 @@ The manual teaches with one small dataset about the family of the Reverend Patri
 | [events.md](events.md) | Every event, with dates and places exactly as each source gives them | E001 to E148 |
 | [notes.md](notes.md) | The shared note, the person and family notes, and one research note per thread | N01 to N17 |
 | [repositories.md](repositories.md) | The archives and offices that hold the sources | R01 to R10 |
-| [sources.md](sources.md) | Everything we consulted, how we consulted it, and the references copied from each item; and the sources named but not opened | S01 to S31 |
+| [sources.md](sources.md) | Everything we consulted, how we consulted it, and the references copied from each item; and the sources named but not opened | S01 to S33 |
 | [media.md](media.md) | Placeholders for images, with the licence check each needs. No image is included | M01 to M04 |
 | [research-threads.md](research-threads.md) | Five threads for stage 7, the smaller discrepancies concluded in the register, and the negative searches | T01 to T05; D01 to D12; NS1 to NS6 |
 | [evidence-register.md](evidence-register.md) | One row per claim: evidence, kind, status, who checked it | C001 to C150 |
