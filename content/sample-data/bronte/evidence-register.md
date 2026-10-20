@@ -2,7 +2,7 @@
 
 One row per claim. Nothing enters the dataset without a row here ([dataset strategy, section 8](../../../authoring/dataset-strategy.md#8-evidence-sources-and-licensing)). Each row says what is claimed, every piece of evidence we found with what it says, the kind of evidence, the claim's status, and who checked it.
 
-**Drafted** 16 October 2026 from the sources in [sources.md](sources.md), as an AI-assisted draft reviewed by the maintainer in the pull request. **Second reader (Q20): pending.** When the second reader has checked a row, the "Checked" cell changes from "Draft" to their initials and date.
+**Drafted** 16 October 2026 from the sources in [sources.md](sources.md), as an AI-assisted draft reviewed by the maintainer in the pull request. **Second reader (Q20): pending.** Updated 20 October 2026 for issue 35: rows C140, C146 and C147 take two civil index entries, S32 and S33. When the second reader has checked a row, the "Checked" cell changes from "Draft" to their initials and date.
 
 **Kind.** O = original record. D = derivative (a transcription, index, catalogue or compiled reference). A = authored work. P = primary information, recorded at the time by someone who knew. S = secondary information, recorded later or at second hand. For example, the burial register transcription is D·P; a memorial tablet is O·S; Gaskell is A·S, except where she prints a letter, which is P.
 
@@ -147,14 +147,14 @@ One row per claim. Nothing enters the dataset without a row here ([dataset strat
 
 | Claim | What is claimed | Evidence | Kind | Status | See | Checked |
 |---|---|---|---|---|---|---|
-| C140 | Born at Killead, County Antrim, in 1819 or 1817 | S24: "born in Killead in 1819". S07: "born in Co. Antrim in 1817, but of Scottish parents on both sides" | A·S | Disagree, open | D06 | Draft |
+| C140 | Born at Killead, County Antrim, in 1819 or 1817 | S24: "born in Killead in 1819". S07: "born in Co. Antrim in 1817, but of Scottish parents on both sides". S33 (the 1906 death index, a transcription): age at death 87. The age is secondary, reported rather than taken from a birth record. It fits a birth in 1818 or 1819; a birth in 1817 would give 88 or 89 | A·S, D·S | Disagree, open | D06 | Draft |
 | C141 | Brought up from the age of seven at Banagher, King's County, by his uncle the Rev. Alan Bell, master of the Royal School | S07: "left at the age of seven to the charge of an uncle, the Rev. Alan Bell, who was headmaster of the Royal School at Banagher, in King's Co.". S24: "At the tender age of seven he was taken in by his uncle, the Reverend Allan Bell". S26: "first came to Banagher in 1825 when he and his brother Alan were adopted by their uncle" | A·S | Confirmed | | Draft |
 | C142 | At Trinity College, Dublin, from 1836, graduating in 1844 | S24: "went to Trinity College in 1836, graduating in 1844". S26: "entered Trinity College Dublin and graduated in 1844" | A·S | Confirmed | | Draft |
 | C143 | Curate of Haworth from 1844 or 1845; resigned in 1853 after proposing to Charlotte, returned in 1854, and stayed with Patrick until 1861 | S07: "He succeeded a fellow countryman, Mr. Peter Augustus Smith, in 1844"; a letter of 9 October 1844 on the new curate; "stayed on at Haworth for the six years that followed his wife's death". S26: "The following year [1845] he was ordained and entered the curacy at Haworth". S02: "he sent in his resignation of the curacy of Haworth". S06: "Nicholls resigned his curacy and left Haworth"; later "Nicholls to return"; "Nicholls continued to live with him" | A·S, A quoting P | Disagree, concluded: 1844, with the ordination possibly 1845 | D07 | Draft |
 | C144 | No child of his marriage to Charlotte | S08: the will provides "In case I leave issue" and names no child; the probate names him sole executor. S03: Charlotte named as wife and daughter only. S24: of the second marriage, "They had no children". S01: Patrick "the childless and widowed father" | O·P, O·S, A·S | Confirmed by consistent evidence: no source records a child | | Draft |
 | C145 | Returned to Banagher in 1861 | S26: "returned to Banagher as a widower in 1861". S07: "When Mr. Bronte died he returned to Ireland" | A·S | Confirmed | | Draft |
-| C146 | Married his cousin Mary Anna Bell on 25 August 1864 | S25: "On 25th August 1864, he married his cousin, Mary Bell". S24: "In 1864 he married his cousin Mary Anna, his uncle's daughter". S07: "Some years later he married again--a cousin, Miss Bell by name" | A·S | Confirmed; the day single source | | Draft |
-| C147 | Died in December 1906 at Banagher | S24: "When Arthur died in December 1906". S25: "He died at Banagher" | A·S | Confirmed for the month and place; the day not yet from a source we opened | | Draft |
+| C146 | Married his cousin Mary Anna Bell on 25 August 1864, in the Parsonstown registration area | S25: "On 25th August 1864, he married his cousin, Mary Bell". S24: "In 1864 he married his cousin Mary Anna, his uncle's daughter". S07: "Some years later he married again--a cousin, Miss Bell by name". S32 (the 1864 marriage index, a transcription): "Party 1 Name: Arthur Nicholls", "Party 2 Name: Mary Bell", "Date of Event: 25/08/1864", "SR District/Reg Area: Parsonstown". The index does not give "Anna" | A·S, D·P | Confirmed: the index agrees with S25 on the day. The middle name is in S24 only | | Draft |
+| C147 | Died in December 1906 at Banagher | S24: "When Arthur died in December 1906". S25: "He died at Banagher". S33 (the 1906 death index, a transcription): year 1906; "SR District/Reg Area: Birr"; no month or day in the transcription we have | A·S, D·P | Disagree, open: the place. The index names the Birr registration area, not Banagher, and we have not checked how the two names relate. The year is confirmed by S33. The month is from S24 alone. The day is not yet from a source | | Draft |
 | C148 | His burial | Not found in the sources opened | | Not found | | Draft |
 | C149 | Son of William Nicholls, a Presbyterian farmer, and Margaret, of the Church of Ireland, at Killead | S24: "one of nine children born to William, a Presbyterian farmer, and Margaret, a member of the Anglican Church of Ireland in Killead". S07: "of Scottish parents on both sides" | A·S | Single source for the names | | Draft |
 | C150 | Husband of P05 | S03: "Charlotte, wife of the Rev. Arthur Bell Nicholls, A.B.". S08: "my said husband, Arthur Bell Nicholls". S12: the marriage index entries, 9a 201 | O·S, O·P, D | Confirmed | | Draft |
@@ -163,9 +163,9 @@ One row per claim. Nothing enters the dataset without a row here ([dataset strat
 
 | Status | Rows |
 |---|---|
-| Confirmed | 61 |
+| Confirmed | 60 |
 | Disagree, concluded | 12 |
-| Disagree, open | 4 |
+| Disagree, open | 5 |
 | Single source | 21 |
 | Not found | 3 |
 | **Total** | **101** |

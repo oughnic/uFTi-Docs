@@ -137,8 +137,8 @@ Stage 2 records births and deaths with the people. Stage 4 adds the rest. "Publi
 | E143 | Occupation: curate of Haworth | From 1844, succeeding Peter Augustus Smith (S07); from 1845 (S26); resigned in 1853 after proposing (S02, S06) and returned in 1854 (S06); remained with Patrick for six years after Charlotte's death (S07) | Haworth | 4 | C143 |
 | E144 | Marriage to Charlotte Brontë | See E061 | Haworth church (S02) | 3 | C066 |
 | E145 | Residence | From 1861 (S26; S07 "When Mr. Bronte died he returned to Ireland") | Banagher (S26); Hill House (S26) | 4 | C145 |
-| E146 | Second marriage, to Mary Anna Bell, his cousin | "25th August 1864" (S25); "In 1864" (S24); "some years later" (S07) | Not given in the sources opened. The civil record (R09) will give it | 4 | C146 |
-| E147 | Death | December 1906 (S24); not dated by S25. The day is not yet confirmed from a source we opened | Banagher (S24, S25) | 2 | C147 |
+| E146 | Second marriage, to Mary Anna Bell, his cousin | "25th August 1864" (S25); "25/08/1864" (S32); "In 1864" (S24); "some years later" (S07) | "Parsonstown", the registration area in the civil index (S32). No venue is named | 4 | C146 |
+| E147 | Death | December 1906 (S24); not dated by S25. The death index gives the year 1906 only (S33). The day is not yet confirmed | Banagher (S24, S25). The death index gives the registration area as "Birr" (S33). Open, see C147 | 2 | C147 |
 | E148 | Burial | Not found in the sources opened | | 4 | C148 |
 
 ## Count

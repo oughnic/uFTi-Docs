@@ -16,7 +16,7 @@ How to read a date: a plain date is given by at least one source and contradicte
 | P06 | Patrick Branwell Brontë | Branwell | M | 1817, Thornton, near Bradford, Yorkshire. Baptised 23 July 1817 | 24 September 1848, Haworth, aged 30 or 31 (T03). One source gives 26 September (D08) | 2 | C080 to C092 |
 | P07 | Emily Jane Brontë | Ellis Bell (pen name) | F | 1818, Thornton, near Bradford, Yorkshire. Baptised 20 August 1818 | 19 December 1848, Haworth, aged 29 or 30 (T03) | 2 | C100 to C111 |
 | P08 | Anne Brontë | Acton Bell (pen name) | F | 1819 or 1820, Thornton, near Bradford, Yorkshire (T04). Baptised 25 March 1820 | 28 May 1849, Scarborough, aged 27, 28 or 29 (T03) | 2 | C120 to C131 |
-| P09 | Arthur Bell Nicholls | | M | 1817 or 1819, Killead, County Antrim, Ireland (D06) | December 1906, Banagher, King's County (now County Offaly), Ireland. The day is not yet confirmed from a source we opened | 2 | C140 to C150 |
+| P09 | Arthur Bell Nicholls | | M | 1817 or 1819, Killead, County Antrim, Ireland (D06) | December 1906, Banagher, King's County (now County Offaly), Ireland, in the local accounts. The civil death index gives the year 1906 and the registration area Birr. The place is open (C147), and the day is not yet confirmed | 2 | C140 to C150 |
 
 ## Names and their variants
 
