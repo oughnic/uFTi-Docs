@@ -14,7 +14,7 @@ The rule: no living person appears in the dataset or in a screenshot ([dataset s
 | P06 | Patrick Branwell Brontë | 24 September 1848 | 178 | S02, S03, S04, S07, S12, S13 (burial 28 Sep 1848) | C088 |
 | P07 | Emily Jane Brontë | 19 December 1848 | 177 | S02, S03, S04, S06, S07, S12, S13 (burial 22 Dec 1848) | C107 |
 | P08 | Anne Brontë | 28 May 1849 | 177 | S02, S03, S04, S06, S07, S11, S12, S20 | C128 |
-| P09 | Arthur Bell Nicholls | December 1906 | 119 | S24, S25, S33 | C147 |
+| P09 | Arthur Bell Nicholls | 2 December 1906 | 119 | S24, S25, S35 | C147 |
 
 The latest death is Arthur Bell Nicholls's, in December 1906, about 120 years ago. Every other death is more than 165 years ago. The strategy's statement that "the latest death among them is over a century ago" holds.
 

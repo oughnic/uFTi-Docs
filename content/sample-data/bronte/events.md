@@ -136,9 +136,9 @@ Stage 2 records births and deaths with the people. Stage 4 adds the rest. "Publi
 | E142 | Education: Trinity College, Dublin | Entered 1836, graduated 1844 (S24); "graduated in 1844" (S26) | Dublin | 4 | C142 |
 | E143 | Occupation: curate of Haworth | From 1844, succeeding Peter Augustus Smith (S07); from 1845 (S26); resigned in 1853 after proposing (S02, S06) and returned in 1854 (S06); remained with Patrick for six years after Charlotte's death (S07) | Haworth | 4 | C143 |
 | E144 | Marriage to Charlotte Brontë | See E061 | Haworth church (S02) | 3 | C066 |
-| E145 | Residence | From 1861 (S26; S07 "When Mr. Bronte died he returned to Ireland") | Banagher (S26); Hill House (S26) | 4 | C145 |
-| E146 | Second marriage, to Mary Anna Bell, his cousin | "25th August 1864" (S25); "25/08/1864" (S32); "In 1864" (S24); "some years later" (S07) | "Parsonstown", the registration area in the civil index (S32). No venue is named | 4 | C146 |
-| E147 | Death | December 1906 (S24); not dated by S25. The death index gives the year 1906 only (S33). The day is not yet confirmed | Banagher (S24, S25). The death index gives the registration area as "Birr" (S33). Open, see C147 | 2 | C147 |
+| E145 | Residence | From 1861 (S26; S07 "When Mr. Bronte died he returned to Ireland"). At the marriage in August 1864, Hill House (S34) | Banagher (S26); Hill House (S26, S34) | 4 | C145 |
+| E146 | Second marriage, to Mary Anna Bell, his cousin | "25th August 1864" (S25); "August 25th 1864" (S34); "25/08/1864" (S32); "In 1864" (S24); "some years later" (S07) | "Banagher", in the Parish Church, by licence (S34). Registered in the Parsonstown registrar's district (S34, S32) | 4 | C146 |
+| E147 | Death | "Second December" 1906 (S35); "December 1906" (S24); not dated by S25. Registered "Thirty first December" 1906 (S35) | "Banagher" (S35); "He died at Banagher" (S25). The registrar's district of Banagher is within the superintendent registrar's district of Birr (S35, S33) | 2 | C147 |
 | E148 | Burial | Not found in the sources opened | | 4 | C148 |
 
 ## Count
