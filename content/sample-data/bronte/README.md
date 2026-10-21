@@ -16,7 +16,7 @@ The manual teaches with one small dataset about the family of the Reverend Patri
 | [notes.md](notes.md) | The shared note, the person and family notes, and one research note per thread | N01 to N17 |
 | [repositories.md](repositories.md) | The archives and offices that hold the sources | R01 to R10 |
 | [sources.md](sources.md) | Everything we consulted, how we consulted it, and the references copied from each item; and the sources named but not opened | S01 to S33 |
-| [media.md](media.md) | Placeholders for images, with the licence check each needs. No image is included | M01 to M04 |
+| [media.md](media.md) | Placeholders for images, and the Wikimedia Commons images linked from the sample files, with the licence each has. No image file is in the repository | M01 to M08 |
 | [research-threads.md](research-threads.md) | Five threads for stage 7, the smaller discrepancies concluded in the register, and the negative searches | T01 to T05; D01 to D12; NS1 to NS6 |
 | [evidence-register.md](evidence-register.md) | One row per claim: evidence, kind, status, who checked it | C001 to C150 |
 | [privacy-check.md](privacy-check.md) | The evidence that every person in the core died long ago and left no descendants | |
@@ -71,7 +71,7 @@ Each row in [evidence-register.md](evidence-register.md) has:
 - **Our own words.** Notes and summaries are written fresh. Short quotations from sources appear in quotation marks with the source id. Nothing is copied from biographies, encyclopaedias or museum pages into the notes.
 - **No GEDCOM tags, record names or file contents** anywhere in these files (DEC-030). People, families, facts, sources.
 - **Spelling.** Brontë with the diaeresis in text; `bronte` in file names and ids. Names of other people and places are spelled as the sources spell them.
-- **Numbers.** The real numbers of the specification: 9 people (plus 5 extension candidates), 2 families, 85 event rows (9 births, 8 baptisms of which 2 not found, 3 marriages, 9 deaths, 9 burials of which 2 dated, 12 education, 17 occupation, 8 residence, 10 publication, 5 other), 17 notes, 10 repositories, 31 sources, 4 media placeholders, 5 research threads, 12 smaller discrepancies and 6 negative searches.
+- **Numbers.** The real numbers of the specification: 9 people (plus 5 extension candidates), 2 families, 85 event rows (9 births, 8 baptisms of which 2 not found, 3 marriages, 9 deaths, 9 burials of which 2 dated, 12 education, 17 occupation, 8 residence, 10 publication, 5 other), 17 notes, 10 repositories, 31 sources, 8 media items (4 placeholders and 4 Commons images, DEC-120), 5 research threads, 12 smaller discrepancies and 6 negative searches.
 
 ## How the build script reads this
 
