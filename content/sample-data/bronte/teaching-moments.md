@@ -28,6 +28,8 @@ What we found while building the specification that the manual and the good prac
 | 20 | **The office has several names.** Patrick is "Minister", "Incumbent", "perpetual curate" and "V." (vicar) in different records for the same post | E013 | Occupations: record the words the source uses |
 | 21 | **A site that needs a named applicant.** Irish civil records can be searched only after the searcher makes an application in their own name | Sources not opened | An authoring note, not a reader topic: some searches must be done by a person |
 | 22 | **Two people, one name.** Maria the mother and Maria the daughter | P02, P03 | Duplicates: same name, same person? |
+| 23 | **A file holds conclusions; research is the process.** Each fact in the sourced sample shows the value we conclude. The route to it (which sources said what, where they disagreed, how they were weighed) is in the citations, the register and the threads | The sourced sample; T01 to T05; D01 to D12 | Analysing and concluding; reconcile evidence; GEDCOM and its limits |
+| 24 | **Some records are made during the event and some well after it.** This is the owner's observation: a birth is often registered some time after it, while a marriage is entered as part of the marriage. Our data shows the gap: Charlotte was baptised about ten weeks after her birth, and Nicholls's death in 1906 was registered 29 days after it. The general rule needs an authority before a topic states it. The app's default treats a civil birth registration as contemporary, primary evidence of the birth, with the registration standing in for the event (DEC-118) | C030, C031, C147; S06, S35 | Sources and evidence: how soon after the event a record was made, and who gave the information |
 
 ## What could not be verified
 

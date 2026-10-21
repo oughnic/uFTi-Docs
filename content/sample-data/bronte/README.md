@@ -22,7 +22,7 @@ The manual teaches with one small dataset about the family of the Reverend Patri
 | [privacy-check.md](privacy-check.md) | The evidence that every person in the core died long ago and left no descendants | |
 | [allow-list.md](allow-list.md) | The people a screenshot may show | |
 | [teaching-moments.md](teaching-moments.md) | What we found that the manual can teach with, and what could not be verified | |
-| [stages/](stages/README.md) | The sample files. The first is stage 3, built in the app, for the app's first-run sample. `build/scripts/check-samples.ps1` checks everything committed there | stage 3 |
+| [stages/](stages/README.md) | The sample files. The first is stage 3, built in the app, for the app's first-run sample. The second is the same tree with its sources, including the sources that disagree. `build/scripts/check-samples.ps1` checks everything committed there | stage 3; stage 3 with sources |
 
 ## The stage map
 
@@ -87,7 +87,7 @@ Open an issue, change the files on a branch, and update the evidence register in
 
 ## What happens next
 
-- **The sample for the app:** the first file, stage 3, is in [stages/](stages/README.md) (DEC-111 to DEC-113). A fuller file from a later stage replaces it as a data change.
+- **The sample for the app:** the first file, stage 3, is in [stages/](stages/README.md) (DEC-111 to DEC-113). A fuller file from a later stage replaces it as a data change. A second file, stage 3 with sources, adds the sources and the ones that disagree (DEC-114, DEC-115). Its GEDCOM 7 file is the basis for the app's seed in due course (DEC-116).
 - **Second reader (Q20):** checks the register rows, starting with the open threads and the single-source rows, and the items in [teaching-moments.md](teaching-moments.md#what-could-not-be-verified).
 - **WP7** builds stages 1, 2, 3, 6 and 7 from this specification while writing the Quick Start and the pilot chapters.
 - **WP8** completes stages 4, 5, 8 and 9, reads the 1841 census image, and settles the media items.
