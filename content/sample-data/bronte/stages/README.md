@@ -98,7 +98,7 @@ One citation is rated 3, 49 are rated 2 and 69 are rated 1. Most of what we coul
 
 ## For the app
 
-Register `stage-3-families.ged` as the first-run sample, under the name above, as before. `stage-3-families-with-sources.ged` is the fuller sample the owner asked for on 20 October 2026. Whether the app registers it in place of stage 3 is the app project's decision (DEC-112, DEC-114). Use the GEDCOM 7 files only if the app prefers GEDCOM 7.
+Register `stage-3-families.ged` as the first-run sample, under the name above, as before. `stage-3-families-with-sources.ged` is the fuller sample the owner asked for on 20 October 2026. Whether the app registers it in place of stage 3 is the app project's decision (DEC-112, DEC-114). The owner has said that the GEDCOM 7 file of this second sample is the basis for the app's seed in due course (DEC-116). Use the first sample's GEDCOM 7 file only if the app prefers GEDCOM 7.
 
 ## Changing these files
 
