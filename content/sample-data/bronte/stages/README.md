@@ -51,6 +51,8 @@ Both are kept byte for byte, as the tools wrote them. The stage 3 files above ar
 | Births of Maria, Elizabeth and Anne | a range, as in stage 3 | the year each source gives, and the age on the tablets | T04, C020, C025, C120 |
 | Arthur Bell Nicholls's birth | 1817 to 1819 | 1817 (Shorter), 1819 (Antrim Now), and an age of 87 at death (Irish death index and register) | D06, C140 |
 
+**Left unreconciled on purpose.** The file holds each fact's value as the register concludes it, with every source cited and none marked down for disagreeing. It does not record the weighing: that is in the register, the threads and, when a reader does it, in a research note. The manual's evidence chapters start from this state and show how to document a conclusion drawn from conflicting evidence, so the file is not changed to look reconciled (DEC-117).
+
 **How good the evidence is.** The quality value of each citation follows the register's kinds (original, derivative or authored; primary or secondary information) and how we saw the evidence.
 
 - **3, primary.** An original record, seen as a copy of the page: the Irish death register entry. It is the only one in the file.
