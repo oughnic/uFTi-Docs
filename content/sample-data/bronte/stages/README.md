@@ -59,7 +59,7 @@ Both are kept byte for byte, as the tools wrote them. The stage 3 files above ar
 - **2, secondary.** The memorial tablets and Charlotte's will and probate, which we read through printed transcriptions. Index entries, the Cambridge reference work, and the newspaper report of Patrick's funeral as Shorter quotes it. An authored work where it reports a register entry or prints a letter, an eyewitness account or the subject's own words.
 - **1, questionable.** An authored account that gives no record for the point: a biography's own statement, a local history, a news feature, a museum or tourism page, and the plaque at Guiseley, which we saw as a photograph on a local history page.
 
-One citation is rated 3, 49 are rated 2 and 69 are rated 1. Most of what we could open is second-hand, and the file says so. The values are a first judgement. The second reader (Q20) may change any of them.
+One citation is rated 3, 49 are rated 2 and 69 are rated 1. Most of what we could open is second-hand, and the file says so. The values are a first judgement. The second reader (Q20) may change any of them. They are not the app's defaults: the manual explains those and the reasons for them (DEC-118).
 
 **Where each fact's citations come from.** Each row names the register rows the citations rest on, and the specification's ids of the sources cited ([sources.md](../sources.md)).
 
