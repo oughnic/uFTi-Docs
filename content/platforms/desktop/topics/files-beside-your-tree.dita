@@ -55,7 +55,7 @@
     </table>
     <section>
       <p>You may see more than one backup, because <keyword keyref="product-name"/> makes a new one each time you start the app and save. A backup is a family tree file too, so you can open one if you need your older tree.</p>
-      <p>A GEDZIP file, which ends in <filepath>.gdz</filepath>, holds the whole workspace: the tree, the pictures and other attached files, and the research data. It is the file to keep and to send.</p>
+      <p>A GEDZIP file, which ends in <filepath>.gdz</filepath>, holds the whole workspace in one file. It is the file to keep and to send.</p>
       <p>Your tree may also link to pictures and other files. They are separate files, and a GEDZIP file holds them with the tree. <xref keyref="your-workspace-and-its-files"/> says more.</p>
       <p>To make the copy that you send, choose <uicontrol keyref="ui-save-as"/> on the card for your tree. <xref keyref="which-file-to-send"/> says more.</p>
     </section>
