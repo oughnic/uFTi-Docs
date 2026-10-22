@@ -2,5 +2,5 @@
 <!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary Entry//EN" "glossentry.dtd">
 <glossentry id="gedzip" xml:lang="en-GB">
   <glossterm>GEDZIP</glossterm>
-  <glossdef>One file that holds a whole workspace: the family tree, the pictures and other attached files, and the research data. It is the best way to save and send your work.</glossdef>
+  <glossdef>One file that holds a whole workspace: the family tree with its research notes, and the pictures and other attached files. It is the best way to save and send your work.</glossdef>
 </glossentry>

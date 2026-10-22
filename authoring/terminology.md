@@ -106,16 +106,16 @@ The words the documentation uses for the ideas behind the app. A term in bold ne
 
 | Say | It means | Glossary entry | Do not say |
 |---|---|---|---|
-| **workspace** | One family tree and everything kept with it: the family tree file, the pictures and other attached files, and the research data. A GEDZIP file holds all of it. You can have more than one. | `workspace` | database, project, file |
+| **workspace** | One family tree and everything kept with it: the family tree file with its research notes, and the pictures and other attached files. A GEDZIP file holds all of it. You can have more than one. | `workspace` | database, project, file |
 | family tree | The tree of people and families that a workspace holds. Draw it with *Family*. | none (everyday words) | genealogy, ancestry chart |
 | person | Someone in your tree. | none | individual, record |
 | family | A group of people joined together in the tree, such as a couple. | none | household, unit |
 | **fact** | Something you record about a person, such as a birth with its date. The menu says *Facts*. | `fact` | event, attribute, field |
 | **source** | Where you found a fact: a certificate, a census page, or what someone told you. | `source` | citation, reference, evidence |
 | **pedigree** | The name the screen gives to the tree it draws. | `pedigree` | pedigree chart |
-| **family tree file** | A GEDCOM file that holds a whole family tree. It does not hold pictures or other attached files. | `family-tree-file` | tree file, export file |
-| **GEDCOM** | The standard file format that family tree files are written in. It has versions, such as 5.5.1 and 7. A version is a version of the standard, never of uFTi. | `gedcom` | V7 (as a name for a version of the app) |
-| **GEDZIP** | One file that holds a whole workspace, with its pictures, attachments and research data. It is the preferred format for saving and sending. | `gedzip` | GDZ (use the label as shown on screen) |
+| **family tree file** | A GEDCOM file that holds a whole family tree, with its research notes. It does not hold pictures or other attached files. | `family-tree-file` | tree file, export file |
+| **GEDCOM** | The standard file format that family tree files are written in. GEDCOM 5.5.1 was published in 1999; GEDCOM 7 in 2021. A version is a version of the standard, never of uFTi. | `gedcom` | V7 (as a name for a version of the app) |
+| **GEDZIP** | One file that holds a whole workspace: the family tree with its research notes, and the pictures and other attached files. It is the preferred format for saving and sending. | `gedzip` | GDZ (use the label as shown on screen) |
 | **saved copy** | A family tree file you make with *Save as…*. It stays as it was when you made it. | `saved-copy` | export, archive (unless the label says so). Not *backup*: that is the file the app makes for itself |
 | **backup** | An older copy of a family tree file that the app makes for itself, the first time it saves after you start it. The word is in the file's name, so the page uses it (DEC-103). | `backup` | saved copy (that is the one you make), export |
 | **citation** | The exact place in a source where a fact is found, such as a page. Use it only when the app or a good practice topic needs it. | needed (WP9) | reference |
