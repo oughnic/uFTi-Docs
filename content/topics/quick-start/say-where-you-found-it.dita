@@ -54,7 +54,7 @@
     </steps>
     <result>
       <p>The fact now has a <term keyref="term-source">source</term>. Later, when two records disagree, this is how you will know what to believe.</p>
-      <fig>
+      <fig platform="WindowsWinUI">
         <image keyref="img-citation-add"/>
       </fig>
     </result>
