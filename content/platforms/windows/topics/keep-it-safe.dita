@@ -41,7 +41,7 @@
       </step>
     </steps>
     <result>
-      <p>You now have a copy. Make a new copy after you add a lot. Keep one on a USB stick or another drive too.</p>
+      <p>You now have a copy. Make a new copy after you add a lot. Keep one on a USB stick or another drive too. A GEDZIP file is also the one to send to someone else who uses <keyword keyref="product-name"/>.</p>
       <note>If you opened a file from another program, <keyword keyref="product-name"/> saves your changes to that file. To leave the original alone, make a copy first and open the copy. Keep the original safe too.</note>
     </result>
     <postreq>

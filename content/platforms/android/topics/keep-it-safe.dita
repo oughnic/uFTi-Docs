@@ -41,7 +41,7 @@
       </step>
     </steps>
     <result>
-      <p>You now have a copy. Make a new copy after you add a lot. <keyword keyref="product-name"/> does not send the file for you. To email it, find it in the Files app. Keep a copy off your phone too.</p>
+      <p>You now have a copy. Make a new copy after you add a lot. <keyword keyref="product-name"/> does not send the file for you. To email it, find it in the Files app. A GEDZIP file is the one to send to someone else who uses <keyword keyref="product-name"/>. Keep a copy off your phone too.</p>
       <note>If you opened a file from another program, <keyword keyref="product-name"/> keeps its own copy of it. The file you chose does not change. Keep that file safe too.</note>
       <fig>
         <image keyref="img-workspace-export"/>

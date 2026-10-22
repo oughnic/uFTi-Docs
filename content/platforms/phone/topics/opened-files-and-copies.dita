@@ -25,12 +25,12 @@
     </section>
     <section>
       <title>Get your tree out</title>
-      <p>The copy that <keyword keyref="product-name"/> works on is not a file you can pick up and send. To get your tree out, choose <uicontrol keyref="ui-save-as"/> on the card for your tree. Then choose where to put the file.</p>
+      <p>The copy that <keyword keyref="product-name"/> works on is not a file you can pick up and send. To get your tree out, choose <uicontrol keyref="ui-save-as"/> on the card for your tree. Then choose how to save it, and where to put the file. Choose the GEDZIP file, unless you need a plain family tree file for an older program.</p>
       <p>The file you save is a <term keyref="term-saved-copy">saved copy</term>. It stays as it was when you made it. Make a new one after you add a lot.</p>
     </section>
     <section>
       <title>Sending your tree</title>
-      <p>Send a copy that you saved. <xref keyref="which-file-to-send"/> says why.</p>
+      <p>Send a GEDZIP copy that you saved. <xref keyref="which-file-to-send"/> says why.</p>
     </section>
   </conbody>
 </concept>
