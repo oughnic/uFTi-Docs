@@ -2,7 +2,7 @@
 <!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
 <reference id="files-beside-your-tree" xml:lang="en-GB">
   <title>Files beside your tree</title>
-  <shortdesc>The files you may see beside your tree: the tree itself, its backup, and the file with V7 in its name.</shortdesc>
+  <shortdesc>The files you may see beside your tree: the tree itself, its backup, and the same tree written in GEDCOM 7.</shortdesc>
   <prolog>
     <critdates>
       <created date="2026-10-18"/>
@@ -12,7 +12,7 @@
       <category>Reference</category>
       <keywords>
         <keyword>backup</keyword>
-        <keyword>V7</keyword>
+        <keyword>GEDCOM 7</keyword>
         <keyword>extra files</keyword>
       </keywords>
     </metadata>
@@ -38,7 +38,7 @@
           <row>
             <entry>Your tree, such as <filepath>Brontë family.ged</filepath></entry>
             <entry>The file you opened. <keyword keyref="product-name"/> saves your changes to it.</entry>
-            <entry>Send a saved copy instead.</entry>
+            <entry>Send a GEDZIP copy instead.</entry>
           </row>
           <row>
             <entry>The <term keyref="term-backup">backup</term>. Its name is the name of your tree, with the word backup, the date and the time added in brackets.</entry>
@@ -46,8 +46,8 @@
             <entry>No. It is an old version.</entry>
           </row>
           <row>
-            <entry>The file with V7 in its name, such as <filepath>Brontë family.V7.ged</filepath></entry>
-            <entry>The same tree again, as a version 7 family tree file, which is what V7 means. <keyword keyref="product-name"/> writes it again each time it saves.</entry>
+            <entry>The same tree written in GEDCOM 7, the newer version of the file standard, such as <filepath>Brontë family.V7.ged</filepath></entry>
+            <entry>The same tree again, in GEDCOM 7. It is a version of the file standard, not of <keyword keyref="product-name"/>. <keyword keyref="product-name"/> writes it again each time it saves.</entry>
             <entry>No. It is a second copy.</entry>
           </row>
         </tbody>
@@ -55,7 +55,8 @@
     </table>
     <section>
       <p>You may see more than one backup, because <keyword keyref="product-name"/> makes a new one each time you start the app and save. A backup is a family tree file too, so you can open one if you need your older tree.</p>
-      <p>A file that ends in <filepath>.gdz</filepath> holds pictures as well. It does not get a file with V7 in its name.</p>
+      <p>A GEDZIP file, which ends in <filepath>.gdz</filepath>, holds the whole workspace in one file. It is the file to keep and to send.</p>
+      <p>Your tree may also link to pictures and other files. They are separate files, and a GEDZIP file holds them with the tree. <xref keyref="your-workspace-and-its-files"/> says more.</p>
       <p>To make the copy that you send, choose <uicontrol keyref="ui-save-as"/> on the card for your tree. <xref keyref="which-file-to-send"/> says more.</p>
     </section>
   </refbody>

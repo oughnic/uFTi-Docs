@@ -2,7 +2,7 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="bring-in-share-and-keep-safe" xml:lang="en-GB">
   <title>Bring in, share and keep safe</title>
-  <shortdesc>What uFTi does with a file you open, how to keep a copy safe, and which file to send to family.</shortdesc>
+  <shortdesc>What is in your workspace, why a GEDZIP file is the one to keep and to send, and when to use a plain family tree file instead.</shortdesc>
   <prolog>
     <critdates>
       <created date="2026-10-18"/>
@@ -13,6 +13,9 @@
     </metadata>
   </prolog>
   <conbody>
-    <p>Your tree may have started in another program. Your family may want a copy. This chapter is for both. It explains what <keyword keyref="product-name"/> does with a file you open. It also says which file to keep and which to send.</p>
+    <p>Your tree is more than one file. It is the family tree, its research notes, and the pictures and other files you attach. This chapter says what <keyword keyref="product-name"/> does with a file you open, how to keep a copy safe, and which file to send.</p>
+    <p>The short answer is the <term keyref="term-gedzip">GEDZIP</term> file. It holds your whole workspace in one file. Keep your work in a GEDZIP file, and send a GEDZIP file to anyone who also uses <keyword keyref="product-name"/>.</p>
+    <p>A plain <term keyref="term-family-tree-file">family tree file</term> is for older programs only. It leaves out your pictures and other attached files.</p>
+    <p>Your tree may have started in another program. Your family may want a copy. This chapter is for both.</p>
   </conbody>
 </concept>

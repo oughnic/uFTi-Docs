@@ -32,8 +32,8 @@
       <step>
         <cmd>Choose how to save your tree.</cmd>
         <choices>
-          <choice><uicontrol keyref="ui-gedcom-file"/> saves your tree as a <term keyref="term-family-tree-file">family tree file</term>.</choice>
-          <choice><uicontrol keyref="ui-gedzip-archive"/> saves it with any pictures as well.</choice>
+          <choice><uicontrol keyref="ui-gedzip-archive"/> saves the whole workspace in one file: the tree with its research notes, and the pictures and other attached files. Choose this one.</choice>
+          <choice><uicontrol keyref="ui-gedcom-file"/> saves the family tree with its research notes, as a <term keyref="term-family-tree-file">family tree file</term>. It leaves out pictures and other attached files. Choose it only for a program that cannot read a GEDZIP file.</choice>
         </choices>
       </step>
       <step>
@@ -41,7 +41,7 @@
       </step>
     </steps>
     <result>
-      <p>You now have a copy. Make a new copy after you add a lot. <keyword keyref="product-name"/> does not send the file for you. To email it, find it in the Files app. Keep a copy off your phone too.</p>
+      <p>You now have a copy. Make a new copy after you add a lot. <keyword keyref="product-name"/> does not send the file for you. To email it, find it in the Files app. A GEDZIP file is the one to send to someone else who uses <keyword keyref="product-name"/>. Keep a copy off your phone too.</p>
       <note>If you opened a file from another program, <keyword keyref="product-name"/> keeps its own copy of it. The file you chose does not change. Keep that file safe too.</note>
       <fig>
         <image keyref="img-workspace-export"/>

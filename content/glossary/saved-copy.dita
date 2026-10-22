@@ -2,5 +2,5 @@
 <!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary Entry//EN" "glossentry.dtd">
 <glossentry id="saved-copy" xml:lang="en-GB">
   <glossterm>saved copy</glossterm>
-  <glossdef>A copy of your tree that you save yourself, as a family tree file. It stays as it was when you made it.</glossdef>
+  <glossdef>A copy of your tree that you save yourself, as a GEDZIP file (preferred) or a family tree file. It stays as it was when you made it.</glossdef>
 </glossentry>
