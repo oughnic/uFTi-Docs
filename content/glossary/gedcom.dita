@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary Entry//EN" "glossentry.dtd">
+<glossentry id="gedcom" xml:lang="en-GB">
+  <glossterm>GEDCOM</glossterm>
+  <glossdef>The standard file format that family tree files are written in. Many family tree programs read it. It has versions, such as 5.5.1 and 7. A newer version of GEDCOM is a newer version of the standard, not of uFTi.</glossdef>
+</glossentry>
