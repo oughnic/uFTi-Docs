@@ -1,0 +1,78 @@
+# Publishes the Brontë sample files so the application can pull them (DEC-121). The files are the
+# walkthroughs' output: the app's first-run sample and the fuller sourced sample. A push to dev that
+# changes them updates one rolling pre-release, bronte-sample-latest, whose download addresses never
+# change. A version release (release.yml) carries the same files, so a released application can pin
+# one. A pull request that touches them only checks that the assembly still works.
+# Third-party actions are pinned to full commit SHAs. Publishing is the only step that can write.
+name: Samples
+
+on:
+  push:
+    branches: [dev]
+    paths:
+      - 'content/sample-data/bronte/stages/**'
+      - 'content/sample-data/bronte/allow-list.md'
+      - 'build/scripts/publish-samples.ps1'
+      - 'build/scripts/check-samples.ps1'
+      - '.github/workflows/samples.yml'
+  pull_request:
+    paths:
+      - 'content/sample-data/bronte/stages/**'
+      - 'content/sample-data/bronte/allow-list.md'
+      - 'build/scripts/publish-samples.ps1'
+      - 'build/scripts/check-samples.ps1'
+      - '.github/workflows/samples.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: samples-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false # a publication must not be cut off halfway
+
+env:
+  TAG: bronte-sample-latest
+
+jobs:
+  assemble:
+    name: assemble the sample files
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Gate and assemble (the sample-file gate runs first, DEC-111)
+        run: pwsh -NoProfile -File build/scripts/publish-samples.ps1 -Output samples
+      - name: The checksums verify
+        run: cd samples && sha256sum -c bronte-sample-SHA256SUMS
+
+  publish:
+    name: publish the rolling release
+    needs: assemble
+    if: github.ref == 'refs/heads/dev' && github.event_name != 'pull_request'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write # to move the tag and update the release
+    steps:
+      - name: Check out
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Assemble
+        run: pwsh -NoProfile -File build/scripts/publish-samples.ps1 -Output samples
+      - name: Update the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          notes="The Brontë family of Haworth sample files from commit ${GITHUB_SHA} on dev. Check them against bronte-sample-SHA256SUMS or bronte-sample-manifest.json. The file names are stable (DEC-121)."
+          if gh release view "$TAG" > /dev/null 2>&1; then
+            gh api -X PATCH "repos/${GITHUB_REPOSITORY}/git/refs/tags/${TAG}" -f sha="${GITHUB_SHA}" -F force=true > /dev/null
+            gh release upload "$TAG" samples/* --clobber
+            gh release view "$TAG" --json assets --jq '.assets[].name' | while read -r old; do
+              [ -e "samples/$old" ] || gh release delete-asset "$TAG" "$old" --yes
+            done
+            gh release edit "$TAG" --notes "$notes"
+          else
+            gh release create "$TAG" samples/* --target "${GITHUB_SHA}" --prerelease --latest=false \
+              --title "Brontë sample files (latest from dev)" --notes "$notes"
+          fi
+          gh release view "$TAG" --json assets --jq '.assets[] | "\(.name)  \(.size) bytes"'
