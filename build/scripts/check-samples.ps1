@@ -10,8 +10,8 @@
     1. Every tracked family tree file (*.ged, *.gdz, *.gedzip) is in that folder, and only *.ged files
        are allowed there: this gate cannot read an archive.
     2. Every file there has a header and a trailer.
-    3. None has a submitter record, a contact detail (email, phone, fax, web page, address), a file
-       line or a file path in it.
+    3. None has a submitter record, a contact detail (email, phone, fax, web page, address) or a file
+       path in it. A media record may link a Wikimedia Commons image by its address (DEC-120).
     4. Every person in it is on the allow-list of people a screenshot may show (allow-list.md) and has
        a death date no later than the last death year, so nobody in a sample can be living.
 
@@ -36,6 +36,7 @@ if (-not $Root) {
     $Root = Get-UftiRepoRoot
 }
 $stages = 'content/sample-data/bronte/stages/'
+$commons = '^https://upload\.wikimedia\.org/wikipedia/commons/\S+$'   # the one kind of file line a sample may hold (DEC-120)
 $allowListPath = Join-Path $Root 'content/sample-data/bronte/allow-list.md'
 $problems = [System.Collections.Generic.List[string]]::new()
 function Problem { param([string]$Path, [string]$Text) $problems.Add("${Path}: $Text"); Write-Host "  FAIL $Path`: $Text" -ForegroundColor Red }
@@ -99,7 +100,10 @@ foreach ($rel in ($tracked | Where-Object { ($_ -replace '\\', '/').StartsWith($
                 if ($tag -eq 'DEAT' -and $type -eq 'INDI' -and $val -match '\d{4}') { foreach ($m in [regex]::Matches($val, '\d{4}')) { $deathYears.Add([int]$m.Value) } }
             }
             elseif ($lvl -eq 2 -and $inDeath -and $tag -eq 'DATE') { foreach ($m in [regex]::Matches($val, '\d{4}')) { $deathYears.Add([int]$m.Value) } }
-            if ($tag -in @('EMAIL', 'PHON', 'FAX', 'WWW', 'ADDR', 'FILE')) { Problem $norm "has a $tag line: a contact detail or a file name" }
+            # A file line is allowed only as a Wikimedia Commons link on a media record (DEC-120).
+            if ($tag -eq 'FILE' -and $type -eq 'OBJE' -and $lvl -eq 1 -and $val -match $commons) { }
+            elseif ($tag -eq 'FILE') { Problem $norm 'has a FILE line that is not a Wikimedia Commons link in a media record' }
+            elseif ($tag -in @('EMAIL', 'PHON', 'FAX', 'WWW', 'ADDR')) { Problem $norm "has a $tag line: a contact detail" }
         }
         if ($l -match '(?i)[a-z]:\\|/Users/|/home/|AppData|\\\\[a-z0-9._-]+\\|[\w.+-]+@[\w-]+\.[\w.-]+') { Problem $norm "has a file path or an email address: $($l.Substring(0, [Math]::Min(60, $l.Length)))" }
     }
