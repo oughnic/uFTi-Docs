@@ -3,12 +3,12 @@
 2 VERS 7.0
 1 SCHMA
 2 TAG _UFTIFORM https://ufti.com/gedcom/extensions/_UFTIFORM
-1 DATE 19 Oct 2026
+1 DATE 19 OCT 2026
 1 SOUR uFTi
 2 VERS 0.1.0
 2 CORP Oughtibridge Ltd
-2 COPR 2026 Oughtibridge Ltd
 2 NAME
+1 COPR 2026 Oughtibridge Ltd
 0 @I1@ INDI
 1 NAME Patrick /Brontë/
 2 GIVN Patrick
