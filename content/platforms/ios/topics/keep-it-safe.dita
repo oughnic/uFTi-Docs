@@ -34,17 +34,17 @@
       <step>
         <cmd>Choose how to save your tree.</cmd>
         <choices>
-          <choice><uicontrol keyref="ui-gedzip-archive"/> saves the whole workspace in one file: the tree with its research notes, and the pictures and other attached files. Choose this one.</choice>
-          <choice><uicontrol keyref="ui-gedcom-file"/> saves the family tree with its research notes, as a <term keyref="term-family-tree-file">family tree file</term>. It leaves out pictures and other attached files. Choose it only for a program that cannot read a GEDZIP file. If <keyword keyref="product-name"/> asks which version of GEDCOM to use, choose GEDCOM 7, unless the other program needs GEDCOM 5.5.1.</choice>
+          <choice><uicontrol keyref="ui-gedzip-archive"/> saves everything in one file, with its pictures. Choose this one.</choice>
+          <choice><uicontrol keyref="ui-gedcom-file"/> saves your tree as a <term keyref="term-family-tree-file">family tree file</term>, without pictures. Use it only for a program that cannot read GEDZIP. If asked which version, choose GEDCOM 7 unless that program is old.</choice>
         </choices>
       </step>
       <step>
-        <cmd>In the Files screen, choose where to put the file, then choose <uicontrol>Save</uicontrol>.</cmd>
+        <cmd>In the Files screen, choose where to put the file, then choose <uicontrol keyref="ui-save"/>.</cmd>
       </step>
     </steps>
     <result>
-      <p>You now have a copy. Make a new copy after you add a lot. Keep one off your device too. A GEDZIP file is also the one to send to someone else who uses <keyword keyref="product-name"/>.</p>
-      <note>If you opened a file from another program, <keyword keyref="product-name"/> keeps its own copy of it. The file you chose does not change. Keep that file safe too.</note>
+      <p>You now have a copy. Make a new one after you add a lot. Keep one off your device too.</p>
+      <note>If you opened a file from another program, <keyword keyref="product-name"/> keeps its own copy. The file you chose does not change.</note>
     </result>
     <postreq>
       <p>Next: <xref keyref="what-next"/>.</p>

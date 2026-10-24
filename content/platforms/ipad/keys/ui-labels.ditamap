@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
-<!-- Words on screen that only the iPad app shows (authoring standards, section 6). None so far. The labels
-     every device shows are in content/keys/ui-labels.ditamap. This map is included first, so a definition
-     here wins. -->
+<!-- Words on screen that only the iPad app shows (authoring standards, section 6). The labels every
+     device shows are in content/keys/ui-labels.ditamap. This map is included first, so a definition
+     here wins. The side menu of the iPad names Family tree and Events, as the computer app does; they
+     were read on the iPad on 24 October 2026. -->
 <map id="ipad-ui-labels" xml:lang="en-GB">
+  <keydef keys="ui-family-tree"><topicmeta><keywords><keyword>Family tree</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-events"><topicmeta><keywords><keyword>Events</keyword></keywords></topicmeta></keydef>
 </map>

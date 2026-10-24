@@ -17,7 +17,7 @@
   <topicref href="../../platforms/android/topics/keep-it-safe.dita" keys="keep-it-safe" platform="Android"/>
   <!-- macOS (DEC-125): keep-it-safe is written. Get the app is not written yet: how readers get the Mac app is not decided. -->
   <topicref href="../../platforms/macos/topics/keep-it-safe.dita" keys="keep-it-safe" platform="MacAppKit"/>
-  <!-- iPhone and iPad (DEC-123): keep-it-safe is written from the walk. Get the app is not written: how readers get the iOS apps is not decided. -->
+  <!-- iPhone and iPad (DEC-130): keep-it-safe is written from the walk. Get the app is not written: how readers get the iOS apps is not decided. -->
   <topicref href="../../platforms/ios/topics/keep-it-safe.dita" keys="keep-it-safe" platform="iOS"/>
   <topicref href="../../topics/quick-start/what-next.dita" keys="what-next"/>
 </map>
