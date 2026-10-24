@@ -137,8 +137,8 @@ Read from the Windows app (version 0.1.0.1, Alpha-1 build) on 24 October 2026 ([
 | `ui-all-events` | All events | The link that goes back from one event to the list. | none |
 | `ui-delete-event` | Delete event | The button that removes an event. | none |
 | `ui-note` | Note | The choice for adding a note, and the box for it. | none |
-| `ui-husband-partner-1` | Husband / partner 1 | The first partner on the family form. | none |
-| `ui-wife-partner-2` | Wife / partner 2 | The second partner on the family form. | none |
+| `ui-first-partner` | Husband / partner 1 | The first partner on the family form. | none |
+| `ui-second-partner` | Wife / partner 2 | The second partner on the family form. | none |
 | `ui-marriage-date` | Marriage date | The box for when the partners married. | none |
 | `ui-place-of-marriage` | Place of marriage | The box for where the partners married. | none |
 | `ui-children` | Children | The part of the family form that lists the children. | none |

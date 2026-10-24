@@ -42,8 +42,8 @@
   <keydef keys="ui-delete-event"><topicmeta><keywords><keyword>Delete event</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-note"><topicmeta><keywords><keyword>Note</keyword></keywords></topicmeta></keydef>
   <!-- the family form and the family tree -->
-  <keydef keys="ui-husband-partner-1"><topicmeta><keywords><keyword>Husband / partner 1</keyword></keywords></topicmeta></keydef>
-  <keydef keys="ui-wife-partner-2"><topicmeta><keywords><keyword>Wife / partner 2</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-first-partner"><topicmeta><keywords><keyword>Husband / partner 1</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-second-partner"><topicmeta><keywords><keyword>Wife / partner 2</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-marriage-date"><topicmeta><keywords><keyword>Marriage date</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-place-of-marriage"><topicmeta><keywords><keyword>Place of marriage</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-children"><topicmeta><keywords><keyword>Children</keyword></keywords></topicmeta></keydef>

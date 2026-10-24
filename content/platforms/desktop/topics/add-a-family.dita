@@ -31,14 +31,14 @@
           <p>A person who is not in a family yet shows this button under <uicontrol keyref="ui-family"/>.</p>
         </info>
         <stepresult>
-          <p>A form opens. The person you came from is already in <uicontrol keyref="ui-husband-partner-1"/>.</p>
+          <p>A form opens. The person you came from is already in <uicontrol keyref="ui-first-partner"/>.</p>
           <fig>
             <image keyref="img-family-form"/>
           </fig>
         </stepresult>
       </step>
       <step>
-        <cmd>Select the box <uicontrol keyref="ui-wife-partner-2"/> and type the start of the other partner's name.</cmd>
+        <cmd>Select the box <uicontrol keyref="ui-second-partner"/> and type the start of the other partner's name.</cmd>
         <stepresult>
           <p>A short list of people appears under the box.</p>
         </stepresult>
