@@ -2,7 +2,7 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="your-workspace-and-its-files" xml:lang="en-GB">
   <title>Your workspace and its files</title>
-  <shortdesc>A workspace is your family tree and the files linked to it. A GEDZIP file holds all of them in one file.</shortdesc>
+  <shortdesc>A workspace is your family tree and its linked files, and a GEDZIP file holds all of them in one file.</shortdesc>
   <prolog>
     <critdates>
       <created date="2026-10-22"/>
