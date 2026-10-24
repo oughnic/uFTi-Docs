@@ -6,7 +6,7 @@
   <prolog>
     <critdates>
       <created date="2026-10-17"/>
-      <revised modified="2026-10-18"/>
+      <revised modified="2026-10-24"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -55,8 +55,14 @@
       <step>
         <cmd>When Windows asks where to put the file, choose a folder you will remember.</cmd>
         <info>
-          <p>Windows opens your Documents folder first. Type or choose the folder you want. When you have saved, look in the folder to check that the copy is there.</p>
+          <p>Windows opens your Documents folder first. Choose the folder you want, then choose Save.</p>
         </info>
+        <stepresult>
+          <p>A message names the file and its folder. It stays until you choose it.</p>
+          <fig>
+            <image keyref="img-save-as-message"/>
+          </fig>
+        </stepresult>
       </step>
     </steps>
     <result>

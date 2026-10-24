@@ -20,7 +20,7 @@
   <refbody>
     <section>
       <title>The menu</title>
-      <p>The menu stays at the left of every screen. Some items show your whole tree. Others show one person, the person named in the chip that starts with <uicontrol keyref="ui-showing"/>.</p>
+      <p>The menu stays at the left of every screen. Some items show your whole tree. Others show one person, the person named in the chip that starts with <uicontrol keyref="ui-showing"/>. The chip is empty until you open someone. It clears again if you remove that person's tree.</p>
       <table>
         <title>The menu items and what they show</title>
         <tgroup cols="3">

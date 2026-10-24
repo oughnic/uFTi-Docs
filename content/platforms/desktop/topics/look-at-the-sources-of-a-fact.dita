@@ -20,7 +20,7 @@
   </prolog>
   <taskbody>
     <context>
-      <p>Each fact on a person's page has a small chip that counts its <term keyref="term-source">sources</term>. A chip that says <q>Sources: 0</q> means nothing backs that fact up yet.</p>
+      <p>Each fact on a person's page has a small chip that counts its <term keyref="term-source">sources</term>. A chip that says <q>Sources: 0</q> means nothing backs that fact up yet. Every count of sources uses the same words, so you see them on a person's card in search results and on the Notes page too.</p>
     </context>
     <steps>
       <step>

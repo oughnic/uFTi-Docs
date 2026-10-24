@@ -61,6 +61,10 @@
     </steps>
     <result>
       <p>To open the new person, <xref keyref="find-a-person"/>.</p>
+      <p>The list ends with <uicontrol keyref="ui-more-forms"/>. Choose it to see the forms that do not fit this person. Each one has a line under it that says why. For example, <q>This form covers 1881, and going by the dates in the tree, nobody here was alive then.</q></p>
+      <fig>
+        <image keyref="img-add-record-more-forms"/>
+      </fig>
     </result>
     <postreq>
       <p>Next: <xref keyref="add-a-family"/>.</p>
