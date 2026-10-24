@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!-- Words on screen that only the macOS app shows (authoring standards, section 6). None so far. The
+     labels both devices show are in content/keys/ui-labels.ditamap. This map is included first, so a
+     definition here wins. Add a label here only when the Mac wording differs from the shared key. -->
+<map id="macos-ui-labels" xml:lang="en-GB">
+</map>

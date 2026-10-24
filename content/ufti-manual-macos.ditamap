@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
+<!-- The macOS manual (platform strategy, section 7; DEC-080): one bookmap at the root of the content
+     folder (DEC-045). Shared topics come from the Desktop idiom, which the Windows manual also uses. The
+     platform topics here carry MacAppKit. Chapters not yet written are left out, not stubbed. -->
+<bookmap id="ufti-manual-macos" xml:lang="en-GB">
+  <booktitle>
+    <mainbooktitle>uFTi user manual: macOS</mainbooktitle>
+  </booktitle>
+  <bookmeta>
+    <publisherinformation>
+      <organization>Oughtibridge Ltd</organization>
+    </publisherinformation>
+    <bookrights>
+      <copyrfirst><year>2026</year></copyrfirst>
+      <bookowner><organization>Oughtibridge Ltd</organization></bookowner>
+    </bookrights>
+  </bookmeta>
+  <frontmatter>
+    <booklists>
+      <toc/>
+    </booklists>
+  </frontmatter>
+  <chapter href="topics/quick-start/quick-start.dita" keys="quick-start">
+    <mapref href="platforms/macos/keys/images.ditamap" platform="MacAppKit" processing-role="resource-only"/>
+    <mapref href="platforms/macos/keys/ui-labels.ditamap" platform="MacAppKit" processing-role="resource-only"/>
+    <mapref href="keys/ui-labels.ditamap" processing-role="resource-only"/>
+    <mapref href="keys/product.ditamap" processing-role="resource-only"/>
+    <mapref href="maps/structure/quick-start.ditamap"/>
+  </chapter>
+  <chapter href="topics/quick-start/five-things-to-know.dita" keys="five-things-to-know"/>
+  <chapter href="topics/workspaces/bring-in-share-and-keep-safe.dita" keys="bring-in-share-and-keep-safe">
+    <mapref href="maps/structure/bring-in-share-and-keep-safe.ditamap"/>
+  </chapter>
+  <backmatter>
+    <booklists>
+      <glossarylist>
+        <topicref href="glossary/backup.dita" keys="term-backup"/>
+        <topicref href="glossary/fact.dita" keys="term-fact"/>
+        <topicref href="glossary/family-tree-file.dita" keys="term-family-tree-file"/>
+        <topicref href="glossary/pedigree.dita" keys="term-pedigree"/>
+        <topicref href="glossary/saved-copy.dita" keys="term-saved-copy"/>
+        <topicref href="glossary/source.dita" keys="term-source"/>
+        <topicref href="glossary/workspace.dita" keys="term-workspace"/>
+      </glossarylist>
+    </booklists>
+  </backmatter>
+</bookmap>

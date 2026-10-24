@@ -4,5 +4,4 @@
      app prints them, read from app version 0.1.0.1 on 17 October 2026. The labels both devices show
      are in content/keys/ui-labels.ditamap. This map is included first, so a definition here wins. -->
 <map id="windows-ui-labels" xml:lang="en-GB">
-  <keydef keys="ui-new-person"><topicmeta><keywords><keyword>New person</keyword></keywords></topicmeta></keydef>
 </map>
