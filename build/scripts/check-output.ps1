@@ -168,7 +168,7 @@ Gate 'links' {
 
 Gate 'metadata' {
     if (-not $SiteUrl) { throw 'no site URL: pass -SiteUrl, or set govuk.site.url in the project file' }
-    $r = Invoke-Python 'check_metadata.py' @('--site-url', $SiteUrl, $dir)
+    $r = Invoke-Python 'check_metadata.py' @('--site-url', $SiteUrl, '--dita-dir', $P.DitaHome, $dir)
     if ($null -eq $r) { return $null }
     Save-Report 'metadata.txt' $r.Output
     $r.ExitCode -eq 0
