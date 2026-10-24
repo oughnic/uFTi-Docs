@@ -7,9 +7,9 @@ The saved stage files of the Brontë dataset ([specification](../README.md)). Th
 | File | What it is | Size | SHA-256 |
 |---|---|---|---|
 | `stage-3-families.ged` | The sample, as GEDCOM 5.5.1. This is the file for the app to register. | 3,331 bytes | `85b0f0c84a3968ea48a946fc849b14d5fc878ab0756adbca33d2c802d29de137` |
-| `stage-3-families.V7.ged` | The same tree as GEDCOM 7, which the app writes beside the first. | 4,478 bytes | `00e4b202e4047d8ab208079cbfdd1718346389bea03225ea2a2fa4022cd8fda6` |
+| `stage-3-families.V7.ged` | The same tree as GEDCOM 7, which the app writes beside the first. | 4,478 bytes | `40fa06dfbab0d8eb6d8af983837c2a6b7ddb3c21479ea435c7f328730d1cb0ae` |
 
-Both are kept byte for byte, with the line endings the app wrote (`.gitattributes`), so the checksums hold on every machine.
+Both are kept byte for byte, with the line endings the app wrote (`.gitattributes`), so the checksums hold on every machine. The GEDCOM 7 file had its header fixed on 24 October 2026 (see below); the size is the same.
 
 **The name to show on screen:** Brontë family of Haworth.
 
@@ -30,9 +30,9 @@ Both are kept byte for byte, with the line endings the app wrote (`.gitattribute
 | File | What it is | Size | SHA-256 |
 |---|---|---|---|
 | `stage-3-families-with-sources.ged` | The stage 3 tree with its sources and three media links, as GEDCOM 5.5.1. | 24,620 bytes | `2f641c11b076051626742cc78818063401b6144b2053f40570c7b4de986d8707` |
-| `stage-3-families-with-sources.V7.ged` | The same file as GEDCOM 7. | 24,672 bytes | `8d9643d61976b9dd34818815ed9dff75eece6e616342265ccf05813b808b7829` |
+| `stage-3-families-with-sources.V7.ged` | The same file as GEDCOM 7. | 24,672 bytes | `a20bd7718a1c90491ec6e0568fd6c5320ec2498b18afea2a3753e7c36f94d9cf` |
 
-The stage 3 files above are not changed. These two were written by the app's tools, then changed by hand on 21 October 2026 to add three media links (DEC-120). The sizes and checksums above are after that change.
+The stage 3 pair above is not changed by the sourced pair. These two were written by the app's tools, then changed by hand on 21 October 2026 to add three media links (DEC-120). The sizes and checksums above are after that change and after the header fix below.
 
 **The name to show on screen:** Brontë family of Haworth, as for stage 3.
 
@@ -97,6 +97,15 @@ One citation is rated 3, 49 are rated 2 and 69 are rated 1. Most of what we coul
 **Licence.** As for stage 3, with one addition. The file now names the titles and authors of published works, as any citation does, and gives short statements of what each says, in our words. It copies no text from them. It holds no image file. It links three public-domain images on Wikimedia Commons by their addresses ([media.md](../media.md), M05 to M07).
 
 **Who could be living.** Nobody in the tree: the same nine people, who died between 1821 and 1906. The source records name the authors of published works, as any citation does. They are not people in the tree.
+
+## Fixed after publication: two GEDCOM 7 departures (24 October 2026)
+
+The app team found two places where both GEDCOM 7 files departed from the GEDCOM 7 standard ([issue 57](https://github.com/oughnic/uFTi-Docs/issues/57), DEC-124). Both are in the header, and both are the same in the two files.
+
+- **The date.** The header date was `19 Oct 2026`. GEDCOM 7 wants the month in capitals, `19 OCT 2026`.
+- **The copyright line.** It sat under the header's source structure. GEDCOM 7 puts it directly under the header, so it moved up one level and now follows the source structure. Its words are unchanged.
+
+Only these four lines changed, two in each file, and no line was added or removed. The sizes are the same. The two GEDCOM 5.5.1 files are not changed. The files were edited by hand rather than made again by the app, because a new export would lose the three media links of 21 October 2026. The checksums before the fix were `00e4b202e4047d8ab208079cbfdd1718346389bea03225ea2a2fa4022cd8fda6` for `stage-3-families.V7.ged` and `8d9643d61976b9dd34818815ed9dff75eece6e616342265ccf05813b808b7829` for `stage-3-families-with-sources.V7.ged`. The tables above give the checksums now. The CI publishes the files to the `bronte-sample-latest` release (DEC-121), so the app swaps its copy for the new one and checks the checksum.
 
 ## For the app
 
