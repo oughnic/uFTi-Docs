@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="open-a-family-tree-file" xml:lang="en-GB">
+  <title>Open a family tree file</title>
+  <shortdesc>Bring a tree from another program, or a copy from a relative, into uFTi.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-24"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>import</keyword>
+        <keyword>open a file</keyword>
+        <keyword>GEDCOM</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="workspaces.import"/>
+  </prolog>
+  <taskbody>
+    <context>
+      <p>A <term keyref="term-family-tree-file">family tree file</term> ends in .ged or .gdz. <keyword keyref="product-name"/> also opens a .zip that holds one. Read <xref keyref="opened-files-and-copies"/> first if the file is the only copy you have.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>On <uicontrol keyref="ui-workspaces"/>, choose <uicontrol keyref="ui-add-from-file"/>.</cmd>
+        <stepresult>
+          <p>The Windows window for opening a file appears.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose the file, then choose Open.</cmd>
+        <stepresult>
+          <p>A summary appears. It counts the people, families, events and sources in the file. It says if there are pictures. It also says that your changes are saved to this file.</p>
+          <fig>
+            <image keyref="img-import-summary"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-ok"/>.</cmd>
+        <stepresult>
+          <p>The tree has a card on <uicontrol keyref="ui-workspaces"/>. The card is marked <uicontrol keyref="ui-active"/>.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>The cards sit side by side. Choose a card to make that tree the open one. Choose <uicontrol keyref="ui-show-details"/> on a card to see which file it is.</p>
+      <fig>
+        <image keyref="img-workspaces"/>
+      </fig>
+      <note>The summary writes the name with hyphens, such as Brontë-family-of-Haworth. The card writes it with spaces. They are the same tree. If you open a second file with the same name, the card adds (2).</note>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="keep-it-safe"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

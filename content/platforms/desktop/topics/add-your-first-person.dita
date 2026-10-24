@@ -23,11 +23,14 @@
       <step>
         <cmd>On <uicontrol keyref="ui-workspaces"/>, choose <uicontrol keyref="ui-create-workspace"/>.</cmd>
         <stepresult>
-          <p>A small window named <wintitle keyref="ui-new-workspace"/> opens.</p>
+          <p>A small window named <wintitle keyref="ui-new-workspace"/> opens. It starts with a name already in the box.</p>
+          <fig>
+            <image keyref="img-create-workspace-dialog"/>
+          </fig>
         </stepresult>
       </step>
       <step>
-        <cmd>Type a name for your tree, such as <userinput>My family</userinput>.</cmd>
+        <cmd>Type a name for your tree, such as <userinput>My family</userinput>, in place of the name that is there.</cmd>
       </step>
       <step>
         <cmd>Choose <uicontrol keyref="ui-create"/>.</cmd>
@@ -44,7 +47,7 @@
       <step>
         <cmd>Choose <uicontrol keyref="ui-save"/>.</cmd>
         <stepresult>
-          <p>The page for that person opens.</p>
+          <p>The page for that person opens. If the <uicontrol keyref="ui-save"/> button is below the bottom of the window, scroll down to it.</p>
         </stepresult>
       </step>
     </steps>
