@@ -76,6 +76,8 @@
 4 TEXT Says he died aged 84.
 3 QUAY 1
 1 FAMS @F1@
+1 OBJE @M05@
+1 OBJE @M07@
 1 _UFTIFORM com.ufti.person-basic
 2 VERS 1.7.0
 0 @I2@ INDI
@@ -616,13 +618,15 @@
 2 QUAY 2
 1 _UFTIFORM com.ufti.family-basic
 2 VERS 1.4.0
+1 OBJE @M06@
 1 CHAN
-2 DATE 20 OCT 2026
-3 TIME 21:18:52Z
+2 DATE 21 OCT 2026
+3 TIME 19:39:29Z
 2 NOTE MCP: add_citation
 2 NOTE MCP: add_citation
 2 NOTE MCP: add_citation
 2 NOTE MCP: update_citation
+2 NOTE Added by hand, as the owner asked: the link to the parsonage photograph.
 0 @F2@ FAM
 1 HUSB @I9@
 1 WIFE @I5@
@@ -668,6 +672,36 @@
 2 NOTE MCP: add_citation
 2 NOTE MCP: add_citation
 2 NOTE MCP: update_citation
+0 @M05@ OBJE
+1 FILE https://upload.wikimedia.org/wikipedia/commons/4/4c/Haworth_parsonage_soon_after_Patrick_Bront%C3%AB%27s_death.jpg
+2 FORM image/jpeg
+3 MEDI PHOTO
+2 TITL Haworth parsonage soon after Patrick Brontë's death, circa 1863
+1 NOTE Public domain. From Wikimedia Commons, where the licence is stated.
+1 CHAN
+2 DATE 21 OCT 2026
+3 TIME 19:39:29Z
+2 NOTE Added by hand, as the owner asked.
+0 @M06@ OBJE
+1 FILE https://upload.wikimedia.org/wikipedia/commons/e/e4/Bronte_Parsonage_Museum.JPG
+2 FORM image/jpeg
+3 MEDI PHOTO
+2 TITL The parsonage in Haworth, now the Brontë Parsonage Museum
+1 NOTE Public domain, as released by its uploader on English Wikipedia. From Wikimedia Commons.
+1 CHAN
+2 DATE 21 OCT 2026
+3 TIME 19:39:29Z
+2 NOTE Added by hand, as the owner asked.
+0 @M07@ OBJE
+1 FILE https://upload.wikimedia.org/wikipedia/commons/3/38/St_johns_rear_buildings.jpg
+2 FORM image/jpeg
+3 MEDI PHOTO
+2 TITL St John's College, Cambridge: the rear buildings
+1 NOTE Public domain. The photographer released it. From Wikimedia Commons.
+1 CHAN
+2 DATE 21 OCT 2026
+3 TIME 19:39:29Z
+2 NOTE Added by hand, as the owner asked.
 0 @S01@ SOUR
 1 TITL The Life of Charlotte Brontë, volume 1
 1 AUTH Elizabeth Gaskell
