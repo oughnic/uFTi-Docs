@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="remove-a-workspace" xml:lang="en-GB">
+  <title>Remove a tree from the list</title>
+  <shortdesc>Take a tree off the Workspaces screen without deleting its file.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-24"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>delete workspace</keyword>
+        <keyword>close a tree</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="workspaces.remove"/>
+  </prolog>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>On <uicontrol keyref="ui-workspaces"/>, find the card of the tree.</cmd>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-remove"/> on that card.</cmd>
+        <stepresult>
+          <p>A box named <wintitle keyref="ui-remove-workspace"/> asks you to check. It says the family tree file on disk is not deleted.</p>
+          <fig>
+            <image keyref="img-remove-workspace"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-remove"/> in the box, or <uicontrol keyref="ui-cancel"/> to stop.</cmd>
+      </step>
+    </steps>
+    <result>
+      <p>The card is gone. The file is still in its folder. Open it again with <uicontrol keyref="ui-add-from-file"/> at any time.</p>
+    </result>
+  </taskbody>
+</task>

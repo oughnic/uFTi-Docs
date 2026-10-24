@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="tour-of-the-screens" xml:lang="en-GB">
+  <title>The screens of the app</title>
+  <shortdesc>What each item in the menu at the left shows, with a picture of each screen.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-24"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Reference</category>
+      <keywords>
+        <keyword>menu</keyword>
+        <keyword>tour</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="workspaces.view"/>
+  </prolog>
+  <refbody>
+    <section>
+      <title>The menu</title>
+      <p>The menu stays at the left of every screen. Some items show your whole tree. Others show one person, the person named in the chip that starts with <uicontrol keyref="ui-showing"/>.</p>
+      <table>
+        <title>The menu items and what they show</title>
+        <tgroup cols="3">
+          <colspec colname="c1" colwidth="2*"/>
+          <colspec colname="c2" colwidth="3*"/>
+          <colspec colname="c3" colwidth="2*"/>
+          <thead>
+            <row>
+              <entry>Menu item</entry>
+              <entry>What it shows</entry>
+              <entry>Needs a person</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><uicontrol keyref="ui-workspaces"/></entry>
+              <entry>Your family trees, one card for each.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry><uicontrol keyref="ui-person"/></entry>
+              <entry>The page of one person.</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry><uicontrol keyref="ui-family-tree"/></entry>
+              <entry>A drawing of the person with parents, partners and children.</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry><uicontrol keyref="ui-events"/></entry>
+              <entry>The things that happened in that person's life.</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry><uicontrol keyref="ui-notes"/></entry>
+              <entry>Your own notes about that person.</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry><uicontrol keyref="ui-where-records-are-kept"/></entry>
+              <entry>The archives, libraries and websites your sources come from.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry><uicontrol keyref="ui-who-made-this-tree"/></entry>
+              <entry>The people credited with the tree.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry><uicontrol keyref="ui-research-questions-and-notes"/></entry>
+              <entry>Your list of questions and ideas.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry><uicontrol keyref="ui-preferences"/></entry>
+              <entry>The colours and the light or dark look.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry><uicontrol keyref="ui-about-ufti"/></entry>
+              <entry>The version of the app and facts about your computer.</entry>
+              <entry>No</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <note>If a page says <q>Select a person</q> or <q>No person selected</q>, it needs a person first. Search for someone, then open them. <xref keyref="a-page-says-no-person-selected"/> shows how.</note>
+    </section>
+    <section>
+      <title><uicontrol keyref="ui-workspaces"/></title>
+      <p>This is the first screen. Each card is one family tree. It tells you how many people, families and events the tree holds. <xref keyref="open-a-family-tree-file"/> and <xref keyref="remove-a-workspace"/> start here.</p>
+      <fig>
+        <image keyref="img-workspaces"/>
+      </fig>
+    </section>
+    <section>
+      <title><uicontrol keyref="ui-person"/></title>
+      <p>This is one person's page: their names, their birth and death, their family and their photos. <xref keyref="find-a-person"/> shows how to open it.</p>
+      <fig>
+        <image keyref="img-person-page"/>
+      </fig>
+    </section>
+    <section>
+      <title><uicontrol keyref="ui-family-tree"/> and <uicontrol keyref="ui-events"/></title>
+      <p><xref keyref="see-a-family-tree"/> explains the tree. <xref keyref="see-the-events-of-a-person"/> explains the list of events.</p>
+      <fig>
+        <image keyref="img-events"/>
+      </fig>
+    </section>
+    <section>
+      <title><uicontrol keyref="ui-notes"/></title>
+      <p>Notes are your own words about a person. <xref keyref="add-a-note"/> shows how to write one.</p>
+      <fig>
+        <image keyref="img-notes"/>
+      </fig>
+    </section>
+    <section>
+      <title><uicontrol keyref="ui-where-records-are-kept"/>, <uicontrol keyref="ui-who-made-this-tree"/> and <uicontrol keyref="ui-research-questions-and-notes"/></title>
+      <p>These three pages list things that belong to the whole tree. Each is empty until you add something with <uicontrol keyref="ui-add"/>. The first one lists the places where your sources are kept.</p>
+      <fig>
+        <image keyref="img-repositories"/>
+      </fig>
+      <fig>
+        <image keyref="img-submitters"/>
+      </fig>
+      <fig>
+        <image keyref="img-research-notes"/>
+      </fig>
+    </section>
+    <section>
+      <title><uicontrol keyref="ui-preferences"/></title>
+      <p><xref keyref="choose-how-it-looks"/> explains the choices on this page.</p>
+      <fig>
+        <image keyref="img-preferences"/>
+      </fig>
+    </section>
+  </refbody>
+</reference>

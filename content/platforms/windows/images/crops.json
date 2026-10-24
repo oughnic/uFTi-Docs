@@ -1,11 +1,192 @@
 {
   "img-start-first-run": {
-    "x": 195, "y": 105, "width": 505, "height": 95,
+    "height": 140,
     "shows": "controls only",
-    "reason": "Keeps the heading and the two buttons. The first launch shows the app's own sample workspaces with file paths, and a screen with the samples removed shows a message about opening a family tree file; neither is the Brontë dataset or the route the page teaches (DEC-040)."
+    "x": 232,
+    "y": 135,
+    "reason": "Keeps the heading and the two buttons. The first launch shows the app's own sample workspaces, and a screen with them removed shows a message about opening a family tree file; neither is the Brontë dataset or the route the page teaches (DEC-040).",
+    "width": 740
+  },
+  "img-create-workspace-dialog": {
+    "y": 520,
+    "height": 560,
+    "x": 900,
+    "reason": "Keeps the small window that asks for a name; the rest is the screen behind it, dimmed.",
+    "width": 740
+  },
+  "img-person-add": {
+    "y": 32,
+    "height": 761,
+    "x": 0,
+    "reason": "Removes the black band the in-app capture leaves where the title bar is.",
+    "width": 1267
   },
   "img-person-view": {
-    "x": 0, "y": 32, "width": 1267, "height": 761,
-    "reason": "Removes the black band the in-app capture leaves where the title bar is."
+    "y": 32,
+    "height": 761,
+    "x": 0,
+    "reason": "Removes the black band the in-app capture leaves where the title bar is.",
+    "width": 1267
+  },
+  "img-workspaces": {
+    "y": 32,
+    "height": 761,
+    "x": 0,
+    "reason": "Removes the black band the in-app capture leaves where the title bar is.",
+    "width": 1267
+  },
+  "img-remove-workspace": {
+    "y": 540,
+    "height": 520,
+    "x": 690,
+    "reason": "Keeps the question and its two buttons; the rest is the screen behind it, dimmed.",
+    "width": 1160
+  },
+  "img-save-as-choice": {
+    "y": 540,
+    "height": 510,
+    "x": 860,
+    "reason": "Keeps the question and its choices; the rest is the screen behind it.",
+    "width": 800
+  },
+  "img-save-as-version": {
+    "y": 540,
+    "height": 510,
+    "x": 860,
+    "reason": "Keeps the question and its choices; the rest is the screen behind it.",
+    "width": 800
+  },
+  "img-import-summary": {
+    "y": 450,
+    "height": 690,
+    "x": 690,
+    "reason": "Keeps the summary and its button; the rest is the screen behind it, dimmed.",
+    "width": 1160
+  },
+  "img-search-results": {
+    "y": 32,
+    "height": 761,
+    "x": 0,
+    "reason": "Removes the black band the in-app capture leaves where the title bar is.",
+    "width": 1267
+  },
+  "img-search-refine": {
+    "y": 32,
+    "height": 761,
+    "x": 0,
+    "reason": "Removes the black band the in-app capture leaves where the title bar is.",
+    "width": 1267
+  },
+  "img-person-page": {
+    "y": 32,
+    "height": 761,
+    "x": 0,
+    "reason": "Removes the black band the in-app capture leaves where the title bar is.",
+    "width": 1267
+  },
+  "img-person-edit": {
+    "y": 32,
+    "height": 761,
+    "x": 0,
+    "reason": "Removes the black band the in-app capture leaves where the title bar is.",
+    "width": 1267
+  },
+  "img-family-form": {
+    "y": 32,
+    "height": 761,
+    "x": 0,
+    "reason": "Removes the black band the in-app capture leaves where the title bar is.",
+    "width": 1267
+  },
+  "img-family-children": {
+    "y": 32,
+    "height": 761,
+    "x": 0,
+    "reason": "Removes the black band the in-app capture leaves where the title bar is.",
+    "width": 1267
+  },
+  "img-family-page": {
+    "y": 32,
+    "height": 761,
+    "x": 0,
+    "reason": "Removes the black band the in-app capture leaves where the title bar is.",
+    "width": 1267
+  },
+  "img-family-tree": {
+    "y": 32,
+    "height": 761,
+    "x": 0,
+    "reason": "Removes the black band the in-app capture leaves where the title bar is.",
+    "width": 1267
+  },
+  "img-tree-marriage": {
+    "y": 32,
+    "height": 761,
+    "x": 0,
+    "reason": "Removes the black band the in-app capture leaves where the title bar is.",
+    "width": 1267
+  },
+  "img-family-tree-charlotte": {
+    "y": 32,
+    "height": 761,
+    "x": 0,
+    "reason": "Removes the black band the in-app capture leaves where the title bar is.",
+    "width": 1267
+  },
+  "img-events": {
+    "y": 32,
+    "height": 761,
+    "x": 0,
+    "reason": "Removes the black band the in-app capture leaves where the title bar is.",
+    "width": 1267
+  },
+  "img-event-detail": {
+    "y": 32,
+    "height": 761,
+    "x": 0,
+    "reason": "Removes the black band the in-app capture leaves where the title bar is.",
+    "width": 1267
+  },
+  "img-notes": {
+    "y": 32,
+    "height": 761,
+    "x": 0,
+    "reason": "Removes the black band the in-app capture leaves where the title bar is.",
+    "width": 1267
+  },
+  "img-note-form": {
+    "y": 32,
+    "height": 761,
+    "x": 0,
+    "reason": "Removes the black band the in-app capture leaves where the title bar is.",
+    "width": 1267
+  },
+  "img-repositories": {
+    "y": 32,
+    "height": 761,
+    "x": 0,
+    "reason": "Removes the black band the in-app capture leaves where the title bar is.",
+    "width": 1267
+  },
+  "img-submitters": {
+    "y": 32,
+    "height": 761,
+    "x": 0,
+    "reason": "Removes the black band the in-app capture leaves where the title bar is.",
+    "width": 1267
+  },
+  "img-research-notes": {
+    "y": 32,
+    "height": 761,
+    "x": 0,
+    "reason": "Removes the black band the in-app capture leaves where the title bar is.",
+    "width": 1267
+  },
+  "img-preferences": {
+    "y": 32,
+    "height": 761,
+    "x": 0,
+    "reason": "Removes the black band the in-app capture leaves where the title bar is.",
+    "width": 1267
   }
 }

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="add-a-family" xml:lang="en-GB">
+  <title>Add a family with children</title>
+  <shortdesc>Join two partners, record their marriage and add their children.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-24"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>married couple</keyword>
+        <keyword>parents</keyword>
+        <keyword>child</keyword>
+        <keyword>husband</keyword>
+        <keyword>wife</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="families.edit"/>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p>Add both partners first. <xref keyref="add-another-person"/> shows how.</p>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Open one of the partners, scroll down and choose <uicontrol keyref="ui-add-a-new-family"/>.</cmd>
+        <info>
+          <p>A person who is not in a family yet shows this button under <uicontrol keyref="ui-family"/>.</p>
+        </info>
+        <stepresult>
+          <p>A form opens. The person you came from is already in <uicontrol keyref="ui-first-partner"/>.</p>
+          <fig>
+            <image keyref="img-family-form"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Select the box <uicontrol keyref="ui-second-partner"/> and type the start of the other partner's name.</cmd>
+        <stepresult>
+          <p>A short list of people appears under the box.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose the person from the list.</cmd>
+        <info>
+          <p>Typing is not enough. You must choose the name in the list.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Fill in <uicontrol keyref="ui-marriage-date"/> and <uicontrol keyref="ui-place-of-marriage"/>.</cmd>
+        <info>
+          <p>Leave them empty if you do not know them.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Scroll down to <uicontrol keyref="ui-children"/> and choose <uicontrol keyref="ui-add-row"/>.</cmd>
+        <stepresult>
+          <p>A row appears for one child. Choose <uicontrol keyref="ui-set"/> under <q>Existing person</q> to pick someone who is in the tree. Or type a new name in the row.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>For a new child, type the names, choose the sex, then choose <uicontrol keyref="ui-set"/> for the birth date and the birthplace.</cmd>
+        <stepresult>
+          <p>A small window opens for each. Fill it in and choose <uicontrol keyref="ui-done"/>.</p>
+          <fig>
+            <image keyref="img-family-children"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Scroll to the bottom and choose <uicontrol keyref="ui-save"/>.</cmd>
+        <stepresult>
+          <p>The page of the family opens. It lists the partners, the marriage and the children.</p>
+          <fig>
+            <image keyref="img-family-page"/>
+          </fig>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>Choose <uicontrol keyref="ui-view-family-tree"/> to see the family drawn out.</p>
+      <fig>
+        <image keyref="img-family-tree"/>
+      </fig>
+    </result>
+    <postreq>
+      <p>The page of the family also has <uicontrol keyref="ui-edit"/> and <uicontrol keyref="ui-delete-family"/>. Next: <xref keyref="add-a-note"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

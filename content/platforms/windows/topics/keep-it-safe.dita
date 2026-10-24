@@ -35,9 +35,28 @@
           <choice><uicontrol keyref="ui-gedcom-file"/> saves your tree as a <term keyref="term-family-tree-file">family tree file</term>.</choice>
           <choice><uicontrol keyref="ui-gedzip-archive"/> saves it with any pictures as well.</choice>
         </choices>
+        <stepresult>
+          <fig>
+            <image keyref="img-save-as-choice"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>If you chose <uicontrol keyref="ui-gedcom-file"/>, choose a version.</cmd>
+        <info>
+          <p>The box named <wintitle keyref="ui-which-version-of-gedcom"/> offers <uicontrol keyref="ui-gedcom-7"/> and <uicontrol keyref="ui-gedcom-551"/>. Choose the first unless a program you use is old.</p>
+        </info>
+        <stepresult>
+          <fig>
+            <image keyref="img-save-as-version"/>
+          </fig>
+        </stepresult>
       </step>
       <step>
         <cmd>When Windows asks where to put the file, choose a folder you will remember.</cmd>
+        <info>
+          <p>Windows opens your Documents folder first. Type or choose the folder you want. When you have saved, look in the folder to check that the copy is there.</p>
+        </info>
       </step>
     </steps>
     <result>
