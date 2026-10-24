@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!-- Words on screen that only the macOS app shows (authoring standards, section 6). The labels both
+     devices show are in content/keys/ui-labels.ditamap. This map is included first, so a definition
+     here wins. The menu and the Workspaces screen use the wording of the computer app (the Windows map
+     has the same keys), so the Mac keys repeat it. Family tree and Events were read on the Mac on 24
+     October 2026. -->
+<map id="macos-ui-labels" xml:lang="en-GB">
+  <keydef keys="ui-family-tree"><topicmeta><keywords><keyword>Family tree</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-events"><topicmeta><keywords><keyword>Events</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-show-details"><topicmeta><keywords><keyword>Show details</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-remove"><topicmeta><keywords><keyword>Remove</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-cancel"><topicmeta><keywords><keyword>Cancel</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-ok"><topicmeta><keywords><keyword>OK</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-active"><topicmeta><keywords><keyword>Active</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-remove-workspace"><topicmeta><keywords><keyword>Remove workspace</keyword></keywords></topicmeta></keydef>
+</map>

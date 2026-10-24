@@ -93,7 +93,7 @@
     <section>
       <title><uicontrol keyref="ui-workspaces"/></title>
       <p>This is the first screen. Each card is one family tree. It tells you how many people, families and events the tree holds. <xref keyref="open-a-family-tree-file"/> and <xref keyref="remove-a-workspace"/> start here.</p>
-      <fig>
+      <fig platform="WindowsWinUI">
         <image keyref="img-workspaces"/>
       </fig>
     </section>

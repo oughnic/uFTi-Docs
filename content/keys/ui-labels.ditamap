@@ -27,6 +27,7 @@
   <keydef keys="ui-add-from-file"><topicmeta><keywords><keyword>Add from file…</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-new-workspace"><topicmeta><keywords><keyword>New workspace</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-create"><topicmeta><keywords><keyword>Create</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-new-person"><topicmeta><keywords><keyword>New person</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-save-as"><topicmeta><keywords><keyword>Save as…</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-save-workspace-as"><topicmeta><keywords><keyword>Save workspace as</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-gedcom-file"><topicmeta><keywords><keyword>GEDCOM file (.ged)</keyword></keywords></topicmeta></keydef>

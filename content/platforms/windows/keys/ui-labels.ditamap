@@ -15,7 +15,6 @@
   <keydef keys="ui-about-ufti"><topicmeta><keywords><keyword>About uFTi</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-showing"><topicmeta><keywords><keyword>Showing</keyword></keywords></topicmeta></keydef>
   <!-- the Workspaces screen and its boxes -->
-  <keydef keys="ui-new-person"><topicmeta><keywords><keyword>New person</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-show-details"><topicmeta><keywords><keyword>Show details</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-remove"><topicmeta><keywords><keyword>Remove</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-cancel"><topicmeta><keywords><keyword>Cancel</keyword></keywords></topicmeta></keydef>

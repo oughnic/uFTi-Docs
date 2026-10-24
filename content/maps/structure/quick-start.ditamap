@@ -15,5 +15,7 @@
   <topicref href="../../topics/quick-start/say-where-you-found-it.dita" keys="say-where-you-found-it"/>
   <topicref href="../../platforms/windows/topics/keep-it-safe.dita" keys="keep-it-safe" platform="WindowsWinUI"/>
   <topicref href="../../platforms/android/topics/keep-it-safe.dita" keys="keep-it-safe" platform="Android"/>
+  <!-- macOS (DEC-125): keep-it-safe is written. Get the app is not written yet: how readers get the Mac app is not decided. -->
+  <topicref href="../../platforms/macos/topics/keep-it-safe.dita" keys="keep-it-safe" platform="MacAppKit"/>
   <topicref href="../../topics/quick-start/what-next.dita" keys="what-next"/>
 </map>

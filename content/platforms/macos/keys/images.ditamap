@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!-- The macOS manual's pictures (platform strategy, section 4). No pictures are captured yet. Capture them on the Brontë dataset in
+     the Oxford and slate light theme (DEC-024) before any img-* key is added here. Until then a topic
+     that needs a picture shows a gap in the build report, and no key is defined. -->
+<map id="macos-images" xml:lang="en-GB">
+  <topicmeta>
+    <prodinfo>
+      <prodname>uFTi</prodname>
+      <platform>macOS</platform>
+    </prodinfo>
+    <data name="reference-device" value="Mac (AppKit head), not yet chosen"/>
+    <data name="dataset" value="bronte"/>
+  </topicmeta>
+</map>

@@ -26,7 +26,7 @@
         <cmd>Choose <uicontrol keyref="ui-remove"/> on that card.</cmd>
         <stepresult>
           <p>A box named <wintitle keyref="ui-remove-workspace"/> asks you to check. It says the family tree file on disk is not deleted.</p>
-          <fig>
+          <fig platform="WindowsWinUI">
             <image keyref="img-remove-workspace"/>
           </fig>
         </stepresult>

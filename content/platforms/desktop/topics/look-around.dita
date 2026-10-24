@@ -58,7 +58,7 @@
     </steps>
     <result>
       <p>The other menu items are for later. To go back one screen, choose the back arrow.</p>
-      <fig>
+      <fig platform="WindowsWinUI">
         <image keyref="img-person-view"/>
       </fig>
     </result>

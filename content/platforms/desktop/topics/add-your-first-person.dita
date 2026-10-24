@@ -24,7 +24,7 @@
         <cmd>On <uicontrol keyref="ui-workspaces"/>, choose <uicontrol keyref="ui-create-workspace"/>.</cmd>
         <stepresult>
           <p>A small window named <wintitle keyref="ui-new-workspace"/> opens. It starts with a name already in the box.</p>
-          <fig>
+          <fig platform="WindowsWinUI">
             <image keyref="img-create-workspace-dialog"/>
           </fig>
         </stepresult>
@@ -53,7 +53,7 @@
     </steps>
     <result>
       <p>That is your first person. <keyword keyref="product-name"/> saves your work as you go.</p>
-      <fig>
+      <fig platform="WindowsWinUI">
         <image keyref="img-person-add"/>
       </fig>
     </result>
