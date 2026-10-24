@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="the-photos-buttons" xml:lang="en-GB">
+  <title>The Photos buttons</title>
+  <shortdesc>What the three buttons under Photos do on a person, an event or a source.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-24"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Concept</category>
+      <keywords>
+        <keyword>pictures</keyword>
+        <keyword>images</keyword>
+        <keyword>media</keyword>
+        <keyword>scan</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="media.add"/>
+  </prolog>
+  <conbody>
+    <p>A person's page, an event and a source each have a part named <uicontrol keyref="ui-photos"/>. It has three round-cornered buttons in a row. Under them, the page says <q>No attachments yet</q> until you add a picture.</p>
+    <ul>
+      <li>The first button has a camera on it.</li>
+      <li>The second button has a folder on it. It opens the Windows window for choosing a file. It lists picture files, so you can pick a photo or a scan from your computer.</li>
+      <li>The third button has a chain link on it. It opens a list of pictures that are already in this tree, so you can use one again on a second person. A new tree has none, and the list says so.</li>
+    </ul>
+    <fig>
+      <image keyref="img-photo-link"/>
+    </fig>
+    <p><xref keyref="which-file-to-send"/> says which file to send to family, and whether the pictures go with it.</p>
+  </conbody>
+</concept>

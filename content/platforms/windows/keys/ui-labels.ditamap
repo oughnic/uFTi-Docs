@@ -1,8 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <!-- Words on screen that only the Windows app shows (authoring standards, section 6), exactly as the
-     app prints them, read from app version 0.1.0.1 on 17 October 2026. The labels both devices show
-     are in content/keys/ui-labels.ditamap. This map is included first, so a definition here wins. -->
+     app prints them, read from the Alpha-1 build (app version 0.1.0.1) on 24 October 2026. The labels
+     both devices show are in content/keys/ui-labels.ditamap. This map is included first, so a
+     definition here wins. -->
 <map id="windows-ui-labels" xml:lang="en-GB">
+  <!-- the menu at the left -->
+  <keydef keys="ui-family-tree"><topicmeta><keywords><keyword>Family tree</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-events"><topicmeta><keywords><keyword>Events</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-where-records-are-kept"><topicmeta><keywords><keyword>Where records are kept</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-who-made-this-tree"><topicmeta><keywords><keyword>Who made this tree</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-research-questions-and-notes"><topicmeta><keywords><keyword>Research questions and notes</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-preferences"><topicmeta><keywords><keyword>Preferences</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-about-ufti"><topicmeta><keywords><keyword>About uFTi</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-showing"><topicmeta><keywords><keyword>Showing</keyword></keywords></topicmeta></keydef>
+  <!-- the Workspaces screen and its boxes -->
   <keydef keys="ui-new-person"><topicmeta><keywords><keyword>New person</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-show-details"><topicmeta><keywords><keyword>Show details</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-remove"><topicmeta><keywords><keyword>Remove</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-cancel"><topicmeta><keywords><keyword>Cancel</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-ok"><topicmeta><keywords><keyword>OK</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-active"><topicmeta><keywords><keyword>Active</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-remove-workspace"><topicmeta><keywords><keyword>Remove workspace</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-which-version-of-gedcom"><topicmeta><keywords><keyword>Which version of GEDCOM?</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-gedcom-7"><topicmeta><keywords><keyword>GEDCOM 7 (recommended)</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-gedcom-551"><topicmeta><keywords><keyword>GEDCOM 5.5.1 (for older programs)</keyword></keywords></topicmeta></keydef>
+  <!-- search -->
+  <keydef keys="ui-refine-by"><topicmeta><keywords><keyword>Refine by</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-dates"><topicmeta><keywords><keyword>Dates</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-place"><topicmeta><keywords><keyword>Place</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-event-type"><topicmeta><keywords><keyword>Event type</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-sound-alike"><topicmeta><keywords><keyword>Approximate (sound-alike) matches</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-clear-filters"><topicmeta><keywords><keyword>Clear filters</keyword></keywords></topicmeta></keydef>
+  <!-- a person's page -->
+  <keydef keys="ui-edit"><topicmeta><keywords><keyword>Edit</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-delete-person"><topicmeta><keywords><keyword>Delete person</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-photos"><topicmeta><keywords><keyword>Photos</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-add-a-new-family"><topicmeta><keywords><keyword>Add a new family</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-add-event"><topicmeta><keywords><keyword>Add event</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-all-events"><topicmeta><keywords><keyword>All events</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-delete-event"><topicmeta><keywords><keyword>Delete event</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-note"><topicmeta><keywords><keyword>Note</keyword></keywords></topicmeta></keydef>
+  <!-- the family form and the family tree -->
+  <keydef keys="ui-first-partner"><topicmeta><keywords><keyword>Husband / partner 1</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-second-partner"><topicmeta><keywords><keyword>Wife / partner 2</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-marriage-date"><topicmeta><keywords><keyword>Marriage date</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-place-of-marriage"><topicmeta><keywords><keyword>Place of marriage</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-children"><topicmeta><keywords><keyword>Children</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-add-row"><topicmeta><keywords><keyword>Add row</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-set"><topicmeta><keywords><keyword>Set…</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-view-family-tree"><topicmeta><keywords><keyword>View family tree</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-delete-family"><topicmeta><keywords><keyword>Delete family</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-return-to-focus"><topicmeta><keywords><keyword>Return to focus</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-fit-to-screen"><topicmeta><keywords><keyword>Fit to screen</keyword></keywords></topicmeta></keydef>
+  <!-- the Add a record list -->
+  <!-- sources -->
+  <keydef keys="ui-compare-records"><topicmeta><keywords><keyword>Compare records that disagree</keyword></keywords></topicmeta></keydef>
+  <!-- preferences -->
+  <keydef keys="ui-theme"><topicmeta><keywords><keyword>Theme</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-oxford-and-slate"><topicmeta><keywords><keyword>Oxford and slate</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-appearance"><topicmeta><keywords><keyword>Appearance</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-follow-the-system"><topicmeta><keywords><keyword>Follow the system</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-light"><topicmeta><keywords><keyword>Light</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-dark"><topicmeta><keywords><keyword>Dark</keyword></keywords></topicmeta></keydef>
 </map>

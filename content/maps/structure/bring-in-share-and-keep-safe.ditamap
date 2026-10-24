@@ -8,6 +8,8 @@
      the tree. Keys sit on the topicrefs and match the file names. -->
 <map id="bring-in-share-and-keep-safe-structure" xml:lang="en-GB">
   <topicref href="../../platforms/desktop/topics/opened-files-and-copies.dita" keys="opened-files-and-copies" platform="Desktop"/>
+  <topicref href="../../platforms/desktop/topics/open-a-family-tree-file.dita" keys="open-a-family-tree-file" platform="Desktop"/>
+  <topicref href="../../platforms/desktop/topics/remove-a-workspace.dita" keys="remove-a-workspace" platform="Desktop"/>
   <topicref href="../../platforms/phone/topics/opened-files-and-copies.dita" keys="opened-files-and-copies" platform="Mobile"/>
   <topicref href="../../platforms/desktop/topics/which-file-to-send.dita" keys="which-file-to-send" platform="Desktop"/>
   <topicref href="../../platforms/phone/topics/which-file-to-send.dita" keys="which-file-to-send" platform="Mobile"/>
