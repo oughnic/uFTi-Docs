@@ -52,7 +52,7 @@ function Rel { param([string]$Path) [System.IO.Path]::GetRelativePath($root, $Pa
 
 # ---- The platform catalogue, read from the DITAVAL filters (one per manual) -------------------
 
-$deviceTokens = @('AndroidPhone', 'AndroidTablet', 'iPhone', 'iPad', 'WindowsWinUI')
+$deviceTokens = @('AndroidPhone', 'AndroidTablet', 'iPhone', 'iPad', 'MacAppKit', 'WindowsWinUI')
 $osTokens = @('Android', 'iOS')
 $groupTokens = @('Phone', 'Tablet', 'Mobile', 'Touch', 'Desktop', 'Pointer')
 $catalogue = $deviceTokens + $osTokens + $groupTokens
@@ -307,14 +307,14 @@ function Test-Topic {
     if ($IsStrict) {
         foreach ($u in $rootEl.SelectNodes('//uicontrol[not(@keyref)] | //wintitle[not(@keyref)]')) { Fail "label typed inline ('$($u.InnerText.Trim())'): use a keyref to ui-* (DEC-090)" $rel; break }
     }
-    # platform tokens
+    # platform tokens (a picture differs by device whatever the text says, so a fig may carry a device token in a shared topic: DEC-129)
     $platforms = [System.Collections.Generic.HashSet[string]]::new()
     $underPlatforms = $rel -match '/platforms/'
     foreach ($e in $rootEl.SelectNodes('//*[@platform]')) {
         foreach ($t in ($e.GetAttribute('platform') -split '\s+' | Where-Object { $_ })) {
             [void]$platforms.Add($t)
             if ($catalogue -notcontains $t) { Fail "platform token '$t' is not in the catalogue" $rel }
-            elseif (($deviceTokens + $osTokens) -contains $t -and -not $underPlatforms) { Fail "platform or device token '$t' used outside platforms/ (DEC-032: idiom first, platform at the edges)" $rel }
+            elseif (($deviceTokens + $osTokens) -contains $t -and -not $underPlatforms -and $e.LocalName -ne 'fig') { Fail "platform or device token '$t' used outside platforms/ (DEC-032: idiom first, platform at the edges)" $rel }
         }
     }
     foreach ($e in $rootEl.SelectNodes('//*[@props or @otherprops or @audience or @rev]')) { Fail "conditional attribute other than @platform on <$($e.LocalName)> (platform strategy, section 2.1)" $rel }
@@ -324,8 +324,28 @@ function Test-Topic {
     foreach ($d in $disclosure) { $mm = [regex]::Match($raw, $d.Pattern); if ($mm.Success) { Fail "looks like $($d.Why): '$($mm.Value)'" $rel } }
     # what the topic needs: keys, diagrams
     $keyrefs = @($rootEl.SelectNodes('//*[@keyref]') | ForEach-Object { $_.GetAttribute('keyref') -replace '/.*$', '' } | Sort-Object -Unique)
+    # where each key is used: under which @platform values, so a manual that filters the element out does not need the key (DEC-129)
+    $keyScopes = @{}
+    foreach ($ke in $rootEl.SelectNodes('//*[@keyref]')) {
+        $kk = $ke.GetAttribute('keyref') -replace '/.*$', ''
+        $scopes = @($ke.SelectNodes('ancestor-or-self::*[@platform]') | ForEach-Object { , @($_.GetAttribute('platform') -split '\s+' | Where-Object { $_ }) })
+        if (-not $keyScopes.ContainsKey($kk)) { $keyScopes[$kk] = [System.Collections.Generic.List[object]]::new() }
+        $keyScopes[$kk].Add($scopes)
+    }
     $svgs = @($rootEl.SelectNodes('//svgref[@href]') | ForEach-Object { $_.GetAttribute('href') })
-    [pscustomobject]@{ Path = $Path; Rel = $rel; Title = $titleText; KeyRefs = $keyrefs; Svgs = $svgs; XrefCount = @($rootEl.SelectNodes('//xref[@keyref or @href] | //link[@keyref or @href]')).Count; ResourceIds = $helpIds; Platforms = @($platforms) }
+    [pscustomobject]@{ Path = $Path; Rel = $rel; Title = $titleText; KeyRefs = $keyrefs; KeyScopes = $keyScopes; Svgs = $svgs; XrefCount = @($rootEl.SelectNodes('//xref[@keyref or @href] | //link[@keyref or @href]')).Count; ResourceIds = $helpIds; Platforms = @($platforms) }
+}
+
+function Test-KeyExcluded {
+    # A key used only inside elements that the manual's filter removes is not used in that manual (DEC-129).
+    # An element is removed when one of its ancestors' @platform lists names none of the manual's tokens.
+    param($Occurrences, [string[]]$Tokens)
+    foreach ($scopes in $Occurrences) {
+        $kept = $true
+        foreach ($sc in $scopes) { if (@($sc | Where-Object { $Tokens -contains $_ }).Count -eq 0) { $kept = $false; break } }
+        if ($kept) { return $false }
+    }
+    return $true
 }
 
 function Test-Svg {
@@ -468,6 +488,7 @@ foreach ($src in $Source) {
             if (-not $topics.ContainsKey($tp)) { continue }
             $info = $topics[$tp]
             foreach ($k in $info.KeyRefs) {
+                if (-not $m.Keys.Contains($k) -and (Test-KeyExcluded $info.KeyScopes[$k] $tokens)) { continue }
                 if (-not $m.Keys.Contains($k)) { Fail "key '$k' is not defined in the $slug manual" $info.Rel; continue }
                 $def = $m.Keys[$k]
                 if ($k -like 'img-*') {

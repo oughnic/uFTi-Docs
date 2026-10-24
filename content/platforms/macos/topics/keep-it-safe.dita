@@ -38,7 +38,7 @@
         </choices>
       </step>
       <step>
-        <cmd>In the Save panel, choose a folder you will remember, then choose <uicontrol>Save</uicontrol>.</cmd>
+        <cmd>In the Save panel, choose a folder you will remember, then choose <uicontrol keyref="ui-save"/>.</cmd>
       </step>
     </steps>
     <result>

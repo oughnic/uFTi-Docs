@@ -33,7 +33,7 @@
         <cmd>Choose the file, then choose Open.</cmd>
         <stepresult>
           <p>A summary appears. It counts the people, families, events and sources in the file. It says if there are pictures. It also says that your changes are saved to this file.</p>
-          <fig>
+          <fig platform="WindowsWinUI">
             <image keyref="img-import-summary"/>
           </fig>
         </stepresult>
@@ -47,7 +47,7 @@
     </steps>
     <result>
       <p>The cards sit side by side. Choose a card to make that tree the open one. Choose <uicontrol keyref="ui-show-details"/> on a card to see which file it is.</p>
-      <fig>
+      <fig platform="WindowsWinUI">
         <image keyref="img-workspaces"/>
       </fig>
       <note>The summary writes the name with hyphens, such as Brontë-family-of-Haworth. The card writes it with spaces. They are the same tree. If you open a second file with the same name, the card adds (2).</note>
