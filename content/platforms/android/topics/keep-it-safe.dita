@@ -32,7 +32,7 @@
       <step>
         <cmd>Choose how to save your tree.</cmd>
         <choices>
-          <choice><uicontrol keyref="ui-gedzip-archive"/> saves the whole workspace in one file, with its pictures. Choose this one.</choice>
+          <choice><uicontrol keyref="ui-gedzip-archive"/> saves everything in one file, with its pictures. Choose this one.</choice>
           <choice><uicontrol keyref="ui-gedcom-file"/> saves the tree and its research notes as a <term keyref="term-family-tree-file">family tree file</term>, without pictures. Choose it only for a program that cannot read a GEDZIP file.</choice>
         </choices>
       </step>
@@ -41,8 +41,8 @@
       </step>
     </steps>
     <result>
-      <p>You now have a copy. Make a new copy after you add a lot. <keyword keyref="product-name"/> does not send the file for you. To email it, find it in the Files app. Keep a copy off your phone too.</p>
-      <note>If you opened a file from another program, <keyword keyref="product-name"/> keeps its own copy of it. The file you chose does not change. Keep that file safe too.</note>
+      <p>You now have a copy. Make a new one after you add a lot. To email it, find it in the Files app. Keep a copy off your phone too.</p>
+      <note>If you opened a file from another program, <keyword keyref="product-name"/> keeps its own copy. The file you chose does not change.</note>
       <fig>
         <image keyref="img-workspace-export"/>
       </fig>
