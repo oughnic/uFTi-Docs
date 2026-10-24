@@ -32,8 +32,8 @@
       <step>
         <cmd>Choose how to save your tree.</cmd>
         <choices>
-          <choice><uicontrol keyref="ui-gedcom-file"/> saves your tree as a <term keyref="term-family-tree-file">family tree file</term>.</choice>
-          <choice><uicontrol keyref="ui-gedzip-archive"/> saves it with any pictures as well.</choice>
+          <choice><uicontrol keyref="ui-gedzip-archive"/> saves everything in one file, with its pictures. Choose this one.</choice>
+          <choice><uicontrol keyref="ui-gedcom-file"/> saves your tree as a <term keyref="term-family-tree-file">family tree file</term>, without pictures. Use it only for a program that cannot read GEDZIP.</choice>
         </choices>
         <stepresult>
           <fig>
@@ -55,13 +55,13 @@
       <step>
         <cmd>When Windows asks where to put the file, choose a folder you will remember.</cmd>
         <info>
-          <p>Windows opens your Documents folder first. Type or choose the folder you want. When you have saved, look in the folder to check that the copy is there.</p>
+          <p>When you have saved, look in the folder to check that the copy is there.</p>
         </info>
       </step>
     </steps>
     <result>
-      <p>You now have a copy. Make a new copy after you add a lot. Keep one on a USB stick or another drive too.</p>
-      <note>If you opened a file from another program, <keyword keyref="product-name"/> saves your changes to that file. To leave the original alone, make a copy first and open the copy. Keep the original safe too.</note>
+      <p>You now have a copy. Make a new one after you add a lot. Keep one on another drive too.</p>
+      <note>If you opened a file from another program, <keyword keyref="product-name"/> saves your changes to that file. To leave the original alone, open a copy.</note>
     </result>
     <postreq>
       <p>Next: <xref keyref="what-next"/>.</p>
