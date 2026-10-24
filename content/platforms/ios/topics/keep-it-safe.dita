@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!-- Keep it safe on iPhone and iPad (platform strategy, section 2.3). Written from the walk of 24 October 2026:
+     Save as on a workspace card, the format sheet, the version question, then the Files save sheet. The
+     iPad's format sheet has no Cancel button and the iPhone's has; the page does not mention either. -->
+<task id="keep-it-safe" xml:lang="en-GB">
+  <title>Keep it safe</title>
+  <shortdesc>Save a copy of your tree as a file, and keep it somewhere else too.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-24"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Get started</category>
+      <keywords>
+        <keyword>backup</keyword>
+        <keyword>copy</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="workspaces.export"/>
+  </prolog>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>Open <uicontrol keyref="ui-workspaces"/>.</cmd>
+      </step>
+      <step>
+        <cmd>On the card for your tree, choose <uicontrol keyref="ui-save-as"/>.</cmd>
+        <stepresult>
+          <p>A small sheet opens. It asks how to save your tree.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose how to save your tree.</cmd>
+        <choices>
+          <choice><uicontrol keyref="ui-gedzip-archive"/> saves the whole workspace in one file: the tree with its research notes, and the pictures and other attached files. Choose this one.</choice>
+          <choice><uicontrol keyref="ui-gedcom-file"/> saves the family tree with its research notes, as a <term keyref="term-family-tree-file">family tree file</term>. It leaves out pictures and other attached files. Choose it only for a program that cannot read a GEDZIP file. If <keyword keyref="product-name"/> asks which version of GEDCOM to use, choose GEDCOM 7, unless the other program needs GEDCOM 5.5.1.</choice>
+        </choices>
+      </step>
+      <step>
+        <cmd>In the Files screen, choose where to put the file, then choose <uicontrol>Save</uicontrol>.</cmd>
+      </step>
+    </steps>
+    <result>
+      <p>You now have a copy. Make a new copy after you add a lot. Keep one off your device too. A GEDZIP file is also the one to send to someone else who uses <keyword keyref="product-name"/>.</p>
+      <note>If you opened a file from another program, <keyword keyref="product-name"/> keeps its own copy of it. The file you chose does not change. Keep that file safe too.</note>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="what-next"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

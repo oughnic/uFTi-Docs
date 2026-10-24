@@ -58,7 +58,7 @@
     </steps>
     <result>
       <p>To go back one screen, choose the back arrow at the top left.</p>
-      <fig>
+      <fig platform="AndroidPhone">
         <image keyref="img-nav-main"/>
       </fig>
     </result>

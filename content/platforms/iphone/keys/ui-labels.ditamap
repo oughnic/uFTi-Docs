@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!-- Words on screen that only the iPhone app shows (authoring standards, section 6). None so far. The labels
+     every device shows are in content/keys/ui-labels.ditamap. This map is included first, so a definition
+     here wins. -->
+<map id="iphone-ui-labels" xml:lang="en-GB">
+  <keydef keys="ui-more"><topicmeta><keywords><keyword>More</keyword></keywords></topicmeta></keydef>
+</map>
