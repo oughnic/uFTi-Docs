@@ -1,6 +1,6 @@
 # The Brontë sample files
 
-The saved stage files of the Brontë dataset ([specification](../README.md)). This is the only folder in the repository where a family tree file may be committed (DEC-063, DEC-111). `build/scripts/check-samples.ps1` checks everything here: only `*.ged` files; each with a header and a trailer; no submitter record, contact detail or file path; every person on the [allow-list](../allow-list.md) and dead by 1930. The manuals never show these files' contents (DEC-030).
+The saved stage files of the Brontë dataset ([specification](../README.md)). This is the only folder in the repository where a family tree file may be committed (DEC-063, DEC-111). `build/scripts/check-samples.ps1` checks everything here: only `*.ged` files; each with a header and a trailer; no submitter record, contact detail or file path, and no file line except a Wikimedia Commons link on a media record (DEC-120); every person on the [allow-list](../allow-list.md) and dead by 1930. The manuals never show these files' contents (DEC-030).
 
 ## The first sample: stage 3
 
@@ -29,14 +29,14 @@ Both are kept byte for byte, with the line endings the app wrote (`.gitattribute
 
 | File | What it is | Size | SHA-256 |
 |---|---|---|---|
-| `stage-3-families-with-sources.ged` | The stage 3 tree with its sources, as GEDCOM 5.5.1. | 23,364 bytes | `3ceed7e82e82c50df35cc36845509973c38be569d1c70c60670e4a419de7a801` |
-| `stage-3-families-with-sources.V7.ged` | The same file as GEDCOM 7. | 23,395 bytes | `afd963221d4972e5b6c896992ec85fc95cba45e74eee6934d5a7758f9b92adc6` |
+| `stage-3-families-with-sources.ged` | The stage 3 tree with its sources and three media links, as GEDCOM 5.5.1. | 24,620 bytes | `2f641c11b076051626742cc78818063401b6144b2053f40570c7b4de986d8707` |
+| `stage-3-families-with-sources.V7.ged` | The same file as GEDCOM 7. | 24,672 bytes | `8d9643d61976b9dd34818815ed9dff75eece6e616342265ccf05813b808b7829` |
 
-Both are kept byte for byte, as the tools wrote them. The stage 3 files above are not changed.
+The stage 3 files above are not changed. These two were written by the app's tools, then changed by hand on 21 October 2026 to add three media links (DEC-120). The sizes and checksums above are after that change.
 
 **The name to show on screen:** Brontë family of Haworth, as for stage 3.
 
-**What it adds to stage 3.** Twenty-two sources, and 119 citations that attach them to the facts they bear on: the nine births, the nine deaths, the two marriages, and who the children and the spouses are. A citation says, in our words, what that source gives for the fact (a date, a place or an age), where in the source when the register gives a locator, and how good the evidence is. The sources are the ones the [evidence register](../evidence-register.md) cites for those facts. Arthur Bell Nicholls's death also has its day now, 2 December 1906, from the certified copy of the Irish register entry (C147, issue 35). Nothing else about the people, the families and the events changes. The dates and places are stage 3's.
+**What it adds to stage 3.** Twenty-two sources, and 119 citations that attach them to the facts they bear on: the nine births, the nine deaths, the two marriages, and who the children and the spouses are. A citation says, in our words, what that source gives for the fact (a date, a place or an age), where in the source when the register gives a locator, and how good the evidence is. The sources are the ones the [evidence register](../evidence-register.md) cites for those facts. Arthur Bell Nicholls's death also has its day now, 2 December 1906, from the certified copy of the Irish register entry (C147, issue 35). Nothing else about the people, the families and the events changes. The dates and places are stage 3's. The only other change is the three media records of 21 October 2026, described under How it was made.
 
 **Where sources disagree, all of them are in the file.** Each fact keeps the value the register concludes, or the range where it concludes nothing, and cites every source on it, the ones that give a different value included. No rival event is added. Nothing is chosen silently: the value on the fact is the register's, and the value a source gives is in its citation. These are the facts with competing sources.
 
@@ -88,19 +88,19 @@ One citation is rated 3, 49 are rated 2 and 69 are rated 1. Most of what we coul
 | Patrick and Maria, their children | C018 | S01, S03, S06 | 3 |
 | Charlotte and Arthur, husband and wife | C150 | S03, S08, S12 | 3 |
 
-**What it leaves out.** What stage 3 left out, apart from sources: baptisms and burials, notes, the other names the family used, the census, and the second marriage. Repositories are not records of their own either. The body that holds a source (a church, an archive, a registry office) is named in the source, and stage 6 adds repositories as records. The web addresses in the specification are not in the file, because the gate refuses a web page as a contact detail.
+**What it leaves out.** What stage 3 left out, apart from sources: baptisms and burials, notes, the other names the family used, the census, and the second marriage. Repositories are not records of their own either. The body that holds a source (a church, an archive, a registry office) is named in the source, and stage 6 adds repositories as records. The web addresses in the specification are not in the file. The only addresses in the file are the three Wikimedia Commons links on the media records, the one kind of file line the gate allows (DEC-120).
 
-**How it was made.** On 20 October 2026, with the app's own tools (DEC-039), from the stage 3 file. The file was loaded, Arthur's death date was changed, the 22 sources and 119 citations were added one at a time, and the workspace was exported twice, as GEDCOM 5.5.1 and as GEDCOM 7. No file was edited by hand. The stage 3 file was loaded without its header copyright line, because the export writes that line itself. The header of the new file is the same as stage 3's, and so is every person, family and event except Arthur's death date. The tools mark each record they make or change with a date and a note naming the tool, so the sources and the two families carry one. The header date is stage 3's. The GEDCOM 7 file has no per-record external identifiers, which stage 3's GEDCOM 7 file has, because the 5.5.1 file it was built from does not hold them.
+**How it was made.** On 20 October 2026, with the app's own tools (DEC-039), from the stage 3 file. The file was loaded, Arthur's death date was changed, the 22 sources and 119 citations were added one at a time, and the workspace was exported twice, as GEDCOM 5.5.1 and as GEDCOM 7. No file was edited by hand until 21 October 2026. The stage 3 file was loaded without its header copyright line, because the export writes that line itself. The header of the new file is the same as stage 3's, and so is every person, family and event except Arthur's death date. The tools mark each record they make or change with a date and a note naming the tool, so the sources and the two families carry one. The header date is stage 3's. The GEDCOM 7 file has no per-record external identifiers, which stage 3's GEDCOM 7 file has, because the 5.5.1 file it was built from does not hold them. On 21 October 2026 the three media records were added by hand, as the owner asked: three public-domain images from Wikimedia Commons, linked by their addresses, each with a change note. Patrick's record links the parsonage photograph of about 1863 and the view of St John's College, Cambridge. The family record links the parsonage as the museum is now, and its change date and time were updated. The header and the people are unchanged. The licences are in [media.md](../media.md) (M05 to M07).
 
 **Where the data comes from.** The specification and the evidence register, as for stage 3, with the register updated on 20 October 2026 for issue 35. Every citation traces to a register row named above. The register is a draft until a second reader has checked it (Q20), so the citations are too.
 
-**Licence.** As for stage 3, with one addition. The file now names the titles and authors of published works, as any citation does, and gives short statements of what each says, in our words. It copies no text from them. It holds no third-party media.
+**Licence.** As for stage 3, with one addition. The file now names the titles and authors of published works, as any citation does, and gives short statements of what each says, in our words. It copies no text from them. It holds no image file. It links three public-domain images on Wikimedia Commons by their addresses ([media.md](../media.md), M05 to M07).
 
 **Who could be living.** Nobody in the tree: the same nine people, who died between 1821 and 1906. The source records name the authors of published works, as any citation does. They are not people in the tree.
 
 ## For the app
 
-Register `stage-3-families.ged` as the first-run sample, under the name above, as before. `stage-3-families-with-sources.ged` is the fuller sample the owner asked for on 20 October 2026. Whether the app registers it in place of stage 3 is the app project's decision (DEC-112, DEC-114). The owner has said that the GEDCOM 7 file of this second sample is the basis for the app's seed in due course (DEC-116). Use the first sample's GEDCOM 7 file only if the app prefers GEDCOM 7.
+Register `stage-3-families.ged` as the first-run sample, under the name above, as before. `stage-3-families-with-sources.ged` is the fuller sample the owner asked for on 20 October 2026. Whether the app registers it in place of stage 3 is the app project's decision (DEC-112, DEC-114). The owner has said that the GEDCOM 7 file of this second sample is the basis for the app's seed in due course (DEC-116). Use the first sample's GEDCOM 7 file only if the app prefers GEDCOM 7. Its three image links point to Wikimedia Commons. Whether the app fetches them is for the media tests to show.
 
 ## Changing these files
 

@@ -539,6 +539,9 @@ if ($Only -contains 'samples') {
         @{ Name = 'a submitter record'; Pass = $false; Expect = 'submitter record'; Files = @{ "$stagesRel/sample.ged" = $goodTree.Replace('0 TRLR', "0 @U1@ SUBM`n1 NAME A Person`n0 TRLR") } }
         @{ Name = 'an email address'; Pass = $false; Expect = 'email address'; Files = @{ "$stagesRel/sample.ged" = $goodTree.Replace('1 SEX M', "1 SEX M`n1 NOTE write to a.person@example.com") } }
         @{ Name = 'a file path'; Pass = $false; Expect = 'file path'; Files = @{ "$stagesRel/sample.ged" = $goodTree.Replace('1 SEX M', "1 SEX M`n1 NOTE saved at C:\Users\someone\tree.ged") } }
+        @{ Name = 'a Wikimedia Commons link in a media record'; Pass = $true; Expect = ''; Files = @{ "$stagesRel/sample.ged" = $goodTree.Replace('0 TRLR', "0 @M05@ OBJE`n1 FILE https://upload.wikimedia.org/wikipedia/commons/3/38/St_johns_rear_buildings.jpg`n2 FORM jpg`n0 TRLR") } }
+        @{ Name = 'a file link that is not a Wikimedia Commons link'; Pass = $false; Expect = 'not a Wikimedia Commons link'; Files = @{ "$stagesRel/sample.ged" = $goodTree.Replace('0 TRLR', "0 @M05@ OBJE`n1 FILE https://example.org/photo.jpg`n0 TRLR") } }
+        @{ Name = 'a Wikimedia Commons link outside a media record'; Pass = $false; Expect = 'not a Wikimedia Commons link'; Files = @{ "$stagesRel/sample.ged" = $goodTree.Replace('1 SEX M', "1 SEX M`n1 FILE https://upload.wikimedia.org/wikipedia/commons/3/38/St_johns_rear_buildings.jpg") } }
         @{ Name = 'a file without a trailer'; Pass = $false; Expect = 'trailer'; Files = @{ "$stagesRel/sample.ged" = $goodTree.Replace("`n0 TRLR", '') } }
     )
     foreach ($c in $sampleCases) {

@@ -45,7 +45,7 @@ Nothing below is in the dataset as a fact. Each item says what is missing and wh
 | 6 | Patrick's probate entry, 1861 | "proved at Wakefield" (S07) | The National Probate Calendar for 1861 | Second reader |
 | 7 | Which parish the townland Emdale lies in | Two parish names from different sources (T02) | The Placenames Database of Northern Ireland or the Ordnance Survey memoirs | Second reader |
 | 8 | The modern county of Haworth, Thornton and Hartshead, stated from a legal source | The historic county from every record; the modern postcode district | The Local Government Act 1972, Schedule 1, which lists the metropolitan counties and their districts | WP9, before the "places that changed county" topic is written |
-| 9 | Any photograph or portrait with a recorded licence | Placeholders only (media.md) | The National Portrait Gallery's terms for NPG 1725; an openly licensed photograph of the Parsonage | WP8 |
+| 9 | Any photograph or portrait with a recorded licence | Placeholders for M01 to M04 (media.md); M05 to M08 are Commons images with their licences recorded | The National Portrait Gallery's terms for NPG 1725; an openly licensed photograph of the Parsonage | WP8 |
 | 10 | The register entries for the Guiseley marriage and the Thornton baptisms as originals | The plaque (S21) and the DNB's reading of the Thornton register (S06) | West Yorkshire Archive Service, Leeds and Bradford | Second reader |
 | 11 | The manuscript date of Charlotte's letter about Emily's burial | The printed date in Gaskell (D05) | The letter's current holder, through the Brontë Parsonage Museum library | Second reader |
 
