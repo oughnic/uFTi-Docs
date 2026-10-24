@@ -12,19 +12,115 @@
       <vrmlist><vrm version="0.1.0.1 (1)"/></vrmlist>
       <platform>Windows</platform>
     </prodinfo>
-    <data name="reference-device" value="desktop window, Windows 11 Pro 10.0.26200 on ARM64, display scaling 200%, 1267 x 761, landscape"/>
+    <data name="reference-device" value="desktop window, Windows 11 Pro 10.0.26200 on ARM64, display scaling 200%, 1267 x 793, landscape"/>
     <data name="dataset" value="bronte"/>
   </topicmeta>
   <keydef keys="img-start-first-run" href="../images/start-first-run.png" format="png" scope="local" platform="WindowsWinUI">
     <topicmeta><linktext>The Workspaces screen, with the Create workspace and Add from file buttons under its heading</linktext></topicmeta>
   </keydef>
   <keydef keys="img-person-add" href="../images/person-add.png" format="png" scope="local" platform="WindowsWinUI">
-    <topicmeta><linktext>The New person form, with Patrick typed in the Given name(s) box and Brontë in the Surname box</linktext></topicmeta>
+    <topicmeta><linktext>The New person form filled in for Patrick Brontë, with his sex, his birth and death dates and the places of both</linktext></topicmeta>
   </keydef>
   <keydef keys="img-person-view" href="../images/person-view.png" format="png" scope="local" platform="WindowsWinUI">
-    <topicmeta><linktext>Charlotte Brontë's page, with the menu at the left and a small chip beside Identity, Birth and Death that counts the sources</linktext></topicmeta>
+    <topicmeta><linktext>Patrick Brontë&apos;s page, with the menu at the left, his dates and places, and a small chip beside Birth that counts one source</linktext></topicmeta>
   </keydef>
   <keydef keys="img-citation-add" href="../images/citation-add.png" format="png" scope="local" platform="WindowsWinUI">
     <topicmeta><linktext>The Add source form, with the title of a book typed in the Title box</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-create-workspace-dialog" href="../images/create-workspace-dialog.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The New workspace window, with Brontë family of Haworth typed as the name and the Create and Cancel buttons below</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-workspaces" href="../images/workspaces.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The Workspaces screen with one card, Brontë family of Haworth, marked Active and showing how many people, families and events it holds</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-remove-workspace" href="../images/remove-workspace.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The Remove workspace question, which says the family tree file on disk is not deleted, with Remove and Cancel buttons</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-save-as-choice" href="../images/save-as-choice.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The Save workspace as choice, with a GEDCOM file, a GEDZIP archive that includes media, and a Cancel button</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-save-as-version" href="../images/save-as-version.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The question Which version of GEDCOM, with GEDCOM 7 marked as recommended, GEDCOM 5.5.1 for older programs, and a Cancel button</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-import-summary" href="../images/import-summary.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The summary after a file opens, listing nine people, two families, twenty events and twenty-two sources, and saying that changes are saved to this file</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-search-results" href="../images/search-results.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The results of a search for Patrick, with two people and one marriage listed side by side</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-search-refine" href="../images/search-refine.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The Refine by panel under the search box, with check boxes for dates, sex, place, event type and sound-alike matches</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-person-page" href="../images/person-page.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The lower part of Patrick Brontë&apos;s page, with his wife and six children listed, the Photos buttons, and the Edit, Add a record and Delete person buttons</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-person-edit" href="../images/person-edit.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The form for changing Charlotte Brontë, with her names, sex, dates and places filled in and Save and Cancel buttons</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-add-record" href="../images/add-record.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The Add a record list, with choices to add parents, an event, a note, a source or a new person for Charlotte Brontë</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-add-record-lower" href="../images/add-record-lower.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The lower part of the Add a record list, with Basic details, Family, Repository, Research note, Submitter and a More forms button</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-family-form" href="../images/family-form.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The Family form with Patrick Brontë as husband, Maria Branwell as wife, and the marriage date and place filled in</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-family-children" href="../images/family-children.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The Children part of the Family form, with one row for a new child, Charlotte, and boxes for her sex, birth date and birthplace</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-family-page" href="../images/family-page.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The page for Patrick Brontë and Maria Branwell, with their marriage, their daughter Charlotte and the Edit and Delete family buttons</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-family-tree" href="../images/family-tree.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The family tree for Patrick Brontë, with his wife Maria Branwell beside him and their daughter Charlotte below</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-family-tree-charlotte" href="../images/family-tree-charlotte.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The family tree for Charlotte Brontë, with her parents above, her husband Arthur Bell Nicholls beside her and a button for her brothers and sisters</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-events" href="../images/events.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>Patrick Brontë&apos;s list of events, which are birth, marriage and death, each with a date, a place and a count of sources</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-event-detail" href="../images/event-detail.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The page for Charlotte Brontë&apos;s birth, with its type, date and place, a source count, the Photos buttons and the Edit and Delete event buttons</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-sources-list" href="../images/sources-list.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The Sources list for Charlotte&apos;s birth, with five books, each with its author and Edit and Remove links</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-sources-empty" href="../images/sources-empty.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The Sources list for a birth with no sources, with the Add source and Compare records that disagree buttons</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-source-new" href="../images/source-new.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The new source form, with boxes for the title, the page, where it is kept, the words copied and a note, and a Save source button</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-source-attach" href="../images/source-attach.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The step after Save source, which offers a camera, a file and a link button to attach a copy of the source, and a Done button</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-sources-one" href="../images/sources-one.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The Sources list after one book has been added, with Edit and Remove beside it</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-notes" href="../images/notes.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The Notes page for Patrick Brontë, showing a note that says he was curate of Haworth, with Edit and Delete note buttons</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-note-form" href="../images/note-form.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The note form, with one box for the note and Save and Cancel buttons</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-repositories" href="../images/repositories.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The Where records are kept page, with a line that says nothing is there yet and to use the plus button</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-submitters" href="../images/submitters.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The Who made this tree page, with a line that says nobody is credited yet and to use the plus button</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-research-notes" href="../images/research-notes.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The Research questions and notes page, with a line that says there are none yet and to use the plus button</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-preferences" href="../images/preferences.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The Preferences page, with three themes and Oxford and slate chosen, and three looks and Light chosen</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-photo-link" href="../images/photo-link.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The list of media to link, which says there is no media in this workspace yet</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-tree-marriage" href="../images/tree-marriage.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The list that opens from the marriage mark, with the marriage of Patrick and Maria and each of their children, over the family tree</linktext></topicmeta>
   </keydef>
 </map>

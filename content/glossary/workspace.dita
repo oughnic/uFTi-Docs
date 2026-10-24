@@ -2,5 +2,5 @@
 <!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary Entry//EN" "glossentry.dtd">
 <glossentry id="workspace" xml:lang="en-GB">
   <glossterm>workspace</glossterm>
-  <glossdef>One family tree and everything kept with it: the family tree file with its research notes, and the pictures and other files attached to people, facts and sources. A GEDZIP file holds all of it. You can have more than one.</glossdef>
+  <glossdef>One family tree and everything kept with it. That is the family tree file with its research notes, and the pictures and other files you attach. A GEDZIP file holds all of it. You can have more than one.</glossdef>
 </glossentry>

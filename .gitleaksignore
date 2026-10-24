@@ -1,0 +1,4 @@
+# Findings read by hand and found harmless (gitleaks fingerprint: commit:file:rule:line).
+# These two are the key names ui-husband-partner-1 and ui-wife-partner-2, renamed in a later commit.
+4671ae5c5ad766a418f5e0b6c8e3c39fd1c97891:content/platforms/desktop/topics/add-a-family.dita:generic-api-key:34
+4671ae5c5ad766a418f5e0b6c8e3c39fd1c97891:content/platforms/windows/keys/ui-labels.ditamap:generic-api-key:45

@@ -32,9 +32,9 @@
         </info>
       </step>
       <step>
-        <cmd>Choose <uicontrol keyref="ui-facts"/>.</cmd>
+        <cmd>Choose <uicontrol keyref="ui-events"/>.</cmd>
         <info>
-          <p>It lists the <term keyref="term-fact">facts</term> for that person.</p>
+          <p>It lists the <term keyref="term-fact">events and facts</term> for that person.</p>
         </info>
       </step>
       <step>
@@ -44,9 +44,9 @@
         </info>
       </step>
       <step>
-        <cmd>Choose <uicontrol keyref="ui-family"/>.</cmd>
+        <cmd>Choose <uicontrol keyref="ui-family-tree"/>.</cmd>
         <info>
-          <p>It draws a tree, which the screen calls a <term keyref="term-pedigree">pedigree</term>.</p>
+          <p>It draws a tree. Older manuals call it a <term keyref="term-pedigree">pedigree</term>.</p>
         </info>
       </step>
       <step>

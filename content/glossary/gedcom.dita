@@ -2,5 +2,5 @@
 <!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary Entry//EN" "glossentry.dtd">
 <glossentry id="gedcom" xml:lang="en-GB">
   <glossterm>GEDCOM</glossterm>
-  <glossdef>The standard file format that family tree files are written in. Many family tree programs read it. GEDCOM 5.5.1 was published in 1999 and has been the common format for exchanging family trees for more than twenty years. GEDCOM 7, published in 2021, is the newer version. A version belongs to the standard, not to uFTi.</glossdef>
+  <glossdef>The standard format for family tree files. Many family tree programs read it. GEDCOM 5.5.1 was published in 1999. It has been the common format for more than twenty years. GEDCOM 7, published in 2021, is the newer version. A version belongs to the standard, not to uFTi.</glossdef>
 </glossentry>
