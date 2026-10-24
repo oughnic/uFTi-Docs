@@ -68,7 +68,7 @@
     </steps>
     <result>
       <p>That is your first person. <keyword keyref="product-name"/> saves your work as you go.</p>
-      <fig>
+      <fig platform="AndroidPhone">
         <image keyref="img-person-add"/>
       </fig>
     </result>

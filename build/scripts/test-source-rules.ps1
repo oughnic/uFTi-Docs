@@ -289,6 +289,16 @@ $lintCases = @(
     @{ Name = 'image-outside-a-fig'; Expect = 'image outside a fig'; Do = { param($d) Edit-File $d 'topics/do-it.dita' '<fig>
         <image keyref="img-shot"/>
       </fig>' '<image keyref="img-shot"/>' } }
+    @{ Name = 'key-in-a-picture-for-every-device'; Expect = "key 'img-elsewhere' is not defined in the windows manual"; Do = { param($d) Edit-File $d 'topics/do-it.dita' '<fig>
+        <image keyref="img-shot"/>
+      </fig>' '<fig>
+        <image keyref="img-shot"/>
+      </fig><fig><image keyref="img-elsewhere"/></fig>' } }
+    @{ Name = 'device-token-on-text-in-a-shared-topic'; Expect = 'used outside platforms/'; Do = { param($d) Edit-File $d 'topics/do-it.dita' '<fig>
+        <image keyref="img-shot"/>
+      </fig>' '<p platform="AndroidPhone">Only on an Android phone.</p><fig>
+        <image keyref="img-shot"/>
+      </fig>' } }
     @{ Name = 'image-by-href'; Expect = 'pictures are referenced by key'; Do = { param($d) Edit-File $d 'topics/do-it.dita' '<image keyref="img-shot"/>' '<image href="../platforms/windows/images/shot.png"><alt>A form</alt></image>' } }
     @{ Name = 'table-without-title'; Expect = 'table without a title'; Do = { param($d) Edit-File $d 'topics/look-it-up.dita' '<title>Things you can save</title>' '' } }
     @{ Name = 'table-without-header-row'; Expect = 'table without a header row'; Do = { param($d) Edit-File $d 'topics/look-it-up.dita' '<thead>
@@ -336,6 +346,11 @@ $lintCases = @(
 # Cases that must pass: the base itself, and a template that no map uses.
 $lintPass = @(
     @{ Name = 'the base publication passes'; Do = { param($d) } }
+    @{ Name = 'a picture for another device in a shared topic passes, though its key is not defined here (DEC-129)'; Do = { param($d) Edit-File $d 'topics/do-it.dita' '<fig>
+        <image keyref="img-shot"/>
+      </fig>' '<fig>
+        <image keyref="img-shot"/>
+      </fig><fig platform="AndroidPhone"><image keyref="img-elsewhere"/></fig>' } }
     @{ Name = 'a template in no map passes'; Do = { param($d) $dest = Join-Path $d 'templates/know-it-too.dita'; New-Item -ItemType Directory -Path (Split-Path $dest) -Force | Out-Null; (Get-Content (Join-Path $d 'topics/know-it.dita') -Raw).Replace('id="know-it"', 'id="know-it-too"').Replace('<title>Know it</title>', '<title>Know it too</title>') | Set-Content $dest -NoNewline } }
 )
 

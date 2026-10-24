@@ -33,7 +33,7 @@
         <cmd>Choose the file, then choose Open.</cmd>
         <stepresult>
           <p>A summary appears. Its title is the name of the tree, written as its card writes it. The summary counts the people, families, events and sources in the file. It says how many pictures there are, and if the file holds anything that <keyword keyref="product-name"/> cannot show. <keyword keyref="product-name"/> keeps that as it is. The summary also says that your changes are saved to this file.</p>
-          <fig>
+          <fig platform="WindowsWinUI">
             <image keyref="img-import-summary"/>
           </fig>
         </stepresult>
@@ -47,7 +47,7 @@
     </steps>
     <result>
       <p>The cards sit side by side. Choose a card to make that tree the open one. Choose <uicontrol keyref="ui-show-details"/> on a card to see which file it is.</p>
-      <fig>
+      <fig platform="WindowsWinUI">
         <image keyref="img-workspaces"/>
       </fig>
       <note>If you open a second file with the same name, the card and the summary both add (2) to the name.</note>

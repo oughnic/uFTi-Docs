@@ -93,7 +93,7 @@ These are not labels in a key map. The pages do not repeat them.
 
 | What is on screen | What the documentation does | Change |
 |---|---|---|
-| A workspace's name printed with hyphens | Fixed in the next Alpha build: the summary after a file opens is titled as its card is (DEC-125). The page no longer mentions it. | **Fixed** |
+| A workspace's name printed with hyphens | Fixed in the next Alpha build: the summary after a file opens is titled as its card is (DEC-131). The page no longer mentions it. | **Fixed** |
 | *Entered via* and a version number on a person's page | Pictures show the app as it is (DEC-091). | **Asked** |
 | The *Citation reference* box on the source form | Pages tell the reader to fill in *Title* only, because the box does not keep what is typed (DEC-090). | **Asked** (a fix, not a new word) |
 | File paths printed on cards | Pictures are cropped so no path shows (DEC-091, DEC-096). | **Asked** (DEC-097) |
@@ -163,14 +163,16 @@ The words the documentation uses for the ideas behind the app. A term in bold ne
 
 | Say | It means | Glossary entry | Do not say |
 |---|---|---|---|
-| **workspace** | One family tree, with all of its people, facts and sources. You can have more than one. | `workspace` | database, project, file |
+| **workspace** | One family tree and everything kept with it: the family tree file with its research notes, and the pictures and other attached files. A GEDZIP file holds all of it. You can have more than one. | `workspace` | database, project, file |
 | family tree | The tree of people and families that a workspace holds. Draw it with *Family*. | none (everyday words) | genealogy, ancestry chart |
 | person | Someone in your tree. | none | individual, record |
 | family | A group of people joined together in the tree, such as a couple. | none | household, unit |
 | **fact** | Something you record about a person, such as a birth with its date. The menu says *Facts*. | `fact` | event, attribute, field |
 | **source** | Where you found a fact: a certificate, a census page, or what someone told you. | `source` | citation, reference, evidence |
 | **pedigree** | The name the screen gives to the tree it draws. | `pedigree` | pedigree chart |
-| **family tree file** | A file that holds a whole family tree. Use it for a GEDCOM file. | `family-tree-file` | GEDCOM file, tree file, export file |
+| **family tree file** | A GEDCOM file that holds a whole family tree, with its research notes. It does not hold pictures or other attached files. | `family-tree-file` | tree file, export file |
+| **GEDCOM** | The standard file format that family tree files are written in. GEDCOM 5.5.1 was published in 1999; GEDCOM 7 in 2021. When a reader saves a plain family tree file, the app asks which version: GEDCOM 7 (recommended) or GEDCOM 5.5.1 (for older programs). A version is a version of the standard, never of uFTi. | `gedcom` | V7 (as a name for a version of the app) |
+| **GEDZIP** | One file that holds a whole workspace: the family tree with its research notes, and the pictures and other attached files. It is the preferred format for saving and sending. | `gedzip` | GDZ (use the label as shown on screen) |
 | **saved copy** | A family tree file you make with *Save as…*. It stays as it was when you made it. | `saved-copy` | export, archive (unless the label says so). Not *backup*: that is the file the app makes for itself |
 | **backup** | An older copy of a family tree file that the app makes for itself, the first time it saves after you start it. The word is in the file's name, so the page uses it (DEC-103). | `backup` | saved copy (that is the one you make), export |
 | **citation** | The exact place in a source where a fact is found, such as a page. Use it only when the app or a good practice topic needs it. | needed (WP9) | reference |

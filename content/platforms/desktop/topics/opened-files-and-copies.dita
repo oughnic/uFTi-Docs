@@ -25,16 +25,16 @@
     </section>
     <section>
       <title>Make a copy</title>
-      <p>Choose <uicontrol keyref="ui-save-as"/> on the card for your tree. <keyword keyref="product-name"/> asks where to put the copy, and then tells you where it went.</p>
+      <p>Choose <uicontrol keyref="ui-save-as"/> on the card for your tree. <keyword keyref="product-name"/> asks how to save it, and where to put it, and then tells you where it went. Choose the GEDZIP file, unless you need a plain family tree file for an older program.</p>
       <p>A copy made this way is a <term keyref="term-saved-copy">saved copy</term>. It is a file of its own, and it stays as it was when you made it. <keyword keyref="product-name"/> does not move you to the copy. It keeps working on the file you opened. To work on the copy, open it.</p>
     </section>
     <section>
       <title>Files beside your tree</title>
-      <p><keyword keyref="product-name"/> also keeps other files beside your tree. One kind is a <term keyref="term-backup">backup</term>, an older copy of your tree. Another has V7 in its name and holds the same tree again. <keyword keyref="product-name"/> makes them for you. <xref keyref="files-beside-your-tree"/> says what each one is.</p>
+      <p><keyword keyref="product-name"/> also keeps other files beside your tree. It keeps a <term keyref="term-backup">backup</term>, an older copy of your tree, and makes it for you. <xref keyref="files-beside-your-tree"/> says what each one is.</p>
     </section>
     <section>
       <title>Sending your tree</title>
-      <p>Send a copy that you saved, and not one of the other files. <xref keyref="which-file-to-send"/> says why.</p>
+      <p>Send a GEDZIP copy that you saved, and not one of the other files. <xref keyref="which-file-to-send"/> says why.</p>
     </section>
   </conbody>
 </concept>

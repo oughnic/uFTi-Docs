@@ -1,6 +1,6 @@
 # The Alpha-1 Windows walk
 
-What was walked, what was found and what the manual does about it. Part of the [authoring plan](../authoring-plan.md). Written 24 October 2026 for [issue 54](https://github.com/oughnic/uFTi-Docs/issues/54). Decisions: DEC-122 and DEC-123. The retest on the next Alpha build is in section 5 ([issue 63](https://github.com/oughnic/uFTi-Docs/issues/63), DEC-125).
+What was walked, what was found and what the manual does about it. Part of the [authoring plan](../authoring-plan.md). Written 24 October 2026 for [issue 54](https://github.com/oughnic/uFTi-Docs/issues/54). Decisions: DEC-122 and DEC-123. The retest on the next Alpha build is in section 5 ([issue 63](https://github.com/oughnic/uFTi-Docs/issues/63), DEC-131).
 
 The app is the Windows Alpha-1 build (version 0.1.0.1, a development build), in the Oxford and slate theme and the light look, in a window 1280 by 800 on a 200% display. The data is the Brontë dataset only. This report says what a reader can see. It names no code, no issue and no build of the application repository (DEC-040, and the standing rule that this repository is public).
 
@@ -53,7 +53,7 @@ The automation tool opens no result card, list row or native box. The walk used 
 
 ## 5. The next Alpha build
 
-Walked on 24 October 2026 for [issue 63](https://github.com/oughnic/uFTi-Docs/issues/63). The app team fixed several findings on their development branch, which is not a release. This walk used a build made from that branch, in the same Oxford and slate light look and window as before. The version it prints is still 0.1.0.1 (1), so the date is what tells the two builds apart. The data is the Brontë dataset and the Brontë sample only. Decision: DEC-125.
+Walked on 24 October 2026 for [issue 63](https://github.com/oughnic/uFTi-Docs/issues/63). The app team fixed several findings on their development branch, which is not a release. This walk used a build made from that branch, in the same Oxford and slate light look and window as before. The version it prints is still 0.1.0.1 (1), so the date is what tells the two builds apart. The data is the Brontë dataset and the Brontë sample only. Decision: DEC-131.
 
 Each finding of section 2 is marked below. *Fixed* means it was seen on screen in this walk.
 
