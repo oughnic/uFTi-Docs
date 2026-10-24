@@ -1,0 +1,932 @@
+0 HEAD
+1 CHAR UTF-8
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 DATE 19 Oct 2026
+1 SOUR uFTi
+2 VERS 0.1.0
+2 CORP Oughtibridge Ltd
+2 COPR 2026 Oughtibridge Ltd
+2 NAME
+0 @I1@ INDI
+1 NAME Patrick /Brontë/
+2 GIVN Patrick
+2 SURN Brontë
+1 SEX M
+1 @EDDFDAB79B40D@ BIRT
+2 DATE 17 MAR 1777
+2 PLAC County Down, Ireland
+2 SOUR @S01@
+3 DATA
+4 TEXT Gives 17 March 1777 and says he was a native of County Down. Names Ahaderg as the parish where his father settled.
+3 QUAY 1
+2 SOUR @S05@
+3 PAGE Identifier BRNT802P
+3 DATA
+4 TEXT Gives 17 March 1777, born at Emdale, County Down.
+3 QUAY 2
+2 SOUR @S06@
+3 DATA
+4 TEXT Gives 17 March 1777, born at Ahaderg, County Down.
+3 QUAY 1
+2 SOUR @S07@
+3 DATA
+4 TEXT Gives 17 March 1777, born at Ahaderg, County Down.
+3 QUAY 1
+2 SOUR @S10@
+3 DATA
+4 TEXT Gives St Patrick's Day, 1777, at his father's house at Ahaderg, County Down.
+3 QUAY 1
+2 SOUR @S23@
+3 DATA
+4 TEXT Gives 17 March 1777, and Emdale as his birthplace.
+3 QUAY 1
+2 SOUR @S24@
+3 DATA
+4 TEXT Gives Drumballyroney, County Down, as his birthplace.
+3 QUAY 1
+1 @E23E00D164F15@ DEAT
+2 DATE 7 JUN 1861
+2 PLAC Haworth, Yorkshire
+2 SOUR @S05@
+3 PAGE Identifier BRNT802P
+3 DATA
+4 TEXT Gives 7 June 1861, aged 84.
+3 QUAY 2
+2 SOUR @S06@
+3 DATA
+4 TEXT Gives 7 June 1861.
+3 QUAY 1
+2 SOUR @S07@
+3 DATA
+4 TEXT Gives 7 June 1861.
+3 QUAY 1
+2 SOUR @S09@
+3 DATA
+4 TEXT The funeral report, as Shorter quotes it, gives the coffin plate: died 7 June 1861, aged 84.
+3 QUAY 2
+2 SOUR @S12@
+3 PAGE Deaths, June quarter 1861, Keighley, volume 9a, page 149
+3 DATA
+4 TEXT Index entry for his death, registered in the June quarter of 1861 at Keighley. No day is given.
+3 QUAY 2
+2 SOUR @S18@
+3 DATA
+4 TEXT Says he died aged 84.
+3 QUAY 1
+1 FAMS @F1@
+1 OBJE @M05@
+1 OBJE @M07@
+1 _UFTIFORM com.ufti.person-basic
+2 VERS 1.7.0
+0 @I2@ INDI
+1 NAME Maria /Branwell/
+2 GIVN Maria
+2 SURN Branwell
+1 SEX F
+1 @E6C4DA4A29EB6@ BIRT
+2 DATE 1783
+2 PLAC Penzance, Cornwall
+2 SOUR @S01@
+3 DATA
+4 TEXT Says she was twenty-nine in the early summer of 1812, and that her family lived at Penzance.
+3 QUAY 1
+2 SOUR @S03@
+3 DATA
+4 TEXT Says she died on 15 September 1821 in the 39th year of her age, which means aged 38.
+3 QUAY 2
+2 SOUR @S06@
+3 DATA
+4 TEXT Says her family was from Penzance. Gives no date of birth.
+3 QUAY 1
+2 SOUR @S07@
+3 PAGE Chronology
+3 DATA
+4 TEXT Gives 1783.
+3 QUAY 1
+2 SOUR @S27@
+3 DATA
+4 TEXT Gives 15 April 1783.
+3 QUAY 1
+1 @E66A8DD79FF8E@ DEAT
+2 DATE 15 SEP 1821
+2 PLAC Haworth, Yorkshire
+2 SOUR @S01@
+3 DATA
+4 TEXT Gives September 1821. No day is given.
+3 QUAY 1
+2 SOUR @S03@
+3 DATA
+4 TEXT Gives 15 September 1821, in the 39th year of her age.
+3 QUAY 2
+2 SOUR @S04@
+3 DATA
+4 TEXT Gives 15 September 1821, in the 39th year of her age.
+3 QUAY 2
+2 SOUR @S06@
+3 DATA
+4 TEXT Gives 15 September 1821, and the cause as cancer.
+3 QUAY 1
+2 SOUR @S27@
+3 DATA
+4 TEXT Gives 22 September 1821.
+3 QUAY 1
+1 FAMS @F1@
+1 _UFTIFORM com.ufti.person-basic
+2 VERS 1.7.0
+0 @I3@ INDI
+1 NAME Maria /Brontë/
+2 GIVN Maria
+2 SURN Brontë
+1 SEX F
+1 @E5A88401A0FF8@ BIRT
+2 DATE BET 1813 AND 1814
+2 PLAC Hartshead, Yorkshire
+2 SOUR @S01@
+3 DATA
+4 TEXT Says she was a few months more than six years old on 25 February 1820. Names Hartshead as her birthplace.
+3 QUAY 1
+2 SOUR @S03@
+3 DATA
+4 TEXT Says she died on 6 May 1825 in the 12th year of her age, which means aged 11.
+3 QUAY 2
+2 SOUR @S06@
+3 DATA
+4 TEXT Names Hartshead as her birthplace and calls her the eldest child. Gives no date.
+3 QUAY 1
+2 SOUR @S07@
+3 PAGE Chronology
+3 DATA
+4 TEXT Gives 1813.
+3 QUAY 1
+2 SOUR @S18@
+3 DATA
+4 TEXT Says she died aged 11.
+3 QUAY 1
+1 @E7EE57CE7021A@ DEAT
+2 DATE 6 MAY 1825
+2 PLAC Haworth, Yorkshire
+2 SOUR @S01@
+3 DATA
+4 TEXT Says she died a very few days after she came home. No date is given.
+3 QUAY 1
+2 SOUR @S03@
+3 DATA
+4 TEXT Gives 6 May 1825, in the 12th year of her age.
+3 QUAY 2
+2 SOUR @S04@
+3 DATA
+4 TEXT Gives 6 May 1825, in the 12th year of her age.
+3 QUAY 2
+2 SOUR @S06@
+3 DATA
+4 TEXT Gives 6 May 1825, in her twelfth year.
+3 QUAY 1
+2 SOUR @S07@
+3 DATA
+4 TEXT Gives 6 May 1825.
+3 QUAY 1
+1 FAMC @F1@
+1 _UFTIFORM com.ufti.person-basic
+2 VERS 1.7.0
+0 @I4@ INDI
+1 NAME Elizabeth /Brontë/
+2 GIVN Elizabeth
+2 SURN Brontë
+1 SEX F
+1 @E9D873696C996@ BIRT
+2 DATE BET 1814 AND 1815
+2 PLAC Hartshead, Yorkshire
+2 SOUR @S01@
+3 DATA
+4 TEXT Names Hartshead as her birthplace. Gives no date.
+3 QUAY 1
+2 SOUR @S03@
+3 DATA
+4 TEXT Says she died on 15 June 1825 in the 11th year of her age, which means aged 10.
+3 QUAY 2
+2 SOUR @S06@
+3 DATA
+4 TEXT Reports her baptism at Thornton on 26 August 1815 from the parish register.
+3 QUAY 2
+2 SOUR @S07@
+3 PAGE Chronology
+3 DATA
+4 TEXT Gives 1814, and Hartshead as her birthplace.
+3 QUAY 1
+2 SOUR @S18@
+3 DATA
+4 TEXT Says she died aged 10.
+3 QUAY 1
+1 @E4BE0F6AA049D@ DEAT
+2 DATE 15 JUN 1825
+2 PLAC Haworth, Yorkshire
+2 SOUR @S01@
+3 DATA
+4 TEXT Says she died in the early summer of 1825. No day is given.
+3 QUAY 1
+2 SOUR @S03@
+3 DATA
+4 TEXT Gives 15 June 1825, in the 11th year of her age.
+3 QUAY 2
+2 SOUR @S04@
+3 DATA
+4 TEXT Gives 15 June 1825, in the 11th year of her age.
+3 QUAY 2
+2 SOUR @S06@
+3 DATA
+4 TEXT Gives 15 June, in her eleventh year.
+3 QUAY 1
+2 SOUR @S07@
+3 DATA
+4 TEXT Gives 15 June 1825.
+3 QUAY 1
+1 FAMC @F1@
+1 _UFTIFORM com.ufti.person-basic
+2 VERS 1.7.0
+0 @I5@ INDI
+1 NAME Charlotte /Brontë/
+2 GIVN Charlotte
+2 SURN Brontë
+1 SEX F
+1 @EEECEA9B32E87@ BIRT
+2 DATE 21 APR 1816
+2 PLAC Thornton, near Bradford, Yorkshire
+2 SOUR @S01@
+3 DATA
+4 TEXT Gives 21 April 1816, at Thornton.
+3 QUAY 1
+2 SOUR @S06@
+3 DATA
+4 TEXT Gives 21 April 1816 as her birth.
+3 QUAY 1
+2 SOUR @S07@
+3 DATA
+4 TEXT Gives 21 April 1816, at Thornton.
+3 QUAY 1
+2 SOUR @S10@
+3 DATA
+4 TEXT Gives April 1816.
+3 QUAY 1
+2 SOUR @S11@
+3 DATA
+4 TEXT Gives 1816.
+3 QUAY 1
+1 @EEABFC00FDD98@ DEAT
+2 DATE 31 MAR 1855
+2 PLAC Haworth, Yorkshire
+2 SOUR @S02@
+3 DATA
+4 TEXT Gives early on Saturday morning, 31 March 1855.
+3 QUAY 1
+2 SOUR @S03@
+3 DATA
+4 TEXT Gives 31 March 1855, in the 39th year of her age.
+3 QUAY 2
+2 SOUR @S04@
+3 DATA
+4 TEXT Gives 31 March 1855, in the 39th year of her age.
+3 QUAY 2
+2 SOUR @S06@
+3 DATA
+4 TEXT Gives 31 March 1855.
+3 QUAY 1
+2 SOUR @S07@
+3 DATA
+4 TEXT Gives 31 March 1855.
+3 QUAY 1
+2 SOUR @S08@
+3 DATA
+4 TEXT As Shorter transcribes it, the probate act gives the date of death as 31 March 1855.
+3 QUAY 2
+2 SOUR @S12@
+3 PAGE Deaths, June quarter 1855, Keighley, volume 9a, page 135
+3 DATA
+4 TEXT Index entry for her death, registered in the June quarter of 1855 at Keighley, under her married name Nicholls. No day is given.
+3 QUAY 2
+1 FAMC @F1@
+1 FAMS @F2@
+1 _UFTIFORM com.ufti.person-basic
+2 VERS 1.7.0
+0 @I6@ INDI
+1 NAME Patrick Branwell /Brontë/
+2 GIVN Patrick Branwell
+2 SURN Brontë
+1 SEX M
+1 @EBFBF1DDA016C@ BIRT
+2 DATE 1817
+2 PLAC Thornton, near Bradford, Yorkshire
+2 SOUR @S01@
+3 DATA
+4 TEXT Prints Patrick's own words that Branwell was born at Thornton. Gives no date.
+3 QUAY 2
+2 SOUR @S06@
+3 DATA
+4 TEXT Reports his baptism at Thornton on 23 July 1817 from the parish register.
+3 QUAY 2
+2 SOUR @S07@
+3 DATA
+4 TEXT Gives 1817, at Thornton.
+3 QUAY 1
+2 SOUR @S10@
+3 DATA
+4 TEXT Gives 1817.
+3 QUAY 1
+2 SOUR @S11@
+3 DATA
+4 TEXT Places his birth in the year after Charlotte's, which was 1816.
+3 QUAY 1
+1 @E58ED35B06AE6@ DEAT
+2 DATE 24 SEP 1848
+2 PLAC Haworth, Yorkshire
+2 SOUR @S02@
+3 DATA
+4 TEXT Prints Charlotte's letter of 9 October 1848, which says he died on Sunday morning, 24 September.
+3 QUAY 2
+2 SOUR @S03@
+3 DATA
+4 TEXT Gives 24 September 1848, aged 30.
+3 QUAY 2
+2 SOUR @S04@
+3 DATA
+4 TEXT Gives 24 September 1848, aged 31.
+3 QUAY 2
+2 SOUR @S06@
+3 DATA
+4 TEXT Gives 26 September 1848.
+3 QUAY 1
+2 SOUR @S07@
+3 DATA
+4 TEXT Gives 24 September 1848.
+3 QUAY 1
+2 SOUR @S12@
+3 PAGE Deaths, December quarter 1848, Keighley, volume 23, page 235
+3 DATA
+4 TEXT Index entry for his death, registered in the December quarter of 1848 at Keighley. No day is given.
+3 QUAY 2
+2 SOUR @S13@
+3 PAGE Entry 1756
+3 DATA
+4 TEXT The burial register, as transcribed, gives his burial on 28 September 1848, aged 30.
+3 QUAY 2
+2 SOUR @S18@
+3 DATA
+4 TEXT Says he died aged 31.
+3 QUAY 1
+1 FAMC @F1@
+1 _UFTIFORM com.ufti.person-basic
+2 VERS 1.7.0
+0 @I7@ INDI
+1 NAME Emily Jane /Brontë/
+2 GIVN Emily Jane
+2 SURN Brontë
+1 SEX F
+1 @E549EECE6A4D5@ BIRT
+2 DATE 1818
+2 PLAC Thornton, near Bradford, Yorkshire
+2 SOUR @S01@
+3 DATA
+4 TEXT Prints Patrick's own words that Emily was born at Thornton. Gives no date.
+3 QUAY 2
+2 SOUR @S06@
+3 DATA
+4 TEXT Reports her baptism at Thornton on 20 August 1818 from the parish register.
+3 QUAY 2
+2 SOUR @S07@
+3 DATA
+4 TEXT Gives 1818, at Thornton.
+3 QUAY 1
+2 SOUR @S10@
+3 DATA
+4 TEXT Gives 1818.
+3 QUAY 1
+2 SOUR @S11@
+3 DATA
+4 TEXT Gives 1818.
+3 QUAY 1
+1 @E2D4B87324D8F@ DEAT
+2 DATE 19 DEC 1848
+2 PLAC Haworth, Yorkshire
+2 SOUR @S02@
+3 DATA
+4 TEXT Says she died about two o'clock on a Tuesday in December 1848. The letter it prints agrees on the Tuesday.
+3 QUAY 2
+2 SOUR @S03@
+3 DATA
+4 TEXT Gives 19 December 1848, aged 29.
+3 QUAY 2
+2 SOUR @S04@
+3 DATA
+4 TEXT Gives 19 December 1848, aged 30.
+3 QUAY 2
+2 SOUR @S06@
+3 DATA
+4 TEXT Gives 19 December 1848.
+3 QUAY 1
+2 SOUR @S07@
+3 DATA
+4 TEXT Gives 19 December 1848.
+3 QUAY 1
+2 SOUR @S12@
+3 PAGE Deaths, December quarter 1848, Keighley, volume 23, page 237
+3 DATA
+4 TEXT Index entry for her death, registered in the December quarter of 1848 at Keighley. No day is given.
+3 QUAY 2
+2 SOUR @S13@
+3 PAGE Entry 1775
+3 DATA
+4 TEXT The burial register, as transcribed, gives her burial on 22 December 1848, aged 29.
+3 QUAY 2
+2 SOUR @S18@
+3 DATA
+4 TEXT Says she died aged 30.
+3 QUAY 1
+1 FAMC @F1@
+1 _UFTIFORM com.ufti.person-basic
+2 VERS 1.7.0
+0 @I8@ INDI
+1 NAME Anne /Brontë/
+2 GIVN Anne
+2 SURN Brontë
+1 SEX F
+1 @EB96E8565CE59@ BIRT
+2 DATE BET 1819 AND 1820
+2 PLAC Thornton, near Bradford, Yorkshire
+2 SOUR @S01@
+3 DATA
+4 TEXT Prints Patrick's own words that Anne was born at Thornton. Gives no date.
+3 QUAY 2
+2 SOUR @S04@
+3 DATA
+4 TEXT Gives her age at death on 28 May 1849 as 29.
+3 QUAY 2
+2 SOUR @S06@
+3 DATA
+4 TEXT Heads the article 1820 to 1849, and reports her baptism at Thornton on 25 March 1820 from the parish register.
+3 QUAY 2
+2 SOUR @S07@
+3 DATA
+4 TEXT Gives 1819.
+3 QUAY 1
+2 SOUR @S10@
+3 DATA
+4 TEXT Says she was born probably just before the move to Haworth on 25 February 1820.
+3 QUAY 1
+2 SOUR @S11@
+3 DATA
+4 TEXT Gives 1819.
+3 QUAY 1
+1 @E09522DD167A4@ DEAT
+2 DATE 28 MAY 1849
+2 PLAC Scarborough, Yorkshire
+2 SOUR @S02@
+3 DATA
+4 TEXT Gives Monday 28 May 1849, about two o'clock.
+3 QUAY 2
+2 SOUR @S03@
+3 DATA
+4 TEXT Gives 28 May 1849, aged 27.
+3 QUAY 2
+2 SOUR @S04@
+3 DATA
+4 TEXT Gives 28 May 1849, aged 29.
+3 QUAY 2
+2 SOUR @S06@
+3 DATA
+4 TEXT Gives 28 May 1849.
+3 QUAY 1
+2 SOUR @S07@
+3 DATA
+4 TEXT Gives 28 May 1849.
+3 QUAY 1
+2 SOUR @S11@
+3 DATA
+4 TEXT Says she was twenty-nine years old.
+3 QUAY 1
+2 SOUR @S12@
+3 PAGE Deaths, June quarter 1849, Scarbro', volume 24, page 384
+3 DATA
+4 TEXT Index entry for her death, registered in the June quarter of 1849 in the Scarborough district. No day is given.
+3 QUAY 2
+2 SOUR @S18@
+3 DATA
+4 TEXT Says she died aged 29.
+3 QUAY 1
+2 SOUR @S20@
+3 DATA
+4 TEXT Reports that her gravestone gives her age as 28, and that she was 29.
+3 QUAY 1
+1 FAMC @F1@
+1 _UFTIFORM com.ufti.person-basic
+2 VERS 1.7.0
+0 @I9@ INDI
+1 NAME Arthur Bell /Nicholls/
+2 GIVN Arthur Bell
+2 SURN Nicholls
+1 SEX M
+1 @E1E981271C673@ BIRT
+2 DATE BET 1817 AND 1819
+2 PLAC Killead, County Antrim, Ireland
+2 SOUR @S07@
+3 DATA
+4 TEXT Gives 1817, in County Antrim.
+3 QUAY 1
+2 SOUR @S24@
+3 DATA
+4 TEXT Gives 1819, at Killead.
+3 QUAY 1
+2 SOUR @S33@
+3 PAGE Group Registration ID 4878372
+3 DATA
+4 TEXT The death index gives his age at death as 87.
+3 QUAY 2
+2 SOUR @S35@
+3 PAGE Entry 426, page 235
+3 DATA
+4 TEXT The death entry gives his age last birthday as 87. The age came from an informant, so it is secondary information.
+3 QUAY 2
+1 @EB7A198F66C7D@ DEAT
+2 DATE 2 DEC 1906
+2 PLAC Banagher, King's County (now County Offaly), Ireland
+2 SOUR @S24@
+3 DATA
+4 TEXT Gives December 1906.
+3 QUAY 1
+2 SOUR @S25@
+3 DATA
+4 TEXT Says he died at Banagher. Gives no date.
+3 QUAY 1
+2 SOUR @S33@
+3 PAGE Group Registration ID 4878372
+3 DATA
+4 TEXT Index entry: the year 1906 and the Birr registration area. It gives no day and no place of death.
+3 QUAY 2
+2 SOUR @S35@
+3 PAGE Entry 426, page 235
+3 DATA
+4 TEXT Gives the date of death as 2 December 1906 at Banagher, registered on 31 December 1906.
+3 QUAY 3
+1 FAMS @F2@
+1 _UFTIFORM com.ufti.person-basic
+2 VERS 1.7.0
+0 @F1@ FAM
+1 HUSB @I1@
+1 WIFE @I2@
+1 CHIL @I3@
+1 CHIL @I4@
+1 CHIL @I5@
+1 CHIL @I6@
+1 CHIL @I7@
+1 CHIL @I8@
+1 @E7F190703E84A@ MARR
+2 DATE 29 DEC 1812
+2 PLAC St Oswald's church, Guiseley, Yorkshire
+2 SOUR @S01@
+3 DATA
+4 TEXT Gives 29 December 1812. Says she was married from her uncle's house in Yorkshire.
+3 QUAY 1
+2 SOUR @S05@
+3 PAGE Identifier BRNT802P
+3 DATA
+4 TEXT Gives 29 December 1812.
+3 QUAY 2
+2 SOUR @S06@
+3 DATA
+4 TEXT Gives 29 December 1812.
+3 QUAY 1
+2 SOUR @S07@
+3 PAGE Chronology
+3 DATA
+4 TEXT Gives 18 December 1812.
+3 QUAY 1
+2 SOUR @S21@
+3 DATA
+4 TEXT A plaque at the church gives the wedding at Guiseley on Monday 29 December 1812.
+3 QUAY 1
+1 SOUR @S01@
+2 DATA
+3 TEXT Calls Maria the eldest of six children.
+2 QUAY 1
+1 SOUR @S03@
+2 DATA
+3 TEXT Names Branwell, Emily and Anne as children of the Rev. P. Brontë, Maria as "daughter of the aforesaid", and Elizabeth as her sister.
+2 QUAY 2
+1 SOUR @S06@
+2 DATA
+3 TEXT Lists the baptisms at Thornton of Elizabeth, Charlotte, Patrick Branwell, Emily Jane and Anne, and calls Maria the eldest.
+2 QUAY 2
+1 _UFTIFORM com.ufti.family-basic
+2 VERS 1.4.0
+1 OBJE @M06@
+1 CHAN
+2 DATE 21 OCT 2026
+3 TIME 19:39:29Z
+2 NOTE MCP: add_citation
+2 NOTE MCP: add_citation
+2 NOTE MCP: add_citation
+2 NOTE MCP: update_citation
+2 NOTE Added by hand, as the owner asked: the link to the parsonage photograph.
+0 @F2@ FAM
+1 HUSB @I9@
+1 WIFE @I5@
+1 @E3F8FC529848F@ MARR
+2 DATE 29 JUN 1854
+2 PLAC Haworth church, Yorkshire
+2 SOUR @S02@
+3 DATA
+4 TEXT Gives 29 June 1854 as the day of the wedding, at Haworth church.
+3 QUAY 1
+2 SOUR @S06@
+3 DATA
+4 TEXT Gives 19 June 1854.
+3 QUAY 1
+2 SOUR @S12@
+3 PAGE Marriages, June quarter 1854, Keighley, volume 9a, page 201
+3 DATA
+4 TEXT Index entries for both of them, registered in the June quarter of 1854 at Keighley, on the same page. No day is given.
+3 QUAY 2
+2 SOUR @S24@
+3 DATA
+4 TEXT Gives 29 June 1854.
+3 QUAY 1
+1 SOUR @S03@
+2 DATA
+3 TEXT Names Charlotte as the wife of the Rev. Arthur Bell Nicholls and the daughter of Patrick.
+2 QUAY 2
+1 SOUR @S08@
+2 DATA
+3 TEXT As Shorter transcribes it, her will calls Arthur Bell Nicholls her husband.
+2 QUAY 2
+1 SOUR @S12@
+2 PAGE Marriages, June quarter 1854, Keighley, volume 9a, page 201
+2 DATA
+3 TEXT Index entries for both of them share one page.
+2 QUAY 2
+1 _UFTIFORM com.ufti.marriage-register
+2 VERS 1.8.0
+1 CHAN
+2 DATE 20 OCT 2026
+3 TIME 21:18:52Z
+2 NOTE MCP: add_citation
+2 NOTE MCP: add_citation
+2 NOTE MCP: add_citation
+2 NOTE MCP: update_citation
+0 @M05@ OBJE
+1 FILE https://upload.wikimedia.org/wikipedia/commons/4/4c/Haworth_parsonage_soon_after_Patrick_Bront%C3%AB%27s_death.jpg
+2 FORM jpg
+3 TYPE photo
+2 TITL Haworth parsonage soon after Patrick Brontë's death, circa 1863
+1 NOTE Public domain. From Wikimedia Commons, where the licence is stated.
+1 CHAN
+2 DATE 21 OCT 2026
+3 TIME 19:39:29Z
+2 NOTE Added by hand, as the owner asked.
+0 @M06@ OBJE
+1 FILE https://upload.wikimedia.org/wikipedia/commons/e/e4/Bronte_Parsonage_Museum.JPG
+2 FORM jpg
+3 TYPE photo
+2 TITL The parsonage in Haworth, now the Brontë Parsonage Museum
+1 NOTE Public domain, as released by its uploader on English Wikipedia. From Wikimedia Commons.
+1 CHAN
+2 DATE 21 OCT 2026
+3 TIME 19:39:29Z
+2 NOTE Added by hand, as the owner asked.
+0 @M07@ OBJE
+1 FILE https://upload.wikimedia.org/wikipedia/commons/3/38/St_johns_rear_buildings.jpg
+2 FORM jpg
+3 TYPE photo
+2 TITL St John's College, Cambridge: the rear buildings
+1 NOTE Public domain. The photographer released it. From Wikimedia Commons.
+1 CHAN
+2 DATE 21 OCT 2026
+3 TIME 19:39:29Z
+2 NOTE Added by hand, as the owner asked.
+0 @S01@ SOUR
+1 TITL The Life of Charlotte Brontë, volume 1
+1 AUTH Elizabeth Gaskell
+1 ABBR Gaskell, Life, vol. 1
+1 PUBL An authored work that also prints primary items. First published 1857. Read as the Project Gutenberg transcription of the 1906 Smith, Elder edition (ebook 1827), not the printed book.
+1 CHAN
+2 DATE 20 OCT 2026
+3 TIME 20:58:02Z
+2 NOTE MCP: create_source
+2 NOTE MCP: update_source
+0 @S02@ SOUR
+1 TITL The Life of Charlotte Brontë, volume 2
+1 AUTH Elizabeth Gaskell
+1 ABBR Gaskell, Life, vol. 2
+1 PUBL An authored work that prints letters of Charlotte Brontë. First published 1857. Read as the Project Gutenberg transcription (ebook 1700), not the printed book.
+1 CHAN
+2 DATE 20 OCT 2026
+3 TIME 20:58:02Z
+2 NOTE MCP: create_source
+2 NOTE MCP: update_source
+0 @S03@ SOUR
+1 TITL First memorial tablet in Haworth church
+1 ABBR First tablet
+1 PUBL An original monument, made after the events from what the family said. Read as Gaskell's transcription in volume 1, chapter 1 of her Life of Charlotte Brontë, not the tablet itself.
+1 DATA
+2 AGNC Haworth church
+1 CHAN
+2 DATE 20 OCT 2026
+3 TIME 20:58:02Z
+2 NOTE MCP: create_source
+2 NOTE MCP: update_source
+0 @S04@ SOUR
+1 TITL Replacement memorial tablet in Haworth church, April 1858
+1 ABBR 1858 tablet
+1 PUBL An original monument, erected in April 1858. Read as Gaskell's transcription in a footnote to volume 1 of her Life of Charlotte Brontë, not the tablet itself.
+1 DATA
+2 AGNC Haworth church
+1 CHAN
+2 DATE 20 OCT 2026
+3 TIME 20:58:02Z
+2 NOTE MCP: create_source
+2 NOTE MCP: update_source
+0 @S05@ SOUR
+1 TITL A Cambridge Alumni Database: entry for Patrick Brontë
+1 ABBR ACAD, Brontë
+1 PUBL A derivative: a reference work compiled from college and university records, with later addenda. Printed entry from Venn, Alumni Cantabrigienses. Read online.
+1 CHAN
+2 DATE 20 OCT 2026
+3 TIME 20:58:02Z
+2 NOTE MCP: create_source
+2 NOTE MCP: update_source
+0 @S06@ SOUR
+1 TITL Brontë, Charlotte, in the Dictionary of National Biography, volume 6
+1 AUTH Leslie Stephen
+1 ABBR DNB, Brontë, Charlotte
+1 PUBL An authored work, 1885 to 1900, with the 1904 errata. Read as the Wikisource transcription.
+1 CHAN
+2 DATE 20 OCT 2026
+3 TIME 20:58:02Z
+2 NOTE MCP: create_source
+2 NOTE MCP: update_source
+0 @S07@ SOUR
+1 TITL Charlotte Brontë and Her Circle
+1 AUTH Clement K. Shorter
+1 ABBR Shorter 1896
+1 PUBL An authored work that prints letters, documents and a chronology. 1896, Hodder and Stoughton. Read as the Project Gutenberg transcription (ebook 19011), not the printed book.
+1 CHAN
+2 DATE 20 OCT 2026
+3 TIME 20:58:02Z
+2 NOTE MCP: create_source
+2 NOTE MCP: update_source
+0 @S08@ SOUR
+1 TITL Will of Charlotte Nicholls, 17 February 1855, with the probate act of 18 April 1855
+1 ABBR Charlotte's will
+1 PUBL An original record. Read as Shorter's transcription in Charlotte Brontë and Her Circle, headed as extracted from the District Probate Registry at York, not the record itself.
+1 DATA
+2 AGNC District Probate Registry, York
+1 CHAN
+2 DATE 20 OCT 2026
+3 TIME 20:58:02Z
+2 NOTE MCP: create_source
+2 NOTE MCP: update_source
+0 @S09@ SOUR
+1 TITL Report of Patrick Brontë's funeral, Bradford Review, June 1861
+1 ABBR Bradford Review, June 1861
+1 PUBL A contemporary newspaper report. Read as quoted by Shorter in Charlotte Brontë and Her Circle; the newspaper was not seen.
+1 CHAN
+2 DATE 20 OCT 2026
+3 TIME 20:58:03Z
+2 NOTE MCP: create_source
+2 NOTE MCP: update_source
+0 @S10@ SOUR
+1 TITL The Brontë Family, with special reference to Patrick Branwell Brontë, volume 1
+1 AUTH Francis A. Leyland
+1 ABBR Leyland 1886
+1 PUBL An authored work, 1886. Read as the uncorrected text of the Internet Archive scan, not the printed book.
+1 CHAN
+2 DATE 20 OCT 2026
+3 TIME 20:58:03Z
+2 NOTE MCP: create_source
+2 NOTE MCP: update_source
+0 @S11@ SOUR
+1 TITL Emily Brontë
+1 AUTH A. Mary F. Robinson
+1 ABBR Robinson 1883
+1 PUBL An authored work, 1883, second edition. Read as the Project Gutenberg transcription (ebook 25789), not the printed book.
+1 CHAN
+2 DATE 20 OCT 2026
+3 TIME 20:58:03Z
+2 NOTE MCP: create_source
+2 NOTE MCP: update_source
+0 @S12@ SOUR
+1 TITL General Register Office index of deaths and marriages for England and Wales
+1 ABBR GRO index (FreeBMD)
+1 PUBL A derivative: an index to the civil registers, transcribed by volunteers. Read through FreeBMD; the registers themselves were not seen.
+1 DATA
+2 AGNC General Register Office for England and Wales
+1 CHAN
+2 DATE 20 OCT 2026
+3 TIME 20:58:15Z
+2 NOTE MCP: create_source
+2 NOTE MCP: update_source
+0 @S13@ SOUR
+1 TITL Parish register of Haworth, St Michael and All Angels: burials
+1 ABBR Haworth burials (FreeREG)
+1 PUBL A derivative: a volunteer transcription of the register. Read through FreeREG; the register itself was not seen.
+1 DATA
+2 AGNC West Yorkshire Archive Service, Bradford
+1 CHAN
+2 DATE 20 OCT 2026
+3 TIME 20:58:15Z
+2 NOTE MCP: create_source
+2 NOTE MCP: update_source
+0 @S18@ SOUR
+1 TITL An introduction to the Brontës
+1 AUTH Brontë Parsonage Museum
+1 ABBR Museum introduction
+1 PUBL An authored web page of the museum, read on 16 October 2026.
+1 CHAN
+2 DATE 20 OCT 2026
+3 TIME 20:58:15Z
+2 NOTE MCP: create_source
+2 NOTE MCP: update_source
+0 @S20@ SOUR
+1 TITL Brontë lovers gather for grave ceremony
+1 AUTH Yorkshire Post
+1 ABBR Yorkshire Post, 29 April 2013
+1 PUBL A newspaper report, 29 April 2013, read online.
+1 CHAN
+2 DATE 20 OCT 2026
+3 TIME 20:58:15Z
+2 NOTE MCP: create_source
+2 NOTE MCP: update_source
+0 @S21@ SOUR
+1 TITL St. Oswald's (C of E) Church, 1150 – Onwards (1)
+1 AUTH Aireborough Historical Society
+1 ABBR Aireborough HS, St Oswald's
+1 PUBL A local history web page with a photograph of the plaque at the church, read online.
+1 CHAN
+2 DATE 20 OCT 2026
+3 TIME 20:58:15Z
+2 NOTE MCP: create_source
+2 NOTE MCP: update_source
+0 @S23@ SOUR
+1 TITL Brontë Homeland Interpretative Centre
+1 AUTH Discover Northern Ireland
+1 ABBR Discover NI, Brontë Homeland
+1 PUBL A tourism web page, read online.
+1 CHAN
+2 DATE 20 OCT 2026
+3 TIME 20:58:15Z
+2 NOTE MCP: create_source
+2 NOTE MCP: update_source
+0 @S24@ SOUR
+1 TITL How an unremarkable cleric from Killead won the heart and hand of Charlotte Brontë
+1 AUTH Antrim Now (Antrim Guardian)
+1 ABBR Antrim Now, 4 May 2024
+1 PUBL A newspaper feature, 4 May 2024, read online.
+1 CHAN
+2 DATE 20 OCT 2026
+3 TIME 20:58:15Z
+2 NOTE MCP: create_source
+2 NOTE MCP: update_source
+0 @S25@ SOUR
+1 TITL Rev Arthur Bell Nicholls
+1 AUTH Malcolm Bull
+1 ABBR Calderdale Companion
+1 PUBL A local reference web page in the Calderdale Companion, read online.
+1 CHAN
+2 DATE 20 OCT 2026
+3 TIME 20:58:15Z
+2 NOTE MCP: create_source
+2 NOTE MCP: update_source
+0 @S27@ SOUR
+1 TITL Maria Branwell
+1 AUTH Women in Cornwall
+1 ABBR Women in Cornwall
+1 PUBL A web article, read online on 16 October 2026.
+1 CHAN
+2 DATE 20 OCT 2026
+3 TIME 20:58:15Z
+2 NOTE MCP: create_source
+2 NOTE MCP: update_source
+0 @S33@ SOUR
+1 TITL Irish civil death index, 1906: the entry for Arthur Nicholls
+1 ABBR Irish death index 1906
+1 PUBL A derivative: a transcription of the index entry on the Irish Genealogy website. The copy of the register entry is a separate source.
+1 DATA
+2 AGNC General Register Office, Ireland
+1 CHAN
+2 DATE 20 OCT 2026
+3 TIME 20:58:15Z
+2 NOTE MCP: create_source
+2 NOTE MCP: update_source
+0 @S35@ SOUR
+1 TITL Irish civil death register, 1906: certified copy of entry 426
+1 ABBR Irish death register 1906
+1 PUBL An original record: a copy of the Banagher registrar's entry, in the Birr superintendent registrar's district, County King's, certified as a true copy in January 1907. Read as an image of the page.
+1 DATA
+2 AGNC General Register Office, Ireland
+1 CHAN
+2 DATE 20 OCT 2026
+3 TIME 21:03:05Z
+2 NOTE MCP: create_source
+2 NOTE MCP: update_source
+2 NOTE MCP: update_source
+0 TRLR
+

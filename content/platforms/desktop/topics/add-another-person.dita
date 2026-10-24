@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="add-another-person" xml:lang="en-GB">
+  <title>Add another person</title>
+  <shortdesc>Add a person to a tree that already has someone in it.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-24"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>new person</keyword>
+        <keyword>add relative</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="people.add"/>
+  </prolog>
+  <taskbody>
+    <context>
+      <p>The first person comes with a new tree. After that, you add people with <uicontrol keyref="ui-add"/>.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-add"/>.</cmd>
+        <stepresult>
+          <p>A list named <uicontrol keyref="ui-add-a-record"/> opens. It starts with things you can add to the person you are looking at.</p>
+          <fig>
+            <image keyref="img-add-record"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Scroll down to the part named <uicontrol keyref="ui-add-a-new-person"/>.</cmd>
+        <info>
+          <p>The list scrolls on its own. Turn the mouse wheel with the pointer on the list.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-basic-details"/>, then choose <uicontrol keyref="ui-add-button"/>.</cmd>
+        <stepresult>
+          <p>The <uicontrol keyref="ui-new-person"/> form opens.</p>
+          <fig>
+            <image keyref="img-add-record-lower"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Type the names, choose the sex and add the dates and places you know.</cmd>
+        <info>
+          <p>Only <uicontrol keyref="ui-given-names"/> is needed. For a date, type the day and the year and choose the month.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Scroll to the bottom of the form and choose <uicontrol keyref="ui-save"/>.</cmd>
+        <stepresult>
+          <p>You go back to the page you came from. The new person is in your tree.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>To open the new person, <xref keyref="find-a-person"/>.</p>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="add-a-family"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

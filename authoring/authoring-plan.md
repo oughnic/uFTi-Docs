@@ -119,7 +119,7 @@ Built from the existing screenshot set and the app's visible navigation. WP0's j
 | 4 | People | View, add, edit and remove a person. Names, sex and gender fields. | task, concept, reference | Medium |
 | 5 | Families and relationships | Add a family, link members, relationship types, generations | task, concept | Low |
 | 6 | Events, dates and places | Add and edit events and facts. Complex dates. Places. | task, concept, reference | Low |
-| 7 | Sources, citations and evidence | Repositories, sources, citations, weighing evidence, research threads | task, concept | Low to medium |
+| 7 | Sources, citations and evidence | Repositories, sources, citations, weighing evidence, the default quality of a citation and its reasons, research threads | task, concept | Low to medium |
 | 8 | Notes and research notes | Notes, research notes and how to use them | task, concept | Low |
 | 9 | Photos and media | Link media, take a photo, manage media | task | **High** |
 | 10 | Create records with forms | The create menu, forms, census forms | task, concept, reference | Low |

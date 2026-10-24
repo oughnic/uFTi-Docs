@@ -128,8 +128,8 @@ jobs:
         with:
           path: ~/.cache/ms-playwright
           key: playwright-${{ runner.os }}-${{ hashFiles('build/tools.lock') }}
-      - name: Bootstrap the checkers
-        run: build/scripts/bootstrap.sh --only designsystempdf,verapdf,vnu,plugin-tools
+      - name: Bootstrap the checkers and the plugin whose tables the metadata checker reads
+        run: build/scripts/bootstrap.sh --only dita-ot,govuk-plugin,designsystempdf,verapdf,vnu,plugin-tools
       - name: Install the accessibility runner
         working-directory: .tools/plugin-tools/tools/a11y
         run: |

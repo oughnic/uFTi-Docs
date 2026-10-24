@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
-<!-- The macOS manual (platform strategy, section 7; DEC-080): one bookmap at the root of the content
+<!-- The macOS manual (platform strategy, section 7; DEC-125): one bookmap at the root of the content
      folder (DEC-045). Shared topics come from the Desktop idiom, which the Windows manual also uses. The
      platform topics here carry MacAppKit. Chapters not yet written are left out, not stubbed. -->
 <bookmap id="ufti-manual-macos" xml:lang="en-GB">

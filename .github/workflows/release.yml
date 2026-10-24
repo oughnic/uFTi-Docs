@@ -1,5 +1,6 @@
 # A version tag on main (vX.Y.Z, DEC-016) makes a GitHub release with the PDFs, a zipped site per
-# publication, SHA-256 checksums and the applicability matrix (build and quality, section 5).
+# publication, SHA-256 checksums, the applicability matrix (build and quality, section 5) and the
+# Brontë sample files for a released application to pin (DEC-121).
 # The publications come from build/projects/site.xml, which arrives with the pilot slice (WP7).
 name: Release
 
@@ -55,12 +56,15 @@ jobs:
           exit $status
       - name: Applicability matrix
         run: pwsh -NoProfile -File build/scripts/lint.ps1 -Source content -Matrix out/applicability-matrix.csv || true
+      - name: The Brontë sample files, for a released application to pin (DEC-121)
+        run: pwsh -NoProfile -File build/scripts/publish-samples.ps1 -Output out/bronte-sample
       - name: Assemble the release files
         run: |
           mkdir -p release
+          cp out/bronte-sample/* release/
           for d in out/*/; do
             name=$(basename "$d")
-            case "$name" in logs|temp|reports) continue ;; esac
+            case "$name" in logs|temp|reports|bronte-sample) continue ;; esac
             cp "$d"*.pdf release/ 2> /dev/null || true
             (cd "$d" && zip -qr "../../release/$name-site-${{ github.ref_name }}.zip" . -x '*.ua1.txt')
           done

@@ -10,6 +10,7 @@ Planning and standards for the uFTi user documentation. These files guide author
 | [screenshot-strategy.md](screenshot-strategy.md) | How are screenshots chosen, captured, imported, reviewed and kept current? |
 | [dataset-strategy.md](dataset-strategy.md) | What is the worked example, and how do we build and check it? |
 | [good-practice-strategy.md](good-practice-strategy.md) | How do we teach family history research good practice to readers who are new to it? |
+| [default-quality.md](default-quality.md) | What quality does the app give a source by default, and why? The table and the reasons for the manual and the guide. |
 | [site-strategy.md](site-strategy.md) | What does ufti.com hold, where do the manuals sit, and what collateral is needed? |
 | [authoring-standards.md](authoring-standards.md) | How is DITA written here: structure, naming, markup, metadata, accessibility? Which rule is checked by what? |
 | [style-guide.md](style-guide.md) | How do the words read: the reading level for an average 11-year-old, sentences, words, dates, tone, and how Vale measures them? |

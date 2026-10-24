@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="your-workspace-and-its-files" xml:lang="en-GB">
+  <title>Your workspace and its files</title>
+  <shortdesc>A workspace is your family tree and its linked files, and a GEDZIP file holds all of them in one file.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-22"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Concept</category>
+      <keywords>
+        <keyword>pictures</keyword>
+        <keyword>attachments</keyword>
+        <keyword>linked files</keyword>
+        <keyword>GEDZIP</keyword>
+        <keyword>GEDCOM</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p>A <term keyref="term-workspace">workspace</term> is one family tree and everything kept with it. That is the family tree file, with its research notes, and the pictures and other files you attach to people, facts and sources.</p>
+    <section>
+      <title>Linked files</title>
+      <p>The family tree file does not hold your pictures. It links to them, and the pictures stay in files of their own. The same is true of other attached files.</p>
+      <p>So if you send only the family tree file, the other person gets the tree and its links, but not the pictures.</p>
+    </section>
+    <section>
+      <title>One file for the whole workspace</title>
+      <p>A <term keyref="term-gedzip">GEDZIP</term> file puts the family tree file and all the files linked to it into one file. You send one file, and nothing is left behind. Another person who uses <keyword keyref="product-name"/> opens it and sees your whole workspace.</p>
+      <p>For that reason, a GEDZIP file is the one to keep and the one to share between copies of <keyword keyref="product-name"/>.</p>
+    </section>
+    <section>
+      <title>The plain family tree file</title>
+      <p>A plain <term keyref="term-family-tree-file">family tree file</term> holds the people, families, facts, sources and research notes. It does not hold the pictures or other attached files.</p>
+      <p>When you save one, <keyword keyref="product-name"/> asks which version of <term keyref="term-gedcom">GEDCOM</term> to use. Choose GEDCOM 7, which was published in 2021 and is the one it recommends. Choose GEDCOM 5.5.1, which was published in 1999, only for an older program that cannot read GEDCOM 7.</p>
+      <p>A GEDZIP file holds a GEDCOM 7 family tree file, with the pictures and other attached files beside it.</p>
+    </section>
+    <section>
+      <title>At a glance</title>
+    <table>
+      <title>Which file holds what</title>
+      <tgroup cols="4">
+        <colspec colname="c1" colwidth="2*"/>
+        <colspec colname="c2" colwidth="2*"/>
+        <colspec colname="c3" colwidth="2*"/>
+        <colspec colname="c4" colwidth="3*"/>
+        <thead>
+          <row>
+            <entry>File</entry>
+            <entry>The tree and its research notes</entry>
+            <entry>Pictures and other attached files</entry>
+            <entry>Use it to</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry>GEDZIP file</entry>
+            <entry>Yes</entry>
+            <entry>Yes</entry>
+            <entry>Keep your work, and share it with another copy of <keyword keyref="product-name"/>.</entry>
+          </row>
+          <row>
+            <entry>Plain family tree file</entry>
+            <entry>Yes</entry>
+            <entry>No</entry>
+            <entry>Share with another program that reads GEDCOM, or work with one.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </section>
+  </conbody>
+</concept>

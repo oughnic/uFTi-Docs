@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
 <!-- The Windows manual (platform strategy, section 7): one bookmap at the root of the content
-     folder (DEC-045). It holds the Start here chapter so far; the chapters of the authoring plan
+     folder (DEC-045). It holds the Start here chapter and two more so far; the chapters of the authoring plan
      (section 3.4) join as they are written. The Quick Start is included by mapref href, and is
      also its own publication in ufti-quick-start-windows.ditamap. -->
 <bookmap id="ufti-manual-windows" xml:lang="en-GB">
@@ -30,6 +30,9 @@
     <mapref href="maps/structure/quick-start.ditamap"/>
   </chapter>
   <chapter href="topics/quick-start/five-things-to-know.dita" keys="five-things-to-know"/>
+  <chapter href="topics/tree/work-with-your-tree.dita" keys="work-with-your-tree">
+    <mapref href="maps/structure/work-with-your-tree.ditamap"/>
+  </chapter>
   <chapter href="topics/workspaces/bring-in-share-and-keep-safe.dita" keys="bring-in-share-and-keep-safe">
     <mapref href="maps/structure/bring-in-share-and-keep-safe.ditamap"/>
   </chapter>
@@ -39,6 +42,8 @@
         <topicref href="glossary/backup.dita" keys="term-backup"/>
         <topicref href="glossary/fact.dita" keys="term-fact"/>
         <topicref href="glossary/family-tree-file.dita" keys="term-family-tree-file"/>
+        <topicref href="glossary/gedcom.dita" keys="term-gedcom"/>
+        <topicref href="glossary/gedzip.dita" keys="term-gedzip"/>
         <topicref href="glossary/pedigree.dita" keys="term-pedigree"/>
         <topicref href="glossary/saved-copy.dita" keys="term-saved-copy"/>
         <topicref href="glossary/source.dita" keys="term-source"/>

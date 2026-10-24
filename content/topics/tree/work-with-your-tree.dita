@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="work-with-your-tree" xml:lang="en-GB">
+  <title>Work with your tree</title>
+  <shortdesc>Find people, add people and families, read their events and sources, and write notes.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-24"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Concept</category>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p>This chapter is for everything you do once a tree is open. It starts with a picture of every screen. Then it shows how to find a person, how to read what the app knows about them, and how to add more. Each page has a few steps and a picture of the result.</p>
+    <p>The pictures use one small tree: the family of Patrick Brontë of Haworth, a village in Yorkshire. You can build it yourself, a little at a time, as you read.</p>
+  </conbody>
+</concept>
