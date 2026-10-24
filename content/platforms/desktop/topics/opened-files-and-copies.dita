@@ -30,7 +30,7 @@
     </section>
     <section>
       <title>Files beside your tree</title>
-      <p><keyword keyref="product-name"/> also keeps other files beside your tree. One kind is a <term keyref="term-backup">backup</term>, an older copy of your tree. Another is the same tree written in GEDCOM 7, the newer version of the file standard. <keyword keyref="product-name"/> makes them for you. <xref keyref="files-beside-your-tree"/> says what each one is.</p>
+      <p><keyword keyref="product-name"/> also keeps other files beside your tree. It keeps a <term keyref="term-backup">backup</term>, an older copy of your tree, and makes it for you. <xref keyref="files-beside-your-tree"/> says what each one is.</p>
     </section>
     <section>
       <title>Sending your tree</title>

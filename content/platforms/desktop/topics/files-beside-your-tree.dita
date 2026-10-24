@@ -2,7 +2,7 @@
 <!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
 <reference id="files-beside-your-tree" xml:lang="en-GB">
   <title>Files beside your tree</title>
-  <shortdesc>The files you may see beside your tree: the tree itself, its backup, and the same tree written in GEDCOM 7.</shortdesc>
+  <shortdesc>The files you may see beside your tree: the tree itself and its backup.</shortdesc>
   <prolog>
     <critdates>
       <created date="2026-10-18"/>
@@ -12,7 +12,6 @@
       <category>Reference</category>
       <keywords>
         <keyword>backup</keyword>
-        <keyword>GEDCOM 7</keyword>
         <keyword>extra files</keyword>
       </keywords>
     </metadata>
@@ -45,17 +44,12 @@
             <entry>An older copy of your tree. <keyword keyref="product-name"/> makes one the first time it saves after you start the app.</entry>
             <entry>No. It is an old version.</entry>
           </row>
-          <row>
-            <entry>The same tree written in GEDCOM 7, the newer version of the file standard, such as <filepath>Brontë family.V7.ged</filepath></entry>
-            <entry>The same tree again, in GEDCOM 7. It is a version of the file standard, not of <keyword keyref="product-name"/>. <keyword keyref="product-name"/> writes it again each time it saves.</entry>
-            <entry>No. It is a second copy.</entry>
-          </row>
         </tbody>
       </tgroup>
     </table>
     <section>
       <p>You may see more than one backup, because <keyword keyref="product-name"/> makes a new one each time you start the app and save. A backup is a family tree file too, so you can open one if you need your older tree.</p>
-      <p>A GEDZIP file, which ends in <filepath>.gdz</filepath>, holds the whole workspace in one file. It is the file to keep and to send.</p>
+      <p>A GEDZIP file, which ends in <filepath>.gdz</filepath>, holds the whole workspace in one file. It is the file to keep and to send. If you open a GEDZIP file, <keyword keyref="product-name"/> works on that file, and its backup is a GEDZIP file too.</p>
       <p>Your tree may also link to pictures and other files. They are separate files, and a GEDZIP file holds them with the tree. <xref keyref="your-workspace-and-its-files"/> says more.</p>
       <p>To make the copy that you send, choose <uicontrol keyref="ui-save-as"/> on the card for your tree. <xref keyref="which-file-to-send"/> says more.</p>
     </section>

@@ -33,8 +33,9 @@
     </section>
     <section>
       <title>The plain family tree file</title>
-      <p>A plain <term keyref="term-family-tree-file">family tree file</term> holds the people, families, facts, sources and research notes. It does not hold the pictures or other attached files. It is written in <term keyref="term-gedcom">GEDCOM</term> 5.5.1, which was published in 1999. Older programs can read it.</p>
-      <p>Use a plain family tree file only to share with an older program, or to work with one. A GEDZIP file comes with GEDCOM 7, which was published in 2021.</p>
+      <p>A plain <term keyref="term-family-tree-file">family tree file</term> holds the people, families, facts, sources and research notes. It does not hold the pictures or other attached files.</p>
+      <p>When you save one, <keyword keyref="product-name"/> asks which version of <term keyref="term-gedcom">GEDCOM</term> to use. Choose GEDCOM 7, which was published in 2021 and is the one it recommends. Choose GEDCOM 5.5.1, which was published in 1999, only for an older program that cannot read GEDCOM 7.</p>
+      <p>A GEDZIP file holds a GEDCOM 7 family tree file, with the pictures and other attached files beside it.</p>
     </section>
     <section>
       <title>At a glance</title>
@@ -64,7 +65,7 @@
             <entry>Plain family tree file</entry>
             <entry>Yes</entry>
             <entry>No</entry>
-            <entry>Share with an older program, or work with one.</entry>
+            <entry>Share with another program that reads GEDCOM, or work with one.</entry>
           </row>
         </tbody>
       </tgroup>
