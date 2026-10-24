@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!-- The iPhone manual's pictures (platform strategy, section 4). No pictures are captured yet. Capture them
+     on the Brontë dataset in the Oxford and slate light theme (DEC-024), on a simulator or device pinned
+     for this manual (DEC-023), before any img-* key is added here. -->
+<map id="iphone-images" xml:lang="en-GB">
+  <topicmeta>
+    <prodinfo>
+      <prodname>uFTi</prodname>
+      <platform>iPhone</platform>
+    </prodinfo>
+    <data name="reference-device" value="iPhone simulator, not yet chosen"/>
+    <data name="dataset" value="bronte"/>
+  </topicmeta>
+</map>
