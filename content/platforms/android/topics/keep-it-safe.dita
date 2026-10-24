@@ -33,7 +33,7 @@
         <cmd>Choose how to save your tree.</cmd>
         <choices>
           <choice><uicontrol keyref="ui-gedzip-archive"/> saves everything in one file, with its pictures. Choose this one.</choice>
-          <choice><uicontrol keyref="ui-gedcom-file"/> saves the tree and its research notes as a <term keyref="term-family-tree-file">family tree file</term>, without pictures. Choose it only for a program that cannot read a GEDZIP file.</choice>
+          <choice><uicontrol keyref="ui-gedcom-file"/> saves the tree and its research notes as a <term keyref="term-family-tree-file">family tree file</term>, without pictures. Choose it only for a program that cannot read a GEDZIP file. If asked which version, choose GEDCOM 7 unless that program is old.</choice>
         </choices>
       </step>
       <step>

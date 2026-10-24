@@ -26,7 +26,7 @@
     </section>
     <section>
       <title>Do not send the files beside your tree</title>
-      <p>Do not send the files that <keyword keyref="product-name"/> keeps beside your tree. The <term keyref="term-backup">backup</term> is an old version of your tree. The file written in GEDCOM 7 is a second copy of it. Sending the wrong one sends an old tree or a second copy. <xref keyref="files-beside-your-tree"/> says what each file is.</p>
+      <p>Do not send the files that <keyword keyref="product-name"/> keeps beside your tree. The <term keyref="term-backup">backup</term> is an old version of your tree. Sending it sends an old tree. <xref keyref="files-beside-your-tree"/> says what each file is.</p>
       <p>A saved copy stays as it was when you made it. Make a new one before you send, if you have added anything since.</p>
     </section>
   </conbody>
