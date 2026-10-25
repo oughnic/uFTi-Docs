@@ -55,6 +55,11 @@ if (-not $Log) {
     foreach ($c in (Join-Path $outDir 'logs' "$Deliverable.log"), (Join-Path $outDir 'logs' 'fixture.log')) { if (Test-Path -LiteralPath $c) { $Log = $c; break } }
 }
 if (-not $SiteUrl) {
+    # a published manual or Quick Start has the address its release gives (build/publications.ini)
+    $pub = Get-UftiPublishedDeliverable -Publications (Read-UftiPublications) -Project $Deliverable
+    if ($pub) { $SiteUrl = $pub.SiteUrl }
+}
+if (-not $SiteUrl) {
     $pf = Join-Path $root 'build' 'projects' "$Deliverable.xml"
     if ((Test-Path -LiteralPath $pf) -and ((Get-Content -LiteralPath $pf -Raw) -match 'name="govuk\.site\.url"\s+value="(?<u>[^"]+)"')) { $SiteUrl = $Matches['u'] }
 }

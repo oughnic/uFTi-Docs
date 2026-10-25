@@ -16,14 +16,14 @@
   Copyright 2026 Oughtibridge Ltd, Apache-2.0.
 
 .PARAMETER Only
-  Run only these parts: lint, vale, templates, samples. Default: all four.
+  Run only these parts: lint, vale, templates, samples, publications. Default: all five.
 
 .PARAMETER Filter
   Run only the cases whose name contains this text.
 #>
 [CmdletBinding()]
 param(
-    [ValidateSet('lint', 'vale', 'templates', 'samples')][string[]]$Only = @('lint', 'vale', 'templates', 'samples'),
+    [ValidateSet('lint', 'vale', 'templates', 'samples', 'publications')][string[]]$Only = @('lint', 'vale', 'templates', 'samples', 'publications'),
     [string]$Filter = '',
     [string]$ToolsDir
 )
@@ -565,6 +565,53 @@ if ($Only -contains 'samples') {
         if ($c.Pass) { Record 'samples' "$($c.Name) passes" ($r.Exit -eq 0) "expected exit 0; got exit $($r.Exit):`n$($r.Text)" }
         else { Record 'samples' "$($c.Name) fails" ($r.Exit -eq 1 -and $r.Text -match $c.Expect) "expected exit 1 with '$($c.Expect)'; got exit $($r.Exit):`n$((($r.Text -split "`n") | Select-Object -First 4) -join "`n")" }
     }
+}
+
+# ---- The release rule: build/publications.ini (DEC-141) -----------------------------------------
+
+if ($Only -contains 'publications') {
+    Write-UftiStep 'Publications: a release is declared once, in the agreed form, and agrees with the pictures'
+    $iniText = [System.IO.File]::ReadAllText((Join-Path $root 'build' 'publications.ini'))
+    function Test-Publications {
+        # the repository's file with one change, read as the build reads it; a throw is the build failing
+        param([string]$Text)
+        $p = Join-Path $work ('publications-' + [guid]::NewGuid().ToString('N').Substring(0, 6) + '.ini')
+        [System.IO.File]::WriteAllText($p, $Text.Replace("`r`n", "`n"))
+        try { $null = Read-UftiPublications -Path $p; [pscustomobject]@{ Ok = $true; Text = '' } } catch { [pscustomobject]@{ Ok = $false; Text = "$_" } }
+    }
+    function Set-WindowsLine { param([string]$Old, [string]$New) $s = $iniText.IndexOf('[windows]'); $e = $iniText.IndexOf('[android-phone]'); $iniText.Substring(0, $s) + $iniText.Substring($s, $e - $s).Replace($Old, $New) + $iniText.Substring($e) }
+    $pubCases = @(
+        @{ Name = 'the repository''s file'; Pass = $true; Expect = ''; Text = $iniText }
+        @{ Name = 'a release Beta-2'; Pass = $true; Expect = ''; Text = (Set-WindowsLine 'release = Alpha-1' 'release = Beta-2') }
+        @{ Name = 'a release RC-1'; Pass = $true; Expect = ''; Text = (Set-WindowsLine 'release = Alpha-1' 'release = RC-1') }
+        @{ Name = 'a release 1.0'; Pass = $true; Expect = ''; Text = (Set-WindowsLine 'release = Alpha-1' 'release = 1.0') }
+        @{ Name = 'a release 1.2.3'; Pass = $true; Expect = ''; Text = (Set-WindowsLine 'release = Alpha-1' 'release = 1.2.3') }
+        @{ Name = 'a platform with no release'; Pass = $false; Expect = 'release is missing'; Text = (Set-WindowsLine "release = Alpha-1`n" '') }
+        @{ Name = 'a release in lower case'; Pass = $false; Expect = 'not in the agreed form'; Text = (Set-WindowsLine 'release = Alpha-1' 'release = alpha-1') }
+        @{ Name = 'a release numbered from zero'; Pass = $false; Expect = 'not in the agreed form'; Text = (Set-WindowsLine 'release = Alpha-1' 'release = Alpha-0') }
+        @{ Name = 'a release with no number'; Pass = $false; Expect = 'not in the agreed form'; Text = (Set-WindowsLine 'release = Alpha-1' 'release = Alpha') }
+        @{ Name = 'a release that is a repository tag'; Pass = $false; Expect = 'not in the agreed form'; Text = (Set-WindowsLine 'release = Alpha-1' 'release = v1.0.0') }
+        @{ Name = 'a release that is a bare number'; Pass = $false; Expect = 'not in the agreed form'; Text = (Set-WindowsLine 'release = Alpha-1' 'release = 1') }
+        @{ Name = 'an app version the pictures do not record'; Pass = $false; Expect = 'differs from'; Text = (Set-WindowsLine 'app-version = 0.1.0.1 (1)' 'app-version = 0.1.0.2 (1)') }
+        @{ Name = 'no app version where the pictures record one'; Pass = $false; Expect = 'app-version must say so'; Text = (Set-WindowsLine "app-version = 0.1.0.1 (1)`n" '') }
+        @{ Name = 'a base address without its closing slash'; Pass = $false; Expect = 'closing slash|ends with a slash'; Text = $iniText.Replace('base-url = https://ufti.com/docs/', 'base-url = https://ufti.com/docs') }
+        @{ Name = 'a base address that is not https'; Pass = $false; Expect = 'ends with a slash'; Text = $iniText.Replace('base-url = https://ufti.com/docs/', 'base-url = http://ufti.com/docs/') }
+        @{ Name = 'a platform name that cannot be a folder'; Pass = $false; Expect = 'lower case letters'; Text = $iniText.Replace('[macos]', '[MacOS]') }
+        @{ Name = 'a platform named for something else on the site'; Pass = $false; Expect = 'name the site uses'; Text = $iniText.Replace('[macos]', '[latest]') }
+        @{ Name = 'a project file that does not exist'; Pass = $false; Expect = 'has no file'; Text = (Set-WindowsLine 'manual = manual-windows' 'manual = manual-nothing') }
+        @{ Name = 'a key nobody reads'; Pass = $false; Expect = 'unknown key'; Text = (Set-WindowsLine 'release = Alpha-1' "release = Alpha-1`nversion = 2") }
+        @{ Name = 'a platform listed twice'; Pass = $false; Expect = 'more than once'; Text = $iniText + "`n[windows]`ntitle = x`n" }
+    )
+    foreach ($c in $pubCases) {
+        if ($Filter -and $c.Name -notlike "*$Filter*") { continue }
+        $r = Test-Publications $c.Text
+        if ($c.Pass) { Record 'publications' "$($c.Name) is accepted" $r.Ok "expected it to be read; it failed:`n$($r.Text)" }
+        else { Record 'publications' "$($c.Name) fails the build" (-not $r.Ok -and $r.Text -match $c.Expect) "expected a failure matching '$($c.Expect)'; got: $(if ($r.Ok) { 'no failure' } else { $r.Text })" }
+    }
+    $order = 'Alpha-1', 'Alpha-2', 'Alpha-10', 'Beta-1', 'RC-1', '1.0', '1.0.1', '1.1', '2.0'
+    $keys = @($order | ForEach-Object { Get-UftiReleaseSortKey $_ })
+    $inOrder = $true; for ($i = 1; $i -lt $keys.Count; $i++) { if ([string]::CompareOrdinal($keys[$i - 1], $keys[$i]) -ge 0) { $inOrder = $false } }
+    Record 'publications' 'releases sort as releases do (Alpha-2 before Alpha-10, Beta before RC, RC before 1.0)' $inOrder "keys: $($keys -join ' ')"
 }
 
 Remove-Item -LiteralPath $work -Recurse -Force -ErrorAction SilentlyContinue

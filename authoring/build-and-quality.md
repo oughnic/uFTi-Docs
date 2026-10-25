@@ -15,7 +15,7 @@ flowchart LR
     E --> F["DesignSystemPDF<br/>tagged PDF/UA-1"]
     D --> G["HTML, link, axe-core<br/>and metadata checks"]
     F --> H["veraPDF<br/>PDF/UA-1 check"]
-    G --> I["GitHub Pages"]
+    G --> I["Azure Static Web Apps"]
     H --> J["GitHub release<br/>PDFs + checksums"]
 ```
 
@@ -69,9 +69,9 @@ Parameters live in a DITA-OT project file, one deliverable per publication. Each
 | `govuk.print` | `yes` | Needed for the PDF. |
 | `govuk.pdf` | `yes` | Fails the build if the PDF generator is missing. Everywhere, as for search (DEC-047). |
 | `govuk.pdf.paper`, `govuk.print.toc.depth` | `A4`, `3` | |
-| `govuk.pdf.name` | `ufti-user-manual-<slug>` | The PDF's file name. |
+| `govuk.pdf.name` | `ufti-user-manual-<platform>-<release>` and `ufti-quick-start-<platform>-<release>`, set by the build scripts from the release (DEC-141) | The PDF's file name, which says which version it is. |
 | `govuk.print.max-topics` | Set above our topic count | The default is 500. Above it the print document and PDF are skipped with a warning. |
-| `govuk.site.url` | `https://ufti.com/docs/<device>/` for each manual and `https://ufti.com/good-practice/` for the guide (DEC-033) | Needed for `sitemap.xml`, `llms.txt`, canonical links and Open Graph URLs. |
+| `govuk.site.url` | `https://ufti.com/docs/<platform>/<release>/` for each manual, `.../start/` below it for the Quick Start, and `https://ufti.com/good-practice/` for the guide (DEC-033, DEC-141). Set by the build scripts from `build/publications.ini`, never in a project file for a published manual. | Needed for `sitemap.xml`, `llms.txt`, canonical links and Open Graph URLs. |
 | `govuk.sitemap`, `govuk.llms` | `auto` | On when the site URL is set. |
 | `govuk.metadata` | `basic` | Open Graph, Dublin Core, canonical, previous, next and licence links. |
 | `govuk.metadata.persons` | `no` | No person's name is published. |
@@ -81,9 +81,9 @@ Parameters live in a DITA-OT project file, one deliverable per publication. Each
 | `args.css`, `args.cssroot`, `args.copycss`, `args.csspath` | `ufti.css`, the path of `build/theme`, `yes`, `theme` | The publisher stylesheet. It is linked on every page and in the print document. In the project file the folder is given with `path="../theme"`, relative to the project file (confirmed in WP1). `args.csspath` keeps the stylesheet and its assets together under `theme/` in the output. |
 | `govuk.css.assets`, `govuk.pdf.fonts` | `build/theme/assets`, `build/theme/assets/fonts` | The fonts the stylesheet names, hosted with the site (the policy `govuk.csp=meta` allows nothing else), and the same fonts for the PDF. Both given with `path`, as above. |
 | `govuk.dates` | `no` | Until there is a reliable dating process (Q13). |
-| `govuk.csp` | `meta` | GitHub Pages cannot set HTTP headers. |
+| `govuk.csp` | `meta` | The pages must work in the app's help frame and on any host, whether or not it can set headers. |
 | `govuk.embed` | `yes` | The embedded view that the app's help panel frames (DEC-028). Ignored under official or NHS branding, which we never use. |
-| `govuk.footer.links` | Platform chooser, accessibility statement, source repository, licence | `label\|url` pairs separated by `;`. |
+| `govuk.footer.links` | Platform chooser, the other versions of the platform and the Quick Start or the manual beside it (from the release, DEC-141), accessibility statement, source repository, licence | `label\|url` pairs separated by `;`. The shared pairs are in `common.xml`; the build scripts put the release's pairs first. |
 | `govuk.content.warnings` | `yes` | Reports scripts, remote images and embeds. The build never fails on content, so the gates read the warnings. |
 
 The plugin warns about a misspelt `govuk.*` parameter (`GOVK009W`). The CI gate on warnings covers it.
@@ -134,13 +134,14 @@ Planned for GitHub Actions, in WP1.
 | `build` | A matrix: the five manuals and their Quick Starts, the good practice guide, the device chooser and the ufti.com pages | Install pinned tools from cache. Build site and PDF into `out/<slug>`. Upload as an artefact. |
 | `check` | After `build`, per output | HTML, axe-core, links, metadata, veraPDF, determinism, page weight. |
 | `coverage` | Once | Key and image coverage, applicability matrix. |
-| `deploy` | `main` only, so only releases are published | Assemble the root with the chooser, publish to GitHub Pages. |
+| `site` | Pushes to `dev`, `main` and `release/**`, and pull requests that touch `build/` or `content/` (`.github/workflows/site.yml`) | Build the whole publishing tree with `build-site.sh`, check every link in it, keep the tree and the archives of the current releases as artefacts. Section 7. |
+| `deploy` | `main` only, so only releases are published | Deploy the `site` artefact to Azure Static Web Apps. Not enabled: it needs a resource and a token that the maintainer creates (section 7). |
 | `release` | On a version tag on `main` | Attach PDFs, a zipped site, SHA-256 checksums and the applicability matrix to a GitHub release. |
 
 Practices:
 
 - Pin third-party actions to full commit SHAs. Keep Dependabot enabled for them.
-- Default permissions are read-only. Only `deploy` gets Pages and OIDC write access.
+- Default permissions are read-only. Only `deploy` gets write access, and only to publish.
 - Cancel superseded runs on the same pull request.
 - Run weekly against the pinned versions to catch upstream drift in the sources we fetch.
 - The plugin's own repository and its consumer repositories are good examples of this shape.
@@ -149,26 +150,106 @@ Practices:
 
 **Versioning**
 
-- The manual's version follows the app's `MAJOR.MINOR.PATCH` and appears as `vrm` in the map metadata.
-- Tag `vX.Y.Z` on `main` when the manual for app version X.Y.Z is released.
+- The manual's version is the **uFTi app release** it was checked against (`Alpha-1`, `Beta-1`, `1.0`), declared once for each platform in `build/publications.ini` (DEC-141, section 7). The number the app itself prints is recorded there too (`app-version`) and with the pictures as `vrm` in the map metadata, and the build fails if they disagree. It is never taken from this repository's tags, the plugin or the toolkit.
+- A tag on `main` marks the commit at which a release was published. It does not decide the release.
 - Before 1.0 the manual is a beta, and the phase banner says so.
-- `dev` is always buildable. Its builds are CI artefacts and are not published. `main` holds the latest release and is what GitHub Pages publishes. Tagged releases are archived as PDFs and a zipped site. Whether earlier versions stay online is DEC-013.
+- `dev` is always buildable. Its builds are CI artefacts and are not published. `main` holds the latest release and is what is published. Each release is archived as a zip of its folder in the tree, and an earlier release stays online from its archive (DEC-143, section 7).
 
 **Release steps**
 
-1. Confirm the app release candidate.
+1. Confirm the app release candidate, its release label and the version it prints.
 2. Cut `release/X.Y.Z` from `dev`.
 3. Refresh screenshots and compare the app with the inventory.
 4. Update the "What is new" topic.
-5. Run every gate and the manual checks.
-6. Merge `release/X.Y.Z` into `main` by pull request, then tag `vX.Y.Z`. The `release` and `deploy` jobs attach the artefacts and publish the site.
-7. Merge `main` back into `dev`.
+5. Keep the release being replaced: its archive must be in the `docs-archive` release (section 7.4) before `release` and `app-version` change in `build/publications.ini`. Then change them, for the platforms that were checked against the new release.
+6. Run every gate and the manual checks.
+7. Merge `release/X.Y.Z` into `main` by pull request, then tag `vX.Y.Z`. The `release` and `deploy` jobs attach the artefacts and publish the site.
+8. Merge `main` back into `dev`.
 
-**Hosting.** The site lives at ufti.com (DEC-033): marketing pages at the root, each manual at `/docs/<device>/` and the guide at `/good-practice/` ([site strategy](site-strategy.md)). GitHub Pages serves the custom domain until headers, redirects or logs are needed (Q26). Pages cannot set HTTP headers, so the site uses `govuk.csp=meta`. The plugin's sites are static, with no cookies, no third-party requests and no analytics (DEC-043), so readers are not tracked. Feedback arrives through the feedback link and the repository's issues.
+**Hosting.** The site lives at ufti.com (DEC-033): marketing pages at the root, each manual at `/docs/<platform>/<release>/` and the guide at `/good-practice/` ([site strategy](site-strategy.md)). The documentation tree is meant for Azure Static Web Apps (DEC-142, section 7); the pages keep `govuk.csp=meta`, so they work on any host and in the app's help frame. The plugin's sites are static, with no cookies, no third-party requests and no analytics (DEC-043), so readers are not tracked. Feedback arrives through the feedback link and the repository's issues.
 
 **Licences and notices.** Our own content is Apache-2.0. The generated site includes GOV.UK Frontend (MIT, Crown copyright) and the PDFs embed Noto fonts (SIL OFL 1.1). The colophon (WP10) lists these, and the plugin's notice files travel with the output.
 
-## 7. Repository hygiene
+## 7. The publishing tree
+
+One command builds everything that is published, in the shape of the site (DEC-140). The shape, the release rule and the hosting are decided in DEC-140 to DEC-143; this section is how they work.
+
+### 7.1 The tree
+
+```text
+out/site/                                  the whole tree: this folder is what the host serves
+  index.html                               the root: the platforms
+  not-found.html                           the page for an address that is not there (status 404)
+  staticwebapp.config.json                 Azure Static Web Apps: routes, headers, 404
+  robots.txt  sitemap.xml  llms.txt  govuk/  theme/
+  windows/
+    index.html                             the platform's versions, newest first
+    Alpha-1/                               the manual for uFTi Alpha-1 on Windows
+      index.html  topics/  platforms/  glossary/  pagefind/  theme/ ...
+      ufti-user-manual-windows-Alpha-1.pdf
+      version.json                         platform, release, app version, PDF names
+      start/                               the Quick Start for the same release
+        index.html ...
+        ufti-quick-start-windows-Alpha-1.pdf
+  android-phone/  iphone/  ipad/  macos/   the same shape
+```
+
+`out/site/` is generated and, like the rest of `out/`, never committed (DEC-140). Each platform that has a manual has a section in `build/publications.ini`; the Android tablet has none until its manual exists.
+
+### 7.2 The release is declared once
+
+`build/publications.ini` is the one place a release is written. Each platform's section has its `release` (`Alpha-1`; later `Alpha-2`, `Beta-1`, `RC-1`, `1.0`, `1.2.3`), the `app-version` the app prints for that build, and the project files of the manual and the Quick Start. The build scripts read it and nothing else:
+
+| Derived from the release | Value |
+|---|---|
+| Folder in the tree | `<platform>/<release>/`, and `start/` below it for the Quick Start |
+| `govuk.site.url` | `<base-url><platform>/<release>/` (and `.../start/`), so canonical links, Open Graph addresses, `sitemap.xml` and `llms.txt` agree with the folder |
+| `govuk.pdf.name` | `ufti-user-manual-<platform>-<release>` and `ufti-quick-start-<platform>-<release>` |
+| `govuk.footer.links` | The chooser, the other versions of the platform, and the Quick Start or the manual beside this one |
+
+`build.ps1` and `build.sh` add these to the toolkit's command line for any project named in the file, so a project file for a published manual holds no address and no PDF name. The build fails, with a message that lists every problem, when:
+
+- a platform has no `release`, or it is not `Alpha-N`, `Beta-N`, `RC-N` or a number such as `1.0` or `1.2.3`;
+- the platform's pictures record an app version (`<vrm>` in `keys/images.ditamap`, `app.version` in `images/manifest.json`) that `app-version` does not state, or states differently (a release and its pictures change together);
+- a project file, the base address or a folder name is wrong, or a platform appears twice.
+
+The label is never read from this repository's tags, the plugin or the toolkit (DEC-141).
+
+### 7.3 Building and checking the tree
+
+```powershell
+pwsh build/scripts/bootstrap.ps1                  # once
+pwsh build/scripts/build-site.ps1 -Archive        # builds out/site and out/archive, then checks the tree
+pwsh build/scripts/check-site.ps1                 # the check alone
+```
+
+`build/scripts/build-site.sh --archive` does the same on Linux and macOS. In order, it:
+
+1. builds every manual and Quick Start with `build.ps1` (or `build.sh`): the toolkit and the plugin only, and any `GOVK*`, `DOTX*` or `DSPDF*` message stops it;
+2. puts back the earlier releases it is given with `-Keep` (section 7.4);
+3. writes the root and platform pages as DITA 1.3 into `out/generated/site-root/` and builds them with `build/projects/site-root.xml`;
+4. assembles `out/site/`, writes `version.json` beside each release and `staticwebapp.config.json` at the root;
+5. with `-Archive`, writes one zip for each current release to `out/archive/`, and `SHA256SUMS`;
+6. runs `check-site.ps1`.
+
+`check-site.ps1` needs only PowerShell. It fails on a folder that should not be there, a release folder that is not a label in the agreed form or has no `version.json` that matches it, a missing website or PDF (a PDF must start `%PDF-`), a Static Web Apps configuration that is not valid or redirects to a page that is not there or does not send `latest` to the current release, and any link that does not resolve. It follows every link in every page, including the root to a platform, a platform to its releases and PDFs, a manual to its Quick Start and back, and addresses that begin with the base address (the footer links, canonical links and the sitemaps) into the tree. It checks letter case exactly, because the host does, and that a link to a part of a page names an id the page has. It does not replace `check-output.ps1`, which runs on each deliverable and still must pass (`-Deliverable manual-windows`, and so on): it checks what only the whole tree can show. The root pages (`site-root`) are not run through `check-output.ps1` on their own: their links lead to the releases, which exist only in the assembled tree, so `check-site.ps1` is their link gate.
+
+### 7.4 Keeping an earlier release
+
+A static host replaces the whole site at each deploy, so an old release is online only if the new tree contains it (DEC-143). The archive is the unit:
+
+1. `build-site -Archive` writes `out/archive/ufti-docs-<platform>-<release>.zip` for each current release, holding `<platform>/<release>/` and nothing else.
+2. The maintainer keeps the zips as assets of the pre-release `docs-archive` (the same way `bronte-sample-latest` is kept): `gh release create docs-archive --prerelease --title "Documentation archive" --notes "Archives of each published release"` once, then `gh release upload docs-archive out/archive/*.zip out/archive/SHA256SUMS --clobber` when a release is published.
+3. A run with `-Keep <folder of zips>` (`site.yml` downloads them from `docs-archive` first) puts each earlier release back in the tree, lists it on its platform page and gives it the longer cache time. The same release in the archive and in the build is replaced by the new build.
+4. When a platform moves from `Alpha-1` to `Alpha-2`, upload the `Alpha-1` archive before changing `release` in `build/publications.ini`. The build then keeps `Alpha-1` and publishes `Alpha-2` as the latest. The build fails if a kept archive is newer than the current release, names a platform that is not in the file, or has no matching `version.json`.
+
+### 7.5 Azure Static Web Apps
+
+`staticwebapp.config.json` is written by the build because its routes depend on the releases. It holds: a redirect from `/<platform>/latest/` (and `latest/start/`) to the current release; a day's cache on every earlier release and five minutes for the rest; `x-content-type-options` and `referrer-policy` headers on every response; the content type of `.pdf`; and the 404 response, which serves `not-found.html`. (That page links to the chooser by its full address, because it is served at the address that was asked for and its relative links to the stylesheet do not resolve there. It reads without the stylesheet.)
+
+The workflow `.github/workflows/site.yml` builds the tree, checks it and keeps it as the artefact `site`. It creates no Azure resource and uses no token. **To deploy:** create the Static Web App for the repository's host in Azure, store its deployment token as the secret `AZURE_STATIC_WEB_APPS_API_TOKEN`, and enable the commented `deploy` job at the end of `site.yml` on pushes to `main`. Its `app_location` is the downloaded `site` artefact, with `skip_app_build: true`: nothing is built in Azure. The first deploy should check the `latest` redirects, the 404 page, a PDF's content type, that a platform address without its closing slash works, and the tree's size against the plan's limit.
+
+## 8. Repository hygiene
 
 - **Branches** (DEC-016). `dev` is the default and integration branch. `main` holds releases only. Both are protected, set up in WP1: pull requests required and CI green.
 - **Work branches** are `docs/<issue>-<slug>` from `dev` (use `feat/` or `fix/` for tooling), merged by pull request into `dev`. Releases go through `release/X.Y.Z` into `main`. Urgent fixes use `hotfix/<slug>` from `main`, merged into `main` and back into `dev`. Commit messages follow `type(scope): subject`.

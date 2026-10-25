@@ -6,7 +6,8 @@
 #
 # NAME is a file under build/projects/ without .xml, or a path. The log goes to out/logs/.
 # Any GOVK, DOTX, DOTJ, DOTA or DSPDF warning, error or fatal message fails the build, as does
-# DOTJ047I (an unresolved key). --smoke reports them instead (DEC-042).
+# DOTJ047I (an unresolved key). --smoke reports them instead (DEC-042). A manual or Quick Start in
+# build/publications.ini is built with the site address, PDF name and footer links its release gives.
 #
 # Copyright 2026 Oughtibridge Ltd, Apache-2.0.
 set -uo pipefail
@@ -21,7 +22,7 @@ while [ $# -gt 0 ]; do
     --output) output=$2; shift 2 ;;
     --smoke) smoke=1; shift ;;
     --tools-dir) tools_dir=$2; shift 2 ;;
-    -h|--help) sed -n '2,11p' "$0"; exit 0 ;;
+    -h|--help) sed -n '2,12p' "$0"; exit 0 ;;
     *) echo "unknown option: $1" >&2; exit 2 ;;
   esac
 done
@@ -40,6 +41,16 @@ export PATH
 if [ -f "$project" ]; then project_file=$(cd "$(dirname "$project")" && pwd)/$(basename "$project"); else project_file="$root/build/projects/$project.xml"; fi
 [ -f "$project_file" ] || { echo "No project file: $project_file" >&2; exit 1; }
 name=$(basename "$project_file" .xml)
+
+# A published deliverable takes its address, PDF name and footer links from the release declared in
+# build/publications.ini (build and quality, section 7); the build fails if that file is wrong.
+. "$here/publications.sh"
+pub_validate || { echo "::error::build/publications.ini is not valid"; exit 1; }
+release_args=()
+if pub_resolve "$name"; then
+  release_args=("--govuk.site.url=$PUB_SITE_URL" "--govuk.footer.links=$PUB_FOOTER")
+  [ -z "$PUB_PDF_NAME" ] || release_args+=("--govuk.pdf.name=$PUB_PDF_NAME")
+fi
 case "$output" in /*) out_dir=$output ;; *) out_dir="$root/$output" ;; esac
 mkdir -p "$out_dir/logs"
 log="$out_dir/logs/$name.log"
@@ -47,6 +58,7 @@ temp="$out_dir/temp/$name"
 
 echo; echo "== Build $name"
 echo "  project: $project_file"; echo "  output:  $out_dir"
+[ -z "$PUB_KIND" ] || echo "  release: ${PUB_RELEASE:-(the site root)}, site address $PUB_SITE_URL"
 
 # The toolkit writes into the output folder without clearing it, and Pagefind leaves old index
 # fragments behind, so each deliverable's folder is removed first: a build is from nothing.
@@ -62,7 +74,7 @@ done
 started=$(date +%s)
 # --verbose, because the toolkit logs an unresolved key (DOTJ047I) at its information level, which
 # the default level never prints. The full log goes to the file; the console shows the messages.
-(cd "$root" && "$dita" "--project=$project_file" "--output=$out_dir" "--temp=$temp" --verbose > "$log" 2>&1)
+(cd "$root" && "$dita" "--project=$project_file" "--output=$out_dir" "--temp=$temp" --verbose ${release_args[@]+"${release_args[@]}"} > "$log" 2>&1)
 code=$?
 rm -rf "$temp"
 grep -E '\[(GOVK|DOTX|DOTJ|DOTA|DSPDF)[0-9]{3}[WEF]\]|\[DOTJ047I\]|^\s*(govuk:|Warning|Error|BUILD|Exception)' "$log" | sed 's/^/  /' || true

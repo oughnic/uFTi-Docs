@@ -1,0 +1,96 @@
+# Builds the publishable tree for an Azure Static Web App (build and quality, section 7; DEC-140 to
+# DEC-143): a root, one folder per platform, and below each platform one folder per uFTi app release,
+# each holding the manual and the Quick Start as a website and a PDF. It builds with the toolkit and
+# the plugin only, checks every link in the tree, and keeps the tree and the archives of each current
+# release as artifacts. It creates no Azure resource and holds no secret.
+#
+# Next step for the maintainer: deploy the "site" artifact. A commented-out step at the end shows how.
+# Third-party actions are pinned to full commit SHAs. Permissions are read-only.
+name: Site
+
+on:
+  push:
+    branches: [dev, main, 'release/**']
+  pull_request:
+    paths: ['build/**', 'content/**', '.github/workflows/site.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  site:
+    name: build the tree
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check out
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Java
+        uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6.1.0
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Pinned tools (cached by the lock file)
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .tools
+          key: tools-build-${{ runner.os }}-${{ hashFiles('build/tools.lock') }}
+      - name: Bootstrap the toolkit, the plugin, DesignSystemPDF and Pagefind
+        run: build/scripts/bootstrap.sh --build-only
+      - name: Earlier releases, kept (the docs-archive release, when there is one)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p kept
+          gh release download docs-archive --repo "$GITHUB_REPOSITORY" --pattern 'ufti-docs-*.zip' --dir kept \
+            || echo "::notice::There is no docs-archive release yet, so no earlier release is kept."
+      - name: Build the tree and check its links
+        run: build/scripts/build-site.sh --keep kept --archive
+      - name: Keep the tree
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: site
+          path: out/site
+          if-no-files-found: error
+      - name: Keep the archives of the current releases
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: site-archives
+          path: out/archive
+          if-no-files-found: error
+      - name: Keep the logs and the link report
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: site-logs
+          path: |
+            out/logs
+            out/reports/site
+          if-no-files-found: ignore
+
+  # Not yet enabled. To publish: create the Static Web App in Azure, add its deployment token to this
+  # repository's secrets as AZURE_STATIC_WEB_APPS_API_TOKEN, give this job `contents: read` and
+  # `pull-requests: write` as the action's documentation says, pin the action to a full commit SHA,
+  # and run it on pushes to main only (DEC-016). The tree is already built, so no build runs in Azure.
+  #
+  # deploy:
+  #   name: deploy to Azure Static Web Apps
+  #   needs: site
+  #   if: github.ref == 'refs/heads/main'
+  #   runs-on: ubuntu-24.04
+  #   steps:
+  #     - uses: actions/download-artifact@<full commit SHA>
+  #       with:
+  #         name: site
+  #         path: site
+  #     - uses: Azure/static-web-apps-deploy@<full commit SHA>
+  #       with:
+  #         azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+  #         action: upload
+  #         app_location: site
+  #         skip_app_build: true
+  #         skip_api_build: true

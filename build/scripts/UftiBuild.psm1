@@ -42,10 +42,10 @@ function Read-UftiToolsLock {
         if (-not $line -or $line.StartsWith('#')) { continue }
         if ($line -match '^\[(?<s>[A-Za-z0-9_.-]+)\]$') { $section = $Matches['s']; $lock[$section] = [ordered]@{}; continue }
         if ($line -match '^(?<k>[^=]+?)\s*=\s*(?<v>.*)$') {
-            if (-not $section) { throw "tools.lock: a value before any [section]: $line" }
+            if (-not $section) { throw "$([System.IO.Path]::GetFileName($Path)): a value before any [section]: $line" }
             $lock[$section][$Matches['k'].Trim()] = $Matches['v'].Trim()
         }
-        else { throw "tools.lock: cannot read line: $line" }
+        else { throw "$([System.IO.Path]::GetFileName($Path)): cannot read line: $line" }
     }
     $lock
 }
@@ -223,4 +223,133 @@ function Get-UftiBuildMessages {
     [pscustomobject]@{ Gated = $gated; Info = $info }
 }
 
-Export-ModuleMember -Function Get-UftiRepoRoot, Get-UftiToolsDir, Get-UftiPlatformId, Get-UftiPlatformCandidates, Read-UftiToolsLock, Get-UftiLockValue, Get-UftiToolPaths, Add-UftiToolsToPath, Get-UftiFileHash256, Test-UftiCommand, Find-UftiInterpreter, Invoke-UftiProcess, Write-UftiStep, Write-UftiProblem, Write-UftiNotice, Get-UftiBuildMessages
+# ---- Publications: which release each platform is published as (build and quality, section 7) ----
+
+function Test-UftiReleaseLabel {
+    # Alpha-1, Beta-2, RC-1, 1.0, 1.2.3: the uFTi app's release, never this repository's version.
+    param([AllowNull()][string]$Label)
+    $Label -cmatch '^((Alpha|Beta|RC)-[1-9][0-9]*|[0-9]+\.[0-9]+(\.[0-9]+)?)$'
+}
+
+function Get-UftiReleaseSortKey {
+    # A key that sorts as releases do: Alpha-1 < Alpha-2 < Beta-1 < RC-1 < 1.0 < 1.0.1 < 1.1. Compare
+    # keys as strings, ordinally.
+    param([Parameter(Mandatory)][string]$Label)
+    if ($Label -cmatch '^(?<s>Alpha|Beta|RC)-(?<n>\d+)$') {
+        $rank = @{ Alpha = 1; Beta = 2; RC = 3 }[$Matches['s']]
+        return '{0}.{1:D6}.{2:D6}.{3:D6}' -f $rank, [int]$Matches['n'], 0, 0
+    }
+    if ($Label -cmatch '^(?<a>\d+)\.(?<b>\d+)(\.(?<c>\d+))?$') {
+        $c = if ($Matches['c']) { [int]$Matches['c'] } else { 0 }
+        return '{0}.{1:D6}.{2:D6}.{3:D6}' -f 4, [int]$Matches['a'], [int]$Matches['b'], $c
+    }
+    throw "'$Label' is not a release label"
+}
+
+function Read-UftiPublications {
+    <#
+    .SYNOPSIS The platforms and releases in build/publications.ini, checked.
+    .DESCRIPTION
+      Throws one error listing every problem: a missing or malformed release, a missing project
+      file, a platform name that cannot be a folder, an app version that disagrees with the version
+      the platform's pictures were checked against, and so on.
+    #>
+    param([string]$Path = (Join-Path (Get-UftiRepoRoot) 'build' 'publications.ini'))
+    $root = Get-UftiRepoRoot
+    $rel = [System.IO.Path]::GetRelativePath($root, $Path) -replace '\\', '/'
+    $problems = [System.Collections.Generic.List[string]]::new()
+    if (-not (Test-Path -LiteralPath $Path)) { throw "$rel does not exist" }
+    $ini = Read-UftiToolsLock -Path $Path
+    $headers = @(Get-Content -LiteralPath $Path | Where-Object { $_ -match '^\s*\[' } | ForEach-Object { $_.Trim() })
+    foreach ($d in ($headers | Group-Object | Where-Object Count -gt 1)) { $problems.Add("section $($d.Name) appears more than once") }
+
+    $base = $null
+    if (-not $ini.Contains('site') -or -not $ini['site'].Contains('base-url')) { $problems.Add('[site] base-url is missing') }
+    else {
+        $base = $ini['site']['base-url']
+        if ($base -notmatch '^https://[a-z0-9.-]+(:\d+)?/([A-Za-z0-9._~-]+/)*$') { $problems.Add("[site] base-url '$base' must be an https address that ends with a slash") }
+    }
+
+    $reserved = 'govuk', 'theme', 'pagefind', 'latest', 'start', 'logs', 'temp', 'reports'
+    $platforms = [System.Collections.Generic.List[object]]::new()
+    foreach ($slug in $ini.Keys) {
+        if ($slug -eq 'site') { continue }
+        $s = $ini[$slug]
+        $where = "[$slug]"
+        if ($slug -cnotmatch '^[a-z0-9]+(-[a-z0-9]+)*$') { $problems.Add("$where the section name is the platform's folder: lower case letters, digits and single hyphens only") }
+        if ($reserved -contains $slug) { $problems.Add("$where '$slug' is a name the site uses for something else") }
+        foreach ($k in 'title', 'device', 'release', 'manual', 'quick-start') { if (-not $s.Contains($k) -or -not $s[$k]) { $problems.Add("$where $k is missing") } }
+        foreach ($k in $s.Keys) { if ('title', 'device', 'release', 'app-version', 'manual', 'quick-start' -notcontains $k) { $problems.Add("$where unknown key '$k'") } }
+        $release = if ($s.Contains('release')) { $s['release'] } else { '' }
+        if ($release -and -not (Test-UftiReleaseLabel $release)) { $problems.Add("$where release '$release' is not in the agreed form (Alpha-N, Beta-N, RC-N, or a number such as 1.0 or 1.2.3)") }
+        foreach ($k in 'manual', 'quick-start') {
+            if ($s.Contains($k) -and $s[$k] -and -not (Test-Path -LiteralPath (Join-Path $root 'build' 'projects' "$($s[$k]).xml"))) { $problems.Add("$where $k '$($s[$k])' has no file build/projects/$($s[$k]).xml") }
+        }
+        # The version the app prints, wherever the platform's pictures recorded one.
+        $appVersion = if ($s.Contains('app-version')) { $s['app-version'] } else { '' }
+        $recorded = [System.Collections.Generic.List[string]]::new()
+        $keyMap = Join-Path $root 'content' 'platforms' $slug 'keys' 'images.ditamap'
+        if (Test-Path -LiteralPath $keyMap) { foreach ($m in [regex]::Matches((Get-Content -LiteralPath $keyMap -Raw), '<vrm version="([^"]*)"')) { $recorded.Add($m.Groups[1].Value) } }
+        $manifest = Join-Path $root 'content' 'platforms' $slug 'images' 'manifest.json'
+        if (Test-Path -LiteralPath $manifest) { $v = (Get-Content -LiteralPath $manifest -Raw | ConvertFrom-Json).app.version; if ($v) { $recorded.Add([string]$v) } }
+        if ($recorded.Count -and -not $appVersion) { $problems.Add("$where the pictures record app version '$($recorded[0])', so app-version must say so") }
+        foreach ($v in $recorded) { if ($appVersion -and $v -ne $appVersion) { $problems.Add("$where app-version '$appVersion' differs from '$v' recorded with the pictures: they change together") } }
+        $platforms.Add([pscustomobject]@{
+            Slug = $slug; Title = $s['title']; Device = $s['device']; Release = $release; AppVersion = $appVersion
+            Manual = $s['manual']; QuickStart = $s['quick-start']
+        })
+    }
+    if ($platforms.Count -eq 0) { $problems.Add('no platform is declared') }
+    if ($problems.Count) { throw ("${rel}:`n  - " + ($problems -join "`n  - ")) }
+    [pscustomobject]@{ BaseUrl = $base; Platforms = $platforms.ToArray() }
+}
+
+function Get-UftiFooterLinks {
+    # The footer's link pairs, with the platform's own first. The shared pairs (accessibility
+    # statement, source, licence) are read from common.xml; its "Choose your device" pair is replaced.
+    param([Parameter(Mandatory)]$Publications, [Parameter(Mandatory)][ValidateSet('root', 'manual', 'quick-start')][string]$Kind, $Platform)
+    $common = Get-Content -LiteralPath (Join-Path (Get-UftiRepoRoot) 'build' 'projects' 'common.xml') -Raw
+    $shared = if ($common -match 'name="govuk\.footer\.links"\s+value="(?<v>[^"]+)"') { @($Matches['v'] -split ';' | Where-Object { $_ -and $_ -notlike 'Choose your device|*' }) } else { @() }
+    $b = $Publications.BaseUrl
+    $own = @("Choose your device|$b")
+    if ($Kind -ne 'root') {
+        $own += "Version $($Platform.Release): other versions|$b$($Platform.Slug)/"
+        $own += if ($Kind -eq 'manual') { "Quick Start|$b$($Platform.Slug)/$($Platform.Release)/start/" } else { "Full manual|$b$($Platform.Slug)/$($Platform.Release)/" }
+    }
+    ($own + $shared) -join ';'
+}
+
+function Get-UftiPublishedDeliverable {
+    <#
+    .SYNOPSIS What a project's build needs from the publications: its address, PDF name and footer links.
+    .DESCRIPTION
+      Returns $null for a project that is not published (a fixture). The address is
+      <base-url><platform>/<release>/ for a manual and <...>/start/ for its Quick Start, so the
+      release in the file decides where the output goes and what every canonical link says.
+    #>
+    param([Parameter(Mandatory)]$Publications, [Parameter(Mandatory)][string]$Project)
+    $b = $Publications.BaseUrl
+    if ($Project -eq 'site-root') {
+        return [pscustomobject]@{ Kind = 'root'; Platform = $null; Release = $null; SiteUrl = $b; PdfName = $null; FooterLinks = (Get-UftiFooterLinks -Publications $Publications -Kind root) }
+    }
+    foreach ($p in $Publications.Platforms) {
+        if ($Project -ceq $p.Manual) {
+            return [pscustomobject]@{ Kind = 'manual'; Platform = $p; Release = $p.Release; SiteUrl = "$b$($p.Slug)/$($p.Release)/"; PdfName = "ufti-user-manual-$($p.Slug)-$($p.Release)"; FooterLinks = (Get-UftiFooterLinks -Publications $Publications -Kind manual -Platform $p) }
+        }
+        if ($Project -ceq $p.QuickStart) {
+            return [pscustomobject]@{ Kind = 'quick-start'; Platform = $p; Release = $p.Release; SiteUrl = "$b$($p.Slug)/$($p.Release)/start/"; PdfName = "ufti-quick-start-$($p.Slug)-$($p.Release)"; FooterLinks = (Get-UftiFooterLinks -Publications $Publications -Kind quick-start -Platform $p) }
+        }
+    }
+    $null
+}
+
+function Get-UftiDeliverableParameters {
+    # The toolkit arguments that a published project's build adds to its project file, so that the
+    # release in build/publications.ini decides the address, the PDF name and the footer links.
+    param([Parameter(Mandatory)]$Published)
+    $a = @("--govuk.site.url=$($Published.SiteUrl)", "--govuk.footer.links=$($Published.FooterLinks)")
+    if ($Published.PdfName) { $a += "--govuk.pdf.name=$($Published.PdfName)" }
+    $a
+}
+
+Export-ModuleMember -Function Get-UftiRepoRoot, Get-UftiToolsDir, Get-UftiPlatformId, Get-UftiPlatformCandidates, Read-UftiToolsLock, Get-UftiLockValue, Get-UftiToolPaths, Add-UftiToolsToPath, Get-UftiFileHash256, Test-UftiCommand, Find-UftiInterpreter, Invoke-UftiProcess, Write-UftiStep, Write-UftiProblem, Write-UftiNotice, Get-UftiBuildMessages, Test-UftiReleaseLabel, Get-UftiReleaseSortKey, Read-UftiPublications, Get-UftiFooterLinks, Get-UftiPublishedDeliverable, Get-UftiDeliverableParameters
