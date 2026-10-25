@@ -1,0 +1,37 @@
+# uFTi user manual: iPad
+
+## Quick Start
+
+- [Quick Start](https://ufti.com/docs/ipad/Alpha-1/topics/quick-start/quick-start.html): Six short pages that take you from opening uFTi to your first person, with its source and a copy.
+- [Add your first person](https://ufti.com/docs/ipad/Alpha-1/platforms/desktop/topics/add-your-first-person.html): Make your own workspace and add yourself, or someone you know well.
+- [Look around](https://ufti.com/docs/ipad/Alpha-1/platforms/desktop/topics/look-around.html): See what the main menu items show for the person you added.
+- [Say where you found it](https://ufti.com/docs/ipad/Alpha-1/topics/quick-start/say-where-you-found-it.html): Add a source to a fact, so you always know why you believe it.
+- [Keep it safe](https://ufti.com/docs/ipad/Alpha-1/platforms/ios/topics/keep-it-safe.html): Save a copy of your tree as a file, and keep it somewhere else too.
+- [What next](https://ufti.com/docs/ipad/Alpha-1/topics/quick-start/what-next.html): You have a tree, a person, a fact with its source and a copy, so choose where to go from here.
+
+## Contents
+
+- [Five things to know](https://ufti.com/docs/ipad/Alpha-1/topics/quick-start/five-things-to-know.html): The five ideas behind uFTi, in two minutes.
+
+## Bring in, share and keep safe
+
+- [Bring in, share and keep safe](https://ufti.com/docs/ipad/Alpha-1/topics/workspaces/bring-in-share-and-keep-safe.html): What your workspace holds, why a GEDZIP file is the one to keep and send, and when a plain family tree file is better.
+- [Your workspace and its files](https://ufti.com/docs/ipad/Alpha-1/topics/workspaces/your-workspace-and-its-files.html): A workspace is your family tree and its linked files, and a GEDZIP file holds all of them in one file.
+- [Opened files and copies](https://ufti.com/docs/ipad/Alpha-1/platforms/phone/topics/opened-files-and-copies.html): On a phone or tablet, uFTi works on its own copy of the file you choose, so the file you chose stays as it was.
+- [Which file to send](https://ufti.com/docs/ipad/Alpha-1/platforms/phone/topics/which-file-to-send.html): Send a GEDZIP file to anyone who uses uFTi, and a plain family tree file only to an older program.
+
+## 
+
+- [backup](https://ufti.com/docs/ipad/Alpha-1/glossary/backup.html)
+- [fact](https://ufti.com/docs/ipad/Alpha-1/glossary/fact.html)
+- [family tree file](https://ufti.com/docs/ipad/Alpha-1/glossary/family-tree-file.html)
+- [GEDCOM](https://ufti.com/docs/ipad/Alpha-1/glossary/gedcom.html)
+- [GEDZIP](https://ufti.com/docs/ipad/Alpha-1/glossary/gedzip.html)
+- [pedigree](https://ufti.com/docs/ipad/Alpha-1/glossary/pedigree.html)
+- [saved copy](https://ufti.com/docs/ipad/Alpha-1/glossary/saved-copy.html)
+- [source](https://ufti.com/docs/ipad/Alpha-1/glossary/source.html)
+- [workspace](https://ufti.com/docs/ipad/Alpha-1/glossary/workspace.html)
+
+## Optional
+
+- [Glossary](https://ufti.com/docs/ipad/Alpha-1/glossary.html)

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ufti.com/docs/android-phone/Alpha-1/sitemap.xml

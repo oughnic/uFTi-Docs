@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ufti.com/docs/macos/Alpha-1/start/sitemap.xml
