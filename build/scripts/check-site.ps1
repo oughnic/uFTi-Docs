@@ -108,9 +108,15 @@ if (Test-Path -LiteralPath $swaPath) {
                 if ($r.route -eq $r.redirect) { Bad "staticwebapp.config.json: $($r.route) redirects to itself" }
             }
         }
+        # Azure treats a route with and without its closing slash as the same route, and refuses a file that has both
+        $seen = @{}
+        foreach ($r in @($swa.routes)) {
+            $k = ([string]$r.route).TrimEnd('/').ToLowerInvariant(); if ($k -eq '') { $k = '/' }
+            if ($seen.ContainsKey($k)) { Bad "staticwebapp.config.json: the route $($r.route) duplicates $($seen[$k]) (Azure ignores a closing slash)" } else { $seen[$k] = $r.route }
+        }
         foreach ($p in $pub.Platforms) {
-            $latest = @($swa.routes | Where-Object { $_.route -ceq "/$($p.Slug)/latest/" })
-            if ($latest.Count -ne 1 -or $latest[0].redirect -cne "/$($p.Slug)/$($p.Release)/") { Bad "staticwebapp.config.json: /$($p.Slug)/latest/ must redirect to /$($p.Slug)/$($p.Release)/ (the current release)" }
+            $latest = @($swa.routes | Where-Object { $_.route -ceq "/$($p.Slug)/latest" })
+            if ($latest.Count -ne 1 -or $latest[0].redirect -cne "/$($p.Slug)/$($p.Release)/") { Bad "staticwebapp.config.json: /$($p.Slug)/latest must redirect to /$($p.Slug)/$($p.Release)/ (the current release)" }
         }
         $nf = $swa.responseOverrides.'404'
         if (-not $nf -or -not $files.Contains(([string]$nf.rewrite).TrimStart('/'))) { Bad 'staticwebapp.config.json: the 404 response does not rewrite to a page in the tree' }
