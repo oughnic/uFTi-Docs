@@ -161,7 +161,7 @@ Practices:
 2. Cut `release/X.Y.Z` from `dev`.
 3. Refresh screenshots and compare the app with the inventory.
 4. Update the "What is new" topic.
-5. Keep the release being replaced: its archive must be in the `docs-archive` release (section 7.4) before `release` and `app-version` change in `build/publications.ini`. Then change them, for the platforms that were checked against the new release.
+5. Keep the release being replaced: it must already be on the publish branch (section 7.6) before `release` and `app-version` change in `build/publications.ini`. Then change them, for the platforms that were checked against the new release.
 6. Run every gate and the manual checks.
 7. Merge `release/X.Y.Z` into `main` by pull request, then tag `vX.Y.Z`. The `release` and `deploy` jobs attach the artefacts and publish the site.
 8. Merge `main` back into `dev`.
@@ -239,15 +239,26 @@ pwsh build/scripts/check-site.ps1                 # the check alone
 A static host replaces the whole site at each deploy, so an old release is online only if the new tree contains it (DEC-143). The archive is the unit:
 
 1. `build-site -Archive` writes `out/archive/ufti-docs-<platform>-<release>.zip` for each current release, holding `<platform>/<release>/` and nothing else.
-2. The maintainer keeps the zips as assets of the pre-release `docs-archive` (the same way `bronte-sample-latest` is kept): `gh release create docs-archive --prerelease --title "Documentation archive" --notes "Archives of each published release"` once, then `gh release upload docs-archive out/archive/*.zip out/archive/SHA256SUMS --clobber` when a release is published.
-3. A run with `-Keep <folder of zips>` (`site.yml` downloads them from `docs-archive` first) puts each earlier release back in the tree, lists it on its platform page and gives it the longer cache time. The same release in the archive and in the build is replaced by the new build.
-4. When a platform moves from `Alpha-1` to `Alpha-2`, upload the `Alpha-1` archive before changing `release` in `build/publications.ini`. The build then keeps `Alpha-1` and publishes `Alpha-2` as the latest. The build fails if a kept archive is newer than the current release, names a platform that is not in the file, or has no matching `version.json`.
+2. The store of earlier releases is the **publish branch** (section 7.6), which holds every release ever published. `build/scripts/kept-from-branch.sh <branch> <folder>` reads that branch and writes one such zip for each release it holds. `site.yml` runs it before every build. If the branch does not exist yet, nothing is kept.
+3. A run with `-Keep <folder of zips>` puts each earlier release back in the tree, lists it on its platform page and gives it the longer cache time. The same release in the archive and in the build is replaced by the new build.
+4. When a platform moves from `Alpha-1` to `Alpha-2`, change `release` in `build/publications.ini`. The publish branch still holds `Alpha-1`, so the build keeps it and publishes `Alpha-2` as the latest. (A maintainer can still keep the zips by hand, for example as assets of a pre-release, and pass the folder to `-Keep`; the branch is the way CI does it.) The build fails if a kept archive is newer than the current release, names a platform that is not in the file, or has no matching `version.json`.
 
 ### 7.5 Azure Static Web Apps
 
 `staticwebapp.config.json` is written by the build because its routes depend on the releases. It holds: a redirect from `/<platform>/latest/` (and `latest/start/`) to the current release; a day's cache on every earlier release and five minutes for the rest; `x-content-type-options` and `referrer-policy` headers on every response; the content type of `.pdf`; and the 404 response, which serves `not-found.html`. (That page links to the chooser by its full address, because it is served at the address that was asked for and its relative links to the stylesheet do not resolve there. It reads without the stylesheet.)
 
 The workflow `.github/workflows/site.yml` builds the tree, checks it and keeps it as the artefact `site`. It creates no Azure resource and uses no token. **To deploy:** create the Static Web App for the repository's host in Azure, store its deployment token as the secret `AZURE_STATIC_WEB_APPS_API_TOKEN`, and enable the commented `deploy` job at the end of `site.yml` on pushes to `main`. Its `app_location` is the downloaded `site` artefact, with `skip_app_build: true`: nothing is built in Azure. The first deploy should check the `latest` redirects, the 404 page, a PDF's content type, that a platform address without its closing slash works, and the tree's size against the plan's limit.
+
+### 7.6 The publish branch
+
+`out/` stays out of git on every ordinary branch, as it always has been. The finished tree is pushed to its own branch, `publish`, so that the output of this repository is a pushed asset (DEC-144).
+
+- **What the branch holds.** Exactly the tree `build-site` assembled, at the root of the branch: `index.html`, `staticwebapp.config.json` and one folder for each platform with every release below it. Nothing else, so an Azure Static Web App can take the root of the branch as its app location, with no build step.
+- **When it is written.** The `publish` job in `site.yml` runs after a successful build on a push to `main` or `release/**`, and on demand: run the workflow from any branch with **publish** ticked (`gh workflow run site.yml --ref dev -f publish=true`). A push to `dev` and a pull request build and check the tree but do not publish. A second input names another branch for a trial (`-f branch=publish-trial`).
+- **How.** `build/scripts/publish-tree.sh out/site <branch>` replaces the branch by the tree in one new commit that names the source commit and the releases it holds. If the tree is the one already there, nothing is pushed. The job has `contents: write` and no other secret. Runs are queued, not cancelled, so two publications cannot overwrite each other.
+- **Why every release is in the tree.** The branch is replaced, not added to. The earlier releases come back into the tree first, from the branch itself (`kept-from-branch.sh`, section 7.4), so a release that was published stays published. Never run `publish-tree.sh` on a tree built without them.
+- **Never edit the branch by hand.** The next publication replaces it. To go back to an earlier publication, use the branch's history.
+- **Size.** About 37 MB for five platforms and one release, and each new release adds its own folder. The history grows by about that much for each publication, which is why `dev` does not publish on every push.
 
 ## 8. Repository hygiene
 
