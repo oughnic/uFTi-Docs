@@ -83,7 +83,7 @@ Parameters live in a DITA-OT project file, one deliverable per publication. Each
 | `govuk.dates` | `no` | Until there is a reliable dating process (Q13). |
 | `govuk.csp` | `meta` | The pages must work in the app's help frame and on any host, whether or not it can set headers. |
 | `govuk.embed` | `yes` | The embedded view that the app's help panel frames (DEC-028). Ignored under official or NHS branding, which we never use. |
-| `govuk.footer.links` | Platform chooser, the other versions of the platform and the Quick Start or the manual beside it (from the release, DEC-141), accessibility statement, source repository, licence | `label\|url` pairs separated by `;`. The shared pairs are in `common.xml`; the build scripts put the release's pairs first. |
+| `govuk.footer.links` | Platform chooser, the other versions of the platform and the Quick Start or the manual beside it (from the release, DEC-141), accessibility statement and privacy policy (pages of the root of the tree, addresses made from `base-url`, DEC-150), source repository, licence | `label\|url` pairs separated by `;`. The shared pairs are in `common.xml`; the build scripts put the release's pairs first. |
 | `govuk.content.warnings` | `yes` | Reports scripts, remote images and embeds. The build never fails on content, so the gates read the warnings. |
 
 The plugin warns about a misspelt `govuk.*` parameter (`GOVK009W`). The CI gate on warnings covers it.
@@ -179,6 +179,8 @@ One command builds everything that is published, in the shape of the site (DEC-1
 ```text
 out/site/                                  the whole tree: this folder is what the host serves
   index.html                               the root: the platforms
+  accessibility/index.html                 the accessibility statement (a page of the site, DEC-150)
+  privacy/index.html                       the privacy policy (a page of the site, DEC-150)
   not-found.html                           the page for an address that is not there (status 404)
   staticwebapp.config.json                 Azure Static Web Apps: routes, headers, 404
   robots.txt  sitemap.xml  llms.txt  govuk/  theme/
@@ -205,7 +207,7 @@ out/site/                                  the whole tree: this folder is what t
 | Folder in the tree | `<platform>/<release>/`, and `start/` below it for the Quick Start |
 | `govuk.site.url` | `<base-url><platform>/<release>/` (and `.../start/`), so canonical links, Open Graph addresses, `sitemap.xml` and `llms.txt` agree with the folder |
 | `govuk.pdf.name` | `ufti-user-manual-<platform>-<release>` and `ufti-quick-start-<platform>-<release>` |
-| `govuk.footer.links` | The chooser, the other versions of the platform, and the Quick Start or the manual beside this one |
+| `govuk.footer.links` | The chooser, the other versions of the platform, the Quick Start or the manual beside this one, and the accessibility statement and privacy policy at `<base-url>accessibility/` and `<base-url>privacy/` |
 
 `build.ps1` and `build.sh` add these to the toolkit's command line for any project named in the file, so a project file for a published manual holds no address and no PDF name. The build fails, with a message that lists every problem, when:
 
@@ -227,12 +229,12 @@ pwsh build/scripts/check-site.ps1                 # the check alone
 
 1. builds every manual and Quick Start with `build.ps1` (or `build.sh`): the toolkit and the plugin only, and any `GOVK*`, `DOTX*` or `DSPDF*` message stops it;
 2. puts back the earlier releases it is given with `-Keep` (section 7.4);
-3. writes the root and platform pages as DITA 1.3 into `out/generated/site-root/` and builds them with `build/projects/site-root.xml`;
+3. writes the root and platform pages as DITA 1.3 into `out/generated/site-root/`, copies the hand-written pages of `content/site/` (the accessibility statement and the privacy policy) into it as `<name>/index.dita`, and builds them with `build/projects/site-root.xml`;
 4. assembles `out/site/`, writes `version.json` beside each release and `staticwebapp.config.json` at the root;
 5. with `-Archive`, writes one zip for each current release to `out/archive/`, and `SHA256SUMS`;
 6. runs `check-site.ps1`.
 
-`check-site.ps1` needs only PowerShell. It fails on a folder that should not be there, a release folder that is not a label in the agreed form or has no `version.json` that matches it, a missing website or PDF (a PDF must start `%PDF-`), a Static Web Apps configuration that is not valid or redirects to a page that is not there or does not send `latest` to the current release, and any link that does not resolve. It follows every link in every page, including the root to a platform, a platform to its releases and PDFs, a manual to its Quick Start and back, and addresses that begin with the base address (the footer links, canonical links and the sitemaps) into the tree. It checks letter case exactly, because the host does, and that a link to a part of a page names an id the page has. It does not replace `check-output.ps1`, which runs on each deliverable and still must pass (`-Deliverable manual-windows`, and so on): it checks what only the whole tree can show. The root pages (`site-root`) are not run through `check-output.ps1` on their own: their links lead to the releases, which exist only in the assembled tree, so `check-site.ps1` is their link gate.
+`check-site.ps1` needs only PowerShell. It fails on a folder that should not be there, a release folder that is not a label in the agreed form or has no `version.json` that matches it, a missing website or PDF (a PDF must start `%PDF-`), a Static Web Apps configuration that is not valid or redirects to a page that is not there or does not send `latest` to the current release, and any link that does not resolve. It also fails when the accessibility statement or the privacy policy is missing, when a page footer does not link both at addresses that start with `base-url`, or when a page still links the accessibility statement on the marketing site. It follows every link in every page, including the root to a platform, a platform to its releases and PDFs, a manual to its Quick Start and back, and addresses that begin with the base address (the footer links, canonical links and the sitemaps) into the tree. It checks letter case exactly, because the host does, and that a link to a part of a page names an id the page has. It does not replace `check-output.ps1`, which runs on each deliverable and still must pass (`-Deliverable manual-windows`, and so on): it checks what only the whole tree can show. The root pages (`site-root`) are not run through `check-output.ps1` on their own: their links lead to the releases, which exist only in the assembled tree, so `check-site.ps1` is their link gate.
 
 ### 7.4 Keeping an earlier release
 

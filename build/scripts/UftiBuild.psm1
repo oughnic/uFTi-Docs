@@ -270,7 +270,7 @@ function Read-UftiPublications {
         if ($base -notmatch '^https://[a-z0-9.-]+(:\d+)?/([A-Za-z0-9._~-]+/)*$') { $problems.Add("[site] base-url '$base' must be an https address that ends with a slash") }
     }
 
-    $reserved = 'govuk', 'theme', 'pagefind', 'latest', 'start', 'logs', 'temp', 'reports'
+    $reserved = 'govuk', 'theme', 'pagefind', 'latest', 'start', 'logs', 'temp', 'reports', 'accessibility', 'privacy'
     $platforms = [System.Collections.Generic.List[object]]::new()
     foreach ($slug in $ini.Keys) {
         if ($slug -eq 'site') { continue }
@@ -306,11 +306,19 @@ function Read-UftiPublications {
 
 function Get-UftiFooterLinks {
     # The footer's link pairs, with the platform's own first. The shared pairs (accessibility
-    # statement, source, licence) are read from common.xml; its "Choose your device" pair is replaced.
+    # statement, privacy policy, source, licence) are read from common.xml; its "Choose your device"
+    # pair is replaced, and the addresses of the two site pages are made from base-url (they are
+    # pages of the root of the tree, DEC-150).
     param([Parameter(Mandatory)]$Publications, [Parameter(Mandatory)][ValidateSet('root', 'manual', 'quick-start')][string]$Kind, $Platform)
     $common = Get-Content -LiteralPath (Join-Path (Get-UftiRepoRoot) 'build' 'projects' 'common.xml') -Raw
-    $shared = if ($common -match 'name="govuk\.footer\.links"\s+value="(?<v>[^"]+)"') { @($Matches['v'] -split ';' | Where-Object { $_ -and $_ -notlike 'Choose your device|*' }) } else { @() }
     $b = $Publications.BaseUrl
+    $sitePages = @{ 'Accessibility statement' = "${b}accessibility/"; 'Privacy policy' = "${b}privacy/" }
+    $shared = if ($common -match 'name="govuk\.footer\.links"\s+value="(?<v>[^"]+)"') {
+        @($Matches['v'] -split ';' | Where-Object { $_ -and $_ -notlike 'Choose your device|*' } | ForEach-Object {
+            $label = ($_ -split '\|', 2)[0]
+            if ($sitePages.ContainsKey($label)) { "$label|$($sitePages[$label])" } else { $_ }
+        })
+    } else { @() }
     $own = @("Choose your device|$b")
     if ($Kind -ne 'root') {
         $own += "Version $($Platform.Release): other versions|$b$($Platform.Slug)/"

@@ -23,12 +23,12 @@ uFTi will be hosted at **ufti.com** (DEC-033). The site is in two parts with one
 | `/docs/<device>/latest/` | The current release | A redirect to the current release's manual (and `latest/start/` to its Quick Start). It is for people; the app links to its own release. | Hosting configuration |
 | `/support/` | Support | How to get help, report a problem, give feedback. Links to issues. | Marketing page |
 | `/about/` | About | Who makes it, the project's status, open-source status when it applies. | Marketing page |
-| `/privacy/` | Privacy | What the app and the site do with data, stated as current behaviour with a date. | Marketing page, reviewed |
-| `/accessibility/` | Accessibility statement | For the site and the manuals, following the GOV.UK template. | Marketing page |
+| `/privacy/` (on `docs.ufti.com`) | Privacy policy | What the app, the documentation site and the stores do with personal data, in plain words, dated, and who is the data controller for a family tree. A hand-written DITA topic in `content/site/` (DEC-150, DEC-153). | DITA build (the root of the documentation tree), reviewed |
+| `/accessibility/` (on `docs.ufti.com`) | Accessibility statement | For the documentation site and its PDFs, following the GOV.UK template, claiming only what the checks do (DEC-151). | DITA build (the root of the documentation tree) |
 | `/legal/` | Licences and trademarks | Apache-2.0, font and component licences, the uFTi name and logo. Terms of service when a service exists. | Marketing page |
 | `/news/` or `/releases/` | What is new | Release notes for the app and the manuals. | Marketing page, fed from the manuals' "What is new" |
 
-The manuals' footers link to the chooser, the other versions of that device's manual (and the Quick Start beside the manual, or the manual beside the Quick Start), the accessibility statement, support and the source repository.
+The manuals' footers link to the chooser, the other versions of that device's manual (and the Quick Start beside the manual, or the manual beside the Quick Start), the accessibility statement and the privacy policy (pages of the documentation site itself, DEC-150), support and the source repository.
 
 ### 2.1 Releases below devices
 
@@ -69,7 +69,7 @@ The client is free today. Revenue may come later from AI models or a record-sync
 |---|---|
 | Topics never say "free", "always", "forever", "no account", "no sign-in" or where data is or is not stored. | Each becomes false the day a service ships. |
 | Pricing, plans and account facts live on marketing pages, and in the manuals only through keys that can be changed in one place. | One edit, every manual. |
-| The privacy page states current behaviour, with the app version and date it describes. | True today, honestly dated tomorrow. |
+| The privacy policy states current behaviour, with the date and the app release it describes, and never says where family tree data is kept. | True today, honestly dated tomorrow. |
 | Sync and AI do not appear in the manuals until they ship. The chapter structure leaves room: "Keep your tree in step across devices" and "Assistants" are reserved chapter names. | No rewriting, no broken promises. |
 | Nothing in the documentation describes what the app does with data beyond what a user can observe. | Observable behaviour only, and nothing that constrains a future design. |
 
