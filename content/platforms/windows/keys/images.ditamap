@@ -31,7 +31,7 @@
     <topicmeta><linktext>The New workspace window, with Brontë family of Haworth typed as the name and the Create and Cancel buttons below</linktext></topicmeta>
   </keydef>
   <keydef keys="img-workspaces" href="../images/workspaces.png" format="png" scope="local" platform="WindowsWinUI">
-    <topicmeta><linktext>The Workspaces screen with one card, Brontë family of Haworth, marked Active and showing how many people, families and events it holds</linktext></topicmeta>
+    <topicmeta><linktext>The Workspaces screen with two cards, Brontë family of Haworth (2), marked Active, and Brontë family of Haworth, each showing how many people, families and events it holds</linktext></topicmeta>
   </keydef>
   <keydef keys="img-remove-workspace" href="../images/remove-workspace.png" format="png" scope="local" platform="WindowsWinUI">
     <topicmeta><linktext>The Remove workspace question, which says the family tree file on disk is not deleted, with Remove and Cancel buttons</linktext></topicmeta>
@@ -42,11 +42,14 @@
   <keydef keys="img-save-as-version" href="../images/save-as-version.png" format="png" scope="local" platform="WindowsWinUI">
     <topicmeta><linktext>The question Which version of GEDCOM, with GEDCOM 7 marked as recommended, GEDCOM 5.5.1 for older programs, and a Cancel button</linktext></topicmeta>
   </keydef>
+  <keydef keys="img-save-as-message" href="../images/save-as-message.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The Workspaces screen after a copy is saved, with a dark message at the bottom that names the file, Brontë family of Haworth.ged, and the folder, Family trees, and says which version of GEDCOM it was written as</linktext></topicmeta>
+  </keydef>
   <keydef keys="img-import-summary" href="../images/import-summary.png" format="png" scope="local" platform="WindowsWinUI">
-    <topicmeta><linktext>The summary after a file opens, listing nine people, two families, twenty events and twenty-two sources, and saying that changes are saved to this file</linktext></topicmeta>
+    <topicmeta><linktext>The summary after a file opens, titled Opened Brontë family of Haworth (2), listing nine people, two families, twenty events, twenty-two sources and three pictures, and saying that changes are saved to this file</linktext></topicmeta>
   </keydef>
   <keydef keys="img-search-results" href="../images/search-results.png" format="png" scope="local" platform="WindowsWinUI">
-    <topicmeta><linktext>The results of a search for Patrick, with two people and one marriage listed side by side</linktext></topicmeta>
+    <topicmeta><linktext>The results of a search for Patrick, with two people and one marriage listed side by side, and a small badge on each person that says how many sources they have</linktext></topicmeta>
   </keydef>
   <keydef keys="img-search-refine" href="../images/search-refine.png" format="png" scope="local" platform="WindowsWinUI">
     <topicmeta><linktext>The Refine by panel under the search box, with check boxes for dates, sex, place, event type and sound-alike matches</linktext></topicmeta>
@@ -62,6 +65,9 @@
   </keydef>
   <keydef keys="img-add-record-lower" href="../images/add-record-lower.png" format="png" scope="local" platform="WindowsWinUI">
     <topicmeta><linktext>The lower part of the Add a record list, with Basic details, Family, Repository, Research note, Submitter and a More forms button</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-add-record-more-forms" href="../images/add-record-more-forms.png" format="png" scope="local" platform="WindowsWinUI">
+    <topicmeta><linktext>The end of the opened Add a record list for Charlotte Brontë, where each census form for a year after she died has a line under it that says nobody in the tree was alive then, and two more forms say why they are not offered</linktext></topicmeta>
   </keydef>
   <keydef keys="img-family-form" href="../images/family-form.png" format="png" scope="local" platform="WindowsWinUI">
     <topicmeta><linktext>The Family form with Patrick Brontë as husband, Maria Branwell as wife, and the marriage date and place filled in</linktext></topicmeta>
@@ -100,7 +106,7 @@
     <topicmeta><linktext>The Sources list after one book has been added, with Edit and Remove beside it</linktext></topicmeta>
   </keydef>
   <keydef keys="img-notes" href="../images/notes.png" format="png" scope="local" platform="WindowsWinUI">
-    <topicmeta><linktext>The Notes page for Patrick Brontë, showing a note that says he was curate of Haworth, with Edit and Delete note buttons</linktext></topicmeta>
+    <topicmeta><linktext>The Notes page for Patrick Brontë, showing a note that says he was curate of Haworth, a small badge that says Sources: 0, and Edit and Delete note buttons</linktext></topicmeta>
   </keydef>
   <keydef keys="img-note-form" href="../images/note-form.png" format="png" scope="local" platform="WindowsWinUI">
     <topicmeta><linktext>The note form, with one box for the note and Save and Cancel buttons</linktext></topicmeta>

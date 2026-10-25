@@ -57,8 +57,8 @@
     "width": 800
   },
   "img-import-summary": {
-    "y": 450,
-    "height": 690,
+    "y": 440,
+    "height": 720,
     "x": 690,
     "reason": "Keeps the summary and its button; the rest is the screen behind it, dimmed.",
     "width": 1160
@@ -176,6 +176,13 @@
     "width": 1267
   },
   "img-research-notes": {
+    "y": 32,
+    "height": 761,
+    "x": 0,
+    "reason": "Removes the black band the in-app capture leaves where the title bar is.",
+    "width": 1267
+  },
+  "img-save-as-message": {
     "y": 32,
     "height": 761,
     "x": 0,

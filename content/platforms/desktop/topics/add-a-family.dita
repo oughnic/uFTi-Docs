@@ -38,7 +38,7 @@
         </stepresult>
       </step>
       <step>
-        <cmd>Select the box <uicontrol keyref="ui-second-partner"/> and type the start of the other partner's name.</cmd>
+        <cmd>Select the box <uicontrol keyref="ui-second-partner"/> and type the other partner's name.</cmd>
         <stepresult>
           <p>A short list of people appears under the box.</p>
         </stepresult>
@@ -46,7 +46,7 @@
       <step>
         <cmd>Choose the person from the list.</cmd>
         <info>
-          <p>Typing is not enough. You must choose the name in the list.</p>
+          <p>If you type a whole name that only one person has, you can leave the box and <keyword keyref="product-name"/> takes that person. If more than one person has the name, the box turns red. It says <q>Choose a person from the list for 'Wife / partner 2', or clear the box.</q> Then choose the right one from the list.</p>
         </info>
       </step>
       <step>

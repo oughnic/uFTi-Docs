@@ -32,7 +32,7 @@
       <step>
         <cmd>Choose <uicontrol keyref="ui-search"/>.</cmd>
         <stepresult>
-          <p>The results come in two lists side by side. The people come first. The events come next to them.</p>
+          <p>The results come in two lists side by side. The people come first. The events come next to them. A small badge on each person, such as <q>Sources: 10</q>, says how many sources back that person up.</p>
           <fig>
             <image keyref="img-search-results"/>
           </fig>

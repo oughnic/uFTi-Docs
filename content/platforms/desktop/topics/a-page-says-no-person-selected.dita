@@ -23,7 +23,7 @@
     </condition>
     <troubleSolution>
       <cause>
-        <p>These pages show one person at a time. You have not opened anyone yet. The chip that starts with <uicontrol keyref="ui-showing"/> names nobody.</p>
+        <p>These pages show one person at a time. You have not opened anyone yet, or you removed the tree that the person came from. The chip that starts with <uicontrol keyref="ui-showing"/> names nobody.</p>
       </cause>
       <remedy>
         <steps>

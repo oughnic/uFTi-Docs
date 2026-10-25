@@ -93,7 +93,7 @@ These are not labels in a key map. The pages do not repeat them.
 
 | What is on screen | What the documentation does | Change |
 |---|---|---|
-| A workspace's name printed with hyphens | Pictures show the app as it is (DEC-091). | **Asked** |
+| A workspace's name printed with hyphens | Fixed in the next Alpha build: the summary after a file opens is titled as its card is (DEC-131). The page no longer mentions it. | **Fixed** |
 | *Entered via* and a version number on a person's page | Pictures show the app as it is (DEC-091). | **Asked** |
 | The *Citation reference* box on the source form | Pages tell the reader to fill in *Title* only, because the box does not keep what is typed (DEC-090). | **Asked** (a fix, not a new word) |
 | File paths printed on cards | Pictures are cropped so no path shows (DEC-091, DEC-096). | **Asked** (DEC-097) |
@@ -113,7 +113,8 @@ Read from the Windows app (version 0.1.0.1, Alpha-1 build) on 24 October 2026 ([
 | `ui-research-questions-and-notes` | Research questions and notes | The menu item and page for your list of questions and ideas. | none |
 | `ui-preferences` | Preferences | The menu item and page for the colours and the light or dark look. | none |
 | `ui-about-ufti` | About uFTi | The menu item for the page about the app. | none |
-| `ui-showing` | Showing | The start of the chip at the top that names the person the pages show. | none |
+| `ui-more-forms` | More forms | The button at the end of the Add a record list that shows the forms that do not fit the person. The app adds a count in brackets, such as *More forms (10)*. | none |
+| `ui-showing` | Showing | The start of the chip at the top that names the person the pages show. The chip clears when the tree that person came from is removed. | none |
 | `ui-show-details` | Show details | The link on a workspace card that shows its file. | none |
 | `ui-remove` | Remove | The button on a card, or in a box, that takes a tree off the list, or a source off a fact. | none |
 | `ui-cancel` | Cancel | The button that leaves a box or a form without a change. | none |
