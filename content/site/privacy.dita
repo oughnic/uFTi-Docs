@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="privacy" xml:lang="en-GB">
+  <title>Privacy policy</title>
+  <shortdesc>How Oughtibridge Ltd treats personal data in the uFTi app and on this website, and what you can ask us.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-25"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Reference</category>
+      <keywords>
+        <keyword>data protection</keyword>
+        <keyword>personal data</keyword>
+        <keyword>cookies</keyword>
+        <keyword>data controller</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <refbody>
+    <section id="short-version">
+      <title>The short version</title>
+      <ul>
+        <li>We do not collect personal data through the uFTi app.</li>
+        <li>We cannot see the family trees that you make.</li>
+        <li>This website and its PDFs do not use cookies, analytics or tracking scripts.</li>
+        <li>A store may pass some personal data to us. This policy says what.</li>
+        <li>If you record information about other people in uFTi, you are the data controller for it.</li>
+      </ul>
+      <p>This policy describes how uFTi and this website work on 25 October 2026. That is the early test version of uFTi, called Alpha-1.</p>
+    </section>
+    <section id="who-we-are">
+      <title>Who we are</title>
+      <p>Oughtibridge Ltd is a company in the United Kingdom. It makes uFTi and this website. In this policy, "we" means Oughtibridge Ltd.</p>
+      <p>We decide how to use the personal data that this policy says we may hold. That makes us the data controller for it.</p>
+      <p>To contact us, use the <xref href="https://github.com/oughnic/uFTi-Docs/issues/new" scope="external" format="html">issue form on our GitHub page</xref>. Anything that you write there is public. So do not put private details in it. Say that you want to talk to us in private about your data, and we will tell you how.</p>
+    </section>
+    <section id="this-website">
+      <title>This website and the PDFs</title>
+      <p>This website does not set cookies. It has no analytics, no advertising and no tracking scripts.</p>
+      <p>Every page loads only things that come from this site. Your browser is told to refuse anything else.</p>
+      <p>Search works inside your browser. What you type into it is not sent to us.</p>
+      <p>The company that hosts this site may keep ordinary records of requests. These can show the time, the page that was asked for and the internet address of the device. We do not add anything to the site to follow you from page to page.</p>
+      <p>The PDFs are plain documents. We do not add tracking to them.</p>
+      <p>Some links lead to other websites, such as GitHub. Those sites have their own privacy policies. If you write in a GitHub issue, what you write is public and GitHub holds it.</p>
+    </section>
+    <section id="the-app">
+      <title>The uFTi app</title>
+      <p>We do not collect personal data through the app. uFTi has no usage tracking and no analytics. It does not send crash reports to us.</p>
+      <p>We cannot see the family trees that people make with uFTi. We do not collect, receive or have access to what you record in it.</p>
+      <p>If you ask us for help, you may choose to send us a message or a file. We then have what you send. We use it only to help you.</p>
+      <p>Your phone, tablet or computer may send crash reports to the company that makes its system. Your settings on the device decide this. It is part of the device, not part of uFTi, and we do not control it.</p>
+      <p>A family tree can hold a picture that lives on a website. When it does, uFTi asks that website for the picture so that it can show it. That website can see the internet address of your device, as any website that you visit can. We do not see this. The app does not use the internet for anything else.</p>
+    </section>
+    <section id="your-tree">
+      <title>Your tree and other people's information</title>
+      <p>uFTi helps you record facts about people. Some may be your relatives. Some may be alive. The name, dates and family ties of a person who is alive are personal data.</p>
+      <p>You decide what to record about people, and why. That makes you the data controller for it. You are responsible for it under data protection law. This includes what you record about people who are alive.</p>
+      <p>The law treats purely personal use differently from other use. If you share or publish a tree, take more care. The <xref href="https://ico.org.uk/" scope="external" format="html">Information Commissioner's Office</xref> explains the rules.</p>
+      <p>We never receive your tree, so we cannot answer questions about it. If you are named in a tree that someone else made, ask the person who made it.</p>
+    </section>
+    <section id="stores">
+      <title>What a store tells us</title>
+      <p>uFTi is offered through app stores, such as the Microsoft Store, Google Play and the Apple App Store. A store has its own privacy policy for what it holds about you.</p>
+      <p>The Microsoft Store passes some information to app publishers through a service called Partner Center. For uFTi, this can include:</p>
+      <ul>
+        <li>reports on downloads and on how the app is used;</li>
+        <li>reports on crashes and on how well the app is running;</li>
+        <li>reviews, with the name of the person who wrote each one;</li>
+        <li>contact details, if someone asks us for support through the store.</li>
+      </ul>
+      <p>Other stores may pass on information of the same kinds. This is set up by the store and your device, not by uFTi.</p>
+      <p>We send early test versions to people we invite through a store. We know the email addresses that we use to invite them.</p>
+      <p>We use this information to look after and improve uFTi. We also use it to answer reviews and support requests. We keep it only as long as we need it for that. We do not sell it. We do not use it to build profiles of people.</p>
+    </section>
+    <section id="your-rights">
+      <title>Your rights</title>
+      <p>Under UK GDPR, you can ask us:</p>
+      <ul>
+        <li>whether we hold personal data about you, and for a copy of it;</li>
+        <li>to correct personal data that is wrong;</li>
+        <li>to delete it;</li>
+        <li>to limit how we use it;</li>
+        <li>to stop using it;</li>
+        <li>to give it to you in a form that you can move.</li>
+      </ul>
+      <p>Which of these apply depends on the case. We hold very little, so we may hold nothing about you.</p>
+      <p>To ask, use the contact route in the section "Who we are".</p>
+      <p>You can also complain to the Information Commissioner's Office, the UK regulator. You can <xref href="https://ico.org.uk/make-a-complaint/" scope="external" format="html">make a complaint on its website</xref>.</p>
+    </section>
+    <section id="changes">
+      <title>Changes to this policy</title>
+      <p>We last checked this policy on 25 October 2026. We change it when uFTi or this website changes.</p>
+    </section>
+    <section id="words-we-use">
+      <title>Words we use</title>
+      <dl>
+        <dlentry>
+          <dt>Analytics</dt>
+          <dd>Counting how many people use something, and how they use it.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Cookie</dt>
+          <dd>A small file that a website asks your browser to keep.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Data controller</dt>
+          <dd>The person or group that decides what personal data is collected, and why. The controller is responsible for looking after it.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Information Commissioner's Office</dt>
+          <dd>The UK body that checks that people follow data protection law.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Internet address</dt>
+          <dd>The number that shows where a device is on the internet. It is also called an IP address.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Personal data</dt>
+          <dd>Information about a person who is alive, which can be used to name them or pick them out.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Tracking script</dt>
+          <dd>Code on a web page that records what a visitor does.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>UK GDPR</dt>
+          <dd>The main UK law about personal data.</dd>
+        </dlentry>
+      </dl>
+    </section>
+  </refbody>
+</reference>

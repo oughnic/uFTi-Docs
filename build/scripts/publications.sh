@@ -52,7 +52,7 @@ pub_validate() { # prints every problem; returns 1 if there is one
   for slug in $(pub_platforms); do
     keyed=$((keyed + 1))
     [[ $slug =~ $PUB_SLUG_RE ]] || bad "[$slug] the section name is the platform's folder: lower case letters, digits and single hyphens only"
-    case $slug in govuk | theme | pagefind | latest | start | logs | temp | reports) bad "[$slug] '$slug' is a name the site uses for something else" ;; esac
+    case $slug in govuk | theme | pagefind | latest | start | logs | temp | reports | accessibility | privacy) bad "[$slug] '$slug' is a name the site uses for something else" ;; esac
     for k in title device release manual quick-start; do [ -n "$(ini_get "$slug" "$k")" ] || bad "[$slug] $k is missing"; done
     for k in $(ini_keys "$slug"); do case $k in title | device | release | app-version | manual | quick-start) ;; *) bad "[$slug] unknown key '$k'" ;; esac; done
     rel=$(ini_get "$slug" release)
@@ -85,7 +85,9 @@ pub_base() { ini_get site base-url; }
 pub_footer() { # kind (root|manual|quick-start) slug release -> the footer link pairs
   local kind=$1 slug=$2 rel=$3 base shared own
   base=$(pub_base)
-  shared=$(sed -n 's/.*name="govuk\.footer\.links"[[:space:]]*value="\([^"]*\)".*/\1/p' "$PUB_ROOT/build/projects/common.xml" | tr ';' '\n' | grep -v '^Choose your device|' | paste -sd ';' -)
+  # the two site pages are pages of the root of the tree: their addresses are made from base-url (DEC-150)
+  shared=$(sed -n 's/.*name="govuk\.footer\.links"[[:space:]]*value="\([^"]*\)".*/\1/p' "$PUB_ROOT/build/projects/common.xml" | tr ';' '\n' | grep -v '^Choose your device|' \
+    | sed -e "s#^Accessibility statement|.*#Accessibility statement|${base}accessibility/#" -e "s#^Privacy policy|.*#Privacy policy|${base}privacy/#" | paste -sd ';' -)
   own="Choose your device|$base"
   if [ "$kind" = manual ]; then own="$own;Version $rel: other versions|$base$slug/;Quick Start|$base$slug/$rel/start/"
   elif [ "$kind" = quick-start ]; then own="$own;Version $rel: other versions|$base$slug/;Full manual|$base$slug/$rel/"; fi
