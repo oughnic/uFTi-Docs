@@ -65,6 +65,8 @@ jobs:
         run: build/scripts/kept-from-branch.sh "$PUBLISH_BRANCH" kept
       - name: Build the tree and check its links
         run: build/scripts/build-site.sh --keep kept --archive
+      - name: Check the tree again, with the PowerShell checker (the bash build is not checked by it otherwise)
+        run: pwsh -NoProfile -File build/scripts/check-site.ps1
       - name: Keep the tree
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:

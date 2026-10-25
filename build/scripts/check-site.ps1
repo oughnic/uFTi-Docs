@@ -157,6 +157,14 @@ function Resolve-TreePath {
 $pages = @($files | Where-Object { $_.EndsWith('.html') -and $_ -notmatch '(^|/)pagefind/' } | Sort-Object)
 $checked = 0; $external = 0; $skipped = 0; $crossRoots = 0
 $externalSet = [System.Collections.Generic.HashSet[string]]::new()
+# The not-found page is served at the address that was asked for, so a relative link in it (the stylesheet, the
+# scripts, the platform pages) is looked for below that address and fails. Every link in it must be absolute.
+$nfFile = Join-Path $siteDir 'not-found.html'
+if (Test-Path -LiteralPath $nfFile) {
+    $nfLeft = [regex]::Matches([System.IO.File]::ReadAllText($nfFile), '(?:href|src)="(?!https?://|#|mailto:|/)[^"]*"')
+    if ($nfLeft.Count -gt 0) { Bad "not-found.html has $($nfLeft.Count) relative link(s), such as $($nfLeft[0].Value): it is served at the address that was asked for, so they fail there (they must start with the base address)" }
+}
+
 foreach ($page in $pages) {
     $text = [System.IO.File]::ReadAllText((Join-Path $siteDir $page))
     $fromDir = [System.IO.Path]::GetDirectoryName($page) -replace '\\', '/'
