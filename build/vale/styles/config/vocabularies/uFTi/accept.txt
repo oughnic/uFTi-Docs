@@ -8,3 +8,5 @@ workspace
 workspaces
 Ctrl
 Esc
+PDFs
+(?-i)Center

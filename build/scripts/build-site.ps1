@@ -186,6 +186,15 @@ foreach ($p in $pub.Platforms) {
     Write-Text (Join-Path $genDir $p.Slug 'index.dita') (New-PlatformTopic -Platform $p -Rows $listing[$p.Slug])
     [void]$map.AppendLine("  <topicref href=""$($p.Slug)/index.dita""/>")
 }
+# The site's own pages (content/site/): hand-written topics, copied into the sources of the root so that the root map
+# names nothing outside its own folder (the plugin's GOVK016W). Each is written to <name>/index.html at the top of the tree.
+foreach ($need in 'accessibility', 'privacy') { if (-not (Test-Path -LiteralPath (Join-Path $root 'content' 'site' "$need.dita"))) { Fail "content/site/$need.dita is missing: the footer of every page links to it" } }
+foreach ($sp in Get-ChildItem -LiteralPath (Join-Path $root 'content' 'site') -Filter '*.dita' | Sort-Object Name) {
+    $dest = Join-Path $genDir $sp.BaseName 'index.dita'
+    New-Item -ItemType Directory -Path (Split-Path -Parent $dest) -Force | Out-Null
+    Copy-Item -LiteralPath $sp.FullName -Destination $dest
+    [void]$map.AppendLine("  <topicref href=""$($sp.BaseName)/index.dita"" toc=""no""/>")
+}
 [void]$map.AppendLine('  <topicref href="not-found.dita" toc="no"/>')
 [void]$map.AppendLine('</map>')
 Write-Text (Join-Path $genDir 'ufti-docs.ditamap') $map.ToString()

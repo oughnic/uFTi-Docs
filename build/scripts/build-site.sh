@@ -142,9 +142,15 @@ rm -rf "$gen_dir"; mkdir -p "$gen_dir"
   echo '<map id="ufti-docs" xml:lang="en-GB">'
   echo '  <title>uFTi documentation</title>'
   for slug in $platforms; do echo "  <topicref href=\"$slug/index.dita\"/>"; done
+  # The site's own pages (content/site/): hand-written topics, copied into the sources of the root so that the root
+  # map names nothing outside its own folder (the plugin's GOVK016W). Each is written to <name>/index.html at the
+  # top of the tree.
+  for page in "$root"/content/site/*.dita; do echo "  <topicref href=\"$(basename "$page" .dita)/index.dita\" toc=\"no\"/>"; done
   echo '  <topicref href="not-found.dita" toc="no"/>'
   echo '</map>'
 } > "$gen_dir/ufti-docs.ditamap"
+for need in accessibility privacy; do [ -f "$root/content/site/$need.dita" ] || fail "content/site/$need.dita is missing: the footer of every page links to it"; done
+for page in "$root"/content/site/*.dita; do name=$(basename "$page" .dita); mkdir -p "$gen_dir/$name"; cp "$page" "$gen_dir/$name/index.dita"; done
 for slug in $platforms; do mkdir -p "$gen_dir/$slug"; platform_topic "$slug" > "$gen_dir/$slug/index.dita"; done
 cat > "$gen_dir/not-found.dita" <<EOF
 <?xml version="1.0" encoding="UTF-8"?>

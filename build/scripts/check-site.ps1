@@ -19,7 +19,10 @@
       followed into the tree; other addresses are counted and left alone;
     - a link to a part of a page (#...) names an id or anchor that page has;
     - each canonical address and each sitemap entry is the address of the page it is on, so a wrong
-      release or base address in a build shows up here.
+      release or base address in a build shows up here;
+    - the accessibility statement and the privacy policy are at the top of the tree, every page's
+      footer links them at addresses that start with the base address, and no page still links the
+      accessibility statement on the marketing site.
 
   Reports go to out/reports/site/. Exits 1 on any failure.
   Copyright 2026 Oughtibridge Ltd, Apache-2.0.
@@ -63,9 +66,9 @@ Write-UftiStep "Check the tree at $siteDir ($($files.Count) files)"
 
 # ---- Shape -------------------------------------------------------------------------------------------
 
-foreach ($need in 'index.html', 'not-found.html', 'staticwebapp.config.json', 'robots.txt', 'sitemap.xml') { if (-not $files.Contains($need)) { Bad "the root has no $need" } }
+foreach ($need in 'index.html', 'not-found.html', 'staticwebapp.config.json', 'robots.txt', 'sitemap.xml', 'accessibility/index.html', 'privacy/index.html') { if (-not $files.Contains($need)) { Bad "the root has no $need" } }
 $slugs = @($pub.Platforms | ForEach-Object Slug)
-$shared = 'govuk', 'theme'
+$shared = 'govuk', 'theme', 'accessibility', 'privacy'   # the shared folders and the two site pages (DEC-150)
 foreach ($top in Get-ChildItem -LiteralPath $siteDir -Directory) {
     if ($slugs -cnotcontains $top.Name -and $shared -cnotcontains $top.Name) { Bad "unexpected folder at the root: $($top.Name)/ (a platform is added in build/publications.ini)" }
 }
@@ -168,6 +171,14 @@ if (Test-Path -LiteralPath $nfFile) {
 foreach ($page in $pages) {
     $text = [System.IO.File]::ReadAllText((Join-Path $siteDir $page))
     $fromDir = [System.IO.Path]::GetDirectoryName($page) -replace '\\', '/'
+    # The footer of every page that has one links the two site pages, at the addresses base-url gives, and the old
+    # address of the accessibility statement (the marketing site) is gone (DEC-150).
+    if ($text -match 'class="govuk-footer"') {
+        foreach ($want in "${base}accessibility/", "${base}privacy/") {
+            if ($text.IndexOf("href=""$want""", [System.StringComparison]::Ordinal) -lt 0) { Bad "${page}: the footer does not link $want" }
+        }
+    }
+    if ($text -match '(?<![\w.])ufti\.com/accessibility') { Bad "${page}: still links the accessibility statement on the marketing site (ufti.com/accessibility), which is now at ${base}accessibility/" }
     foreach ($m in $linkRegex.Matches($text)) {
         $url = [System.Net.WebUtility]::HtmlDecode(($m.Groups[1].Value + $m.Groups[2].Value)).Trim()
         if ($url -eq '') { continue }

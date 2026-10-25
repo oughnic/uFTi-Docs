@@ -67,6 +67,32 @@ jobs:
         run: build/scripts/build-site.sh --keep kept --archive
       - name: Check the tree again, with the PowerShell checker (the bash build is not checked by it otherwise)
         run: pwsh -NoProfile -File build/scripts/check-site.ps1
+      # Every page of the tree, the root and platform pages and the two site pages included, goes through
+      # axe-core (WCAG 2.2 AA) and the Nu HTML Checker. The accessibility statement says so (DEC-151, DEC-152).
+      - name: Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '22'
+      - name: Playwright's browser (cached by the lock file)
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('build/tools.lock') }}
+      - name: Bootstrap the page checkers
+        run: build/scripts/bootstrap.sh --only vnu,plugin-tools
+      - name: Install the accessibility runner
+        working-directory: .tools/plugin-tools/tools/a11y
+        run: |
+          npm ci --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Every page of the tree (axe-core, WCAG 2.2 AA, no exceptions, and the Nu HTML Checker)
+        run: |
+          cp build/scripts/a11y.mjs build/scripts/a11y-exceptions.json .tools/plugin-tools/tools/a11y/
+          # not-found.html in the tree has absolute links (it is served at the address that was asked for), so opened
+          # from a file it has no stylesheet; the same page before that rewrite, in out/site-root, is the one to check
+          mapfile -t pages < <(find "$GITHUB_WORKSPACE/out/site" -name '*.html' ! -name not-found.html | sort)
+          (cd .tools/plugin-tools/tools/a11y && node a11y.mjs "${pages[@]}" "$GITHUB_WORKSPACE/out/site-root/not-found.html")
+          java -jar .tools/vnu/vnu.jar --errors-only --skip-non-html out/site
       - name: Keep the tree
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="accessibility" xml:lang="en-GB">
+  <title>Accessibility statement</title>
+  <shortdesc>How accessible the uFTi documentation website and its PDFs are, how we check them, and how to tell us about a problem.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-25"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Reference</category>
+      <keywords>
+        <keyword>WCAG</keyword>
+        <keyword>PDF/UA</keyword>
+        <keyword>screen reader</keyword>
+        <keyword>barrier</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <refbody>
+    <section id="about-this-statement">
+      <title>About this statement</title>
+      <p>This statement is about the uFTi documentation website and the PDFs on it. It is not about the uFTi app. Each manual describes the accessibility features of the app where it covers them.</p>
+      <p>Oughtibridge Ltd runs this website. We want as many people as possible to be able to use it. We used the layout of the GOV.UK accessibility statement as a guide.</p>
+    </section>
+    <section id="what-we-aim-for">
+      <title>What we aim for</title>
+      <p>The web pages aim to meet WCAG 2.2 level AA. These are the international rules for accessible web pages. The site is built with components from the GOV.UK Design System. They give every page headings, landmarks, a skip link, clear focus marks and enough contrast.</p>
+      <p>The PDFs aim to meet PDF/UA-1. This is the standard for accessible PDFs. Each PDF has a structure that a screen reader can follow.</p>
+      <p>We chose the colours and the fonts of the site for clear reading. We check that every pair of colours in our theme has enough contrast.</p>
+      <p>The words are written for a reader of about 11 years old.</p>
+    </section>
+    <section id="what-we-check">
+      <title>What we check</title>
+      <p>These checks run by machine on every change to this site. A change that fails one of them cannot be merged.</p>
+      <table id="checks">
+        <title>Checks that run by machine</title>
+        <tgroup cols="2">
+          <colspec colname="c1" colwidth="1*"/>
+          <colspec colname="c2" colwidth="3*"/>
+          <thead>
+            <row>
+              <entry>Check</entry>
+              <entry>What it finds</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>axe-core</entry>
+              <entry>Problems against WCAG 2.2 level AA, on every page of the site, in a real browser. We allow no exceptions.</entry>
+            </row>
+            <row>
+              <entry>Nu HTML Checker</entry>
+              <entry>Pages with faulty code. Each page must have one main heading and one main area.</entry>
+            </row>
+            <row>
+              <entry>Theme check</entry>
+              <entry>Pairs of colours that do not have enough contrast.</entry>
+            </row>
+            <row>
+              <entry>veraPDF</entry>
+              <entry>PDFs that do not meet PDF/UA-1. For now it checks the PDFs of the Windows and Android phone manuals.</entry>
+            </row>
+            <row>
+              <entry>Font check</entry>
+              <entry>PDFs where a font is not stored inside the file.</entry>
+            </row>
+            <row>
+              <entry>Picture check</entry>
+              <entry>Pictures with no alternative text. Every picture has it.</entry>
+            </row>
+            <row>
+              <entry>Reading level</entry>
+              <entry>Text that is too hard. The writing is measured for reading level.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section id="what-we-have-not-done">
+      <title>What we have not done</title>
+      <p>A person outside our team has not audited this site. Machine checks find only some problems, so we do not say that the site meets every rule.</p>
+      <p>We have not recorded any testing with screen readers or other assistive technology. We plan to test with them before each release. When we do, we will say here what we found.</p>
+    </section>
+    <section id="known-limits">
+      <title>Known limits</title>
+      <ul>
+        <li>The pictures of the app are screenshots of its screens. Each has alternative text that says what it shows. The words inside a screenshot are part of the picture.</li>
+        <li>The manuals are written in British English only.</li>
+        <li>The PDFs of some manuals are not yet checked by veraPDF.</li>
+      </ul>
+    </section>
+    <section id="tell-us">
+      <title>Ask for another format or tell us about a problem</title>
+      <p>Each manual and Quick Start is on the website and in a PDF. If you need another format, or if you find a barrier, tell us.</p>
+      <p>Use the <xref href="https://github.com/oughnic/uFTi-Docs/issues/new" scope="external" format="html">issue form on our GitHub page</xref>. Anything that you write there is public. Do not put private details in it.</p>
+      <p>Tell us the address of the page, what went wrong and what you were using. Tell us the format that you need. We will look at each report.</p>
+    </section>
+    <section id="this-statement">
+      <title>About the date of this statement</title>
+      <p>We wrote this statement on 25 October 2026. It describes the checks that we run on that day. We will change it when the checks change.</p>
+    </section>
+    <section id="words-we-use">
+      <title>Words we use</title>
+      <dl>
+        <dlentry>
+          <dt>Alternative text</dt>
+          <dd>A short written description of a picture. A screen reader reads it aloud.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Assistive technology</dt>
+          <dd>Tools that help people use a computer, such as a screen reader.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Contrast</dt>
+          <dd>How much one colour stands out from another. Text needs enough of it to be read.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>PDF/UA</dt>
+          <dd>The international standard for PDFs that people with disabilities can use.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Screen reader</dt>
+          <dd>A program that reads what is on the screen aloud.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>WCAG</dt>
+          <dd>The Web Content Accessibility Guidelines. Level AA is the level that most laws and policies ask for.</dd>
+        </dlentry>
+      </dl>
+    </section>
+  </refbody>
+</reference>

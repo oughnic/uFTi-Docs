@@ -418,6 +418,7 @@ foreach ($src in $Source) {
     Write-UftiStep "Lint $src"
     $strictSource = $Strict.IsPresent -or ((Rel $srcRoot) -eq 'content')
     $templateDir = (Join-Path $srcRoot 'templates') + [System.IO.Path]::DirectorySeparatorChar   # templates are checked as topics but belong to no manual (DEC-073)
+    $siteDir = (Join-Path $srcRoot 'site') + [System.IO.Path]::DirectorySeparatorChar   # the pages of the site's root (accessibility statement, privacy policy)
     function Test-IsTemplate { param([string]$Path) $Path.StartsWith($templateDir, [System.StringComparison]::OrdinalIgnoreCase) }
     # file and folder names
     foreach ($f in Get-ChildItem -LiteralPath $srcRoot -Recurse -File | Where-Object { $_.Extension -ne '.md' }) {   # Markdown documents (README.md, the dataset) are not DITA sources
@@ -525,7 +526,8 @@ foreach ($src in $Source) {
         }
         $cells = foreach ($slug in $manuals.Keys) { if ($included.ContainsKey($slug) -and $included[$slug] -contains $tp) { 'included' } elseif ($included.ContainsKey($slug)) { 'excluded' } else { 'no manual' } }
         $matrixRows.Add((Rel $tp) + ',' + ($cells -join ','))
-        if (-not $used.Contains($tp)) { Fail "orphan: the topic is in no manual's navigation" (Rel $tp) }
+        # the site's own pages (content/site/) belong to the root of the published tree, which build-site writes the map for
+        if (-not $used.Contains($tp) -and -not $tp.StartsWith($siteDir, [System.StringComparison]::OrdinalIgnoreCase)) { Fail "orphan: the topic is in no manual's navigation" (Rel $tp) }
     }
     foreach ($png in Get-ChildItem -LiteralPath $srcRoot -Recurse -Filter '*.png') {
         if (-not $usedImages.Contains($png.FullName)) { Fail "orphan: no key uses this picture" (Rel $png.FullName) }
