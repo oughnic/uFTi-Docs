@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://ufti.com/docs/macos/Alpha-1/sitemap.xml
+Sitemap: https://docs.ufti.com/macos/Alpha-1/sitemap.xml

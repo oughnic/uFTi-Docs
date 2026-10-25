@@ -2,39 +2,39 @@
 
 ## Quick Start
 
-- [Quick Start](https://ufti.com/docs/macos/Alpha-1/topics/quick-start/quick-start.html): Six short pages that take you from opening uFTi to your first person, with its source and a copy.
-- [Add your first person](https://ufti.com/docs/macos/Alpha-1/platforms/desktop/topics/add-your-first-person.html): Make your own workspace and add yourself, or someone you know well.
-- [Look around](https://ufti.com/docs/macos/Alpha-1/platforms/desktop/topics/look-around.html): See what the main menu items show for the person you added.
-- [Say where you found it](https://ufti.com/docs/macos/Alpha-1/topics/quick-start/say-where-you-found-it.html): Add a source to a fact, so you always know why you believe it.
-- [Keep it safe](https://ufti.com/docs/macos/Alpha-1/platforms/macos/topics/keep-it-safe.html): Save a copy of your tree as a file, and keep it somewhere else too.
-- [What next](https://ufti.com/docs/macos/Alpha-1/topics/quick-start/what-next.html): You have a tree, a person, a fact with its source and a copy, so choose where to go from here.
+- [Quick Start](https://docs.ufti.com/macos/Alpha-1/topics/quick-start/quick-start.html): Six short pages that take you from opening uFTi to your first person, with its source and a copy.
+- [Add your first person](https://docs.ufti.com/macos/Alpha-1/platforms/desktop/topics/add-your-first-person.html): Make your own workspace and add yourself, or someone you know well.
+- [Look around](https://docs.ufti.com/macos/Alpha-1/platforms/desktop/topics/look-around.html): See what the main menu items show for the person you added.
+- [Say where you found it](https://docs.ufti.com/macos/Alpha-1/topics/quick-start/say-where-you-found-it.html): Add a source to a fact, so you always know why you believe it.
+- [Keep it safe](https://docs.ufti.com/macos/Alpha-1/platforms/macos/topics/keep-it-safe.html): Save a copy of your tree as a file, and keep it somewhere else too.
+- [What next](https://docs.ufti.com/macos/Alpha-1/topics/quick-start/what-next.html): You have a tree, a person, a fact with its source and a copy, so choose where to go from here.
 
 ## Contents
 
-- [Five things to know](https://ufti.com/docs/macos/Alpha-1/topics/quick-start/five-things-to-know.html): The five ideas behind uFTi, in two minutes.
+- [Five things to know](https://docs.ufti.com/macos/Alpha-1/topics/quick-start/five-things-to-know.html): The five ideas behind uFTi, in two minutes.
 
 ## Bring in, share and keep safe
 
-- [Bring in, share and keep safe](https://ufti.com/docs/macos/Alpha-1/topics/workspaces/bring-in-share-and-keep-safe.html): What your workspace holds, why a GEDZIP file is the one to keep and send, and when a plain family tree file is better.
-- [Your workspace and its files](https://ufti.com/docs/macos/Alpha-1/topics/workspaces/your-workspace-and-its-files.html): A workspace is your family tree and its linked files, and a GEDZIP file holds all of them in one file.
-- [Opened files and copies](https://ufti.com/docs/macos/Alpha-1/platforms/desktop/topics/opened-files-and-copies.html): On a computer, uFTi works on the file you open, so make a copy first if you want the original left alone.
-- [Open a family tree file](https://ufti.com/docs/macos/Alpha-1/platforms/desktop/topics/open-a-family-tree-file.html): Bring a tree from another program, or a copy from a relative, into uFTi.
-- [Remove a tree from the list](https://ufti.com/docs/macos/Alpha-1/platforms/desktop/topics/remove-a-workspace.html): Take a tree off the Workspaces screen without deleting its file.
-- [Which file to send](https://ufti.com/docs/macos/Alpha-1/platforms/desktop/topics/which-file-to-send.html): Send a GEDZIP file to anyone who uses uFTi, and a plain family tree file only to an older program.
-- [Files beside your tree](https://ufti.com/docs/macos/Alpha-1/platforms/desktop/topics/files-beside-your-tree.html): The files you may see beside your tree: the tree itself and its backup.
+- [Bring in, share and keep safe](https://docs.ufti.com/macos/Alpha-1/topics/workspaces/bring-in-share-and-keep-safe.html): What your workspace holds, why a GEDZIP file is the one to keep and send, and when a plain family tree file is better.
+- [Your workspace and its files](https://docs.ufti.com/macos/Alpha-1/topics/workspaces/your-workspace-and-its-files.html): A workspace is your family tree and its linked files, and a GEDZIP file holds all of them in one file.
+- [Opened files and copies](https://docs.ufti.com/macos/Alpha-1/platforms/desktop/topics/opened-files-and-copies.html): On a computer, uFTi works on the file you open, so make a copy first if you want the original left alone.
+- [Open a family tree file](https://docs.ufti.com/macos/Alpha-1/platforms/desktop/topics/open-a-family-tree-file.html): Bring a tree from another program, or a copy from a relative, into uFTi.
+- [Remove a tree from the list](https://docs.ufti.com/macos/Alpha-1/platforms/desktop/topics/remove-a-workspace.html): Take a tree off the Workspaces screen without deleting its file.
+- [Which file to send](https://docs.ufti.com/macos/Alpha-1/platforms/desktop/topics/which-file-to-send.html): Send a GEDZIP file to anyone who uses uFTi, and a plain family tree file only to an older program.
+- [Files beside your tree](https://docs.ufti.com/macos/Alpha-1/platforms/desktop/topics/files-beside-your-tree.html): The files you may see beside your tree: the tree itself and its backup.
 
 ## 
 
-- [backup](https://ufti.com/docs/macos/Alpha-1/glossary/backup.html)
-- [fact](https://ufti.com/docs/macos/Alpha-1/glossary/fact.html)
-- [family tree file](https://ufti.com/docs/macos/Alpha-1/glossary/family-tree-file.html)
-- [GEDCOM](https://ufti.com/docs/macos/Alpha-1/glossary/gedcom.html)
-- [GEDZIP](https://ufti.com/docs/macos/Alpha-1/glossary/gedzip.html)
-- [pedigree](https://ufti.com/docs/macos/Alpha-1/glossary/pedigree.html)
-- [saved copy](https://ufti.com/docs/macos/Alpha-1/glossary/saved-copy.html)
-- [source](https://ufti.com/docs/macos/Alpha-1/glossary/source.html)
-- [workspace](https://ufti.com/docs/macos/Alpha-1/glossary/workspace.html)
+- [backup](https://docs.ufti.com/macos/Alpha-1/glossary/backup.html)
+- [fact](https://docs.ufti.com/macos/Alpha-1/glossary/fact.html)
+- [family tree file](https://docs.ufti.com/macos/Alpha-1/glossary/family-tree-file.html)
+- [GEDCOM](https://docs.ufti.com/macos/Alpha-1/glossary/gedcom.html)
+- [GEDZIP](https://docs.ufti.com/macos/Alpha-1/glossary/gedzip.html)
+- [pedigree](https://docs.ufti.com/macos/Alpha-1/glossary/pedigree.html)
+- [saved copy](https://docs.ufti.com/macos/Alpha-1/glossary/saved-copy.html)
+- [source](https://docs.ufti.com/macos/Alpha-1/glossary/source.html)
+- [workspace](https://docs.ufti.com/macos/Alpha-1/glossary/workspace.html)
 
 ## Optional
 
-- [Glossary](https://ufti.com/docs/macos/Alpha-1/glossary.html)
+- [Glossary](https://docs.ufti.com/macos/Alpha-1/glossary.html)

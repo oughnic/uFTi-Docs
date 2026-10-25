@@ -2,8 +2,8 @@
 
 ## Contents
 
-- [uFTi on Windows](https://ufti.com/docs/windows/index.html): The Quick Start and the manual for uFTi on a Windows computer. The latest version is Alpha-1.
-- [uFTi on Android phone](https://ufti.com/docs/android-phone/index.html): The Quick Start and the manual for uFTi on an Android phone. The latest version is Alpha-1.
-- [uFTi on iPhone](https://ufti.com/docs/iphone/index.html): The Quick Start and the manual for uFTi on an iPhone. The latest version is Alpha-1.
-- [uFTi on iPad](https://ufti.com/docs/ipad/index.html): The Quick Start and the manual for uFTi on an iPad. The latest version is Alpha-1.
-- [uFTi on Mac](https://ufti.com/docs/macos/index.html): The Quick Start and the manual for uFTi on a Mac. The latest version is Alpha-1.
+- [uFTi on Windows](https://docs.ufti.com/windows/index.html): The Quick Start and the manual for uFTi on a Windows computer. The latest version is Alpha-1.
+- [uFTi on Android phone](https://docs.ufti.com/android-phone/index.html): The Quick Start and the manual for uFTi on an Android phone. The latest version is Alpha-1.
+- [uFTi on iPhone](https://docs.ufti.com/iphone/index.html): The Quick Start and the manual for uFTi on an iPhone. The latest version is Alpha-1.
+- [uFTi on iPad](https://docs.ufti.com/ipad/index.html): The Quick Start and the manual for uFTi on an iPad. The latest version is Alpha-1.
+- [uFTi on Mac](https://docs.ufti.com/macos/index.html): The Quick Start and the manual for uFTi on a Mac. The latest version is Alpha-1.
