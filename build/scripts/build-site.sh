@@ -194,8 +194,8 @@ done
   route() { if [ -n "$first" ]; then first=""; else echo ","; fi; printf '%s' "$1"; }
   for slug in $platforms; do
     c=$(ini_get "$slug" release)
-    for from in "/$slug/latest" "/$slug/latest/"; do route "    { \"route\": \"$from\", \"redirect\": \"/$slug/$c/\", \"statusCode\": 302 }"; done
-    for from in "/$slug/latest/start" "/$slug/latest/start/"; do route "    { \"route\": \"$from\", \"redirect\": \"/$slug/$c/start/\", \"statusCode\": 302 }"; done
+    for from in "/$slug/latest"; do route "    { \"route\": \"$from\", \"redirect\": \"/$slug/$c/\", \"statusCode\": 302 }"; done
+    for from in "/$slug/latest/start"; do route "    { \"route\": \"$from\", \"redirect\": \"/$slug/$c/start/\", \"statusCode\": 302 }"; done
     route "    { \"route\": \"/$slug/latest/*\", \"redirect\": \"/$slug/$c/\", \"statusCode\": 302 }"
     # an earlier release does not change, so it may be cached for longer than the one being worked on
     rows_for "$slug" | while IFS='|' read -r r a m q cur; do [ "$cur" = 1 ] || echo "$r"; done > "$out_dir/temp/older.list"

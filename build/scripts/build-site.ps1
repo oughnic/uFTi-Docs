@@ -231,8 +231,8 @@ foreach ($p in $pub.Platforms) {
 $routes = [System.Collections.Generic.List[object]]::new()
 foreach ($p in $pub.Platforms) {
     $s = $p.Slug; $c = $p.Release
-    foreach ($from in "/$s/latest", "/$s/latest/") { $routes.Add([ordered]@{ route = $from; redirect = "/$s/$c/"; statusCode = 302 }) }
-    foreach ($from in "/$s/latest/start", "/$s/latest/start/") { $routes.Add([ordered]@{ route = $from; redirect = "/$s/$c/start/"; statusCode = 302 }) }
+    foreach ($from in "/$s/latest") { $routes.Add([ordered]@{ route = $from; redirect = "/$s/$c/"; statusCode = 302 }) }
+    foreach ($from in "/$s/latest/start") { $routes.Add([ordered]@{ route = $from; redirect = "/$s/$c/start/"; statusCode = 302 }) }
     $routes.Add([ordered]@{ route = "/$s/latest/*"; redirect = "/$s/$c/"; statusCode = 302 })
     # an earlier release does not change, so it may be cached for longer than the one being worked on
     foreach ($r in $listing[$s] | Where-Object { -not $_.Current }) { $routes.Add([ordered]@{ route = "/$s/$($r.Release)/*"; headers = [ordered]@{ 'cache-control' = 'public, max-age=86400' } }) }
