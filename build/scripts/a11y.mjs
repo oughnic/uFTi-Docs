@@ -12,8 +12,9 @@
 import { chromium } from "playwright";
 import { AxeBuilder } from "@axe-core/playwright";
 import { pathToFileURL, fileURLToPath } from "node:url";
-import { readdirSync, readFileSync, statSync } from "node:fs";
-import { dirname, join } from "node:path";
+import { readdirSync, readFileSync, statSync, existsSync, createReadStream } from "node:fs";
+import { createServer } from "node:http";
+import { dirname, join, relative, resolve, extname, sep } from "node:path";
 
 const args = process.argv.slice(2);
 if (args.length === 0) { console.error("usage: node a11y.mjs <site folder or page> [...]"); process.exit(2); }
@@ -24,14 +25,39 @@ function htmlUnder(target) {
   if (statSync(target).isDirectory()) return readdirSync(target).flatMap((name) => htmlUnder(join(target, name)));
   return target.endsWith(".html") ? [target] : [];
 }
-const files = args.flatMap(htmlUnder).sort();
+// A folder is served over http from its own root, so a link that starts with a slash (the not-found page's
+// stylesheet) resolves as it does on the site, and its Content-Security-Policy treats the page as same-origin.
+// A single page is loaded from disk.
+const types = { ".html": "text/html; charset=utf-8", ".css": "text/css", ".js": "text/javascript", ".json": "application/json", ".svg": "image/svg+xml", ".png": "image/png", ".woff2": "font/woff2", ".woff": "font/woff", ".ttf": "font/ttf", ".pdf": "application/pdf", ".xml": "text/xml", ".txt": "text/plain" };
+async function serve(root) {
+  const top = resolve(root);
+  const server = createServer((req, res) => {
+    let file = resolve(top, "." + decodeURIComponent(new URL(req.url, "http://localhost").pathname));
+    if (file !== top && !file.startsWith(top + sep)) { res.statusCode = 403; res.end(); return; }
+    if (existsSync(file) && statSync(file).isDirectory()) file = join(file, "index.html");
+    if (!existsSync(file)) { res.statusCode = 404; res.end("not found"); return; }
+    res.setHeader("content-type", types[extname(file)] ?? "application/octet-stream");
+    createReadStream(file).pipe(res);
+  });
+  await new Promise((done) => server.listen(0, "127.0.0.1", done));
+  return `http://127.0.0.1:${server.address().port}`;
+}
+const targets = [];   // { file, url }
+for (const arg of args) {
+  if (statSync(arg).isDirectory()) {
+    const base = await serve(arg);
+    for (const file of htmlUnder(arg)) targets.push({ file, url: `${base}/${relative(arg, file).split(sep).join("/")}` });
+  } else if (arg.endsWith(".html")) targets.push({ file: arg, url: pathToFileURL(arg).href });
+}
+targets.sort((a, b) => a.file.localeCompare(b.file));
+const files = targets.map((t) => t.file);
 
 const browser = await chromium.launch();
 const context = await browser.newContext();
 let failing = 0, accepted = 0;
-for (const file of files) {
+for (const { file, url } of targets) {
   const page = await context.newPage();
-  await page.goto(pathToFileURL(file).href, { waitUntil: "load" });
+  await page.goto(url, { waitUntil: "load" });
   const { violations } = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"]).analyze();
   const lines = [];
   for (const v of violations) {

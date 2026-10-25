@@ -165,7 +165,7 @@ echo; echo "== Assemble the tree"
 cp -R "$out_dir/site-root/." "$site_dir/"
 # The not-found page is served at the address that was asked for, so a relative link in it (the stylesheet, the
 # scripts, the platform pages) would be looked for below that address. Its links are made absolute, from base-url.
-BASE="$base" perl -pi -e 's{(href|src)="(?!https?://|#|mailto:|/)([^"]*)"}{$1="$ENV{BASE}$2"}g' "$site_dir/not-found.html"
+BASE="$(printf '%s' "$base" | sed -E 's#^https?://[^/]*##')" perl -pi -e 's{(href|src)="(?!https?://|#|mailto:|/)([^"]*)"}{$1="$ENV{BASE}$2"}g' "$site_dir/not-found.html"
 for slug in $platforms; do
   rel=$(ini_get "$slug" release); app=$(ini_get "$slug" app-version)
   ver_dir="$site_dir/$slug/$rel"
