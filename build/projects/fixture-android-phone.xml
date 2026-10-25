@@ -13,7 +13,7 @@
     <output href="fixture-android-phone"/>
     <publication idref="ufti-manual">
       <param name="govuk.service.name" value="uFTi fixture: Android phone"/>
-      <param name="govuk.site.url" value="https://ufti.com/docs/android-phone/"/>
+      <param name="govuk.site.url" value="https://docs.ufti.com/android-phone/"/>
       <param name="govuk.pdf.name" value="ufti-fixture-android-phone"/>
     </publication>
   </deliverable>

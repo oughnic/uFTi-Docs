@@ -377,7 +377,7 @@ The open questions that most affect the start of work:
 | Q19 | Will the app bundle the finished Brontë workspace as a built-in sample? The Quick Start's "explore a family" page depends on it. | Yes, recommended. Otherwise the Quick Start opens a downloaded file. |
 | Q16 | Should phone and tablet have separate manuals, or share one manual per operating system? | Separate manuals, five in all. WP2 and WP4 test this. |
 | Q26 | Which host for ufti.com: GitHub Pages with the custom domain, or a static host that supports headers and redirects? | GitHub Pages with the custom domain, until headers, redirects or logs are needed. |
-| Q24 | Are the manuals at `ufti.com/docs/`, or at `docs.ufti.com`? | `ufti.com/docs/`: one domain, one look, one search engine entry. |
+| Q24 | Are the manuals at `ufti.com/docs/`, or at `docs.ufti.com`? | **Answered, 25 October 2026: `docs.ufti.com`** (DEC-146). A Static Web App cannot take a CNAME at the root of a domain. |
 | Q23 | Which family for the Spanish edition, and who reviews it? | Chosen in WP16 by the criteria, with a Spanish-speaking reviewer. Nothing before then. |
 | Q5 | Which brand assets (logo, colours) are available? | A plain masthead with the service name until supplied. |
 | Q8 | Who reviews good practice content? | The maintainer, with a volunteer genealogist to be found. |

@@ -10,7 +10,7 @@
     <param name="govuk.feedback.url" value="https://github.com/oughnic/uFTi-Docs/issues/new"/>
     <param name="govuk.homepage.layout" value="auto"/>
     <param name="govuk.homepage.depth" value="2"/>
-    <param name="govuk.footer.links" value="Choose your device|https://ufti.com/docs/;Accessibility statement|https://ufti.com/accessibility/;Source|https://github.com/oughnic/uFTi-Docs;Licence|https://www.apache.org/licenses/LICENSE-2.0"/>
+    <param name="govuk.footer.links" value="Choose your device|https://docs.ufti.com/;Accessibility statement|https://ufti.com/accessibility/;Source|https://github.com/oughnic/uFTi-Docs;Licence|https://www.apache.org/licenses/LICENSE-2.0"/>
     <!-- Search, print and PDF are required, so a missing tool stops the build instead of leaving a
          gap. Bootstrap installs Pagefind and DesignSystemPDF on every machine. -->
     <param name="govuk.search" value="yes"/>

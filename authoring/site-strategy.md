@@ -59,7 +59,7 @@ The documentation tree is meant for **Azure Static Web Apps** (DEC-142), a stati
 
 The marketing pages (section 4) are not part of the tree. Where they are hosted is still open. If Static Web Apps serves only the documentation, it is bound to the address that `base-url` in `build/publications.ini` names, and that value is the only one to change. GitHub Pages remains a possible host for the marketing pages: it serves a custom domain over HTTPS but sets no custom headers and has no redirects, a soft size limit of about a gigabyte and a bandwidth limit of about a hundred gigabytes a month.
 
-The build parameters that depend on the address come from the release in `build/publications.ini`, not from the project files: `govuk.site.url` is `https://ufti.com/docs/<device>/<release>/` for each manual, with `start/` below it for the Quick Start, and `https://ufti.com/good-practice/` for the guide.
+The build parameters that depend on the address come from the release in `build/publications.ini`, not from the project files: `govuk.site.url` is `https://docs.ufti.com/<device>/<release>/` for each manual, with `start/` below it for the Quick Start (DEC-146). The guide, when it is built, is published on the same host unless the maintainer decides otherwise.
 
 ## 6. Business-model independence
 
