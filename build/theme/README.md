@@ -11,7 +11,7 @@ A stylesheet and fonts that give the website and the PDF the look of the uFTi ap
 | `ufti.css` | The publisher stylesheet. One file, because the build takes one. |
 | `assets/fonts/` | Six TrueType fonts: Atkinson Hyperlegible Next (regular, bold, italic) and Source Serif 4 (regular, italic, semibold). |
 | `assets/licences/` | The licences of those fonts. They travel with the fonts. |
-| `assets/brand/` | The favicon, the share image and the sampler mark, imported from the app team's artwork by `build/brand/import-brand.ps1` (section 10). |
+| `assets/brand/` | The favicon, the share card and the two marks, copied unchanged from the app team's artwork by `build/brand/import-brand.ps1` (section 10). |
 | `check-theme.ps1` | Checks contrast and the stylesheet's own rules. PowerShell 7, on any operating system. |
 
 ## 2. Where the look comes from
@@ -194,13 +194,13 @@ A page loads only the faces it uses. A typical page fetches about 400 KB of font
 
 ## 10. The brand artwork
 
-The app team's logo and store art live in [`build/brand/`](../brand/README.md), which says where they come from and that they are not under the Apache-2.0 licence. Four files are shipped beside the stylesheet in `assets/brand/`, and the build copies them with the fonts:
+The app team's logo and store art live in [`build/brand/`](../brand/README.md), which names the version, the tag and the commit, and holds their terms of use (the artwork is not under the Apache-2.0 licence). Four files are shipped beside the stylesheet in `assets/brand/`, copied unchanged, and the build copies them with the fonts:
 
 | File | Used by |
 |---|---|
 | `ufti.ico` | `govuk.favicon` in `build/projects/common.xml`: the 16, 32 and 48 pixel marks |
-| `ufti-share.png` | `govuk.og.image`: 1200 × 630, cut from the hero |
-| `ufti-mark-small.svg` | The masthead: a background image before the name (section 5 of the stylesheet), 32 px |
+| `ufti-share-card.png` | `govuk.og.image`: 1200 × 630 |
+| `ufti-mark-on-dark.svg` | The masthead: a background image before the name (section 5 of the stylesheet), 2.5 rem, in light thread for the dark masthead |
 | `ufti-mark.svg` | The cover of the print document and the PDF (section 7), 72 pt |
 
-Both marks are decoration, drawn as background images, so the PDF leaves them untagged. The PDF engine ignores the size in the `background` shorthand, so the cover rule sets the properties one by one. `check-theme.ps1` fails if a shipped file is missing, if an SVG draws text or refers to another file, or if the favicon or share image has the wrong shape.
+Both marks are decoration, drawn as background images, so the PDF leaves them untagged. The PDF engine ignores the size in the `background` shorthand, so the cover rule sets the properties one by one. Every manual and Quick Start map also gives the strapline as its alternative title (`booktitlealt`), which the home page and the cover show under the title. `check-theme.ps1` fails if a shipped file is missing or differs from its copy in `build/brand/art/`, if an SVG draws text, refers to another file or has no title, or if the favicon or share card has the wrong shape.

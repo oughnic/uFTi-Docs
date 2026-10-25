@@ -180,32 +180,36 @@ foreach ($f in 'AtkinsonHyperlegibleNext-OFL.txt', 'SourceSerif4-OFL.md') {
     if (-not (Test-Path -LiteralPath (Join-Path $themeRoot "assets/licences/$f"))) { $failures.Add("Hygiene: assets/licences/$f is missing.") }
 }
 
-# 5. The brand artwork (build/brand/README.md): the files the build ships are there; no SVG draws text or loads
-#    a font or a file (an SVG used as an image loads nothing, so a reference would draw wrongly); the favicon
-#    holds the 16, 32 and 48 pixel marks; the share image is 1200 x 630.
+# 5. The brand artwork (build/brand/README.md), copied unchanged from the app team: the four files the build ships are
+#    there and are the same bytes as their copies in build/brand/art/; no SVG draws text, loads a font or refers
+#    to another file (an SVG used as an image loads nothing) and each has a title; the favicon holds the 16, 32
+#    and 48 pixel marks; the share card is 1200 x 630.
 $brandDir = Join-Path $themeRoot 'assets/brand'
-foreach ($f in 'ufti.ico', 'ufti-share.png', 'ufti-mark.svg', 'ufti-mark-small.svg') {
-    if (-not (Test-Path -LiteralPath (Join-Path $brandDir $f))) { $failures.Add("Brand: assets/brand/$f is missing. Run build/brand/import-brand.ps1.") }
-}
 $artDir = Join-Path (Split-Path -Parent $themeRoot) 'brand/art'
+foreach ($f in 'ufti.ico', 'ufti-share-card.png', 'ufti-mark.svg', 'ufti-mark-on-dark.svg') {
+    $shipped = Join-Path $brandDir $f; $kept = Join-Path $artDir $f
+    if (-not (Test-Path -LiteralPath $shipped)) { $failures.Add("Brand: assets/brand/$f is missing. Run build/brand/import-brand.ps1."); continue }
+    if (-not (Test-Path -LiteralPath $kept) -or (Get-FileHash -LiteralPath $shipped).Hash -ne (Get-FileHash -LiteralPath $kept).Hash) { $failures.Add("Brand: assets/brand/$f differs from build/brand/art/$f. The artwork is used unchanged: import it again.") }
+}
 $svgs = @(Get-ChildItem -LiteralPath $brandDir, $artDir -Filter '*.svg' -ErrorAction SilentlyContinue)
 foreach ($s in $svgs) {
     $svg = [System.IO.File]::ReadAllText($s.FullName)
-    if ($svg -match '<text[\s>]|@font-face|<image|href\s*=\s*[''"](?!#)|url\(\s*[''"]?(?!#)|\.\./') { $failures.Add("Brand: $($s.Name) draws text or refers to another file. Import it again with build/brand/import-brand.ps1.") }
+    if ($svg -match '<text[\s>]|@font-face|<image|href\s*=\s*[''"](?!#)|url\(\s*[''"]?(?!#)|\.\./') { $failures.Add("Brand: $($s.Name) draws text or refers to another file. Use the outlined file.") }
+    if ($svg -notmatch '<title>') { $failures.Add("Brand: $($s.Name) has no title.") }
 }
 $ico = Join-Path $brandDir 'ufti.ico'
 if (Test-Path -LiteralPath $ico) {
     $b = [System.IO.File]::ReadAllBytes($ico)
     if ($b.Length -lt 6 -or [BitConverter]::ToUInt16($b, 2) -ne 1 -or [BitConverter]::ToUInt16($b, 4) -ne 3) { $failures.Add('Brand: ufti.ico should hold three images (16, 32 and 48 pixels).') }
 }
-$share = Join-Path $brandDir 'ufti-share.png'
+$share = Join-Path $brandDir 'ufti-share-card.png'
 if (Test-Path -LiteralPath $share) {
     $b = [System.IO.File]::ReadAllBytes($share)
     $w = ([int]$b[16] -shl 24) + ([int]$b[17] -shl 16) + ([int]$b[18] -shl 8) + [int]$b[19]
     $h = ([int]$b[20] -shl 24) + ([int]$b[21] -shl 16) + ([int]$b[22] -shl 8) + [int]$b[23]
-    if ($w -ne 1200 -or $h -ne 630) { $failures.Add("Brand: ufti-share.png is $w x $h, not 1200 x 630.") }
+    if ($w -ne 1200 -or $h -ne 630) { $failures.Add("Brand: ufti-share-card.png is $w x $h, not 1200 x 630.") }
 }
-Write-Output ("Brand files checked: {0} SVG file(s), the favicon and the share image" -f $svgs.Count)
+Write-Output ("Brand files checked: {0} SVG file(s), the favicon and the share card" -f $svgs.Count)
 
 # ---- Verdict ---------------------------------------------------------------------------------
 

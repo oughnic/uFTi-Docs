@@ -1,37 +1,43 @@
 # uFTi brand artwork
 
-The uFTi logo and store art, as the application's team publishes them, ready for the documentation website and PDFs. The mark is a cross-stitch tree on linen, stitched in the Oxford and slate colours, with its fruit in the app's three evidence colours.
+The uFTi logo and store art, as the app's team publishes them, kept unchanged for the documentation website and PDFs.
 
-**These files are not under the Apache-2.0 licence of this repository.** The uFTi name, the mark and the box and store art belong to Oughtibridge Ltd. You may copy them only to publish this documentation, or to say, truthfully, that you are writing about uFTi. Do not use them for anything else, and do not alter them. The licence of the rest of the repository does not give you the right to use them.
+**These files are not under the Apache-2.0 licence of this repository, or any other.** Their terms of use are the app team's, in [`art/README.md`](art/README.md): copy and show them unchanged apart from scaling, only to publish uFTi's documentation or to say truthfully that something is about uFTi. Anything else needs written permission from Oughtibridge Ltd (DEC-165).
 
 ## Source
 
 | | |
 |---|---|
-| Where they are made | The application's repository (folder `design/brand`), by its brand script from one 16 × 16 stitch map. Never edit the files here by hand: import them again. |
-| Imported from | Branch `feat/1655-sampler-icon`, commit `99a15e3c464ee72dada93e56c62943645bd00c02` (25 October 2026). Change this line each time you import. |
-| What the import changes | Each `<text>` becomes the outline of the same glyphs, so the file needs no font and draws the same when it is used as an image. Nothing else is changed. |
+| Made by | The app's repository (private), folder `design/brand`, by its brand script from one stitch map. Never edit a file here: import again. |
+| Artwork version | **1.1.0** |
+| Tag | `brand-v1.1.0` |
+| Commit | `71fa81e345decb2bbe1f644067ecf87f883b9904` |
 
 ## What is here
 
 | Path | What it is | Used for |
 |---|---|---|
-| `art/ufti-sampler.svg` | The 1024 master | The cover of each PDF (`ufti-mark.svg` is a copy) |
-| `art/ufti-sampler-16.svg`, `-32`, `-48` | Pixel versions | The favicon (16, 32 and 48), and the masthead (32) |
-| `art/ufti-hero.svg` | Landscape hero, 1920 × 1080 | The share image |
-| `art/ufti-box-front.svg` | Box front, 1200 × 1600 | Kept for the Get the app pages and the stores |
-| `art/ufti-play-feature.svg` | Google Play feature graphic | Kept for the stores; not used in the documentation |
-| `../theme/assets/brand/` | What the build ships beside the stylesheet: `ufti.ico`, `ufti-share.png` (1200 × 630), `ufti-mark.svg`, `ufti-mark-small.svg` | `govuk.favicon`, `govuk.og.image` and `ufti.css` |
+| `art/ufti-mark.svg` | The mark, no tile, for light backgrounds | The cover of each print document and PDF |
+| `art/ufti-mark-on-dark.svg` | The mark, no tile, light thread, for dark backgrounds | The masthead |
+| `art/ufti.ico` | 16, 32 and 48 pixel versions | The favicon (`govuk.favicon`) |
+| `art/ufti-share-card.png` | 1200 × 630 | The share image (`govuk.og.image`) |
+| `art/ufti-share-card-outlined.svg`, `ufti-hero-outlined.svg` | Share card and landscape hero | Kept; the Get the app pages and slides |
+| `art/ufti-box-front-outlined.svg`, `ufti-play-feature-outlined.svg` | Box front, Google Play graphic | Kept for the stores and the Get the app pages |
+| `art/ufti-sampler*.svg`, `.png`, `ufti-touch-icon.svg`, `ufti-icon-*.png` | The master, pixel versions, touch and store icons | Kept |
+| `../theme/assets/brand/` | The four files the build ships beside the stylesheet: `ufti.ico`, `ufti-share-card.png`, `ufti-mark.svg`, `ufti-mark-on-dark.svg` | |
 
-## How to import new artwork
+The app team's `.svg` files with live text are not kept. They load the app's fonts from a path in the app's repository and draw wrongly anywhere else: use the `-outlined` files.
 
-1. Fetch the app's `design/brand/*.svg` into a folder (the repository is private: use `gh api` or a checkout).
-2. Run `pwsh build/brand/import-brand.ps1 -From <that folder>`. It needs Docker only: it runs in the Playwright container that `build/tools.lock` pins, with opentype.js 1.3.4, and it uses the fonts in `build/theme/assets/fonts`.
-3. Change the commit in the table above, run `pwsh build/theme/check-theme.ps1`, and build a deliverable to look at it.
+## How to import a new version
+
+1. Run `pwsh build/brand/import-brand.ps1 -Tag brand-v<version>`. It needs the GitHub CLI signed in with access to the app's repository. It only copies files and changes none (`-From <folder>` takes a local copy of `design/brand` instead).
+2. Change the version, tag and commit in the table above (the script prints the commit), and look at the app's `art/README.md` for changed terms and claims.
+3. Run `pwsh build/theme/check-theme.ps1`, build a deliverable and look at the masthead and a PDF cover.
 
 ## Rules
 
-- The mark appears in the masthead and on the cover of each PDF as a background image: decoration only, never the only way to know which site this is. The name beside it says that.
-- Show the mark whole, at its own proportions, on its own tile. Do not recolour it, crop it or put it on a busy background.
+- The marks are background images in the masthead and on each cover: decoration only. The publication's name beside them says which publication it is, and the PDF leaves them untagged.
+- Show the mark whole and at its own proportions. Never recolour, crop or redraw it.
+- The art makes claims (every device, GEDCOM 7, evidence first, three themes). The app team keeps them in one list and says they must match what ships and what the documentation says, and never gain a price, an account, a sign-in or a storage claim. Review them when you import.
 - Platforms appear in the art as plain device outlines. Never add a platform's own logo.
-- Do not put the box or store art in a manual as a screenshot. A picture of the app is a screenshot from the app, from the Brontë dataset.
+- The box and store art are not screenshots of the app. A picture of the app is a screenshot from the Brontë dataset.
