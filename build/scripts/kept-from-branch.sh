@@ -3,8 +3,9 @@
 #
 #   build/scripts/kept-from-branch.sh <branch> <dir>
 #
-# The published tree lives on a branch (default "publish"): <platform>/<release>/ for every release
-# ever published. This script reads that branch and writes one archive for each release into <dir>,
+# The published tree lives on a branch (default "publish"), in its site/ folder: site/<platform>/<release>/
+# for every release ever published. (A branch published in the first shape, with the tree at its root, is
+# read too.) This script reads that branch and writes one archive for each release into <dir>,
 # named ufti-docs-<platform>-<release>.zip and holding exactly one <platform>/<release>/ folder, which is
 # what build-site.sh --keep expects. If the branch does not exist yet, <dir> stays empty. Run it in a
 # clone with a remote named origin, before the build.
@@ -23,11 +24,12 @@ git fetch --quiet --depth 1 origin "refs/heads/$branch:refs/remotes/origin/$bran
 work=$(mktemp -d); trap 'git worktree remove --force "$work/tree" > /dev/null 2>&1 || true; rm -rf "$work"' EXIT
 git worktree add --quiet --detach "$work/tree" "refs/remotes/origin/$branch"
 
+base="$work/tree"; [ -d "$base/site" ] && base="$base/site"
 count=0
-for vf in "$work"/tree/*/*/version.json; do
+for vf in "$base"/*/*/version.json; do
   [ -f "$vf" ] || continue
   rel_dir=$(dirname "$vf"); rel=$(basename "$rel_dir"); slug=$(basename "$(dirname "$rel_dir")")
-  (cd "$work/tree" && zip --quiet --recurse-paths --symlinks "$dest/ufti-docs-$slug-$rel.zip" "$slug/$rel")
+  (cd "$base" && zip --quiet --recurse-paths --symlinks "$dest/ufti-docs-$slug-$rel.zip" "$slug/$rel")
   echo "  from '$branch': $slug $rel"
   count=$((count + 1))
 done
