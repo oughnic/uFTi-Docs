@@ -16,9 +16,11 @@ uFTi will be hosted at **ufti.com** (DEC-033). The site is in two parts with one
 | `/features/` | Features | What it does, in the reader's words, each linked to the manual. | Marketing page |
 | `/get/` | Get uFTi | Store links and installers per platform, system requirements. | Marketing page |
 | `/good-practice/` | Family history good practice | The guide, as a public resource in its own right. | DITA build of the guide |
-| `/docs/` | Documentation | The device chooser: "What are you using uFTi on?" | DITA build (the chooser) |
-| `/docs/<device>/` | A manual | One per device, Quick Start first. | DITA build |
-| `/docs/<device>/start/` | Quick Start | The ten-minute start for that device. | DITA build |
+| `/docs/` | Documentation | The device chooser: "What are you using uFTi on?" | DITA build (the root of the documentation tree) |
+| `/docs/<device>/` | A device's versions | The versions of uFTi that have a Quick Start and a manual for that device, newest first, each with its PDFs. | DITA build (written from the releases in the tree) |
+| `/docs/<device>/<release>/` | A manual | The manual for one uFTi app release on that device, as a website and a PDF. | DITA build |
+| `/docs/<device>/<release>/start/` | Quick Start | The ten-minute start for that release on that device, as a website and a PDF. | DITA build |
+| `/docs/<device>/latest/` | The current release | A redirect to the current release's manual (and `latest/start/` to its Quick Start). It is for people; the app links to its own release. | Hosting configuration |
 | `/support/` | Support | How to get help, report a problem, give feedback. Links to issues. | Marketing page |
 | `/about/` | About | Who makes it, the project's status, open-source status when it applies. | Marketing page |
 | `/privacy/` | Privacy | What the app and the site do with data, stated as current behaviour with a date. | Marketing page, reviewed |
@@ -26,7 +28,13 @@ uFTi will be hosted at **ufti.com** (DEC-033). The site is in two parts with one
 | `/legal/` | Licences and trademarks | Apache-2.0, font and component licences, the uFTi name and logo. Terms of service when a service exists. | Marketing page |
 | `/news/` or `/releases/` | What is new | Release notes for the app and the manuals. | Marketing page, fed from the manuals' "What is new" |
 
-The manuals' footers link to the chooser, the accessibility statement, support and the source repository.
+The manuals' footers link to the chooser, the other versions of that device's manual (and the Quick Start beside the manual, or the manual beside the Quick Start), the accessibility statement, support and the source repository.
+
+### 2.1 Releases below devices
+
+`<device>` is a folder named for the platform: `windows`, `android-phone`, `iphone`, `ipad`, `macos` (and `android-tablet` when that manual exists). `<release>` is a **uFTi app release**: `Alpha-1`, `Alpha-2`, `Beta-1`, `RC-1`, `1.0`, `1.2.3` (DEC-141). It is not this repository's version, the plugin's or the toolkit's. Each device has its own release, because the apps are walked and released one at a time. The first is `Alpha-1`. A release folder is complete in itself: the manual's website and PDF, with the Quick Start's website and PDF in `start/`. The PDF names carry the release (`ufti-user-manual-windows-Alpha-1.pdf`), so a downloaded file says which version it is.
+
+An earlier release stays at its address, unchanged, when a later one is published (DEC-143). Its page in the device's list says so by listing it below the newer one, and its footer says which version it is and links to the others. The documentation does not say that an old release is out of date, because a reader may still have that app. The tree and how it is built are in [build and quality, section 7](build-and-quality.md#7-the-publishing-tree).
 
 ## 3. Marketing collateral
 
@@ -47,9 +55,11 @@ Why not DITA for them: a marketing page needs layout freedom the manual does not
 
 ## 5. Hosting
 
-GitHub Pages serves a custom domain over HTTPS, so ufti.com can stay on it. Its limits are no custom headers (so the Content Security Policy is a `meta` tag, and `frame-ancestors` cannot be set), no server-side redirects, a soft size limit of about a gigabyte and a bandwidth limit of about a hundred gigabytes a month. A static host that supports headers and redirects (Q26) becomes worth it when the site needs them, when video or large downloads arrive, or when privacy-respecting logs are wanted (DEC-043). Moving a static site is a day's work, so the choice does not need making now.
+The documentation tree is meant for **Azure Static Web Apps** (DEC-142), a static host that sets headers and redirects. It serves the tree as built: no build runs in Azure. The tree's own configuration, `staticwebapp.config.json`, is written by the build and ships at the root of the tree. It redirects `<device>/latest/` to the current release, caches the current release for minutes and an earlier release for a day, gives PDFs their content type, and shows `not-found.html` with the status 404. The pages keep `govuk.csp=meta` (a `meta` tag), so they behave the same in the app's help frame and need no header.
 
-The build parameters that depend on the address: `govuk.site.url` is `https://ufti.com/docs/<device>/` for each manual and `https://ufti.com/good-practice/` for the guide.
+The marketing pages (section 4) are not part of the tree. Where they are hosted is still open. If Static Web Apps serves only the documentation, it is bound to the address that `base-url` in `build/publications.ini` names, and that value is the only one to change. GitHub Pages remains a possible host for the marketing pages: it serves a custom domain over HTTPS but sets no custom headers and has no redirects, a soft size limit of about a gigabyte and a bandwidth limit of about a hundred gigabytes a month.
+
+The build parameters that depend on the address come from the release in `build/publications.ini`, not from the project files: `govuk.site.url` is `https://ufti.com/docs/<device>/<release>/` for each manual, with `start/` below it for the Quick Start, and `https://ufti.com/good-practice/` for the guide.
 
 ## 6. Business-model independence
 

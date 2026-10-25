@@ -17,7 +17,12 @@
   A name under build/projects/ (fixture, fixture-android-phone, fixture-smoke, ...) or a path.
 
 .PARAMETER Output
-  The output folder; each deliverable lands in its own subfolder. Default out/.
+  The output folder; each deliverable lands in its own subfolder. Default out/. (The publishable
+  tree is assembled from these by build-site.ps1.)
+
+  A manual or Quick Start listed in build/publications.ini is built with the site address, PDF name
+  and footer links that its release gives; the build fails if that file is missing a release or
+  has one in the wrong form.
 
 .EXAMPLE
   pwsh build/scripts/build.ps1 -Project fixture-android-phone
@@ -51,6 +56,12 @@ $outDir = [System.IO.Path]::GetFullPath($outDir)
 $log = Join-Path $outDir 'logs' "$name.log"
 $temp = Join-Path $outDir 'temp' $name
 
+# A published deliverable takes its address, PDF name and footer links from the release declared in
+# build/publications.ini (build and quality, section 7); the build fails if that file is wrong.
+try { $publications = Read-UftiPublications } catch { Write-UftiProblem "$_"; exit 1 }
+$published = Get-UftiPublishedDeliverable -Publications $publications -Project $name
+$releaseArgs = if ($published) { @(Get-UftiDeliverableParameters -Published $published) } else { @() }
+
 $onPath = Add-UftiToolsToPath -Paths $P
 Write-UftiStep "Build $name"
 
@@ -71,11 +82,12 @@ foreach ($href in (Get-DeliverableOutputs $projectFile ([System.Collections.Gene
 Write-Host "  project: $projectFile"
 Write-Host "  output:  $outDir"
 Write-Host "  tools:   $($onPath -join '; ')"
+if ($published) { Write-Host "  release: $(if ($published.Release) { $published.Release } else { '(the site root)' }), site address $($published.SiteUrl)" }
 
 $started = Get-Date
 # --verbose, because the toolkit logs an unresolved key (DOTJ047I) at its information level, which
 # the default level never prints. The full log goes to the file; the console shows the messages.
-$r = Invoke-UftiProcess -FilePath $P.Dita -ArgumentList @("--project=$projectFile", "--output=$outDir", "--temp=$temp", '--verbose') -WorkingDirectory $root -LogPath $log -Quiet
+$r = Invoke-UftiProcess -FilePath $P.Dita -ArgumentList (@("--project=$projectFile", "--output=$outDir", "--temp=$temp", '--verbose') + $releaseArgs) -WorkingDirectory $root -LogPath $log -Quiet
 $took = [int]((Get-Date) - $started).TotalSeconds
 if (Test-Path -LiteralPath $temp) { Remove-Item -LiteralPath $temp -Recurse -Force -ErrorAction SilentlyContinue }
 $r.Output | Where-Object { $_ -match '\[(GOVK|DOTX|DOTJ|DOTA|DSPDF)\d{3}[WEFI]\]|^\s*(govuk:|Warning|Error|BUILD|Exception)' -and $_ -notmatch '\[DOTJ\d{3}I\]' -or $_ -match '\[DOTJ047I\]' } | ForEach-Object { Write-Host "  $_" }
