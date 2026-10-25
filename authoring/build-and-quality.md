@@ -77,7 +77,7 @@ Parameters live in a DITA-OT project file, one deliverable per publication. Each
 | `govuk.metadata.persons` | `no` | No person's name is published. |
 | `govuk.organisation`, `govuk.organisation.url` | Set explicitly | Publisher metadata. |
 | `govuk.licence.url` | The Apache-2.0 licence address | Written as `rel="license"`. |
-| `govuk.og.image`, `govuk.favicon` | From WP6 | Share image and favicon. |
+| `govuk.favicon`, `govuk.og.image` | `build/theme/assets/brand/ufti.ico`, and `theme/brand/ufti-share.png` (a path under the deliverable) | The favicon and the share image, from the brand artwork (`build/brand/README.md`, DEC-160 to DEC-163). The share image is copied beside the stylesheet with the rest of `govuk.css.assets`. | 
 | `args.css`, `args.cssroot`, `args.copycss`, `args.csspath` | `ufti.css`, the path of `build/theme`, `yes`, `theme` | The publisher stylesheet. It is linked on every page and in the print document. In the project file the folder is given with `path="../theme"`, relative to the project file (confirmed in WP1). `args.csspath` keeps the stylesheet and its assets together under `theme/` in the output. |
 | `govuk.css.assets`, `govuk.pdf.fonts` | `build/theme/assets`, `build/theme/assets/fonts` | The fonts the stylesheet names, hosted with the site (the policy `govuk.csp=meta` allows nothing else), and the same fonts for the PDF. Both given with `path`, as above. |
 | `govuk.dates` | `no` | Until there is a reliable dating process (Q13). |
