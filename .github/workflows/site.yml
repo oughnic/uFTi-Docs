@@ -113,7 +113,7 @@ jobs:
   # `pull-requests: write` as the action's documentation says, pin the action to a full commit SHA,
   # and run it after the publish job on pushes to main only (DEC-016). The tree is already built and is
   # on the publish branch, so no build runs in Azure. (Azure can also deploy from the publish branch
-  # directly, with the app location at the root of the branch and no build.)
+  # directly, with `site` as the app location and no build.)
   #
   # deploy:
   #   name: deploy to Azure Static Web Apps

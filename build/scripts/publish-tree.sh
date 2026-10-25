@@ -5,9 +5,11 @@
 #   build/scripts/publish-tree.sh <tree> <branch> [source-ref]
 #
 # <tree> is out/site, as build-site.sh leaves it (it already holds the earlier releases, put back with
-# --keep). The branch is replaced by exactly that tree in one new commit, so a release that is not in the
-# tree is not on the branch: never run this on a tree built without the earlier releases. The commit names
-# the source commit and the releases it holds. Nothing is pushed when the tree is the one already there.
+# --keep). On the branch it goes into a site/ folder, beside a short README.md that says what the branch
+# is and nothing else (no sources); Azure uses `site` as its app location. The branch is replaced by
+# exactly that, in one new commit, so a release that is not in the tree is not on the branch: never run
+# this on a tree built without the earlier releases. The commit names the source commit and the releases
+# it holds. Nothing is pushed when the result is what the branch already holds.
 # Run it in a clone with a remote named origin and a token that can push (contents: write).
 set -euo pipefail
 
@@ -34,7 +36,19 @@ fi
 
 cd "$work/tree"
 find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
-cp -a "$tree"/. .
+mkdir site
+cp -a "$tree"/. site/
+cat > README.md <<'MD'
+# Published documentation
+
+This branch holds the built uFTi documentation, nothing else. It is written by the Site workflow of the
+source repository (the `publish` job), never by hand, and each publication replaces it.
+
+- `site/` is the tree: a root page, one folder for each platform, and below each platform one folder for
+  each uFTi app release, with the manual and the Quick Start as a website and a PDF.
+- To serve it, use `site` as the app location (Azure Static Web Apps) with no build step.
+- The sources are on the `dev` branch of the same repository.
+MD
 git add -A
 if [ "$existed" = yes ] && git diff --cached --quiet; then
   echo "The '$branch' branch already holds this tree. Nothing to push."
