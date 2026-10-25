@@ -594,8 +594,8 @@ if ($Only -contains 'publications') {
         @{ Name = 'a release that is a bare number'; Pass = $false; Expect = 'not in the agreed form'; Text = (Set-WindowsLine 'release = Alpha-1' 'release = 1') }
         @{ Name = 'an app version the pictures do not record'; Pass = $false; Expect = 'differs from'; Text = (Set-WindowsLine 'app-version = 0.1.0.1 (1)' 'app-version = 0.1.0.2 (1)') }
         @{ Name = 'no app version where the pictures record one'; Pass = $false; Expect = 'app-version must say so'; Text = (Set-WindowsLine "app-version = 0.1.0.1 (1)`n" '') }
-        @{ Name = 'a base address without its closing slash'; Pass = $false; Expect = 'closing slash|ends with a slash'; Text = $iniText.Replace('base-url = https://ufti.com/docs/', 'base-url = https://ufti.com/docs') }
-        @{ Name = 'a base address that is not https'; Pass = $false; Expect = 'ends with a slash'; Text = $iniText.Replace('base-url = https://ufti.com/docs/', 'base-url = http://ufti.com/docs/') }
+        @{ Name = 'a base address without its closing slash'; Pass = $false; Expect = 'closing slash|ends with a slash'; Text = $iniText.Replace('base-url = https://docs.ufti.com/', 'base-url = https://docs.ufti.com') }
+        @{ Name = 'a base address that is not https'; Pass = $false; Expect = 'ends with a slash'; Text = $iniText.Replace('base-url = https://docs.ufti.com/', 'base-url = http://docs.ufti.com/') }
         @{ Name = 'a platform name that cannot be a folder'; Pass = $false; Expect = 'lower case letters'; Text = $iniText.Replace('[macos]', '[MacOS]') }
         @{ Name = 'a platform named for something else on the site'; Pass = $false; Expect = 'name the site uses'; Text = $iniText.Replace('[macos]', '[latest]') }
         @{ Name = 'a project file that does not exist'; Pass = $false; Expect = 'has no file'; Text = (Set-WindowsLine 'manual = manual-windows' 'manual = manual-nothing') }
