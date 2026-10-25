@@ -31,6 +31,10 @@
     <param name="govuk.organisation.url" value="https://ufti.com/"/>
     <param name="govuk.licence.url" value="https://www.apache.org/licenses/LICENSE-2.0"/>
     <param name="govuk.dates" value="no"/>
+    <!-- Brand artwork (build/brand/README.md): the favicon, and the share image, which sits beside the stylesheet
+         (args.csspath/brand) and is named by its path under the deliverable. -->
+    <param name="govuk.favicon" path="../theme/assets/brand/ufti.ico"/>
+    <param name="govuk.og.image" value="theme/brand/ufti-share.png"/>
     <!-- Hosting: GitHub Pages cannot set headers (govuk.csp=meta); the app's help panel frames pages. -->
     <param name="govuk.csp" value="meta"/>
     <param name="govuk.embed" value="yes"/>

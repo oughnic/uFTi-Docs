@@ -379,7 +379,7 @@ The open questions that most affect the start of work:
 | Q26 | Which host for ufti.com: GitHub Pages with the custom domain, or a static host that supports headers and redirects? | GitHub Pages with the custom domain, until headers, redirects or logs are needed. |
 | Q24 | Are the manuals at `ufti.com/docs/`, or at `docs.ufti.com`? | **Answered, 25 October 2026: `docs.ufti.com`** (DEC-146). A Static Web App cannot take a CNAME at the root of a domain. |
 | Q23 | Which family for the Spanish edition, and who reviews it? | Chosen in WP16 by the criteria, with a Spanish-speaking reviewer. Nothing before then. |
-| Q5 | Which brand assets (logo, colours) are available? | A plain masthead with the service name until supplied. |
+| Q5 | Which brand assets (logo, colours) are available? | **Answered** (DEC-160): the app team's mark, favicons, box front, hero and Play graphic. |
 | Q8 | Who reviews good practice content? | The maintainer, with a volunteer genealogist to be found. |
 | Q20 | Who checks the dataset's evidence as a second reader, and which sources can they reach? | The maintainer and the volunteer genealogist (Q8), using public sources only. |
 | Q25 | Is there appetite for video at all, and on which channel? | None at v1. Decide after v1.0 from the usability sessions. |
