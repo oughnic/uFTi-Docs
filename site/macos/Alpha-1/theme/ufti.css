@@ -214,6 +214,19 @@ textarea {
   color: var(--ufti-on-primary);
 }
 
+/* The app's sampler mark before the name. It is a background image, so it is decoration: the name beside
+ * it says what the link is, and the PDF does not tag it. The pixel version is drawn at 32 px, one of
+ * its exact sizes. */
+.app-masthead__title::before {
+  content: "";
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.6rem;
+  vertical-align: middle;
+  background: url("brand/ufti-mark-small.svg") center / contain no-repeat;
+}
+
 @media (min-width: 48.0625em) {
   .app-sidebar {
     border-right-color: var(--ufti-outline);
@@ -616,4 +629,18 @@ pre.pre {
     font-family: "Atkinson Hyperlegible Next", Arial, "Helvetica Neue", Helvetica, sans-serif; /* ufti: literal font-text */
     color: #4B5563; /* ufti: literal on-surface-muted */
   }
+}
+
+/* The sampler mark above the title on the cover of the print document and the PDF. A background image, so
+ * it is decoration and the PDF leaves it untagged. The PDF engine ignores the size in the shorthand, so the
+ * properties are separate. */
+.app-print .app-print-cover::before {
+  content: "";
+  display: block;
+  width: 72pt;
+  height: 72pt;
+  margin-bottom: 18pt;
+  background-image: url("brand/ufti-mark.svg");
+  background-repeat: no-repeat;
+  background-size: 72pt 72pt;
 }
