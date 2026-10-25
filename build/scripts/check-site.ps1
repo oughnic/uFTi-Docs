@@ -186,6 +186,7 @@ foreach ($page in $pages) {
         if ($url -match '^(?i:mailto|tel|data|javascript|blob):') { $skipped++; continue }
         if ($url.StartsWith($base, [System.StringComparison]::Ordinal)) { $rest = $url.Substring($base.Length); $fromDirUse = '' }
         elseif ($url -match '^(?i:https?:)?//') { $external++; [void]$externalSet.Add($url); continue }
+        elseif ($page -ceq 'not-found.html' -and $url.StartsWith(([uri]$base).AbsolutePath, [System.StringComparison]::Ordinal)) { $rest = $url.Substring(([uri]$base).AbsolutePath.Length); $fromDirUse = '' }
         elseif ($url.StartsWith('/')) { Bad "${page}: the link $url starts with a slash, which breaks when the site is served below another path"; continue }
         else { $rest = $url; $fromDirUse = $fromDir }
         $checked++

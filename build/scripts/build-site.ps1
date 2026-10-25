@@ -223,7 +223,7 @@ Copy-Item -Path (Join-Path $outDir 'site-root' '*') -Destination $siteDir -Recur
 # scripts, the platform pages) would be looked for below that address. Its links are made absolute, from base-url.
 $nfPath = Join-Path $siteDir 'not-found.html'
 $nfHtml = [System.IO.File]::ReadAllText($nfPath)
-$nfHtml = $nfHtml -replace '(href|src)="(?!https?://|#|mailto:|/)([^"]*)"', ('$1="' + $base + '$2"')
+$nfHtml = $nfHtml -replace '(href|src)="(?!https?://|#|mailto:|/)([^"]*)"', ('$1="' + ([uri]$base).AbsolutePath + '$2"')
 [System.IO.File]::WriteAllText($nfPath, $nfHtml, $utf8)
 foreach ($p in $pub.Platforms) {
     $verDir = Join-Path $siteDir $p.Slug $p.Release
