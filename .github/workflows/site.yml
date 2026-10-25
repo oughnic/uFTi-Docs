@@ -88,7 +88,10 @@ jobs:
       - name: Every page of the tree (axe-core, WCAG 2.2 AA, no exceptions, and the Nu HTML Checker)
         run: |
           cp build/scripts/a11y.mjs build/scripts/a11y-exceptions.json .tools/plugin-tools/tools/a11y/
-          (cd .tools/plugin-tools/tools/a11y && node a11y.mjs "$GITHUB_WORKSPACE/out/site")
+          # not-found.html in the tree has absolute links (it is served at the address that was asked for), so opened
+          # from a file it has no stylesheet; the same page before that rewrite, in out/site-root, is the one to check
+          mapfile -t pages < <(find "$GITHUB_WORKSPACE/out/site" -name '*.html' ! -name not-found.html | sort)
+          (cd .tools/plugin-tools/tools/a11y && node a11y.mjs "${pages[@]}" "$GITHUB_WORKSPACE/out/site-root/not-found.html")
           java -jar .tools/vnu/vnu.jar --errors-only --skip-non-html out/site
       - name: Keep the tree
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
