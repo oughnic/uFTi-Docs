@@ -8,7 +8,7 @@
 # already published are read back from that branch before the build, so an old release stays online
 # (DEC-143). It creates no Azure resource and holds no secret.
 #
-# Next step for the maintainer: deploy the publish branch. A commented-out step at the end shows how.
+# The "deploy" job then deploys the tree to Azure Static Web Apps (issue 77), from a push to main or release/**, or on demand.
 # Third-party actions are pinned to full commit SHAs. Permissions are read-only, except in the publish job.
 name: Site
 
@@ -27,6 +27,10 @@ on:
         description: "The branch that holds the published tree"
         type: string
         default: publish
+      deploy:
+        description: "Deploy the tree to Azure Static Web Apps after it is published (needs publish ticked)"
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -108,27 +112,34 @@ jobs:
       - name: Push the tree to the publish branch
         run: build/scripts/publish-tree.sh out/site "$PUBLISH_BRANCH" "$GITHUB_REF_NAME"
 
-  # Not yet enabled. To deploy: create the Static Web App in Azure, add its deployment token to this
-  # repository's secrets as AZURE_STATIC_WEB_APPS_API_TOKEN, give this job `contents: read` and
-  # `pull-requests: write` as the action's documentation says, pin the action to a full commit SHA,
-  # and run it after the publish job on pushes to main only (DEC-016). The tree is already built and is
-  # on the publish branch, so no build runs in Azure. (Azure can also deploy from the publish branch
-  # directly, with `site` as the app location and no build.)
-  #
-  # deploy:
-  #   name: deploy to Azure Static Web Apps
-  #   needs: site
-  #   if: github.ref == 'refs/heads/main'
-  #   runs-on: ubuntu-24.04
-  #   steps:
-  #     - uses: actions/download-artifact@<full commit SHA>
-  #       with:
-  #         name: site
-  #         path: site
-  #     - uses: Azure/static-web-apps-deploy@<full commit SHA>
-  #       with:
-  #         azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-  #         action: upload
-  #         app_location: site
-  #         skip_app_build: true
-  #         skip_api_build: true
+  # Deploys the tree to Azure Static Web Apps (issue 77; DEC-142). It runs after a successful publish, on a push
+  # to main or release/**, or on demand with "deploy" ticked together with "publish" (and the default branch
+  # name). It needs the repository secret AZURE_STATIC_WEB_APPS_API_TOKEN (the deployment token of the Static
+  # Web App; rotate it with "Reset deployment token" in the Azure portal and set the secret again). The job
+  # runs in the GitHub environment azure-production, where the maintainer can require a reviewer. The tree is
+  # already built, so no build runs in Azure; the action is pinned to a full commit SHA (the v1 release).
+  deploy:
+    name: deploy to Azure Static Web Apps
+    needs: publish
+    if: needs.publish.result == 'success' && (inputs.branch || 'publish') == 'publish' && (github.event_name == 'push' || inputs.deploy)
+    runs-on: ubuntu-24.04
+    environment: azure-production
+    permissions:
+      contents: read
+    concurrency:
+      group: deploy
+      cancel-in-progress: false
+    steps:
+      - name: The built tree
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: site
+          path: site
+      - name: Deploy
+        uses: Azure/static-web-apps-deploy@1a947af9992250f3bc2e68ad0754c0b0c11566c9 # v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          action: upload
+          app_location: site
+          skip_app_build: true
+          skip_api_build: true
