@@ -215,16 +215,16 @@ textarea {
 }
 
 /* The app's sampler mark before the name. It is a background image, so it is decoration: the name beside
- * it says what the link is, and the PDF does not tag it. The pixel version is drawn at 32 px, one of
- * its exact sizes. */
+ * it says what the link is, and the PDF does not tag it. The version with light thread is for the dark
+ * masthead. */
 .app-masthead__title::before {
   content: "";
   display: inline-block;
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
   margin-right: 0.6rem;
   vertical-align: middle;
-  background: url("brand/ufti-mark-small.svg") center / contain no-repeat;
+  background: url("brand/ufti-mark-on-dark.svg") center / contain no-repeat;
 }
 
 @media (min-width: 48.0625em) {

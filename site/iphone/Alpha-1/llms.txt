@@ -1,5 +1,7 @@
 # uFTi user manual: iPhone
 
+> Understanding family tree information
+
 ## Quick Start
 
 - [Quick Start](https://docs.ufti.com/iphone/Alpha-1/topics/quick-start/quick-start.html): Six short pages that take you from opening uFTi to your first person, with its source and a copy.
