@@ -16,7 +16,7 @@ The plan, the toolchain and the first content (the Windows and Android phone Qui
 - **Who it is for.** People who do not read manuals come first: the Quick Start, in-app help and the words on screen before the full manual (`authoring/content-model.md`).
 - **Reading level.** Write for an average 11-year-old: short sentences, plain words, a glossary entry for every term (DEC-029).
 - **Never show GEDCOM tags, structures or file contents** (DEC-030). Describe people, families, facts and sources in human terms.
-- **Never state** price, "free", "forever", accounts, sign-in or where data is stored (DEC-040). Sync and AI do not appear until they ship.
+- **Never state** price, "free", "forever", accounts or sign-in (DEC-040). Where a tree is saved on the reader's own device may be stated (DEC-168); where any service keeps data may not. Never publish the address of a store listing that is not public, or anything about who may get a build before release: that is managed separately. Sync and AI do not appear until they ship.
 - **DNA:** one topic on risks and issues, nothing more (DEC-037). **Video:** never embedded (DEC-034).
 - **Idiom first.** Write for phone, tablet or desktop; use platform tokens only for installing, updating, permissions, files, accessibility features and backup (DEC-032).
 - **Keep the decision log in sync.** Any decision made or changed goes into `authoring/decision-log.md` in the same change.

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="where-your-trees-are-saved" xml:lang="en-GB">
+  <title>Where your trees are saved</title>
+  <shortdesc>New trees are saved in a folder named uFTi inside your Documents folder, and they stay there if you remove the app.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-26"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Concept</category>
+      <keywords>
+        <keyword>Documents</keyword>
+        <keyword>OneDrive</keyword>
+        <keyword>uninstall</keyword>
+        <keyword>where my files are</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p>When you make a new tree, <keyword keyref="product-name"/> saves it in the folder <filepath>Documents\uFTi</filepath> on your PC.</p>
+    <section>
+      <title>If you remove the app</title>
+      <p>Your trees are files in your own Documents folder. They are not part of the app. If you remove <keyword keyref="product-name"/> from your PC, your trees stay where they are.</p>
+    </section>
+    <section>
+      <title>If your Documents folder is in OneDrive</title>
+      <p>Some PCs keep the Documents folder in OneDrive. If yours does, your trees go to OneDrive with the rest of that folder. They are kept up to date and copied between your PCs in the way OneDrive does that.</p>
+    </section>
+    <section>
+      <title>Trees you open from somewhere else</title>
+      <p>A tree that you open from another folder stays in that folder. <xref keyref="opened-files-and-copies"/> says what happens to it.</p>
+    </section>
+  </conbody>
+</concept>

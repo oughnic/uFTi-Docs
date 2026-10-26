@@ -18,7 +18,7 @@
 #>
 [CmdletBinding()]
 param(
-    [string]$Tag = 'brand-v1.1.0',
+    [string]$Tag = 'brand-v1.3.0',
     [string]$From,
     [string]$Repository = 'oughtibridge/uFTi-2'
 )
@@ -35,7 +35,8 @@ $keep = @(
     'README.md', 'ufti-sampler.svg', 'ufti-mark.svg', 'ufti-mark-on-dark.svg', 'ufti-touch-icon.svg',
     'ufti-sampler-16.svg', 'ufti-sampler-32.svg', 'ufti-sampler-48.svg', 'ufti-sampler-16.png', 'ufti-sampler-32.png', 'ufti-sampler-48.png',
     'ufti.ico', 'ufti-icon-180.png', 'ufti-icon-300.png', 'ufti-icon-512.png', 'ufti-icon-1024.png',
-    'ufti-box-front-outlined.svg', 'ufti-hero-outlined.svg', 'ufti-play-feature-outlined.svg', 'ufti-share-card-outlined.svg', 'ufti-share-card.png'
+    'ufti-box-front-outlined.svg', 'ufti-hero-outlined.svg', 'ufti-play-feature-outlined.svg', 'ufti-share-card-outlined.svg', 'ufti-share-card.png',
+    'ufti-store-poster-outlined.svg', 'ufti-store-box-art-outlined.svg', 'ufti-app-icon.svg', 'ufti-app-icon-256.png', 'ufti-app-icon-1024.png', 'ufti-app.ico'
 )
 $shipped = @('ufti.ico', 'ufti-share-card.png', 'ufti-mark.svg', 'ufti-mark-on-dark.svg')
 

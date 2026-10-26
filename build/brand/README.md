@@ -9,9 +9,9 @@ The uFTi logo and store art, as the app's team publishes them, kept unchanged fo
 | | |
 |---|---|
 | Made by | The app's repository (private), folder `design/brand`, by its brand script from one stitch map. Never edit a file here: import again. |
-| Artwork version | **1.1.0** |
-| Tag | `brand-v1.1.0` |
-| Commit | `71fa81e345decb2bbe1f644067ecf87f883b9904` |
+| Artwork version | **1.3.0** |
+| Tag | `brand-v1.3.0` |
+| Commit | `98137e212216fa29f1bf39784df4d4a5a3e461fa` |
 
 ## What is here
 
@@ -23,6 +23,8 @@ The uFTi logo and store art, as the app's team publishes them, kept unchanged fo
 | `art/ufti-share-card.png` | 1200 × 630 | The share image (`govuk.og.image`) |
 | `art/ufti-share-card-outlined.svg`, `ufti-hero-outlined.svg` | Share card and landscape hero | Kept; the Get the app pages and slides |
 | `art/ufti-box-front-outlined.svg`, `ufti-play-feature-outlined.svg` | Box front, Google Play graphic | Kept for the stores and the Get the app pages |
+| `art/ufti-store-poster-outlined.svg`, `ufti-store-box-art-outlined.svg` | Microsoft Store poster (9:16) and box art (1:1) | Kept for the Get the app pages |
+| `art/ufti-app-icon.svg`, `ufti-app-icon-256.png`, `-1024.png`, `ufti-app.ico` | The desktop app icon (a tile with a margin) and the Windows program icon | Kept; the install pages can show what to look for |
 | `art/ufti-sampler*.svg`, `.png`, `ufti-touch-icon.svg`, `ufti-icon-*.png` | The master, pixel versions, touch and store icons | Kept |
 | `../theme/assets/brand/` | The four files the build ships beside the stylesheet: `ufti.ico`, `ufti-share-card.png`, `ufti-mark.svg`, `ufti-mark-on-dark.svg` | |
 
