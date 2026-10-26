@@ -34,7 +34,7 @@
     <!-- Brand artwork (build/brand/README.md): the favicon, and the share image, which sits beside the stylesheet
          (args.csspath/brand) and is named by its path under the deliverable. -->
     <param name="govuk.favicon" path="../theme/assets/brand/ufti.ico"/>
-    <param name="govuk.og.image" value="theme/brand/ufti-share.png"/>
+    <param name="govuk.og.image" value="theme/brand/ufti-share-card.png"/>
     <!-- Hosting: GitHub Pages cannot set headers (govuk.csp=meta); the app's help panel frames pages. -->
     <param name="govuk.csp" value="meta"/>
     <param name="govuk.embed" value="yes"/>
