@@ -10,3 +10,6 @@ Ctrl
 Esc
 PDFs
 (?-i)Center
+(?-i)Organization
+(?-i)Standardization
+(?-i)Electrotechnical
