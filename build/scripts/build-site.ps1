@@ -181,7 +181,7 @@ $map = [System.Text.StringBuilder]::new()
 [void]$map.AppendLine($head)
 [void]$map.AppendLine('<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">')
 [void]$map.AppendLine('<map id="ufti-docs" xml:lang="en-GB">')
-[void]$map.AppendLine('  <title>uFTi documentation</title>')
+[void]$map.AppendLine('  <title>Welcome to uFTi</title>')
 foreach ($p in $pub.Platforms) {
     Write-Text (Join-Path $genDir $p.Slug 'index.dita') (New-PlatformTopic -Platform $p -Rows $listing[$p.Slug])
     [void]$map.AppendLine("  <topicref href=""$($p.Slug)/index.dita""/>")
@@ -189,12 +189,25 @@ foreach ($p in $pub.Platforms) {
 # The site's own pages (content/site/): hand-written topics, copied into the sources of the root so that the root map
 # names nothing outside its own folder (the plugin's GOVK016W). Each is written to <name>/index.html at the top of the tree.
 foreach ($need in 'accessibility', 'privacy') { if (-not (Test-Path -LiteralPath (Join-Path $root 'content' 'site' "$need.dita"))) { Fail "content/site/$need.dita is missing: the footer of every page links to it" } }
+foreach ($need in 'welcome') { if (-not (Test-Path -LiteralPath (Join-Path $root 'content' 'site' "$need.dita"))) { Fail "content/site/$need.dita is missing: it is the top of the home page" } }
 foreach ($sp in Get-ChildItem -LiteralPath (Join-Path $root 'content' 'site') -Filter '*.dita' | Sort-Object Name) {
+    if ($sp.BaseName -ceq 'welcome') { continue }   # the home page: its body goes into the top of index.html (below)
     $dest = Join-Path $genDir $sp.BaseName 'index.dita'
     New-Item -ItemType Directory -Path (Split-Path -Parent $dest) -Force | Out-Null
     Copy-Item -LiteralPath $sp.FullName -Destination $dest
     [void]$map.AppendLine("  <topicref href=""$($sp.BaseName)/index.dita"" toc=""no""/>")
 }
+# The home page (content/site/welcome.dita) is a topic at the top of the root, so that it builds to home.html beside index.html and its
+# pictures are found at images/ from there. Its body is moved into index.html after the build (section 4) and home.html is removed.
+Copy-Item -LiteralPath (Join-Path $root 'content' 'site' 'welcome.dita') -Destination (Join-Path $genDir 'home.dita')
+Copy-Item -LiteralPath (Join-Path $root 'content' 'site' 'images.ditamap') -Destination (Join-Path $genDir 'site-images.ditamap')
+New-Item -ItemType Directory -Path (Join-Path $genDir 'images') -Force | Out-Null
+Copy-Item -LiteralPath (Join-Path $root 'build' 'brand' 'art' 'ufti-hero-outlined.svg') -Destination (Join-Path $genDir 'images' 'ufti-hero.svg')
+Copy-Item -LiteralPath (Join-Path $root 'content' 'platforms' 'android-phone' 'images' 'family-page.png') -Destination (Join-Path $genDir 'images' 'family-tree-android-phone.png')
+Copy-Item -LiteralPath (Join-Path $root 'content' 'platforms' 'windows' 'images' 'family-page.png') -Destination (Join-Path $genDir 'images' 'family-tree-windows.png')
+$titleTag = '<title>Welcome to uFTi</title>'
+[void]$map.Insert($map.ToString().IndexOf($titleTag) + $titleTag.Length, "`n  <mapref href=""site-images.ditamap"" processing-role=""resource-only""/>")
+[void]$map.AppendLine('  <topicref href="home.dita" toc="no"/>')
 [void]$map.AppendLine('  <topicref href="not-found.dita" toc="no"/>')
 [void]$map.AppendLine('</map>')
 Write-Text (Join-Path $genDir 'ufti-docs.ditamap') $map.ToString()
@@ -219,6 +232,24 @@ if ($LASTEXITCODE -ne 0) { Fail 'the root and platform pages did not build clean
 
 Write-UftiStep 'Assemble the tree'
 Copy-Item -Path (Join-Path $outDir 'site-root' '*') -Destination $siteDir -Recurse -Force
+# The body of the home page goes into the top of the generated index.html, in place of the word "Contents" above the list of
+# devices, which becomes "Choose your device". Until the plugin has a place for an intro topic (plugin issue 270).
+$homePath = Join-Path $siteDir 'home.html'
+$indexPath = Join-Path $siteDir 'index.html'
+$homeHtml = [System.IO.File]::ReadAllText($homePath)
+if ($homeHtml -notmatch '(?s)<article[^>]*>\s*<h1[^>]*>.*?</h1>(?<body>.*)</article>') { Fail 'home.html has no article to move into index.html' }
+$homeBody = $Matches['body']
+$indexHtml = [System.IO.File]::ReadAllText($indexPath)
+$marker = '<h2 class="govuk-heading-m">Contents</h2>'
+if (-not $indexHtml.Contains($marker)) { Fail 'index.html has no Contents heading to put the home page above' }
+$indexHtml = $indexHtml.Replace($marker, $homeBody + '<h2 class="govuk-heading-m">Choose your device</h2>')
+[System.IO.File]::WriteAllText($indexPath, $indexHtml, $utf8)
+Remove-Item -LiteralPath $homePath
+# The pages next to it in the map link to home.html as the one before or after them. They mean the home page, which is index.html.
+foreach ($page in Get-ChildItem -LiteralPath $siteDir -Recurse -Filter '*.html') {
+    $text = [System.IO.File]::ReadAllText($page.FullName)
+    if ($text.Contains('home.html')) { [System.IO.File]::WriteAllText($page.FullName, $text.Replace('home.html', 'index.html'), $utf8) }
+}
 # The not-found page is served at the address that was asked for, so a relative link in it (the stylesheet, the
 # scripts, the platform pages) would be looked for below that address. Its links are made absolute, from base-url.
 $nfPath = Join-Path $siteDir 'not-found.html'

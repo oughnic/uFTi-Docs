@@ -114,7 +114,7 @@ Other languages measure differently. English measures do not apply to Spanish, w
 - **Explain a hard word once,** where the reader first meets it, in plain words, and link its glossary entry with `<term keyref="term-..."/>`. Every term in the glossary has a definition an 11-year-old can read.
 - **No jargon without a reason.** If you cannot explain a word in the topic, the topic is too hard. Expand an abbreviation the first time, or link it.
 - **Never show a file tag, a structure or a line of a file** (DEC-030). Say what the thing is for: "a family tree file", "a person", "a fact". Vale `uFTi.GedcomTags`.
-- **Never state price, "free", "forever", accounts, sign-in or where data is kept** (DEC-040). Vale `uFTi.BusinessModel`.
+- **Never state price, "free", "forever", accounts, sign-in or where data are kept** (DEC-040). Vale `uFTi.BusinessModel`.
 - **Avoid** *simply*, *just*, *easy*, *obviously*, *please*, *via*, *e.g.*, *i.e.* and *etc.* They tell a reader who is stuck that they should not be. Vale `uFTi.Avoid`.
 - **Verbs that work for touch and for a pointer:** *choose*, *select*, *open*, *enter*, *type*. Use *click*, *tap* and *press* only in text for one kind of device (Vale `uFTi.NeutralVerbs`, a warning).
 - **Name the control, not its colour or its place** (Vale `uFTi.ColourCues`, an error, and `uFTi.PositionCues`, a warning). Say "choose **Delete**", not "choose the red button on the right". Position changes with the screen and a screen reader does not give it. Say where a control is only when its name alone would not find it, as for the **+** button.
@@ -150,6 +150,7 @@ The advice rule `uFTi.PlainWords` warns on the left column. The full list is in 
 - **Times** are written the GOV.UK way: 9am, 5.30pm, midday, midnight.
 - **Numbers.** Spell out one to nine in text. Use digits for 10 and over, in tables, and for anything the screen shows as a digit. Do not start a sentence with a digit.
 - **Names.** *Brontë* has the diaeresis in text. In file names and keys it is `bronte`. Use the people and places of the [dataset](dataset-strategy.md) exactly as it spells them, and invent no one else. Write notes in our own words. Never copy text from a biography, an encyclopaedia or a museum page.
+- **Data** is a plural word: *data are*, *the data show*, *these data* (maintainer preference, DEC-176). Say *information* or *facts* where they fit as well.
 - **Real people.** Never a living person, and never real family data.
 
 ## 7. Headings, titles and layout
@@ -194,6 +195,6 @@ A person reads each topic once, aloud if they can, and asks:
 - [ ] Is it free of "just", "simply" and "easy", and of any blame?
 - [ ] Is the title a title a reader would search for, and the short description a sentence that helps them choose?
 - [ ] Is the picture's alternative text useful if the picture is not seen?
-- [ ] Does it say nothing about price, accounts, where data is kept or a file's contents?
+- [ ] Does it say nothing about price, accounts, where data are kept or a file's contents?
 - [ ] Are the examples the Brontë family, spelt as the dataset spells them?
 - [ ] Are the warnings from Vale (position cues, plain words, terms) answered, or left on purpose?

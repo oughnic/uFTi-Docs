@@ -11,7 +11,7 @@
           platforms/<idiom>/topics/. A page the same everywhere lives in topics/quick-start/. See the
           variant template for how one key serves them all.
        5. Category is "Get started". The help identifier names the screen the page is about.
-       6. Say nothing about price, accounts or where data is kept (DEC-040).
+       6. Say nothing about price, accounts or where data are kept (DEC-040).
      Everything else follows the task template. -->
 <task id="template-quick-start-page" xml:lang="en-GB">
   <title>Do the first thing</title>

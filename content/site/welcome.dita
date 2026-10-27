@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="welcome" xml:lang="en-GB">
+  <title>Welcome to uFTi</title>
+  <shortdesc>An app for your family tree that ties every fact to the place you found it.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-27"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Concept</category>
+      <keywords>
+        <keyword>family history</keyword>
+        <keyword>GEDCOM 7</keyword>
+        <keyword>Oughtibridge Ltd</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p>You add people, families and facts. For each fact, you say where you found it. Later you can see what backs it up.</p>
+    <fig>
+      <image keyref="img-home-hero"/>
+    </fig>
+    <section id="what-ufti-is">
+      <title>What uFTi is</title>
+      <p>There is one uFTi app for each kind of device: Windows, Mac, iPhone, iPad and Android. Each app is built for its own device. It is not a web page.</p>
+      <p>Here is the same family, the Brontë family of Haworth, on a phone and on a Windows computer.</p>
+      <fig>
+        <image keyref="img-home-android-phone"/>
+        <image keyref="img-home-windows"/>
+      </fig>
+    </section>
+    <section id="where-things-stand">
+      <title>Where things stand</title>
+      <p>uFTi is in Alpha. That is an early stage, so the apps and these pages still change. Alpha-1 is not open to the public yet.</p>
+      <p>The manuals match Alpha-1. The Windows and Android phone manuals are the fullest. The iPhone, iPad and Mac manuals are shorter. The Android tablet manual is being written.</p>
+      <p>Everything on these pages is about the uFTi apps.</p>
+    </section>
+    <section id="your-family-tree-files">
+      <title>Your family tree files</title>
+      <p>Family history programs share trees as files in a format called GEDCOM. uFTi uses the newest version, GEDCOM 7, as its own. It also reads and writes the older GEDCOM 5.5.1, so you can move a tree to and from an older program.</p>
+    </section>
+    <section id="who-makes-ufti">
+      <title>Who makes uFTi</title>
+      <p>Oughtibridge Ltd makes uFTi. It is a company in the United Kingdom, set up in 1994. Its particular skill is robust data architecture. That means planning how information is stored so that it stays correct and can be checked.</p>
+      <p>The company also helps to write international standards. It leads standards projects, and it convenes working groups, in ISO and in IEC. ISO is the International Organization for Standardization. IEC is the International Electrotechnical Commission. Both publish standards. A standard is a set of rules that people agree on, so that things made by different people work together.</p>
+      <p>We bring the same care to uFTi, where the data are the facts of your family.</p>
+    </section>
+  </conbody>
+</concept>
