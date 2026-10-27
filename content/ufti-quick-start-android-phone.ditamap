@@ -33,7 +33,8 @@
   <chapter href="topics/quick-start/five-things-to-know.dita" keys="five-things-to-know"/>
   <backmatter>
     <booklists>
-      <glossarylist>
+      <!-- toc="no": the print document and PDF make their own Glossary part, so the terms are not also printed as pages of their own (DEC-170). -->
+      <glossarylist toc="no">
         <topicref href="glossary/fact.dita" keys="term-fact"/>
         <topicref href="glossary/family-tree-file.dita" keys="term-family-tree-file"/>
         <topicref href="glossary/gedcom.dita" keys="term-gedcom"/>
