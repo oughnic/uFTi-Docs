@@ -66,9 +66,13 @@ Write-UftiStep "Check the tree at $siteDir ($($files.Count) files)"
 
 # ---- Shape -------------------------------------------------------------------------------------------
 
-foreach ($need in 'index.html', 'not-found.html', 'staticwebapp.config.json', 'robots.txt', 'sitemap.xml', 'accessibility/index.html', 'privacy/index.html') { if (-not $files.Contains($need)) { Bad "the root has no $need" } }
+foreach ($need in 'index.html', 'not-found.html', 'staticwebapp.config.json', 'robots.txt', 'sitemap.xml', 'accessibility/index.html', 'privacy/index.html', 'images/ufti-hero.svg') { if (-not $files.Contains($need)) { Bad "the root has no $need" } }
+# the home page's words are in index.html (the build moves them there from content/site/welcome.dita), and no page of the tree still points at home.html
+$indexText = [System.IO.File]::ReadAllText((Join-Path $siteDir 'index.html'))
+foreach ($mark in 'id="welcome__what-ufti-is"', 'id="welcome__who-makes-ufti"', 'Choose your device') { if (-not $indexText.Contains($mark)) { Bad "index.html does not hold the home page: $mark is missing" } }
+if ($files.Contains('home.html')) { Bad 'home.html is in the tree: the build moves it into index.html' }
 $slugs = @($pub.Platforms | ForEach-Object Slug)
-$shared = 'govuk', 'theme', 'accessibility', 'privacy'   # the shared folders and the two site pages (DEC-150)
+$shared = 'govuk', 'theme', 'images', 'accessibility', 'privacy'   # the shared folders (images: the home page's pictures) and the two site pages (DEC-150)
 foreach ($top in Get-ChildItem -LiteralPath $siteDir -Directory) {
     if ($slugs -cnotcontains $top.Name -and $shared -cnotcontains $top.Name) { Bad "unexpected folder at the root: $($top.Name)/ (a platform is added in build/publications.ini)" }
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!-- The pictures of the home page (welcome.dita). The build copies the files into images/ beside the root map:
+     the hero from the brand artwork (build/brand/art/, copied unchanged, DEC-164), and the same Brontë tree from
+     the Android phone and the Windows manuals. A key's link text is the picture's alternative text (DEC-011). -->
+<map id="site-images" xml:lang="en-GB">
+  <keydef keys="img-home-hero" href="images/ufti-hero.svg" format="svg" scope="local">
+    <topicmeta><linktext>The uFTi name and its strapline, Understanding family tree information, beside a cross-stitch tree in an embroidery hoop on a blue ground</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-home-android-phone" href="images/family-tree-android-phone.png" format="png" scope="local">
+    <topicmeta><linktext>The page for Patrick Brontë and Maria Branwell on an Android phone, with their marriage, their daughter Charlotte and a button to view their family tree</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-home-windows" href="images/family-tree-windows.png" format="png" scope="local">
+    <topicmeta><linktext>The page for Patrick Brontë and Maria Branwell in the Windows app, with their marriage, their daughter Charlotte and the buttons to change or delete the family</linktext></topicmeta>
+  </keydef>
+</map>
