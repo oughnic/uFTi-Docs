@@ -35,7 +35,8 @@
   </chapter>
   <backmatter>
     <booklists>
-      <glossarylist>
+      <!-- toc="no": the print document and PDF make their own Glossary part, so the terms are not also printed as pages of their own (DEC-170). -->
+      <glossarylist toc="no">
         <topicref href="glossary/backup.dita" keys="term-backup"/>
         <topicref href="glossary/fact.dita" keys="term-fact"/>
         <topicref href="glossary/family-tree-file.dita" keys="term-family-tree-file"/>
