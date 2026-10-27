@@ -6,8 +6,8 @@
 
 - [Quick Start](https://docs.ufti.com/android-phone/Alpha-1/start/topics/quick-start/quick-start.html): Six short pages that take you from opening uFTi to your first person, with its source and a copy.
 - [Get uFTi](https://docs.ufti.com/android-phone/Alpha-1/start/platforms/android/topics/get-ufti.html): Open uFTi for the first time.
-- [Add your first person](https://docs.ufti.com/android-phone/Alpha-1/start/platforms/phone/topics/add-your-first-person.html): Make your own workspace and add yourself, or someone you know well.
-- [Look around](https://docs.ufti.com/android-phone/Alpha-1/start/platforms/phone/topics/look-around.html): See what the five tabs and the search box do for the person you added.
+- [Add your first person](https://docs.ufti.com/android-phone/Alpha-1/start/platforms/android-phone/topics/add-your-first-person.html): Make your own workspace and add yourself, or someone you know well.
+- [Look around](https://docs.ufti.com/android-phone/Alpha-1/start/platforms/android-phone/topics/look-around.html): See what the five places in the bar and the search box do for the person you added.
 - [Say where you found it](https://docs.ufti.com/android-phone/Alpha-1/start/topics/quick-start/say-where-you-found-it.html): Add a source to a fact, so you always know why you believe it.
 - [Keep it safe](https://docs.ufti.com/android-phone/Alpha-1/start/platforms/android/topics/keep-it-safe.html): Save a copy of your tree as a file, and keep it somewhere else too.
 - [What next](https://docs.ufti.com/android-phone/Alpha-1/start/topics/quick-start/what-next.html): You have a tree, a person, a fact with its source and a copy, so choose where to go from here.
