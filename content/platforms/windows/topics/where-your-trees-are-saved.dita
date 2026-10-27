@@ -6,6 +6,7 @@
   <prolog>
     <critdates>
       <created date="2026-10-26"/>
+      <revised modified="2026-10-27"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -20,6 +21,10 @@
   </prolog>
   <conbody>
     <p>When you make a new tree, <keyword keyref="product-name"/> saves it in the folder <filepath>Documents\uFTi</filepath> on your PC.</p>
+    <section>
+      <title>Your pictures</title>
+      <p>The pictures that you add to a tree are saved in the folder <filepath>DocumentsFTiMedia</filepath>, beside your trees. They are kept in the same way.</p>
+    </section>
     <section>
       <title>If you remove the app</title>
       <p>Your trees are files in your own Documents folder. They are not part of the app. If you remove <keyword keyref="product-name"/> from your PC, your trees stay where they are.</p>
