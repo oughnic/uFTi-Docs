@@ -46,6 +46,7 @@ jobs:
   site:
     name: build the tree
     runs-on: ubuntu-24.04
+    timeout-minutes: 40
     steps:
       - name: Check out
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -82,7 +83,11 @@ jobs:
         run: build/scripts/bootstrap.sh --only vnu,plugin-tools
       - name: Install the accessibility runner
         working-directory: .tools/plugin-tools/tools/a11y
+        timeout-minutes: 15
         run: |
+          # apt gives up on a stalled connection to the package server and tries again, instead of waiting
+          # for the job's time limit (issue 108). Playwright's --with-deps installs its packages with apt.
+          printf 'Acquire::Retries "5";\nAcquire::http::Timeout "30";\nAcquire::https::Timeout "30";\n' | sudo tee /etc/apt/apt.conf.d/99ufti-retries > /dev/null
           npm ci --no-audit --no-fund
           npx playwright install --with-deps chromium
       - name: Every page of the tree (axe-core, WCAG 2.2 AA, no exceptions, and the Nu HTML Checker)
@@ -124,6 +129,7 @@ jobs:
     needs: site
     if: (github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/heads/release/'))) || (github.event_name == 'workflow_dispatch' && inputs.publish)
     runs-on: ubuntu-24.04
+    timeout-minutes: 15
     permissions:
       contents: write
     concurrency:
@@ -151,6 +157,7 @@ jobs:
     needs: publish
     if: needs.publish.result == 'success' && (inputs.branch || 'publish') == 'publish' && (github.event_name == 'push' || inputs.deploy)
     runs-on: ubuntu-24.04
+    timeout-minutes: 15
     environment: azure-production
     permissions:
       contents: read
