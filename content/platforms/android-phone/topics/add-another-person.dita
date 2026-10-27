@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="add-another-person" xml:lang="en-GB">
+  <title>Add another person</title>
+  <shortdesc>Add a person to a tree that already has someone in it.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-27"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>new person</keyword>
+        <keyword>add record</keyword>
+        <keyword>forms</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="people.add"/>
+  </prolog>
+  <taskbody>
+    <context>
+      <p>The first person comes with a new tree. After that, you add people with <uicontrol keyref="ui-add"/>.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-add"/> at the top right.</cmd>
+        <stepresult>
+          <p>A sheet named <uicontrol keyref="ui-add-a-record"/> opens. If a person is open, it starts with things you can add to that person.</p>
+          <fig>
+            <image keyref="img-add-record"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Scroll down to the part named <uicontrol keyref="ui-add-a-new-person"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-basic-details"/>, then choose <uicontrol keyref="ui-add-button"/> at the bottom.</cmd>
+        <info>
+          <p>The button stays grey until you choose a form.</p>
+        </info>
+        <stepresult>
+          <p>The <uicontrol keyref="ui-new-person"/> form opens.</p>
+          <fig>
+            <image keyref="img-add-record-lower"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Type the names, choose the sex and add the dates and places you know.</cmd>
+        <info>
+          <p>Only <uicontrol keyref="ui-given-names"/> is needed. For a date, type the day and the year and choose the month from the list. A line under the date says how the app reads it, such as <q>Reads as 17 March 1777</q>.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Scroll to the bottom of the form and choose <uicontrol keyref="ui-save"/>.</cmd>
+        <stepresult>
+          <p>You go back to the screen you came from. The new person is in your tree.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>To open the new person, <xref keyref="find-a-person"/>.</p>
+      <p>The sheet ends with <uicontrol keyref="ui-more-forms"/>. Choose it to see the forms that do not fit this person. Each one has a line under it that says why. For example, <q>This form covers 1891, and going by the dates in the tree, nobody here was alive then.</q></p>
+      <fig>
+        <image keyref="img-add-record-more-forms"/>
+      </fig>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="add-a-family"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

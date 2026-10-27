@@ -31,6 +31,9 @@
     <mapref href="maps/structure/quick-start.ditamap"/>
   </chapter>
   <chapter href="topics/quick-start/five-things-to-know.dita" keys="five-things-to-know"/>
+  <chapter href="topics/tree/work-with-your-tree.dita" keys="work-with-your-tree">
+    <mapref href="maps/structure/work-with-your-tree.ditamap"/>
+  </chapter>
   <chapter href="topics/workspaces/bring-in-share-and-keep-safe.dita" keys="bring-in-share-and-keep-safe">
     <mapref href="maps/structure/bring-in-share-and-keep-safe.ditamap"/>
   </chapter>
