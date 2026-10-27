@@ -5,7 +5,7 @@
 ## Quick Start
 
 - [Quick Start](https://docs.ufti.com/windows/Alpha-1/topics/quick-start/quick-start.html): Six short pages that take you from opening uFTi to your first person, with its source and a copy.
-- [Get uFTi](https://docs.ufti.com/windows/Alpha-1/platforms/windows/topics/get-ufti.html): Download uFTi, install it and open it for the first time.
+- [Get uFTi](https://docs.ufti.com/windows/Alpha-1/platforms/windows/topics/get-ufti.html): Get uFTi from the Microsoft Store, then open it for the first time.
 - [Add your first person](https://docs.ufti.com/windows/Alpha-1/platforms/desktop/topics/add-your-first-person.html): Make your own workspace and add yourself, or someone you know well.
 - [Look around](https://docs.ufti.com/windows/Alpha-1/platforms/desktop/topics/look-around.html): See what the main menu items show for the person you added.
 - [Say where you found it](https://docs.ufti.com/windows/Alpha-1/topics/quick-start/say-where-you-found-it.html): Add a source to a fact, so you always know why you believe it.
@@ -36,6 +36,7 @@
 
 - [Bring in, share and keep safe](https://docs.ufti.com/windows/Alpha-1/topics/workspaces/bring-in-share-and-keep-safe.html): What your workspace holds, why a GEDZIP file is the one to keep and send, and when a plain family tree file is better.
 - [Your workspace and its files](https://docs.ufti.com/windows/Alpha-1/topics/workspaces/your-workspace-and-its-files.html): A workspace is your family tree and its linked files, and a GEDZIP file holds all of them in one file.
+- [Where your trees are saved](https://docs.ufti.com/windows/Alpha-1/platforms/windows/topics/where-your-trees-are-saved.html): New trees are saved in a folder named uFTi inside your Documents folder, and they stay there if you remove the app.
 - [Opened files and copies](https://docs.ufti.com/windows/Alpha-1/platforms/desktop/topics/opened-files-and-copies.html): On a computer, uFTi works on the file you open, so make a copy first if you want the original left alone.
 - [Open a family tree file](https://docs.ufti.com/windows/Alpha-1/platforms/desktop/topics/open-a-family-tree-file.html): Bring a tree from another program, or a copy from a relative, into uFTi.
 - [Remove a tree from the list](https://docs.ufti.com/windows/Alpha-1/platforms/desktop/topics/remove-a-workspace.html): Take a tree off the Workspaces screen without deleting its file.

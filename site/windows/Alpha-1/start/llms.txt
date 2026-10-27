@@ -5,7 +5,7 @@
 ## Quick Start
 
 - [Quick Start](https://docs.ufti.com/windows/Alpha-1/start/topics/quick-start/quick-start.html): Six short pages that take you from opening uFTi to your first person, with its source and a copy.
-- [Get uFTi](https://docs.ufti.com/windows/Alpha-1/start/platforms/windows/topics/get-ufti.html): Download uFTi, install it and open it for the first time.
+- [Get uFTi](https://docs.ufti.com/windows/Alpha-1/start/platforms/windows/topics/get-ufti.html): Get uFTi from the Microsoft Store, then open it for the first time.
 - [Add your first person](https://docs.ufti.com/windows/Alpha-1/start/platforms/desktop/topics/add-your-first-person.html): Make your own workspace and add yourself, or someone you know well.
 - [Look around](https://docs.ufti.com/windows/Alpha-1/start/platforms/desktop/topics/look-around.html): See what the main menu items show for the person you added.
 - [Say where you found it](https://docs.ufti.com/windows/Alpha-1/start/topics/quick-start/say-where-you-found-it.html): Add a source to a fact, so you always know why you believe it.
