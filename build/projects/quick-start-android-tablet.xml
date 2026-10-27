@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- One deliverable: the Android tablet Quick Start, its own site, print document and PDF (content model,
+     section 3). Build it with build/scripts/build.ps1 -Project quick-start-android-tablet (or build.sh).
+     Its address, PDF name and footer links come from the release in build/publications.ini. -->
+<project xmlns="https://www.dita-ot.org/project">
+  <include href="common.xml"/>
+  <deliverable id="quick-start-android-tablet">
+    <context>
+      <input href="../../content/ufti-quick-start-android-tablet.ditamap"/>
+      <profile>
+        <ditaval href="../ditaval/android-tablet.ditaval"/>
+      </profile>
+    </context>
+    <output href="quick-start-android-tablet"/>
+    <publication idref="ufti-manual">
+      <param name="govuk.service.name" value="uFTi Quick Start: Android tablet"/>
+    </publication>
+  </deliverable>
+</project>

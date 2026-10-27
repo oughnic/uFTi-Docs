@@ -1,0 +1,26 @@
+{
+  "img-start-first-run": {
+    "shows": "controls only",
+    "reason": "Cut before import to the heading and the two buttons. The first launch also shows the app's own sample workspaces, which are not the Brontë dataset or the route the page teaches (DEC-040)."
+  },
+  "img-create-workspace-dialog": {
+    "shows": "controls only",
+    "reason": "Cut before import to the box and its two buttons. The keyboard below it is not shown."
+  },
+  "img-nav-main": {
+    "noFocus": true,
+    "reason": "No cut but the status bar and the gesture bar. The subject is a list of people from a search, all of them on the allow-list, not one person."
+  },
+  "img-citation-add": {
+    "noFocus": true,
+    "reason": "Cut before import to the form. The subject is the form, which names no person."
+  },
+  "img-family-children": {
+    "workspaceHidden": true,
+    "reason": "Cut before import to the Children part of the form, so the name of the workspace is not shown."
+  },
+  "img-note-form": {
+    "workspaceHidden": true,
+    "reason": "Cut before import below the button that fills the form from a document (an AI feature, which the documentation leaves out, DEC-020), which also leaves out the name of the workspace."
+  }
+}

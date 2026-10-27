@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
-<!-- The phone pages written from the Android walk carry the token AndroidPhone (the token Phone is shared with the iPhone, whose words are not walked yet: issue 103). -->
+<!-- The phone pages written from the Android walk carry the token AndroidPhone (the token Phone is shared with the iPhone, whose words are not walked yet: issue 103). The tablet twins written from the Android tablet walk carry AndroidTablet (issue 20). -->
 <!-- The Quick Start in order, shared by every manual (content model, section 3). A page that depends
      on the platform (getting the app, keeping a copy) or on the device idiom (adding a person, looking
      around) has one topic per platform or idiom, each topicref carrying its token and the same key,
@@ -12,9 +12,11 @@
   <topicref href="../../platforms/desktop/topics/add-your-first-person.dita" keys="add-your-first-person" platform="Desktop iPad"/>
   <topicref href="../../platforms/phone/topics/add-your-first-person.dita" keys="add-your-first-person" platform="iPhone"/>
   <topicref href="../../platforms/android-phone/topics/add-your-first-person.dita" keys="add-your-first-person" platform="AndroidPhone"/>
+  <topicref href="../../platforms/android-tablet/topics/add-your-first-person.dita" keys="add-your-first-person" platform="AndroidTablet"/>
   <topicref href="../../platforms/desktop/topics/look-around.dita" keys="look-around" platform="Desktop iPad"/>
   <topicref href="../../platforms/phone/topics/look-around.dita" keys="look-around" platform="iPhone"/>
   <topicref href="../../platforms/android-phone/topics/look-around.dita" keys="look-around" platform="AndroidPhone"/>
+  <topicref href="../../platforms/android-tablet/topics/look-around.dita" keys="look-around" platform="AndroidTablet"/>
   <topicref href="../../topics/quick-start/say-where-you-found-it.dita" keys="say-where-you-found-it"/>
   <topicref href="../../platforms/windows/topics/keep-it-safe.dita" keys="keep-it-safe" platform="WindowsWinUI"/>
   <topicref href="../../platforms/android/topics/keep-it-safe.dita" keys="keep-it-safe" platform="Android"/>
