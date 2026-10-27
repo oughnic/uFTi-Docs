@@ -21,7 +21,7 @@
   <taskbody>
     <steps>
       <step>
-        <cmd>Choose the <uicontrol keyref="ui-workspaces"/> tab.</cmd>
+        <cmd>Choose <uicontrol keyref="ui-workspaces"/>.</cmd>
       </step>
       <step>
         <cmd>On the card for your tree, choose <uicontrol keyref="ui-save-as"/>.</cmd>
@@ -46,11 +46,11 @@
         </info>
       </step>
       <step>
-        <cmd>When Android asks where to put the file, choose a place you will remember, such as Downloads. Then choose Save.</cmd>
+        <cmd>When Android asks where to put the file, choose a place you will remember, such as Download. Then choose Save.</cmd>
       </step>
     </steps>
     <result>
-      <p>You now have a copy. Make a new one after you add a lot. To email it, find it in the Files app. Keep a copy off your phone too.</p>
+      <p>You now have a copy. Make a new one after you add a lot. To email it, find it in the Files app. Keep a copy off your phone or tablet too.</p>
       <note>If you opened a file from another program, <keyword keyref="product-name"/> keeps its own copy. The file you chose does not change.</note>
     </result>
     <postreq>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="change-a-person" xml:lang="en-GB">
+  <title>Change a person</title>
+  <shortdesc>Correct a name, a date or a place on a person's page.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-27"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>edit</keyword>
+        <keyword>correct</keyword>
+        <keyword>amend</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="people.change"/>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p>Open the person first. <xref keyref="find-a-person"/> shows how.</p>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Scroll to the bottom of the page and choose <uicontrol keyref="ui-edit"/>.</cmd>
+        <stepresult>
+          <p>The page turns into a form. The names and the sex are on the left. The dates and places of birth and death are on the right. The form may open part of the way down: scroll up to see the top.</p>
+          <fig>
+            <image keyref="img-person-edit"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Change what is wrong.</cmd>
+      </step>
+      <step>
+        <cmd>Scroll to the bottom of the form. Choose <uicontrol keyref="ui-save"/> to keep your changes, or <uicontrol keyref="ui-cancel"/> to leave the form as it was.</cmd>
+      </step>
+    </steps>
+    <result>
+      <p>Your changes are saved to the file as you go. The page shows the new words.</p>
+      <note>The button <uicontrol keyref="ui-delete-person"/> sits below <uicontrol keyref="ui-edit"/>. It removes the person. Check before you choose it.</note>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="look-at-the-sources-of-a-fact"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

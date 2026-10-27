@@ -19,7 +19,7 @@
   </prolog>
   <conbody>
     <p>To share your tree with someone who uses <keyword keyref="product-name"/>, save a copy as a <term keyref="term-gedzip">GEDZIP</term> file with <uicontrol keyref="ui-save-as"/>, and send that file. <xref keyref="keep-it-safe"/> shows how to make one.</p>
-    <p>A GEDZIP file holds your whole workspace: the tree, its research notes, and the pictures and other attached files. It is one file, so you can send it from your phone. Nothing is left behind, so the other person sees what you see. <xref keyref="your-workspace-and-its-files"/> says more.</p>
+    <p>A GEDZIP file holds your whole workspace: the tree, its research notes, and the pictures and other attached files. It is one file, so you can send it from your phone or tablet. Nothing is left behind, so the other person sees what you see. <xref keyref="your-workspace-and-its-files"/> says more.</p>
     <section>
       <title>For an older program</title>
       <p>Some older programs cannot read a GEDZIP file. For them, save a plain <term keyref="term-family-tree-file">family tree file</term> instead. It holds the people, families, facts, sources and research notes, but not the pictures or other attached files. If the other person needs the pictures, send them as well.</p>

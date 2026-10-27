@@ -12,6 +12,7 @@ content/
   ufti-manual-windows.ditamap        the Windows manual: the Start here chapter, and so far the start of
                                      "Bring in, share and keep safe"
   ufti-quick-start-android-phone.ditamap, ufti-manual-android-phone.ditamap   the same for the Android phone
+  ufti-quick-start-android-tablet.ditamap, ufti-manual-android-tablet.ditamap   the same for the Android tablet
   maps/structure/quick-start.ditamap the Quick Start pages in order, shared by both
   maps/structure/bring-in-share-and-keep-safe.ditamap   the pages of that chapter, shared by both
   topics/quick-start/                the pages the same on every device, the chapter introduction, and
