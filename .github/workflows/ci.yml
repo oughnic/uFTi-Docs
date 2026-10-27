@@ -27,6 +27,7 @@ jobs:
   lint:
     name: lint
     runs-on: ubuntu-24.04
+    timeout-minutes: 20
     steps:
       - name: Check out
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -59,6 +60,7 @@ jobs:
   build:
     name: build (${{ matrix.deliverable }})
     runs-on: ubuntu-24.04
+    timeout-minutes: 20
     strategy:
       fail-fast: false
       matrix:
@@ -98,6 +100,7 @@ jobs:
     name: check (${{ matrix.deliverable }})
     needs: build
     runs-on: ubuntu-24.04
+    timeout-minutes: 30
     strategy:
       fail-fast: false
       matrix:
@@ -132,7 +135,11 @@ jobs:
         run: build/scripts/bootstrap.sh --only dita-ot,govuk-plugin,designsystempdf,verapdf,vnu,plugin-tools
       - name: Install the accessibility runner
         working-directory: .tools/plugin-tools/tools/a11y
+        timeout-minutes: 15
         run: |
+          # apt gives up on a stalled connection to the package server and tries again, instead of waiting
+          # for the job's time limit (issue 108). Playwright's --with-deps installs its packages with apt.
+          printf 'Acquire::Retries "5";\nAcquire::http::Timeout "30";\nAcquire::https::Timeout "30";\n' | sudo tee /etc/apt/apt.conf.d/99ufti-retries > /dev/null
           npm ci --no-audit --no-fund
           npx playwright install --with-deps chromium
           touch .chromium-installed
@@ -154,6 +161,7 @@ jobs:
   smoke:
     name: smoke (stock html5, DEC-042)
     runs-on: ubuntu-24.04
+    timeout-minutes: 15
     steps:
       - name: Check out
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -182,6 +190,7 @@ jobs:
   windows:
     name: build on Windows (PowerShell)
     runs-on: windows-2025
+    timeout-minutes: 30
     env:
       # a short path inside the workspace, so the cache step below finds it (the scripts default to
       # %LOCALAPPDATA%\ufti-tools on Windows, because a deep checkout overruns dita.bat's command line)
@@ -212,6 +221,7 @@ jobs:
     if: always()
     needs: [lint, build, check, smoke, windows]
     runs-on: ubuntu-24.04
+    timeout-minutes: 5
     steps:
       - name: Every job passed
         if: contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled')
