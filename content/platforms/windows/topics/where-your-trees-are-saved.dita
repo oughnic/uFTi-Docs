@@ -23,7 +23,7 @@
     <p>When you make a new tree, <keyword keyref="product-name"/> saves it in the folder <filepath>Documents\uFTi</filepath> on your PC.</p>
     <section>
       <title>Your pictures</title>
-      <p>The pictures that you add to a tree are saved in the folder <filepath>DocumentsFTiMedia</filepath>, beside your trees. They are kept in the same way.</p>
+      <p>The pictures that you add to a tree are saved in the folder <filepath>Documents\uFTi\Media</filepath>, beside your trees. They are kept in the same way.</p>
     </section>
     <section>
       <title>If you remove the app</title>
