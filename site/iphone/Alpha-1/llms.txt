@@ -22,18 +22,6 @@
 - [Opened files and copies](https://docs.ufti.com/iphone/Alpha-1/platforms/phone/topics/opened-files-and-copies.html): On a phone or tablet, uFTi works on its own copy of the file you choose, so the file you chose stays as it was.
 - [Which file to send](https://docs.ufti.com/iphone/Alpha-1/platforms/phone/topics/which-file-to-send.html): Send a GEDZIP file to anyone who uses uFTi, and a plain family tree file only to an older program.
 
-## 
-
-- [backup](https://docs.ufti.com/iphone/Alpha-1/glossary/backup.html)
-- [fact](https://docs.ufti.com/iphone/Alpha-1/glossary/fact.html)
-- [family tree file](https://docs.ufti.com/iphone/Alpha-1/glossary/family-tree-file.html)
-- [GEDCOM](https://docs.ufti.com/iphone/Alpha-1/glossary/gedcom.html)
-- [GEDZIP](https://docs.ufti.com/iphone/Alpha-1/glossary/gedzip.html)
-- [pedigree](https://docs.ufti.com/iphone/Alpha-1/glossary/pedigree.html)
-- [saved copy](https://docs.ufti.com/iphone/Alpha-1/glossary/saved-copy.html)
-- [source](https://docs.ufti.com/iphone/Alpha-1/glossary/source.html)
-- [workspace](https://docs.ufti.com/iphone/Alpha-1/glossary/workspace.html)
-
 ## Optional
 
 - [Glossary](https://docs.ufti.com/iphone/Alpha-1/glossary.html)

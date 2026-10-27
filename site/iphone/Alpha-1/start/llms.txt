@@ -15,16 +15,6 @@
 
 - [Five things to know](https://docs.ufti.com/iphone/Alpha-1/start/topics/quick-start/five-things-to-know.html): The five ideas behind uFTi, in two minutes.
 
-## 
-
-- [fact](https://docs.ufti.com/iphone/Alpha-1/start/glossary/fact.html)
-- [family tree file](https://docs.ufti.com/iphone/Alpha-1/start/glossary/family-tree-file.html)
-- [GEDCOM](https://docs.ufti.com/iphone/Alpha-1/start/glossary/gedcom.html)
-- [GEDZIP](https://docs.ufti.com/iphone/Alpha-1/start/glossary/gedzip.html)
-- [pedigree](https://docs.ufti.com/iphone/Alpha-1/start/glossary/pedigree.html)
-- [source](https://docs.ufti.com/iphone/Alpha-1/start/glossary/source.html)
-- [workspace](https://docs.ufti.com/iphone/Alpha-1/start/glossary/workspace.html)
-
 ## Optional
 
 - [Glossary](https://docs.ufti.com/iphone/Alpha-1/start/glossary.html)

@@ -25,18 +25,6 @@
 - [Which file to send](https://docs.ufti.com/macos/Alpha-1/platforms/desktop/topics/which-file-to-send.html): Send a GEDZIP file to anyone who uses uFTi, and a plain family tree file only to an older program.
 - [Files beside your tree](https://docs.ufti.com/macos/Alpha-1/platforms/desktop/topics/files-beside-your-tree.html): The files you may see beside your tree: the tree itself and its backup.
 
-## 
-
-- [backup](https://docs.ufti.com/macos/Alpha-1/glossary/backup.html)
-- [fact](https://docs.ufti.com/macos/Alpha-1/glossary/fact.html)
-- [family tree file](https://docs.ufti.com/macos/Alpha-1/glossary/family-tree-file.html)
-- [GEDCOM](https://docs.ufti.com/macos/Alpha-1/glossary/gedcom.html)
-- [GEDZIP](https://docs.ufti.com/macos/Alpha-1/glossary/gedzip.html)
-- [pedigree](https://docs.ufti.com/macos/Alpha-1/glossary/pedigree.html)
-- [saved copy](https://docs.ufti.com/macos/Alpha-1/glossary/saved-copy.html)
-- [source](https://docs.ufti.com/macos/Alpha-1/glossary/source.html)
-- [workspace](https://docs.ufti.com/macos/Alpha-1/glossary/workspace.html)
-
 ## Optional
 
 - [Glossary](https://docs.ufti.com/macos/Alpha-1/glossary.html)
