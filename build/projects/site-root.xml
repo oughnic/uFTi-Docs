@@ -18,6 +18,8 @@
       <param name="govuk.search" value="no"/>
       <param name="govuk.print" value="no"/>
       <param name="govuk.pdf" value="no"/>
+      <!-- The hero of the home page is a picture file, not inlined (a 140 KB picture would otherwise sit in the page). -->
+      <param name="govuk.svg.inline" value="no"/>
     </publication>
   </deliverable>
 </project>
