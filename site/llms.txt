@@ -1,4 +1,4 @@
-# uFTi documentation
+# Welcome to uFTi
 
 ## Contents
 

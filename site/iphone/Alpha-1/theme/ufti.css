@@ -367,6 +367,22 @@ pre.pre {
   --pagefind-ui-tag: var(--ufti-surface-container);
 }
 
+/* The home page shows one screen on a phone and one on a computer, side by side where there is room and one above the
+ * other where there is not. */
+#welcome__what-ufti-is figure {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+#main-content #welcome__what-ufti-is figure img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 18rem;
+}
+
 /* ===== 6. Design System components with literal colours ===== */
 
 .govuk-button {
