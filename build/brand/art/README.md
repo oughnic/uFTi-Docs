@@ -1,6 +1,6 @@
 # uFTi brand artwork
 
-**Artwork version 1.1.0**
+**Artwork version 1.3.0**
 
 The sampler mark (#1655) is a cross-stitch tree on linen. Victorian samplers were where families stitched their names. The colours are from the Oxford and slate theme: Oxford-blue thread on slate linen. The tree's fruit is stitched in the app's three evidence colours: sound (green), uncertain (amber) and unsourced (blue).
 
@@ -19,7 +19,7 @@ Any other use needs written permission from Oughtibridge Ltd.
 
 ## Where to import from
 
-Import from `design/brand` on the `dev` branch. Record the artwork version above and the commit you took. The version rises whenever any published file changes.
+Import from the tag for the artwork version, `brand-v<version>` (this set: `brand-v1.3.0`), or from `design/brand` on the `dev` branch with the version and the commit you took. The version rises, and gets its tag, whenever any published file changes.
 
 ## Files
 
@@ -35,6 +35,8 @@ Import from `design/brand` on the `dev` branch. Record the artwork version above
 | `ufti-touch-icon.svg` | Opaque square with a margin, for icons a platform rounds itself |
 | `ufti-icon-180.png` | Touch icon for web pages on iPhone and iPad (`apple-touch-icon`) |
 | `ufti-icon-300.png`, `-512.png`, `-1024.png` | Store icons: Microsoft Store listing (300), Google Play (512), App Store (1024, opaque) |
+| `ufti-app-icon.svg`, `ufti-app-icon-1024.png`, `-256.png` | Desktop app icon: the mark on a rounded tile with a margin, in macOS proportions (used by the AppKit and GTK4 heads) |
+| `ufti-app.ico` | Windows program icon: the pixel versions at 16-48 and the tile at 256 (used by the WPF head) |
 
 **Artwork with text.** Each comes three ways: `.svg` with live text (it loads the app's fonts from `uFTi.app/Resources/Fonts`, so it works only inside this repository); `-outlined.svg` with the text as outlines (no fonts needed: use this one anywhere else, and for print); and `.png`.
 
@@ -44,6 +46,8 @@ Import from `design/brand` on the `dev` branch. Record the artwork version above
 | `ufti-hero` | 1920 × 1080 | Store hero art, the docs site, slides |
 | `ufti-play-feature` | 1024 × 500 | Google Play feature graphic |
 | `ufti-share-card` | 1200 × 630 | Link previews (Open Graph, social sites, chat apps) |
+| `ufti-store-poster` | 1440 × 2160 | Microsoft Store 9:16 poster art (the Windows 11 listing page and search) |
+| `ufti-store-box-art` | 2160 × 2160 | Microsoft Store 1:1 box art |
 
 Every SVG carries a `<title>` and a `<desc>`, and a comment naming the artwork version and these terms. In an outlined file, each line of text keeps its words in a `<title>` on its path.
 

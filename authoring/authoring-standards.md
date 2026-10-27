@@ -19,7 +19,7 @@ Much of this follows the plugin's own guide for people who write DITA for it, [S
 - **`outputclass`** only for effects the plugin documents, currently `search-ignore`, `search-demote` and `landscape`. Classes carry styling, not meaning. Never record a topic's type or status in `outputclass`.
 - **Forbidden:** `mapref` by key, keys that name maps, and `chunk="to-content"` (both trigger known DITA-OT 4.4 defects).
 - **No GEDCOM tags, structures or file contents** anywhere: not in a topic, a glossary entry, a table or an example (DEC-030). They are not human-centred. The field reference is generated from the GEDCOM 7 structure definitions in plain words, keyed by the label on screen. Lint fails on a tag pattern.
-- **No statements about price, "free", "forever", accounts, sign-in or where data is stored** (DEC-040). Those facts live on ufti.com and in keys.
+- **No statements about price, "free", "forever", accounts or sign-in** (DEC-040). Those facts live on ufti.com and in keys. A topic may say where a tree is saved on the reader's own device (DEC-168), never where any service keeps data.
 - **Workflow is not recorded in the source.** No `@status` or `@rev` for review state. Use pull requests and issues.
 
 ## 2. Topic-based authoring rules
