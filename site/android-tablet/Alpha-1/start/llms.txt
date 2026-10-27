@@ -1,0 +1,21 @@
+# uFTi Quick Start: Android tablet
+
+> Understanding family tree information
+
+## Quick Start
+
+- [Quick Start](https://docs.ufti.com/android-tablet/Alpha-1/start/topics/quick-start/quick-start.html): Six short pages that take you from opening uFTi to your first person, with its source and a copy.
+- [Get uFTi](https://docs.ufti.com/android-tablet/Alpha-1/start/platforms/android/topics/get-ufti.html): Open uFTi for the first time.
+- [Add your first person](https://docs.ufti.com/android-tablet/Alpha-1/start/platforms/android-tablet/topics/add-your-first-person.html): Make your own workspace and add yourself, or someone you know well.
+- [Look around](https://docs.ufti.com/android-tablet/Alpha-1/start/platforms/android-tablet/topics/look-around.html): See what the places in the list on the left and the search box do for the person you added.
+- [Say where you found it](https://docs.ufti.com/android-tablet/Alpha-1/start/topics/quick-start/say-where-you-found-it.html): Add a source to a fact, so you always know why you believe it.
+- [Keep it safe](https://docs.ufti.com/android-tablet/Alpha-1/start/platforms/android/topics/keep-it-safe.html): Save a copy of your tree as a file, and keep it somewhere else too.
+- [What next](https://docs.ufti.com/android-tablet/Alpha-1/start/topics/quick-start/what-next.html): You have a tree, a person, a fact with its source and a copy, so choose where to go from here.
+
+## Contents
+
+- [Five things to know](https://docs.ufti.com/android-tablet/Alpha-1/start/topics/quick-start/five-things-to-know.html): The five ideas behind uFTi, in two minutes.
+
+## Optional
+
+- [Glossary](https://docs.ufti.com/android-tablet/Alpha-1/start/glossary.html)

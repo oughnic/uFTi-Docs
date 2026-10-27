@@ -1,0 +1,46 @@
+# uFTi user manual: Android tablet
+
+> Understanding family tree information
+
+## Quick Start
+
+- [Quick Start](https://docs.ufti.com/android-tablet/Alpha-1/topics/quick-start/quick-start.html): Six short pages that take you from opening uFTi to your first person, with its source and a copy.
+- [Get uFTi](https://docs.ufti.com/android-tablet/Alpha-1/platforms/android/topics/get-ufti.html): Open uFTi for the first time.
+- [Add your first person](https://docs.ufti.com/android-tablet/Alpha-1/platforms/android-tablet/topics/add-your-first-person.html): Make your own workspace and add yourself, or someone you know well.
+- [Look around](https://docs.ufti.com/android-tablet/Alpha-1/platforms/android-tablet/topics/look-around.html): See what the places in the list on the left and the search box do for the person you added.
+- [Say where you found it](https://docs.ufti.com/android-tablet/Alpha-1/topics/quick-start/say-where-you-found-it.html): Add a source to a fact, so you always know why you believe it.
+- [Keep it safe](https://docs.ufti.com/android-tablet/Alpha-1/platforms/android/topics/keep-it-safe.html): Save a copy of your tree as a file, and keep it somewhere else too.
+- [What next](https://docs.ufti.com/android-tablet/Alpha-1/topics/quick-start/what-next.html): You have a tree, a person, a fact with its source and a copy, so choose where to go from here.
+
+## Contents
+
+- [Five things to know](https://docs.ufti.com/android-tablet/Alpha-1/topics/quick-start/five-things-to-know.html): The five ideas behind uFTi, in two minutes.
+
+## Work with your tree
+
+- [Work with your tree](https://docs.ufti.com/android-tablet/Alpha-1/topics/tree/work-with-your-tree.html): Find people, add people and families, read their events and sources, and write notes.
+- [The screens of the app](https://docs.ufti.com/android-tablet/Alpha-1/platforms/android-tablet/topics/tour-of-the-screens.html): What each place in the list on the left shows, with a picture of each screen.
+- [Find a person](https://docs.ufti.com/android-tablet/Alpha-1/platforms/android-tablet/topics/find-a-person.html): Search your tree by a name, a place or an event, then open the person you want.
+- [See a family tree](https://docs.ufti.com/android-tablet/Alpha-1/platforms/android-tablet/topics/see-a-family-tree.html): Draw the parents, partners and children of one person.
+- [See the events of a person](https://docs.ufti.com/android-tablet/Alpha-1/platforms/android-tablet/topics/see-the-events-of-a-person.html): List what happened in a person's life, such as birth, marriage and death, and open any one.
+- [Look at the sources of a fact](https://docs.ufti.com/android-tablet/Alpha-1/platforms/android-tablet/topics/look-at-the-sources-of-a-fact.html): See which books and records back up a birth, a death or another fact, and change or remove one.
+- [Add another person](https://docs.ufti.com/android-tablet/Alpha-1/platforms/android-tablet/topics/add-another-person.html): Add a person to a tree that already has someone in it.
+- [Change a person](https://docs.ufti.com/android-tablet/Alpha-1/platforms/android-tablet/topics/change-a-person.html): Correct a name, a date or a place on a person's page.
+- [Add a family with children](https://docs.ufti.com/android-tablet/Alpha-1/platforms/android-tablet/topics/add-a-family.html): Join two partners, record their marriage and add their children.
+- [Add a note to a person](https://docs.ufti.com/android-tablet/Alpha-1/platforms/android-tablet/topics/add-a-note.html): Write down something you know about a person that does not fit in a date or a place.
+- [The Photos buttons](https://docs.ufti.com/android-tablet/Alpha-1/platforms/android-tablet/topics/the-photos-buttons.html): What the buttons under Photos are for on a person, an event or a source.
+- [Choose how the app looks](https://docs.ufti.com/android-tablet/Alpha-1/platforms/android-tablet/topics/choose-how-it-looks.html): Pick a colour theme, and a light or dark look, for this tablet.
+- [A page says no person is selected](https://docs.ufti.com/android-tablet/Alpha-1/platforms/android-tablet/topics/a-page-says-no-person-selected.html): What to do when Family tree asks you to pick a person first, or Events and Notes show only the search box.
+
+## Bring in, share and keep safe
+
+- [Bring in, share and keep safe](https://docs.ufti.com/android-tablet/Alpha-1/topics/workspaces/bring-in-share-and-keep-safe.html): What your workspace holds, why a GEDZIP file is the one to keep and send, and when a plain family tree file is better.
+- [Your workspace and its files](https://docs.ufti.com/android-tablet/Alpha-1/topics/workspaces/your-workspace-and-its-files.html): A workspace is your family tree and its linked files, and a GEDZIP file holds all of them in one file.
+- [Open a family tree file](https://docs.ufti.com/android-tablet/Alpha-1/platforms/android-tablet/topics/open-a-family-tree-file.html): Bring a tree from another program, or a copy from a relative, into uFTi.
+- [Remove a tree from the list](https://docs.ufti.com/android-tablet/Alpha-1/platforms/android-tablet/topics/remove-a-workspace.html): Take a tree off the Workspaces screen without deleting its file.
+- [Opened files and copies](https://docs.ufti.com/android-tablet/Alpha-1/platforms/phone/topics/opened-files-and-copies.html): On a phone or tablet, uFTi works on its own copy of the file you choose, so the file you chose stays as it was.
+- [Which file to send](https://docs.ufti.com/android-tablet/Alpha-1/platforms/phone/topics/which-file-to-send.html): Send a GEDZIP file to anyone who uses uFTi, and a plain family tree file only to an older program.
+
+## Optional
+
+- [Glossary](https://docs.ufti.com/android-tablet/Alpha-1/glossary.html)
