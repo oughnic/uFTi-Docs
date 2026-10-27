@@ -140,17 +140,28 @@ rm -rf "$gen_dir"; mkdir -p "$gen_dir"
   echo '<?xml version="1.0" encoding="UTF-8"?>'
   echo '<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">'
   echo '<map id="ufti-docs" xml:lang="en-GB">'
-  echo '  <title>uFTi documentation</title>'
+  echo '  <title>Welcome to uFTi</title>'
+  echo '  <mapref href="site-images.ditamap" processing-role="resource-only"/>'
   for slug in $platforms; do echo "  <topicref href=\"$slug/index.dita\"/>"; done
   # The site's own pages (content/site/): hand-written topics, copied into the sources of the root so that the root
   # map names nothing outside its own folder (the plugin's GOVK016W). Each is written to <name>/index.html at the
   # top of the tree.
-  for page in "$root"/content/site/*.dita; do echo "  <topicref href=\"$(basename "$page" .dita)/index.dita\" toc=\"no\"/>"; done
+  for page in "$root"/content/site/*.dita; do [ "$(basename "$page" .dita)" = welcome ] && continue; echo "  <topicref href=\"$(basename "$page" .dita)/index.dita\" toc=\"no\"/>"; done
+  echo '  <topicref href="home.dita" toc="no"/>'
   echo '  <topicref href="not-found.dita" toc="no"/>'
   echo '</map>'
 } > "$gen_dir/ufti-docs.ditamap"
 for need in accessibility privacy; do [ -f "$root/content/site/$need.dita" ] || fail "content/site/$need.dita is missing: the footer of every page links to it"; done
-for page in "$root"/content/site/*.dita; do name=$(basename "$page" .dita); mkdir -p "$gen_dir/$name"; cp "$page" "$gen_dir/$name/index.dita"; done
+[ -f "$root/content/site/welcome.dita" ] || fail "content/site/welcome.dita is missing: it is the top of the home page"
+for page in "$root"/content/site/*.dita; do name=$(basename "$page" .dita); [ "$name" = welcome ] && continue; mkdir -p "$gen_dir/$name"; cp "$page" "$gen_dir/$name/index.dita"; done
+# The home page (content/site/welcome.dita) is a topic at the top of the root: it builds to home.html beside index.html, and its pictures are
+# found at images/ from there. Its body is moved into index.html after the build (section 4) and home.html is removed.
+cp "$root/content/site/welcome.dita" "$gen_dir/home.dita"
+cp "$root/content/site/images.ditamap" "$gen_dir/site-images.ditamap"
+mkdir -p "$gen_dir/images"
+cp "$root/build/brand/art/ufti-hero-outlined.svg" "$gen_dir/images/ufti-hero.svg"
+cp "$root/content/platforms/android-phone/images/family-page.png" "$gen_dir/images/family-tree-android-phone.png"
+cp "$root/content/platforms/windows/images/family-page.png" "$gen_dir/images/family-tree-windows.png"
 for slug in $platforms; do mkdir -p "$gen_dir/$slug"; platform_topic "$slug" > "$gen_dir/$slug/index.dita"; done
 cat > "$gen_dir/not-found.dita" <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
@@ -169,6 +180,21 @@ EOF
 
 echo; echo "== Assemble the tree"
 cp -R "$out_dir/site-root/." "$site_dir/"
+# The body of the home page goes into the top of the generated index.html, above the list of devices, which is headed
+# "Choose your device" (until the plugin has a place for an intro topic: plugin issue 270).
+HOME_HTML="$site_dir/home.html" INDEX_HTML="$site_dir/index.html" perl -0777 -e '
+  open my $h, "<:utf8", $ENV{HOME_HTML} or die "no home.html"; my $home = do { local $/; <$h> }; close $h;
+  $home =~ m{<article[^>]*>\s*<h1[^>]*>.*?</h1>(?<body>.*)</article>}s or die "home.html has no article to move into index.html";
+  my $body = $+{body};
+  open my $x, "<:utf8", $ENV{INDEX_HTML} or die; my $idx = do { local $/; <$x> }; close $x;
+  my $marker = q{<h2 class="govuk-heading-m">Contents</h2>};
+  index($idx, $marker) >= 0 or die "index.html has no Contents heading to put the home page above";
+  substr($idx, index($idx, $marker), length($marker)) = $body . q{<h2 class="govuk-heading-m">Choose your device</h2>};
+  open my $o, ">:utf8", $ENV{INDEX_HTML} or die; print $o $idx; close $o;
+' || fail "the home page was not put into index.html"
+rm -f "$site_dir/home.html"
+# The pages next to it in the map link to home.html as the one before or after them. They mean the home page, which is index.html.
+grep -rlF "home.html" "$site_dir" --include='*.html' | while IFS= read -r p; do perl -pi -e 's{home\.html}{index.html}g' "$p"; done
 # The not-found page is served at the address that was asked for, so a relative link in it (the stylesheet, the
 # scripts, the platform pages) would be looked for below that address. Its links are made absolute, from base-url.
 BASE="$(printf '%s' "$base" | sed -E 's#^https?://[^/]*##')" perl -pi -e 's{(href|src)="(?!https?://|#|mailto:|/)([^"]*)"}{$1="$ENV{BASE}$2"}g' "$site_dir/not-found.html"
