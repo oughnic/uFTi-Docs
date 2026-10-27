@@ -12,22 +12,115 @@
       <vrmlist><vrm version="0.1.0 (1)"/></vrmlist>
       <platform>Android phone</platform>
     </prodinfo>
-    <data name="reference-device" value="physical, Samsung Galaxy A41 (SM-A415F), Android 12 (SDK 31), arm64-v8a, 420 dpi, 3-button navigation; display size default; font scale set to 1.0 for the captures (the phone had 1.1), 1080 x 2400, portrait"/>
+    <data name="reference-device" value="physical, 1080 x 2400, portrait"/>
     <data name="dataset" value="bronte"/>
   </topicmeta>
   <keydef keys="img-start-first-run" href="../images/start-first-run.png" format="png" scope="local" platform="AndroidPhone">
     <topicmeta><linktext>The Workspaces screen, with the Create workspace and Add from file buttons under its heading</linktext></topicmeta>
   </keydef>
   <keydef keys="img-person-add" href="../images/person-add.png" format="png" scope="local" platform="AndroidPhone">
-    <topicmeta><linktext>The form for a new person, with Patrick typed in the Given name(s) box and Brontë in the Surname box</linktext></topicmeta>
+    <topicmeta><linktext>The New person form filled in for Patrick Brontë, with his sex, his birth date and the place of his birth</linktext></topicmeta>
   </keydef>
   <keydef keys="img-nav-main" href="../images/nav-main.png" format="png" scope="local" platform="AndroidPhone">
-    <topicmeta><linktext>Search results for Bront, one card for each Brontë, with the bar of five tabs along the bottom of the screen</linktext></topicmeta>
+    <topicmeta><linktext>Search results for Patrick, with two people and one marriage listed, and the bar of five places along the bottom of the screen</linktext></topicmeta>
   </keydef>
   <keydef keys="img-citation-add" href="../images/citation-add.png" format="png" scope="local" platform="AndroidPhone">
     <topicmeta><linktext>The Add source form, with the title of a book typed in the Title box</linktext></topicmeta>
   </keydef>
-  <keydef keys="img-workspace-export" href="../images/workspace-export.png" format="png" scope="local" platform="AndroidPhone">
-    <topicmeta><linktext>The two choices for saving a workspace as a file, with a Cancel button, over the Workspaces screen</linktext></topicmeta>
+  <keydef keys="img-create-workspace-dialog" href="../images/create-workspace-dialog.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The New workspace box, with Brontë family of Haworth typed as the name and the Cancel and Create buttons below</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-workspaces" href="../images/workspaces.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The Workspaces screen with two cards, Brontë family of Haworth (2), marked Active, and Brontë family of Haworth, each showing how many people, families and events it holds</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-remove-workspace" href="../images/remove-workspace.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The Remove workspace question, which says the family tree file is not deleted, with Cancel and Remove buttons</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-save-as-choice" href="../images/save-as-choice.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The Save workspace as choice, with Everything marked recommended, Family tree only, and a Cancel button</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-save-as-version" href="../images/save-as-version.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The question Which version of GEDCOM, with GEDCOM 7 marked as recommended, GEDCOM 5.5.1 for older programs, and a Cancel button</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-search-results" href="../images/search-results.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The results of a search for Patrick, with two people and one marriage listed, and a small badge on each person that says how many sources they have</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-search-refine" href="../images/search-refine.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The Refine by list under the search box, with check boxes for dates, sex, place, event type and sound-alike matches</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-person-view" href="../images/person-view.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The top of Patrick Brontë's page, with his name, his sex, and his birth and death with a small chip on each that counts its sources</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-person-page" href="../images/person-page.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The lower part of Patrick Brontë's page, with his wife Maria Branwell and their daughter Charlotte listed, the Photos buttons, and the Edit, Add a record and Delete person buttons</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-person-edit" href="../images/person-edit.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The form for changing Charlotte Brontë, with her names, sex and birth date filled in</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-add-record" href="../images/add-record.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The Add a record sheet, with choices to add parents, an event, a note, a source or a new person for Charlotte Brontë</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-add-record-lower" href="../images/add-record-lower.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The lower part of the Add a record sheet, with Basic details, Family, Repository, Research note and Submitter, and a More forms button above the Add and Cancel buttons</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-add-record-more-forms" href="../images/add-record-more-forms.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The end of the opened Add a record sheet for Charlotte Brontë, where each census form for a year after she died has a line under it that says nobody in the tree was alive then</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-family-form" href="../images/family-form.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The Family form for Patrick Brontë and Maria Branwell, with the partners filled in and the new husband and wife boxes empty</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-family-children" href="../images/family-children.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The Children part of the Family form, with one card for a new child, Charlotte, and her sex, her birth date and her birthplace set</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-family-page" href="../images/family-page.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The page for Patrick Brontë and Maria Branwell, with their marriage, their daughter Charlotte and a View family tree button</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-family-tree" href="../images/family-tree.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The family tree for Patrick Brontë, with his wife Maria Branwell beside him and their daughter Charlotte below</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-family-tree-charlotte" href="../images/family-tree-charlotte.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The family tree for Charlotte Brontë, with her parents above, her husband Arthur Bell Nicholls beside her and a button for her brothers and sisters</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-tree-marriage" href="../images/tree-marriage.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The sheet that opens from the marriage mark, with the marriage of Patrick and Maria and their daughter Charlotte, over the family tree</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-events" href="../images/events.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>Charlotte Brontë's list of events, which are birth, marriage and death, each with a date, a place and a count of sources</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-event-detail" href="../images/event-detail.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The page for Charlotte Brontë's birth, with its type, date and place, a source count, the Photos buttons and the Edit and Delete event buttons</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-sources-list" href="../images/sources-list.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The Sources screen for Charlotte's birth, with five books, each with its author and Edit and Remove links</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-sources-empty" href="../images/sources-empty.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The Sources screen for a birth with no sources, with the words No sources for this fact yet and an Add source button</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-source-new" href="../images/source-new.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The new source form, with boxes for the title, the page, where it is kept, the words copied and a note, and a Save source button</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-source-attach" href="../images/source-attach.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The step after Save source, which offers a camera, a folder and a chain button to attach a copy of the source, and a Done button</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-sources-one" href="../images/sources-one.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The Sources screen after one book has been added, with Edit and Remove beside it</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-notes" href="../images/notes.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The Notes screen for Patrick Brontë, showing a note that says he became curate of Haworth, a small chip that says Sources: 0, and Edit and Delete note buttons</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-note-form" href="../images/note-form.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The note form, with one box for the note and Save and Cancel buttons</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-repositories" href="../images/repositories.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The Where records are kept screen, with a line that says nothing is there yet and to use the plus button</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-submitters" href="../images/submitters.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The Who made this tree screen, with a line that says nobody is credited yet and to use the plus button</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-research-notes" href="../images/research-notes.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The Research questions and notes screen, with a line that says there are none yet and to use the plus button</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-preferences" href="../images/preferences.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The Preferences screen, with three themes and Oxford and slate chosen, and three looks and Light chosen</linktext></topicmeta>
   </keydef>
 </map>

@@ -1,4 +1,24 @@
 {
+  "img-create-workspace-dialog": {
+    "x": 60, "y": 380, "width": 960, "height": 600,
+    "shows": "controls only",
+    "reason": "Keeps the box and its two buttons. The screen behind it shows the search box and the person that was open, and the keyboard below it hides the rest."
+  },
+  "img-family-form": {
+    "x": 0, "y": 560, "width": 1080, "height": 1622,
+    "workspaceHidden": true,
+    "reason": "Leaves out the top of the screen, which names the workspace and the family page under the form, and keeps the boxes of the form."
+  },
+  "img-note-form": {
+    "x": 0, "y": 660, "width": 1080, "height": 1522,
+    "workspaceHidden": true,
+    "reason": "Leaves out the top of the screen: the button that fills the form from a document (an AI feature, which the documentation leaves out, DEC-020) and the name of the workspace."
+  },
+  "img-person-edit": {
+    "x": 0, "y": 660, "width": 1080, "height": 1522,
+    "workspaceHidden": true,
+    "reason": "Leaves out the top of the screen: the button that fills the form from a document (an AI feature, which the documentation leaves out, DEC-020) and the name of the workspace."
+  },
   "img-start-first-run": {
     "x": 55, "y": 295, "width": 745, "height": 225,
     "shows": "controls only",
@@ -14,11 +34,7 @@
     "reason": "No crop. The subject is a list of people from a search, all of them on the allow-list, not one person."
   },
   "img-citation-add": {
-    "x": 0, "y": 0, "width": 1060, "height": 2184,
-    "reason": "Removes a thin sliver of another element at the right edge of the capture."
-  },
-  "img-workspace-export": {
     "noFocus": true,
-    "reason": "No crop. The subject is the box of choices. The card behind it is hidden by the box, so no file path shows."
+    "reason": "No crop. The subject is the form, which names no person."
   }
 }

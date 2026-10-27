@@ -27,6 +27,9 @@
         <cmd>On the card for your tree, choose <uicontrol keyref="ui-save-as"/>.</cmd>
         <stepresult>
           <p>A small box named <wintitle keyref="ui-save-workspace-as"/> opens.</p>
+          <fig>
+            <image keyref="img-save-as-choice"/>
+          </fig>
         </stepresult>
       </step>
       <step>
@@ -35,6 +38,12 @@
           <choice><uicontrol keyref="ui-gedzip-archive"/> saves everything in one file, with its pictures. Choose this one.</choice>
           <choice><uicontrol keyref="ui-gedcom-file"/> saves the tree and its research notes as a <term keyref="term-family-tree-file">family tree file</term>, without pictures. Choose it only for a program that cannot read a GEDZIP file. If asked which version, choose GEDCOM 7 unless that program is old.</choice>
         </choices>
+        <info>
+          <p>A second box asks <wintitle keyref="ui-which-version-of-gedcom"/>.</p>
+          <fig>
+            <image keyref="img-save-as-version"/>
+          </fig>
+        </info>
       </step>
       <step>
         <cmd>When Android asks where to put the file, choose a place you will remember, such as Downloads. Then choose Save.</cmd>
@@ -43,9 +52,6 @@
     <result>
       <p>You now have a copy. Make a new one after you add a lot. To email it, find it in the Files app. Keep a copy off your phone too.</p>
       <note>If you opened a file from another program, <keyword keyref="product-name"/> keeps its own copy. The file you chose does not change.</note>
-      <fig>
-        <image keyref="img-workspace-export"/>
-      </fig>
     </result>
     <postreq>
       <p>Next: <xref keyref="what-next"/>.</p>
