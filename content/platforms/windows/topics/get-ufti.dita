@@ -6,7 +6,7 @@
   <prolog>
     <critdates>
       <created date="2026-10-17"/>
-      <revised modified="2026-10-26"/>
+      <revised modified="2026-10-27"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -46,6 +46,7 @@
     </steps>
     <result>
       <p>This is where your trees live. The first time, <keyword keyref="product-name"/> also opens a sample tree: the Brontë family of Haworth. Use it to look around. You do not need it.</p>
+      <p>If you have used <keyword keyref="product-name"/> on this PC before, or through OneDrive, your own trees open instead.</p>
       <fig>
         <image keyref="img-start-first-run"/>
       </fig>
