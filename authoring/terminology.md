@@ -150,6 +150,9 @@ Read from the Windows app (version 0.1.0.1, Alpha-1 build) on 24 October 2026 ([
 | `ui-return-to-focus` | Return to focus | The button that goes back to the first person in the tree. | none |
 | `ui-fit-to-screen` | Fit to screen | The button that shrinks the tree to fit the window. | none |
 | `ui-compare-records` | Compare records that disagree | The button for two records that give different answers. | none |
+| `ui-link-existing-media` | Link existing media | The list of the tree's pictures that the chain button under Photos opens (iPhone). | none |
+| `ui-close` | Close | The button that closes a sheet, such as the list of the tree's pictures (iPhone). | none |
+| `ui-allow` | Allow | The iPhone's own answer when it asks if an app may use the camera. | none |
 | `ui-theme` | Theme | The group of three colour sets. | none |
 | `ui-oxford-and-slate` | Oxford and slate | The colour set used in this manual's pictures. | none |
 | `ui-appearance` | Appearance | The group that sets a light look, a dark look or the Windows setting. | none |

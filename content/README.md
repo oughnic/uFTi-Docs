@@ -13,14 +13,18 @@ content/
                                      "Bring in, share and keep safe"
   ufti-quick-start-android-phone.ditamap, ufti-manual-android-phone.ditamap   the same for the Android phone
   ufti-quick-start-android-tablet.ditamap, ufti-manual-android-tablet.ditamap   the same for the Android tablet
+  ufti-quick-start-iphone.ditamap, ufti-manual-iphone.ditamap   the same for the iPhone
   maps/structure/quick-start.ditamap the Quick Start pages in order, shared by both
   maps/structure/bring-in-share-and-keep-safe.ditamap   the pages of that chapter, shared by both
   topics/quick-start/                the pages the same on every device, the chapter introduction, and
                                      "Five things to know"
   topics/workspaces/                 the introduction to "Bring in, share and keep safe"
   platforms/windows/topics/, platforms/android/topics/   the pages for one platform (getting the app, keeping a copy)
-  platforms/desktop/topics/, platforms/phone/topics/     the pages that differ by device idiom (adding a person, looking
-                                     around, opened files and copies, which file to send; files beside your tree is for a computer only)
+  platforms/desktop/topics/, platforms/phone/topics/     the pages that differ by device idiom (opened files and copies,
+                                     which file to send; files beside your tree is for a computer only)
+  platforms/android-phone/topics/, platforms/android-tablet/topics/, platforms/iphone/topics/   the pages written
+                                     from the walk of one device (adding a person, looking around, the chapter
+                                     "Work with your tree")
   platforms/<manual>/keys/           the manual's own keys: pictures (images.ditamap) and the words that
                                      only that device shows (ui-labels.ditamap)
   platforms/<manual>/images/         its pictures and crops.json (what was cropped, and why), written by

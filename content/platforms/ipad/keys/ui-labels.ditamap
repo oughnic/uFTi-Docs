@@ -7,4 +7,6 @@
 <map id="ipad-ui-labels" xml:lang="en-GB">
   <keydef keys="ui-family-tree"><topicmeta><keywords><keyword>Family tree</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-events"><topicmeta><keywords><keyword>Events</keyword></keywords></topicmeta></keydef>
+  <!-- the second question of Save as, seen on the iPad on 24 October 2026 -->
+  <keydef keys="ui-which-version-of-gedcom"><topicmeta><keywords><keyword>Which version of GEDCOM?</keyword></keywords></topicmeta></keydef>
 </map>

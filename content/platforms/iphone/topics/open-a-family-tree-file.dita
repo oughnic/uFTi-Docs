@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="open-a-family-tree-file" xml:lang="en-GB">
+  <title>Open a family tree file</title>
+  <shortdesc>Bring a tree from another program, or a copy from a relative, into uFTi.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-29"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>import</keyword>
+        <keyword>open a file</keyword>
+        <keyword>GEDCOM</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="workspaces.import"/>
+  </prolog>
+  <taskbody>
+    <context>
+      <p>A <term keyref="term-family-tree-file">family tree file</term> ends in .ged or .gdz. Put the file on your iPhone first, for example in the Files app, under On My iPhone. <keyword keyref="product-name"/> works on its own copy, so the file you choose stays as it was. <xref keyref="opened-files-and-copies"/> says more.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>On <uicontrol keyref="ui-workspaces"/>, choose <uicontrol keyref="ui-add-from-file"/>.</cmd>
+        <stepresult>
+          <p>The iPhone's own Files screen opens.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Find the file, for example under On My iPhone, and choose it.</cmd>
+        <stepresult>
+          <p>A box names the tree and counts the people, families, events, sources and notes in it. It says <q>uFTi keeps its own copy; the file you chose is left as it was.</q></p>
+          <fig>
+            <image keyref="img-import-summary"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-ok"/>.</cmd>
+        <stepresult>
+          <p>The tree has a new card on <uicontrol keyref="ui-workspaces"/>.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>The cards are one under another. Choose a card to make that tree the open one. Choose <uicontrol keyref="ui-show-details"/> on a card to see which file it is.</p>
+      <fig>
+        <image keyref="img-workspaces"/>
+      </fig>
+      <note>A card takes its name from the file. If two cards have the same name, choose <uicontrol keyref="ui-show-details"/> on each to tell them apart.</note>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="keep-it-safe"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

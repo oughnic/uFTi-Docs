@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE troubleshooting PUBLIC "-//OASIS//DTD DITA Troubleshooting//EN" "troubleshooting.dtd">
+<troubleshooting id="a-page-says-no-person-selected" xml:lang="en-GB">
+  <title>A page says no person is selected</title>
+  <shortdesc>What to do when Family tree asks you to pick a person first, or Person, Events and Notes show only the search box.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-29"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Troubleshooting</category>
+      <keywords>
+        <keyword>empty page</keyword>
+        <keyword>select a person</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <troublebody>
+    <condition>
+      <p>You choose <uicontrol keyref="ui-family-tree"/> and the page says <q>Select a person to view their family tree.</q> Or you choose <uicontrol keyref="ui-person"/>, <uicontrol keyref="ui-events"/> or <uicontrol keyref="ui-notes"/> and the page is empty under the search box.</p>
+    </condition>
+    <troubleSolution>
+      <cause>
+        <p>These pages show one person at a time. You have not opened anyone since the app started. There is no chip that starts with <uicontrol keyref="ui-showing"/> at the top.</p>
+      </cause>
+      <remedy>
+        <steps>
+          <step>
+            <cmd>Type a name in the search box at the top, then choose <uicontrol keyref="ui-search"/>.</cmd>
+          </step>
+          <step>
+            <cmd>Choose the card of the person you want.</cmd>
+            <stepresult>
+              <p>The chip that starts with <uicontrol keyref="ui-showing"/> shows their name. The page now works.</p>
+            </stepresult>
+          </step>
+        </steps>
+      </remedy>
+    </troubleSolution>
+    <troubleSolution>
+      <cause>
+        <p>The page is empty because nothing has been added to the tree yet. <uicontrol keyref="ui-where-records-are-kept"/>, <uicontrol keyref="ui-who-made-this-tree"/> and <uicontrol keyref="ui-research-questions-and-notes"/> start empty.</p>
+      </cause>
+      <remedy>
+        <steps>
+          <step>
+            <cmd>Choose <uicontrol keyref="ui-add"/> and add the first one.</cmd>
+          </step>
+        </steps>
+      </remedy>
+    </troubleSolution>
+  </troublebody>
+</troubleshooting>

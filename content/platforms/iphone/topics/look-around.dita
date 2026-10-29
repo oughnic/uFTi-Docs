@@ -2,10 +2,11 @@
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
 <task id="look-around" xml:lang="en-GB">
   <title>Look around</title>
-  <shortdesc>See what the five tabs and the search box do for the person you added.</shortdesc>
+  <shortdesc>See what the five places in the bar and the search box do for the person you added.</shortdesc>
   <prolog>
     <critdates>
       <created date="2026-10-17"/>
+      <revised modified="2026-10-27"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -15,7 +16,7 @@
         <keyword>tabs</keyword>
       </keywords>
     </metadata>
-    <resourceid appname="ufti" appid="search"/>
+    <resourceid appname="ufti" appid="people.view"/>
   </prolog>
   <taskbody>
     <prereq>
@@ -30,17 +31,22 @@
         <info>
           <p>It shows that person's page.</p>
         </info>
+        <stepresult>
+          <fig>
+            <image keyref="img-person-view"/>
+          </fig>
+        </stepresult>
       </step>
       <step>
-        <cmd>Choose <uicontrol keyref="ui-facts"/>.</cmd>
+        <cmd>Choose <uicontrol keyref="ui-events"/>.</cmd>
         <info>
-          <p>It lists the <term keyref="term-fact">facts</term> for that person.</p>
+          <p>It lists what happened in that person's life, such as a birth. Each one is a <term keyref="term-fact">fact</term>.</p>
         </info>
       </step>
       <step>
-        <cmd>Choose <uicontrol keyref="ui-family"/>.</cmd>
+        <cmd>Choose <uicontrol keyref="ui-family-tree"/>.</cmd>
         <info>
-          <p>It draws a tree, which the screen calls a <term keyref="term-pedigree">pedigree</term>.</p>
+          <p>It draws a tree of that person, with parents above and children below.</p>
         </info>
       </step>
       <step>
@@ -58,7 +64,7 @@
     </steps>
     <result>
       <p>To go back one screen, choose the back arrow at the top left.</p>
-      <fig platform="AndroidPhone">
+      <fig>
         <image keyref="img-nav-main"/>
       </fig>
     </result>
