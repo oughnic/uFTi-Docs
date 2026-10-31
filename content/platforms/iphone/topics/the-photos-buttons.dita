@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="the-photos-buttons" xml:lang="en-GB">
+  <title>The Photos buttons</title>
+  <shortdesc>What the buttons under Photos are for on a person, an event or a source.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-29"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Concept</category>
+      <keywords>
+        <keyword>images</keyword>
+        <keyword>pictures</keyword>
+        <keyword>attachments</keyword>
+        <keyword>camera</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="media.add"/>
+  </prolog>
+  <conbody>
+    <p>A person's page, an event and a source each have a part named <uicontrol keyref="ui-photos"/>. It has three round-cornered buttons in a row. Under them, the page says <q>No attachments yet</q> until you add a picture.</p>
+    <p>The same three buttons appear when you attach a copy of a source. <xref keyref="which-file-to-send"/> says which file to send to family, and whether the pictures go with it.</p>
+    <section>
+      <title>The camera button</title>
+      <p>The first button has a camera on it. It is for a new photo, such as a photo of a certificate.</p>
+      <p>The first time, the iPhone asks if <keyword keyref="product-name"/> may use the camera. Choose <uicontrol keyref="ui-allow"/> to take photos in the app.</p>
+    </section>
+    <section>
+      <title>The folder button</title>
+      <p>The second button has a folder on it. It is for a picture or a scan that is already on your iPhone. The iPhone's own Files screen opens. Choose a picture, or choose the cross at the top to leave it.</p>
+    </section>
+    <section>
+      <title>The chain button</title>
+      <p>The third button has a chain link on it. It is for a picture that is already in this tree, so you can use it again on a second person. A list named <wintitle keyref="ui-link-existing-media"/> opens, with a box to search the pictures by what they show. A new tree has none yet. Choose <uicontrol keyref="ui-close"/> to leave it.</p>
+    </section>
+    <section>
+      <title>The fourth button</title>
+      <p>When a page already has pictures, a fourth button shows, with an arrow that points down. It copies all the pictures of that page to a folder. The iPhone's own screen for choosing a folder opens.</p>
+    </section>
+  </conbody>
+</concept>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
 <!-- The iPhone manual (platform strategy, section 7; DEC-080): one bookmap at the root of the content
-     folder (DEC-045). Shared topics come from the Desktop idiom, which the Windows manual also uses. The
-     platform topics here carry iPhone. Chapters not yet written are left out, not stubbed. -->
+     folder (DEC-045). The pages written from the iPhone walk carry iPhone (DEC-183); the pages a phone and
+     a tablet share carry Mobile or iOS. Chapters not yet written are left out, not stubbed. -->
 <bookmap id="ufti-manual-iphone" xml:lang="en-GB">
   <booktitle>
     <mainbooktitle>uFTi user manual: iPhone</mainbooktitle>
@@ -30,6 +30,9 @@
     <mapref href="maps/structure/quick-start.ditamap"/>
   </chapter>
   <chapter href="topics/quick-start/five-things-to-know.dita" keys="five-things-to-know"/>
+  <chapter href="topics/tree/work-with-your-tree.dita" keys="work-with-your-tree">
+    <mapref href="maps/structure/work-with-your-tree.ditamap"/>
+  </chapter>
   <chapter href="topics/workspaces/bring-in-share-and-keep-safe.dita" keys="bring-in-share-and-keep-safe">
     <mapref href="maps/structure/bring-in-share-and-keep-safe.ditamap"/>
   </chapter>

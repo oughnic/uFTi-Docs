@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="add-a-note" xml:lang="en-GB">
+  <title>Add a note to a person</title>
+  <shortdesc>Write down something you know about a person that does not fit in a date or a place.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-29"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>writing</keyword>
+        <keyword>memo</keyword>
+        <keyword>story</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="notes.edit"/>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p>Open the person first. <xref keyref="find-a-person"/> shows how.</p>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-add"/> at the top right.</cmd>
+        <stepresult>
+          <p>The sheet named <uicontrol keyref="ui-add-a-record"/> opens.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-note"/> under the part for a note, then choose <uicontrol keyref="ui-add-button"/> at the bottom.</cmd>
+        <info>
+          <p>Scroll the sheet to find the part.</p>
+        </info>
+        <stepresult>
+          <p>A form opens with one box for the note.</p>
+          <fig>
+            <image keyref="img-note-form"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Type your note, then choose <uicontrol keyref="ui-save"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-more"/> in the bar along the bottom, then <uicontrol keyref="ui-notes"/>.</cmd>
+        <stepresult>
+          <p>The note shows under <uicontrol keyref="ui-notes"/>, with <uicontrol keyref="ui-edit"/> and a button to delete it.</p>
+          <fig>
+            <image keyref="img-notes"/>
+          </fig>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>The note belongs to that person. Write what you know. Say where you read it if you can.</p>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="choose-how-it-looks"/>.</p>
+    </postreq>
+  </taskbody>
+</task>
