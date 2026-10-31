@@ -53,7 +53,7 @@ The scenario scripts need the app's automation identifiers and routes. Those are
 | Android phone | **A physical phone: the maintainer's Samsung Galaxy A41, model SM-A415F, Android 12, 1080 by 2400 pixels at 420 dpi, portrait** (DEC-088) | The emulator on the Arm authoring machine proved unreliable. The phone is the pinned profile. Its serial number never appears in this repository. |
 | Android tablet | A tablet emulator: **the Pixel Tablet profile, 2560 by 1600 pixels at 320 dpi, Android 16, landscape** (DEC-181) | Pinned profile. Landscape. A clean emulator, so Android's own screens list nothing else. |
 | iPhone | An iPhone simulator | Needs a Mac. Pinned (DEC-184): an iPhone 17 Pro simulator, iOS 26.5, 1206 by 2622 pixels, portrait, English (United Kingdom), default text size. |
-| iPad | An iPad simulator | Needs a Mac. Landscape. |
+| iPad | An iPad simulator | Needs a Mac. Pinned (DEC-187): an iPad Air 11-inch (M4) simulator, iOS 26.5, 2360 by 1640 pixels, landscape, English (United Kingdom), default text size. |
 | Windows | The app on a **clean Windows profile or virtual machine**, at a fixed window size | A generic user name, so no personal paths or names appear. |
 
 Every capture run sets these explicitly. It never relies on the machine's defaults:

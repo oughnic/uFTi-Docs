@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="tour-of-the-screens" xml:lang="en-GB">
+  <title>The screens of the app</title>
+  <shortdesc>What each place in the list on the left shows, with a picture of each screen.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-31"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Reference</category>
+      <keywords>
+        <keyword>app layout</keyword>
+        <keyword>side list</keyword>
+        <keyword>menu</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="workspaces.view"/>
+  </prolog>
+  <refbody>
+    <section>
+      <title>The list on the left</title>
+      <p>A list of five places runs down the left side of every screen, whichever way up you hold the iPad. The place you are in is shaded. The first four are the main places. Some show your whole tree. Others show one person, the person named in the chip that starts with <uicontrol keyref="ui-showing"/>. The chip shows once you open someone.</p>
+      <table>
+        <title>The main places and what they show</title>
+        <tgroup cols="3">
+          <colspec colname="c1" colwidth="2*"/>
+          <colspec colname="c2" colwidth="3*"/>
+          <colspec colname="c3" colwidth="2*"/>
+          <thead>
+            <row>
+              <entry>Place</entry>
+              <entry>What it shows</entry>
+              <entry>Needs a person</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><uicontrol keyref="ui-workspaces"/></entry>
+              <entry>Your family trees, one card for each.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry><uicontrol keyref="ui-person"/></entry>
+              <entry>The page of one person.</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry><uicontrol keyref="ui-family-tree"/></entry>
+              <entry>A drawing of the person with parents, partners and children.</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry><uicontrol keyref="ui-events"/></entry>
+              <entry>The things that happened in that person's life.</entry>
+              <entry>Yes</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <p>The search box and the <uicontrol keyref="ui-add"/> button are along the top of every screen. Above them, a line names the tree and the page you are on. Choose a name in that line to go back to that page. A back arrow at the top left takes you back one screen.</p>
+      <note>If a page says <q>Select a person</q> or shows only the search box, it needs a person first. Search for someone, then open them. <xref keyref="a-page-says-no-person-selected"/> shows how.</note>
+    </section>
+    <section>
+      <title><uicontrol keyref="ui-workspaces"/></title>
+      <p>This is the first screen. Each card is one family tree. It tells you how many people, families and events the tree holds. <xref keyref="remove-a-workspace"/> starts here.</p>
+      <fig>
+        <image keyref="img-workspaces"/>
+      </fig>
+    </section>
+    <section>
+      <title><uicontrol keyref="ui-person"/></title>
+      <p>This is one person's page: their names, their birth and death, their family and their photos. <xref keyref="find-a-person"/> shows how to open it.</p>
+      <fig>
+        <image keyref="img-person-page"/>
+      </fig>
+    </section>
+    <section>
+      <title><uicontrol keyref="ui-family-tree"/> and <uicontrol keyref="ui-events"/></title>
+      <p><xref keyref="see-a-family-tree"/> explains the tree. <xref keyref="see-the-events-of-a-person"/> explains the list of events.</p>
+      <fig>
+        <image keyref="img-events"/>
+      </fig>
+    </section>
+    <section>
+      <title><uicontrol keyref="ui-more"/></title>
+      <p>The fifth place in the list, <uicontrol keyref="ui-more"/>, opens a list of six more places. Each one opens a screen of its own.</p>
+      <ul>
+        <li><uicontrol keyref="ui-notes"/> shows your own notes about the person you are looking at. <xref keyref="add-a-note"/> shows how to write one.</li>
+        <li><uicontrol keyref="ui-where-records-are-kept"/> lists the archives, libraries and websites that your sources come from.</li>
+        <li><uicontrol keyref="ui-who-made-this-tree"/> lists the people credited with the tree.</li>
+        <li><uicontrol keyref="ui-research-questions-and-notes"/> is your list of questions and ideas.</li>
+        <li><uicontrol keyref="ui-preferences"/> sets the colours and the light or dark look. <xref keyref="choose-how-it-looks"/> explains it.</li>
+        <li><uicontrol keyref="ui-about-ufti"/> shows the version of the app.</li>
+      </ul>
+      <p>The three that list things for the whole tree are empty until you add something with <uicontrol keyref="ui-add"/>.</p>
+      <fig>
+        <image keyref="img-notes"/>
+      </fig>
+      <fig>
+        <image keyref="img-repositories"/>
+      </fig>
+      <fig>
+        <image keyref="img-submitters"/>
+      </fig>
+      <fig>
+        <image keyref="img-research-notes"/>
+      </fig>
+      <fig>
+        <image keyref="img-preferences"/>
+      </fig>
+    </section>
+    <section>
+      <title>When the iPad is upright</title>
+      <p>The pictures in this manual show the iPad on its side. Upright, the screen is narrower, and some screens change.</p>
+      <ul>
+        <li>The list on the left stays.</li>
+        <li>A person's page and the forms are in one column. <uicontrol keyref="ui-save"/> is further down, so scroll to find it.</li>
+        <li>Search results are in one column, people above events. Buttons above them show everything, only the people or only the events.</li>
+        <li>The cards on <uicontrol keyref="ui-workspaces"/> are one under another.</li>
+      </ul>
+    </section>
+  </refbody>
+</reference>

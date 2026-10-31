@@ -2,54 +2,66 @@
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <!-- The chapter "Work with your tree" (authoring plan, section 3.4, chapters 3 to 8 in brief): what a
      reader does once a tree is open. These pages describe the computer idiom, so each topicref carries
-     the token Desktop (DEC-093); the phone twins written from the Android walk carry AndroidPhone, the tablet twins written from the Android tablet walk carry AndroidTablet, and the iPhone twins written from the iPhone walk carry iPhone. Keys sit on the topicrefs and match the file names. -->
+     the token Desktop (DEC-093); the phone twins written from the Android walk carry AndroidPhone, the tablet twins written from the Android tablet walk carry AndroidTablet, the iPhone twins written from the iPhone walk carry iPhone, and the iPad twins written from the iPad walk carry iPad. Keys sit on the topicrefs and match the file names. -->
 <map id="work-with-your-tree-structure" xml:lang="en-GB">
   <topicref href="../../platforms/desktop/topics/tour-of-the-screens.dita" keys="tour-of-the-screens" platform="Desktop"/>
   <topicref href="../../platforms/android-phone/topics/tour-of-the-screens.dita" keys="tour-of-the-screens" platform="AndroidPhone"/>
   <topicref href="../../platforms/android-tablet/topics/tour-of-the-screens.dita" keys="tour-of-the-screens" platform="AndroidTablet"/>
   <topicref href="../../platforms/iphone/topics/tour-of-the-screens.dita" keys="tour-of-the-screens" platform="iPhone"/>
+  <topicref href="../../platforms/ipad/topics/tour-of-the-screens.dita" keys="tour-of-the-screens" platform="iPad"/>
   <topicref href="../../platforms/desktop/topics/find-a-person.dita" keys="find-a-person" platform="Desktop"/>
   <topicref href="../../platforms/android-phone/topics/find-a-person.dita" keys="find-a-person" platform="AndroidPhone"/>
   <topicref href="../../platforms/android-tablet/topics/find-a-person.dita" keys="find-a-person" platform="AndroidTablet"/>
   <topicref href="../../platforms/iphone/topics/find-a-person.dita" keys="find-a-person" platform="iPhone"/>
+  <topicref href="../../platforms/ipad/topics/find-a-person.dita" keys="find-a-person" platform="iPad"/>
   <topicref href="../../platforms/desktop/topics/see-a-family-tree.dita" keys="see-a-family-tree" platform="Desktop"/>
   <topicref href="../../platforms/android-phone/topics/see-a-family-tree.dita" keys="see-a-family-tree" platform="AndroidPhone"/>
   <topicref href="../../platforms/android-tablet/topics/see-a-family-tree.dita" keys="see-a-family-tree" platform="AndroidTablet"/>
   <topicref href="../../platforms/iphone/topics/see-a-family-tree.dita" keys="see-a-family-tree" platform="iPhone"/>
+  <topicref href="../../platforms/ipad/topics/see-a-family-tree.dita" keys="see-a-family-tree" platform="iPad"/>
   <topicref href="../../platforms/desktop/topics/see-the-events-of-a-person.dita" keys="see-the-events-of-a-person" platform="Desktop"/>
   <topicref href="../../platforms/android-phone/topics/see-the-events-of-a-person.dita" keys="see-the-events-of-a-person" platform="AndroidPhone"/>
   <topicref href="../../platforms/android-tablet/topics/see-the-events-of-a-person.dita" keys="see-the-events-of-a-person" platform="AndroidTablet"/>
   <topicref href="../../platforms/iphone/topics/see-the-events-of-a-person.dita" keys="see-the-events-of-a-person" platform="iPhone"/>
+  <topicref href="../../platforms/ipad/topics/see-the-events-of-a-person.dita" keys="see-the-events-of-a-person" platform="iPad"/>
   <topicref href="../../platforms/desktop/topics/look-at-the-sources-of-a-fact.dita" keys="look-at-the-sources-of-a-fact" platform="Desktop"/>
   <topicref href="../../platforms/android-phone/topics/look-at-the-sources-of-a-fact.dita" keys="look-at-the-sources-of-a-fact" platform="AndroidPhone"/>
   <topicref href="../../platforms/android-tablet/topics/look-at-the-sources-of-a-fact.dita" keys="look-at-the-sources-of-a-fact" platform="AndroidTablet"/>
   <topicref href="../../platforms/iphone/topics/look-at-the-sources-of-a-fact.dita" keys="look-at-the-sources-of-a-fact" platform="iPhone"/>
+  <topicref href="../../platforms/ipad/topics/look-at-the-sources-of-a-fact.dita" keys="look-at-the-sources-of-a-fact" platform="iPad"/>
   <topicref href="../../platforms/desktop/topics/add-another-person.dita" keys="add-another-person" platform="Desktop"/>
   <topicref href="../../platforms/android-phone/topics/add-another-person.dita" keys="add-another-person" platform="AndroidPhone"/>
   <topicref href="../../platforms/android-tablet/topics/add-another-person.dita" keys="add-another-person" platform="AndroidTablet"/>
   <topicref href="../../platforms/iphone/topics/add-another-person.dita" keys="add-another-person" platform="iPhone"/>
+  <topicref href="../../platforms/ipad/topics/add-another-person.dita" keys="add-another-person" platform="iPad"/>
   <topicref href="../../platforms/desktop/topics/change-a-person.dita" keys="change-a-person" platform="Desktop"/>
   <topicref href="../../platforms/android-phone/topics/change-a-person.dita" keys="change-a-person" platform="AndroidPhone"/>
   <topicref href="../../platforms/android-tablet/topics/change-a-person.dita" keys="change-a-person" platform="AndroidTablet"/>
   <topicref href="../../platforms/iphone/topics/change-a-person.dita" keys="change-a-person" platform="iPhone"/>
+  <topicref href="../../platforms/ipad/topics/change-a-person.dita" keys="change-a-person" platform="iPad"/>
   <topicref href="../../platforms/desktop/topics/add-a-family.dita" keys="add-a-family" platform="Desktop"/>
   <topicref href="../../platforms/android-phone/topics/add-a-family.dita" keys="add-a-family" platform="AndroidPhone"/>
   <topicref href="../../platforms/android-tablet/topics/add-a-family.dita" keys="add-a-family" platform="AndroidTablet"/>
   <topicref href="../../platforms/iphone/topics/add-a-family.dita" keys="add-a-family" platform="iPhone"/>
+  <topicref href="../../platforms/ipad/topics/add-a-family.dita" keys="add-a-family" platform="iPad"/>
   <topicref href="../../platforms/desktop/topics/add-a-note.dita" keys="add-a-note" platform="Desktop"/>
   <topicref href="../../platforms/android-phone/topics/add-a-note.dita" keys="add-a-note" platform="AndroidPhone"/>
   <topicref href="../../platforms/android-tablet/topics/add-a-note.dita" keys="add-a-note" platform="AndroidTablet"/>
   <topicref href="../../platforms/iphone/topics/add-a-note.dita" keys="add-a-note" platform="iPhone"/>
+  <topicref href="../../platforms/ipad/topics/add-a-note.dita" keys="add-a-note" platform="iPad"/>
   <topicref href="../../platforms/desktop/topics/the-photos-buttons.dita" keys="the-photos-buttons" platform="Desktop"/>
   <topicref href="../../platforms/android-phone/topics/the-photos-buttons.dita" keys="the-photos-buttons" platform="AndroidPhone"/>
   <topicref href="../../platforms/android-tablet/topics/the-photos-buttons.dita" keys="the-photos-buttons" platform="AndroidTablet"/>
   <topicref href="../../platforms/iphone/topics/the-photos-buttons.dita" keys="the-photos-buttons" platform="iPhone"/>
+  <topicref href="../../platforms/ipad/topics/the-photos-buttons.dita" keys="the-photos-buttons" platform="iPad"/>
   <topicref href="../../platforms/desktop/topics/choose-how-it-looks.dita" keys="choose-how-it-looks" platform="Desktop"/>
   <topicref href="../../platforms/android-phone/topics/choose-how-it-looks.dita" keys="choose-how-it-looks" platform="AndroidPhone"/>
   <topicref href="../../platforms/android-tablet/topics/choose-how-it-looks.dita" keys="choose-how-it-looks" platform="AndroidTablet"/>
   <topicref href="../../platforms/iphone/topics/choose-how-it-looks.dita" keys="choose-how-it-looks" platform="iPhone"/>
+  <topicref href="../../platforms/ipad/topics/choose-how-it-looks.dita" keys="choose-how-it-looks" platform="iPad"/>
   <topicref href="../../platforms/desktop/topics/a-page-says-no-person-selected.dita" keys="a-page-says-no-person-selected" platform="Desktop"/>
   <topicref href="../../platforms/android-phone/topics/a-page-says-no-person-selected.dita" keys="a-page-says-no-person-selected" platform="AndroidPhone"/>
   <topicref href="../../platforms/android-tablet/topics/a-page-says-no-person-selected.dita" keys="a-page-says-no-person-selected" platform="AndroidTablet"/>
   <topicref href="../../platforms/iphone/topics/a-page-says-no-person-selected.dita" keys="a-page-says-no-person-selected" platform="iPhone"/>
+  <topicref href="../../platforms/ipad/topics/a-page-says-no-person-selected.dita" keys="a-page-says-no-person-selected" platform="iPad"/>
 </map>

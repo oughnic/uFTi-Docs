@@ -14,6 +14,7 @@ content/
   ufti-quick-start-android-phone.ditamap, ufti-manual-android-phone.ditamap   the same for the Android phone
   ufti-quick-start-android-tablet.ditamap, ufti-manual-android-tablet.ditamap   the same for the Android tablet
   ufti-quick-start-iphone.ditamap, ufti-manual-iphone.ditamap   the same for the iPhone
+  ufti-quick-start-ipad.ditamap, ufti-manual-ipad.ditamap   the same for the iPad
   maps/structure/quick-start.ditamap the Quick Start pages in order, shared by both
   maps/structure/bring-in-share-and-keep-safe.ditamap   the pages of that chapter, shared by both
   topics/quick-start/                the pages the same on every device, the chapter introduction, and
@@ -22,7 +23,8 @@ content/
   platforms/windows/topics/, platforms/android/topics/   the pages for one platform (getting the app, keeping a copy)
   platforms/desktop/topics/, platforms/phone/topics/     the pages that differ by device idiom (opened files and copies,
                                      which file to send; files beside your tree is for a computer only)
-  platforms/android-phone/topics/, platforms/android-tablet/topics/, platforms/iphone/topics/   the pages written
+  platforms/android-phone/topics/, platforms/android-tablet/topics/, platforms/iphone/topics/,
+  platforms/ipad/topics/             the pages written
                                      from the walk of one device (adding a person, looking around, the chapter
                                      "Work with your tree")
   platforms/<manual>/keys/           the manual's own keys: pictures (images.ditamap) and the words that

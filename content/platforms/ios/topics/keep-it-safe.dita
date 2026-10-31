@@ -29,7 +29,7 @@
         <cmd>On the card for your tree, choose <uicontrol keyref="ui-save-as"/>.</cmd>
         <stepresult>
           <p>A small box opens. It starts with the words <q><keyword keyref="ui-save-workspace-as"/></q> and asks how to save your tree.</p>
-          <fig platform="iPhone">
+          <fig>
             <image keyref="img-save-as-choice"/>
           </fig>
         </stepresult>
@@ -42,7 +42,7 @@
         </choices>
         <info>
           <p>A second box asks <wintitle keyref="ui-which-version-of-gedcom"/>.</p>
-          <fig platform="iPhone">
+          <fig>
             <image keyref="img-save-as-version"/>
           </fig>
         </info>
