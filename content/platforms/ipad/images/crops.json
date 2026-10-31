@@ -1,0 +1,82 @@
+{
+  "img-create-workspace-dialog": {
+    "shows": "controls only",
+    "reason": "Cut before import to the box and its two buttons."
+  },
+  "img-citation-add": {
+    "noFocus": true,
+    "workspaceHidden": true,
+    "reason": "Cut before import to the form below the status bar: the sheet covers the whole screen, so the name of the workspace is not on it. The subject is the form, which names no person."
+  },
+  "img-remove-workspace": {
+    "workspaceHidden": true,
+    "reason": "Cut before import to the box, which names the workspace it would remove."
+  },
+  "img-save-as-choice": {
+    "shows": "controls only",
+    "reason": "Cut before import to the box and its two buttons."
+  },
+  "img-save-as-version": {
+    "shows": "controls only",
+    "reason": "Cut before import to the box and its two buttons."
+  },
+  "img-import-summary": {
+    "workspaceHidden": true,
+    "reason": "Cut before import to the box, which names the tree that was opened."
+  },
+  "img-search-results": {
+    "workspaceHidden": true,
+    "reason": "Cut before import to the search box and the results below it. The subject is the list of results, all of them on the allow-list."
+  },
+  "img-search-refine": {
+    "shows": "controls only",
+    "reason": "Cut before import to the search box and the Refine by list."
+  },
+  "img-add-record": {
+    "workspaceHidden": true,
+    "reason": "Cut before import to the sheet: it covers the whole screen, so the name of the workspace is not on it."
+  },
+  "img-add-record-lower": {
+    "workspaceHidden": true,
+    "reason": "Cut before import to the sheet: it covers the whole screen, so the name of the workspace is not on it."
+  },
+  "img-add-record-more-forms": {
+    "shows": "controls only",
+    "reason": "Cut before import to the sheet: it covers the whole screen, so the name of the workspace is not on it, and this part of it names no person."
+  },
+  "img-family-children": {
+    "workspaceHidden": true,
+    "reason": "Cut before import to the row for the new child, so the name of the workspace is not shown."
+  },
+  "img-tree-marriage": {
+    "workspaceHidden": true,
+    "reason": "Cut before import to the sheet that opens from the marriage mark."
+  },
+  "img-sources-list": {
+    "noFocus": true,
+    "workspaceHidden": true,
+    "reason": "Cut before import to the list: the sheet covers the whole screen, so the name of the workspace is not on it. The subject is the list of books, not one person."
+  },
+  "img-sources-empty": {
+    "shows": "controls only",
+    "reason": "Cut before import to the top of the screen: the sheet covers the whole screen, so the name of the workspace is not on it."
+  },
+  "img-source-new": {
+    "shows": "controls only",
+    "reason": "Cut before import to the form: the sheet covers the whole screen, so the name of the workspace is not on it."
+  },
+  "img-source-attach": {
+    "shows": "controls only",
+    "reason": "Cut before import to the top of the screen: the sheet covers the whole screen, so the name of the workspace is not on it."
+  },
+  "img-sources-one": {
+    "noFocus": true,
+    "workspaceHidden": true,
+    "reason": "Cut before import to the top of the screen: the sheet covers the whole screen, so the name of the workspace is not on it. The subject is the one book in the list."
+  },
+  "img-note-form": {
+    "noFocus": true,
+    "workspaceHidden": true,
+    "reason": "Cut before import below the button that fills the form from a document (an AI feature, which the documentation leaves out, DEC-020), which also leaves out the name of the workspace."
+  }
+}

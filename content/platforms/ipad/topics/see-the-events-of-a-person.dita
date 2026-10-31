@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="see-the-events-of-a-person" xml:lang="en-GB">
+  <title>See the events of a person</title>
+  <shortdesc>List what happened in a person's life, such as birth, marriage and death, and open any one.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-31"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>life events</keyword>
+        <keyword>birth</keyword>
+        <keyword>death</keyword>
+        <keyword>facts</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="events.edit"/>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p>Open a person first. <xref keyref="find-a-person"/> shows how.</p>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-events"/> in the list on the left.</cmd>
+        <stepresult>
+          <p>Each event has a line with its name, its date and its place. A small number at the right counts the <term keyref="term-source">sources</term> for it, once it has one.</p>
+          <fig>
+            <image keyref="img-events"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose an event to open it.</cmd>
+        <stepresult>
+          <p>A page shows its type, date and place. It has a count of sources, a row of photo buttons, and the buttons <uicontrol keyref="ui-edit"/> and <uicontrol keyref="ui-delete-event"/>.</p>
+          <fig>
+            <image keyref="img-event-detail"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-all-events"/> at the top to go back to the list.</cmd>
+      </step>
+    </steps>
+    <result>
+      <p>To add an event, choose <uicontrol keyref="ui-add-event"/> under the list.</p>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="look-at-the-sources-of-a-fact"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

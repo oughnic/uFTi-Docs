@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="see-a-family-tree" xml:lang="en-GB">
+  <title>See a family tree</title>
+  <shortdesc>Draw the parents, partners and children of one person.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-31"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>drawing</keyword>
+        <keyword>parents</keyword>
+        <keyword>children</keyword>
+        <keyword>pedigree</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="tree.view"/>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p>Open a person first. <xref keyref="find-a-person"/> shows how.</p>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-family-tree"/> in the list on the left.</cmd>
+        <stepresult>
+          <p>A drawing opens, with the person you chose in a box with a dark edge. Their parents are above. Their partners are beside them. Their children are below.</p>
+          <fig>
+            <image keyref="img-family-tree-charlotte"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose the round mark between two partners.</cmd>
+        <stepresult>
+          <p>The mark shows the year of their marriage. A sheet opens from the bottom. It names the couple and lists their marriage and each child.</p>
+          <fig>
+            <image keyref="img-tree-marriage"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose a line in the sheet.</cmd>
+        <info>
+          <p>The marriage line opens the page of that family. A child's line shows the tree of that child. <q>Open family record</q> is another way to open the family page. To close the sheet without choosing, choose the cross at its top right.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Use the minus and plus buttons at the top to show fewer or more generations.</cmd>
+        <info>
+          <p>The pair beside the up arrow is for parents and older people. The pair beside the down arrow is for children and younger people.</p>
+        </info>
+      </step>
+    </steps>
+    <result>
+      <p>Choose <uicontrol keyref="ui-return-to-focus"/> to go back to the first person. Choose <uicontrol keyref="ui-fit-to-screen"/> to see the whole drawing at once when it is big. A button such as <q>+5 siblings</q> means more brothers and sisters are not drawn.</p>
+      <fig>
+        <image keyref="img-family-tree"/>
+      </fig>
+    </result>
+    <postreq>
+      <p>Choose a person's box to draw the tree again around that person. They become the person the chip that starts with <uicontrol keyref="ui-showing"/> names.</p>
+      <p>The tree and a person's page are two screens. The tree never shows the page beside it, even with the iPad on its side. To read the page of the person in the middle of the tree, choose <uicontrol keyref="ui-person"/> in the list on the left. To go back to the tree, choose <uicontrol keyref="ui-family-tree"/>.</p>
+      <p>The same tree is the <term keyref="term-pedigree">pedigree</term> in older manuals. Next: <xref keyref="see-the-events-of-a-person"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

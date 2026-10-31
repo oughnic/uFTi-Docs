@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="choose-how-it-looks" xml:lang="en-GB">
+  <title>Choose how the app looks</title>
+  <shortdesc>Pick a colour theme, and a light or dark look, for this iPad.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-31"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>theme</keyword>
+        <keyword>dark mode</keyword>
+        <keyword>colours</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="settings.appearance"/>
+  </prolog>
+  <taskbody>
+    <context>
+      <p>These settings are for this iPad only. They do not change your family tree files.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-more"/> in the list on the left, then <uicontrol keyref="ui-preferences"/>.</cmd>
+        <stepresult>
+          <p>The screen shows two groups of choices.</p>
+          <fig>
+            <image keyref="img-preferences"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Under <uicontrol keyref="ui-theme"/>, choose a set of colours.</cmd>
+        <info>
+          <p>The first group has three themes, and a row of four colour squares shows each one. <uicontrol keyref="ui-oxford-and-slate"/> is the one in the pictures in this manual.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Under <uicontrol keyref="ui-appearance"/>, choose <uicontrol keyref="ui-follow-the-system"/>, <uicontrol keyref="ui-light"/> or <uicontrol keyref="ui-dark"/>.</cmd>
+        <info>
+          <p>The first choice copies the setting you made on your iPad.</p>
+        </info>
+      </step>
+    </steps>
+    <result>
+      <p>The change shows at once. The app keeps your choice the next time you open it.</p>
+    </result>
+  </taskbody>
+</task>

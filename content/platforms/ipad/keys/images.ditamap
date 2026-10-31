@@ -1,15 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
-<!-- The iPad manual's pictures (platform strategy, section 4). No pictures are captured yet. Capture them
-     on the Brontë dataset in the Oxford and slate light theme (DEC-024), on a simulator or device pinned
-     for this manual (DEC-023), before any img-* key is added here. -->
+<!-- The iPad manual's pictures (platform strategy, section 4). Key names are the same in every manual,
+     so one topic serves them all. A key's link text is the picture's alternative text (DEC-011): one
+     sentence about what the picture shows and why it matters. The importer
+     (build/scripts/Import-Screenshots.ps1) writes the files and keeps this map in step; it never
+     rewrites alternative text. -->
 <map id="ipad-images" xml:lang="en-GB">
   <topicmeta>
     <prodinfo>
       <prodname>uFTi</prodname>
+      <vrmlist><vrm version="0.1.0 (1)"/></vrmlist>
       <platform>iPad</platform>
     </prodinfo>
-    <data name="reference-device" value="iPad simulator, not yet chosen"/>
+    <data name="reference-device" value="simulator, ipad_air_11_m4, 2360 x 1640, landscape"/>
     <data name="dataset" value="bronte"/>
   </topicmeta>
+  <keydef keys="img-person-add" href="../images/person-add.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The New person form filled in for Patrick Brontë, with his names and sex on the left and his dates and places of birth and death on the right</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-nav-main" href="../images/nav-main.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>Charlotte Brontë's page, with the list of places down the left side and the line of names, the search box and the plus button along the top</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-citation-add" href="../images/citation-add.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The Add source form, with the title of a book typed in the Title box</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-create-workspace-dialog" href="../images/create-workspace-dialog.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The New workspace box, with Brontë family of Haworth typed as the name and the Cancel and Create buttons below</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-workspaces" href="../images/workspaces.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The Workspaces screen with two cards side by side, Brontë family of Haworth (2), marked Active, and Brontë family of Haworth, each showing how many people, families and events it holds</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-remove-workspace" href="../images/remove-workspace.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The Remove workspace question, which says the family tree file is not deleted, with Cancel and Remove buttons</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-save-as-choice" href="../images/save-as-choice.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The Save workspace as box, with the choices Everything, marked recommended, and Family tree only</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-save-as-version" href="../images/save-as-version.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The question Which version of GEDCOM, with GEDCOM 7 marked as recommended and GEDCOM 5.5.1 for older programs</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-import-summary" href="../images/import-summary.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The box that opens after a file is opened, which counts the people, families, events, sources and notes and says the chosen file is left as it was</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-search-results" href="../images/search-results.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The results of a search for Patrick in two columns, two people on the left, each with a small badge that says how many sources they have, and one marriage on the right</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-search-refine" href="../images/search-refine.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The Refine by list under the search box, with choices for dates, sex, place, event type and sound-alike matches</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-person-view" href="../images/person-view.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>Patrick Brontë's page, with his name and sex on the left, his birth and death on the right, each with a count of sources, and the Family and Photos parts below</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-person-page" href="../images/person-page.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The lower part of Charlotte Brontë's page, with her parents and her husband listed, the Photos buttons, and the Edit, Add a record and Delete person buttons</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-person-edit" href="../images/person-edit.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The form for changing Charlotte Brontë, with her names, sex and title on the left, her dates and places of birth and death on the right, and the Save and Cancel buttons below</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-add-record" href="../images/add-record.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The Add a record sheet, with choices to add parents, an event, a note or a source for Patrick Brontë</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-add-record-lower" href="../images/add-record-lower.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The lower part of the Add a record sheet, with Basic details chosen, the Family, Repository, Research note and Submitter choices, and More forms above the Add button</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-add-record-more-forms" href="../images/add-record-more-forms.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The opened More forms part of the Add a record sheet, where each census form for a year after the people in the tree died has a line under it that says nobody here was alive then</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-family-form" href="../images/family-form.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The form for changing the family of Patrick Brontë and Maria Branwell, with the partners on the left and the date and place of the marriage on the right</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-family-children" href="../images/family-children.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The row for a new child in the Family form, with Charlotte Brontë's names, her sex, her birth date and the start of her birthplace</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-family-page" href="../images/family-page.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The page for Patrick Brontë and Maria Branwell, with the partners and their marriage on the left, their daughter Charlotte on the right and a View family tree button</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-family-tree" href="../images/family-tree.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The family tree for Patrick Brontë, with his wife Maria Branwell beside him and their daughter Charlotte below</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-family-tree-charlotte" href="../images/family-tree-charlotte.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The family tree for Charlotte Brontë, with her parents above, her husband Arthur Bell Nicholls beside her and a button for her brothers and sisters</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-tree-marriage" href="../images/tree-marriage.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The sheet that opens from the marriage mark, with the marriage of Patrick and Maria, their daughter Charlotte and an Open family record line</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-events" href="../images/events.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>Charlotte Brontë's list of events, which are birth, marriage and death, each with a date, a place and a count of sources</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-event-detail" href="../images/event-detail.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The page for Charlotte Brontë's birth, with its type, date and place, a source count, the Photos buttons and the Edit and Delete event buttons</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-sources-list" href="../images/sources-list.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The Sources screen for Charlotte's birth, with five books, each with its author, a quality line and Edit and Remove buttons</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-sources-empty" href="../images/sources-empty.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The Sources screen for a birth with no sources, with the words No sources for this fact yet and the Add source and Compare records that disagree buttons</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-source-new" href="../images/source-new.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The new source form, with boxes for the title, the page, where it is kept, the words copied and a note, and a Save source button</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-source-attach" href="../images/source-attach.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The step after Save source, which offers a camera, a folder and a chain button to attach a copy of the source, and a Done button</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-sources-one" href="../images/sources-one.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The Sources screen after one book has been added, with Edit and Remove beside it</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-notes" href="../images/notes.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The Notes screen for Patrick Brontë, showing a note that says he became perpetual curate of Haworth, a small chip that says Sources: 0, and Edit and Delete note buttons</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-note-form" href="../images/note-form.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The note form, with the note typed under the word Note and Save and Cancel buttons</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-repositories" href="../images/repositories.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The Where records are kept screen, with a line that says nothing is there yet and to use the plus button</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-submitters" href="../images/submitters.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The Who made this tree screen, with a line that says nobody is credited yet and to use the plus button</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-research-notes" href="../images/research-notes.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The Research questions and notes screen, with a line that says there are none yet and to use the plus button</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-preferences" href="../images/preferences.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The Preferences screen, with three themes and Oxford and slate chosen, and three looks and Light chosen</linktext></topicmeta>
+  </keydef>
 </map>

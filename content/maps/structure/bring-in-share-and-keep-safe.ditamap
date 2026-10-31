@@ -13,10 +13,12 @@
   <topicref href="../../platforms/desktop/topics/open-a-family-tree-file.dita" keys="open-a-family-tree-file" platform="Desktop"/>
   <topicref href="../../platforms/android-tablet/topics/open-a-family-tree-file.dita" keys="open-a-family-tree-file" platform="AndroidTablet"/>
   <topicref href="../../platforms/iphone/topics/open-a-family-tree-file.dita" keys="open-a-family-tree-file" platform="iPhone"/>
+  <topicref href="../../platforms/ipad/topics/open-a-family-tree-file.dita" keys="open-a-family-tree-file" platform="iPad"/>
   <topicref href="../../platforms/desktop/topics/remove-a-workspace.dita" keys="remove-a-workspace" platform="Desktop"/>
   <topicref href="../../platforms/android-phone/topics/remove-a-workspace.dita" keys="remove-a-workspace" platform="AndroidPhone"/>
   <topicref href="../../platforms/android-tablet/topics/remove-a-workspace.dita" keys="remove-a-workspace" platform="AndroidTablet"/>
   <topicref href="../../platforms/iphone/topics/remove-a-workspace.dita" keys="remove-a-workspace" platform="iPhone"/>
+  <topicref href="../../platforms/ipad/topics/remove-a-workspace.dita" keys="remove-a-workspace" platform="iPad"/>
   <topicref href="../../platforms/phone/topics/opened-files-and-copies.dita" keys="opened-files-and-copies" platform="Mobile"/>
   <topicref href="../../platforms/desktop/topics/which-file-to-send.dita" keys="which-file-to-send" platform="Desktop"/>
   <topicref href="../../platforms/phone/topics/which-file-to-send.dita" keys="which-file-to-send" platform="Mobile"/>

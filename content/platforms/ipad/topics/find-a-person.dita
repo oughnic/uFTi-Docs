@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="find-a-person" xml:lang="en-GB">
+  <title>Find a person</title>
+  <shortdesc>Search your tree by a name, a place or an event, then open the person you want.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-31"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>search</keyword>
+        <keyword>look up</keyword>
+        <keyword>filter</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="search"/>
+  </prolog>
+  <taskbody>
+    <context>
+      <p>The search box is at the top of every screen. It searches the tree that is open. There is no list of all your people: search is how you find one.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Type a name, a place or an event in the box at the top.</cmd>
+        <info>
+          <p>For example, type <userinput>Patrick</userinput>.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-search"/>.</cmd>
+        <stepresult>
+          <p>The results come in two columns. The people are on the left. The events are on the right. A small badge on each person, such as <q>Sources: 10</q>, says how many sources back that person up. When the iPad is upright, the results are in one column, with buttons above them to show everything, only the people or only the events.</p>
+          <fig>
+            <image keyref="img-search-results"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose the card of the person you want.</cmd>
+        <stepresult>
+          <p>The page of that person opens. Their name shows in the chip that starts with <uicontrol keyref="ui-showing"/>.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>Now <uicontrol keyref="ui-family-tree"/>, <uicontrol keyref="ui-events"/> and <uicontrol keyref="ui-notes"/> all show that person.</p>
+    </result>
+    <postreq>
+      <p>To narrow the results, choose the button with the sliders next to <uicontrol keyref="ui-search"/>. A list named <uicontrol keyref="ui-refine-by"/> opens. Tick <uicontrol keyref="ui-dates"/>, <uicontrol keyref="ui-sex"/>, <uicontrol keyref="ui-place"/> or <uicontrol keyref="ui-event-type"/> to add a filter. Tick <uicontrol keyref="ui-sound-alike"/> to also find names that sound alike. Choose <uicontrol keyref="ui-clear-filters"/> to start again.</p>
+      <fig>
+        <image keyref="img-search-refine"/>
+      </fig>
+      <p>Next: <xref keyref="see-a-family-tree"/>.</p>
+    </postreq>
+  </taskbody>
+</task>
