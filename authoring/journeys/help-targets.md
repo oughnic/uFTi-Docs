@@ -2,7 +2,7 @@
 
 Part of [WP0](README.md) and [WP7b](../authoring-plan.md#8-delivery-plan). Status: 3 November 2026. Every screen in the app gets a help target. That is the page the app opens when the reader chooses Help on that screen ([content model, section 5](../content-model.md#5-in-app-help), DEC-028).
 
-This list was a draft of 40 screens guessed from the plan. It is now the app's own list of its 24 screens (DEC-189), and for each one, the page that answers it. [`build/help/screens.csv`](../../build/help/screens.csv) holds the same 24 identifiers for the build.
+This list was a draft of 40 screens guessed from the plan. It is now the app's own list of its 22 screens (DEC-189, DEC-195), and for each one, the page that answers it. [`build/help/screens.csv`](../../build/help/screens.csv) holds the same 22 identifiers for the build. The app retired `people.list` and `people.relatives` on 4 November 2026 (DEC-195).
 
 ## Rules
 
@@ -30,9 +30,7 @@ The Windows manual comes first because it has the most pages that match the app'
 | `notes.list` | The notes | *The screens of the app*, the part on **Notes** | Mapped. |
 | `notes.record` | The notes on one record | *The screens of the app*, the part on **Notes** | Mapped. The same surface as `notes.list`: one page, two identifiers. |
 | `people.edit` | Add or change a person | *Add your first person* | Mapped. *Add another person* and *Change a person* have task identifiers. |
-| `people.list` | A list of people | none | **Known gap.** A real page with no menu entry; the app team will confirm the final id. |
-| `people.merge` | Merge two people | none | **Known gap.** A placeholder in the app that nothing opens; the app team will confirm the final id. |
-| `people.relatives` | A person's relatives | none | **Known gap.** Nothing opens it; in effect it is `tree.view`. The app team will confirm the final id. |
+| `people.merge` | Merge two people | none | **Reserved: no help yet.** A placeholder in the app that nothing opens. The id is kept so a real screen can use it later. |
 | `people.view` | A person's page | *Look around* | Mapped. |
 | `repositories.list` | Where records are kept | *The screens of the app*, the part on the three lists of the whole tree | Mapped to a short description. Adding one was not walked. |
 | `research.list` | Research questions and notes | *The screens of the app*, the same part | Mapped to a short description. Adding one was not walked. |
@@ -44,18 +42,18 @@ The Windows manual comes first because it has the most pages that match the app'
 | `tree.view` | The family tree | *See a family tree* | Mapped. |
 | `workspaces.list` | Your family trees | *The screens of the app*, the part on **Workspaces** | Mapped. |
 
-**18 of the 24 screens have a page on Windows. Six do not.** The other manuals have fewer: they have no tour part for the list screens yet (the Android and iOS tours are not split into parts), and the Mac manual holds only a few pages. Run `pwsh build/scripts/new-help-map.ps1` to see the figures for each device.
+**18 of the 22 screens have a page on Windows. Four do not.** The other manuals have fewer: they have no tour part for the list screens yet (the Android and iOS tours are not split into parts), and the Mac manual holds only a few pages. Run `pwsh build/scripts/new-help-map.ps1` to see the figures for each device.
 
 ## What the docs need from the app team
 
-1. **Do any ids need renaming?** None needs it for the docs. Each of the 24 maps to a page the docs write. The ones to check are the eight with no page: say whether they are on the build the docs describe, and what each one shows.
+1. **Do any ids need renaming?** None needs it for the docs. The app has settled the eight that had no page: two now have one, two were retired, and four are known gaps (below).
 2. **Forms.** `forms.compose` is the screen that holds any form. If a form later needs a page of its own, tell the docs its identifier and the docs write the page, or point it at a shared one.
 3. **Dates.** The one page on dates is `events.date`. Every screen that takes a date can point there.
 4. **The date editor shows a typed example in the file format's own short codes.** The docs never show those (DEC-030), so they cannot quote the example. A plain-words example would let *Dates* describe it.
 
 ## What WP4 must do with this list
 
-1. Walk the app and write the two real gaps, `families.view` and `forms.compose` (a shared "fill in a form" page). `more` needs a page in the phone and tablet manuals. `people.list`, `people.merge` and `people.relatives` stay as known gaps until the app team confirms their final ids; the list only shrinks.
+1. Walk the app and write the two real gaps, `families.view` and `forms.compose` (a shared "fill in a form" page). `more` needs a page in the phone and tablet manuals. `people.merge` is reserved with no help yet.
 2. Add the nested parts to the tour of each phone and tablet, so their list screens land on a part.
 3. Mark screens that mention AI features, which are documented without them (DEC-020).
 4. Measure which screens differ on a tablet, so each device's map is right.

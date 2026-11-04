@@ -10,9 +10,7 @@ more,More,gap
 notes.list,Notes,
 notes.record,Notes on one record,
 people.edit,Add or change a person,
-people.list,People,gap
 people.merge,Merge two people,gap
-people.relatives,Relatives of a person,gap
 people.view,A person,
 repositories.list,Where records are kept,
 research.list,Research questions and notes,

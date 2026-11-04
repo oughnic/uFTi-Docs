@@ -98,7 +98,7 @@ The help identifier links a screen in the app to the page that explains it (DEC-
 | Area | What it covers | Examples |
 |---|---|---|
 | `workspaces` | The list of family trees, making one, saving and bringing one in | `workspaces.list`, `workspaces.create`, `workspaces.export` |
-| `people` | People | `people.list`, `people.view`, `people.edit` |
+| `people` | People | `people.view`, `people.edit`, `people.merge` |
 | `families` | Families | `families.view`, `families.edit` |
 | `tree` | The tree | `tree.view` |
 | `search` | Finding a person | `search` |
