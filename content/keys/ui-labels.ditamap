@@ -45,4 +45,21 @@
   <keydef keys="ui-title"><topicmeta><keywords><keyword>Title</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-save-source"><topicmeta><keywords><keyword>Save source</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-done"><topicmeta><keywords><keyword>Done</keyword></keywords></topicmeta></keydef>
+  <!-- the date editor. Read from the app's date editor on 3 November 2026; check against the Alpha-1
+       build before the Windows manual is published with them (the terminology list, section 2.8). -->
+  <keydef keys="ui-how-much-do-you-know"><topicmeta><keywords><keyword>How much do you know?</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-the-year"><topicmeta><keywords><keyword>The year</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-the-month-and-year"><topicmeta><keywords><keyword>The month and year</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-the-whole-date"><topicmeta><keywords><keyword>The whole date</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-not-sure-of-the-date"><topicmeta><keywords><keyword>Not sure of the date?</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-kind-of-date"><topicmeta><keywords><keyword>Kind of date</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-date-on"><topicmeta><keywords><keyword>On</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-date-about"><topicmeta><keywords><keyword>About</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-date-estimated"><topicmeta><keywords><keyword>Estimated</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-date-before"><topicmeta><keywords><keyword>Before</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-date-after"><topicmeta><keywords><keyword>After</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-date-between"><topicmeta><keywords><keyword>Between two dates</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-date-period"><topicmeta><keywords><keyword>From a date to a date</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-edit-as-text"><topicmeta><keywords><keyword>Edit as text</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-calendar"><topicmeta><keywords><keyword>Calendar</keyword></keywords></topicmeta></keydef>
 </map>

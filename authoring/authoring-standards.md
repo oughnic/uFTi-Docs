@@ -15,7 +15,7 @@ Much of this follows the plugin's own guide for people who write DITA for it, [S
 - **Domains.** The standard DTDs include the user interface, software and highlight domains. Use highlight elements (`b`, `i`) only when no semantic element fits.
 - **Encoding.** UTF-8, with an XML declaration.
 - **Language.** `xml:lang="en-GB"` on every map and topic.
-- **One topic per file.** The root element's `id` matches the file name.
+- **One topic per file.** The root element's `id` matches the file name. The one exception is a nested topic in a concept or a reference (section 2.1).
 - **`outputclass`** only for effects the plugin documents, currently `search-ignore`, `search-demote` and `landscape`. Classes carry styling, not meaning. Never record a topic's type or status in `outputclass`.
 - **Forbidden:** `mapref` by key, keys that name maps, and `chunk="to-content"` (both trigger known DITA-OT 4.4 defects).
 - **No GEDCOM tags, structures or file contents** anywhere: not in a topic, a glossary entry, a table or an example (DEC-030). They are not human-centred. The field reference is generated from the GEDCOM 7 structure definitions in plain words, keyed by the label on screen. Lint fails on a tag pattern.
@@ -34,6 +34,18 @@ Much of this follows the plugin's own guide for people who write DITA for it, [S
 8. **Every topic has** a title, a short description, `xml:lang` and metadata.
 9. **Reuse by reference.** Keys for words and facts. Content references only for fragments that must stay identical.
 10. **Minimalism.** Do not explain the obvious. Show the result of an action. Help readers recover from mistakes.
+
+### 2.1 Nested topics
+
+A screen's help sometimes needs one part of a page, not the whole page: the part of a tour that describes that screen, or one idea in a longer concept. A nested topic gives that part its own place to land (DEC-190).
+
+- **Only a concept or a reference nests topics, and only one level deep.** A task never does: its steps must read as one piece.
+- **Use one only when a screen's help needs it.** Do not nest to organise a page: a `section` does that. A nested topic is for a part that carries its own `resourceid`, or that will.
+- **Its `id` is the page anchor,** so the address `page.html#its-id` reaches it. Lower case letters, digits and hyphens, unique in the file. **It never changes after publication,** because the in-app help links to it (section 3).
+- **It has a title and `xml:lang="en-GB"`.** Its short description, metadata and dates are optional: the file's root topic carries them for the page.
+- **Its `resourceid` follows the metadata vocabulary** (section 5.1 there). The identifier counts as the topic's own for the rule that one identifier names one topic in a manual.
+- **Its words count toward the file's size limit** (section 2, rule 7).
+- **Write it so it stands alone,** as any topic does (section 2, rule 1). A reader lands on the part with no other part in view.
 
 ## 3. Files, folders and identifiers
 
@@ -150,7 +162,7 @@ Metadata goes in the topic's `prolog`. The DTD fixes the order of elements. The 
 | `keywords` | Real aliases only: other names, abbreviations, former names. **Never the title's own words.** The plugin drops a keyword that only repeats a title word. |
 | `audience` | `experiencelevel` of `novice`, `general` or `expert`, only where it helps a reader choose. It becomes a search filter. |
 | `critdates` | `created` and `revised`, **only when true**. Set by the author on a substantive change. Never batch-stamped. Do not give dates in both `bookmeta` and topics. The site shows no dates until a reliable process exists (Q13). |
-| `resourceid` | For a topic that documents a screen: `appname="ufti"` and `appid` set to the screen's stable identifier. The help map is generated from it (DEC-028), so every screen topic must have one. Never an issue number. |
+| `resourceid` | For a topic that documents a screen: `appname="ufti"` and `appid` set to the screen's stable identifier. The help map is generated from it (DEC-028), so every screen topic must have one. A topic may carry several, and a nested topic (section 2.1) carries its own. Never an issue number. Do not use `ux-source-priority` to choose between topics: in DITA 1.3 it settles a map's definition against a topic's, and it is valid only on a `topicref` (DEC-191). |
 | `data` | A name with a prefix from Dublin Core, DCAT, ADMS, SKOS and similar vocabularies is read as metadata, and written to the page where the plugin has a mapping for it. A name that is not a real term of those vocabularies is reported (`GOVK011W`) and dropped. A name with no prefix is ours and is not metadata. |
 
 ### 9.2 In a map
@@ -240,7 +252,8 @@ The checks run locally with `pwsh build/scripts/check-source.ps1` and in CI ([bu
 | 2 | No positional references | Vale `Positional` (before) |
 | 2 | No numbers in titles | Lint (WP3) |
 | 2 | Links by key | Lint (before) |
-| 2 | Size: a task of nine steps or fewer, a concept of 500 words or fewer | Lint (WP3) |
+| 2 | Size: a task of nine steps or fewer, a concept of 500 words or fewer (nested topics included) | Lint (WP3; nested topics counted from DEC-190) |
+| 2.1 | Nested topics: only in a concept or a reference, one level, a unique anchor id, a title, `xml:lang`, a valid `resourceid` | Lint (DEC-190) |
 | 2 | Every topic has a title, a short description, `xml:lang` and metadata | Lint (before) |
 | 2 | Standalone; one purpose; prerequisites; reuse; minimalism | Review |
 | 3 | File and folder names lower case with hyphens | Lint (before) |

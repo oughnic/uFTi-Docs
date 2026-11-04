@@ -68,6 +68,10 @@ jobs:
         run: build/scripts/build-site.sh --keep kept --archive
       - name: Check the tree again, with the PowerShell checker (the bash build is not checked by it otherwise)
         run: pwsh -NoProfile -File build/scripts/check-site.ps1
+      # The in-app help maps (DEC-192): every page and anchor that a map names must be in the tree just built. The
+      # maps written here say "proposed"; a "published" map is written only once its pages are proved on the host.
+      - name: Write the help maps, and check that every page and anchor they name is in the tree
+        run: pwsh -NoProfile -File build/scripts/new-help-map.ps1 -Site out/site
       # Every page of the tree, the root and platform pages and the two site pages included, goes through
       # axe-core (WCAG 2.2 AA) and the Nu HTML Checker. The accessibility statement says so (DEC-151, DEC-152).
       - name: Node
@@ -103,6 +107,12 @@ jobs:
         with:
           name: site
           path: out/site
+          if-no-files-found: error
+      - name: Keep the help maps
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: help-maps
+          path: out/help-maps
           if-no-files-found: error
       - name: Keep the archives of the current releases
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2

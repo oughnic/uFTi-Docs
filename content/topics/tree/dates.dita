@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<!-- The one topic for a date (help map: events.date). The date editor opens on every screen that takes a
+     date, so every date box reaches this page, in every manual. Written once for all devices: it names no
+     device, and the words on screen come from the shared label keys. -->
+<concept id="dates" xml:lang="en-GB">
+  <title>Dates</title>
+  <shortdesc>How uFTi records a date, including one that you only know in part or are not sure of.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-03"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Concept</category>
+      <keywords>
+        <keyword>approximate date</keyword>
+        <keyword>partial date</keyword>
+        <keyword>date range</keyword>
+        <keyword>circa</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="events.date"/>
+  </prolog>
+  <conbody>
+    <p>Most dates in a family tree are not exact. A record may give only a year. A story may say a birth was "about 1850". uFTi lets you record a date as well as you know it. Then the tree never claims more than your evidence does.</p>
+    <section>
+      <title>How much you know</title>
+      <p>The date editor asks <uicontrol keyref="ui-how-much-do-you-know"/>. Choose <uicontrol keyref="ui-the-year"/>, <uicontrol keyref="ui-the-month-and-year"/> or <uicontrol keyref="ui-the-whole-date"/>, to match what the record gives you. Do not make up a day or a month to fill the gap.</p>
+    </section>
+    <section>
+      <title>How sure you are</title>
+      <p>Choose <uicontrol keyref="ui-not-sure-of-the-date"/> to show the choices under <uicontrol keyref="ui-kind-of-date"/>.</p>
+      <dl>
+        <dlentry>
+          <dt><uicontrol keyref="ui-date-on"/></dt>
+          <dd>You know the date.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><uicontrol keyref="ui-date-about"/></dt>
+          <dd>A record or a story gives a date that is close, but not exact.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><uicontrol keyref="ui-date-estimated"/></dt>
+          <dd>You worked the date out yourself, for example from an age.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><uicontrol keyref="ui-date-before"/></dt>
+          <dd>It happened on or before this date. A baptism date can be a limit like this for a birth.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><uicontrol keyref="ui-date-after"/></dt>
+          <dd>It happened on or after this date.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><uicontrol keyref="ui-date-between"/></dt>
+          <dd>You know the earliest and the latest date it could have been. Enter both.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><uicontrol keyref="ui-date-period"/></dt>
+          <dd>Something went on for a while, such as a job or a stay. Enter the start and the end.</dd>
+        </dlentry>
+      </dl>
+    </section>
+    <section>
+      <title>Typing the date</title>
+      <p>Choose <uicontrol keyref="ui-edit-as-text"/> to type the whole date in one box. uFTi shows how the date reads, so that you can check it. If uFTi does not understand what you typed, it tells you.</p>
+    </section>
+    <section>
+      <title>Calendars</title>
+      <p>Almost every date uses the calendar that you use today. If a record uses an older one, choose it under <uicontrol keyref="ui-calendar"/>.</p>
+    </section>
+  </conbody>
+</concept>

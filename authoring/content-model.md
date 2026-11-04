@@ -77,7 +77,10 @@ The journeys are drafted in [`journeys/`](journeys/README.md), with the Quick St
 
 The app opens the right page for the screen the person is on (DEC-028). That reaches the people who will never look for a manual.
 
-- **Help map.** A generated file, per device and language, that maps a screen identifier to a page URL. The source is DITA's `resourceid` element in each topic (`appname="ufti"`, `appid="people.edit"`), so the mapping lives with the content and is checked by the build. WP7b delivers it.
+- **Help map.** A generated file, per device, release and language, that maps a screen identifier to a page, relative to the manual's address (`https://docs.ufti.com/<device>/<release>/`). The source is DITA's `resourceid` element in each topic (`appname="ufti"`, `appid="people.edit"`), so the mapping lives with the content and is checked by the build. `build/scripts/new-help-map.ps1` writes it (DEC-192). The identifiers are the app's own, 24 screens (DEC-189).
+- **One page, many screens.** A topic may carry several identifiers, and a nested topic carries its own, so a screen can land on a part of a page: `page.html#its-id` (DEC-190). The one page on dates is `events.date`. A screen with no page falls back to the manual's home page.
+- **Proposed and published.** A map says `proposed` until every page it names is proved to be there, in the assembled tree or on the host. Only then does the build write `published`, and the app uses only published maps in a release, so a release never links to a page that does not exist.
+- **Languages.** The same topic ids and identifiers in every language, and one map for each language. A screen with no page in Spanish is reported and does not fail the build.
 - **Embedded view.** The plugin can show a page's content without its masthead, contents and footer when the page is framed with `?embed=1` (`govuk.embed=yes`). An app that shows a page in a frame gets a clean help panel. Opened directly in a browser, the same address shows the full page, so a copied link always works.
 - **What the app must do** (Q22): give each screen a stable identifier, and open a URL from a help control, in a frame or a browser. An offline fallback (bundling the Quick Start in the app) is a later question.
 - **Rule.** Every screen in the inventory has a help target. The coverage check fails on a screen without one.

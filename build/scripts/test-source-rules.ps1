@@ -16,14 +16,14 @@
   Copyright 2026 Oughtibridge Ltd, Apache-2.0.
 
 .PARAMETER Only
-  Run only these parts: lint, vale, templates, samples, publications. Default: all five.
+  Run only these parts: lint, vale, templates, samples, publications, helpmap. Default: all six.
 
 .PARAMETER Filter
   Run only the cases whose name contains this text.
 #>
 [CmdletBinding()]
 param(
-    [ValidateSet('lint', 'vale', 'templates', 'samples', 'publications')][string[]]$Only = @('lint', 'vale', 'templates', 'samples', 'publications'),
+    [ValidateSet('lint', 'vale', 'templates', 'samples', 'publications', 'helpmap')][string[]]$Only = @('lint', 'vale', 'templates', 'samples', 'publications', 'helpmap'),
     [string]$Filter = '',
     [string]$ToolsDir
 )
@@ -264,6 +264,9 @@ function Words { param([int]$Count) (@(1..$Count | ForEach-Object { 'word' }) -j
 
 # ---- Lint cases: each changes one thing and names the message it must raise -------------------
 
+# A valid nested topic: it carries its own help identifier, and its id is the page anchor.
+$nestedConcept = '<concept id="part-one" xml:lang="en-GB"><title>Part one</title><prolog><resourceid appname="ufti" appid="things.part"/></prolog><conbody><p>Part one.</p></conbody></concept>'
+
 $lintCases = @(
     @{ Name = 'xml-declaration'; Expect = 'does not start with the XML declaration'; Do = { param($d) Edit-File $d 'topics/know-it.dita' '<?xml version="1.0" encoding="UTF-8"?>' '' } }
     @{ Name = 'doctype-not-standard'; Expect = 'is not the standard one'; Do = { param($d) Edit-File $d 'topics/do-it.dita' '-//OASIS//DTD DITA Task//EN' '-//EXAMPLE//DTD Special Task//EN' } }
@@ -283,6 +286,19 @@ $lintCases = @(
     @{ Name = 'help-id-format'; Expect = 'is not area.screen'; Do = { param($d) Edit-File $d 'topics/do-it.dita' 'appid="things.edit"' 'appid="Things Edit"' } }
     @{ Name = 'help-id-missing'; Expect = 'has no resourceid help identifier'; Do = { param($d) Edit-File $d 'topics/do-it.dita' '<resourceid appname="ufti" appid="things.edit"/>' '' } }
     @{ Name = 'help-id-claimed-twice'; Expect = 'is also claimed by'; Do = { param($d) Edit-File $d 'topics/know-it.dita' '</prolog>' '<resourceid appname="ufti" appid="things.edit"/></prolog>' } }
+    @{ Name = 'nested-topic-in-a-task'; Expect = 'only a concept or a reference nests topics'; Do = { param($d) Edit-File $d 'topics/do-it.dita' '</taskbody>' ('</taskbody>' + $nestedConcept) } }
+    @{ Name = 'nested-topic-id-used-twice'; Expect = "nested topic id 'part-one' is used twice"; Do = { param($d) Edit-File $d 'topics/know-it.dita' '</conbody>' ('</conbody>' + $nestedConcept + $nestedConcept) } }
+    @{ Name = 'nested-topic-id-not-an-anchor'; Expect = "nested topic id 'Part_One' is the page anchor"; Do = { param($d) Edit-File $d 'topics/know-it.dita' '</conbody>' ('</conbody>' + $nestedConcept.Replace('part-one', 'Part_One')) } }
+    @{ Name = 'nested-topic-without-language'; Expect = "xml:lang is not en-GB on nested topic 'part-one'"; Do = { param($d) Edit-File $d 'topics/know-it.dita' '</conbody>' ('</conbody>' + $nestedConcept.Replace(' xml:lang="en-GB"', '')) } }
+    @{ Name = 'nested-topic-without-title'; Expect = "nested topic 'part-one' has no title"; Do = { param($d) Edit-File $d 'topics/know-it.dita' '</conbody>' ('</conbody>' + $nestedConcept.Replace('<title>Part one</title>', '')) } }
+    @{ Name = 'nested-topic-title-with-a-full-stop'; Expect = "title of nested topic 'part-one' ends with a full stop"; Do = { param($d) Edit-File $d 'topics/know-it.dita' '</conbody>' ('</conbody>' + $nestedConcept.Replace('Part one</title>', 'Part one.</title>')) } }
+    @{ Name = 'nested-topic-inside-a-nested-topic'; Expect = 'one level only'; Do = { param($d) Edit-File $d 'topics/know-it.dita' '</conbody>' ('</conbody>' + $nestedConcept.Replace('</concept>', '<concept id="part-deeper" xml:lang="en-GB"><title>Deeper</title><conbody><p>Deeper.</p></conbody></concept></concept>')) } }
+    @{ Name = 'nested-topic-help-id-claimed-by-another-topic'; Expect = "help identifier 'things.edit' is also claimed by"; Do = { param($d) Edit-File $d 'topics/know-it.dita' '</conbody>' ('</conbody>' + $nestedConcept.Replace('things.part', 'things.edit')) } }
+    @{ Name = 'nested-topic-help-id-format'; Expect = "is not area.screen in lower case with hyphens (nested topic 'part-one')"; Do = { param($d) Edit-File $d 'topics/know-it.dita' '</conbody>' ('</conbody>' + $nestedConcept.Replace('things.part', 'Things Part')) } }
+    @{ Name = 'a concept with a nested topic over 500 words'; Expect = 'a concept of'; Do = { param($d) Edit-File $d 'topics/know-it.dita' '</conbody>' ('</conbody>' + $nestedConcept.Replace('<p>Part one.</p>', "<p>$(Words 520)</p>")) } }
+    @{ Name = 'screen-with-no-topic'; Expect = "screen 'things.gone' (A thing nobody wrote) has no topic with resourceid"; Do = { param($d) Write-File $d 'screens.csv' "screen_id,screen_name,status`nthings.edit,Edit a thing,`nthings.gone,A thing nobody wrote,`n" } }
+    @{ Name = 'screen-marked-gap-that-now-has-a-topic'; Expect = "screen 'things.edit' is marked 'gap' but a topic now carries its identifier"; Do = { param($d) Write-File $d 'screens.csv' "screen_id,screen_name,status`nthings.edit,Edit a thing,gap`n" } }
+    @{ Name = 'screen-status-that-is-not-gap'; Expect = "screen 'things.edit': status 'later' is not blank or 'gap'"; Do = { param($d) Write-File $d 'screens.csv' "screen_id,screen_name,status`nthings.edit,Edit a thing,later`n" } }
     @{ Name = 'forbidden-element'; Expect = '<object> is not used'; Do = { param($d) Edit-File $d 'topics/know-it.dita' '<p>A thing is kept when you save it.</p>' '<p>A thing is kept when you save it.</p><object data="clip.mp4"/>' } }
     @{ Name = 'link-text-click-here'; Expect = "means nothing out of context"; Do = { param($d) Edit-File $d 'topics/do-it.dita' '<xref keyref="know-it"/>' '<xref keyref="know-it">click here</xref>' } }
     @{ Name = 'link-text-bare-address'; Expect = 'link text is a bare address'; Do = { param($d) Edit-File $d 'topics/do-it.dita' '<xref keyref="know-it"/>' '<xref href="https://example.org/" scope="external" format="html">https://example.org/</xref>' } }
@@ -346,6 +362,8 @@ $lintCases = @(
 # Cases that must pass: the base itself, and a template that no map uses.
 $lintPass = @(
     @{ Name = 'the base publication passes'; Do = { param($d) } }
+    @{ Name = 'a concept with a nested topic that has its own help identifier passes'; Do = { param($d) Edit-File $d 'topics/know-it.dita' '</conbody>' ('</conbody>' + $nestedConcept) } }
+    @{ Name = 'a screen marked gap with no topic passes (DEC-194)'; Do = { param($d) Write-File $d 'screens.csv' "screen_id,screen_name,status`nthings.edit,Edit a thing,`nthings.gone,A thing nobody wrote,gap`n" } }
     @{ Name = 'a picture for another device in a shared topic passes, though its key is not defined here (DEC-129)'; Do = { param($d) Edit-File $d 'topics/do-it.dita' '<fig>
         <image keyref="img-shot"/>
       </fig>' '<fig>
@@ -614,8 +632,74 @@ if ($Only -contains 'publications') {
     Record 'publications' 'releases sort as releases do (Alpha-2 before Alpha-10, Beta before RC, RC before 1.0)' $inOrder "keys: $($keys -join ' ')"
 }
 
+# ---- The help map (DEC-028): which page a screen's help opens ---------------------------------
+
+if ($Only -contains 'helpmap') {
+    Write-Host '== Help map cases'
+    $ini = "[site]`nbase-url = https://docs.example.org/`n`n[windows]`ntitle = Windows`ndevice = a Windows computer`nrelease = Alpha-1`napp-version = 0.1.0.1 (1)`nmanual = manual-windows`nquick-start = quick-start-windows`n"
+    $inventoryText = "screen_id,screen_name`nthings.edit,Edit a thing`nthings.part,A part of a thing`nthings.list,The list of things`n"
+    function New-HelpMapPublication {
+        # The small publication, its root map named as the generator wants, a nested topic with its own id,
+        # an inventory, and a publications file. Returns the folders.
+        param([string]$Name)
+        $d = Join-Path $work $Name
+        New-BasePublication $d
+        Move-Item -LiteralPath (Join-Path $d 'ufti-test-windows.ditamap') -Destination (Join-Path $d 'ufti-manual-windows.ditamap')
+        Edit-File $d 'topics/know-it.dita' '</conbody>' ('</conbody>' + $nestedConcept)
+        [System.IO.File]::WriteAllText((Join-Path $work "$Name.csv"), $inventoryText)
+        [System.IO.File]::WriteAllText((Join-Path $work "$Name.ini"), $ini)
+        $d
+    }
+    function Invoke-HelpMap {
+        param([string]$Name, [string[]]$Extra = @())
+        $d = Join-Path $work $Name
+        $out = Join-Path $work "$Name-maps"
+        $text = & pwsh -NoProfile -File (Join-Path $PSScriptRoot 'new-help-map.ps1') -Inventory (Join-Path $work "$Name.csv") -PublicationsFile (Join-Path $work "$Name.ini") -ContentRoot $d -Output $out @Extra 2>&1 | ForEach-Object { "$_" }
+        $file = Join-Path $out 'windows.Alpha-1.en-GB.help-map.json'
+        [pscustomobject]@{ Exit = $LASTEXITCODE; Text = ($text -join "`n"); Map = $(if (Test-Path -LiteralPath $file) { Get-Content -LiteralPath $file -Raw | ConvertFrom-Json } else { $null }) }
+    }
+    function New-SiteFor {
+        # A tree with every page the small publication builds, and the anchor of the nested topic.
+        param([string]$Name, [switch]$WithoutAnchor)
+        $s = Join-Path $work "$Name-site/windows/Alpha-1"
+        New-Item -ItemType Directory -Path (Join-Path $s 'topics') -Force | Out-Null
+        Set-Content -LiteralPath (Join-Path $s 'index.html') '<html></html>'
+        Set-Content -LiteralPath (Join-Path $s 'topics/do-it.html') '<html></html>'
+        Set-Content -LiteralPath (Join-Path $s 'topics/know-it.html') $(if ($WithoutAnchor) { '<html><div id="other"></div></html>' } else { '<html><div id="part-one"></div></html>' })
+        Join-Path $work "$Name-site"
+    }
+    $helpCases = @(
+        @{ Name = 'a screen with a topic and a screen with a nested topic are mapped'; Do = { param($n) }; Check = { param($r) $r.Exit -eq 0 -and $r.Map.targets.'things.edit' -eq 'topics/do-it.html' -and $r.Map.targets.'things.part' -eq 'topics/know-it.html#part-one' }; Why = 'expected both ids in the map' }
+        @{ Name = 'a map is proposed unless it is proved'; Do = { param($n) }; Check = { param($r) $r.Map.status -eq 'proposed' -and $r.Map.baseUrl -eq 'https://docs.example.org/windows/Alpha-1/' -and $r.Map.device -eq 'windows' -and $r.Map.release -eq 'Alpha-1' -and $r.Map.language -eq 'en-GB' -and $r.Map.home -eq 'index.html' }; Why = 'expected status proposed and the base address of the release' }
+        @{ Name = 'a screen with no page is left out and the map says it is not complete'; Do = { param($n) }; Check = { param($r) $r.Exit -eq 0 -and -not ($r.Map.targets.PSObject.Properties.Name -contains 'things.list') -and $r.Map.complete -eq $false }; Why = 'expected things.list to be left out and complete to be false' }
+        @{ Name = 'a task identifier that is not a screen stays out of the map'; Do = { param($n) Edit-File (Join-Path $work $n) 'topics/do-it.dita' '<resourceid appname="ufti" appid="things.edit"/>' '<resourceid appname="ufti" appid="things.edit"/><resourceid appname="ufti" appid="things.remove"/>' }; Check = { param($r) $r.Exit -eq 0 -and -not ($r.Map.targets.PSObject.Properties.Name -contains 'things.remove') }; Why = 'expected things.remove to be left out' }
+        @{ Name = 'several screens may share one page'; Do = { param($n) Edit-File (Join-Path $work $n) 'topics/do-it.dita' '<resourceid appname="ufti" appid="things.edit"/>' '<resourceid appname="ufti" appid="things.edit"/><resourceid appname="ufti" appid="things.list"/>' }; Check = { param($r) $r.Exit -eq 0 -and $r.Map.targets.'things.list' -eq 'topics/do-it.html' -and $r.Map.complete -eq $true }; Why = 'expected two ids on one page and a complete map' }
+        @{ Name = 'a topic in another language is left out and does not fail'; Do = { param($n) Edit-File (Join-Path $work $n) 'topics/know-it.dita' '<concept id="know-it" xml:lang="en-GB">' '<concept id="know-it" xml:lang="es">' }; Check = { param($r) $r.Exit -eq 0 -and -not ($r.Map.targets.PSObject.Properties.Name -contains 'things.part') }; Why = 'expected the Spanish topic to be left out without a failure' }
+        @{ Name = 'two topics claiming one screen fail'; Do = { param($n) Edit-File (Join-Path $work $n) 'topics/know-it.dita' '<conbody>' '<conbody><p>x</p></conbody><concept id="part-two" xml:lang="en-GB"><title>Part two</title><prolog><resourceid appname="ufti" appid="things.edit"/></prolog><conbody><p>Part two.</p></conbody></concept><conbody>' }; Fail = 'one identifier, one landing page'; Why = 'expected a failure for the shared identifier' }
+        @{ Name = 'an inventory id that is not an app screen id fails'; Do = { param($n) [System.IO.File]::WriteAllText((Join-Path $work "$n.csv"), "screen_id,screen_name`nThings Edit,Bad`n") }; Fail = 'is not an app screen id'; Why = 'expected the bad id to be refused' }
+        @{ Name = 'an inventory id listed twice fails'; Do = { param($n) [System.IO.File]::WriteAllText((Join-Path $work "$n.csv"), "screen_id,screen_name`nthings.edit,A`nthings.edit,B`n") }; Fail = 'is listed twice'; Why = 'expected the duplicate to be refused' }
+        @{ Name = 'published without proof is refused'; Do = { param($n) }; Extra = @('-Published'); Fail = 'needs proof'; NoMap = $true; Why = 'expected -Published alone to be refused' }
+        @{ Name = 'published with every page and anchor in the tree is written'; Do = { param($n) New-SiteFor $n | Out-Null }; Extra = { param($n) @('-Published', '-Site', (Join-Path $work "$n-site")) }; Check = { param($r) $r.Exit -eq 0 -and $r.Map.status -eq 'published' }; Why = 'expected a published map' }
+        @{ Name = 'published with an anchor missing from the tree fails and leaves no map'; Do = { param($n) New-SiteFor $n -WithoutAnchor | Out-Null }; Extra = { param($n) @('-Published', '-Site', (Join-Path $work "$n-site")) }; Fail = 'anchor #part-one'; NoMap = $true; Why = 'expected the missing anchor to fail and no published file to remain' }
+        @{ Name = 'published with a page missing from the tree fails and leaves no map'; Do = { param($n) $s = New-SiteFor $n; Remove-Item -LiteralPath (Join-Path $s 'windows/Alpha-1/topics/do-it.html') }; Extra = { param($n) @('-Published', '-Site', (Join-Path $work "$n-site")) }; Fail = 'page not in the tree'; NoMap = $true; Why = 'expected the missing page to fail and no published file to remain' }
+    )
+    foreach ($c in $helpCases) {
+        if ($Filter -and $c.Name -notlike "*$Filter*") { continue }
+        $n = 'helpmap-' + [guid]::NewGuid().ToString('N').Substring(0, 6)
+        New-HelpMapPublication $n | Out-Null
+        & $c.Do $n
+        $extra = if ($c['Extra'] -is [scriptblock]) { & $c['Extra'] $n } elseif ($c['Extra']) { $c['Extra'] } else { @() }
+        $r = Invoke-HelpMap $n $extra
+        if ($c['Check']) { Record 'helpmap' $c.Name ([bool](& $c['Check'] $r)) "$($c.Why); got exit $($r.Exit):`n$($r.Text)" }
+        else {
+            $ok = ($r.Exit -ne 0) -and $r.Text.Contains($c['Fail']) -and (-not $c['NoMap'] -or -not $r.Map)
+            Record 'helpmap' "$($c.Name)" $ok "$($c.Why); got exit $($r.Exit), map $(if ($r.Map) { 'written' } else { 'absent' }):`n$($r.Text)"
+        }
+    }
+}
+
 Remove-Item -LiteralPath $work -Recurse -Force -ErrorAction SilentlyContinue
-$failed = @($results | Where-Object { -not $_.Ok })
+$failed =@($results | Where-Object { -not $_.Ok })
 Write-Host ''
 Write-Host "$($results.Count - $failed.Count) of $($results.Count) case(s) behaved as expected."
 if ($failed.Count) { Write-Host "FAIL: $($failed.Count) case(s) did not." -ForegroundColor Red; exit 1 }

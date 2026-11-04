@@ -18,6 +18,7 @@
       </keywords>
     </metadata>
     <resourceid appname="ufti" appid="events.edit"/>
+    <resourceid appname="ufti" appid="events.list"/>
   </prolog>
   <taskbody>
     <prereq>
