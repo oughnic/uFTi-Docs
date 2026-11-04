@@ -8,6 +8,8 @@
      replaces the shared labels whose words are different on a phone or a tablet (the list of places and
      the two choices for a copy). -->
 <map id="ipad-ui-labels" xml:lang="en-GB">
+  <!-- the word for this device in a topic that is shared with other devices (platform strategy, section 3.1) -->
+  <keydef keys="product-device"><topicmeta><keywords><keyword>iPad</keyword></keywords></topicmeta></keydef>
   <!-- the list of places down the left side, and the list its last place opens -->
   <keydef keys="ui-more"><topicmeta><keywords><keyword>More</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-gedzip-archive"><topicmeta><keywords><keyword>Everything (.gdz, recommended)</keyword></keywords></topicmeta></keydef>

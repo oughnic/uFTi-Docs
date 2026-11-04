@@ -16,14 +16,14 @@
   Copyright 2026 Oughtibridge Ltd, Apache-2.0.
 
 .PARAMETER Only
-  Run only these parts: lint, vale, templates, samples, publications, helpmap. Default: all six.
+  Run only these parts: lint, vale, templates, samples, publications, helpmap, reuse. Default: all seven.
 
 .PARAMETER Filter
   Run only the cases whose name contains this text.
 #>
 [CmdletBinding()]
 param(
-    [ValidateSet('lint', 'vale', 'templates', 'samples', 'publications', 'helpmap')][string[]]$Only = @('lint', 'vale', 'templates', 'samples', 'publications', 'helpmap'),
+    [ValidateSet('lint', 'vale', 'templates', 'samples', 'publications', 'helpmap', 'reuse')][string[]]$Only = @('lint', 'vale', 'templates', 'samples', 'publications', 'helpmap', 'reuse'),
     [string]$Filter = '',
     [string]$ToolsDir
 )
@@ -730,6 +730,54 @@ if ($Only -contains 'helpmap') {
     }
 }
 
+# ---- The reuse measurement (platform strategy, section 3.1) ----------------------------------
+
+if ($Only -contains 'reuse') {
+    Write-UftiStep 'Source rules: the reuse measurement'
+    $reuse = Join-Path $work 'reuse'
+    function New-ReuseTopic {
+        param([string]$Slug, [string]$Name, [string]$Device, [string]$Extra = '', [string]$Date = '2026-10-01', [string]$Comment = '')
+        Write-File $reuse "content/platforms/$Slug/topics/$Name.dita" @"
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+$Comment
+<task id="$Name" xml:lang="en-GB">
+  <title>Do it</title>
+  <prolog>
+    <critdates>
+      <created date="$Date"/>
+    </critdates>
+  </prolog>
+
+  <taskbody>
+    <steps>
+      <step><cmd>Open your $Device.</cmd></step>$Extra
+    </steps>
+  </taskbody>
+</task>
+"@
+    }
+    New-ReuseTopic 'android-phone' 'same-text' 'phone' -Date '2026-10-01' -Comment '<!-- written on the phone -->'
+    New-ReuseTopic 'iphone' 'same-text' 'phone' -Date '2026-10-20' -Comment '<!-- a different note -->'
+    New-ReuseTopic 'android-phone' 'device-word' 'phone'
+    New-ReuseTopic 'iphone' 'device-word' 'iPhone'
+    New-ReuseTopic 'android-phone' 'a-step-more' 'phone'
+    New-ReuseTopic 'iphone' 'a-step-more' 'iPhone' -Extra "`n      <step><cmd>Choose a thing.</cmd></step>"
+    New-ReuseTopic 'android-phone' 'one-folder-only' 'phone'
+    $all = @(& (Join-Path $PSScriptRoot 'measure-reuse.ps1') -Root $reuse -PassThru)
+    $row = { param($t) $all | Where-Object { $_.Topic -eq $t } | Select-Object -First 1 }
+    $cases = @(
+        @{ Name = 'dates, comments and blank lines are not differences'; Ok = { $r = & $row 'same-text'; $r -and $r.Lines -eq 0 -and $r.Masked -eq 0 } }
+        @{ Name = 'a device word is a difference that the key removes'; Ok = { $r = & $row 'device-word'; $r -and $r.Lines -eq 2 -and $r.Masked -eq 0 } }
+        @{ Name = 'a step the other device has is a difference that stays'; Ok = { $r = & $row 'a-step-more'; $r -and $r.Lines -eq 3 -and $r.Masked -eq 1 } }
+        @{ Name = 'a topic in one folder is not compared'; Ok = { -not (& $row 'one-folder-only') } }
+        @{ Name = '-Max leaves out a pair that is further apart'; Ok = { $few = @(& (Join-Path $PSScriptRoot 'measure-reuse.ps1') -Root $reuse -Max 0 -PassThru); ($few | Where-Object { $_.Topic -eq 'a-step-more' }) -eq $null -and @($few).Count -eq 2 } }
+    )
+    foreach ($c in $cases) {
+        if ($Filter -and $c.Name -notlike "*$Filter*") { continue }
+        Record 'reuse' $c.Name ([bool](& $c.Ok)) 'the measurement is not what the strategy says it is'
+    }
+}
 Remove-Item -LiteralPath $work -Recurse -Force -ErrorAction SilentlyContinue
 $failed =@($results | Where-Object { -not $_.Ok })
 Write-Host ''

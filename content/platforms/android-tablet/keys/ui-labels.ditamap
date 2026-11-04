@@ -7,6 +7,8 @@
      different on Android (the two choices for a copy). The tablet has no More place: the places the
      phone lists under More are in the list down the left side of the screen. -->
 <map id="android-tablet-ui-labels" xml:lang="en-GB">
+  <!-- the word for this device in a topic that is shared with other devices (platform strategy, section 3.1) -->
+  <keydef keys="product-device"><topicmeta><keywords><keyword>tablet</keyword></keywords></topicmeta></keydef>
   <!-- the list of places down the left side -->
   <keydef keys="ui-gedzip-archive"><topicmeta><keywords><keyword>Everything (.gdz, recommended)</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-gedcom-file"><topicmeta><keywords><keyword>Family tree only (.ged)</keyword></keywords></topicmeta></keydef>

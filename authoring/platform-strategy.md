@@ -108,6 +108,16 @@ Rules:
 - **Prefer a platform-specific topic to a fourth variant.**
 - **Do not use conditions for version differences.** Tagged releases hold earlier versions (DEC-013).
 
+### 3.1 One topic for several mobile manuals
+
+The four mobile manuals (Android phone, Android tablet, iPhone and iPad) say much the same thing. A topic that reads the same in two or more of them is written once and each manual selects it (DEC-197). Measuring the first twenty topics showed that the phones differ from each other by little, the tablets by little, and a phone from a tablet mostly in navigation.
+
+- **Where it goes.** `content/platforms/mobile/topics/<name>.dita`. The map's `topicref` carries `platform="Mobile"`, or a narrower group (`Phone`, `Tablet`, `Android`, `iOS`) when only some of the four share it. When a topic moves there, the device copies and their `topicref` elements are removed in the same change.
+- **The device word is a key.** `product-device` is "phone", "tablet", "iPhone" or "iPad", defined in each of the four manual key maps. A shared sentence uses `<keyword keyref="product-device"/>`. Word it so the key works wherever it falls: "your <keyword keyref="product-device"/>", never at the start of a sentence.
+- **What remains different uses the ladder** (section 3). Navigation and layout that differ between phone and tablet are inline variants on `Phone` and `Tablet`: at most three, never inside a sentence. A topic that needs more is two topics, one for each idiom (`platforms/phone/topics/`, `platforms/tablet/topics/`), not one for each device.
+- **Merge a difference only when its kind is known.** A difference may be real: a screen that one device has and another has not, found by walking the app. Do not erase it to make a merge. Merge when every differing line is navigation, layout or the device word.
+- **Measure first.** `build/scripts/measure-reuse.ps1` counts the lines that differ between the copies of a topic, with and without the device word. A figure of 0 in the second column means the pair can be one topic. `lint.ps1` notes a pair that differs by at most two lines, so a copy that should be shared does not come back unseen.
+
 ## 4. Screenshots as keys
 
 This generalises the convention already used in the existing key maps. How screenshots are chosen, captured, imported and kept current is in the [screenshot strategy](screenshot-strategy.md).
@@ -135,7 +145,7 @@ WP2 verifies that alternative text taken from `linktext` reaches both the HTML a
 
 ## 5. UI labels and product facts as keys
 
-- **Product facts** live in `content/keys/product.ditamap`: the product name (marked `translate="no"`), the app version, platform display names and standard links. Topics use `<keyword keyref="product-name"/>`.
+- **Product facts** live in `content/keys/product.ditamap`: the product name (marked `translate="no"`), the app version, platform display names and standard links. Topics use `<keyword keyref="product-name"/>`. The word for the reader's device, `product-device`, is defined in each mobile manual's own key map (section 3.1).
 - **UI labels** live in `content/keys/ui-labels.ditamap`: names of screens, tabs, buttons and fields that are used in more than two topics or are known to differ by platform or language. Topics use `<uicontrol keyref="ui-people"/>`. Labels used once are typed inline, exactly as on screen.
 - **Platform overrides.** A label that differs on one device is defined in that manual's key map. DITA gives priority to the first definition, so each manual's key map is included before the shared keys. WP2 verifies this.
 - **Stretch goal.** Generate the label keys from the application's resource files so the manual always uses the exact UI wording, and so a Spanish set could follow. The generated file would hold only user-facing strings. WP3 and WP4 evaluate it.
@@ -191,8 +201,9 @@ content/maps/structure/          shared chapter maps, one per chapter
 content/platforms/
   <slug>/keys/, images/          each manual's own key map and screenshots
   <token>/topics/                platform-specific topics, in a folder named for the
-                                 token that governs them: an OS (android, ios), an idiom
-                                 across OSs (phone, tablet) or a single manual (ipad, ...)
+                                 token that governs them: all four mobile manuals (mobile),
+                                 an OS (android, ios), an idiom across OSs (phone, tablet)
+                                 or a single manual (ipad, ...)
 ```
 
 - **One root map per publication, at the root of the publication's folder.** DITA-OT takes the root map's folder as the input directory: a topic or image above it is built with `DOTJ036W`, the plugin does not inline a diagram from there (`GOVK005W`), and the plugin's relative links then miss. `args.input.dir` does not change this (WP1 tested it on the command line and in a project file). So the bookmaps sit at `content/`, and every topic, key map, image and diagram sits beneath them (DEC-045).
@@ -250,5 +261,6 @@ CI generates these. Failures block a release unless noted.
 | Applicability matrix | Topic by manual (included or excluded) as a CSV artefact. Reviewed at release. Does not block. |
 | Idiom parity | Topics in one idiom's manual but not in the other's for the same operating system. Expected only for idiom-specific topics. |
 | Variant budget | Topics with more than three `@platform` variants are flagged. |
+| Near-identical siblings | Copies of a topic in two mobile manuals' folders that differ by at most two lines (section 3.1). A note: it does not block. |
 | Orphans | Topics in no map, platform-specific topics nobody references, and screenshots no key uses. |
 | Vocabulary | Every `@platform` value is in the catalogue or the group token set. |
