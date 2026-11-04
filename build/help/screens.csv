@@ -5,10 +5,10 @@ events.date,The date editor,
 events.list,Events,
 families.view,A family,gap
 forms.compose,A form for a new record,gap
-home,Home,gap
+home,Home,
 more,More,gap
 notes.list,Notes,
-notes.record,Notes on one record,gap
+notes.record,Notes on one record,
 people.edit,Add or change a person,
 people.list,People,gap
 people.merge,Merge two people,gap

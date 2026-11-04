@@ -134,6 +134,7 @@
     <title><uicontrol keyref="ui-notes"/></title>
     <prolog>
       <resourceid appname="ufti" appid="notes.list"/>
+      <resourceid appname="ufti" appid="notes.record"/>
     </prolog>
     <refbody>
       <section>

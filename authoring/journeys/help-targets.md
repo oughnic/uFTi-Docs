@@ -25,14 +25,14 @@ The Windows manual comes first because it has the most pages that match the app'
 | `events.list` | A person's events | *See the events of a person* | Mapped. |
 | `families.view` | A family's page | none | **No page.** *Add a family with children* makes a family. It does not describe the page. Walk it. |
 | `forms.compose` | A form for a new record | none | **No page.** Only the person, family and note forms were walked. |
-| `home` | The home screen | none | **No page.** The Alpha-1 walk names no home screen. Confirm it exists on the build. |
+| `home` | The home screen | *Find a person* | Mapped. The app's home is the search page with nothing asked yet (and the first-run prompt when no tree is open, which *Get uFTi* covers). |
 | `more` | The More list | none | **Not on Windows.** The computer's menu has no More. The phone and the iPad do. |
 | `notes.list` | The notes | *The screens of the app*, the part on **Notes** | Mapped. |
-| `notes.record` | The notes on one record | none | **No page.** Confirm how it differs from `notes.list`. |
+| `notes.record` | The notes on one record | *The screens of the app*, the part on **Notes** | Mapped. The same surface as `notes.list`: one page, two identifiers. |
 | `people.edit` | Add or change a person | *Add your first person* | Mapped. *Add another person* and *Change a person* have task identifiers. |
-| `people.list` | A list of people | none | **No page.** The Alpha-1 menu has no list of people; search shows people. Confirm. |
-| `people.merge` | Merge two people | none | **No page.** The walk did not cover duplicates. |
-| `people.relatives` | A person's relatives | none | **No page.** Not in the Alpha-1 walk. |
+| `people.list` | A list of people | none | **Known gap.** A real page with no menu entry; the app team will confirm the final id. |
+| `people.merge` | Merge two people | none | **Known gap.** A placeholder in the app that nothing opens; the app team will confirm the final id. |
+| `people.relatives` | A person's relatives | none | **Known gap.** Nothing opens it; in effect it is `tree.view`. The app team will confirm the final id. |
 | `people.view` | A person's page | *Look around* | Mapped. |
 | `repositories.list` | Where records are kept | *The screens of the app*, the part on the three lists of the whole tree | Mapped to a short description. Adding one was not walked. |
 | `research.list` | Research questions and notes | *The screens of the app*, the same part | Mapped to a short description. Adding one was not walked. |
@@ -44,7 +44,7 @@ The Windows manual comes first because it has the most pages that match the app'
 | `tree.view` | The family tree | *See a family tree* | Mapped. |
 | `workspaces.list` | Your family trees | *The screens of the app*, the part on **Workspaces** | Mapped. |
 
-**16 of the 24 screens have a page on Windows. Eight do not.** The other manuals have fewer: they have no tour part for the list screens yet (the Android and iOS tours are not split into parts), and the Mac manual holds only a few pages. Run `pwsh build/scripts/new-help-map.ps1` to see the figures for each device.
+**18 of the 24 screens have a page on Windows. Six do not.** The other manuals have fewer: they have no tour part for the list screens yet (the Android and iOS tours are not split into parts), and the Mac manual holds only a few pages. Run `pwsh build/scripts/new-help-map.ps1` to see the figures for each device.
 
 ## What the docs need from the app team
 
@@ -55,7 +55,7 @@ The Windows manual comes first because it has the most pages that match the app'
 
 ## What WP4 must do with this list
 
-1. Walk the app on each device, for the eight screens with no page, and write them.
+1. Walk the app and write the two real gaps, `families.view` and `forms.compose` (a shared "fill in a form" page). `more` needs a page in the phone and tablet manuals. `people.list`, `people.merge` and `people.relatives` stay as known gaps until the app team confirms their final ids; the list only shrinks.
 2. Add the nested parts to the tour of each phone and tablet, so their list screens land on a part.
 3. Mark screens that mention AI features, which are documented without them (DEC-020).
 4. Measure which screens differ on a tablet, so each device's map is right.

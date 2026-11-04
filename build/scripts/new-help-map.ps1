@@ -13,8 +13,10 @@
   in the app's inventory (build/help/screens.csv: task ids such as people.add stay in the topics for
   search and never reach a map), and writes
       <Output>/<platform>.<release>.<language>.help-map.json
-  with: status, baseUrl, device, release, language, home, complete, and targets (id to page, relative
-  to baseUrl; a nested topic's page ends in #its-id). Several ids may share a page.
+  with: status, baseUrl, device, release, language, home, complete, gaps, and targets (id to page,
+  relative to baseUrl; a nested topic's page ends in #its-id). Several ids may share a page. "gaps"
+  names every screen of the inventory that has no target in this map, so the app can list the same
+  ones; "complete" is true when it is empty.
 
   A map says "status": "proposed" unless -Published is given. -Published also needs proof that the
   pages are there: -Site <folder> checks them in the tree the build assembled, and -Live checks them on
@@ -193,6 +195,7 @@ foreach ($p in $pubs.Platforms) {
         language = $Language
         home     = 'index.html'
         complete = ($missing.Count -eq 0)
+        gaps     = @($missing | Sort-Object { $_ } -CaseSensitive)
         targets  = $targets
     }
     $file = Join-Path $outDir "$($p.Slug).$($p.Release).$Language.help-map.json"
