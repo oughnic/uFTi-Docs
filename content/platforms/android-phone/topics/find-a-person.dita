@@ -17,6 +17,7 @@
       </keywords>
     </metadata>
     <resourceid appname="ufti" appid="search"/>
+    <resourceid appname="ufti" appid="home"/>
   </prolog>
   <taskbody>
     <context>

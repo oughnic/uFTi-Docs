@@ -247,6 +247,28 @@ function Test-Topic {
         $aid = $r.GetAttribute('appid')
         if ($aid -notmatch $helpIdPattern) { Fail "help identifier '$aid' is not area.screen in lower case with hyphens (metadata vocabulary)" $rel } else { $helpIds += $aid }
     }
+    # nested topics (authoring standards, section 2.1): a part of the page that a screen's help can land on. Its id is the
+    # page anchor, so it never changes once published. Only a concept or a reference nests, and only one level deep.
+    $nestedTopicXPath = 'descendant::*[self::concept or self::task or self::reference or self::troubleshooting or self::glossentry]'
+    $nestedSeen = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::Ordinal)
+    [void]$nestedSeen.Add($rootEl.GetAttribute('id'))
+    foreach ($nt in $rootEl.SelectNodes($nestedTopicXPath)) {
+        $ntId = $nt.GetAttribute('id')
+        if (@('concept', 'reference') -notcontains $rootEl.LocalName) { Fail "a nested topic ('$ntId') in a $($rootEl.LocalName): only a concept or a reference nests topics (authoring standards, section 2.1)" $rel; break }
+        if ($nt.SelectNodes('ancestor::*[self::concept or self::task or self::reference or self::troubleshooting or self::glossentry]').Count -gt 1) { Fail "nested topic '$ntId' is inside another nested topic: one level only" $rel }
+        if ($ntId -notmatch '^[a-z][a-z0-9-]*$') { Fail "nested topic id '$ntId' is the page anchor: lower case letters, digits and hyphens, starting with a letter" $rel }
+        elseif (-not $nestedSeen.Add($ntId)) { Fail "nested topic id '$ntId' is used twice in this file" $rel }
+        if ($nt.GetAttribute('xml:lang') -ne 'en-GB') { Fail "xml:lang is not en-GB on nested topic '$ntId'" $rel }
+        $ntTitle = $nt.SelectSingleNode('title')
+        if (-not $ntTitle -or (-not $ntTitle.InnerText.Trim() -and -not $ntTitle.SelectSingleNode('.//*[@keyref]'))) { Fail "nested topic '$ntId' has no title" $rel }
+        elseif ($ntTitle.InnerText.Trim().Length -gt 70) { Fail "title of nested topic '$ntId' is longer than 70 characters" $rel }
+        elseif ($ntTitle.InnerText.Trim() -match '\.$') { Fail "title of nested topic '$ntId' ends with a full stop" $rel }
+        foreach ($r in $nt.SelectNodes('prolog/resourceid')) {
+            if ($r.GetAttribute('appname') -ne 'ufti') { Fail "resourceid appname must be 'ufti' (nested topic '$ntId')" $rel }
+            $aid = $r.GetAttribute('appid')
+            if ($aid -notmatch $helpIdPattern) { Fail "help identifier '$aid' is not area.screen in lower case with hyphens (nested topic '$ntId')" $rel } else { $helpIds += $aid }
+        }
+    }
     foreach ($a in $rootEl.SelectNodes('prolog/author')) { Fail "a person or author in metadata ('$($a.InnerText)'): metadata names nobody" $rel }
     # markup rules
     foreach ($e in $rootEl.SelectNodes('//*[@chunk]')) { if ($e.GetAttribute('chunk') -match 'to-content') { Fail "chunk='to-content' is forbidden" $rel } }
@@ -289,7 +311,8 @@ function Test-Topic {
             foreach ($tb in $rootEl.SelectNodes('taskbody/steps//table | taskbody/steps//simpletable')) { Fail "a table inside a step (authoring standards, section 5)" $rel; break }
         }
         'concept' {
-            if ($body -and (Get-Words $body.InnerText) -gt 500) { Fail "a concept of $(Get-Words $body.InnerText) words: aim for 500 or fewer, and split it" $rel }
+            $conWords = (@($rootEl.SelectNodes('descendant-or-self::*/conbody')) | ForEach-Object { Get-Words $_.InnerText } | Measure-Object -Sum).Sum   # nested topics count too
+            if ($body -and $conWords -gt 500) { Fail "a concept of $conWords words: aim for 500 or fewer, and split it" $rel }
             if ($category -eq 'Good practice') {
                 foreach ($s in $rootEl.SelectNodes('conbody/section/title')) { if ($guideSections -notcontains $s.InnerText.Trim()) { Fail "good practice section title '$($s.InnerText.Trim())' is not one of: $($guideSections -join ', ')" $rel } }
             }
@@ -558,13 +581,27 @@ foreach ($src in $Source) {
         if ($onlyTablet) { Note "Android tablet only: $($onlyTablet -join ', ')" }
     }
     # help-map coverage (DEC-028): every screen in the inventory has a topic with its identifier
+    # A source may hold its own screens.csv (the fixture does); the real content uses build/help/screens.csv (DEC-194).
+    # A row marked `gap` in the optional third column (`status`) is a screen the docs have not written yet: it may have
+    # no topic, but once a topic carries its identifier the mark must go, so the list of gaps only shrinks.
     $screens = Join-Path $srcRoot 'screens.csv'
+    if (-not (Test-Path -LiteralPath $screens) -and (Rel $srcRoot) -eq 'content') { $screens = Join-Path $root 'build' 'help' 'screens.csv' }
     if (Test-Path -LiteralPath $screens) {
         $ids = @($topics.Values | ForEach-Object { $_.ResourceIds } | Where-Object { $_ })
-        foreach ($row in (Import-Csv -LiteralPath $screens)) {
-            if ($ids -notcontains $row.screen_id) { Fail "screen '$($row.screen_id)' ($($row.screen_name)) has no topic with resourceid appid='$($row.screen_id)'" (Rel $screens) }
+        $rows = @(Import-Csv -LiteralPath $screens)
+        $gaps = 0
+        foreach ($row in $rows) {
+            $status = if ($row.PSObject.Properties['status']) { "$($row.status)".Trim() } else { '' }
+            if ($status -and $status -cne 'gap') { Fail "screen '$($row.screen_id)': status '$status' is not blank or 'gap'" (Rel $screens); continue }
+            $has = $ids -contains $row.screen_id
+            if ($status -eq 'gap') {
+                $gaps++
+                if ($has) { Fail "screen '$($row.screen_id)' is marked 'gap' but a topic now carries its identifier: clear the mark" (Rel $screens) }
+            }
+            elseif (-not $has) { Fail "screen '$($row.screen_id)' ($($row.screen_name)) has no topic with resourceid appid='$($row.screen_id)'" (Rel $screens) }
         }
-        Write-Host "  help map: $((Import-Csv -LiteralPath $screens).Count) screen(s) in the inventory, $($ids.Count) topic identifier(s)"
+        Write-Host "  help map: $($rows.Count) screen(s) in the inventory, $gaps known gap(s), $($ids.Count) topic identifier(s)"
+        if ($gaps) { Note "help map: $gaps screen(s) are known gaps with no page (DEC-194): $((@($rows | Where-Object { $_.PSObject.Properties['status'] -and "$($_.status)".Trim() -eq 'gap' } | ForEach-Object { $_.screen_id })) -join ', ')" }
     }
 }
 

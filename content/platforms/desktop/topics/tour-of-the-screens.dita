@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<!-- Each screen's part of the tour is a nested topic, so that the help map can send a reader from a
+     screen straight to its part of this page (authoring standards, section 2.1). The ids of the nested
+     topics are the page anchors and never change once published. -->
 <reference id="tour-of-the-screens" xml:lang="en-GB">
   <title>The screens of the app</title>
   <shortdesc>What each item in the menu at the left shows, with a picture of each screen.</shortdesc>
@@ -90,53 +93,100 @@
       </table>
       <note>If a page says <q>Select a person</q> or <q>No person selected</q>, it needs a person first. Search for someone, then open them. <xref keyref="a-page-says-no-person-selected"/> shows how.</note>
     </section>
-    <section>
-      <title><uicontrol keyref="ui-workspaces"/></title>
-      <p>This is the first screen. Each card is one family tree. It tells you how many people, families and events the tree holds. <xref keyref="open-a-family-tree-file"/> and <xref keyref="remove-a-workspace"/> start here.</p>
-      <fig platform="WindowsWinUI">
-        <image keyref="img-workspaces"/>
-      </fig>
-    </section>
-    <section>
-      <title><uicontrol keyref="ui-person"/></title>
-      <p>This is one person's page: their names, their birth and death, their family and their photos. <xref keyref="find-a-person"/> shows how to open it.</p>
-      <fig>
-        <image keyref="img-person-page"/>
-      </fig>
-    </section>
-    <section>
-      <title><uicontrol keyref="ui-family-tree"/> and <uicontrol keyref="ui-events"/></title>
-      <p><xref keyref="see-a-family-tree"/> explains the tree. <xref keyref="see-the-events-of-a-person"/> explains the list of events.</p>
-      <fig>
-        <image keyref="img-events"/>
-      </fig>
-    </section>
-    <section>
-      <title><uicontrol keyref="ui-notes"/></title>
-      <p>Notes are your own words about a person. <xref keyref="add-a-note"/> shows how to write one.</p>
-      <fig>
-        <image keyref="img-notes"/>
-      </fig>
-    </section>
-    <section>
-      <title><uicontrol keyref="ui-where-records-are-kept"/>, <uicontrol keyref="ui-who-made-this-tree"/> and <uicontrol keyref="ui-research-questions-and-notes"/></title>
-      <p>These three pages list things that belong to the whole tree. Each is empty until you add something with <uicontrol keyref="ui-add"/>. The first one lists the places where your sources are kept.</p>
-      <fig>
-        <image keyref="img-repositories"/>
-      </fig>
-      <fig>
-        <image keyref="img-submitters"/>
-      </fig>
-      <fig>
-        <image keyref="img-research-notes"/>
-      </fig>
-    </section>
-    <section>
-      <title><uicontrol keyref="ui-preferences"/></title>
-      <p><xref keyref="choose-how-it-looks"/> explains the choices on this page.</p>
-      <fig>
-        <image keyref="img-preferences"/>
-      </fig>
-    </section>
   </refbody>
+  <reference id="tour-workspaces" xml:lang="en-GB">
+    <title><uicontrol keyref="ui-workspaces"/></title>
+    <prolog>
+      <resourceid appname="ufti" appid="workspaces.list"/>
+    </prolog>
+    <refbody>
+      <section>
+        <p>This is the first screen. Each card is one family tree. It tells you how many people, families and events the tree holds. <xref keyref="open-a-family-tree-file"/> and <xref keyref="remove-a-workspace"/> start here.</p>
+        <fig platform="WindowsWinUI">
+          <image keyref="img-workspaces"/>
+        </fig>
+      </section>
+    </refbody>
+  </reference>
+  <reference id="tour-person" xml:lang="en-GB">
+    <title><uicontrol keyref="ui-person"/></title>
+    <refbody>
+      <section>
+        <p>This is one person's page: their names, their birth and death, their family and their photos. <xref keyref="find-a-person"/> shows how to open it.</p>
+        <fig>
+          <image keyref="img-person-page"/>
+        </fig>
+      </section>
+    </refbody>
+  </reference>
+  <reference id="tour-family-tree-and-events" xml:lang="en-GB">
+    <title><uicontrol keyref="ui-family-tree"/> and <uicontrol keyref="ui-events"/></title>
+    <refbody>
+      <section>
+        <p><xref keyref="see-a-family-tree"/> explains the tree. <xref keyref="see-the-events-of-a-person"/> explains the list of events.</p>
+        <fig>
+          <image keyref="img-events"/>
+        </fig>
+      </section>
+    </refbody>
+  </reference>
+  <reference id="tour-notes" xml:lang="en-GB">
+    <title><uicontrol keyref="ui-notes"/></title>
+    <prolog>
+      <resourceid appname="ufti" appid="notes.list"/>
+      <resourceid appname="ufti" appid="notes.record"/>
+    </prolog>
+    <refbody>
+      <section>
+        <p>Notes are your own words about a person. <xref keyref="add-a-note"/> shows how to write one.</p>
+        <fig>
+          <image keyref="img-notes"/>
+        </fig>
+      </section>
+    </refbody>
+  </reference>
+  <reference id="tour-lists-of-the-whole-tree" xml:lang="en-GB">
+    <title><uicontrol keyref="ui-where-records-are-kept"/>, <uicontrol keyref="ui-who-made-this-tree"/> and <uicontrol keyref="ui-research-questions-and-notes"/></title>
+    <prolog>
+      <resourceid appname="ufti" appid="repositories.list"/>
+      <resourceid appname="ufti" appid="submitters.list"/>
+      <resourceid appname="ufti" appid="research.list"/>
+    </prolog>
+    <refbody>
+      <section>
+        <p>These three pages list things that belong to the whole tree. Each is empty until you add something with <uicontrol keyref="ui-add"/>. The first one lists the places where your sources are kept.</p>
+        <fig>
+          <image keyref="img-repositories"/>
+        </fig>
+        <fig>
+          <image keyref="img-submitters"/>
+        </fig>
+        <fig>
+          <image keyref="img-research-notes"/>
+        </fig>
+      </section>
+    </refbody>
+  </reference>
+  <reference id="tour-preferences" xml:lang="en-GB">
+    <title><uicontrol keyref="ui-preferences"/></title>
+    <refbody>
+      <section>
+        <p><xref keyref="choose-how-it-looks"/> explains the choices on this page.</p>
+        <fig>
+          <image keyref="img-preferences"/>
+        </fig>
+      </section>
+    </refbody>
+  </reference>
+  <reference id="tour-about" xml:lang="en-GB">
+    <title><uicontrol keyref="ui-about-ufti"/></title>
+    <prolog>
+      <resourceid appname="ufti" appid="about"/>
+    </prolog>
+    <refbody>
+      <section>
+        <p>This page shows the version of the app and facts about your computer.</p>
+      </section>
+    </refbody>
+  </reference>
 </reference>

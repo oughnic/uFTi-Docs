@@ -17,7 +17,7 @@
         <keyword>requirements</keyword>
       </keywords>
     </metadata>
-    <resourceid appname="ufti" appid="workspaces.list"/>
+    <resourceid appname="ufti" appid="workspaces.first-run"/>
   </prolog>
   <taskbody>
     <prereq>

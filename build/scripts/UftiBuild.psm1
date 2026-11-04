@@ -351,6 +351,51 @@ function Get-UftiPublishedDeliverable {
     $null
 }
 
+function Get-UftiManualTopics {
+    <#
+    .SYNOPSIS The topic files a manual includes, as its DITAVAL filter sees them.
+    .DESCRIPTION
+      Walks a root map and every map it includes (mapref), keeps an element only if no ancestor's
+      @platform excludes it for the manual's tokens, and returns the full path of each topic in the
+      order the navigation reaches it. Resource-only maps and key definitions add no topic. This is
+      the same walk as lint.ps1 makes, so the help map and the lint agree on what a manual holds.
+      Throws on a missing map or topic.
+    #>
+    param([Parameter(Mandatory)][string]$MapPath, [Parameter(Mandatory)][string[]]$Tokens)
+    $topics = [System.Collections.Generic.List[string]]::new()
+    $seenMaps = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
+    $keptBy = {
+        param([System.Xml.XmlElement]$Element)
+        for ($a = $Element; $a -is [System.Xml.XmlElement]; $a = $a.ParentNode) {
+            $p = $a.GetAttribute('platform')
+            if ($p -and -not @($p -split '\s+' | Where-Object { $_ -and $Tokens -contains $_ })) { return $false }
+        }
+        $true
+    }
+    $walk = {
+        param([string]$Path)
+        if (-not $seenMaps.Add($Path)) { return }
+        if (-not (Test-Path -LiteralPath $Path)) { throw "map not found: $Path" }
+        $settings = [System.Xml.XmlReaderSettings]::new(); $settings.DtdProcessing = [System.Xml.DtdProcessing]::Ignore; $settings.XmlResolver = $null
+        $reader = [System.Xml.XmlReader]::Create($Path, $settings)
+        try { $doc = [System.Xml.XmlDocument]::new(); $doc.Load($reader) } finally { $reader.Dispose() }
+        $dir = Split-Path -Parent $Path
+        foreach ($e in $doc.SelectNodes('//*[@href]')) {
+            if (-not (& $keptBy $e)) { continue }
+            $href = $e.GetAttribute('href')
+            if (-not $href -or $e.GetAttribute('scope') -eq 'external') { continue }
+            $target = [System.IO.Path]::GetFullPath((Join-Path $dir ($href -split '#')[0]))
+            if ($e.LocalName -eq 'mapref' -or $e.GetAttribute('format') -eq 'ditamap') { & $walk $target; continue }
+            if ($href -match '\.dita(#.*)?$' -and $e.GetAttribute('processing-role') -ne 'resource-only' -and $e.LocalName -ne 'keydef') {
+                if (-not (Test-Path -LiteralPath $target)) { throw "topic not found: $href (from $Path)" }
+                if (-not $topics.Contains($target)) { $topics.Add($target) }
+            }
+        }
+    }
+    & $walk $MapPath
+    $topics.ToArray()
+}
+
 function Get-UftiDeliverableParameters {
     # The toolkit arguments that a published project's build adds to its project file, so that the
     # release in build/publications.ini decides the address, the PDF name and the footer links.
@@ -360,4 +405,4 @@ function Get-UftiDeliverableParameters {
     $a
 }
 
-Export-ModuleMember -Function Get-UftiRepoRoot, Get-UftiToolsDir, Get-UftiPlatformId, Get-UftiPlatformCandidates, Read-UftiToolsLock, Get-UftiLockValue, Get-UftiToolPaths, Add-UftiToolsToPath, Get-UftiFileHash256, Test-UftiCommand, Find-UftiInterpreter, Invoke-UftiProcess, Write-UftiStep, Write-UftiProblem, Write-UftiNotice, Get-UftiBuildMessages, Test-UftiReleaseLabel, Get-UftiReleaseSortKey, Read-UftiPublications, Get-UftiFooterLinks, Get-UftiPublishedDeliverable, Get-UftiDeliverableParameters
+Export-ModuleMember -Function Get-UftiRepoRoot, Get-UftiToolsDir, Get-UftiPlatformId, Get-UftiPlatformCandidates, Read-UftiToolsLock, Get-UftiLockValue, Get-UftiToolPaths, Add-UftiToolsToPath, Get-UftiFileHash256, Test-UftiCommand, Find-UftiInterpreter, Invoke-UftiProcess, Write-UftiStep, Write-UftiProblem, Write-UftiNotice, Get-UftiBuildMessages, Test-UftiReleaseLabel, Get-UftiReleaseSortKey, Read-UftiPublications, Get-UftiFooterLinks, Get-UftiPublishedDeliverable, Get-UftiManualTopics, Get-UftiDeliverableParameters

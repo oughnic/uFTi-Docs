@@ -17,6 +17,7 @@
       </keywords>
     </metadata>
     <resourceid appname="ufti" appid="settings.appearance"/>
+    <resourceid appname="ufti" appid="settings"/>
   </prolog>
   <taskbody>
     <context>

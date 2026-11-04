@@ -16,6 +16,7 @@
       </keywords>
     </metadata>
     <resourceid appname="ufti" appid="people.add"/>
+    <resourceid appname="ufti" appid="add.record"/>
   </prolog>
   <taskbody>
     <context>

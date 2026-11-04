@@ -160,6 +160,28 @@ Read from the Windows app (version 0.1.0.1, Alpha-1 build) on 24 October 2026 ([
 | `ui-light` | Light | The choice for a light look. | none |
 | `ui-dark` | Dark | The choice for a dark look. | none |
 
+### 2.8 The date editor
+
+Read from the app's date editor on 3 November 2026, from the words the app prints (shared keys in [`content/keys/ui-labels.ditamap`](../content/keys/ui-labels.ditamap)). **Check each against the Alpha-1 build before the Windows manual is published with them:** the walk of Alpha-1 did not open the date editor. The box where a date can be typed as text also shows an example written in the file format's own short codes. DEC-030 stops us quoting it, and it is a plain-words label to ask of the app team (Q32).
+
+| Key | Label as printed | What we say around it | Change |
+|---|---|---|---|
+| `ui-how-much-do-you-know` | How much do you know? | The question that sets whether the date is a year, a month and year, or a whole date. | none |
+| `ui-the-year` | The year | The choice for a date known only as a year. | none |
+| `ui-the-month-and-year` | The month and year | The choice for a date known as a month and a year. | none |
+| `ui-the-whole-date` | The whole date | The choice for a date with a day, a month and a year. | none |
+| `ui-not-sure-of-the-date` | Not sure of the date? | The choice that shows ways to say how sure you are. | none |
+| `ui-kind-of-date` | Kind of date | The list of ways to say how sure you are. | none |
+| `ui-date-on` | On | The kind of date for a date you know. | none |
+| `ui-date-about` | About | The kind of date for a date that is close, not exact. | none |
+| `ui-date-estimated` | Estimated | The kind of date for a date you worked out yourself. | none |
+| `ui-date-before` | Before | The kind of date for a limit: it happened on or before. | none |
+| `ui-date-after` | After | The kind of date for a limit: it happened on or after. | none |
+| `ui-date-between` | Between two dates | The kind of date for an earliest and a latest date. | none |
+| `ui-date-period` | From a date to a date | The kind of date for something that lasted a while. | none |
+| `ui-edit-as-text` | Edit as text | The choice that lets you type the whole date in one box. | none |
+| `ui-calendar` | Calendar | The list of calendars. | none |
+
 ## 3. Domain terms
 
 The words the documentation uses for the ideas behind the app. A term in bold needs a glossary entry before a topic uses it. The seven entries that exist are in [`content/glossary/`](../content/glossary/).

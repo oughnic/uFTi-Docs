@@ -17,6 +17,7 @@
       </keywords>
     </metadata>
     <resourceid appname="ufti" appid="citations.edit"/>
+    <resourceid appname="ufti" appid="sources.sheet"/>
   </prolog>
   <taskbody>
     <prereq>

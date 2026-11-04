@@ -1,0 +1,23 @@
+screen_id,screen_name,status
+about,About uFTi,
+add.record,Add a record,
+events.date,The date editor,
+events.list,Events,
+families.view,A family,gap
+forms.compose,A form for a new record,gap
+home,Home,
+more,More,gap
+notes.list,Notes,
+notes.record,Notes on one record,
+people.edit,Add or change a person,
+people.merge,Merge two people,gap
+people.view,A person,
+repositories.list,Where records are kept,
+research.list,Research questions and notes,
+search,Search,
+settings,Settings,
+sources.sheet,Add a source to a fact,
+sources.view,Sources of a fact,
+submitters.list,Who made this tree,
+tree.view,The family tree,
+workspaces.list,Workspaces,
