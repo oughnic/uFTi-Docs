@@ -53,6 +53,5 @@
   <topicref href="../../platforms/desktop/topics/a-page-says-no-person-selected.dita" keys="a-page-says-no-person-selected" platform="Desktop"/>
   <topicref href="../../platforms/android-phone/topics/a-page-says-no-person-selected.dita" keys="a-page-says-no-person-selected" platform="AndroidPhone"/>
   <topicref href="../../platforms/android-tablet/topics/a-page-says-no-person-selected.dita" keys="a-page-says-no-person-selected" platform="AndroidTablet"/>
-  <topicref href="../../platforms/iphone/topics/a-page-says-no-person-selected.dita" keys="a-page-says-no-person-selected" platform="iPhone"/>
-  <topicref href="../../platforms/ipad/topics/a-page-says-no-person-selected.dita" keys="a-page-says-no-person-selected" platform="iPad"/>
+  <topicref href="../../platforms/ios/topics/a-page-says-no-person-selected.dita" keys="a-page-says-no-person-selected" platform="iOS"/>
 </map>
