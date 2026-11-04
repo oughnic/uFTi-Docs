@@ -6,6 +6,8 @@
      first, so a definition here wins: it also replaces the shared labels whose words are different on a
      phone (the bar along the bottom and the two choices for a copy). -->
 <map id="iphone-ui-labels" xml:lang="en-GB">
+  <!-- the word for this device in a topic that is shared with other devices (platform strategy, section 3.1) -->
+  <keydef keys="product-device"><topicmeta><keywords><keyword>iPhone</keyword></keywords></topicmeta></keydef>
   <!-- the bar along the bottom, and the list the last tab opens -->
   <keydef keys="ui-more"><topicmeta><keywords><keyword>More</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-gedzip-archive"><topicmeta><keywords><keyword>Everything (.gdz, recommended)</keyword></keywords></topicmeta></keydef>

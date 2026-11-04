@@ -254,3 +254,16 @@ The Vale rule `uFTi.PlainWords` warns on the words in the left column, and `uFTi
 | chip | The small counter beside a heading. Call it "the small chip" until the app names it. |
 
 Say "the **Save** button", not "the Save field". Say "Type a name in **Title**", not "Fill in the Title field".
+
+## 6. The word for the reader's device
+
+A topic shared by several mobile manuals names the device with the key `product-device` (platform strategy, section 3.1). Each manual defines it, once, in its own key map.
+
+| Manual | `product-device` | Never |
+|---|---|---|
+| Android phone | phone | mobile, handset, smartphone, cell |
+| Android tablet | tablet | slate |
+| iPhone | iPhone | phone (in the iPhone manual, the device is named) |
+| iPad | iPad | tablet (in the iPad manual, the device is named) |
+
+Say "your phone", not "the device", where the key is used.

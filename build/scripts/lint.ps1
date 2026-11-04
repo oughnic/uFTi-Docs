@@ -580,6 +580,11 @@ foreach ($src in $Source) {
         if ($onlyPhone) { Note "Android phone only: $($onlyPhone -join ', ')" }
         if ($onlyTablet) { Note "Android tablet only: $($onlyTablet -join ', ')" }
     }
+    # near-identical copies of a topic in two mobile manuals' folders: one topic would do (platform strategy, section 3.1; DEC-197)
+    if ((Rel $srcRoot) -eq 'content') {
+        $near = @(& (Join-Path $PSScriptRoot 'measure-reuse.ps1') -Root $root -Max 2 -PassThru)
+        if ($near) { Note "$($near.Count) pair(s) of mobile topics differ by at most two lines once the device word is a key: write each once in platforms/mobile/topics (pwsh build/scripts/measure-reuse.ps1 -Max 2 lists them)" }
+    }
     # help-map coverage (DEC-028): every screen in the inventory has a topic with its identifier
     # A source may hold its own screens.csv (the fixture does); the real content uses build/help/screens.csv (DEC-194).
     # A row marked `gap` in the optional third column (`status`) is a screen the docs have not written yet: it may have
