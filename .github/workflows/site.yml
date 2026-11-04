@@ -72,6 +72,12 @@ jobs:
       # maps written here say "proposed"; a "published" map is written only once its pages are proved on the host.
       - name: Write the help maps, and check that every page and anchor they name is in the tree
         run: pwsh -NoProfile -File build/scripts/new-help-map.ps1 -Site out/site
+      # The maps are assembled for the app as a pull request would see them, so a map the app cannot read fails
+      # here and not after the merge (DEC-196).
+      - name: Assemble the proposed help maps, and check their checksums
+        run: |
+          pwsh -NoProfile -File build/scripts/publish-help-maps.ps1 -Output out/help-maps-assembled -Status proposed
+          (cd out/help-maps-assembled && sha256sum -c help-maps-SHA256SUMS)
       # Every page of the tree, the root and platform pages and the two site pages included, goes through
       # axe-core (WCAG 2.2 AA) and the Nu HTML Checker. The accessibility statement says so (DEC-151, DEC-152).
       - name: Node
@@ -156,6 +162,51 @@ jobs:
       - name: Push the tree to the publish branch
         run: build/scripts/publish-tree.sh out/site "$PUBLISH_BRANCH" "$GITHUB_REF_NAME"
 
+  # Keeps the rolling pre-release help-maps-proposed up to date with the maps built from dev, so the app's
+  # development builds can pull them without a token (issue 117, DEC-196; the Brontë sample's pattern, DEC-121).
+  # The maps say "proposed": a release build of the app never reads them.
+  help-maps-proposed:
+    name: publish the proposed help maps
+    needs: site
+    if: github.event_name == 'push' && github.ref == 'refs/heads/dev'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write # to move the tag and update the release
+    concurrency:
+      group: help-maps-proposed
+      cancel-in-progress: false # a publication must not be cut off halfway
+    env:
+      TAG: help-maps-proposed
+    steps:
+      - name: Check out
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: The maps the build wrote
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: help-maps
+          path: out/help-maps
+      - name: Assemble
+        run: pwsh -NoProfile -File build/scripts/publish-help-maps.ps1 -Output help-maps -Status proposed
+      - name: Update the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          notes="Help maps built from commit ${GITHUB_SHA} on dev, with status proposed: for development builds of the app only. Check them against help-maps-SHA256SUMS or help-maps-manifest.json. The file names are stable (DEC-196)."
+          if gh release view "$TAG" > /dev/null 2>&1; then
+            gh api -X PATCH "repos/${GITHUB_REPOSITORY}/git/refs/tags/${TAG}" -f sha="${GITHUB_SHA}" -F force=true > /dev/null
+            gh release upload "$TAG" help-maps/* --clobber
+            gh release view "$TAG" --json assets --jq '.assets[].name' | while read -r old; do
+              [ -e "help-maps/$old" ] || gh release delete-asset "$TAG" "$old" --yes
+            done
+            gh release edit "$TAG" --notes "$notes"
+          else
+            gh release create "$TAG" help-maps/* --target "${GITHUB_SHA}" --prerelease --latest=false \
+              --title "Help maps, proposed (latest from dev)" --notes "$notes"
+          fi
+          gh release view "$TAG" --json assets --jq '.assets[] | "\(.name)  \(.size) bytes"'
+
   # Deploys the tree to Azure Static Web Apps (issue 77; DEC-142). It runs after a successful publish, on a push
   # to main or release/**, or on demand with "deploy" ticked together with "publish" (and the default branch
   # name). It needs the repository secret AZURE_STATIC_WEB_APPS_API_TOKEN (the deployment token of the Static
@@ -187,3 +238,53 @@ jobs:
           action: upload
           app_location: site
           skip_app_build: true
+
+  # Keeps the rolling pre-release help-maps-published up to date with the maps for the site just deployed
+  # (issue 117, DEC-196). The maps are written with -Published -Live, which asks the host for every page and
+  # anchor a map names and writes nothing when one is missing, so a release build of the app never links to a
+  # page that is not there. The deployment can take a minute to reach the host, so the proof is tried again.
+  help-maps-published:
+    name: publish the proved help maps
+    needs: deploy
+    if: needs.deploy.result == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: write # to move the tag and update the release
+    concurrency:
+      group: help-maps-published
+      cancel-in-progress: false # a publication must not be cut off halfway
+    env:
+      TAG: help-maps-published
+    steps:
+      - name: Check out
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Write the maps, proved against the live host
+        run: |
+          for attempt in 1 2 3 4 5 6 7 8 9 10; do
+            if pwsh -NoProfile -File build/scripts/new-help-map.ps1 -Published -Live; then exit 0; fi
+            echo "Attempt $attempt did not prove every page; trying again in 60 seconds."
+            sleep 60
+          done
+          echo "::error::The live site does not hold every page and anchor a map names, so no published map is written."
+          exit 1
+      - name: Assemble
+        run: pwsh -NoProfile -File build/scripts/publish-help-maps.ps1 -Output help-maps -Status published
+      - name: Update the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          notes="Help maps for the site deployed from commit ${GITHUB_SHA}, with status published: every page and anchor was found on the live host. For release builds of the app. Check them against help-maps-SHA256SUMS or help-maps-manifest.json. The file names are stable (DEC-196)."
+          if gh release view "$TAG" > /dev/null 2>&1; then
+            gh api -X PATCH "repos/${GITHUB_REPOSITORY}/git/refs/tags/${TAG}" -f sha="${GITHUB_SHA}" -F force=true > /dev/null
+            gh release upload "$TAG" help-maps/* --clobber
+            gh release view "$TAG" --json assets --jq '.assets[].name' | while read -r old; do
+              [ -e "help-maps/$old" ] || gh release delete-asset "$TAG" "$old" --yes
+            done
+            gh release edit "$TAG" --notes "$notes"
+          else
+            gh release create "$TAG" help-maps/* --target "${GITHUB_SHA}" --prerelease --latest=false \
+              --title "Help maps, published (latest from the live site)" --notes "$notes"
+          fi
+          gh release view "$TAG" --json assets --jq '.assets[] | "\(.name)  \(.size) bytes"'

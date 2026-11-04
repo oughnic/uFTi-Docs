@@ -65,6 +65,7 @@ pwsh build/scripts/check-site.ps1               # checks the tree again: shape, 
 | `Import-Screenshots.ps1` | Not a gate: imports a capture folder into one manual's pictures, after checking the manifest, the keys, the alternative text and the privacy allow-list; strips, caps and compresses the PNG files (DEC-085). `-WhatIf` runs the checks only | PowerShell 7; Windows to resize |
 | `check-site.ps1` | Over the assembled tree in `out/site/`: the folders, every release's `version.json`, website and PDFs, `staticwebapp.config.json`, and every link in every page (a manual to its Quick Start, the root to a platform, the base address followed into the tree), the exact letter case of each, the canonical addresses and the sitemaps | PowerShell 7 only |
 | `new-help-map.ps1` | Not a gate: writes the in-app help map for each device, release and language into `out/help-maps/`, from the `resourceid` of each topic a manual includes, and prints the screens that have no page. A map is `proposed` unless `-Published` is given with `-Site out/site` (every page and anchor is in the assembled tree) or `-Live` (they are on the host); a failed run leaves no published map (DEC-192) | PowerShell 7 only |
+| `publish-help-maps.ps1 -Output <folder> -Status <proposed\|published>` | Not a gate: checks the maps in `out/help-maps/` (the fields the app reads, the status, the file names, relative targets, `complete` against `gaps`), then copies them byte for byte with `help-maps-SHA256SUMS` and `help-maps-manifest.json`. A failed check assembles nothing (DEC-196). |
 | `lint.ps1` | The structure rules of the [authoring standards](../authoring/authoring-standards.md#131-which-rules-are-checked-and-by-what): files, identifiers, the shape of each topic type, metadata and the help identifier, platform tokens, keys and images per manual, diagrams, disclosure patterns, orphans, templates and the help-map inventory; writes `out/applicability-matrix.csv` | Nothing beyond PowerShell |
 | `publish-samples.ps1 -Output <folder>` | Not a gate: runs the sample-file gate, then assembles the Brontë sample files byte for byte with `bronte-sample-SHA256SUMS` and `bronte-sample-manifest.json`, for the application to pull (DEC-121) | Nothing beyond PowerShell and git |
 | `test-source-rules.ps1` | Not a gate on content: it proves the rules. Every rule that `lint.ps1`, Vale and the sample-file gate enforce has a case that must fail, and it builds every template with the toolkit, which validates it against the DITA 1.3 DTD. `-Only lint,vale,templates,samples,publications,helpmap` and `-Filter` narrow it. The `helpmap` cases prove the help map: what is mapped, what is left out, and that a published map is never written without proof. The `publications` cases prove the release rule: every form of release that must be refused is, and the pictures' app version must agree | The toolkit and Vale (the `publications` cases need neither) |
@@ -92,6 +93,27 @@ gh release download bronte-sample-latest --repo oughnic/uFTi-Docs --dir samples
 ```
 
 The same files are at `https://github.com/oughnic/uFTi-Docs/releases/download/bronte-sample-latest/<file name>`. To see what would be published from a checkout: `pwsh build/scripts/publish-samples.ps1 -Output out/samples`.
+## Publishing the help maps
+
+The help maps (`out/help-maps/`, from `new-help-map.ps1`) are published for the application to pull in, the way the Brontë sample files are (DEC-196, DEC-121). The repository is public, so no token is needed. The tag names the status, and the app reads the one that matches its build.
+
+| Where | What it holds |
+|---|---|
+| The pre-release `help-maps-proposed` | The maps built from `dev`, with status `proposed`. For development builds of the app only. The Site workflow updates it on each push to `dev`. |
+| The pre-release `help-maps-published` | The maps for the site just deployed, with status `published`: every page and anchor was found on `docs.ufti.com`. For release builds of the app. The Site workflow updates it after a successful deploy from `main` or `release/**`, and tries the proof again for up to ten minutes while the deployment reaches the host. |
+
+Each publication holds one `<device>.<release>.<language>.help-map.json` for each manual, `help-maps-SHA256SUMS` for `sha256sum -c`, and `help-maps-manifest.json` (the status, the commit, and each file's device, release, language, size, SHA-256 and number of targets and gaps). **The file names are the contract and stay stable.** The fields of a map are in the [content model](../authoring/content-model.md#5-in-app-help). A pull request runs the assembly without publishing.
+
+Attaching the maps to each version release, so that a released app can pin one, waits for the first release: the release workflow does not build the site yet.
+
+To pull and check the maps:
+
+```bash
+gh release download help-maps-published --repo oughnic/uFTi-Docs --dir help-maps
+(cd help-maps && sha256sum -c help-maps-SHA256SUMS)
+```
+
+The same files are at `https://github.com/oughnic/uFTi-Docs/releases/download/help-maps-published/<file name>`. To see what would be published from a checkout: `pwsh build/scripts/new-help-map.ps1` and then `pwsh build/scripts/publish-help-maps.ps1 -Output out/help-maps-assembled -Status proposed`.
 ## Upgrading a tool
 
 1. Check the upstream release and its checksum. For the plugin and DesignSystemPDF, also `gh attestation verify --repo iStandUK/govuk-dita-plugin`.

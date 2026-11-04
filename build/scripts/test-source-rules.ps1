@@ -696,6 +696,38 @@ if ($Only -contains 'helpmap') {
             Record 'helpmap' "$($c.Name)" $ok "$($c.Why); got exit $($r.Exit), map $(if ($r.Map) { 'written' } else { 'absent' }):`n$($r.Text)"
         }
     }
+
+    # ---- Assembling the maps for the app to pull (DEC-196) ----
+    function Invoke-PublishMaps {
+        param([string]$Name, [string]$Status = 'proposed')
+        $out = Join-Path $work "$Name-out"
+        $text = & pwsh -NoProfile -File (Join-Path $PSScriptRoot 'publish-help-maps.ps1') -Maps (Join-Path $work "$Name-maps") -Output $out -Status $Status -Root $root 2>&1 | ForEach-Object { "$_" }
+        [pscustomobject]@{ Exit = $LASTEXITCODE; Text = ($text -join "`n"); Out = $out }
+    }
+    $mapName = 'windows.Alpha-1.en-GB.help-map.json'
+    $publishCases = @(
+        @{ Name = 'proposed maps are assembled with checksums that verify'; Check = { param($r) $manifest = Get-Content -LiteralPath (Join-Path $r.Out 'help-maps-manifest.json') -Raw | ConvertFrom-Json; $sum = (Get-Content -LiteralPath (Join-Path $r.Out 'help-maps-SHA256SUMS') -Raw).Trim(); $hash = (Get-FileHash -LiteralPath (Join-Path $r.Out $mapName) -Algorithm SHA256).Hash.ToLowerInvariant(); $r.Exit -eq 0 -and $manifest.status -eq 'proposed' -and @($manifest.files).Count -eq 1 -and $manifest.files[0].name -eq $mapName -and $manifest.files[0].targets -eq 2 -and $manifest.files[0].gaps -eq 1 -and $manifest.files[0].sha256 -eq $hash -and $sum -eq "$hash  $mapName" }; Why = 'expected the map, its checksum and a manifest' }
+        @{ Name = 'a map of another status than the publication fails'; Status = 'published'; Fail = "status is 'proposed', but this publication is 'published'"; Why = 'expected the proposed map to be refused as published' }
+        @{ Name = 'a file whose name does not follow its device fails'; Do = { param($n) Rename-Item -LiteralPath (Join-Path $work "$n-maps/$mapName") -NewName 'ipad.Alpha-1.en-GB.help-map.json' }; Fail = 'does not follow device.release.language'; Why = 'expected the misnamed map to be refused' }
+        @{ Name = 'a map without the gaps field fails'; Do = { param($n) $p = Join-Path $work "$n-maps/$mapName"; [System.IO.File]::WriteAllText($p, (Get-Content -LiteralPath $p -Raw | ConvertFrom-Json | Select-Object -Property * -ExcludeProperty gaps | ConvertTo-Json -Depth 5)) }; Fail = 'missing gaps'; Why = 'expected the missing field to be named' }
+        @{ Name = 'an id that is both a target and a gap fails'; Do = { param($n) Edit-File $work "$n-maps/$mapName" '"things.list"' '"things.edit"' }; Fail = "'things.edit' is both a target and a gap"; Why = 'expected the clash to be refused' }
+        @{ Name = 'complete that disagrees with the gaps fails'; Do = { param($n) Edit-File $work "$n-maps/$mapName" '"complete": false' '"complete": true' }; Fail = 'complete is True, but there are 1 gap(s)'; Why = 'expected the disagreement to be refused' }
+        @{ Name = 'a target that is not a relative address fails'; Do = { param($n) Edit-File $work "$n-maps/$mapName" '"topics/do-it.html"' '"https://example.org/do-it.html"' }; Fail = 'is not a relative address'; Why = 'expected the absolute address to be refused' }
+        @{ Name = 'a failed run assembles nothing'; Do = { param($n) Edit-File $work "$n-maps/$mapName" '"complete": false' '"complete": true' }; Fail = 'nothing is assembled'; NoOut = $true; Why = 'expected no manifest after a failure' }
+    )
+    foreach ($c in $publishCases) {
+        if ($Filter -and $c.Name -notlike "*$Filter*") { continue }
+        $n = 'helpmap-' + [guid]::NewGuid().ToString('N').Substring(0, 6)
+        New-HelpMapPublication $n | Out-Null
+        Invoke-HelpMap $n | Out-Null
+        if ($c['Do']) { & $c['Do'] $n }
+        $r = Invoke-PublishMaps $n $(if ($c['Status']) { $c['Status'] } else { 'proposed' })
+        if ($c['Check']) { Record 'helpmap' $c.Name ([bool](& $c['Check'] $r)) "$($c.Why); got exit $($r.Exit):`n$($r.Text)" }
+        else {
+            $ok = ($r.Exit -ne 0) -and $r.Text.Contains($c['Fail']) -and (-not $c['NoOut'] -or -not (Test-Path -LiteralPath (Join-Path $r.Out 'help-maps-manifest.json')))
+            Record 'helpmap' $c.Name $ok "$($c.Why); got exit $($r.Exit):`n$($r.Text)"
+        }
+    }
 }
 
 Remove-Item -LiteralPath $work -Recurse -Force -ErrorAction SilentlyContinue
