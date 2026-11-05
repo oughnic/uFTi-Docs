@@ -103,7 +103,7 @@ The help identifier links a screen in the app to the page that explains it (DEC-
 | `tree` | The tree | `tree.view` |
 | `search` | Finding a person | `search` |
 | `events` | Facts with dates | `events.edit`, `events.date` |
-| `places` | Places | `places.edit`, `places.place` (proposed by the app team, not yet used: DEC-200) |
+| `places` | Places | `places.edit`, `places.place` |
 | `sources` | Sources | `sources.list`, `sources.edit` |
 | `citations` | Saying where a fact came from | `citations.edit` |
 | `repositories` | Where sources are kept | `repositories.edit` |

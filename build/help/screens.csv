@@ -12,6 +12,7 @@ notes.record,Notes on one record,
 people.edit,Add or change a person,
 people.merge,Merge two people,gap
 people.view,A person,
+places.place,A place,
 repositories.list,Where records are kept,
 research.list,Research questions and notes,
 search,Search,
