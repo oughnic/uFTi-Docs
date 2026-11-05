@@ -20,6 +20,8 @@
   <topicref href="../../platforms/phone/topics/see-the-events-of-a-person.dita" keys="see-the-events-of-a-person" platform="Phone"/>
   <topicref href="../../platforms/tablet/topics/see-the-events-of-a-person.dita" keys="see-the-events-of-a-person" platform="Tablet"/>
   <topicref href="../../topics/tree/dates.dita" keys="dates"/>
+  <topicref href="../../topics/tree/places.dita" keys="places"/>
+  <topicref href="../../topics/tree/names.dita" keys="names"/>
   <topicref href="../../platforms/desktop/topics/look-at-the-sources-of-a-fact.dita" keys="look-at-the-sources-of-a-fact" platform="Desktop"/>
   <topicref href="../../platforms/mobile/topics/look-at-the-sources-of-a-fact.dita" keys="look-at-the-sources-of-a-fact" platform="Mobile"/>
   <topicref href="../../platforms/desktop/topics/add-another-person.dita" keys="add-another-person" platform="Desktop"/>

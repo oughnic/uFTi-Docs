@@ -62,4 +62,11 @@
   <keydef keys="ui-date-period"><topicmeta><keywords><keyword>From a date to a date</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-edit-as-text"><topicmeta><keywords><keyword>Edit as text</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-calendar"><topicmeta><keywords><keyword>Calendar</keyword></keywords></topicmeta></keydef>
+  <!-- places and names (the words are the app team's, from the shipped forms, 5 November 2026) -->
+  <keydef keys="ui-place-of-birth"><topicmeta><keywords><keyword>Place of birth</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-place-of-death"><topicmeta><keywords><keyword>Place of death</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-place-of-birth-new-child"><topicmeta><keywords><keyword>Place of birth (new child)</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-start-typing-a-place"><topicmeta><keywords><keyword>Start typing a place…</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-use"><topicmeta><keywords><keyword>Use</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-add-a-new-person-called"><topicmeta><keywords><keyword>Add a new person called</keyword></keywords></topicmeta></keydef>
 </map>

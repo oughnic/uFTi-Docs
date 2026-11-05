@@ -181,6 +181,12 @@ Read from the app's date editor on 3 November 2026, from the words the app print
 | `ui-date-period` | From a date to a date | The kind of date for something that lasted a while. | none |
 | `ui-edit-as-text` | Edit as text | The choice that lets you type the whole date in one box. | none |
 | `ui-calendar` | Calendar | The list of calendars. | none |
+| `ui-place-of-birth` | Place of birth | The box for where a person was born, in the Basic details form. | none |
+| `ui-place-of-death` | Place of death | The box for where a person died, in the Basic details form. | none |
+| `ui-place-of-birth-new-child` | Place of birth (new child) | The box for where a new child was born, when you add a family. | none |
+| `ui-start-typing-a-place` | Start typing a place… | The hint that an empty place box shows. | none |
+| `ui-use` | Use | The button that links the form to a person who is already in the tree. | none |
+| `ui-add-a-new-person-called` | Add a new person called | The start of the button that makes a second person with the same name. | none |
 
 ## 3. Domain terms
 

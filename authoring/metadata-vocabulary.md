@@ -98,12 +98,12 @@ The help identifier links a screen in the app to the page that explains it (DEC-
 | Area | What it covers | Examples |
 |---|---|---|
 | `workspaces` | The list of family trees, making one, saving and bringing one in | `workspaces.list`, `workspaces.create`, `workspaces.export` |
-| `people` | People | `people.view`, `people.edit`, `people.merge` |
+| `people` | People | `people.view`, `people.edit`, `people.merge`, `people.name` (proposed by the app team, not yet used: DEC-200) |
 | `families` | Families | `families.view`, `families.edit` |
 | `tree` | The tree | `tree.view` |
 | `search` | Finding a person | `search` |
 | `events` | Facts with dates | `events.edit`, `events.date` |
-| `places` | Places | `places.edit` |
+| `places` | Places | `places.edit`, `places.place` (proposed by the app team, not yet used: DEC-200) |
 | `sources` | Sources | `sources.list`, `sources.edit` |
 | `citations` | Saying where a fact came from | `citations.edit` |
 | `repositories` | Where sources are kept | `repositories.edit` |

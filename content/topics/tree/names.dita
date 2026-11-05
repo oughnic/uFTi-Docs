@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<!-- The one topic for a name. Every form that takes a name asks the same question when the name is already
+     in the tree, so one page serves them all, in every manual. Written once for all devices: it names no
+     device, and the words on screen come from the shared label keys. The help identifier people.name is
+     not added yet: the app team has proposed it, it needs a small change in the app first, and they have
+     asked us to wait until they say it has merged (DEC-200). -->
+<concept id="names" xml:lang="en-GB">
+  <title>Names</title>
+  <shortdesc>What uFTi does when you save a person whose name is already in the tree, and how to choose.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-05"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Concept</category>
+      <keywords>
+        <keyword>name</keyword>
+        <keyword>duplicate</keyword>
+        <keyword>same name</keyword>
+        <keyword>already in this tree</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p>A person has <uicontrol keyref="ui-given-names"/> and <uicontrol keyref="ui-surname"/>. Families use the same names again and again. So two people in your tree may share a name, and a name you type may belong to someone you have already added.</p>
+    <section>
+      <title>The question uFTi asks</title>
+      <p>When you save a form that would make a person with a name that is already in the tree, uFTi stops and asks you first. A box opens. Its title says that the name is already in this tree. If more than one person has the name, it says how many.</p>
+    </section>
+    <section>
+      <title>Your choices</title>
+      <p>Under the title, there is one button for each person who has that name.</p>
+      <dl>
+        <dlentry>
+          <dt><uicontrol keyref="ui-use"/>, then the name and the years</dt>
+          <dd>Choose this when it is the same person. The form goes with that person, and uFTi does not make another one. The years of birth and death help you tell people apart.</dd>
+        </dlentry>
+        <dlentry>
+          <dt><uicontrol keyref="ui-add-a-new-person-called"/>, then the name</dt>
+          <dd>Choose this when it is a different person who has the same name. uFTi makes a second person.</dd>
+        </dlentry>
+      </dl>
+      <p>If you are not sure, look at the other person first. Do not join two people unless your records say they are one.</p>
+    </section>
+  </conbody>
+</concept>
