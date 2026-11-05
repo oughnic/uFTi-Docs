@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<!-- The one topic for a place. Every box that takes a place works the same way, so one page serves them
-     all, in every manual. Written once for all devices: it names no device, and the words on screen come
-     from the shared label keys. The help identifier places.place is not added yet: the app team has
-     proposed it and asked us to wait until they say it has merged (DEC-200). -->
+<!-- The one topic for a place (help map: places.place). Every box that takes a place works the same way,
+     so one page serves them all, in every manual. Written once for all devices: it names no device, and
+     the words on screen come from the shared label keys. The app team added the identifier on
+     5 November 2026 (DEC-201). -->
 <concept id="places" xml:lang="en-GB">
   <title>Places</title>
   <shortdesc>How uFTi records a place, and how it helps you spell a place the same way each time.</shortdesc>
@@ -20,6 +20,7 @@
         <keyword>place name</keyword>
       </keywords>
     </metadata>
+    <resourceid appname="ufti" appid="places.place"/>
   </prolog>
   <conbody>
     <p>In uFTi, a place is the words you type. There is no map, and no list of places to pick from. So type the place as your record gives it, such as a town or a parish.</p>
