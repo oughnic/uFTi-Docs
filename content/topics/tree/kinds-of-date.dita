@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<!-- The kinds of date, each with an example from the Brontë dataset (DEC-025) or, where the dataset has no
+     clean case, a general one. Written once for all devices. The examples are in the dataset's evidence
+     register; the words typed are those the app team confirmed it reads (issue 125). -->
+<reference id="kinds-of-date" xml:lang="en-GB">
+  <title>The kinds of date</title>
+  <shortdesc>Seven ways to say how sure you are of a date, each with an example.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-05"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Reference</category>
+      <keywords>
+        <keyword>about</keyword>
+        <keyword>estimated</keyword>
+        <keyword>before</keyword>
+        <keyword>after</keyword>
+        <keyword>between</keyword>
+        <keyword>period</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <refbody>
+    <section>
+      <title>Say what the record says</title>
+      <p>A date in a family tree is often not exact. The kind of date lets the tree say so. Choose <uicontrol keyref="ui-not-sure-of-the-date"/> to see the kinds under <uicontrol keyref="ui-kind-of-date"/>. Pick the one that matches your evidence, not the one that sounds neatest.</p>
+      <table>
+        <title>The seven kinds of date</title>
+        <tgroup cols="4">
+          <colspec colname="c1" colwidth="2*"/>
+          <colspec colname="c2" colwidth="3*"/>
+          <colspec colname="c3" colwidth="4*"/>
+          <colspec colname="c4" colwidth="3*"/>
+          <thead>
+            <row>
+              <entry>Kind</entry>
+              <entry>Use it when</entry>
+              <entry>Example</entry>
+              <entry>Type it as</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><uicontrol keyref="ui-date-on"/></entry>
+              <entry>You know the date.</entry>
+              <entry>A copy of a parish register says that Emily Brontë was buried on 22 December 1848.</entry>
+              <entry><userinput>22 December 1848</userinput></entry>
+            </row>
+            <row>
+              <entry><uicontrol keyref="ui-date-about"/></entry>
+              <entry>A record or a story gives a date that is close, but not exact.</entry>
+              <entry>A family story says that a great-uncle left home about 1850.</entry>
+              <entry><userinput>about 1850</userinput></entry>
+            </row>
+            <row>
+              <entry><uicontrol keyref="ui-date-estimated"/></entry>
+              <entry>You worked the date out yourself, for example from an age.</entry>
+              <entry>A census says that a woman was 30 in 1851. You work out that she was born about 1821.</entry>
+              <entry><userinput>estimated 1821</userinput></entry>
+            </row>
+            <row>
+              <entry><uicontrol keyref="ui-date-before"/></entry>
+              <entry>It happened on or before this date.</entry>
+              <entry>Branwell Brontë had drawing lessons before 1835.</entry>
+              <entry><userinput>before 1835</userinput></entry>
+            </row>
+            <row>
+              <entry><uicontrol keyref="ui-date-after"/></entry>
+              <entry>It happened on or after this date.</entry>
+              <entry>Branwell worked as a portrait painter after his visit to London in 1835.</entry>
+              <entry><userinput>after 1835</userinput></entry>
+            </row>
+            <row>
+              <entry><uicontrol keyref="ui-date-between"/></entry>
+              <entry>You know the earliest and the latest date it could have been.</entry>
+              <entry>A memorial tablet says that Maria Brontë died on 6 May 1825, in the 12th year of her age. So she was born between 7 May 1813 and 6 May 1814.</entry>
+              <entry><userinput>between 7 May 1813 and 6 May 1814</userinput></entry>
+            </row>
+            <row>
+              <entry><uicontrol keyref="ui-date-period"/></entry>
+              <entry>Something went on for a while, such as a job or a stay.</entry>
+              <entry>Patrick Brontë was curate of Thornton from 1815 to 1820.</entry>
+              <entry><userinput>from 1815 to 1820</userinput></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>A limit is not a guess</title>
+      <p>Use <uicontrol keyref="ui-date-before"/> and <uicontrol keyref="ui-date-after"/> for a limit that a record gives you. A baptism can be a limit on a birth, because a child is baptised after being born. Use <uicontrol keyref="ui-date-estimated"/> only for a date that you worked out.</p>
+    </section>
+    <section>
+      <title>When two sources disagree</title>
+      <p>Do not pick one date and drop the other. Record each date with the source that gives it. Then your tree shows the disagreement, and a later record may settle it.</p>
+    </section>
+  </refbody>
+</reference>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<!-- Where a date can be entered, how it is shown, how it is ordered and what is checked. From the app
+     team's answers of 5 November 2026 (issue 125). Nothing about checks the app only runs on request is
+     stated: the app has no screen that lists them. Written once for all devices. -->
+<reference id="dates-in-lists-and-order" xml:lang="en-GB">
+  <title>Dates in lists and in order</title>
+  <shortdesc>Where you can enter a date, how uFTi shows it, how it puts dates in order and what it checks.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-05"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="general"/>
+      <category>Reference</category>
+      <keywords>
+        <keyword>sort order</keyword>
+        <keyword>date fields</keyword>
+        <keyword>date checks</keyword>
+        <keyword>BC</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <refbody>
+    <section>
+      <title>Where you can enter a date</title>
+      <ul>
+        <li><uicontrol keyref="ui-date-of-birth"/> and <uicontrol keyref="ui-date-of-death"/>, in the <uicontrol keyref="ui-basic-details"/> form.</li>
+        <li>The date of the event, in the Baptism, Birth, Burial and Death forms. The Event details form also has one.</li>
+        <li>The date of a marriage or other event, and the date of birth of each child, when you add a family.</li>
+        <li>The date of the census, in every census form. The 1939 register also asks for each person's date of birth.</li>
+        <li>The date of an event in a marriage register form.</li>
+      </ul>
+      <p>A source has no date of its own. Give the date of a record to the event it is about.</p>
+    </section>
+    <section>
+      <title>How uFTi shows a date</title>
+      <p>A date is written in words, in the language of the app. It does not follow the date settings of your device. You will see <q>15 March 1900</q>, <q>March 1900</q> and <q>1900</q>. An uncertain date reads <q>about 1900</q>, <q>before 1900</q>, <q>after 1900</q>, <q>between 1850 and 1860</q> or <q>from 1850 to 1860</q>. A year before the common era reads <q>44 BC</q>. A life span in a list reads <q>1816–1855</q>.</p>
+    </section>
+    <section>
+      <title>How uFTi puts dates in order</title>
+      <p>uFTi orders by the year of the first date, as if that date were exact. It does not use the month or the day for an uncertain date.</p>
+      <table>
+        <title>How each kind of date is ordered</title>
+        <tgroup cols="2">
+          <colspec colname="c1" colwidth="2*"/>
+          <colspec colname="c2" colwidth="3*"/>
+          <thead>
+            <row>
+              <entry>Date</entry>
+              <entry>It is ordered as</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><userinput>about 1850</userinput></entry>
+              <entry>The year 1850.</entry>
+            </row>
+            <row>
+              <entry><userinput>before 1900</userinput> and <userinput>after 1900</userinput></entry>
+              <entry>The year 1900, both. Neither goes before or after it.</entry>
+            </row>
+            <row>
+              <entry><userinput>between 1850 and 1860</userinput></entry>
+              <entry>The year 1850.</entry>
+            </row>
+            <row>
+              <entry><userinput>from 1850 to 1860</userinput></entry>
+              <entry>Its start, 1850.</entry>
+            </row>
+            <row>
+              <entry>A year before the common era</entry>
+              <entry>Before the year 1.</entry>
+            </row>
+            <row>
+              <entry>A date kept as typed</entry>
+              <entry>It is not ordered by year, because uFTi reads no year in it.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <p>On the page of a person, the events are in order of year, and then by the kind of event. The month and the day are not used. Events with no date come last. The family tree view uses the year, then the month, then the day, of the first date.</p>
+    </section>
+    <section>
+      <title>What uFTi checks</title>
+      <p>While you enter a date, uFTi checks that the day exists in that month and year of the calendar. It does not check that the events of one person are in a sensible order. Check yourself that a baptism comes after a birth, and a burial after a death.</p>
+      <p>Some forms warn you about a date but never stop you. A census form expects a Gregorian date on the day of the census.</p>
+    </section>
+    <section>
+      <title>Years before the common era</title>
+      <p>uFTi has no limit on the earliest year. Type <userinput>BC</userinput> or <userinput>BCE</userinput> after the year, such as <userinput>44 BC</userinput>. The date pickers cannot enter these years, so you always type them.</p>
+    </section>
+  </refbody>
+</reference>

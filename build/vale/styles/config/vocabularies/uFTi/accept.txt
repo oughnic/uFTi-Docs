@@ -13,3 +13,7 @@ PDFs
 (?-i)Organization
 (?-i)Standardization
 (?-i)Electrotechnical
+Pryme
+De la Pryme
+De
+la
