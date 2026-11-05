@@ -60,6 +60,7 @@
   <keydef keys="ui-fit-to-screen"><topicmeta><keywords><keyword>Fit to screen</keyword></keywords></topicmeta></keydef>
   <!-- the Add a record list -->
   <!-- sources -->
+  <keydef keys="ui-compare-records"><topicmeta><keywords><keyword>Compare records that disagree</keyword></keywords></topicmeta></keydef>
   <!-- preferences -->
   <keydef keys="ui-theme"><topicmeta><keywords><keyword>Theme</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-oxford-and-slate"><topicmeta><keywords><keyword>Oxford and slate</keyword></keywords></topicmeta></keydef>

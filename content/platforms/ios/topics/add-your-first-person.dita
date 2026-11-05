@@ -45,9 +45,9 @@
         </info>
       </step>
       <step>
-        <cmd>Choose <uicontrol keyref="ui-save"/> under the form.</cmd>
+        <cmd>Choose <uicontrol keyref="ui-save"/> at the end of the form. Scroll down if you need to.</cmd>
         <stepresult>
-          <p>The page for that person opens, with a short <q>Saved</q> message at the bottom.</p>
+          <p>The page for that person opens. A short <q>Saved</q> message may show at the bottom.</p>
         </stepresult>
       </step>
     </steps>

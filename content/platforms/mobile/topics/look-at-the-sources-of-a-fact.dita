@@ -76,7 +76,7 @@
       <p>You are back on the page of the person. The chip shows the new count.</p>
     </result>
     <postreq>
-      <p>A fact with no source shows the words <q>No sources for this fact yet.</q> and the button <uicontrol keyref="ui-add-source"/>. Under it, <uicontrol keyref="ui-compare-records"/> is for two records that give different answers.</p>
+      <p>A fact with no source shows the words <q>No sources for this fact yet.</q> and the button <uicontrol keyref="ui-add-source"/>. When the fact has one place, such as a birth place or a death place, <uicontrol keyref="ui-compare-records"/> shows under it. It is for two records that give different answers. The button is not there once the fact has a source.</p>
       <fig>
         <image keyref="img-sources-empty"/>
       </fig>

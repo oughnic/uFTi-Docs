@@ -10,8 +10,7 @@
   <topicref href="../../platforms/windows/topics/get-ufti.dita" keys="get-ufti" platform="WindowsWinUI"/>
   <topicref href="../../platforms/android/topics/get-ufti.dita" keys="get-ufti" platform="Android"/>
   <topicref href="../../platforms/desktop/topics/add-your-first-person.dita" keys="add-your-first-person" platform="Desktop"/>
-  <topicref href="../../platforms/iphone/topics/add-your-first-person.dita" keys="add-your-first-person" platform="iPhone"/>
-  <topicref href="../../platforms/ipad/topics/add-your-first-person.dita" keys="add-your-first-person" platform="iPad"/>
+  <topicref href="../../platforms/ios/topics/add-your-first-person.dita" keys="add-your-first-person" platform="iOS"/>
   <topicref href="../../platforms/android-phone/topics/add-your-first-person.dita" keys="add-your-first-person" platform="AndroidPhone"/>
   <topicref href="../../platforms/android-tablet/topics/add-your-first-person.dita" keys="add-your-first-person" platform="AndroidTablet"/>
   <topicref href="../../platforms/desktop/topics/look-around.dita" keys="look-around" platform="Desktop"/>

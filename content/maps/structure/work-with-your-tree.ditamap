@@ -21,9 +21,7 @@
   <topicref href="../../platforms/tablet/topics/see-the-events-of-a-person.dita" keys="see-the-events-of-a-person" platform="Tablet"/>
   <topicref href="../../topics/tree/dates.dita" keys="dates"/>
   <topicref href="../../platforms/desktop/topics/look-at-the-sources-of-a-fact.dita" keys="look-at-the-sources-of-a-fact" platform="Desktop"/>
-  <topicref href="../../platforms/android-phone/topics/look-at-the-sources-of-a-fact.dita" keys="look-at-the-sources-of-a-fact" platform="AndroidPhone"/>
-  <topicref href="../../platforms/tablet/topics/look-at-the-sources-of-a-fact.dita" keys="look-at-the-sources-of-a-fact" platform="Tablet"/>
-  <topicref href="../../platforms/iphone/topics/look-at-the-sources-of-a-fact.dita" keys="look-at-the-sources-of-a-fact" platform="iPhone"/>
+  <topicref href="../../platforms/mobile/topics/look-at-the-sources-of-a-fact.dita" keys="look-at-the-sources-of-a-fact" platform="Mobile"/>
   <topicref href="../../platforms/desktop/topics/add-another-person.dita" keys="add-another-person" platform="Desktop"/>
   <topicref href="../../platforms/android-phone/topics/add-another-person.dita" keys="add-another-person" platform="AndroidPhone"/>
   <topicref href="../../platforms/tablet/topics/add-another-person.dita" keys="add-another-person" platform="Tablet"/>
@@ -34,9 +32,8 @@
   <topicref href="../../platforms/iphone/topics/change-a-person.dita" keys="change-a-person" platform="iPhone"/>
   <topicref href="../../platforms/ipad/topics/change-a-person.dita" keys="change-a-person" platform="iPad"/>
   <topicref href="../../platforms/desktop/topics/add-a-family.dita" keys="add-a-family" platform="Desktop"/>
-  <topicref href="../../platforms/android-phone/topics/add-a-family.dita" keys="add-a-family" platform="AndroidPhone"/>
   <topicref href="../../platforms/tablet/topics/add-a-family.dita" keys="add-a-family" platform="Tablet"/>
-  <topicref href="../../platforms/iphone/topics/add-a-family.dita" keys="add-a-family" platform="iPhone"/>
+  <topicref href="../../platforms/phone/topics/add-a-family.dita" keys="add-a-family" platform="Phone"/>
   <topicref href="../../platforms/desktop/topics/add-a-note.dita" keys="add-a-note" platform="Desktop"/>
   <topicref href="../../platforms/phone/topics/add-a-note.dita" keys="add-a-note" platform="Phone"/>
   <topicref href="../../platforms/android-tablet/topics/add-a-note.dita" keys="add-a-note" platform="AndroidTablet"/>
@@ -44,8 +41,7 @@
   <topicref href="../../platforms/desktop/topics/the-photos-buttons.dita" keys="the-photos-buttons" platform="Desktop"/>
   <topicref href="../../platforms/android-phone/topics/the-photos-buttons.dita" keys="the-photos-buttons" platform="AndroidPhone"/>
   <topicref href="../../platforms/android-tablet/topics/the-photos-buttons.dita" keys="the-photos-buttons" platform="AndroidTablet"/>
-  <topicref href="../../platforms/iphone/topics/the-photos-buttons.dita" keys="the-photos-buttons" platform="iPhone"/>
-  <topicref href="../../platforms/ipad/topics/the-photos-buttons.dita" keys="the-photos-buttons" platform="iPad"/>
+  <topicref href="../../platforms/ios/topics/the-photos-buttons.dita" keys="the-photos-buttons" platform="iOS"/>
   <topicref href="../../platforms/desktop/topics/choose-how-it-looks.dita" keys="choose-how-it-looks" platform="Desktop"/>
   <topicref href="../../platforms/phone/topics/choose-how-it-looks.dita" keys="choose-how-it-looks" platform="Phone"/>
   <topicref href="../../platforms/android-tablet/topics/choose-how-it-looks.dita" keys="choose-how-it-looks" platform="AndroidTablet"/>

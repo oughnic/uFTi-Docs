@@ -25,11 +25,11 @@
     <section>
       <title>The camera button</title>
       <p>The first button has a camera on it. It is for a new photo, such as a photo of a certificate.</p>
-      <p>The first time, the iPhone asks if <keyword keyref="product-name"/> may use the camera. Choose <uicontrol keyref="ui-allow"/> to take photos in the app.</p>
+      <p>The first time, the <keyword keyref="product-device"/> asks if <keyword keyref="product-name"/> may use the camera. Choose <uicontrol keyref="ui-allow"/> to take photos in the app. If you do not allow it, a box says that the camera is needed to photograph a document.</p>
     </section>
     <section>
       <title>The folder button</title>
-      <p>The second button has a folder on it. It is for a picture or a scan that is already on your iPhone. The iPhone's own Files screen opens. Choose a picture, or choose the cross at the top to leave it.</p>
+      <p>The second button has a folder on it. It is for a picture or a scan that is already on your <keyword keyref="product-device"/>. Your <keyword keyref="product-device"/> opens its own Files screen. Choose a picture, or choose the cross at the top to leave it.</p>
     </section>
     <section>
       <title>The chain button</title>
@@ -37,7 +37,7 @@
     </section>
     <section>
       <title>The fourth button</title>
-      <p>When a page already has pictures, a fourth button shows, with an arrow that points down. It copies all the pictures of that page to a folder. The iPhone's own screen for choosing a folder opens.</p>
+      <p>When a page already has pictures, a fourth button shows, with an arrow that points down. It copies all the pictures of that page to a folder. Your <keyword keyref="product-device"/> opens its own screen for choosing a folder.</p>
     </section>
   </conbody>
 </concept>
