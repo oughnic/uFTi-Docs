@@ -5,7 +5,7 @@
   <shortdesc>Take a tree off the Workspaces screen without deleting its file.</shortdesc>
   <prolog>
     <critdates>
-      <created date="2026-10-31"/>
+      <created date="2026-10-29"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -37,7 +37,7 @@
       </step>
     </steps>
     <result>
-      <p>The card is gone, and a line at the bottom says the tree was removed. The file is still on your iPad. Open it again with <uicontrol keyref="ui-add-from-file"/> at any time.</p>
+      <p>The card is gone, and a line at the bottom says the tree was removed. The file is still on your <keyword keyref="product-device"/>. Open it again with <uicontrol keyref="ui-add-from-file"/> at any time.</p>
     </result>
   </taskbody>
 </task>
