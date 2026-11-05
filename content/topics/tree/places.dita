@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<!-- The one topic for a place. Every box that takes a place works the same way, so one page serves them
+     all, in every manual. Written once for all devices: it names no device, and the words on screen come
+     from the shared label keys. The help identifier places.place is not added yet: the app team has
+     proposed it and asked us to wait until they say it has merged (DEC-200). -->
+<concept id="places" xml:lang="en-GB">
+  <title>Places</title>
+  <shortdesc>How uFTi records a place, and how it helps you spell a place the same way each time.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-05"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Concept</category>
+      <keywords>
+        <keyword>place</keyword>
+        <keyword>birthplace</keyword>
+        <keyword>place name</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p>In uFTi, a place is the words you type. There is no map, and no list of places to pick from. So type the place as your record gives it, such as a town or a parish.</p>
+    <section>
+      <title>Where you are asked for a place</title>
+      <p>You meet a place box in these forms:</p>
+      <ul>
+        <li><uicontrol keyref="ui-place-of-birth"/> and <uicontrol keyref="ui-place-of-death"/>, in the <uicontrol keyref="ui-basic-details"/> form.</li>
+        <li><uicontrol keyref="ui-place-of-birth-new-child"/>, when you add a family.</li>
+        <li>The place box in the details of an event.</li>
+      </ul>
+      <p>They all work in the same way.</p>
+    </section>
+    <section>
+      <title>Typing a place</title>
+      <p>An empty box says <q><keyword keyref="ui-start-typing-a-place"/></q>. As you type, uFTi shows the places in this tree that match. It shows up to eight, underneath the box. Choose one to use it. Or keep typing a new place.</p>
+    </section>
+    <section>
+      <title>Spell it the same way each time</title>
+      <p>The places offered are the ones you have already typed in this tree. When you choose one, the place is spelled exactly as before. That keeps one place from turning into two.</p>
+      <p>When a record spells a place in a different way, type it as the record does. Then the tree shows what the record said.</p>
+    </section>
+  </conbody>
+</concept>
