@@ -26,7 +26,7 @@
       <step>
         <cmd>On the page of a person, choose the chip beside <uicontrol keyref="ui-birth"/>.</cmd>
         <stepresult>
-          <p>A screen named <uicontrol keyref="ui-sources"/> opens. Each source shows its title, its author and a quality line.</p>
+          <p>A screen named <uicontrol keyref="ui-sources"/> opens. Each source shows its title. Under the title, a line gives the author and where the source is kept, when the source has them. A source that you make in the app has no author, so its line shows only where it is kept. A quality line shows when the citation records a quality.</p>
           <fig>
             <image keyref="img-sources-list"/>
           </fig>
