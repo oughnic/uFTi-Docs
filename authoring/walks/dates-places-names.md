@@ -11,6 +11,7 @@ The pages were written from the app team's answers, which came from reading the 
 - **Every leg walks the rows that name it.** The last column, *On*, lists the legs, or a group from the table below. A row marked `help` waits for a build that has the help links (walk plan, section 6.1) and no leg does it on Alpha-1.
 - **Start from the notes skeleton.** On the machine that runs the leg, `pwsh build/walks/New-WalkNotes.ps1 -Sheet dates-places-names -Leg <leg>` writes a `notes.md` with one line for each row that names the leg. You fill in two columns of its *Results* table: the result, and what you saw.
 - **The result is one of four words.** *Same* (as our page says), *Different* (write what you saw), *Not found* (the screen is not there) or *Not done*.
+- **A driver may fill in the *Seen* column.** On a leg that is driven with DevFlow, a script does the rows that suit it and writes what it read, and a reviewer sets the *Result*. Rows 2.5 and 6.1 and every row of sections 7 and 8 are always walked by hand (walk plan, section 4.7).
 - **The collector merges the legs** into one table with a column for each leg (`build/walks/collect-walk.ps1`).
 
 ### Legs and groups

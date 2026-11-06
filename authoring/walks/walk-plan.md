@@ -1,6 +1,6 @@
 # The walk plan
 
-How the machines and devices work together to walk the documented apps, record what a reader will see and capture fresh pictures, on the closed Alpha-1 build. Part of the [authoring plan](../authoring-plan.md). Written 6 November 2026 for [issue 129](https://github.com/oughnic/uFTi-Docs/issues/129). Decision: DEC-209. The first sheet it uses is [the dates, places and names walk](dates-places-names.md).
+How the machines and devices work together to walk the documented apps, record what a reader will see and capture fresh pictures, on the closed Alpha-1 build. Part of the [authoring plan](../authoring-plan.md). Written 6 November 2026 for [issue 129](https://github.com/oughnic/uFTi-Docs/issues/129). Decisions: DEC-209 and DEC-211. The first sheet it uses is [the dates, places and names walk](dates-places-names.md).
 
 This plan is public. It names no machine, no account, no serial number, no build number beyond the released Alpha-1, and nothing from the application repository. Devices are named by model only.
 
@@ -18,6 +18,7 @@ The application repository also walks targets that are not documented. They are 
 - **The importer refuses a picture from a different build.** Every leg runs the same build.
 - **No serial number enters this repository.** The importer refuses a manifest that has one.
 - **Raw captures never go into Git.** Only pictures that the importer accepts and a person has reviewed are committed.
+- **A leg says which kind of build it ran.** A driven leg runs on a build with the DevFlow agent, and a hand leg runs on the closed package (section 6.2).
 
 ## 3. What is walked, and where
 
@@ -124,6 +125,19 @@ Nothing is committed until a person has looked at it.
 
 State lives in the shared folder and on issue 129, not in a conversation. A session on each machine can run its legs and report in the same files, and one session can coordinate. Each leg ticks its line on issue 129 when it is dropped. The plan works with only people and scripts.
 
+The Mac can run a session that the coordinating session starts over a saved SSH connection. It has the tools to run the walk scripts, so it can write a leg's notes, run a driver and drop the result without anyone at the keyboard. The cloud Windows PC and the Android host are not set up that way yet (section 10).
+
+### 4.7 Driving a leg with DevFlow
+
+DevFlow lets a script drive the app and read the screen. It can go to a page, find a control by its automation id, tap, fill a field, read the words on the screen and take a picture of the app's own window. It works on Windows, Android, the iOS simulators and Mac Catalyst. A driver reads the words the screen shows, so the *Seen* column is exact and not remembered.
+
+- **Rows that suit a driver.** A row that does something and reads what follows: the date editor and its *Reads as* line (rows 1.5 to 1.14), the place box (3.1 to 3.3), the name prompt (4.1 to 4.5), the sources (5.1 to 5.5) and the worked case (6.2). A driver covers what it can and says which rows it left.
+- **Rows that stay by hand.** Row 2.5 (the device's own settings), row 6.1 (reading our pages), the rows of section 7 (layout, and the file picker, which belongs to the device) and the rows of section 8 (the camera and its prompts, which are outside the app's window).
+- **What a driver writes.** It fills the *Seen* column of `notes.md` with the words it read, and leaves *Result* as Not done. Whoever reviews the leg sets the result against *Our pages say*. A session may propose it and a person confirms it, because a Different row is a finding.
+- **Controls need automation ids.** A driver finds a control by its id, not by where it sits. A control without one is reported to the app team, which adds it, and the row is walked by hand until then.
+- **Pictures.** The driver's screenshot is of the app's own window, with no status bar and no notification, and it works while the screen is locked. That is what section 9 asks of the phones.
+- **Where the driver lives.** In the application repository, with the capture scripts (DEC-022). This repository holds the sheet, the notes skeleton and the collector.
+
 ## 5. Order
 
 ```mermaid
@@ -158,6 +172,14 @@ The help links need a newer build than Alpha-1. The app cannot open `places.plac
 
 They move to a **help leg**, run later on a development build that reads the published help maps. It is a coordination item with the app team, and it belongs to the work in [issue 16](https://github.com/oughnic/uFTi-Docs/issues/16) and to the later Alpha-2 plan. The help leg needs three things before it can run: a build with the help links, the proposed help maps built into that build, and the pages live on the host.
 
+### 6.2 Driven legs and the closed package
+
+The DevFlow agent is compiled into development builds only. It is not in the closed Alpha-1 package. So a **driven** leg runs on a build of the Alpha-1 source with the agent, not on the package. The two come from one source and should behave the same, but they are not the same file.
+
+- **The record says which.** The leg result records the kind of build, `closed` for the package and `devflow` for the build with the agent, and the version and build number the app shows. A run's report lists the kind for each leg.
+- **A short walk by hand on the closed package** covers the rows that matter most: rows 1.3 and 1.14, and the rows of section 7, on the Galaxy A41. A row that is Different between the two kinds of build is a finding about the build, not about our pages.
+- **Pictures.** The screenshot strategy takes pictures from release candidates only (DEC-023). Whether a picture from a build with the agent counts is an open point (section 10).
+
 ## 7. Targets that are not documented
 
 The application repository walks other targets that we do not document and do not plan to release. It tracks them, and anything it learns from them, in its own issues and plans. This repository holds no detail about them, and no manual, picture or page describes them.
@@ -189,11 +211,13 @@ A leg for such a target may use the same environments and the same shared folder
 | **Where the Pixel Tablet emulator runs.** It needs an Intel machine with hardware virtualisation. | Maintainer |
 | **The help leg:** the build, the date, and the published maps. | App team, with the maintainer |
 | **Where the list of legs and the wrapper live.** The application repository is proposed (section 4.1). | Maintainer |
-| **Sessions on the other machines.** Whether to run Claude sessions there, or to drive the legs by hand. | Maintainer |
+| **Sessions on the other machines.** The Mac can run one (section 4.6). Whether the cloud Windows PC and the Android host should, or be driven by hand. | Maintainer |
+| **Pictures from a build with the agent.** Whether DEC-023's "release candidates only" allows a Release configuration build of the same source with the DevFlow agent, or asks for the closed package. The application repository says whether it can make such a build. | Maintainer, with the app team |
 
 ## 11. What gets built, in order
 
 1. **Done.** The #129 sheet has an *On* column that names the legs for each row, and two new sections (phone and tablet differences, and the camera route). `build/walks/New-WalkNotes.ps1` writes a leg's notes from it.
 2. **Done.** `build/walks/collect-walk.ps1`, with a test for each of its checks in `test-source-rules.ps1 -Only walks`.
-3. **In the application repository, not started.** The list of legs, the wrapper and the environment card. The drop-folder layout above is what the wrapper must write.
-4. **Then.** The first run: the smoke leg on every environment.
+3. **In the application repository, not started.** The list of legs, the wrapper, the environment card and the DevFlow driver (section 4.7). The drop-folder layout above is what the wrapper must write.
+4. **Here, then.** The leg result gains a `buildKind`, and the collector reads it and lists it in the report, with a failing case in `test-source-rules.ps1 -Only walks`.
+5. **Then.** The first run: the smoke leg on every environment, then the walks. The Mac and the Galaxy A41 come first.
