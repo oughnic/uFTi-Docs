@@ -10,6 +10,7 @@ more,More,gap
 notes.list,Notes,
 notes.record,Notes on one record,
 people.edit,Add or change a person,
+people.list,Everyone in the tree,gap
 people.merge,Merge two people,gap
 people.name,A name,
 people.view,A person,
