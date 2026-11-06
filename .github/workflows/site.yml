@@ -8,6 +8,9 @@
 # already published are read back from that branch before the build, so an old release stays online
 # (DEC-143). It creates no Azure resource and holds no secret.
 #
+# A pull request does not run this workflow: the CI workflow assembles the same tree from its own builds and checks it
+# (its "tree" job, DEC-207), so no manual is built a second time there.
+#
 # The "deploy" job then deploys the tree to Azure Static Web Apps (issue 77), from a push to main or release/**, or on demand.
 # Third-party actions are pinned to full commit SHAs. Permissions are read-only, except in the publish job.
 name: Site
@@ -15,8 +18,6 @@ name: Site
 on:
   push:
     branches: [dev, main, 'release/**']
-  pull_request:
-    paths: ['build/**', 'content/**', '.github/workflows/site.yml']
   workflow_dispatch:
     inputs:
       publish:
