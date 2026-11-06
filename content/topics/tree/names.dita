@@ -22,6 +22,7 @@
         <keyword>already in this tree</keyword>
       </keywords>
     </metadata>
+    <resourceid appname="ufti" appid="people.name"/>
   </prolog>
   <conbody>
     <p>A person has <uicontrol keyref="ui-given-names"/> and <uicontrol keyref="ui-surname"/>. Families use the same names again and again. So two people in your tree may share a name, and a name you type may belong to someone you have already added.</p>
