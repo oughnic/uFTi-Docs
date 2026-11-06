@@ -16,14 +16,14 @@
   Copyright 2026 Oughtibridge Ltd, Apache-2.0.
 
 .PARAMETER Only
-  Run only these parts: lint, vale, templates, samples, publications, helpmap, reuse. Default: all seven.
+  Run only these parts: lint, vale, templates, samples, publications, helpmap, reuse, walks. Default: all eight.
 
 .PARAMETER Filter
   Run only the cases whose name contains this text.
 #>
 [CmdletBinding()]
 param(
-    [ValidateSet('lint', 'vale', 'templates', 'samples', 'publications', 'helpmap', 'reuse')][string[]]$Only = @('lint', 'vale', 'templates', 'samples', 'publications', 'helpmap', 'reuse'),
+    [ValidateSet('lint', 'vale', 'templates', 'samples', 'publications', 'helpmap', 'reuse', 'walks')][string[]]$Only = @('lint', 'vale', 'templates', 'samples', 'publications', 'helpmap', 'reuse', 'walks'),
     [string]$Filter = '',
     [string]$ToolsDir
 )
@@ -778,6 +778,117 @@ $Comment
         Record 'reuse' $c.Name ([bool](& $c.Ok)) 'the measurement is not what the strategy says it is'
     }
 }
+# ---- The walk tooling: a run is collected only when every leg is there, on one build, with no identifiers (DEC-209) ----
+
+if ($Only -contains 'walks') {
+    Write-UftiStep 'Walks: the sheet, the notes skeleton and the collector'
+    $walkTools = Join-Path $root 'build' 'walks'
+    Import-Module (Join-Path $walkTools 'WalkSheet.psm1') -Force
+    $sheetDir = Join-Path $work 'walk-sheets'
+    Write-File $sheetDir 'mini.md' @'
+# A small sheet
+
+### Legs and groups
+
+| Token | Legs |
+|---|---|
+| `both` | `leg-a`, `leg-b` |
+| `help` | none yet |
+
+## 1. One
+
+| # | Do this | Our pages say | On |
+|---|---|---|---|
+| 1.1 | Look at it. | A thing. | `both` |
+| 1.2 | Look again. | A thing. | `leg-a` |
+| 1.3 | Find the help button. | A thing. | `help` |
+'@
+    $walkRoot = Join-Path $work 'walk-runs'
+    function Write-Sums {
+        param([string]$Leg)
+        $lines = Get-ChildItem -LiteralPath $Leg -Recurse -File | Where-Object { $_.Name -ne 'SHA256SUMS' } | Sort-Object FullName | ForEach-Object { "$((Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash.ToLowerInvariant())  $([System.IO.Path]::GetRelativePath($Leg, $_.FullName) -replace '\\', '/')" }
+        [System.IO.File]::WriteAllText((Join-Path $Leg 'SHA256SUMS'), (($lines -join "`n") + "`n"))
+    }
+    function Write-WalkLeg {
+        param([string]$Run, [string]$Id, [string[]]$Rows, [string]$Seen = 'as the page says', [string]$Result = 'Same', [string]$Status = 'complete', [string]$Version = '0.1.0')
+        $dir = Join-Path $Run $Id
+        New-Item -ItemType Directory -Path $dir -Force | Out-Null
+        Write-File $dir 'leg-result.json' "{ `"leg`": `"$Id`", `"status`": `"$Status`", `"build`": { `"version`": `"$Version`", `"build`": `"1`" }, `"environment`": { `"os`": `"Windows 11`", `"screen`": `"1280x800`" } }"
+        $t = "# Notes: $Id`n`n## Results: mini`n`n| # | Result | Seen | Do this |`n|---|---|---|---|`n"
+        foreach ($r in $Rows) { $t += "| $r | $Result | $Seen | text |`n" }
+        Write-File $dir 'notes.md' $t
+        Write-Sums $dir
+    }
+    function New-WalkRun {
+        param([string]$Name)
+        $run = Join-Path $walkRoot $Name
+        Write-File $run 'run.json' '{ "id": "test-run", "build": { "label": "Alpha-1", "version": "0.1.0", "build": "1" }, "sheets": [ "mini" ], "legs": [ { "id": "leg-a", "kind": "behaviour" }, { "id": "leg-b", "kind": "behaviour" } ] }'
+        Write-WalkLeg $run 'leg-a' @('1.1', '1.2')
+        Write-WalkLeg $run 'leg-b' @('1.1')
+        $run
+    }
+    function Invoke-Collect {
+        param([string]$Run, [string[]]$More = @())
+        $o = & pwsh -NoProfile -File (Join-Path $walkTools 'collect-walk.ps1') -Run $Run -SheetsRoot $sheetDir -NoImport @More 2>&1 | Out-String
+        [pscustomobject]@{ Exit = $LASTEXITCODE; Text = $o; Report = $(if (Test-Path -LiteralPath (Join-Path $Run 'report' 'walk-report.md')) { [System.IO.File]::ReadAllText((Join-Path $Run 'report' 'walk-report.md')) } else { '' }) }
+    }
+    $walkCases = @(
+        @{ Name = 'a complete run on one build'; Pass = $true; More = @(); Do = { param($r) }; Expect = 'is collected' }
+        @{ Name = 'a leg that is missing'; Pass = $false; More = @(); Do = { param($r) Remove-Item -LiteralPath (Join-Path $r 'leg-b') -Recurse -Force }; Expect = 'has not been dropped' }
+        @{ Name = 'a leg that is missing, when partial runs are accepted'; Pass = $true; More = @('-AllowPartial'); Do = { param($r) Remove-Item -LiteralPath (Join-Path $r 'leg-b') -Recurse -Force }; Expect = 'is collected' }
+        @{ Name = 'a leg that ran another build'; Pass = $false; More = @(); Do = { param($r) Write-WalkLeg $r 'leg-b' @('1.1') -Version '0.2.0' }; Expect = 'not the run''s' }
+        @{ Name = 'a leg that is only partial'; Pass = $false; More = @(); Do = { param($r) Write-WalkLeg $r 'leg-b' @('1.1') -Status 'partial' }; Expect = 'is partial|not complete' }
+        @{ Name = 'a leg that is only partial, when partial runs are accepted'; Pass = $true; More = @('-AllowPartial'); Do = { param($r) Write-WalkLeg $r 'leg-b' @('1.1') -Status 'partial' }; Expect = 'is collected' }
+        @{ Name = 'a file changed after its checksum'; Pass = $false; More = @(); Do = { param($r) Add-Content -LiteralPath (Join-Path $r 'leg-a' 'notes.md') "`nmore" }; Expect = 'does not match its checksum' }
+        @{ Name = 'a file that is not in SHA256SUMS'; Pass = $false; More = @(); Do = { param($r) Write-File (Join-Path $r 'leg-a') 'extra.txt' 'x' }; Expect = 'is not listed in SHA256SUMS' }
+        @{ Name = 'a leg with no checksums'; Pass = $false; More = @(); Do = { param($r) Remove-Item -LiteralPath (Join-Path $r 'leg-a' 'SHA256SUMS') }; Expect = 'has no SHA256SUMS' }
+        @{ Name = 'a device serial number in the leg result'; Pass = $false; More = @(); Do = { param($r) $d = Join-Path $r 'leg-a'; Write-File $d 'leg-result.json' '{ "leg": "leg-a", "status": "complete", "build": { "version": "0.1.0", "build": "1" }, "environment": { "os": "Android 12", "serial": "R58M123ABC" } }'; Write-Sums $d }; Expect = 'keep serial numbers' }
+        @{ Name = 'a host name as a key in the leg result'; Pass = $false; More = @(); Do = { param($r) $d = Join-Path $r 'leg-a'; Write-File $d 'leg-result.json' '{ "leg": "leg-a", "status": "complete", "build": { "version": "0.1.0", "build": "1" }, "environment": { "os": "Windows 11", "hostname": "x" } }'; Write-Sums $d }; Expect = 'keep serial numbers' }
+        @{ Name = 'a leg result with no environment card'; Pass = $false; More = @(); Do = { param($r) $d = Join-Path $r 'leg-a'; Write-File $d 'leg-result.json' '{ "leg": "leg-a", "status": "complete", "build": { "version": "0.1.0", "build": "1" } }'; Write-Sums $d }; Expect = 'no environment card' }
+        @{ Name = 'a name on the private deny-list'; Pass = $false; More = @('-DenyList'); Deny = 'Examplehost'; Do = { param($r) Write-WalkLeg $r 'leg-a' @('1.1', '1.2') -Seen 'run on examplehost today' }; Expect = 'deny-list' }
+        @{ Name = 'a row that the sheet does not have'; Pass = $false; More = @(); Do = { param($r) Write-WalkLeg $r 'leg-a' @('1.1', '1.2', '9.9') }; Expect = 'is not a row of the sheet' }
+        @{ Name = 'a row that waits for a later build'; Pass = $false; More = @(); Do = { param($r) Write-WalkLeg $r 'leg-a' @('1.1', '1.2', '1.3') }; Expect = 'is not a row of the sheet' }
+        @{ Name = 'a row with no line'; Pass = $false; More = @(); Do = { param($r) Write-WalkLeg $r 'leg-a' @('1.1') }; Expect = 'has no line for row' }
+        @{ Name = 'a row listed twice'; Pass = $false; More = @(); Do = { param($r) Write-WalkLeg $r 'leg-a' @('1.1', '1.2', '1.2') }; Expect = 'appears twice' }
+        @{ Name = 'a result that is not one of the four words'; Pass = $false; More = @(); Do = { param($r) Write-WalkLeg $r 'leg-a' @('1.1', '1.2') -Result 'Fine' }; Expect = 'use Same, Different' }
+        @{ Name = 'a leg that is not listed in the run'; Pass = $true; More = @(); Do = { param($r) Write-WalkLeg $r 'leg-z' @('1.1') }; Expect = 'is not a leg of this run' }
+        @{ Name = 'a run with no run.json'; Pass = $false; More = @(); Do = { param($r) Remove-Item -LiteralPath (Join-Path $r 'run.json') }; Expect = 'No run.json' }
+        @{ Name = 'a leg listed twice in the run'; Pass = $false; More = @(); Do = { param($r) Write-File $r 'run.json' '{ "id": "test-run", "build": { "version": "0.1.0", "build": "1" }, "sheets": [ "mini" ], "legs": [ { "id": "leg-a", "kind": "behaviour" }, { "id": "leg-a", "kind": "behaviour" } ] }' }; Expect = 'listed twice' }
+        @{ Name = 'a pictures leg with no manual'; Pass = $false; More = @(); Do = { param($r) Write-File $r 'run.json' '{ "id": "test-run", "build": { "version": "0.1.0", "build": "1" }, "sheets": [ "mini" ], "legs": [ { "id": "leg-a", "kind": "pictures" }, { "id": "leg-b", "kind": "behaviour" } ] }' }; Expect = 'names no manual' }
+    )
+    $n = 0
+    foreach ($c in $walkCases) {
+        if ($Filter -and $c.Name -notlike "*$Filter*") { continue }
+        $n++
+        $run = New-WalkRun "case-$n"
+        & $c.Do $run
+        $more = @($c.More)
+        if ($c.ContainsKey('Deny')) { Write-File $run 'deny-list.txt' "# private`n$($c.Deny)`n"; $more = @() }
+        $r = Invoke-Collect $run $more
+        $ok = if ($c.Pass) { $r.Exit -eq 0 -and $r.Text -match $c.Expect } else { $r.Exit -eq 1 -and $r.Text -match $c.Expect }
+        if ($c.ContainsKey('Deny') -and $r.Text -match [regex]::Escape($c.Deny)) { $ok = $false }   # the name itself is never printed
+        Record 'walks' "$($c.Name) $(if ($c.Pass) { 'is accepted' } else { 'fails the collection' })" $ok "expected exit $(if ($c.Pass) { 0 } else { 1 }) and '$($c.Expect)'; got exit $($r.Exit): $($r.Text)"
+    }
+    if (-not $Filter -or 'report' -like "*$Filter*") {
+        $run = New-WalkRun 'report'
+        Write-WalkLeg $run 'leg-a' @('1.1', '1.2') -Result 'Different' -Seen 'it showed X'
+        $r = Invoke-Collect $run
+        Record 'walks' 'a Different row is a finding in the report, and not a failure' ($r.Exit -eq 0 -and $r.Report -match '\*\*Different\*\*' -and $r.Report -match '1\.2.*leg-a.*Different: it showed X') "exit $($r.Exit); report: $($r.Report)"
+        Record 'walks' 'a row that a leg does not walk is n/a in the report' ($r.Report -match '\| 1\.2 \|[^|]*\|[^|]*\| n/a \|') "report: $($r.Report)"
+    }
+    $sheet = Read-WalkSheet -Path (Join-Path $sheetDir 'mini.md')
+    Record 'walks' 'a group stands for its legs, and a row for later help is walked by no leg' ((@(Get-WalkRowsForLeg $sheet 'leg-b').Id -join ',') -eq '1.1' -and (@(Get-WalkRowsForLeg $sheet 'leg-a').Id -join ',') -eq '1.1,1.2') 'the rows for a leg are not those the sheet names'
+    Write-File $sheetDir 'no-on.md' "# x`n`n## 1. One`n`n| # | Do this | Our pages say | On |`n|---|---|---|---|`n| 1.1 | Look. | A thing. | none |`n"
+    $threw = $false; try { $null = Read-WalkSheet -Path (Join-Path $sheetDir 'no-on.md') } catch { $threw = "$_" -match 'names no leg' }
+    Record 'walks' 'a sheet row that names no leg is refused' $threw 'the sheet was read'
+    $notes = Join-Path $work 'walk-notes' 'notes.md'
+    & pwsh -NoProfile -File (Join-Path $walkTools 'New-WalkNotes.ps1') -Sheet mini -Leg leg-b -Out $notes -SheetsRoot $sheetDir *> $null
+    $nt = if (Test-Path -LiteralPath $notes) { [System.IO.File]::ReadAllText($notes) } else { '' }
+    Record 'walks' 'the notes skeleton has a line for each row of the leg and no other' ($nt -match '\| 1\.1 \| Not done' -and $nt -notmatch '\| 1\.2 \|' -and $nt -notmatch '\| 1\.3 \|') $nt
+    & pwsh -NoProfile -File (Join-Path $walkTools 'New-WalkNotes.ps1') -Sheet mini -Leg leg-b -Out $notes -SheetsRoot $sheetDir *> $null
+    Record 'walks' 'the notes skeleton does not replace a file that may hold results' ($LASTEXITCODE -eq 1) 'a second run replaced the file'
+}
+
 Remove-Item -LiteralPath $work -Recurse -Force -ErrorAction SilentlyContinue
 $failed =@($results | Where-Object { -not $_.Ok })
 Write-Host ''
