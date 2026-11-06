@@ -2,7 +2,7 @@
 
 Part of [WP0](README.md) and [WP7b](../authoring-plan.md#8-delivery-plan). Status: 3 November 2026. Every screen in the app gets a help target. That is the page the app opens when the reader chooses Help on that screen ([content model, section 5](../content-model.md#5-in-app-help), DEC-028).
 
-This list was a draft of 40 screens guessed from the plan. It is now the app's own list of its 22 screens (DEC-189, DEC-195), and for each one, the page that answers it. [`build/help/screens.csv`](../../build/help/screens.csv) holds the same 22 identifiers for the build. The app retired `people.list` and `people.relatives` on 4 November 2026 (DEC-195).
+This list was a draft of 40 screens guessed from the plan. It is now the app's own list of its screens (DEC-189, DEC-195, DEC-208), and for each one, the page that answers it. [`build/help/screens.csv`](../../build/help/screens.csv) holds the same identifiers for the build. The app retired `people.relatives` on 4 November 2026 (DEC-195). It retired `people.list` on the same day and brought it back on 6 November 2026, when an **All people** button was added to the workspace home (DEC-208).
 
 ## Rules
 
@@ -30,6 +30,7 @@ The Windows manual comes first because it has the most pages that match the app'
 | `notes.list` | The notes | *The screens of the app*, the part on **Notes** | Mapped. |
 | `notes.record` | The notes on one record | *The screens of the app*, the part on **Notes** | Mapped. The same surface as `notes.list`: one page, two identifiers. |
 | `people.edit` | Add or change a person | *Add your first person* | Mapped. *Add another person* and *Change a person* have task identifiers. |
+| `people.list` | Everyone in the tree | none | **No page.** An **All people** button on the workspace home opens it, when the open tree has a person. It lists everyone in the tree, with a **New person** button, and you tap a person to open them. Walk it. |
 | `people.merge` | Merge two people | none | **Reserved: no help yet.** A placeholder in the app that nothing opens. The id is kept so a real screen can use it later. |
 | `people.view` | A person's page | *Look around* | Mapped. |
 | `repositories.list` | Where records are kept | *The screens of the app*, the part on the three lists of the whole tree | Mapped to a short description. Adding one was not walked. |
