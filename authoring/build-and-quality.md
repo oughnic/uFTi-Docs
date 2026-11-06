@@ -132,7 +132,8 @@ Planned for GitHub Actions, in WP1.
 |---|---|---|
 | `lint` | Pushes to `dev`, `main`, `release/**` and `hotfix/**`, and every pull request | Prose, structure, vocabulary, secrets. Fast. |
 | `build` | A matrix: the five manuals and their Quick Starts, the good practice guide, the device chooser and the ufti.com pages | Install pinned tools from cache. Build site and PDF into `out/<slug>`. Upload as an artefact. |
-| `check` | After `build`, per output | HTML, axe-core, links, metadata, veraPDF, determinism, page weight. |
+| `check` | After `build`, per output | HTML, links, metadata, veraPDF (PDF/UA), fonts and figures in the PDF, alternative text, the theme, page weight. No browser. |
+| `a11y` | After `build`, once per platform (Windows, Android phone, Android tablet, iPhone, iPad), for that platform's fixture, Quick Start and manual | The two gates that need a browser: axe-core at WCAG 2.2 AA, and the theme probe. The browser and its system libraries are installed here and nowhere else (DEC-206). |
 | `coverage` | Once | Key and image coverage, applicability matrix. |
 | `site` | Pushes to `dev`, `main` and `release/**`, and pull requests that touch `build/` or `content/` (`.github/workflows/site.yml`) | Build the whole publishing tree with `build-site.sh`, check every link in it, keep the tree and the archives of the current releases as artefacts. Section 7. |
 | `deploy` | `main` only, so only releases are published | Deploy the `site` artefact to Azure Static Web Apps. Not enabled: it needs a resource and a token that the maintainer creates (section 7). |
@@ -144,6 +145,7 @@ Practices:
 - Default permissions are read-only. Only `deploy` gets write access, and only to publish.
 - Cancel superseded runs on the same pull request.
 - Run weekly against the pinned versions to catch upstream drift in the sources we fetch.
+- **Do not repeat a check on output that has not changed (DEC-206).** `build/scripts/output-hash.sh` gives one SHA-256 for the built output of a deliverable, the search index left out. When that output has already passed with the same tools and checks, the `a11y` job for its platform (axe-core and the theme probe) and the `check` job's PDF/UA gate skip, and the browser is not installed. The record is a small cache entry whose key holds the hash, the tool lock and a hash of the scripts and the workflow that run the checks, so a change to any of them checks again. The weekly run ignores the records. A pull request reads the records of `dev`; the first run on a new branch, and the first run on `dev` after a merge, check in full. Do not filter the whole workflow by path: a workflow that does not run leaves the required `ci` check waiting for ever.
 - The plugin's own repository and its consumer repositories are good examples of this shape.
 
 ## 6. Release, versioning and hosting

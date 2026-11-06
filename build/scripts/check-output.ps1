@@ -22,7 +22,16 @@
 
 .PARAMETER Skip
   Gates to leave out: log, structure, html, links, metadata, a11y, pdf-ua, pdf-fonts, alt,
-  theme, theme-browser, weight, determinism.
+  theme, theme-browser, weight, determinism. A gate left out this way counts as one that could
+  not run, so the run fails unless -AllowSkips.
+
+.PARAMETER Only
+  Run just these gates, and do not report the others. For a job that runs a part of the gates:
+  CI runs the two that need a browser, a11y and theme-browser, in their own job (DEC-206).
+
+.PARAMETER Without
+  Run every gate but these, and report them as "elsewhere". Unlike -Skip, it does not fail the
+  run: the caller says that another job runs them, or that they already passed on identical output.
 #>
 [CmdletBinding()]
 param(
@@ -32,6 +41,8 @@ param(
     [string]$SiteUrl,
     [string]$CompareWith,
     [string[]]$Skip = @(),
+    [string[]]$Only = @(),
+    [string[]]$Without = @(),
     [switch]$AllowSkips,
     [string]$ToolsDir
 )
@@ -40,6 +51,9 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 Import-Module (Join-Path $PSScriptRoot 'UftiBuild.psm1') -Force
 $root = Get-UftiRepoRoot
+# powershell -File passes "a,b" as one string, so a list may arrive joined by commas
+$Only = @($Only | ForEach-Object { $_ -split ',' } | Where-Object { $_ })
+$Without = @($Without | ForEach-Object { $_ -split ',' } | Where-Object { $_ })
 if (-not $ToolsDir) { $ToolsDir = Get-UftiToolsDir }
 $ToolsDir = [System.IO.Path]::GetFullPath($ToolsDir)
 $lock = Read-UftiToolsLock
@@ -126,6 +140,8 @@ function Invoke-Node {
 $results = [ordered]@{}
 function Gate {
     param([string]$Name, [scriptblock]$Body)
+    if ($Only.Count -and $Only -notcontains $Name) { return }
+    if ($Without -contains $Name) { $results[$Name] = 'elsewhere'; return }
     if ($Skip -contains $Name) { $results[$Name] = 'skipped'; return }
     Write-UftiStep "Gate: $Name"
     try {
@@ -298,13 +314,13 @@ Gate 'determinism' {
 # ---- Summary ---------------------------------------------------------------------------------
 
 Write-Host ''
-$failed = 0; $skipped = 0
+$failed = 0; $skipped = 0; $elsewhere = 0
 foreach ($k in $results.Keys) {
     $v = $results[$k]
-    if ($v -eq 'FAIL') { $failed++ } elseif ($v -eq 'skipped') { $skipped++ }
-    Write-Host ("  {0,-14} {1}" -f $k, $v) -ForegroundColor $(if ($v -eq 'pass') { 'Green' } elseif ($v -eq 'FAIL') { 'Red' } else { 'Yellow' })
+    if ($v -eq 'FAIL') { $failed++ } elseif ($v -eq 'skipped') { $skipped++ } elseif ($v -eq 'elsewhere') { $elsewhere++ }
+    Write-Host ("  {0,-14} {1}" -f $k, $v) -ForegroundColor $(if ($v -eq 'pass') { 'Green' } elseif ($v -eq 'FAIL') { 'Red' } elseif ($v -eq 'elsewhere') { 'Cyan' } else { 'Yellow' })
 }
 Write-Host "  reports: $reports"
 if ($failed) { Write-Host "FAIL: $failed gate(s) failed for $Deliverable." -ForegroundColor Red; exit 1 }
 if ($skipped -and -not $AllowSkips) { Write-Host "FAIL: $skipped gate(s) could not run for $Deliverable (pass -AllowSkips to accept that)." -ForegroundColor Red; exit 1 }
-Write-Host "PASS: every output gate passed for $Deliverable$(if ($skipped) { " ($skipped skipped)" })." -ForegroundColor Green
+Write-Host "PASS: every output gate passed for $Deliverable$(if ($skipped) { " ($skipped skipped)" })$(if ($elsewhere) { " ($elsewhere run elsewhere)" })." -ForegroundColor Green
