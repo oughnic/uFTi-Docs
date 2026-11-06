@@ -86,7 +86,7 @@ The list of legs belongs in the application repository, because it names the cap
 ### 4.2 What a leg does
 
 1. **Preflight.** Install the pinned build. Set the Oxford and slate theme, light, and en-GB. Start from a throwaway data folder. Check that the app shows the run's build. Write an **environment card**: operating system, version, screen size, scale. Add no serial number and no host name.
-2. **Walk.** Do the sheet for the leg. Mark each row Same, Different or Not found.
+2. **Walk.** Do the sheet for the leg. `build/walks/New-WalkNotes.ps1 -Leg <leg>` writes a `notes.md` with one line for each row that names the leg. Mark each row Same, Different, Not found or Not done, and write what you saw.
 3. **Capture.** Run the scripted replay from the application repository. If it is not ready, capture by hand as the [screenshot strategy](../screenshot-strategy.md#45-manual-capture-fallback) says.
 4. **Drop.** Copy the result to the shared folder and stop. Nothing else in the leg depends on another machine.
 
@@ -101,15 +101,17 @@ A private folder in OneDrive, synced to every machine. It holds one folder per l
   run.json                    the run id, the build, the legs and who owns each
   <leg>/
     leg-result.json           status, deviations, the environment card
-    manifest.json             as the screenshot strategy describes, with no serial number
-    <name>.png                one file per key
-    notes.md                  the sheet, filled in, and anything else seen
-    SHA256SUMS
+    manifest.json             pictures legs: as the screenshot strategy describes, with no serial number
+    screens/<name>.png        pictures legs: one file per key
+    notes.md                  the sheet's rows, filled in, and anything else seen
+    SHA256SUMS                every file of the leg but itself
+  deny-list.txt               private: names that must never appear in the run (never committed)
+  report/                     written by the collector
 ```
 
 ### 4.4 The collector
 
-`build/walks/collect-walk.ps1 <run>` runs on the Windows ARM PC, because the importer's crop and resize run on Windows. It checks that every leg is present and for the same build, that the hashes match, that no manifest carries a serial number, and that every focus person is allowed. Then it runs the importer for each documented manual, merges the filled-in sheets into one table with a column for each leg, and lists for each changed picture the topics to recheck.
+`build/walks/collect-walk.ps1 -Run <run>` runs on the Windows ARM PC, because the importer's crop and resize run on Windows. It fails when a leg is missing or not complete, when a leg ran another build, when a checksum does not match or a file is not listed, when a result file has a key that names a serial number, a host or an account, when a row is missing, unknown or has a result that is not one of the four words, or when a name on the private deny-list appears in any text file or in the report (it reports the file and the line, never the name). Then it merges the filled-in notes into one table with a column for each leg, lists the rows that are Different or Not found, and runs the importer for each pictures leg: with `-WhatIf` unless `-Import` is given. A Different row is a finding, not a failure. The report is `report/walk-report.md`, and nothing is committed or sent.
 
 ### 4.5 Review, then Git
 
@@ -191,7 +193,7 @@ A leg for such a target may use the same environments and the same shared folder
 
 ## 11. What gets built, in order
 
-1. The #129 sheet widened to a column for each leg.
-2. In the application repository: the list of legs, the wrapper and the environment card.
-3. In this repository: `build/walks/collect-walk.ps1`.
-4. The first run: the smoke leg on every environment.
+1. **Done.** The #129 sheet has an *On* column that names the legs for each row, and two new sections (phone and tablet differences, and the camera route). `build/walks/New-WalkNotes.ps1` writes a leg's notes from it.
+2. **Done.** `build/walks/collect-walk.ps1`, with a test for each of its checks in `test-source-rules.ps1 -Only walks`.
+3. **In the application repository, not started.** The list of legs, the wrapper and the environment card. The drop-folder layout above is what the wrapper must write.
+4. **Then.** The first run: the smoke leg on every environment.
