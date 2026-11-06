@@ -11,6 +11,7 @@ notes.list,Notes,
 notes.record,Notes on one record,
 people.edit,Add or change a person,
 people.merge,Merge two people,gap
+people.name,A name,
 people.view,A person,
 places.place,A place,
 repositories.list,Where records are kept,
