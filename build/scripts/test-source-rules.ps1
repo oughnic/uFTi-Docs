@@ -810,10 +810,11 @@ if ($Only -contains 'walks') {
         [System.IO.File]::WriteAllText((Join-Path $Leg 'SHA256SUMS'), (($lines -join "`n") + "`n"))
     }
     function Write-WalkLeg {
-        param([string]$Run, [string]$Id, [string[]]$Rows, [string]$Seen = 'as the page says', [string]$Result = 'Same', [string]$Status = 'complete', [string]$Version = '0.1.0')
+        param([string]$Run, [string]$Id, [string[]]$Rows, [string]$Seen = 'as the page says', [string]$Result = 'Same', [string]$Status = 'complete', [string]$Version = '0.1.0', [string]$Kind = 'closed')
         $dir = Join-Path $Run $Id
         New-Item -ItemType Directory -Path $dir -Force | Out-Null
-        Write-File $dir 'leg-result.json' "{ `"leg`": `"$Id`", `"status`": `"$Status`", `"build`": { `"version`": `"$Version`", `"build`": `"1`" }, `"environment`": { `"os`": `"Windows 11`", `"screen`": `"1280x800`" } }"
+        $kindJson = if ($Kind) { " `"buildKind`": `"$Kind`"," } else { '' }
+        Write-File $dir 'leg-result.json' "{ `"leg`": `"$Id`", `"status`": `"$Status`", `"build`": { `"version`": `"$Version`", `"build`": `"1`" },$kindJson `"environment`": { `"os`": `"Windows 11`", `"screen`": `"1280x800`" } }"
         $t = "# Notes: $Id`n`n## Results: mini`n`n| # | Result | Seen | Do this |`n|---|---|---|---|`n"
         foreach ($r in $Rows) { $t += "| $r | $Result | $Seen | text |`n" }
         Write-File $dir 'notes.md' $t
@@ -842,9 +843,12 @@ if ($Only -contains 'walks') {
         @{ Name = 'a file changed after its checksum'; Pass = $false; More = @(); Do = { param($r) Add-Content -LiteralPath (Join-Path $r 'leg-a' 'notes.md') "`nmore" }; Expect = 'does not match its checksum' }
         @{ Name = 'a file that is not in SHA256SUMS'; Pass = $false; More = @(); Do = { param($r) Write-File (Join-Path $r 'leg-a') 'extra.txt' 'x' }; Expect = 'is not listed in SHA256SUMS' }
         @{ Name = 'a leg with no checksums'; Pass = $false; More = @(); Do = { param($r) Remove-Item -LiteralPath (Join-Path $r 'leg-a' 'SHA256SUMS') }; Expect = 'has no SHA256SUMS' }
-        @{ Name = 'a device serial number in the leg result'; Pass = $false; More = @(); Do = { param($r) $d = Join-Path $r 'leg-a'; Write-File $d 'leg-result.json' '{ "leg": "leg-a", "status": "complete", "build": { "version": "0.1.0", "build": "1" }, "environment": { "os": "Android 12", "serial": "R58M123ABC" } }'; Write-Sums $d }; Expect = 'keep serial numbers' }
-        @{ Name = 'a host name as a key in the leg result'; Pass = $false; More = @(); Do = { param($r) $d = Join-Path $r 'leg-a'; Write-File $d 'leg-result.json' '{ "leg": "leg-a", "status": "complete", "build": { "version": "0.1.0", "build": "1" }, "environment": { "os": "Windows 11", "hostname": "x" } }'; Write-Sums $d }; Expect = 'keep serial numbers' }
-        @{ Name = 'a leg result with no environment card'; Pass = $false; More = @(); Do = { param($r) $d = Join-Path $r 'leg-a'; Write-File $d 'leg-result.json' '{ "leg": "leg-a", "status": "complete", "build": { "version": "0.1.0", "build": "1" } }'; Write-Sums $d }; Expect = 'no environment card' }
+        @{ Name = 'a device serial number in the leg result'; Pass = $false; More = @(); Do = { param($r) $d = Join-Path $r 'leg-a'; Write-File $d 'leg-result.json' '{ "leg": "leg-a", "status": "complete", "build": { "version": "0.1.0", "build": "1" }, "buildKind": "closed", "environment": { "os": "Android 12", "serial": "R58M123ABC" } }'; Write-Sums $d }; Expect = 'keep serial numbers' }
+        @{ Name = 'a host name as a key in the leg result'; Pass = $false; More = @(); Do = { param($r) $d = Join-Path $r 'leg-a'; Write-File $d 'leg-result.json' '{ "leg": "leg-a", "status": "complete", "build": { "version": "0.1.0", "build": "1" }, "buildKind": "closed", "environment": { "os": "Windows 11", "hostname": "x" } }'; Write-Sums $d }; Expect = 'keep serial numbers' }
+        @{ Name = 'a leg result with no environment card'; Pass = $false; More = @(); Do = { param($r) $d = Join-Path $r 'leg-a'; Write-File $d 'leg-result.json' '{ "leg": "leg-a", "status": "complete", "build": { "version": "0.1.0", "build": "1" }, "buildKind": "closed" }'; Write-Sums $d }; Expect = 'no environment card' }
+        @{ Name = 'a leg result that does not say which kind of build it ran'; Pass = $false; More = @(); Do = { param($r) Write-WalkLeg $r 'leg-b' @('1.1') -Kind '' }; Expect = 'has no buildKind' }
+        @{ Name = 'a leg result with a kind of build that is not known'; Pass = $false; More = @(); Do = { param($r) Write-WalkLeg $r 'leg-b' @('1.1') -Kind 'debug' }; Expect = 'is not closed or devflow' }
+        @{ Name = 'a leg that ran a build with the DevFlow agent'; Pass = $true; More = @(); Do = { param($r) Write-WalkLeg $r 'leg-b' @('1.1') -Kind 'devflow' }; Expect = 'is collected' }
         @{ Name = 'a name on the private deny-list'; Pass = $false; More = @('-DenyList'); Deny = 'Examplehost'; Do = { param($r) Write-WalkLeg $r 'leg-a' @('1.1', '1.2') -Seen 'run on examplehost today' }; Expect = 'deny-list' }
         @{ Name = 'a row that the sheet does not have'; Pass = $false; More = @(); Do = { param($r) Write-WalkLeg $r 'leg-a' @('1.1', '1.2', '9.9') }; Expect = 'is not a row of the sheet' }
         @{ Name = 'a row that waits for a later build'; Pass = $false; More = @(); Do = { param($r) Write-WalkLeg $r 'leg-a' @('1.1', '1.2', '1.3') }; Expect = 'is not a row of the sheet' }
@@ -875,6 +879,15 @@ if ($Only -contains 'walks') {
         $r = Invoke-Collect $run
         Record 'walks' 'a Different row is a finding in the report, and not a failure' ($r.Exit -eq 0 -and $r.Report -match '\*\*Different\*\*' -and $r.Report -match '1\.2.*leg-a.*Different: it showed X') "exit $($r.Exit); report: $($r.Report)"
         Record 'walks' 'a row that a leg does not walk is n/a in the report' ($r.Report -match '\| 1\.2 \|[^|]*\|[^|]*\| n/a \|') "report: $($r.Report)"
+    }
+    if (-not $Filter -or 'kinds' -like "*$Filter*") {
+        $run = New-WalkRun 'kinds'
+        Write-WalkLeg $run 'leg-b' @('1.1') -Kind 'devflow'
+        $r = Invoke-Collect $run
+        Record 'walks' 'the report lists the kind of build of each leg, and says when they differ' ($r.Exit -eq 0 -and $r.Report -match '\| `leg-a` \| behaviour \| closed \|' -and $r.Report -match '\| `leg-b` \| behaviour \| devflow \|' -and $r.Report -match 'more than one kind of build') "exit $($r.Exit); report: $($r.Report)"
+        $run = New-WalkRun 'kinds-same'
+        $r = Invoke-Collect $run
+        Record 'walks' 'the report does not warn when every leg ran the same kind of build' ($r.Exit -eq 0 -and $r.Report -notmatch 'more than one kind of build') "report: $($r.Report)"
     }
     $sheet = Read-WalkSheet -Path (Join-Path $sheetDir 'mini.md')
     Record 'walks' 'a group stands for its legs, and a row for later help is walked by no leg' ((@(Get-WalkRowsForLeg $sheet 'leg-b').Id -join ',') -eq '1.1' -and (@(Get-WalkRowsForLeg $sheet 'leg-a').Id -join ',') -eq '1.1,1.2') 'the rows for a leg are not those the sheet names'

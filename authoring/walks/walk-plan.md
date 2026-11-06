@@ -101,7 +101,7 @@ A private folder in OneDrive, synced to every machine. It holds one folder per l
 <run>/
   run.json                    the run id, the build, the legs and who owns each
   <leg>/
-    leg-result.json           status, deviations, the environment card
+    leg-result.json           status, the build and its kind (closed or devflow), the environment card
     manifest.json             pictures legs: as the screenshot strategy describes, with no serial number
     screens/<name>.png        pictures legs: one file per key
     notes.md                  the sheet's rows, filled in, and anything else seen
@@ -176,7 +176,7 @@ They move to a **help leg**, run later on a development build that reads the pub
 
 The DevFlow agent is compiled into development builds only. It is not in the closed Alpha-1 package. So a **driven** leg runs on a build of the Alpha-1 source with the agent, not on the package. The two come from one source and should behave the same, but they are not the same file.
 
-- **The record says which.** The leg result records the kind of build, `closed` for the package and `devflow` for the build with the agent, and the version and build number the app shows. A run's report lists the kind for each leg.
+- **The record says which.** The leg result records the kind of build, `closed` for the package and `devflow` for the build with the agent, and the version and build number the app shows. The collector fails a leg that does not say, and the report lists the kind for each leg and says when a run mixed the two.
 - **A short walk by hand on the closed package** covers the rows that matter most: rows 1.3 and 1.14, and the rows of section 7, on the Galaxy A41. A row that is Different between the two kinds of build is a finding about the build, not about our pages.
 - **Pictures.** The screenshot strategy takes pictures from release candidates only (DEC-023). Whether a picture from a build with the agent counts is an open point (section 10).
 
@@ -219,5 +219,5 @@ A leg for such a target may use the same environments and the same shared folder
 1. **Done.** The #129 sheet has an *On* column that names the legs for each row, and two new sections (phone and tablet differences, and the camera route). `build/walks/New-WalkNotes.ps1` writes a leg's notes from it.
 2. **Done.** `build/walks/collect-walk.ps1`, with a test for each of its checks in `test-source-rules.ps1 -Only walks`.
 3. **In the application repository, not started.** The list of legs, the wrapper, the environment card and the DevFlow driver (section 4.7). The drop-folder layout above is what the wrapper must write.
-4. **Here, then.** The leg result gains a `buildKind`, and the collector reads it and lists it in the report, with a failing case in `test-source-rules.ps1 -Only walks`.
+4. **Done.** The leg result has a `buildKind`, `closed` or `devflow`. The collector fails a leg that does not say or that says something else, lists the kind of each leg in the report, and says when the legs ran more than one kind. Each check has a case in `test-source-rules.ps1 -Only walks`.
 5. **Then.** The first run: the smoke leg on every environment, then the walks. The Mac and the Galaxy A41 come first.

@@ -11,14 +11,16 @@
     <run>/run.json                  { "id", "build": { "label", "version", "build" }, "sheets": [...],
                                       "legs": [ { "id", "kind": "pictures" | "behaviour", "manual" } ] }
     <run>/<leg>/leg-result.json     { "leg", "status": "complete" | "partial" | "failed",
-                                      "build": { "version", "build" }, "environment": { "os", ... } }
+                                      "build": { "version", "build" }, "buildKind": "closed" | "devflow",
+                                      "environment": { "os", ... } }
     <run>/<leg>/notes.md            the Results table that New-WalkNotes.ps1 wrote, filled in
     <run>/<leg>/manifest.json       pictures legs only: the screenshot manifest
     <run>/<leg>/screens/<name>.png  pictures legs only
     <run>/<leg>/SHA256SUMS          every file of the leg but itself
 
   It fails (exit 1) when a leg is missing or not complete, a leg ran another build than the run, a checksum
-  does not match or a file is not listed, a result file holds a key that names a device serial number, a
+  does not match or a file is not listed, a leg does not say whether it ran the closed package (closed) or a
+  build of the same source with the DevFlow agent (devflow; DEC-211), a result file holds a key that names a device serial number, a
   host or an account, a row is missing or unknown or its Result is not one of Same, Different, Not found
   or Not done, a name on the private deny-list appears in any text file (or in the report), or the
   importer fails. A Different or Not found row is a finding, not a failure: the report lists them.
@@ -157,9 +159,10 @@ foreach ($l in $runLegs) {
     $id = [string](Get-Prop $l 'id'); $kind = [string](Get-Prop $l 'kind'); $manual = [string](Get-Prop $l 'manual')
     $dir = Join-Path $Run $id
     $status = 'missing'
+    $legBuild = ''
     if (-not (Test-Path -LiteralPath $dir -PathType Container)) {
         if ($AllowPartial) { Notice "$id has not been dropped; the report says so" } else { Fail "$id has not been dropped: no folder $id in the run" }
-        $legStatus.Add([pscustomobject]@{ Leg = $id; Kind = $kind; Status = $status }); continue
+        $legStatus.Add([pscustomobject]@{ Leg = $id; Kind = $kind; Build = $legBuild; Status = $status }); continue
     }
     $present.Add($id)
 
@@ -177,6 +180,10 @@ foreach ($l in $runLegs) {
             if ([string](Get-Prop $b 'version') -ne $buildVersion -or [string](Get-Prop $b 'build') -ne $buildNumber) {
                 Fail "$id ran build $(Get-Prop $b 'version') ($(Get-Prop $b 'build')), not the run's $buildVersion ($buildNumber)"
             }
+            $buildKind = [string](Get-Prop $res 'buildKind')
+            if (-not $buildKind) { Fail "$id/leg-result.json has no buildKind: say closed (the closed package) or devflow (a build with the DevFlow agent)" }
+            elseif ($buildKind -notin 'closed', 'devflow') { Fail "$id/leg-result.json: buildKind '$buildKind' is not closed or devflow" }
+            else { $legBuild = $buildKind }
             if (-not (Get-Prop (Get-Prop $res 'environment') 'os')) { Fail "$id/leg-result.json has no environment card (environment.os)" }
             foreach ($k in @(Get-JsonKeys $res) | Where-Object { $_ -match $forbiddenKey }) { Fail "$id/leg-result.json has a key '$k': keep serial numbers, hosts and accounts out of the run" }
         }
@@ -240,7 +247,7 @@ foreach ($l in $runLegs) {
         $missing = @($expected | Where-Object { -not $byId.ContainsKey($_.Id) })
         if ($missing.Count) { Fail "$id/notes.md has no line for row(s) $(($missing | ForEach-Object { $_.Id }) -join ', ')" }
     }
-    $legStatus.Add([pscustomobject]@{ Leg = $id; Kind = $kind; Status = $status })
+    $legStatus.Add([pscustomobject]@{ Leg = $id; Kind = $kind; Build = $legBuild; Status = $status })
 }
 # a folder that the run does not list
 foreach ($d in Get-ChildItem -LiteralPath $Run -Directory | Where-Object { $_.Name -ne 'report' }) { if (-not $legIds.Contains($d.Name)) { Notice "the folder $($d.Name) is not a leg of this run" } }
@@ -255,10 +262,14 @@ Line "Build $buildVersion ($buildNumber)$(if ((Get-Prop $build 'label')) { ", $(
 Line
 Line '## Legs'
 Line
-Line '| Leg | Kind | Status |'
-Line '|---|---|---|'
-foreach ($s in $legStatus) { Line "| ``$($s.Leg)`` | $($s.Kind) | $($s.Status) |" }
+Line '| Leg | Kind | Build | Status |'
+Line '|---|---|---|---|'
+foreach ($s in $legStatus) { Line "| ``$($s.Leg)`` | $($s.Kind) | $(if ($s.Build) { $s.Build } else { 'n/a' }) | $($s.Status) |" }
 Line
+if (@($legStatus | Where-Object { $_.Build } | ForEach-Object { $_.Build } | Sort-Object -Unique).Count -gt 1) {
+    Line 'The legs ran more than one kind of build: `closed` is the closed package and `devflow` is a build of the same source with the DevFlow agent. A row that differs between the two is about the build, not about our pages.'
+    Line
+}
 $legsInReport = @($runLegs | ForEach-Object { [string](Get-Prop $_ 'id') } | Where-Object { $_ -in $present })
 foreach ($s in $sheets) {
     Line "## Results: $($s.Name)"
