@@ -3,6 +3,8 @@
 # The checks that need a browser (axe-core and the theme probe) run in the "a11y" job, once per
 # platform, and the PDF/UA check runs in each "check" job. Both are skipped for an output that is
 # byte for byte the same as one that has already passed with the same tools and checks (DEC-206).
+# The "tree" job assembles the publishing tree from the builds of the "build" job and checks it, so a pull request
+# builds each manual once, and the second build that proves the output is the same runs on pushes only (DEC-207).
 # Third-party actions are pinned to full commit SHAs. Permissions are read-only.
 name: CI
 
@@ -67,7 +69,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        deliverable: [fixture-android-phone, fixture-android-tablet, fixture-windows, quick-start-windows, manual-windows, quick-start-android-phone, manual-android-phone, quick-start-android-tablet, manual-android-tablet, quick-start-iphone, manual-iphone, quick-start-ipad, manual-ipad]
+        deliverable: [fixture-android-phone, fixture-android-tablet, fixture-windows, quick-start-windows, manual-windows, quick-start-android-phone, manual-android-phone, quick-start-android-tablet, manual-android-tablet, quick-start-iphone, manual-iphone, quick-start-ipad, manual-ipad, quick-start-macos, manual-macos]
     steps:
       - name: Check out
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -85,9 +87,13 @@ jobs:
         run: build/scripts/bootstrap.sh --build-only
       - name: Build the website and the PDF
         run: build/scripts/build.sh --project ${{ matrix.deliverable }}
+      # The second build proves the toolchain, not a change to a page, so a pull request does not repeat it:
+      # every push to a long-lived branch, the weekly run and an on-demand run still do (DEC-207).
       - name: Build again
+        if: github.event_name != 'pull_request'
         run: build/scripts/build.sh --project ${{ matrix.deliverable }} --output out-again
       - name: The same input gives the same output
+        if: github.event_name != 'pull_request'
         # Pagefind's index is left out: its bytes differ between runs on identical pages (DEC-053)
         run: diff -r -x pagefind out/${{ matrix.deliverable }} out-again/${{ matrix.deliverable }} && echo "byte for byte the same, the search index aside"
       - name: Keep the output
@@ -267,6 +273,137 @@ jobs:
           path: .a11y-record
           key: browser-${{ matrix.group }}-${{ steps.hash.outputs.value }}-${{ hashFiles('build/tools.lock', 'build/scripts/a11y.mjs', 'build/scripts/a11y-exceptions.json', 'build/scripts/theme-probe.mjs', 'build/scripts/check-output.ps1', 'build/scripts/UftiBuild.psm1', '.github/workflows/ci.yml') }}
 
+  tree:
+    # The publishing tree, assembled from the outputs that the build job has just made (build-site.sh --reuse), so
+    # that a pull request does not build every manual a second time (DEC-207). It checks every link in the tree, the
+    # root and platform pages, and that every page and anchor a help map names is there. The pages of a release are
+    # checked by the gates of their own deliverable, on the same files, so axe-core and the Nu HTML Checker run over
+    # the pages that are not (the root, the platforms, the two site pages and the not-found page), and not at all when
+    # those pages have not changed.
+    name: the tree (links, root pages, help maps)
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - name: Check out
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Java
+        uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6.1.0
+        with:
+          distribution: ${{ env.JAVA_DISTRIBUTION }}
+          java-version: ${{ env.JAVA_VERSION }}
+      - name: Pinned tools (cached by the lock file)
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .tools
+          key: tools-build-${{ runner.os }}-${{ hashFiles('build/tools.lock') }}
+      - name: Bootstrap the toolkit, the plugin, DesignSystemPDF and Pagefind
+        run: build/scripts/bootstrap.sh --build-only
+      - name: The built manuals
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          pattern: site-manual-*
+          merge-multiple: true
+          path: out
+      - name: The built Quick Starts
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          pattern: site-quick-start-*
+          merge-multiple: true
+          path: out
+      - name: Earlier releases, read back from the publish branch
+        run: build/scripts/kept-from-branch.sh publish kept
+      - name: Assemble the tree from those builds, and check its links
+        run: build/scripts/build-site.sh --reuse --keep kept
+      - name: Check the tree again, with the PowerShell checker (the bash build is not checked by it otherwise)
+        run: pwsh -NoProfile -File build/scripts/check-site.ps1
+      - name: Write the help maps, and check that every page and anchor they name is in the tree
+        run: pwsh -NoProfile -File build/scripts/new-help-map.ps1 -Site out/site
+      - name: Assemble the proposed help maps, and check their checksums
+        run: |
+          pwsh -NoProfile -File build/scripts/publish-help-maps.ps1 -Output out/help-maps-assembled -Status proposed
+          (cd out/help-maps-assembled && sha256sum -c help-maps-SHA256SUMS)
+      - name: The release pages are the pages that were checked
+        run: |
+          # The tree copies each deliverable's output into its release folder. Say so, with a comparison, before
+          # relying on it: the gates of the deliverable then stand for the copy.
+          . build/scripts/publications.sh
+          for slug in windows android-phone android-tablet iphone ipad; do
+            rel=$(ini_get "$slug" release)
+            diff -rq "out/$(ini_get "$slug" manual)" "out/site/$slug/$rel" -x start -x version.json
+            diff -rq "out/$(ini_get "$slug" quick-start)" "out/site/$slug/$rel/start"
+          done
+          echo "the release folders of five platforms are byte for byte the deliverables that were checked"
+      - name: The pages of the tree that no deliverable checks
+        id: pages
+        run: |
+          # The release folders of the platforms that the a11y job covers hold that job's pages, byte for byte.
+          # macOS has no job of its own yet (DEC-207), so its pages stay in this check, with the root pages.
+          for slug in windows android-phone android-tablet iphone ipad; do find "out/site/$slug" -name version.json -printf '%h/\n'; done | sort > out/release-folders.txt
+          # not-found.html in the tree has absolute links (it is served at the address that was asked for), so opened
+          # from a file it has no stylesheet; the same page before that rewrite, in out/site-root, is the one to check
+          { find out/site -name '*.html' ! -name not-found.html | sort | grep -vFf out/release-folders.txt || true; echo out/site-root/not-found.html; } > out/tree-pages.txt
+          echo "$(wc -l < out/tree-pages.txt) page(s) outside the releases"
+          echo "value=$(xargs -d '\n' sha256sum < out/tree-pages.txt | sha256sum | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
+      - name: Has this set of pages already passed?
+        # not on the weekly run, which checks everything again against the pinned tools
+        id: record
+        if: github.event_name != 'schedule'
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .tree-record
+          key: tree-${{ steps.pages.outputs.value }}-${{ hashFiles('build/tools.lock', 'build/scripts/a11y.mjs', 'build/scripts/a11y-exceptions.json', '.github/workflows/ci.yml') }}
+          lookup-only: true
+      - name: Node
+        if: steps.record.outputs.cache-hit != 'true'
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '22'
+      - name: Playwright's browser (cached by the lock file)
+        if: steps.record.outputs.cache-hit != 'true'
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('build/tools.lock') }}
+      - name: Bootstrap the page checkers
+        if: steps.record.outputs.cache-hit != 'true'
+        run: build/scripts/bootstrap.sh --only vnu,plugin-tools
+      - name: Install the accessibility runner
+        if: steps.record.outputs.cache-hit != 'true'
+        working-directory: .tools/plugin-tools/tools/a11y
+        timeout-minutes: 15
+        run: |
+          # apt gives up on a stalled connection to the package server and tries again, instead of waiting
+          # for the job's time limit (issue 108). Playwright's --with-deps installs its packages with apt.
+          printf 'Acquire::Retries "5";\nAcquire::http::Timeout "30";\nAcquire::https::Timeout "30";\n' | sudo tee /etc/apt/apt.conf.d/99ufti-retries > /dev/null
+          npm ci --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Those pages (axe-core, WCAG 2.2 AA, no exceptions, and the Nu HTML Checker)
+        if: steps.record.outputs.cache-hit != 'true'
+        run: |
+          cp build/scripts/a11y.mjs build/scripts/a11y-exceptions.json .tools/plugin-tools/tools/a11y/
+          mapfile -t pages < <(sed "s#^out/#$GITHUB_WORKSPACE/out/#" out/tree-pages.txt)
+          (cd .tools/plugin-tools/tools/a11y && node a11y.mjs "${pages[@]}")
+          java -jar .tools/vnu/vnu.jar --errors-only --skip-non-html "${pages[@]}"
+      - name: Record the pass for these pages
+        if: github.event_name != 'schedule' && steps.record.outputs.cache-hit != 'true'
+        run: mkdir -p .tree-record && echo "${{ steps.pages.outputs.value }}" > .tree-record/passed
+      - name: Keep the record
+        if: github.event_name != 'schedule' && steps.record.outputs.cache-hit != 'true'
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .tree-record
+          key: tree-${{ steps.pages.outputs.value }}-${{ hashFiles('build/tools.lock', 'build/scripts/a11y.mjs', 'build/scripts/a11y-exceptions.json', '.github/workflows/ci.yml') }}
+      - name: Keep the logs and the link report
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: tree-logs
+          path: |
+            out/logs
+            out/reports/site
+          if-no-files-found: ignore
+
   smoke:
     name: smoke (stock html5, DEC-042)
     runs-on: ubuntu-24.04
@@ -328,7 +465,7 @@ jobs:
     # One check for branch protection to require.
     name: ci
     if: always()
-    needs: [lint, build, check, a11y, smoke, windows]
+    needs: [lint, build, check, a11y, tree, smoke, windows]
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:

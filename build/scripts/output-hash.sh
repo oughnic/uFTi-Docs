@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # One SHA-256 for the built output of one or more deliverables: the hash of every file's path and
-# its own hash, in a fixed order, Pagefind's index left out (its bytes differ between runs on
+# its own hash, in a fixed order, every Pagefind index left out (its bytes differ between runs on
 # identical pages, DEC-053). Identical output gives the same value, so CI can tell that a manual's
 # output is unchanged and an earlier pass of the accessibility checks still stands (DEC-206).
 #
@@ -24,5 +24,5 @@ for d in "$@"; do
 done
 # each file as "<hash>  <path>", paths relative to the output folder, sorted, then hashed again
 for d in "$@"; do
-  find "$d" -path "$d/pagefind" -prune -o -type f -print0
+  find "$d" -type d -name pagefind -prune -o -type f -print0
 done | sort -z | xargs -0 -n 50 $hashcmd | $hashcmd | cut -d" " -f1
