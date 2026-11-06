@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<!-- A worked case of an old-style date, from the diary of Abraham De la Pryme (DEC-202). The evidence for
+     every claim is in content/sample-data/pryme/README.md, with the page of the 1870 edition. Written once
+     for all devices. No picture: the pictures follow the Brontë dataset (DEC-025). -->
+<concept id="an-old-style-date" xml:lang="en-GB">
+  <title>A worked case: a birth in January</title>
+  <shortdesc>How a year that began in March can change a birth year, shown with a diarist born in 1671.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-05"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="general"/>
+      <category>Concept</category>
+      <keywords>
+        <keyword>old style</keyword>
+        <keyword>dual year</keyword>
+        <keyword>birth year</keyword>
+        <keyword>worked example</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p>This case shows why the old year matters. Read <xref keyref="calendars"/> first.</p>
+    <section>
+      <title>The evidence</title>
+      <p>Abraham De la Pryme was a diarist in Yorkshire. In his diary, he says he was born on 15 January 1671. His own list of the family, at the front of the diary, says the same.</p>
+      <p>The same list says that his parents married on 3 April 1670. It also says that his brother Peter was born on 29 April 1672. The printed edition of 1870 is the source for all of this.</p>
+    </section>
+    <section>
+      <title>The question</title>
+      <p>In England at that time, the year began on 25 March. If Abraham used that rule, then January 1671 was January 1672 by our count. Then Peter would have been born about three months later. That cannot be right.</p>
+      <p>So Abraham probably began his year on 1 January. His parents' wedding fits too: a birth in January 1671 comes about nine months after April 1670. His birth year is then 1671 in either count.</p>
+    </section>
+    <section>
+      <title>Why it matters</title>
+      <p>In England, a writer who gave a date from January to March might use either year. Someone adding one to a January year, because of the old rule, would get 1672. The family's own dates suggest that this would be wrong here.</p>
+      <p>The same early months appear in two ways in the edition. The preface says that Abraham took his degree in January 1693. A footnote prints the year of another man's degree, at the same college, as 1692-3. The two forms name one year.</p>
+    </section>
+    <section>
+      <title>What to record</title>
+      <ul>
+        <li>Type the day as the source gives it: <userinput>15 January 1671</userinput>.</li>
+        <li>Add a dual year only if a source prints one, such as <userinput>12 February 1731/32</userinput>.</li>
+        <li>Put each source and its page against the date. Then the next reader can weigh the evidence.</li>
+        <li>If the day was in the Julian calendar, you can name it. In the Gregorian calendar, 15 January 1671 was 25 January.</li>
+      </ul>
+    </section>
+  </conbody>
+</concept>

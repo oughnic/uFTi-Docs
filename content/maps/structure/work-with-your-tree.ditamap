@@ -19,7 +19,13 @@
   <topicref href="../../platforms/desktop/topics/see-the-events-of-a-person.dita" keys="see-the-events-of-a-person" platform="Desktop"/>
   <topicref href="../../platforms/phone/topics/see-the-events-of-a-person.dita" keys="see-the-events-of-a-person" platform="Phone"/>
   <topicref href="../../platforms/tablet/topics/see-the-events-of-a-person.dita" keys="see-the-events-of-a-person" platform="Tablet"/>
-  <topicref href="../../topics/tree/dates.dita" keys="dates"/>
+  <topicref href="../../topics/tree/dates.dita" keys="dates">
+    <topicref href="../../topics/tree/kinds-of-date.dita" keys="kinds-of-date"/>
+    <topicref href="../../topics/tree/typing-a-date.dita" keys="typing-a-date"/>
+    <topicref href="../../topics/tree/calendars.dita" keys="calendars"/>
+    <topicref href="../../topics/tree/an-old-style-date.dita" keys="an-old-style-date"/>
+    <topicref href="../../topics/tree/dates-in-lists-and-order.dita" keys="dates-in-lists-and-order"/>
+  </topicref>
   <topicref href="../../topics/tree/places.dita" keys="places"/>
   <topicref href="../../topics/tree/names.dita" keys="names"/>
   <topicref href="../../platforms/desktop/topics/look-at-the-sources-of-a-fact.dita" keys="look-at-the-sources-of-a-fact" platform="Desktop"/>

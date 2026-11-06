@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<!-- Calendars, and the year that began in March. What the app does is from the app team's answers of
+     5 November 2026 (issue 125): four calendars, no conversion, no knowledge of the change of 1752, and a
+     dual year only by typing. The history is general knowledge, stated carefully. The worked case is in
+     an-old-style-date. Written once for all devices. -->
+<concept id="calendars" xml:lang="en-GB">
+  <title>Calendars and old dates</title>
+  <shortdesc>The four calendars uFTi keeps, and what you need to know when a record is from before 1752.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-05"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Concept</category>
+      <keywords>
+        <keyword>Julian calendar</keyword>
+        <keyword>Gregorian calendar</keyword>
+        <keyword>old style</keyword>
+        <keyword>dual year</keyword>
+        <keyword>Hebrew calendar</keyword>
+        <keyword>French Republican calendar</keyword>
+        <keyword>1752</keyword>
+        <keyword>Britain</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p>For a date in the last two hundred years or so, you can ignore this page. Every date is in the calendar that you use today, and uFTi assumes it. This page is for a researcher who meets an older date.</p>
+    <section>
+      <title>The four calendars</title>
+      <p>uFTi keeps a date in <term keyref="term-gregorian-calendar">Gregorian</term>, <term keyref="term-julian-calendar">Julian</term>, Hebrew or French Republican. Gregorian is the one you use today, and it is the default. You choose another under <uicontrol keyref="ui-calendar"/> in the date editor. Or you type its name before the date, such as <userinput>Julian 14 February 1750</userinput>.</p>
+      <p>Then uFTi names the calendar in the date, as in <q>14 February 1750 (Julian)</q>. Some forms fix the calendar. A census form always uses Gregorian, and does not offer the list.</p>
+      <p>uFTi does not change a date from one calendar to another. It keeps the date as you entered it. Dates are ordered by the year in their own calendar.</p>
+    </section>
+    <section>
+      <title>The change of 1752</title>
+      <p>Britain and its colonies used the Julian calendar until September 1752. In that month, Wednesday 2 September was followed by Thursday 14 September. Many Catholic countries had changed in 1582, and other countries changed at other times. So the place matters as well as the year.</p>
+      <p>uFTi does not know about the change. It takes <userinput>3 September 1752</userinput> as an ordinary date, and does not warn you, though that day never happened in Britain. Check dates of this time yourself.</p>
+      <p>The two calendars differed by ten days in the 1600s and by eleven days in the 1700s. A record from the time gives the day as it was then. Naming the calendar tells the next reader which kind of date it is.</p>
+    </section>
+    <section>
+      <title>The year that began in March, in Britain</title>
+      <p>This part is about England, Wales and Ireland, and the British colonies. Before 1752, the year there began on 25 March, not on 1 January. A day in February was still in the old year. Writers marked this with a <term keyref="term-dual-year">dual year</term>, such as 1731/32. It means 1731 by the old rule and 1732 by ours.</p>
+      <p>Scotland began its year on 1 January from 1600. Other countries changed the start of the year at other times. A dual year belongs to a British record from 1 January to 24 March, up to 1751. Check the place of your record.</p>
+      <p>Type a dual year, such as <userinput>12 February 1731/32</userinput>. uFTi shows the date as you wrote it. The date pickers cannot hold a dual year, so it is always typed. uFTi orders it by the first year, 1731. <xref keyref="an-old-style-date"/> shows why this matters.</p>
+    </section>
+    <section>
+      <title>Hebrew and French Republican dates</title>
+      <p>Hebrew dates appear in Jewish records. France used the French Republican calendar from 1793 until the end of 1805. For these two calendars, uFTi checks only that the day is possible. It does not work out the other calendar for you.</p>
+    </section>
+  </conbody>
+</concept>

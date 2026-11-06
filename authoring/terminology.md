@@ -181,6 +181,8 @@ Read from the app's date editor on 3 November 2026, from the words the app print
 | `ui-date-period` | From a date to a date | The kind of date for something that lasted a while. | none |
 | `ui-edit-as-text` | Edit as text | The choice that lets you type the whole date in one box. | none |
 | `ui-calendar` | Calendar | The list of calendars. | none |
+| `ui-date-of-birth` | Date of birth | The box for when a person was born, in the Basic details form. | none |
+| `ui-date-of-death` | Date of death | The box for when a person died, in the Basic details form. | none |
 | `ui-place-of-birth` | Place of birth | The box for where a person was born, in the Basic details form. | none |
 | `ui-place-of-death` | Place of death | The box for where a person died, in the Basic details form. | none |
 | `ui-place-of-birth-new-child` | Place of birth (new child) | The box for where a new child was born, when you add a family. | none |
@@ -206,6 +208,9 @@ The words the documentation uses for the ideas behind the app. A term in bold ne
 | **GEDZIP** | One file that holds a whole workspace: the family tree with its research notes, and the pictures and other attached files. It is the preferred format for saving and sending. | `gedzip` | GDZ (use the label as shown on screen) |
 | **saved copy** | A family tree file you make with *Save as…*. It stays as it was when you made it. | `saved-copy` | export, archive (unless the label says so). Not *backup*: that is the file the app makes for itself |
 | **backup** | An older copy of a family tree file that the app makes for itself, the first time it saves after you start it. The word is in the file's name, so the page uses it (DEC-103). | `backup` | saved copy (that is the one you make), export |
+| **dual year** | A year written with two numbers, such as 1731/32. In Britain, it marks a date from 1 January to 24 March, up to 1751, when the year began on 25 March. It shows the old year and the new one. | `dual-year` | double date, split year (unless a source prints the words) |
+| **Gregorian calendar** | The calendar in use today. Britain changed to it in September 1752. uFTi assumes it unless you name another. | `gregorian-calendar` | new style (a source may use it; we explain it in the page) |
+| **Julian calendar** | The calendar that came before the Gregorian one. Britain used it until September 1752. | `julian-calendar` | old style (a source may use it; we explain it in the page) |
 | **citation** | The exact place in a source where a fact is found, such as a page. Use it only when the app or a good practice topic needs it. | needed (WP9) | reference |
 | **repository** | Where a source is kept: an archive, a library or a website. | needed (WP9) | archive (as a label) |
 | **submitter** | The person who made the tree. | needed (WP9) | creator, author |

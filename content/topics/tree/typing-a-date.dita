@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<!-- What the Edit as text box reads, and what it keeps as typed. From the app team's answers of
+     5 November 2026 (issue 125). The file format's own short words for a date are not shown here
+     (DEC-030). Written once for all devices. -->
+<reference id="typing-a-date" xml:lang="en-GB">
+  <title>Typing a date</title>
+  <shortdesc>What uFTi reads when you type a date in one box, and what it keeps exactly as you typed it.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-05"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Reference</category>
+      <keywords>
+        <keyword>type a date</keyword>
+        <keyword>date format</keyword>
+        <keyword>edit as text</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <refbody>
+    <section>
+      <title>Plain words</title>
+      <p>Choose <uicontrol keyref="ui-edit-as-text"/> to type a whole date. Write it in words, with the day first, then the month, then the year. The box shows an example. Capital letters do not matter. You can write a month in full or with its first three letters.</p>
+      <table>
+        <title>What uFTi reads</title>
+        <tgroup cols="2">
+          <colspec colname="c1" colwidth="3*"/>
+          <colspec colname="c2" colwidth="4*"/>
+          <thead>
+            <row>
+              <entry>You type</entry>
+              <entry>It means</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><userinput>15 March 1900</userinput> or <userinput>15 Mar 1900</userinput></entry>
+              <entry>A whole date.</entry>
+            </row>
+            <row>
+              <entry><userinput>March 1900</userinput></entry>
+              <entry>A month and a year.</entry>
+            </row>
+            <row>
+              <entry><userinput>1900</userinput></entry>
+              <entry>A year.</entry>
+            </row>
+            <row>
+              <entry><userinput>about 1900</userinput>, <userinput>estimated 1900</userinput> or <userinput>calculated 1900</userinput></entry>
+              <entry>A date that is close, or that you worked out.</entry>
+            </row>
+            <row>
+              <entry><userinput>before 1900</userinput> or <userinput>after 1900</userinput></entry>
+              <entry>A limit.</entry>
+            </row>
+            <row>
+              <entry><userinput>between 1850 and 1860</userinput></entry>
+              <entry>The earliest and the latest date it could be.</entry>
+            </row>
+            <row>
+              <entry><userinput>from 1850 to 1860</userinput></entry>
+              <entry>Something that lasted for a while.</entry>
+            </row>
+            <row>
+              <entry><userinput>44 BC</userinput></entry>
+              <entry>A year before the common era. <userinput>BCE</userinput> works too.</entry>
+            </row>
+            <row>
+              <entry><userinput>Julian 14 February 1750</userinput></entry>
+              <entry>A date in the Julian calendar. Name the calendar first.</entry>
+            </row>
+            <row>
+              <entry><userinput>12 February 1731/32</userinput></entry>
+              <entry>A date with a dual year (<xref keyref="calendars"/>).</entry>
+            </row>
+            <row>
+              <entry><userinput>1700 (Easter)</userinput></entry>
+              <entry>The year 1700, with the word Easter kept beside it.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+    <section>
+      <title>What uFTi keeps as you typed it</title>
+      <p>These are not read as dates. uFTi keeps them exactly as you typed them. It does not use them to order your events.</p>
+      <ul>
+        <li><userinput>15/03/1900</userinput> and <userinput>03/04/1900</userinput>. Countries put the day and the month in a different order, so uFTi does not guess.</li>
+        <li><userinput>1900-03-15</userinput> and <userinput>1850-1860</userinput>.</li>
+        <li><userinput>March 15, 1900</userinput>, with the month first.</li>
+        <li><userinput>c. 1850</userinput> and <userinput>circa 1850</userinput>. Write <userinput>about 1850</userinput> instead.</li>
+        <li><userinput>Easter 1700</userinput>. Write <userinput>1700 (Easter)</userinput> instead.</li>
+      </ul>
+    </section>
+    <section>
+      <title>Check the line that says Reads as</title>
+      <p>When uFTi cannot read a date, it does not stop you, and it does not warn you. The line under the box only repeats what you typed, such as <q>Reads as Easter 1700</q>. So read that line each time. For a date that uFTi has understood, the line shows it in words, such as <q>Reads as 15 March 1900</q>.</p>
+      <p>A date that cannot be read stays in the box as text. <uicontrol keyref="ui-edit-as-text"/> stays on for it, because the day, month and year pickers cannot show it.</p>
+    </section>
+  </refbody>
+</reference>

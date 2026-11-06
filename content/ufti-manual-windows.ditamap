@@ -42,10 +42,13 @@
       <!-- toc="no": the print document and PDF make their own Glossary part, so the terms are not also printed as pages of their own (DEC-170). -->
       <glossarylist toc="no">
         <topicref href="glossary/backup.dita" keys="term-backup"/>
+        <topicref href="glossary/dual-year.dita" keys="term-dual-year"/>
         <topicref href="glossary/fact.dita" keys="term-fact"/>
         <topicref href="glossary/family-tree-file.dita" keys="term-family-tree-file"/>
         <topicref href="glossary/gedcom.dita" keys="term-gedcom"/>
         <topicref href="glossary/gedzip.dita" keys="term-gedzip"/>
+        <topicref href="glossary/gregorian-calendar.dita" keys="term-gregorian-calendar"/>
+        <topicref href="glossary/julian-calendar.dita" keys="term-julian-calendar"/>
         <topicref href="glossary/pedigree.dita" keys="term-pedigree"/>
         <topicref href="glossary/saved-copy.dita" keys="term-saved-copy"/>
         <topicref href="glossary/source.dita" keys="term-source"/>
