@@ -58,4 +58,35 @@
   <topicref href="../../platforms/android-phone/topics/a-page-says-no-person-selected.dita" keys="a-page-says-no-person-selected" platform="AndroidPhone"/>
   <topicref href="../../platforms/android-tablet/topics/a-page-says-no-person-selected.dita" keys="a-page-says-no-person-selected" platform="AndroidTablet"/>
   <topicref href="../../platforms/ios/topics/a-page-says-no-person-selected.dita" keys="a-page-says-no-person-selected" platform="iOS"/>
+  <!-- Links from the tasks that fill in a date, a place or a name to the page that explains it (DEC-205).
+       A table links both ways, so each concept page also lists the tasks. The tour and the sources page
+       carry no date, place or name to fill in. -->
+  <reltable>
+    <relheader>
+      <relcolspec type="concept"/>
+      <relcolspec type="task"/>
+    </relheader>
+    <relrow>
+      <relcell>
+        <topicref keyref="dates"/>
+      </relcell>
+      <relcell>
+        <topicref keyref="add-another-person"/>
+        <topicref keyref="change-a-person"/>
+        <topicref keyref="add-a-family"/>
+        <topicref keyref="see-the-events-of-a-person"/>
+      </relcell>
+    </relrow>
+    <relrow>
+      <relcell>
+        <topicref keyref="places"/>
+        <topicref keyref="names"/>
+      </relcell>
+      <relcell>
+        <topicref keyref="add-another-person"/>
+        <topicref keyref="change-a-person"/>
+        <topicref keyref="add-a-family"/>
+      </relcell>
+    </relrow>
+  </reltable>
 </map>
