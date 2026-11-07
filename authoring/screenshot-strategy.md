@@ -10,7 +10,7 @@ Part of the [authoring plan](authoring-plan.md). Status: Draft 0.4, 16 October 2
 |---|---|---|
 | Where do the capture scripts live? | In the **application repository**. | DEC-022 |
 | What are screenshots captured on? | **Emulators and simulators** with pinned profiles on mobile, and a clean Windows profile or virtual machine at a fixed window size on Windows. **Exception: the Android phone is captured on one physical phone** ([section 4.2](#42-the-environment)). | DEC-023, DEC-088 |
-| When are they captured? | On **release candidates only**. | DEC-023 |
+| When are they captured? | On **release candidates only**. A Release build of the same source with the DevFlow agent counts as the release candidate ([walk plan, section 6.2](walks/walk-plan.md#62-driven-legs-and-the-release-package)). | DEC-023, DEC-213 |
 | Which theme? | The app's **Oxford and slate** theme, light variant, in every screenshot. | DEC-024 |
 | Which data? | The **Brontë dataset**, built by replaying the manual's journey stage by stage ([dataset strategy](dataset-strategy.md)). | DEC-025 |
 | Video? | **Never embedded.** Linked only, if made at all ([section 11](#11-video-and-animation)). | DEC-034 |
@@ -127,7 +127,7 @@ An importer script in this repository (WP5) takes a capture folder and:
 4. The change report is reviewed and the affected topics are updated.
 5. The pull request merges into the release branch, with all gates green ([build and quality](build-and-quality.md#4-quality-gates)).
 
-Captures happen on release candidates only. Between releases the images are not touched, and a change to the app's interface that affects a screenshot is caught by the next release candidate.
+Captures happen on release candidates only (a Release build of the release candidate's source with the DevFlow agent counts, DEC-213). Between releases the images are not touched, and a change to the app's interface that affects a screenshot is caught by the next release candidate.
 
 ## 8. Accessibility and sizing
 
