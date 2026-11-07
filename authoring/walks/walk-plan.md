@@ -1,13 +1,13 @@
 # The walk plan
 
-How the machines and devices work together to walk the documented apps, record what a reader will see and capture fresh pictures, on the closed Alpha-1 build. Part of the [authoring plan](../authoring-plan.md). Written 6 November 2026 for [issue 129](https://github.com/oughnic/uFTi-Docs/issues/129). Decisions: DEC-209 and DEC-211. The first sheet it uses is [the dates, places and names walk](dates-places-names.md).
+How the machines and devices work together to walk the documented apps, record what a reader will see and capture fresh pictures, on the Alpha-2 build, which the walks wait for (section 6). Part of the [authoring plan](../authoring-plan.md). Written 6 November 2026 for [issue 129](https://github.com/oughnic/uFTi-Docs/issues/129) and changed on 7 November 2026 for [issue 143](https://github.com/oughnic/uFTi-Docs/issues/143). Decisions: DEC-209, DEC-211 and DEC-212. The first sheet it uses is [the dates, places and names walk](dates-places-names.md).
 
-This plan is public. It names no machine, no account, no serial number, no build number beyond the released Alpha-1, and nothing from the application repository. Devices are named by model only.
+This plan is public. It names no machine, no account, no serial number, no build number of a build that is not released, and nothing from the application repository. Devices are named by model only.
 
 ## 1. What the walks are for
 
 1. **Settle what the pages say.** Some statements in the pages were written from the app team's reading of the code. A walk shows them on a screen.
-2. **Fresh pictures for Alpha-1.** Capture every documented device again, on the one closed build, so that every picture and every page describe the same app.
+2. **Fresh pictures for Alpha-2.** Capture every documented device again, on the one build, so that every picture and every page describe the same app.
 
 The application repository also walks targets that are not documented. They are tracked there (section 7), and this plan says nothing more about them.
 
@@ -18,7 +18,7 @@ The application repository also walks targets that are not documented. They are 
 - **The importer refuses a picture from a different build.** Every leg runs the same build.
 - **No serial number enters this repository.** The importer refuses a manifest that has one.
 - **Raw captures never go into Git.** Only pictures that the importer accepts and a person has reviewed are committed.
-- **A leg says which kind of build it ran.** A driven leg runs on a build with the DevFlow agent, and a hand leg runs on the closed package (section 6.2).
+- **A leg says which kind of build it ran.** A driven leg runs on a build with the DevFlow agent, and a hand leg runs on the release package (section 6.2).
 
 ## 3. What is walked, and where
 
@@ -80,7 +80,7 @@ The sections that follow describe the boxes, in order.
 
 ### 4.1 A run, a build and its legs
 
-A **run** has an id, such as `alpha-1-walk-1`, and one build: the closed Alpha-1, shown in the app as 0.1.0 (1). A run is a set of legs.
+A **run** has an id, such as `alpha-2-walk-1`, and one build: the Alpha-2 build, whose version and build number `run.json` declares once the build exists. A run is a set of legs.
 
 The list of legs belongs in the application repository, because it names the capture scripts and the device profiles, and it covers targets that are not documented. This repository keeps what it needs from each leg: the catalogue of keys for each manual, the importer, and the walk reports.
 
@@ -151,33 +151,37 @@ flowchart LR
   p6 -.-> p9["Later: the help leg<br/>on a newer build"]
 ```
 
-1. **Prepare.** Install the closed Alpha-1 build on every environment. Write the environment cards.
+1. **Prepare.** Install the Alpha-2 build on every environment. Write the environment cards.
 2. **Smoke leg.** Start the app, open a tree, check the version and the theme, and drop the result. Every environment, at the same time.
 3. **Walks.** Every leg, at the same time. Do the cloud Windows PC, the Galaxy A41 and the Mac first, because they settle the most open statements.
 4. **Capture.** One manual at a time on a machine. Different manuals can run on different machines.
 5. **Collect, review, close.** When the pictures and the sheet are in, DEC-193 and DEC-203 can move to Accepted.
 
-## 6. The build: the closed Alpha-1
+## 6. The build: Alpha-2
 
-Every leg runs the closed Alpha-1 build. `build/publications.ini` does not change, and no new release is declared. The pictures replace the earlier ones for Alpha-1.
+The walks wait for Alpha-2 (DEC-212). Every leg runs the one Alpha-2 build, and `run.json` declares its version and build number when it exists. Until then no leg runs.
 
-Some pages were written from the app team's answers about a build that is newer than Alpha-1. A row that differs on Alpha-1 is marked Different, with the build, and then a person decides whether the page or the release should move.
+**Why not Alpha-1.** The app team has changed what a reader sees, and the labels a driver needs, since Alpha-1, and those changes are not in the Alpha-1 source. A walk of Alpha-1 would mark rows Different because the app moved on, not because a page is wrong. A build of the Alpha-1 source with the DevFlow agent would not have the labels either. Alpha-1 stays as it is: its manuals, pictures and walk reports describe the released build, and nothing here changes them.
+
+**What waiting means for the pages.** Some pages were written from the app team's answers about a build newer than Alpha-1 (DEC-193, DEC-203). The Alpha-2 walk settles them. Pages for what Alpha-2 adds are written after its walk, from what the walk shows (DEC-012). This repository does not list those changes before then.
+
+**The release.** `build/publications.ini` changes only when Alpha-2 is released: the old release is archived first, then `release` and `app-version` change, and the pictures and text are checked against the new release (build and quality, section 7). A run does not change it.
 
 ### 6.1 Help on help
 
-The help links need a newer build than Alpha-1. The app cannot open `places.place` or `people.name` from a field until it has them, and the proposed help maps are meant for development builds of the app. So these rows cannot be walked on Alpha-1:
+The help links need a build that has them. The app cannot open `places.place` or `people.name` from a field until it does, and the proposed help maps are meant for development builds of the app. Whether Alpha-2 has the help links is for the app team to say (issue 16). If it does, the rows below are walked in the main run and the `help` token in a sheet names the legs that can do them. If it does not, they stay in a later help leg. Until then these rows are walked by no leg:
 
 - Row 1.15 of the dates, places and names sheet (a help control on the date editor), row 3.4 (on a place field) and row 4.6 (on a name field).
 - Whether the Help button on each screen opens the page that the help map names.
 
-They move to a **help leg**, run later on a development build that reads the published help maps. It is a coordination item with the app team, and it belongs to the work in [issue 16](https://github.com/oughnic/uFTi-Docs/issues/16) and to the later Alpha-2 plan. The help leg needs three things before it can run: a build with the help links, the proposed help maps built into that build, and the pages live on the host.
+A **help leg** is a coordination item with the app team, and it belongs to the work in [issue 16](https://github.com/oughnic/uFTi-Docs/issues/16). It needs three things before it can run: a build with the help links, the proposed help maps built into that build, and the pages live on the host.
 
-### 6.2 Driven legs and the closed package
+### 6.2 Driven legs and the release package
 
-The DevFlow agent is compiled into development builds only. It is not in the closed Alpha-1 package. So a **driven** leg runs on a build of the Alpha-1 source with the agent, not on the package. The two come from one source and should behave the same, but they are not the same file.
+The DevFlow agent is compiled into development builds only. It is not in the release package. So a **driven** leg runs on a build of the Alpha-2 source with the agent, not on the package. The two come from one source and should behave the same, but they are not the same file. The app team is trying a Release configuration build with the agent, and says what it finds.
 
-- **The record says which.** The leg result records the kind of build, `closed` for the package and `devflow` for the build with the agent, and the version and build number the app shows. The collector fails a leg that does not say, and the report lists the kind for each leg and says when a run mixed the two.
-- **A short walk by hand on the closed package** covers the rows that matter most: rows 1.3 and 1.14, and the rows of section 7, on the Galaxy A41. A row that is Different between the two kinds of build is a finding about the build, not about our pages.
+- **The record says which.** The leg result records the kind of build, `closed` for the release package and `devflow` for the build with the agent, and the version and build number the app shows. The collector fails a leg that does not say, and the report lists the kind for each leg and says when a run mixed the two.
+- **A short walk by hand on the release package** covers the rows that matter most: rows 1.3 and 1.14, and the rows of section 7, on the Galaxy A41. A row that is Different between the two kinds of build is a finding about the build, not about our pages.
 - **Pictures.** The screenshot strategy takes pictures from release candidates only (DEC-023). Whether a picture from a build with the agent counts is an open point (section 10).
 
 ## 7. Targets that are not documented
@@ -193,7 +197,7 @@ A leg for such a target may use the same environments and the same shared folder
 | [Dates, places and names sheet](dates-places-names.md) | The date editor, the place box, the name prompt, and the second line under a source | `windows-x64`, `windows-arm64`, `android-phone`, `iphone`, `ipad`, `mac` |
 | The unconfirmed mobile differences ([issue 115](https://github.com/oughnic/uFTi-Docs/issues/115)) | Whether the form opens part of the way down, the file card delay, the full-screen sheet and its count, the sources count on tablets, and two file cards to a row | `android-phone`, `android-fold`, `iphone`, `ipad` |
 | The camera route and the photos buttons ([issue 68](https://github.com/oughnic/uFTi-Docs/issues/68)) | The camera route on a device | `android-phone`, `android-fold` |
-| The walk reports for Alpha-1 | Any picture or page that is out of date | Every leg |
+| The walk reports for Alpha-2 | Any picture or page that is out of date | Every leg |
 
 ## 9. Care on every leg
 
@@ -212,12 +216,13 @@ A leg for such a target may use the same environments and the same shared folder
 | **The help leg:** the build, the date, and the published maps. | App team, with the maintainer |
 | **Where the list of legs and the wrapper live.** The application repository is proposed (section 4.1). | Maintainer |
 | **Sessions on the other machines.** The Mac can run one (section 4.6). Whether the cloud Windows PC and the Android host should, or be driven by hand. | Maintainer |
-| **Pictures from a build with the agent.** Whether DEC-023's "release candidates only" allows a Release configuration build of the same source with the DevFlow agent, or asks for the closed package. The application repository says whether it can make such a build. | Maintainer, with the app team |
+| **Pictures from a build with the agent.** Whether DEC-023's "release candidates only" allows a Release configuration build of the same source with the DevFlow agent, or asks for the release package. The app team is trying a Release configuration build with the agent and says what it finds. | Maintainer, with the app team |
+| **Which build is Alpha-2, and when.** The version and build number, the date it is cut, and whether it has the help links (section 6.1) and the labels a driver needs. The walks cannot start before it exists. | App team |
 
 ## 11. What gets built, in order
 
 1. **Done.** The #129 sheet has an *On* column that names the legs for each row, and two new sections (phone and tablet differences, and the camera route). `build/walks/New-WalkNotes.ps1` writes a leg's notes from it.
 2. **Done.** `build/walks/collect-walk.ps1`, with a test for each of its checks in `test-source-rules.ps1 -Only walks`.
-3. **In the application repository, not started.** The list of legs, the wrapper, the environment card and the DevFlow driver (section 4.7). The drop-folder layout above is what the wrapper must write.
+3. **In the application repository, not started.** The list of legs, the wrapper, the environment card and the DevFlow driver (section 4.7), against the Alpha-2 build. The drop-folder layout above is what the wrapper must write. The labels a driver needs for the date editor and the lists of matches are the app team's work, and they come with Alpha-2.
 4. **Done.** The leg result has a `buildKind`, `closed` or `devflow`. The collector fails a leg that does not say or that says something else, lists the kind of each leg in the report, and says when the legs ran more than one kind. Each check has a case in `test-source-rules.ps1 -Only walks`.
-5. **Then.** The first run: the smoke leg on every environment, then the walks. The Mac and the Galaxy A41 come first.
+5. **Waiting.** Alpha-2. The first run, the smoke leg on every environment and then the walks, starts when the build exists and the application repository's wrapper can drop a leg. The Mac and the Galaxy A41 come first.

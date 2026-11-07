@@ -25,7 +25,7 @@
   The folder that holds the sheets. Default: authoring/walks in this repository.
 
 .EXAMPLE
-  pwsh build/walks/New-WalkNotes.ps1 -Leg android-phone -Out D:\drop\alpha-1-walk-1\android-phone\notes.md
+  pwsh build/walks/New-WalkNotes.ps1 -Leg android-phone -Out D:\drop\alpha-2-walk-1\android-phone\notes.md
 #>
 [CmdletBinding()]
 param(

@@ -8,8 +8,9 @@ The pages were written from the app team's answers, which came from reading the 
 
 ## How to use this sheet
 
-- **Every leg walks the rows that name it.** The last column, *On*, lists the legs, or a group from the table below. A row marked `help` waits for a build that has the help links (walk plan, section 6.1) and no leg does it on Alpha-1.
+- **Every leg walks the rows that name it.** The last column, *On*, lists the legs, or a group from the table below. A row marked `help` waits for a build that has the help links (walk plan, section 6.1) and no leg does it until the Alpha-2 build is known to have them.
 - **Start from the notes skeleton.** On the machine that runs the leg, `pwsh build/walks/New-WalkNotes.ps1 -Sheet dates-places-names -Leg <leg>` writes a `notes.md` with one line for each row that names the leg. You fill in two columns of its *Results* table: the result, and what you saw.
+- **Some rows describe Alpha-1.** Where the Alpha-2 build differs from what our pages say, mark the row Different and write what you see. That is what the walk is for.
 - **The result is one of four words.** *Same* (as our page says), *Different* (write what you saw), *Not found* (the screen is not there) or *Not done*.
 - **A driver may fill in the *Seen* column.** On a leg that is driven with DevFlow, a script does the rows that suit it and writes what it read, and a reviewer sets the *Result*. Rows 2.5 and 6.1 and every row of sections 7 and 8 are always walked by hand (walk plan, section 4.7).
 - **The collector merges the legs** into one table with a column for each leg (`build/walks/collect-walk.ps1`).
@@ -26,7 +27,7 @@ The pages were written from the app team's answers, which came from reading the 
 ## Before you start
 
 - Use a **scratch tree** made for the walk. Make it, then remove it. The Brontë dataset is the only family data that is allowed in this repository (DEC-025). The test dates below are not real people. The old dates are typed, not taken from any family.
-- Note the device, its system version and the build version shown in the app, in the leg's environment card. The build must be the closed Alpha-1 build, shown as 0.1.0 (1).
+- Note the device, its system version and the build version shown in the app, in the leg's environment card. The build must be the Alpha-2 build that the run names, and the app must show its version and build number (walk plan, section 6). This sheet waits for that build.
 - Do not paste anything from the application's repository, and do not name its numbers (the standing rule: this repository is public). Name no machine, no account and no serial number.
 - Record **what you see**, in the words on the screen, with the capital letters. A picture helps, but pictures for the manuals are made by the journeys, not by this walk.
 
