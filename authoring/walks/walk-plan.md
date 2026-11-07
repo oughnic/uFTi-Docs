@@ -134,7 +134,7 @@ DevFlow lets a script drive the app and read the screen. It can go to a page, fi
 - **Rows that suit a driver.** A row that does something and reads what follows: the date editor and its *Reads as* line (rows 1.5 to 1.14), the place box (3.1 to 3.3), the name prompt (4.1 to 4.5), the sources (5.1 to 5.5) and the worked case (6.2). A driver covers what it can and says which rows it left.
 - **Rows that stay by hand.** Row 2.5 (the device's own settings), row 6.1 (reading our pages), the rows of section 7 (layout, and the file picker, which belongs to the device) and the rows of section 8 (the camera and its prompts, which are outside the app's window).
 - **What a driver writes.** It fills the *Seen* column of `notes.md` with the words it read, and leaves *Result* as Not done. Whoever reviews the leg sets the result against *Our pages say*. A session may propose it and a person confirms it, because a Different row is a finding.
-- **Controls need automation ids.** A driver finds a control by its id, not by where it sits. A control without one is reported to the app team, which adds it, and the row is walked by hand until then.
+- **Controls need automation ids.** A driver finds a control by its id, not by where it sits. A control without one is reported to the app team, which adds it, and the row is walked by hand until then. The ids for the date editor's boxes and its *Reads as* line, and for the lists of matches under the place box and the name box, are part of Alpha-2 and are not in the build yet. The place box, the name box and the source forms can be driven once the build is there, but choosing from a list of matches needs the ids.
 - **Pictures.** The driver's screenshot is of the app's own window, with no status bar and no notification, and it works while the screen is locked. That is what section 9 asks of the phones.
 - **Where the driver lives.** In the application repository, with the capture scripts (DEC-022). This repository holds the sheet, the notes skeleton and the collector.
 
@@ -159,17 +159,17 @@ flowchart LR
 
 ## 6. The build: Alpha-2
 
-The walks wait for Alpha-2 (DEC-212). Every leg runs the one Alpha-2 build, and `run.json` declares its version and build number when it exists. Until then no leg runs.
+The walks wait for Alpha-2 (DEC-212). Every leg runs the one Alpha-2 build, and `run.json` declares its version and build number when it exists. Until then no leg runs. The app team has said that Alpha-2 is version 0.2.0, with no date for the cut yet. The app will show it as `0.2.0.<build>`, with one build counter for every platform, the same on the About page and in the diagnostics. The wrapper reads that line and writes the version and the build number into the leg result. A leg compares against the About page, not against the operating system's own version fields, which keep their own shapes.
 
 **Why not Alpha-1.** The app team has changed what a reader sees, and the labels a driver needs, since Alpha-1, and those changes are not in the Alpha-1 source. A walk of Alpha-1 would mark rows Different because the app moved on, not because a page is wrong. A build of the Alpha-1 source with the DevFlow agent would not have the labels either. Alpha-1 stays as it is: its manuals, pictures and walk reports describe the released build, and nothing here changes them.
 
 **What waiting means for the pages.** Some pages were written from the app team's answers about a build newer than Alpha-1 (DEC-193, DEC-203). The Alpha-2 walk settles them. Pages for what Alpha-2 adds are written after its walk, from what the walk shows (DEC-012). This repository does not list those changes before then.
 
-**The release.** `build/publications.ini` changes only when Alpha-2 is released: the old release is archived first, then `release` and `app-version` change, and the pictures and text are checked against the new release (build and quality, section 7). A run does not change it.
+**The release.** `build/publications.ini` changes only when Alpha-2 is released: the old release is archived first, then `release` and `app-version` change, and the pictures and text are checked against the new release (build and quality, section 7). The build accepts any text for `app-version` and checks only that it agrees with the version recorded with the pictures, so the new shape, `0.2.0.<build>`, changes in both places together. A run does not change it.
 
 ### 6.1 Help on help
 
-The help links need a build that has them. The app cannot open `places.place` or `people.name` from a field until it does, and the proposed help maps are meant for development builds of the app. Whether Alpha-2 has the help links is for the app team to say (issue 16). If it does, the rows below are walked in the main run and the `help` token in a sheet names the legs that can do them. If it does not, they stay in a later help leg. Until then these rows are walked by no leg:
+The help links need a build that has them. The app cannot open `places.place` or `people.name` from a field until it does, and the proposed help maps are meant for development builds of the app. The app team says the help links are in Alpha-2 if it is cut from the development branch as planned (issue 16). So the rows below go in the main run, and the `help` token in a sheet names the legs that can do them, once the cut is confirmed. If the cut leaves them out, they stay in a later help leg. Until the cut is confirmed these rows are walked by no leg:
 
 - Row 1.15 of the dates, places and names sheet (a help control on the date editor), row 3.4 (on a place field) and row 4.6 (on a name field).
 - Whether the Help button on each screen opens the page that the help map names.
@@ -178,11 +178,12 @@ A **help leg** is a coordination item with the app team, and it belongs to the w
 
 ### 6.2 Driven legs and the release package
 
-The DevFlow agent is compiled into development builds only. It is not in the release package. So a **driven** leg runs on a build of the Alpha-2 source with the agent, not on the package. The two come from one source and should behave the same, but they are not the same file. The app team is trying a Release configuration build with the agent, and says what it finds.
+The DevFlow agent is compiled into development builds only. It is not in the release package. So a **driven** leg runs on a build of the Alpha-2 source with the agent, not on the package. The two come from one source and should behave the same, but they are not the same file. A Release configuration build with the agent has run on a phone, as a separate probe package with its own data. The agent started, found controls by their ids and took in-app screenshots with no status bar.
 
 - **The record says which.** The leg result records the kind of build, `closed` for the release package and `devflow` for the build with the agent, and the version and build number the app shows. The collector fails a leg that does not say, and the report lists the kind for each leg and says when a run mixed the two.
 - **A short walk by hand on the release package** covers the rows that matter most: rows 1.3 and 1.14, and the rows of section 7, on the Galaxy A41. A row that is Different between the two kinds of build is a finding about the build, not about our pages.
-- **Pictures.** The screenshot strategy takes pictures from release candidates only (DEC-023). Whether a picture from a build with the agent counts is an open point (section 10).
+- **Pictures.** The screenshot strategy takes pictures from release candidates only (DEC-023). A picture from a Release build with the agent counts as one (DEC-213), when the build is made from the same commit as the Alpha-2 release candidate, in the Release configuration; the picture is an in-app capture; the leg result says `devflow`; and a person compares a few screens against the release package before the pictures are imported.
+- **After a launch.** The first one or two captures after the app starts can fail, and every later one works. The driver waits or retries.
 
 ## 7. Targets that are not documented
 
@@ -216,8 +217,7 @@ A leg for such a target may use the same environments and the same shared folder
 | **The help leg:** the build, the date, and the published maps. | App team, with the maintainer |
 | **Where the list of legs and the wrapper live.** The application repository is proposed (section 4.1). | Maintainer |
 | **Sessions on the other machines.** The Mac can run one (section 4.6). Whether the cloud Windows PC and the Android host should, or be driven by hand. | Maintainer |
-| **Pictures from a build with the agent.** Whether DEC-023's "release candidates only" allows a Release configuration build of the same source with the DevFlow agent, or asks for the release package. The app team is trying a Release configuration build with the agent and says what it finds. | Maintainer, with the app team |
-| **Which build is Alpha-2, and when.** The version and build number, the date it is cut, and whether it has the help links (section 6.1) and the labels a driver needs. The walks cannot start before it exists. | App team |
+| **When Alpha-2 is cut.** The version is 0.2.0. The build number and the date are not set. The cut also confirms the help links (section 6.1) and the ids a driver needs (section 4.7). The walks cannot start before it exists. | App team |
 
 ## 11. What gets built, in order
 
