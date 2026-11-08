@@ -1,0 +1,51 @@
+# CodeQL code scanning (DEC-215). It covers the JavaScript in build/scripts and the workflows in .github/workflows. It does not
+# cover PowerShell, shell or DITA. The job runs on a self-hosted runner on the maintainer's workstation, labelled `sirhandel`.
+# On a public repository a self-hosted runner runs whatever a workflow tells it, so this workflow never reaches the runner from a
+# fork: pull_request runs only for a branch in this repository, there is no pull_request_target, and no secret is used.
+# Third-party actions are pinned to full commit SHAs.
+name: CodeQL
+
+on:
+  push:
+    branches: [dev, main]
+  pull_request:
+    branches: [dev]
+  schedule:
+    - cron: '23 4 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: codeql-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  analyze:
+    name: analyze (${{ matrix.language }})
+    if: github.repository == 'oughnic/uFTi-Docs' && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: [self-hosted, windows, x64, sirhandel]
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      actions: read
+      security-events: write
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [javascript-typescript, actions]
+    steps:
+      - name: Check out
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Start CodeQL
+        uses: github/codeql-action/init@33d7b85da1a04171e211befe2c739303b9a4c066 # v4.39.3
+        with:
+          languages: ${{ matrix.language }}
+          build-mode: none
+      - name: Analyse
+        uses: github/codeql-action/analyze@33d7b85da1a04171e211befe2c739303b9a4c066 # v4.39.3
+        with:
+          category: /language:${{ matrix.language }}
