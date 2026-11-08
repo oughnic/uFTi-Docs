@@ -43,11 +43,13 @@ jobs:
         with:
           distribution: ${{ env.JAVA_DISTRIBUTION }}
           java-version: ${{ env.JAVA_VERSION }}
+      # Each job keeps its own cache key. A saved entry is never changed, so two jobs that need different tools must not share one:
+      # the second would find the first's entry, miss its own tools and download them on every run (issue 149).
       - name: Pinned tools (cached by the lock file)
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: .tools
-          key: tools-source-${{ runner.os }}-${{ hashFiles('build/tools.lock') }}
+          key: tools-lint-${{ runner.os }}-${{ hashFiles('build/tools.lock') }}
       - name: Bootstrap the toolkit, Vale and gitleaks
         run: build/scripts/bootstrap.sh --only dita-ot,vale,gitleaks
       - name: Source gates (theme, structure lint, prose and reading level, secrets)
@@ -420,7 +422,7 @@ jobs:
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: .tools
-          key: tools-source-${{ runner.os }}-${{ hashFiles('build/tools.lock') }}
+          key: tools-smoke-${{ runner.os }}-${{ hashFiles('build/tools.lock') }}
       - name: Bootstrap the toolkit alone
         run: build/scripts/bootstrap.sh --only dita-ot
       - name: Build with the toolkit's stock html5 transformation
