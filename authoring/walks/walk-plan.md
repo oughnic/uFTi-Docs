@@ -174,6 +174,10 @@ The help links need a build that has them. The app cannot open `places.place` or
 - Row 1.15 of the dates, places and names sheet (a help control on the date editor), row 3.4 (on a place field) and row 4.6 (on a name field).
 - Whether the Help button on each screen opens the page that the help map names.
 
+**What to expect for now.** Only the help for Alpha-1 has been built and published, so until the Alpha-2 pages are published a help button has nothing of ours to open, and opening the site's welcome page is expected (the maintainer, 8 November 2026). The three rows are marked Different for that reason, with the words "to be walked again once the pages for this release are published", and they are walked again then.
+
+**One set of changes.** The walk's findings change the pages once, from the feedback of all six legs (iPhone, iPad, Mac Catalyst, Android phone, Android tablet and Windows), and findings for the app team are sent once, after the same collection (DEC-214). No leg's findings change a page or go to the app team on their own.
+
 A **help leg** is a coordination item with the app team, and it belongs to the work in [issue 16](https://github.com/oughnic/uFTi-Docs/issues/16). It needs three things before it can run: a build with the help links, the proposed help maps built into that build, and the pages live on the host.
 
 ### 6.2 Driven legs and the release package
@@ -195,8 +199,8 @@ A leg for such a target may use the same environments and the same shared folder
 
 | Source | What it settles | Legs |
 |---|---|---|
-| [Dates, places and names sheet](dates-places-names.md) | The date editor, the place box, the name prompt, and the second line under a source | `windows-x64`, `windows-arm64`, `android-phone`, `iphone`, `ipad`, `mac` |
-| The unconfirmed mobile differences ([issue 115](https://github.com/oughnic/uFTi-Docs/issues/115)) | Whether the form opens part of the way down, the file card delay, the full-screen sheet and its count, the sources count on tablets, and two file cards to a row | `android-phone`, `android-fold`, `iphone`, `ipad` |
+| [Dates, places and names sheet](dates-places-names.md) | The date editor, the place box, the name prompt, and the second line under a source | `windows-x64`, `windows-arm64`, `android-phone`, `android-tablet`, `iphone`, `ipad`, `mac` |
+| The unconfirmed mobile differences ([issue 115](https://github.com/oughnic/uFTi-Docs/issues/115)) | Whether the form opens part of the way down, the file card delay, the full-screen sheet and its count, the sources count on tablets, and two file cards to a row | `android-phone`, `android-fold`, `android-tablet`, `iphone`, `ipad` |
 | The camera route and the photos buttons ([issue 68](https://github.com/oughnic/uFTi-Docs/issues/68)) | The camera route on a device | `android-phone`, `android-fold` |
 | The walk reports for Alpha-2 | Any picture or page that is out of date | Every leg |
 
