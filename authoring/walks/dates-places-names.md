@@ -8,7 +8,7 @@ The pages were written from the app team's answers, which came from reading the 
 
 ## How to use this sheet
 
-- **Every leg walks the rows that name it.** The last column, *On*, lists the legs, or a group from the table below. A row marked `help` waits for a build that has the help links (walk plan, section 6.1) and no leg does it until the Alpha-2 build is known to have them.
+- **Every leg walks the rows that name it.** The last column, *On*, lists the legs, or a group from the table below. A row marked `help` is about the help links (walk plan, section 6.1), which the Alpha-2 build has; the same legs do it as `app`.
 - **Start from the notes skeleton.** On the machine that runs the leg, `pwsh build/walks/New-WalkNotes.ps1 -Sheet dates-places-names -Leg <leg>` writes a `notes.md` with one line for each row that names the leg. You fill in two columns of its *Results* table: the result, and what you saw.
 - **Some rows describe Alpha-1.** Where the Alpha-2 build differs from what our pages say, mark the row Different and write what you see. That is what the walk is for.
 - **The result is one of four words.** *Same* (as our page says), *Different* (write what you saw), *Not found* (the screen is not there) or *Not done*.
@@ -19,10 +19,10 @@ The pages were written from the app team's answers, which came from reading the 
 
 | Token | Legs |
 |---|---|
-| `app` | `windows-x64`, `windows-arm64`, `android-phone`, `iphone`, `ipad`, `mac` |
-| `mobile` | `android-phone`, `android-fold`, `iphone`, `ipad` |
+| `app` | `windows-x64`, `windows-arm64`, `android-phone`, `android-tablet`, `iphone`, `ipad`, `mac` |
+| `mobile` | `android-phone`, `android-fold`, `android-tablet`, `iphone`, `ipad` |
 | `camera` | `android-phone`, `android-fold` |
-| `help` | none yet |
+| `help` | `windows-x64`, `windows-arm64`, `android-phone`, `android-tablet`, `iphone`, `ipad`, `mac` |
 
 ## Before you start
 

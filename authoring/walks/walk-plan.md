@@ -159,7 +159,7 @@ flowchart LR
 
 ## 6. The build: Alpha-2
 
-The walks wait for Alpha-2 (DEC-212). Every leg runs the one Alpha-2 build, and `run.json` declares its version and build number when it exists. Until then no leg runs. The app team has said that Alpha-2 is version 0.2.0, with no date for the cut yet. The app will show it as `0.2.0.<build>`, with one build counter for every platform, the same on the About page and in the diagnostics. The wrapper reads that line and writes the version and the build number into the leg result. A leg compares against the About page, not against the operating system's own version fields, which keep their own shapes.
+The walks wait for Alpha-2 (DEC-212). Every leg runs the one Alpha-2 build, and `run.json` declares its version and build number when it exists. The app team cut Alpha-2 on 8 November 2026: version 0.2.0, with the tag `Alpha-2`. **The walk build** is a Release configuration build of the tagged commit, with the build number that commit's count gives, the same for every platform. This plan does not print the build number, because the build is not released: the app team posts it on the issue that tracks the walks, and `run.json` declares it. If the walk finds a fault that is fixed, the app team rebuilds from a later commit: still 0.2.0, with a higher build number, and `run.json` declares the build that the legs walked. The app shows the version as `0.2.0.<build>`, with one build counter for every platform, the same on the About page and in the diagnostics. The wrapper reads that line and writes the version and the build number into the leg result. A leg compares against the About page, not against the operating system's own version fields, which keep their own shapes.
 
 **Why not Alpha-1.** The app team has changed what a reader sees, and the labels a driver needs, since Alpha-1, and those changes are not in the Alpha-1 source. A walk of Alpha-1 would mark rows Different because the app moved on, not because a page is wrong. A build of the Alpha-1 source with the DevFlow agent would not have the labels either. Alpha-1 stays as it is: its manuals, pictures and walk reports describe the released build, and nothing here changes them.
 
@@ -169,7 +169,7 @@ The walks wait for Alpha-2 (DEC-212). Every leg runs the one Alpha-2 build, and 
 
 ### 6.1 Help on help
 
-The help links need a build that has them. The app cannot open `places.place` or `people.name` from a field until it does, and the proposed help maps are meant for development builds of the app. The app team says the help links are in Alpha-2 if it is cut from the development branch as planned (issue 16). So the rows below go in the main run, and the `help` token in a sheet names the legs that can do them, once the cut is confirmed. If the cut leaves them out, they stay in a later help leg. Until the cut is confirmed these rows are walked by no leg:
+The help links need a build that has them. The app cannot open `places.place` or `people.name` from a field until it does, and the proposed help maps are meant for development builds of the app. The app team has confirmed that the help links are in Alpha-2 (8 November 2026; issue 16). So the rows below go in the main run, and the `help` token in a sheet names the legs that can do them: the same legs as `app`. If the walked build turns out to lack them, the rows come out of the main run and stay for a later help leg. These rows are:
 
 - Row 1.15 of the dates, places and names sheet (a help control on the date editor), row 3.4 (on a place field) and row 4.6 (on a name field).
 - Whether the Help button on each screen opens the page that the help map names.
@@ -217,12 +217,12 @@ A leg for such a target may use the same environments and the same shared folder
 | **The help leg:** the build, the date, and the published maps. | App team, with the maintainer |
 | **Where the list of legs and the wrapper live.** The application repository is proposed (section 4.1). | Maintainer |
 | **Sessions on the other machines.** The Mac can run one (section 4.6). Whether the cloud Windows PC and the Android host should, or be driven by hand. | Maintainer |
-| **When Alpha-2 is cut.** The version is 0.2.0. The build number and the date are not set. The cut also confirms the help links (section 6.1) and the ids a driver needs (section 4.7). The walks cannot start before it exists. | App team |
+| **Which build is walked.** Settled on 8 November 2026: the build of the `Alpha-2` tag, version 0.2.0, with the help links and the driver ids in. A fix found by the walk means a rebuild from a later commit, and the app team posts the new build number. | App team |
 
 ## 11. What gets built, in order
 
 1. **Done.** The #129 sheet has an *On* column that names the legs for each row, and two new sections (phone and tablet differences, and the camera route). `build/walks/New-WalkNotes.ps1` writes a leg's notes from it.
 2. **Done.** `build/walks/collect-walk.ps1`, with a test for each of its checks in `test-source-rules.ps1 -Only walks`.
-3. **In the application repository, not started.** The list of legs, the wrapper, the environment card and the DevFlow driver (section 4.7), against the Alpha-2 build. The drop-folder layout above is what the wrapper must write. The labels a driver needs for the date editor and the lists of matches are the app team's work, and they come with Alpha-2.
+3. **In the application repository, not started.** The list of legs, the wrapper, the environment card and the DevFlow driver (section 4.7), against the Alpha-2 build. The drop-folder layout above is what the wrapper must write. The labels a driver needs for the date editor and the lists of matches are in the development branch now, and so is the version line, which a driver reads by its automation id on the About page.
 4. **Done.** The leg result has a `buildKind`, `closed` or `devflow`. The collector fails a leg that does not say or that says something else, lists the kind of each leg in the report, and says when the legs ran more than one kind. Each check has a case in `test-source-rules.ps1 -Only walks`.
-5. **Waiting.** Alpha-2. The first run, the smoke leg on every environment and then the walks, starts when the build exists and the application repository's wrapper can drop a leg. The Mac and the Galaxy A41 come first.
+5. **Waiting.** The application repository's wrapper and the builds for each leg. Alpha-2 is cut, so the first run, the smoke leg on every environment and then the walks, starts when a leg can be built and dropped. The Mac and the Galaxy A41 come first.
