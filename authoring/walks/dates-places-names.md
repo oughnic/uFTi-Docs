@@ -19,10 +19,10 @@ The pages were written from the app team's answers, which came from reading the 
 
 | Token | Legs |
 |---|---|
-| `app` | `windows-x64`, `windows-arm64`, `android-phone`, `iphone`, `ipad`, `mac` |
-| `mobile` | `android-phone`, `android-fold`, `iphone`, `ipad` |
+| `app` | `windows-x64`, `windows-arm64`, `android-phone`, `android-tablet`, `iphone`, `ipad`, `mac` |
+| `mobile` | `android-phone`, `android-fold`, `android-tablet`, `iphone`, `ipad` |
 | `camera` | `android-phone`, `android-fold` |
-| `help` | `windows-x64`, `windows-arm64`, `android-phone`, `iphone`, `ipad`, `mac` |
+| `help` | `windows-x64`, `windows-arm64`, `android-phone`, `android-tablet`, `iphone`, `ipad`, `mac` |
 
 ## Before you start
 
