@@ -2,11 +2,11 @@
 
 What quality the app gives a source by default when it records how much weight the source deserves for a fact, and why. The source for the manual's reference topic and for the good practice guide's topic on the same subject.
 
-Part of the [authoring plan](authoring-plan.md). Status: Draft, 21 October 2026. Decisions: DEC-118 (accepted) and DEC-119 (proposed) in the [decision log](decision-log.md). The defaults in section 3 are the owner's, confirmed on 21 October 2026. Nothing here is published until it has been checked against the released build (DEC-118).
+Part of the [authoring plan](authoring-plan.md). Status: Draft, 21 October 2026. Decisions: DEC-118 and DEC-119 (both accepted) in the [decision log](decision-log.md). The defaults in section 3 are the owner's, confirmed on 21 October 2026. Nothing here is published until it has been checked against the released build (DEC-118).
 
 ## 1. What quality means here
 
-Quality is how much weight a source deserves for one fact, judged from how the information was recorded. It is not a verdict on whether the fact is true (DEC-119, proposed). A citation holds one quality, because a citation is the link between one fact and one source.
+Quality is how much weight a source deserves for one fact, judged from how the information was recorded. It is not a verdict on whether the fact is true (DEC-119). A citation holds one quality, because a citation is the link between one fact and one source.
 
 The GEDCOM standard describes it as the submitter's evaluation of how credible a piece of information is, based on its supporting evidence. It says the value is not meant to replace the reader's own judgement, and GEDCOM 7.0 adds that the numbers have no arithmetic meaning. The standards describe the four levels by the kind of evidence. We keep their order and their meaning, and say them in plain words.
 
