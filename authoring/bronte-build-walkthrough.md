@@ -2,7 +2,7 @@
 
 How we walk through every feature of the app in turn, build the Brontë family file as we go, and come out with the user guide, the help text and the pictures. Each step says what a reader should be able to do afterwards.
 
-Part of the [authoring plan](authoring-plan.md). Status: Draft for review, 9 November 2026, after the first walk on Windows. Proposed in DEC-216; the changes from that walk are DEC-218. Decisions are tracked in the [decision log](decision-log.md).
+Part of the [authoring plan](authoring-plan.md). Status: Accepted, 9 November 2026, after the first walk on Windows (DEC-216). The changes from that walk are DEC-218, which is still proposed. Decisions are tracked in the [decision log](decision-log.md).
 
 ## 1. What this document adds
 
