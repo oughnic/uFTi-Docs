@@ -2,7 +2,7 @@
 
 How we walk through every feature of the app in turn, build the Brontë family file as we go, and come out with the user guide, the help text and the pictures. Each step says what a reader should be able to do afterwards.
 
-Part of the [authoring plan](authoring-plan.md). Status: Draft for review, 8 November 2026. Proposed in DEC-216. Decisions are tracked in the [decision log](decision-log.md).
+Part of the [authoring plan](authoring-plan.md). Status: Draft for review, 9 November 2026, after the first walk on Windows. Proposed in DEC-216; the changes from that walk are DEC-218. Decisions are tracked in the [decision log](decision-log.md).
 
 ## 1. What this document adds
 
@@ -56,6 +56,7 @@ At the end of each stage, export the tree as that stage's saved state. Then repl
 |---|---|
 | Walked | Walked on Alpha-2 across the legs. The labels below are the ones read from the screen. |
 | Part walked | Some of it was walked on Alpha-2, or it was walked only on Alpha-1. Confirm the labels. |
+| Walked on Windows | Walked once on the Windows app, on an Arm PC, entering only the step's named records. The labels below are the ones read from the screen. Not yet replayed on the other devices. |
 | Not walked | Nobody has done this on the current build. Labels here are expected, not seen. |
 
 ## 4. The order at a glance
@@ -149,9 +150,9 @@ At the end of each stage, export the tree as that stage's saved state. Then repl
 #### 1.1 Create the tree
 
 - **Learning objective.** After this step, you can start a new family tree and give it a name.
-- **Status.** Part walked.
+- **Status.** Walked on Windows. That typing adds to the name in the box is still to be checked by hand.
 - **Brontë data.** "Brontë family of Haworth".
-- **Do.** Open Workspaces. Choose the new workspace button. Clear the name box first, because it starts filled with "My family tree" and typing adds to it. Enter the name. See [open point 1](#11-open-points) about the sample's identical name.
+- **Do.** Open Workspaces. Press **Create workspace**. A system window titled *New workspace* opens. Clear the name box first, because it starts filled with "My family tree" and typing adds to it. Enter the name. Press **Create**. If the sample is still there, the app accepts the same name and shows the new tree with "(2)" after it. See [open point 1](#11-open-points).
 - **Guide.** *Create a workspace*; *Your workspace and its files*; glossary *workspace*.
 - **Picture.** `img-create-workspace-dialog`.
 - **You know it worked when** the new tree is open and has nobody in it.
@@ -159,24 +160,24 @@ At the end of each stage, export the tree as that stage's saved state. Then repl
 #### 1.2 Say who made the tree
 
 - **Learning objective.** After this step, you can record who made this tree, so anyone who receives a copy knows who to ask.
-- **Status.** Not walked.
+- **Status.** Walked on Windows.
 - **Brontë data.** The author as submitter. Use a role name such as "uFTi documentation". Never a private person's details.
-- **Do.** Open the list of who made the tree. Add one.
+- **Do.** Open *Who made this tree*. Press **+**. On *Add a record*, choose *Submitter* under *Add to the workspace*, then **Add**. Enter the name. Save.
 - **Guide.** New task *Say who made this tree*.
 - **Help.** `submitters.list`.
 - **Picture.** `img-submitters`.
-- **You know it worked when** the name is in the list.
+- **You know it worked when** the name is in the list, marked "(default)".
 
 #### 1.3 Move between trees
 
 - **Learning objective.** After this step, you can see your trees, tell them apart and open the one you want.
-- **Status.** Part walked.
+- **Status.** Walked on Windows.
 - **Brontë data.** The new tree and the sample, if it was kept.
-- **Do.** Open Workspaces. Read a tree's card and its details. Open another tree, then come back.
+- **Do.** Open Workspaces. Read a tree's card. *Show details* adds the file's name and a line that names the file format, so do not picture a card with its details open (DEC-030). Press **Open** on another tree, then come back.
 - **Guide.** *The screens of the app*, the part on Workspaces.
 - **Help.** `workspaces.list`.
 - **Picture.** `img-workspaces`.
-- **You know it worked when** the tree you chose is marked as the open one.
+- **You know it worked when** the tree you chose has the *Active* badge and its card comes first.
 
 ### Stage 2: record the people
 
@@ -199,7 +200,7 @@ At the end of each stage, export the tree as that stage's saved state. Then repl
 
 - **Learning objective.** After this step, you can add more people, and tell apart two people who share a name.
 - **Status.** Walked.
-- **Brontë data.** P02 to P09. Maria the mother (P02) and Maria the daughter (P03) share a name.
+- **Brontë data.** P02 to P09. Maria the mother (P02) goes in as Maria Branwell, as in the committed sample, and Maria the daughter (P03) as Maria Brontë. The list then shows the same first name twice, with different years.
 - **Do.** Add each person from the record in [people.md](../content/sample-data/bronte/people.md). Note that Basic details and Birth record saved a second person with the same name without asking.
 - **Guide.** *Add another person*.
 - **Help.** `add.record`, `people.list`.
@@ -212,7 +213,7 @@ At the end of each stage, export the tree as that stage's saved state. Then repl
 - **Good practice.** An uncertain year is a range with a reason, never a guess.
 - **Status.** Walked.
 - **Brontë data.** Exact: Charlotte, 21 April 1816. Year only: Maria (P02), 1783. A range: Maria the daughter (P03), 1813 or 1814 (thread T04).
-- **Do.** Use Day, Month and Year. Switch on *Not sure of the date?* for *Kind of date* and *How much do you know?*. Try Edit as text, and read the *Reads as* line after leaving the box.
+- **Do.** Use Day, Month and Year. Switch on *Not sure of the date?* for *Kind of date* and *How much do you know?*. Try Edit as text, and read the *Reads as* line after leaving the box. *Between two dates* with *The year* gives two Year boxes joined by "and". The *Not sure of the date?* switch cannot be turned off while such a kind is chosen. Lists show only the first year of a range.
 - **Guide.** *Dates*, *Typing a date*, *Kinds of date*, *Dates in lists and order*. *Calendars* and *An old-style date* use their own example, because the Brontë dates are all after 1752.
 - **Help.** `events.date`.
 - **Picture.** New `img-date-editor` and `img-date-not-sure`. Take them **before leaving the box**, because the box then rewrites the date in short capital forms that no page may show (DEC-030).
@@ -232,29 +233,29 @@ At the end of each stage, export the tree as that stage's saved state. Then repl
 #### 2.5 Enter names that change
 
 - **Learning objective.** After this step, you can record a birth surname, a married name, a pen name and another spelling, and still find the person.
-- **Status.** Walked.
+- **Status.** Walked. Confirmed on Windows.
 - **Brontë data.** Patrick: Brunty, Prunty, Branty. Charlotte: Nicholls, Currer Bell. Emily: Ellis Bell. Anne: Acton Bell. Branwell (P06), known by his middle name.
-- **Do.** Add each extra name to the person.
+- **Do.** Open the person. Press **Edit**. Under *Other names* press **Add row**, and fill in *Kind of name*, *Given name(s)* and the surname. The kinds include *Birth name*, *Married name* and *Also known as*, but not a pen name: use *Professional name* and write "Pen name" in *Kind, in words*. Enter Branwell in *Nickname*. Save.
 - **Guide.** *Names*.
 - **Help.** `people.name`.
 - **Picture.** `img-person-edit`, Charlotte.
-- **You know it worked when** a search for "Currer" finds Charlotte. Confirm this on the walk.
+- **You know it worked when** a search for "Currer" finds Charlotte and a search for "Brunty" finds Patrick.
 
 #### 2.6 Correct a person
 
 - **Learning objective.** After this step, you can change something you entered and see the change.
-- **Status.** Part walked.
+- **Status.** Walked on Windows.
 - **Brontë data.** Enter Anne's birthplace wrongly on purpose in a scratch copy, then correct it.
-- **Do.** Open the person. Press Edit. Change it. Save.
+- **Do.** Open the person. Press **Edit**: the page itself turns into boxes. Change it. Press **Save** at the foot of the page.
 - **Guide.** *Change a person*.
 - **You know it worked when** the person's page shows the corrected value.
 
 #### 2.7 Remove a person added by mistake
 
 - **Learning objective.** After this step, you can remove a person you added by mistake, and know what goes with them.
-- **Status.** Not walked.
+- **Status.** Walked on Windows. The Copy button is still to be checked on the closed build.
 - **Brontë data.** A scratch person, "Test Person". **Never a person in the specification.**
-- **Do.** Add the scratch person. Press Delete person. Write down the app's words exactly. Find out what the Copy button on the person's page does.
+- **Do.** Add the scratch person. Press **Delete person**. The app asks: "Delete this person? They will be removed and unlinked from any families, events and relationships. This cannot be undone." It does not name the person, so check the page's heading first. Copy said "Could not copy to the clipboard on this device." on a build run from its folder, so find out what it copies on the closed build.
 - **Guide.** New task *Remove a person*, with *Change a person*.
 - **You know it worked when** All people is back to nine.
 
@@ -265,19 +266,19 @@ At the end of each stage, export the tree as that stage's saved state. Then repl
 #### 3.1 Make a family from people already in the tree
 
 - **Learning objective.** After this step, you can make a family from people already in your tree, without making copies of them.
-- **Status.** Part walked.
+- **Status.** Walked on Windows.
 - **Brontë data.** F01: Patrick and Maria (P02), with the six children P03 to P08.
-- **Do.** Add a family. Find the parents with the person picker, then add each child. Also type a name that is already in the tree, and read the question the app asks: *matches N people in this tree*, *Use*, *Add a new person called*.
+- **Do.** Press **+**, then *Family* under *Add to the workspace*. Find each parent by typing in the box and choosing a match. For each child press **Add row**, then **Set…**, find the child and press **Done**. Leave *Marriage date* empty: see step 3.2. Also type a name that is already in the tree, and read the question the app asks on Save. With one match it says that the name "is already in this tree"; with more it says *matches N people in this tree*. The choices are *Use* and *Add a new person called*.
 - **Guide.** *Add a family with children*; *Add a parent, partner or child*.
-- **Picture.** `img-family-form`, `img-family-children`, and new `img-name-question`. On iPhone, iPad and Mac the question is a system sheet that the in-app capture cannot draw, so it needs an operating-system capture.
+- **Picture.** `img-family-form`, `img-family-children`, and new `img-name-question`. On iPhone, iPad, Mac and Windows the question is a system window that the in-app capture cannot draw, so it needs an operating-system capture.
 - **You know it worked when** there are still nine people, and each child's page shows both parents.
 
 #### 3.2 Add the marriage and read the family's page
 
 - **Learning objective.** After this step, you can add a marriage to a family and find it on the family's page.
-- **Status.** Not walked. *No page exists yet.*
+- **Status.** Walked on Windows. *No page exists yet.*
 - **Brontë data.** E010: 29 December 1812, St Oswald's church, Guiseley. One source gives 18 December (D01). Enter the date most sources give; the other goes in at stage 7 with its source.
-- **Do.** Open the family. Add the marriage.
+- **Do.** Open the family. Press **Edit**. Enter *Marriage date* and *Place of marriage*. Save. **A date entered on the form that first makes a family was saved as a Census on Windows, not a marriage. The app team has been told. Until it is fixed, make the family first and add the marriage with Edit.**
 - **Guide.** New task *See a family's page*.
 - **Help.** `families.view`.
 - **Picture.** `img-family-page`.
@@ -286,9 +287,9 @@ At the end of each stage, export the tree as that stage's saved state. Then repl
 #### 3.3 Add a later marriage
 
 - **Learning objective.** After this step, you can add another family for someone already in the tree.
-- **Status.** Part walked.
+- **Status.** Walked on Windows, with the marriage added by Edit.
 - **Brontë data.** F02: Charlotte and Arthur Bell Nicholls (P09), E061, 29 June 1854, Haworth church. No children.
-- **Do.** Start the family from Charlotte's page.
+- **Do.** On Charlotte's page press **Add a record**, then *Family* under *Add to the workspace*. Charlotte is filled in as wife. *Add a new family* shows on the page only for someone in no family. Find Arthur. Save, then add the marriage with **Edit**, as in step 3.2.
 - **Guide.** *Add a second family for a person*. See [open point 2](#11-open-points) about a true second marriage.
 - **Picture.** `img-tree-marriage`.
 - **You know it worked when** Charlotte appears both as a child in F01 and as a partner in F02.
@@ -296,7 +297,7 @@ At the end of each stage, export the tree as that stage's saved state. Then repl
 #### 3.4 Read the family tree
 
 - **Learning objective.** After this step, you can read the family tree, move around it and choose whose tree you see.
-- **Status.** Walked.
+- **Status.** Walked. On Windows, moving by pressing a card is still to be checked by hand.
 - **Brontë data.** Patrick in focus, two generations and the later marriage.
 - **Do.** Open the family tree from Patrick. Move to Charlotte. Turn a phone to landscape.
 - **Guide.** *See a family tree*, with a written description of the tree for readers who cannot see the picture.
@@ -312,9 +313,9 @@ At the end of each stage, export the tree as that stage's saved state. Then repl
 #### 4.1 Add a baptism and a burial
 
 - **Learning objective.** After this step, you can add an event to a person, and choose the right kind of record.
-- **Status.** Part walked.
+- **Status.** Walked on Windows.
 - **Brontë data.** Branwell (P06): baptised 23 July 1817, Thornton; his death is already in from stage 2.
-- **Do.** On his page press Add a record. Choose from the list. Open *More forms* to see the rest.
+- **Do.** On his page press **Add a record**, then *Event details*. Choose *Baptism*, and enter the date and place. Open *More forms* to see the rest. **The *Baptism record* form starts with a register's title, so use it only for a register you have seen.** Branwell's date comes from a dictionary of biography.
 - **Guide.** *Add an event*, and the shared *Fill in a form* page.
 - **Help.** `add.record`, `forms.compose`.
 - **Picture.** `img-add-record-lower`, `img-add-record-more-forms`, `img-event-detail`.
@@ -323,25 +324,25 @@ At the end of each stage, export the tree as that stage's saved state. Then repl
 #### 4.2 Add something that lasted
 
 - **Learning objective.** After this step, you can record something that went on for years, such as a home or a job.
-- **Status.** Part walked.
+- **Status.** Walked on Windows. The occupation rows were not entered.
 - **Brontë data.** E014: Residence, from 25 February 1820 to 7 June 1861, Haworth Parsonage. Occupation rows in [events.md](../content/sample-data/bronte/events.md).
-- **Do.** Add the residence. Enter the period.
+- **Do.** Use *Event details*, kind *Residence*. With Edit as text on, enter the period.
 - **Guide.** *Enter a period*, inside *Kinds of date*.
 - **You know it worked when** the date reads as a period, from one date to another.
 
 #### 4.3 Add an event of your own kind
 
 - **Learning objective.** After this step, you can record an event that is not on the list.
-- **Status.** Not walked.
+- **Status.** Part walked on Windows. A person should decide how the page tells this.
 - **Brontë data.** E057: Publication, *Poems by Currer, Ellis, and Acton Bell*, May 1846.
-- **Do.** Add a custom event and give its kind as Publication.
+- **Do.** Use *Event details*, kind *Event*. There is no box for naming a new kind, so start the box labelled *Notes* with the word: "Publication: *Poems by Currer, Ellis, and Acton Bell*".
 - **Guide.** New task *Add an event of your own kind*.
-- **You know it worked when** the event shows the word Publication.
+- **You know it worked when** the Events list shows the word Publication in the event's line.
 
 #### 4.4 Read a life in order
 
 - **Learning objective.** After this step, you can read a person's events in date order, and see where an event without a date goes.
-- **Status.** Walked.
+- **Status.** Walked. On Windows, events in the same year were in alphabetical order: a burial came before a death three days earlier, and a dated baptism before a birth given only as a year.
 - **Brontë data.** Branwell, with every stage 4 event.
 - **Do.** Open the Events screen. Open one event.
 - **Guide.** *See the events of a person*; *Dates in lists and order*.
@@ -356,7 +357,7 @@ At the end of each stage, export the tree as that stage's saved state. Then repl
 #### 5.1 Add a note to a person or family
 
 - **Learning objective.** After this step, you can add a note to a person or a family.
-- **Status.** Part walked.
+- **Status.** Walked on Windows.
 - **Brontë data.** N02 to N10 and N16 to N17. Maria (P02) in focus. Write only the words in [notes.md](../content/sample-data/bronte/notes.md), which are our own.
 - **Do.** Add a note to Maria. Read it back.
 - **Guide.** *Add a note*.
@@ -367,13 +368,13 @@ At the end of each stage, export the tree as that stage's saved state. Then repl
 #### 5.2 Use one note in several places
 
 - **Learning objective.** After this step, you can write one note once and link it to several people, and find every note in the tree.
-- **Status.** Not walked.
+- **Status.** Walked on Windows, on two people.
 - **Brontë data.** N01, the note on Haworth Parsonage, linked from P01 to P08.
-- **Do.** Add the note and link it. Open the list of notes. If the app cannot share a note, record that and change the specification.
+- **Do.** With the first person showing, open *Notes*, press **Add note**, write the note and press **Save**. With the next person showing, press **Use an existing note** and choose it. Open the list of notes.
 - **Guide.** New task *Use one note for several people*.
 - **Help.** `notes.list`.
 - **Picture.** `img-notes`.
-- **You know it worked when** the same note shows on two people.
+- **You know it worked when** the same note shows on two people, with "Shared with 1 other record" under it.
 
 ### Stage 6: say where it came from
 
@@ -384,9 +385,9 @@ At the end of each stage, export the tree as that stage's saved state. Then repl
 #### 6.1 Record where records are kept
 
 - **Learning objective.** After this step, you can record an archive or office that holds a record.
-- **Status.** Not walked.
+- **Status.** Walked on Windows.
 - **Brontë data.** R01 to R10, starting with the Brontë Parsonage Museum (R01) and The National Archives (R05).
-- **Do.** Open the list. Add one.
+- **Do.** Open *Where records are kept*. Press **+**, then *Repository* under *Add to the workspace*. Add one, with its website in a row under *Telephone, email and website*.
 - **Guide.** New task *Add a repository*; glossary entry.
 - **Help.** `repositories.list`.
 - **Picture.** `img-repositories`.
@@ -408,7 +409,7 @@ At the end of each stage, export the tree as that stage's saved state. Then repl
 - **Good practice.** One fact, its own source, its own reference.
 - **Status.** Walked.
 - **Brontë data.** Emily's burial, with S13. Confirm the row in the register first.
-- **Do.** Open the fact's sources. Add the source. On the next step enter the page or reference and *Date of the entry*.
+- **Do.** Add the burial first, with Event details. Open the fact's sources. Add the source. On the next step enter the page or reference and *Date of the entry*.
 - **Guide.** *Say where you found it*; *Add a source to a fact*.
 - **Help.** `sources.sheet`.
 - **Picture.** `img-sources-empty`, `img-source-attach`, `img-citation-add`.
@@ -418,9 +419,9 @@ At the end of each stage, export the tree as that stage's saved state. Then repl
 
 - **Learning objective.** After this step, you can read what supports a fact and how good the evidence is.
 - **Good practice.** Original or copy? First-hand or second-hand? Those are two different questions.
-- **Status.** Walked.
+- **Status.** Walked. On Windows the sheet shows the title and the reference, but not the quality.
 - **Brontë data.** Emily's burial.
-- **Do.** Open the sources of the fact. Read the quality the app gives by default ([default quality](default-quality.md)). Change it where the register disagrees.
+- **Do.** Open the sources of the fact. The quality is *How reliable it is* when you add the source, and it is on the page *Compare records that disagree* opens, where that is offered ([default quality](default-quality.md)). Change it where the register disagrees.
 - **Guide.** *Look at the sources of a fact*; concept on the quality of evidence.
 - **Help.** `sources.view`.
 - **Picture.** `img-sources-one`.
@@ -435,9 +436,9 @@ At the end of each stage, export the tree as that stage's saved state. Then repl
 #### 7.1 Write down the question
 
 - **Learning objective.** After this step, you can record a research question before you start to answer it.
-- **Status.** Not walked.
+- **Status.** Walked on Windows.
 - **Brontë data.** T01, "What was Patrick's surname at birth, and when did he become Brontë?", in its research note N11.
-- **Do.** Open research notes. Add one.
+- **Do.** Open *Research questions and notes*. Press **+**, then *Research note*. Enter the text and a *Status*, which is a plain box. The note cannot be tied to a person, so name the person in the text.
 - **Guide.** New task *Add a research note*.
 - **Help.** `research.list`.
 - **Picture.** `img-research-notes`.
@@ -446,9 +447,9 @@ At the end of each stage, export the tree as that stage's saved state. Then repl
 #### 7.2 Record two records that disagree
 
 - **Learning objective.** After this step, you can keep two records that disagree, side by side, without deleting either.
-- **Status.** Part walked. When *Compare records that disagree* is offered has been put to the app team.
+- **Status.** Part walked on Windows. When *Compare records that disagree* is offered has been put to the app team.
 - **Brontë data.** T03, how old Anne was when she died (Anne in focus). D01, the date of the 1812 marriage, is a simpler alternative.
-- **Do.** Add the second source to the fact. Press *Compare records that disagree*.
+- **Do.** Add the second source to the fact. Both stay on the sheet. *Compare records that disagree* was offered on a birth and not on a burial. It opens *Evidence*: the conclusion, and what each source says. How to record a source that says something different has not been found.
 - **Guide.** New task *Record evidence that disagrees*.
 - **Picture.** New `img-compare-records`.
 - **You know it worked when** both records are still there.
@@ -457,9 +458,9 @@ At the end of each stage, export the tree as that stage's saved state. Then repl
 
 - **Learning objective.** After this step, you can weigh evidence, state a conclusion and say what it rests on.
 - **Good practice.** Two records from one informant count as one piece of evidence.
-- **Status.** Not walked.
+- **Status.** Walked on Windows.
 - **Brontë data.** T05: why the 1841 census gives Patrick's age as 60. Adults' ages in that census were rounded down to a multiple of five, so the census and the baptism disagree by design.
-- **Do.** Complete the research note with the evidence, the reasoning and the confidence.
+- **Do.** Complete the research note, as text, with the evidence, the reasoning and the confidence.
 - **Guide.** Worked example in the good practice guide.
 - **You know it worked when** a stranger could follow your reasoning from the note alone.
 
@@ -467,9 +468,9 @@ At the end of each stage, export the tree as that stage's saved state. Then repl
 
 - **Learning objective.** After this step, you can leave a question open honestly, and record a search that found nothing.
 - **Good practice.** Not finding something is a fact about the search, not about the person.
-- **Status.** Not walked.
+- **Status.** Walked on Windows.
 - **Brontë data.** T02, where in County Down Patrick was born. NS1: Charlotte's death in 1855 is not indexed under Brontë, and was found under Nicholls.
-- **Do.** Record the search in the research note: where you looked, under what name and what came back.
+- **Do.** There is no separate place for a search. Write it in the research note: where you looked, under what name and what came back.
 - **Guide.** New task *Record a search that found nothing*.
 - **You know it worked when** the note says where you looked and why you stopped.
 
@@ -502,9 +503,9 @@ At the end of each stage, export the tree as that stage's saved state. Then repl
 #### 8.3 Use a form for a real record
 
 - **Learning objective.** After this step, you can pick the form that matches your record, and fill in a whole household at once.
-- **Status.** Part walked. **Saving a census for a new household failed on the Alpha-2 walk.** The Brontës use an existing household, so walk that path, and check the new-household path again on the next build.
+- **Status.** Part walked. **Saving a census for a new household failed on the Alpha-2 walk.** The Brontës use an existing household, so walk that path, and check the new-household path again on the next build. On Windows the form was read but not saved, because the image has not been read.
 - **Brontë data.** E015: the 1841 census, Haworth, 6 June 1841, once its image has been read. This may need the extension people X01 and X03. Patrick's age is written as 60. Do not correct it.
-- **Do.** From Patrick, Add a record, *More forms*, 1841 Census. Choose his household. Check the date already filled in. Fill in the household.
+- **Do.** From Patrick, Add a record, *More forms*, 1841 Census. Choose his household. Check the date already filled in. Fill in the household. The household lists everyone in the family, even people who had died by that date, so remove each one who was not there.
 - **Guide.** *Fill in a form*; *Record a census household with a form*.
 - **Help.** `forms.compose`.
 - **Picture.** New `img-household-choice` and `img-census-form`.
@@ -518,13 +519,13 @@ At the end of each stage, export the tree as that stage's saved state. Then repl
 #### 9.1 Find someone by another name
 
 - **Learning objective.** After this step, you can find a person when you only know another spelling or name.
-- **Status.** Part walked.
+- **Status.** Walked on Windows. A search for Maria is still to be checked by hand.
 - **Brontë data.** Search for Brunty, Prunty and Nicholls. Search Maria for the two people who share the name.
-- **Do.** Search. Refine the results.
+- **Do.** Search. Under *Refine by*, switch on *Approximate (sound-alike) matches*.
 - **Guide.** *Find a person*; *Search and refine*.
 - **Help.** `search`, `home`.
 - **Picture.** `img-search-results`, `img-search-refine`.
-- **You know it worked when** Brunty finds Patrick. Confirm sound-alike matching before the page claims it.
+- **You know it worked when** Brunty finds Patrick, and Bruntee finds the Brontës with sound-alike matches on, and nobody with them off.
 
 #### 9.2 Check the tree, and deal with duplicates
 
@@ -535,9 +536,9 @@ At the end of each stage, export the tree as that stage's saved state. Then repl
 #### 9.3 Make a copy of the tree
 
 - **Learning objective.** After this step, you can make a copy of your tree and find it again.
-- **Status.** Part walked (Alpha-1).
+- **Status.** Part walked (Alpha-1). On Windows the first question was walked, and no copy has been saved on Alpha-2.
 - **Brontë data.** The finished tree.
-- **Do.** In Workspaces, use the tree's export button. Choose the kind of file. Note where it was saved.
+- **Do.** In Workspaces, press **Save as…**. Choose *Everything (.gdz, recommended)* or *Family tree only (.ged)*. Windows then opens its own Save window. Note where it was saved.
 - **Guide.** *Keep it safe* (platform); *Which file to send*; *Where your trees are saved* (Windows); glossary *backup*, *saved copy*, *family tree file*.
 - **Picture.** `img-save-as-choice`, `img-save-as-version`, `img-save-as-message`.
 - **You know it worked when** the file is there and has a size.
@@ -564,7 +565,7 @@ At the end of each stage, export the tree as that stage's saved state. Then repl
 #### 9.6 Remove a tree
 
 - **Learning objective.** After this step, you can remove a tree from the app and know what happens to the file.
-- **Status.** Walked. The next tree in the list opens.
+- **Status.** Walked. On Windows the next tree opens and the file stays in its folder.
 - **Brontë data.** A scratch tree. **Never the Brontë build.**
 - **Do.** In Workspaces, Remove. Write down the question the app asks.
 - **Guide.** *Remove a workspace*.
@@ -657,7 +658,7 @@ Every picture is captured at its stage, with its focus person on the [allow-list
 | `img-person-edit` | 2.5 | 2 | Charlotte | |
 | `img-family-form` | 3.1 | 3 | Patrick | |
 | `img-family-children` | 3.1 | 3 | Patrick | |
-| `img-name-question` (new) | 3.1 | 3 | Patrick | System sheet on Apple devices |
+| `img-name-question` (new) | 3.1 | 3 | Patrick | System window on Apple devices and Windows |
 | `img-family-page` | 3.2 | 3 | Patrick | |
 | `img-tree-marriage` | 3.3 | 3 | Charlotte | |
 | `img-family-tree` | 3.4 | 3 | Patrick | Written description in the topic |
@@ -697,6 +698,7 @@ That is 45, above the budget of 25 to 40 per manual. A manual only takes the key
 | System sheets on iPhone, iPad and Mac | By hand, or an operating-system capture |
 | Android: a scrolled page comes out stretched | Capture at the top of the page, or by hand |
 | The in-app capture leaves out the Add a record page and the sources sheet on the Android phone | Capture by hand |
+| Windows: system windows (the name question, Save as, Add from file) | Capture by hand. The Save window needs a person |
 
 A hand capture follows the same catalogue entry ([screenshot strategy, section 4.5](screenshot-strategy.md#45-manual-capture-fallback)).
 
@@ -728,8 +730,12 @@ A hand capture follows the same catalogue entry ([screenshot strategy, section 4
 
 | # | Point | Proposed answer |
 |---|---|---|
-| 1 | The first-run sample is called "Brontë family of Haworth", the same as the tree we build. | Check whether the app allows two with one name. For the capture run, explore the sample at stage 0, then remove it before stage 1. For readers, tell them to give their practice tree a different name. |
+| 1 | The first-run sample is called "Brontë family of Haworth", the same as the tree we build. | Answered on Windows: the app accepts the same name and shows the new tree with "(2)" after it, until the sample is removed and the app restarted. For the capture run, explore the sample at stage 0, then remove it before stage 1. For readers, tell them to give their practice tree a different name. |
 | 2 | Arthur Bell Nicholls's second marriage (E146) is the only true second family, but his wife is not in the core. | Keep the core as it is. Step 3.3 teaches with Charlotte. Adding her needs a privacy row and an allow-list row first. |
 | 3 | The date box rewrites dates in short capital forms, which no page may show. | Picture the box before it is left, and describe the *Reads as* line. The app team has been told. |
-| 4 | Which reader-facing name goes with a shared note, if the app has one | Decide after step 5.2. |
+| 4 | Which reader-facing name goes with a shared note, if the app has one | The app says *Shared with 1 other record*. Use "shared note". |
 | 5 | Second reader of the evidence register (Q20) | Still needed before the file goes out as the sample. |
+| 6 | The app has no kind of name for a pen name. | Use *Professional name*, with "Pen name" in *Kind, in words*, and say so on the *Names* page. Ask the app team for the kind. |
+| 7 | The app has no way to name your own kind of event. | Use the kind *Event* and start the *Notes* box with the word, as in step 4.3. A person decides whether the page tells it that way. |
+| 8 | A research note cannot be tied to a person. | Name the person in the note. Change the specification, which attaches each note to people. |
+| 9 | Only named records were entered on the first walk, so the saved states of stages 4 to 9 are not reached. | Enter the rest at each stage when the walk is repeated on the reference device. |
