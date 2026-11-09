@@ -3,13 +3,14 @@
 <!-- Calendars, and the year that began in March. What the app does is from the app team's answers of
      5 November 2026 (issue 125): four calendars, no conversion, no knowledge of the change of 1752, and a
      dual year only by typing. The history is general knowledge, stated carefully. The worked case is in
-     an-old-style-date. Written once for all devices. -->
+     an-old-style-date (DEC-202, DEC-219). Written once for all devices. -->
 <concept id="calendars" xml:lang="en-GB">
   <title>Calendars and old dates</title>
   <shortdesc>The four calendars uFTi keeps, and what you need to know when a record is from before 1752.</shortdesc>
   <prolog>
     <critdates>
       <created date="2026-11-05"/>
+      <revised modified="2026-11-09"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -39,6 +40,7 @@
       <p>Britain and its colonies used the Julian calendar until September 1752. In that month, Wednesday 2 September was followed by Thursday 14 September. Many Catholic countries had changed in 1582, and other countries changed at other times. So the place matters as well as the year.</p>
       <p>uFTi does not know about the change. It takes <userinput>3 September 1752</userinput> as an ordinary date, and does not warn you, though that day never happened in Britain. Check dates of this time yourself.</p>
       <p>The two calendars differed by ten days in the 1600s and by eleven days in the 1700s. A record from the time gives the day as it was then. Naming the calendar tells the next reader which kind of date it is.</p>
+      <p>It was really two changes. The year 1751 began on 25 March and ended on 31 December. Then eleven days were left out in September 1752. A record made near these changes can look wrong, by days or a year, when it is right.</p>
     </section>
     <section>
       <title>The year that began in March, in Britain</title>

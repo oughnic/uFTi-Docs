@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<!-- A second worked case from the diary of Abraham De la Pryme (DEC-202, DEC-219): the gap between the two
+     calendars. The evidence for every claim is in content/sample-data/pryme/README.md, with the page of the
+     1870 edition. The Gregorian days and the days of the week are worked out by us. Written once for all
+     devices. No picture: the pictures follow the Brontë dataset (DEC-025). -->
+<concept id="two-calendars-one-life" xml:lang="en-GB">
+  <title>A worked case: two calendars in one life</title>
+  <shortdesc>How far apart the Julian and Gregorian calendars were in the life of a diarist who lived from 1671 to 1704.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-09"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="general"/>
+      <category>Concept</category>
+      <keywords>
+        <keyword>Julian calendar</keyword>
+        <keyword>Gregorian calendar</keyword>
+        <keyword>day of the week</keyword>
+        <keyword>worked example</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p>Abraham De la Pryme was a diarist in Yorkshire. England used the <term keyref="term-julian-calendar">Julian calendar</term> all through his life, so his dates are Julian. This case shows how far they were from the <term keyref="term-gregorian-calendar">Gregorian calendar</term>. Read <xref keyref="calendars"/> first.</p>
+    <section>
+      <title>Ten days, and then eleven</title>
+      <p>The Gregorian calendar was ten days ahead when Abraham was born. The gap grew while he lived. The year 1700 had a 29 February in the Julian calendar, but not in the Gregorian calendar. So, from March 1700, the gap was eleven days.</p>
+      <table>
+        <title>Four of his dates in both calendars</title>
+        <tgroup cols="4">
+          <colspec colname="c1" colwidth="3*"/>
+          <colspec colname="c2" colwidth="3*"/>
+          <colspec colname="c3" colwidth="3*"/>
+          <colspec colname="c4" colwidth="2*"/>
+          <thead>
+            <row>
+              <entry>What happened</entry>
+              <entry>Julian, as written then</entry>
+              <entry>Gregorian</entry>
+              <entry>The gap</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>His birth</entry>
+              <entry>15 January 1671</entry>
+              <entry>25 January 1671</entry>
+              <entry>10 days</entry>
+            </row>
+            <row>
+              <entry>A letter from Hull</entry>
+              <entry>20 November 1699</entry>
+              <entry>30 November 1699</entry>
+              <entry>10 days</entry>
+            </row>
+            <row>
+              <entry>Another letter from Hull</entry>
+              <entry>18 September 1700</entry>
+              <entry>29 September 1700</entry>
+              <entry>11 days</entry>
+            </row>
+            <row>
+              <entry>His death</entry>
+              <entry>12 June 1704</entry>
+              <entry>23 June 1704</entry>
+              <entry>11 days</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <p>uFTi does not work out the other calendar for you. We worked out this table by hand.</p>
+    </section>
+    <section>
+      <title>A day of the week can show the calendar</title>
+      <p>A friend wrote in his own diary that Abraham died on a Monday, the 12th of the month. The preface of the printed diary gives this, for June 1704. In the Julian calendar, 12 June 1704 was a Monday. In the Gregorian calendar, it was a Thursday. So the friend's date is a Julian one.</p>
+      <p>When a record names the day of the week, you can test its date in this way.</p>
+    </section>
+    <section>
+      <title>What his dates cannot show</title>
+      <p>Abraham died in 1704, so his dates stop before the change of 1752. <xref keyref="calendars"/> explains that change.</p>
+    </section>
+    <section>
+      <title>What to record</title>
+      <p>Keep the date as the record gives it. If you want to show which calendar it is, type its name first, such as <userinput>Julian 12 June 1704</userinput>.</p>
+    </section>
+  </conbody>
+</concept>
