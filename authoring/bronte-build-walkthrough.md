@@ -213,7 +213,7 @@ At the end of each stage, export the tree as that stage's saved state. Then repl
 - **Status.** Walked.
 - **Brontë data.** Exact: Charlotte, 21 April 1816. Year only: Maria (P02), 1783. A range: Maria the daughter (P03), 1813 or 1814 (thread T04).
 - **Do.** Use Day, Month and Year. Switch on *Not sure of the date?* for *Kind of date* and *How much do you know?*. Try Edit as text, and read the *Reads as* line after leaving the box.
-- **Guide.** *Dates*, *Typing a date*, *Kinds of date*, *Dates in lists and order*. *Calendars* and *An old-style date* use their own example, because the Brontë dates are all after 1752.
+- **Guide.** *Dates*, *Typing a date*, *Kinds of date*, *Dates in lists and order*. *Calendars* and *An old-style date* use their own example, because the Brontë dates are all after 1752. Step 9.8 walks them.
 - **Help.** `events.date`.
 - **Picture.** New `img-date-editor` and `img-date-not-sure`. Take them **before leaving the box**, because the box then rewrites the date in short capital forms that no page may show (DEC-030).
 - **You know it worked when** the *Reads as* line says what you meant.
@@ -578,6 +578,18 @@ At the end of each stage, export the tree as that stage's saved state. Then repl
 - **Do.** Export the finished tree. Compare it with the reference workspace ([dataset strategy, section 6](dataset-strategy.md#6-how-it-is-built)). Offer it to the app team as a fuller sample (DEC-112, DEC-116). Write the one DNA topic (DEC-037) and the troubleshooting chapter from what the walk actually went wrong on.
 - **You know it worked when** the two workspaces match, or each difference is explained.
 
+#### 9.8 Enter a date from before 1752
+
+- **Learning objective.** After this step, you can keep an old date in the calendar of its record, and explain why its day or year may differ from the one you expect.
+- **Good practice.** Type a date as the source gives it. Add a dual year only if a source prints one.
+- **Status.** Not walked with these dates. The same forms were checked with other dates in the walk of the pages on dates.
+- **Data.** Not the Brontë dataset: claims P1 and P7 to P11 in the [De la Pryme evidence](../content/sample-data/pryme/README.md), in a scratch tree. **Never the Brontë build.** No file of these dates is kept or shipped (DEC-219).
+- **Do.** In a scratch tree, add a person. Choose Edit as text. Type `Julian 15 January 1671` and read the *Reads as* line. Then try `2 February 1701/02` and `Julian 12 June 1704`, and note what each line says. Leave without saving, or remove the tree afterwards.
+- **Guide.** *Calendars and old dates*, *A worked case: a birth in January*, *A worked case: two calendars in one life*.
+- **Help.** `events.date`.
+- **Picture.** None. The pictures follow the Brontë dataset (DEC-025, DEC-202).
+- **You know it worked when** the *Reads as* line names the Julian calendar, and nothing has changed in the Brontë file.
+
 ## 7. Help text
 
 Help has three layers.
@@ -594,7 +606,7 @@ Help has three layers.
 |---|---|---|---|
 | `about` | 0.5 | See which version of uFTi you have. | Has a page |
 | `add.record` | 2.2, 4.1 | Choose what you want to add. | Has a page; widen beyond people |
-| `events.date` | 2.3 | Enter a date, even one you are not sure of. | Has a page |
+| `events.date` | 2.3, 9.8 | Enter a date, even one you are not sure of. | Has a page |
 | `events.list` | 4.4 | See everything that happened in a person's life, in order. | Has a page |
 | `families.view` | 3.2 | See a family: the partners, their children and their marriage. | **Write** |
 | `forms.compose` | 4.1, 8.3 | Fill in a form that matches your record. | **Write** |

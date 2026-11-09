@@ -11,7 +11,7 @@
   <prolog>
     <critdates>
       <created date="2026-11-03"/>
-      <revised modified="2026-11-05"/>
+      <revised modified="2026-11-09"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -44,7 +44,9 @@
     </section>
     <section>
       <title>Old dates</title>
-      <p>A date from long ago may need more care. Britain changed its calendar in 1752. Before that, the year there began in March. uFTi can keep a date in the calendar of the record. <xref keyref="calendars"/> explains how, and <xref keyref="an-old-style-date"/> works through a real case.</p>
+      <p>A date from long ago may need more care. Britain changed its calendar in 1752. Before that, the year there began in March. uFTi can keep a date in the calendar of the record.</p>
+      <p>For example, the diarist Abraham De la Pryme gives his birthday as 15 January 1671. England used the Julian calendar then. To keep the date in that calendar, type <userinput>Julian 15 January 1671</userinput>. The <q>Reads as</q> line then shows <q>15 January 1671 (Julian)</q>.</p>
+      <p><xref keyref="calendars"/> explains how this works. <xref keyref="an-old-style-date"/> and <xref keyref="two-calendars-one-life"/> follow his dates through real cases.</p>
     </section>
     <section>
       <title>Where dates are used</title>
