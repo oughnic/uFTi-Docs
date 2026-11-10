@@ -1,6 +1,6 @@
 # The Alpha-2 Windows walk
 
-What was walked, what was found and what the Windows manual does about it. Part of the [authoring plan](../authoring-plan.md) and the [walk plan](walk-plan.md). Written 10 November 2026. Decision: DEC-220. This report names no machine, no account and nothing from the application repository.
+What was walked, what was found and what the Windows manual does about it. Part of the [authoring plan](../authoring-plan.md) and the [walk plan](walk-plan.md). Written 10 November 2026. Decision: DEC-221. This report names no machine, no account and nothing from the application repository.
 
 ## 1. What was walked
 
