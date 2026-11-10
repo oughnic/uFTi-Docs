@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="add-a-repository" xml:lang="en-GB">
+  <title>Add a place where records are kept</title>
+  <shortdesc>Keep a list of the archives, libraries and websites that hold your records.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>repository</keyword>
+        <keyword>archive</keyword>
+        <keyword>library</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="repositories.list"/>
+  </prolog>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-more"/>, then <uicontrol keyref="ui-where-records-are-kept"/>.</cmd>
+        <stepresult>
+          <p>A new tree says <q>Nothing here yet.</q></p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-add"/>, then <uicontrol keyref="ui-repository"/> under <q>Add to the workspace</q>, then <uicontrol keyref="ui-add-button"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Type the name of the archive, library or website in <uicontrol keyref="ui-name"/>.</cmd>
+        <info>
+          <p>You can add an address, and a note.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>To add a telephone number, an email address or a website, choose <uicontrol keyref="ui-add-row"/>.</cmd>
+        <info>
+          <p>Choose the kind from the list, then type the number or the address.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Scroll to the bottom and choose <uicontrol keyref="ui-save"/>.</cmd>
+        <stepresult>
+          <p>A box may ask whether to discard changes. The place is already saved. Leave the list and open it again to see it.</p>
+          <fig>
+            <image keyref="img-repositories"/>
+          </fig>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>The list names the places your records come from. Each one has buttons to <uicontrol keyref="ui-edit"/> and delete it.</p>
+    </result>
+  </taskbody>
+</task>

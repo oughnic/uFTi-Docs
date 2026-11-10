@@ -1,40 +1,35 @@
 {
   "img-create-workspace-dialog": {
-    "x": 60, "y": 380, "width": 960, "height": 600,
+    "x": 60, "y": 380, "width": 960, "height": 560,
     "shows": "controls only",
-    "reason": "Keeps the box and its two buttons. The screen behind it shows the search box and the person that was open, and the keyboard below it hides the rest."
+    "reason": "Keeps the box and its two buttons. The screen behind it is dimmed, and the keyboard below it shows the keys of the phone."
+  },
+  "img-name-question": {
+    "x": 60, "y": 840, "width": 960, "height": 560,
+    "shows": "controls only",
+    "reason": "Keeps the question and its three buttons. The form behind it is dimmed and holds nothing the page teaches."
+  },
+  "img-remove-workspace": {
+    "x": 60, "y": 900, "width": 960, "height": 420,
+    "shows": "controls only",
+    "reason": "Keeps the question and its two buttons. The Workspaces screen behind it is dimmed."
+  },
+  "img-save-as-choice": {
+    "x": 60, "y": 820, "width": 960, "height": 600,
+    "shows": "controls only",
+    "reason": "Keeps the choice and its button. The Workspaces screen behind it is dimmed."
+  },
+  "img-save-as-version": {
+    "x": 60, "y": 850, "width": 960, "height": 540,
+    "shows": "controls only",
+    "reason": "Keeps the choice and its button. The Workspaces screen behind it is dimmed."
   },
   "img-family-form": {
-    "x": 0, "y": 560, "width": 1080, "height": 1622,
-    "workspaceHidden": true,
-    "reason": "Leaves out the top of the screen, which names the workspace and the family page under the form, and keeps the boxes of the form."
+    "x": 0, "y": 650, "width": 1080, "height": 1532,
+    "reason": "Leaves out the top of the screen: the button that fills the form from a document (an AI feature, which the documentation leaves out, DEC-020)."
   },
   "img-note-form": {
-    "x": 0, "y": 660, "width": 1080, "height": 1522,
-    "workspaceHidden": true,
-    "reason": "Leaves out the top of the screen: the button that fills the form from a document (an AI feature, which the documentation leaves out, DEC-020) and the name of the workspace."
-  },
-  "img-person-edit": {
-    "x": 0, "y": 660, "width": 1080, "height": 1522,
-    "workspaceHidden": true,
-    "reason": "Leaves out the top of the screen: the button that fills the form from a document (an AI feature, which the documentation leaves out, DEC-020) and the name of the workspace."
-  },
-  "img-start-first-run": {
-    "x": 55, "y": 295, "width": 745, "height": 225,
-    "shows": "controls only",
-    "reason": "Keeps the heading and the two buttons. The first launch shows the app's own sample workspaces with file paths, and the screen with the samples removed shows a message about opening a family tree file; neither is the Brontë dataset or the route the page teaches (DEC-040)."
-  },
-  "img-person-add": {
-    "x": 0, "y": 520, "width": 1080, "height": 1662,
-    "workspaceHidden": true,
-    "reason": "Leaves out the top of the screen: the button that fills the form from a document (an AI feature, which the documentation leaves out, DEC-020) and the name of the workspace, which is not the Brontë workspace."
-  },
-  "img-nav-main": {
-    "noFocus": true,
-    "reason": "No crop. The subject is a list of people from a search, all of them on the allow-list, not one person."
-  },
-  "img-citation-add": {
-    "noFocus": true,
-    "reason": "No crop. The subject is the form, which names no person."
+    "x": 0, "y": 650, "width": 1080, "height": 1532,
+    "reason": "Leaves out the top of the screen: the button that fills the form from a document (an AI feature, which the documentation leaves out, DEC-020)."
   }
 }

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="enter-a-date" xml:lang="en-GB">
+  <title>Enter a date, even one you are not sure of</title>
+  <shortdesc>Enter an exact date, a part of a date, or a date you can only guess, and read how the app has understood it.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>unsure</keyword>
+        <keyword>range</keyword>
+        <keyword>reads as</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="dates.enter"/>
+  </prolog>
+  <taskbody>
+    <context>
+      <p>Every box that asks for a date works the same way. A good researcher enters what the record says. A date you are not sure of is entered as not sure, never as a guess.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>In a date, type the day and the year, and choose the month from the list.</cmd>
+        <info>
+          <p>You can leave out the day, or the day and the month.</p>
+        </info>
+        <stepresult>
+          <p>A line under the date says how the app reads it, such as <q>Reads as 21 April 1816</q>.</p>
+          <fig>
+            <image keyref="img-date-editor"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>To say how sure you are, turn on <uicontrol keyref="ui-not-sure-of-the-date"/>.</cmd>
+        <stepresult>
+          <p>Two lists show. <uicontrol keyref="ui-kind-of-date"/> offers <uicontrol keyref="ui-date-on"/>, <uicontrol keyref="ui-date-about"/>, <uicontrol keyref="ui-date-estimated"/>, <uicontrol keyref="ui-date-before"/>, <uicontrol keyref="ui-date-after"/>, <uicontrol keyref="ui-date-between"/> and <uicontrol keyref="ui-date-period"/>. <uicontrol keyref="ui-how-much-do-you-know"/> offers <uicontrol keyref="ui-the-year"/>, <uicontrol keyref="ui-the-month-and-year"/> and <uicontrol keyref="ui-the-whole-date"/>.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose the kind of date, and how much you know.</cmd>
+        <info>
+          <p>For <uicontrol keyref="ui-date-between"/> with <uicontrol keyref="ui-the-year"/>, the form shows two year boxes with the word <q>and</q> between them. Type both years.</p>
+        </info>
+        <stepresult>
+          <p>The line under the boxes follows what you type, such as <q>Reads as between 1813 and 1814</q>.</p>
+          <fig>
+            <image keyref="img-date-not-sure"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>To type the whole date in one box, turn on <uicontrol keyref="ui-edit-as-text"/>.</cmd>
+        <info>
+          <p>The line under the box shows how the app reads what you typed. Words such as <q>about</q>, <q>before</q> and <q>between</q> work. <xref keyref="typing-a-date"/> lists them.</p>
+        </info>
+      </step>
+    </steps>
+    <result>
+      <p>A calendar other than the Gregorian one is behind the button <uicontrol keyref="ui-more-other-calendars"/>. It has the Julian, Hebrew and French Republican calendars. <xref keyref="calendars"/> explains when to use them.</p>
+      <p>The app does not check that a day exists. A date such as 31 February 1900 is kept as you typed it. Each date box also has a small help button of its own.</p>
+    </result>
+    <postreq>
+      <p>To learn more, read <xref keyref="dates"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

@@ -3,14 +3,14 @@ about,About uFTi,
 add.record,Add a record,
 events.date,The date editor,
 events.list,Events,
-families.view,A family,gap
-forms.compose,A form for a new record,gap
+families.view,A family,
+forms.compose,A form for a new record,
 home,Home,
-more,More,gap
+more,More,
 notes.list,Notes,
 notes.record,Notes on one record,
 people.edit,Add or change a person,
-people.list,Everyone in the tree,gap
+people.list,Everyone in the tree,
 people.merge,Merge two people,gap
 people.name,A name,
 people.view,A person,

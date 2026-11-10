@@ -1,32 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept id="the-photos-buttons" xml:lang="en-GB">
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="the-photos-buttons" xml:lang="en-GB">
   <title>The Photos buttons</title>
   <shortdesc>What the buttons under Photos are for on a person, an event or a source.</shortdesc>
   <prolog>
     <critdates>
       <created date="2026-10-27"/>
+      <revised modified="2026-11-10"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
-      <category>Concept</category>
+      <category>Reference</category>
       <keywords>
-        <keyword>images</keyword>
         <keyword>pictures</keyword>
-        <keyword>attachments</keyword>
         <keyword>camera</keyword>
+        <keyword>attachments</keyword>
       </keywords>
     </metadata>
     <resourceid appname="ufti" appid="media.add"/>
   </prolog>
-  <conbody>
-    <p>A person's page, an event and a source each have a part named <uicontrol keyref="ui-photos"/>. It has three round-cornered buttons in a row. Under them, the page says <q>No attachments yet</q> until you add a picture.</p>
-    <ul>
-      <li>The first button has a camera on it. It is for a new photo.</li>
-      <li>The second button has a folder on it. It is for a picture or a scan that is already on your phone.</li>
-      <li>The third button has a chain link on it. It is for a picture that is already in this tree, so you can use it again on a second person.</li>
-    </ul>
-    <p>When a page already has pictures, a fourth button shows, with an arrow that points down.</p>
-    <p>The same three buttons appear when you attach a copy of a source. <xref keyref="which-file-to-send"/> says which file to send to family, and whether the pictures go with it.</p>
-  </conbody>
-</concept>
+  <refbody>
+    <section>
+      <title>The buttons</title>
+      <p>A person's page, an event and a source each have a part named <uicontrol keyref="ui-photos"/>. It has three buttons in a row. Under them, the page says <q>No attachments yet.</q> until you add a picture.</p>
+      <table>
+        <title>The buttons under Photos</title>
+        <tgroup cols="2">
+          <colspec colname="c1" colwidth="2*"/>
+          <colspec colname="c2" colwidth="3*"/>
+          <thead>
+            <row>
+              <entry>Button</entry>
+              <entry>What it is for</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><uicontrol keyref="ui-take-photo"/>, with a camera on it</entry>
+              <entry>A new photo of a document. <xref keyref="take-a-photo"/> shows how.</entry>
+            </row>
+            <row>
+              <entry><uicontrol keyref="ui-add-photo"/>, with a folder on it</entry>
+              <entry>A picture or a scan that is already on your <keyword keyref="product-device"/>.</entry>
+            </row>
+            <row>
+              <entry><uicontrol keyref="ui-link-existing-media"/>, with a chain link on it</entry>
+              <entry>A picture that is already in this tree, so you can use it again on a second person.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <p>When a page already has pictures, a fourth button shows, named <uicontrol keyref="ui-export-all-to-a-folder"/>.</p>
+    </section>
+    <section>
+      <title>A picture that is attached</title>
+      <p>A picture shows as a card. Choose the card to see a short list. It offers <uicontrol keyref="ui-view"/>, <uicontrol keyref="ui-details"/>, <uicontrol keyref="ui-copy"/>, <uicontrol keyref="ui-export"/> and <uicontrol keyref="ui-remove"/>. <uicontrol keyref="ui-details"/> opens a form with the name of the file, its type and your description. <uicontrol keyref="ui-remove"/> asks if you want to delete the photo and its file. It says so when the photo is only attached to that one record.</p>
+      <p>The same three buttons appear when you attach a copy of a source. <xref keyref="which-file-to-send"/> says which file to send to family, and whether the pictures go with it.</p>
+    </section>
+  </refbody>
+</reference>

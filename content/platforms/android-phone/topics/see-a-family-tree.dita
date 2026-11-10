@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="see-a-family-tree" xml:lang="en-GB">
+  <title>See a family tree</title>
+  <shortdesc>Draw the parents, partners and children of one person.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-27"/>
+      <revised modified="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>pedigree</keyword>
+        <keyword>ancestors</keyword>
+        <keyword>generations</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="tree.view"/>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p>Open a person first. <xref keyref="find-a-person"/> shows how.</p>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-family-tree"/> in the bar along the bottom.</cmd>
+        <stepresult>
+          <p>A drawing opens, with the person you chose in a box with a dark edge. Their parents are above. Their partners are beside them. Their children are below.</p>
+          <fig>
+            <image keyref="img-family-tree-charlotte"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>If the boxes are too small to read, choose <uicontrol keyref="ui-fit-to-screen"/>.</cmd>
+        <info>
+          <p>It shows the whole drawing at once. A big family looks small.</p>
+        </info>
+        <stepresult>
+          <fig>
+            <image keyref="img-family-tree"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Use the minus and plus buttons at the top to show fewer or more generations.</cmd>
+        <info>
+          <p>The pair beside the up arrow is for parents and older people. The pair beside the down arrow is for children and younger people.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-return-to-focus"/> to go back to the first person.</cmd>
+      </step>
+    </steps>
+    <result>
+      <p>Each box gives a name, how the person is related, and their years. A small mark shows how many events and notes the person has. A round mark between two partners shows the year of their marriage. A button such as <q>+5 siblings</q> means more brothers and sisters are not drawn.</p>
+      <p>In words: the tree of Charlotte Brontë shows her parents at the top, Patrick Brontë and Maria Branwell, joined by a mark for 1812. Charlotte is below them in a box with a dark edge. Beside her is her husband, Arthur Bell Nicholls, joined by a mark for 1854.</p>
+      <p>The same tree is the pedigree in older manuals.</p>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="see-the-events-of-a-person"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

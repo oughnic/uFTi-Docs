@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="look-at-the-sources-of-a-fact" xml:lang="en-GB">
+  <title>Look at the sources of a fact</title>
+  <shortdesc>See which books and records back up a birth, a death or another fact, add a source to it, and say how reliable it is.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-27"/>
+      <revised modified="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>evidence</keyword>
+        <keyword>citation</keyword>
+        <keyword>reliable</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="sources.view"/>
+  </prolog>
+  <taskbody>
+    <context>
+      <p>Each fact on a person's page has a small chip that counts its <term keyref="term-source">sources</term>. A chip that says <q>Sources: 0</q> means nothing backs that fact up yet. Every count of sources uses the same words, so you see them on a person's card in the results of a search too.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>On the page of a person, choose the chip beside the fact, such as <uicontrol keyref="ui-birth"/> or <uicontrol keyref="ui-death"/>.</cmd>
+        <stepresult>
+          <p>A sheet named <uicontrol keyref="ui-sources"/> opens. A fact with no source says <q>No sources for this fact yet.</q></p>
+          <fig>
+            <image keyref="img-sources-empty"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-add-source"/>.</cmd>
+        <stepresult>
+          <p>A box to search for a source you have already added opens. Use it when one book backs up many facts. The other choice is <uicontrol keyref="ui-add-a-new-source"/>.</p>
+          <fig>
+            <image keyref="img-source-attach"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-add-a-new-source"/>.</cmd>
+        <stepresult>
+          <p>A form opens. Only <uicontrol keyref="ui-title"/> is needed. The other boxes hold the words copied from the record, a note, and where the source is kept. <uicontrol keyref="ui-more-details"/> adds the author and the publisher.</p>
+          <fig>
+            <image keyref="img-source-new"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Type the title, then choose <uicontrol keyref="ui-save-source"/>.</cmd>
+        <stepresult>
+          <p>The source is already attached to the fact. The sheet shows its title, and the buttons <uicontrol keyref="ui-copy"/>, <uicontrol keyref="ui-citation"/>, <uicontrol keyref="ui-edit"/> and <uicontrol keyref="ui-remove"/>.</p>
+          <fig>
+            <image keyref="img-sources-list"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-citation"/>, then fill in the page and how reliable the source is.</cmd>
+        <info>
+          <p>A citation says where in the source you found the fact. Enter the page, folio or entry in <uicontrol keyref="ui-page-or-reference-number"/>. Choose how good the evidence is in <uicontrol keyref="ui-how-reliable-it-is"/>. If the entry has a date, enter it in <uicontrol keyref="ui-date-of-the-entry"/>.</p>
+          <fig>
+            <image keyref="img-citation-add"/>
+          </fig>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-save"/>, then <uicontrol keyref="ui-done"/>.</cmd>
+        <stepresult>
+          <p>The sheet shows the title, the page and a line that starts <q>Quality</q>. The chip on the person's page shows the new count.</p>
+          <fig>
+            <image keyref="img-sources-one"/>
+          </fig>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>The choices for how reliable a source is start with <q>Not stated</q>. They run from unreliable or worked out up to direct and primary evidence. They rate how good the evidence is. They do not say that the fact is true. A copy of a record, such as a transcription, is second-hand evidence.</p>
+      <p>When a fact has one place, such as a birth place or a death place, <uicontrol keyref="ui-compare-records"/> shows on the sheet. It opens a page that lists what each source says about the place and how good each source is. Use it when two records give different answers.</p>
+      <fig>
+        <image keyref="img-compare-records"/>
+      </fig>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="add-another-person"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

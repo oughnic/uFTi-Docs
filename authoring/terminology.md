@@ -190,6 +190,77 @@ Read from the app's date editor on 3 November 2026, from the words the app print
 | `ui-use` | Use | The button that links the form to a person who is already in the tree. | none |
 | `ui-add-a-new-person-called` | Add a new person called | The start of the button that makes a second person with the same name. | none |
 
+### 2.9 Android phone Alpha-2 additions
+
+Read from the Android phone app on 10 November 2026, in the walk for the Android phone manual ([`content/platforms/android-phone/keys/ui-labels.ditamap`](../content/platforms/android-phone/keys/ui-labels.ditamap)). The keys are the labels the screens print.
+
+| Key | Label as printed | What we say around it | Change |
+|---|---|---|---|
+| `ui-home` | Home | The first place in the bar. It shows the open tree, a search box and the people you opened last. | none |
+| `ui-all-people` | All people | The button on Home that lists everyone in the tree. | none |
+| `ui-open-another-workspace` | Open another workspace | The button on Home that shows your trees. | none |
+| `ui-add-the-first-person` | Add the first person | The button on Home in a tree that has nobody in it yet. | none |
+| `ui-continue-with` | Continue with | The heading over the person you opened last. | none |
+| `ui-recent-people` | Recent people | The heading over the people you opened lately. | none |
+| `ui-help` | Help | The line in the More list that opens the guide to the screen you are on, in the web browser. | none |
+| `ui-help-about-this-screen` | Help about this screen | The question mark at the top of every screen, and the name a screen reader gives it. | none |
+| `ui-add-note` | Add note | The button on the Notes screen that writes a new note. | none |
+| `ui-use-an-existing-note` | Use an existing note | The button on the Notes screen that links a note you already wrote. | none |
+| `ui-other-names` | Other names | The part of a person's form for a married name, a pen name and other names. | none |
+| `ui-kind-of-name` | Kind of name | The list of kinds of name, such as Married name or Pen name. | none |
+| `ui-married-name` | Married name | The kind of name for a name taken at marriage. | none |
+| `ui-pen-name` | Pen name | The kind of name for a name used when writing. | none |
+| `ui-delete` | Delete | The button in a box that removes what the box names. | none |
+| `ui-discard` | Discard | The button in a box that leaves a form without keeping changes. | none |
+| `ui-death` | Death | The fact for when and where a person died. | none |
+| `ui-other-event` | Other event | The choice on the Add a record sheet for an event that has no form of its own. | none |
+| `ui-type` | Type | The list of kinds of event. | none |
+| `ui-baptism` | Baptism | A kind of event. | none |
+| `ui-residence` | Residence | A kind of event for where a person lived. | none |
+| `ui-occupation` | Occupation | A kind of event for a person's work. | none |
+| `ui-event` | Event | The kind of event for one that is not on the list. | none |
+| `ui-kind-of-event-in-words` | Kind of event, in words | The box where you type your own word for a kind of event. | none |
+| `ui-baptism-record` | Baptism record | The form that matches a baptism or christening record. | none |
+| `ui-birth-record` | Birth record | The form that matches a birth certificate. | none |
+| `ui-burial-record` | Burial record | The form that matches a burial record. | none |
+| `ui-death-record` | Death record | The form that matches a death certificate. | none |
+| `ui-marriage-register-entry` | Marriage register entry | The form that matches an entry in a marriage register. | none |
+| `ui-family-note` | Family note | The form that adds a note to a family. | none |
+| `ui-existing-person` | Existing person | The part of a child's row where you choose someone who is already in the tree. | none |
+| `ui-citation` | Citation | The button on the Sources sheet that edits the page and the reliability. | none |
+| `ui-copy` | Copy | The button that copies a source or a picture. | none |
+| `ui-page-or-reference-number` | Page or reference number | The box for the page, folio or entry in a source. | none |
+| `ui-how-reliable-it-is` | How reliable it is | The list that rates how good the evidence is. | none |
+| `ui-date-of-the-entry` | Date of the entry | The date written in the entry of a source. | none |
+| `ui-more-details` | More details | The button on the new source form that adds the author and the publisher. | none |
+| `ui-name` | Name | The box for the name of a repository or of the people who made the tree. | none |
+| `ui-repository` | Repository | The choice on the Add a record sheet for an archive, a library or a website. | none |
+| `ui-submitter` | Submitter | The choice on the Add a record sheet for the person who made the tree. | none |
+| `ui-research-note` | Research note | The choice on the Add a record sheet for a question or a note. | none |
+| `ui-status` | Status | The list that says whether a question is open, in progress or resolved. | none |
+| `ui-people-it-is-about` | People it is about | The part of a research note where you name the people. | none |
+| `ui-take-photo` | Take photo | The button for a new photo with the camera. | none |
+| `ui-add-photo` | Add photo | The button for a picture that is already on the device. | none |
+| `ui-link-existing-media` | Link existing media | The button for a picture that is already in the tree. | none |
+| `ui-export-all-to-a-folder` | Export all to a folder | The button that copies the pictures of a record to a folder. | none |
+| `ui-view` | View | The choice that shows a picture. | none |
+| `ui-details` | Details | The choice that shows the file name and the description of a picture. | none |
+| `ui-export` | Export | The choice that copies one picture to a folder. | none |
+| `ui-crop-and-deskew` | Crop & deskew | The title of the screen where you drag the corners of a document. | none |
+| `ui-rotate` | Rotate | The button that turns a picture. | none |
+| `ui-reset` | Reset | The button that puts a picture back as it was. | none |
+| `ui-high-contrast` | High contrast | The theme for readers who need strong outlines and the clearest text. | none |
+| `ui-ink-and-parchment` | Ink and parchment | The theme the app starts with. | none |
+| `ui-saving-another-programs-file` | Saving another program's file | The part of Preferences for files that another program made. | none |
+
+### 2.9 Android phone Alpha-2 additions
+
+Read from the Android phone app on 10 November 2026, in the walk for the Android phone manual ([`content/platforms/android-phone/keys/ui-labels.ditamap`](../content/platforms/android-phone/keys/ui-labels.ditamap)). The keys are the labels the screens print.
+
+| Key | Label as printed | What we say around it | Change |
+|---|---|---|---|
+| `ui-more-other-calendars` | More: other calendars | The button that shows the list of other calendars under a date. | none |
+
 ## 3. Domain terms
 
 The words the documentation uses for the ideas behind the app. A term in bold needs a glossary entry before a topic uses it. The seven entries that exist are in [`content/glossary/`](../content/glossary/).
