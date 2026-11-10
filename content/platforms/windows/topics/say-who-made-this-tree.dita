@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="say-who-made-this-tree" xml:lang="en-GB">
+  <title>Say who made this tree</title>
+  <shortdesc>Add your name, or the name of a group, as the maker of your tree.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>submitter</keyword>
+        <keyword>credit</keyword>
+        <keyword>copyright</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="submitters.add"/>
+  </prolog>
+  <taskbody>
+    <context>
+      <p>The page <uicontrol keyref="ui-who-made-this-tree"/> lists the people or groups credited with the tree. It is usually only you. The name marked <q>(default)</q> is named as the maker when you save the tree.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-who-made-this-tree"/> in the menu.</cmd>
+        <stepresult>
+          <p>If nobody is credited yet, the page says <q>Nobody is credited with this tree yet. Use the + button to add a name.</q></p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose the <uicontrol keyref="ui-add"/> button, named <uicontrol keyref="ui-add-a-record"/>, at the top of the window.</cmd>
+        <stepresult>
+          <p>A sheet named <uicontrol keyref="ui-add-a-record"/> opens.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>In the group <uicontrol keyref="ui-add-to-the-workspace"/>, choose <uicontrol keyref="ui-submitter"/>, then choose <uicontrol keyref="ui-add-button"/>.</cmd>
+        <info>
+          <p>The group is near the end of the sheet. Scroll to it if you cannot see it. <uicontrol keyref="ui-add-button"/> does not work until you choose a form.</p>
+        </info>
+        <stepresult>
+          <p>A form named <uicontrol keyref="ui-submitter"/> opens.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Type your name in <uicontrol keyref="ui-submitter-name"/>.</cmd>
+        <info>
+          <p>This is the only box you must fill in. The form also has <uicontrol keyref="ui-submitter-address"/>, <uicontrol keyref="ui-submitter-contacts"/>, <uicontrol keyref="ui-submitter-language"/> and <uicontrol keyref="ui-copyright-of-this-tree"/>. For a telephone number, an email address or a website, choose <uicontrol keyref="ui-add-row"/>.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-save"/>.</cmd>
+        <info>
+          <p>To leave without saving, choose <uicontrol keyref="ui-cancel"/>.</p>
+        </info>
+      </step>
+    </steps>
+    <result>
+      <p>The page now lists your name, with <q>(default)</q> after it. Beside it are a button for notes, and the buttons <uicontrol keyref="ui-edit"/> and <uicontrol keyref="ui-delete-name"/>.</p>
+      <p>Until you fill in <uicontrol keyref="ui-copyright-of-this-tree"/>, the page says <q>This tree states no copyright.</q> To add one later, choose <uicontrol keyref="ui-edit"/> beside a name and fill in that box.</p>
+      <p>The picture shows the page with one name listed, <q>uFTi documentation (default)</q>, and that line about copyright.</p>
+      <fig>
+        <image keyref="img-submitters"/>
+      </fig>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="move-between-workspaces"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!-- The chapter "Events, notes and sources" of the Windows manual (Alpha-2). Every page here is written
+     from the Windows walk, so each topicref carries the token WindowsWinUI. The pages for adding a note
+     (add-a-note) and for the sources of a fact (look-at-the-sources-of-a-fact) are written in
+     platforms/windows/topics/ but are listed in work-with-your-tree.ditamap, where the shared pages they
+     replace are, and say-where-you-found-it is the Windows page in the Quick Start map. They are not listed again
+     here. Keys sit on the topicrefs and match the file names. The words on screen for this chapter are in
+     the label map included first. -->
+<map id="windows-evidence-structure" xml:lang="en-GB">
+  <mapref href="../../platforms/windows/keys/ui-labels-evidence.ditamap" platform="WindowsWinUI" processing-role="resource-only"/>
+  <topicref href="../../platforms/windows/topics/add-an-event.dita" keys="add-an-event" platform="WindowsWinUI"/>
+  <topicref href="../../platforms/windows/topics/enter-a-period.dita" keys="enter-a-period" platform="WindowsWinUI"/>
+  <topicref href="../../platforms/windows/topics/add-an-event-of-your-own-kind.dita" keys="add-an-event-of-your-own-kind" platform="WindowsWinUI"/>
+  <topicref href="../../platforms/windows/topics/use-one-note-for-several-people.dita" keys="use-one-note-for-several-people" platform="WindowsWinUI"/>
+  <topicref href="../../platforms/windows/topics/add-a-repository.dita" keys="add-a-repository" platform="WindowsWinUI"/>
+  <topicref href="../../platforms/windows/topics/add-a-source.dita" keys="add-a-source" platform="WindowsWinUI"/>
+  <topicref href="../../platforms/windows/topics/add-a-research-note.dita" keys="add-a-research-note" platform="WindowsWinUI"/>
+  <topicref href="../../platforms/windows/topics/record-a-search-that-found-nothing.dita" keys="record-a-search-that-found-nothing" platform="WindowsWinUI"/>
+  <topicref href="../../platforms/windows/topics/use-a-form-for-a-real-record.dita" keys="use-a-form-for-a-real-record" platform="WindowsWinUI"/>
+</map>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="use-one-note-for-several-people" xml:lang="en-GB">
+  <title>Use one note for several people</title>
+  <shortdesc>Write a note once, then use the same note on the page of another person.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>shared note</keyword>
+        <keyword>same note</keyword>
+        <keyword>reuse</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="notes.share"/>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p>The tree needs a note already. <xref keyref="add-a-note"/> adds one to Maria Branwell. Then open the page of Patrick Brontë. <xref keyref="find-a-person"/> shows how.</p>
+    </prereq>
+    <context>
+      <p>Some facts belong to more than one person. The note about Maria Branwell tells of her marriage to Patrick Brontë, so it fits his page too. You can use the same note on both pages, so you do not write it twice.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-notes"/> in the menu.</cmd>
+        <info>
+          <p>The menu opens the notes of the person named in the chip that starts <uicontrol keyref="ui-showing"/>.</p>
+        </info>
+        <stepresult>
+          <p>The page shows the notes of Patrick Brontë, and two buttons: <uicontrol keyref="ui-add-note"/> and <uicontrol keyref="ui-use-an-existing-note"/>.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-use-an-existing-note"/>.</cmd>
+        <stepresult>
+          <p>A list opens, headed <uicontrol keyref="ui-use-an-existing-note"/>. It has a box named <uicontrol keyref="ui-search-the-notes"/> and a row for each note in the tree. A row shows the first words of the note and a line such as <systemoutput>Used by 1 record</systemoutput>. The button <uicontrol keyref="ui-back-to-all-notes"/> goes back to the page of notes.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose the row of the note that starts <q>Maria Branwell came from Penzance in Cornwall</q>.</cmd>
+        <stepresult>
+          <p>The page of notes opens again. It lists the note by its first words, and under them it says <systemoutput>Shared with 1 other record</systemoutput>.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>Patrick Brontë and Maria Branwell now use the same note. Both of their pages show it, with the words <systemoutput>Shared with 1 other record</systemoutput> under its first words.</p>
+    </result>
+    <postreq>
+      <p>To write a first note, see <xref keyref="add-a-note"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

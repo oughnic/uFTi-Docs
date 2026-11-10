@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!-- Words on screen that the Windows Quick Start pages use and no other label map holds, exactly as
+     the app prints them, read from the Alpha-2 Windows app on 10 November 2026. It sits beside the
+     Windows label map and follows its shape. The Quick Start structure map includes it. -->
+<map id="windows-ui-labels-quick-start" xml:lang="en-GB">
+  <!-- the menu at the left, and the top bar -->
+  <keydef keys="ui-home"><topicmeta><keywords><keyword>Home</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-help"><topicmeta><keywords><keyword>Help</keyword></keywords></topicmeta></keydef>
+  <!-- the Home screen of a tree with nobody in it -->
+  <keydef keys="ui-add-the-first-person"><topicmeta><keywords><keyword>Add the first person</keyword></keywords></topicmeta></keydef>
+  <!-- Home, once someone has been opened. The next three are also defined in the labels of the chapter
+       "Work with your tree", with the same words. They are repeated here because the Quick Start is
+       also a publication of its own, which does not include that map. -->
+  <keydef keys="ui-all-people"><topicmeta><keywords><keyword>All people</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-continue-with"><topicmeta><keywords><keyword>Continue with</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-recent-people"><topicmeta><keywords><keyword>Recent people</keyword></keywords></topicmeta></keydef>
+  <!-- the Basic details form -->
+  <keydef keys="ui-male"><topicmeta><keywords><keyword>Male</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-day"><topicmeta><keywords><keyword>Day</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-month"><topicmeta><keywords><keyword>Month</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-year"><topicmeta><keywords><keyword>Year</keyword></keywords></topicmeta></keydef>
+  <!-- the Sources sheet and the step that adds a source. The next two are also defined in the labels of
+       other chapters, with the same words. They are repeated here because the Quick Start is also a
+       publication of its own, which does not include those maps. -->
+  <keydef keys="ui-page-or-reference-number"><topicmeta><keywords><keyword>Page or reference number</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-open"><topicmeta><keywords><keyword>Open</keyword></keywords></topicmeta></keydef>
+  <!-- the Save workspace as sheet -->
+  <keydef keys="ui-everything-gdz"><topicmeta><keywords><keyword>Everything (.gdz, recommended)</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-family-tree-only-ged"><topicmeta><keywords><keyword>Family tree only (.ged)</keyword></keywords></topicmeta></keydef>
+</map>

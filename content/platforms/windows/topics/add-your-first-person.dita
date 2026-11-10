@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="add-your-first-person" xml:lang="en-GB">
+  <title>Add your first person</title>
+  <shortdesc>Make a tree of your own and add the first person to it.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Get started</category>
+      <keywords>
+        <keyword>new person</keyword>
+        <keyword>start a tree</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="workspaces.create"/>
+    <resourceid appname="ufti" appid="people.edit"/>
+  </prolog>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-workspaces"/> in the menu, then <uicontrol keyref="ui-create-workspace"/>.</cmd>
+        <stepresult>
+          <p>A small box named <wintitle keyref="ui-new-workspace"/> opens, with a name in it.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Clear the name. Type a new one, such as <userinput>Practice tree</userinput>, and choose <uicontrol keyref="ui-create"/>.</cmd>
+        <info>
+          <p>Say you remove a tree and make a new one with the same name in the same session. The new tree mixes with the old one. It stays mixed until you close and open <keyword keyref="product-name"/> again.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>On <uicontrol keyref="ui-home"/>, choose <uicontrol keyref="ui-add-the-first-person"/>.</cmd>
+        <info>
+          <p>Another way is to choose <uicontrol keyref="ui-add"/> at the top, then <uicontrol keyref="ui-basic-details"/>, then <uicontrol keyref="ui-add-button"/>.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Type <userinput>Patrick</userinput> in <uicontrol keyref="ui-given-names"/> and <userinput>Brontë</userinput> in <uicontrol keyref="ui-surname"/>. In <uicontrol keyref="ui-sex"/>, choose <uicontrol keyref="ui-male"/>.</cmd>
+      </step>
+      <step>
+        <cmd>In <uicontrol keyref="ui-date-of-birth"/>, type <userinput>17</userinput> in <uicontrol keyref="ui-day"/>, choose March in <uicontrol keyref="ui-month"/>, and type <userinput>1777</userinput> in <uicontrol keyref="ui-year"/>.</cmd>
+      </step>
+      <step>
+        <cmd>In <uicontrol keyref="ui-place-of-birth"/>, type <userinput>County Down, Ireland</userinput>.</cmd>
+      </step>
+      <step>
+        <cmd>In <uicontrol keyref="ui-date-of-death"/>, enter 7 June 1861 the same way. In <uicontrol keyref="ui-place-of-death"/>, type <userinput>Haworth, Yorkshire</userinput>.</cmd>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-save"/> at the foot of the form.</cmd>
+        <stepresult>
+          <p>Patrick's page opens.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>That is your first person. <keyword keyref="product-name"/> saves your work as you go.</p>
+      <fig>
+        <image keyref="img-person-add"/>
+      </fig>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="say-where-you-found-it"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

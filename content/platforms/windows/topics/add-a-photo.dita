@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="add-a-photo" xml:lang="en-GB">
+  <title>Add a photo to a person</title>
+  <shortdesc>Choose a photo or a scan from your PC for a person's page.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>picture</keyword>
+        <keyword>scan</keyword>
+        <keyword>image file</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="media.attach"/>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p>Open the page of the person. <xref keyref="find-a-person"/> says how.</p>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Find the part of the page named <uicontrol keyref="ui-photos"/>.</cmd>
+        <stepresult>
+          <p>It has three buttons with a small picture on each. <xref keyref="the-photos-buttons"/> says what each one is for.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose the button with a folder on it.</cmd>
+        <stepresult>
+          <p>Windows opens its own window for choosing a file.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose the photo or the scan, then choose <uicontrol keyref="ui-open"/>.</cmd>
+      </step>
+    </steps>
+    <result>
+      <p>You have chosen a photo or a scan for the person. Look at the part named <uicontrol keyref="ui-photos"/> on the page.</p>
+      <p>The button with a camera on it is the button for taking a photo. <xref keyref="where-your-trees-are-saved"/> says where <keyword keyref="product-name"/> keeps your pictures.</p>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="which-file-to-send"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

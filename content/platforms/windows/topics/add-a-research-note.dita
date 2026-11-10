@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="add-a-research-note" xml:lang="en-GB">
+  <title>Add a research note</title>
+  <shortdesc>Write down a question you are trying to answer, with a status, and tie it to the people it is about.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>question</keyword>
+        <keyword>research log</keyword>
+        <keyword>to-do</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="research.edit"/>
+  </prolog>
+  <taskbody>
+    <context>
+      <p>A research note is a question, an idea or a job to do. It has a status, such as open, in progress or resolved. This page adds the question of Patrick Brontë's surname.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-research-questions-and-notes"/> in the menu.</cmd>
+        <stepresult>
+          <p>The page lists your research notes. Each shows its first words, its status and how many records it is linked from.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-add"/>, then choose <uicontrol keyref="ui-research-note"/> in the part named <uicontrol keyref="ui-add-to-the-workspace"/>, then choose <uicontrol keyref="ui-add-button"/>.</cmd>
+        <info>
+          <p>The list scrolls. Turn the mouse wheel with the pointer on it to find the part.</p>
+        </info>
+        <stepresult>
+          <p>A form opens.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>In <uicontrol keyref="ui-note"/>, type your question.</cmd>
+        <info>
+          <p>This box is needed. For example, <userinput>Question: what was Patrick's surname at birth, and when did he become Brontë? The sources give Brunty and Prunty. Still open: look for the parish register.</userinput></p>
+        </info>
+      </step>
+      <step>
+        <cmd>In <uicontrol keyref="ui-status"/>, choose <uicontrol keyref="ui-status-open"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Under <uicontrol keyref="ui-people-it-is-about"/>, choose <uicontrol keyref="ui-add-row"/>, then choose <uicontrol keyref="ui-set"/> under <uicontrol keyref="ui-person"/>.</cmd>
+        <stepresult>
+          <p>A window named <wintitle keyref="ui-existing-person"/> opens, with a box for a name.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Type <userinput>Patrick Brontë</userinput>, then choose the line with his years, <q>1777–1861</q>, then choose <uicontrol keyref="ui-done"/>.</cmd>
+        <info>
+          <p>The tree has more than one Patrick. The years show which one is which.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-save"/>.</cmd>
+        <stepresult>
+          <p>The page <uicontrol keyref="ui-research-questions-and-notes"/> lists the note by its first words. Under them it says <systemoutput>Open · linked from 1 record(s)</systemoutput>.</p>
+          <fig>
+            <image keyref="img-research-notes"/>
+          </fig>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>The question is in your research log, tied to Patrick. Each note in the list has <uicontrol keyref="ui-edit"/>, <uicontrol keyref="ui-copy"/> and <uicontrol keyref="ui-delete"/>.</p>
+      <note type="tip">Good practice: write the question down before you start to answer it. A question can stay open until you find the evidence.</note>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="record-a-search-that-found-nothing"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

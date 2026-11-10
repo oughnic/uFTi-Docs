@@ -2,10 +2,10 @@
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
 <task id="see-the-events-of-a-person" xml:lang="en-GB">
   <title>See the events of a person</title>
-  <shortdesc>List what happened in a person's life, such as birth, marriage and death, and open any one.</shortdesc>
+  <shortdesc>List what happened in a person's life, such as birth, baptism and death, and open any one.</shortdesc>
   <prolog>
     <critdates>
-      <created date="2026-10-24"/>
+      <created date="2026-11-10"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -13,11 +13,10 @@
       <keywords>
         <keyword>facts</keyword>
         <keyword>birth</keyword>
-        <keyword>marriage</keyword>
+        <keyword>baptism</keyword>
         <keyword>death</keyword>
       </keywords>
     </metadata>
-    <resourceid appname="ufti" appid="events.edit"/>
     <resourceid appname="ufti" appid="events.list"/>
   </prolog>
   <taskbody>
@@ -28,7 +27,7 @@
       <step>
         <cmd>Choose <uicontrol keyref="ui-events"/> in the menu.</cmd>
         <stepresult>
-          <p>Each event has a line with its name, its date and its place. The small number at the right counts the <term keyref="term-source">sources</term> for it.</p>
+          <p>A list opens, with a line at the head that says what it holds. Each event has a line with its name, then its date and its place. For Branwell Brontë, the first line says Birth, 1817, and Thornton, near Bradford, Yorkshire.</p>
           <fig>
             <image keyref="img-events"/>
           </fig>
@@ -37,7 +36,7 @@
       <step>
         <cmd>Choose an event to open it.</cmd>
         <stepresult>
-          <p>A page shows its type, date and place. It has a count of sources, a row of photo buttons, and the buttons <uicontrol keyref="ui-edit"/> and <uicontrol keyref="ui-delete-event"/>.</p>
+          <p>A page with the heading <uicontrol keyref="ui-event-or-fact"/> opens. It shows the type, the date, the place and a description. A column named <uicontrol keyref="ui-more-details"/> holds the rest, such as the age at the event and the cause. A chip that starts with <uicontrol keyref="ui-sources"/> counts the <term keyref="term-source">sources</term> of the event.</p>
           <fig>
             <image keyref="img-event-detail"/>
           </fig>
@@ -48,7 +47,8 @@
       </step>
     </steps>
     <result>
-      <p>To add an event, choose <uicontrol keyref="ui-add-event"/> under the list.</p>
+      <p>The list is in order of date. Branwell's birth in 1817 comes before his baptism on 23 July 1817.</p>
+      <p>To add an event, choose <uicontrol keyref="ui-add-event"/> under the list. <xref keyref="add-an-event"/> shows how.</p>
     </result>
     <postreq>
       <p>Next: <xref keyref="look-at-the-sources-of-a-fact"/>.</p>

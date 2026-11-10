@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="open-a-family-tree-file" xml:lang="en-GB">
+  <title>Open a family tree file</title>
+  <shortdesc>Bring a tree from another program, or a copy from a relative, into uFTi.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>import</keyword>
+        <keyword>open a file</keyword>
+        <keyword>GEDCOM</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="workspaces.import"/>
+  </prolog>
+  <taskbody>
+    <context>
+      <p>A <term keyref="term-family-tree-file">family tree file</term> ends in .ged or .gdz. Read <xref keyref="opened-files-and-copies"/> first if the file is the only copy you have.</p>
+      <p>If you have no tree at all, the page <uicontrol keyref="ui-workspaces"/> says <q>No workspaces found. Open a family tree file to get started.</q> This is the way to do that.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-workspaces"/> in the menu, then <uicontrol keyref="ui-add-from-file"/>.</cmd>
+        <stepresult>
+          <p>Windows opens its own window for choosing a file.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose the file, then choose <uicontrol keyref="ui-open"/>.</cmd>
+      </step>
+    </steps>
+    <result>
+      <p>The tree is added to the list, with a card of its own on <uicontrol keyref="ui-workspaces"/>. To make it the open tree, choose <uicontrol keyref="ui-open"/> on its card. <xref keyref="move-between-workspaces"/> says more.</p>
+      <fig>
+        <image keyref="img-workspaces"/>
+      </fig>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="keep-it-safe"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

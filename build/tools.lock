@@ -29,11 +29,11 @@ folder = dita-ot-4.4.1
 
 [govuk-plugin]
 id = org.istanduk.gov-uk
-version = 1.4.0
-url = https://github.com/iStandUK/govuk-dita-plugin/releases/download/v1.4.0/org.istanduk.gov-uk-1.4.0.zip
-size = 331577
-sha256 = f179cea03ebfd2a3f74e973ae3392e6c4e9779e10510042ea3a2207dfdb74ee3
-upstream-check = org.istanduk.gov-uk-1.4.0.zip.sha256 beside the release, and "gh attestation verify --repo iStandUK/govuk-dita-plugin" (both passed on 24 October 2026)
+version = 1.4.1
+url = https://github.com/iStandUK/govuk-dita-plugin/releases/download/v1.4.1/org.istanduk.gov-uk-1.4.1.zip
+size = 331581
+sha256 = 3ca7447409e9b5844eb67caceaf75100bc8adba54bae4bb729ddf1ff8793cfc8
+upstream-check = org.istanduk.gov-uk-1.4.1.zip.sha256 beside the release, and "gh attestation verify --repo iStandUK/govuk-dita-plugin" (both passed on 10 November 2026)
 requires = DITA-OT 4.4.1 or later, Java 17 or later
 
 [designsystempdf]

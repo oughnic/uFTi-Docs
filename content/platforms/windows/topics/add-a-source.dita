@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="add-a-source" xml:lang="en-GB">
+  <title>Add a source to a person</title>
+  <shortdesc>Describe a book, a register or a web page you used, so that someone else could find it again.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>register</keyword>
+        <keyword>book</keyword>
+        <keyword>citation</keyword>
+        <keyword>evidence</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="sources.edit"/>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p>Open the page of Emily Brontë first. <xref keyref="find-a-person"/> shows how.</p>
+    </prereq>
+    <context>
+      <p>A <term keyref="term-source">source</term> is where you found something out. This page adds a source to Emily Brontë: a copy of the Haworth burial register that volunteers typed out.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-add"/>.</cmd>
+        <stepresult>
+          <p>The list named <uicontrol keyref="ui-add-a-record"/> opens.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-source"/> in the part that starts <uicontrol keyref="ui-add-a-source-to"/>, then choose <uicontrol keyref="ui-add-button"/>.</cmd>
+        <info>
+          <p>The list scrolls. Turn the mouse wheel with the pointer on it to find the part.</p>
+        </info>
+        <stepresult>
+          <p>A form opens. It starts with <uicontrol keyref="ui-attach-source-document"/>, which you can leave alone.</p>
+          <fig>
+            <image keyref="img-source-new"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>In <uicontrol keyref="ui-title"/>, type the name of the source.</cmd>
+        <info>
+          <p>This box is needed. Say what you saw. For this source, type <userinput>Haworth burial register (volunteer transcription)</userinput>.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>In <uicontrol keyref="ui-page-or-reference-number"/>, type where to look in the source.</cmd>
+        <info>
+          <p>For this source, type <userinput>Burials of December 1848</userinput>.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Fill in the other boxes if you can, then choose <uicontrol keyref="ui-save"/>.</cmd>
+        <info>
+          <p>The form has <uicontrol keyref="ui-words-copied"/>, <uicontrol keyref="ui-note"/> and <uicontrol keyref="ui-where-it-is-kept"/>. You can leave them empty.</p>
+        </info>
+        <stepresult>
+          <p>The page of the person opens again. A line at the top says <systemoutput>Sourced by</systemoutput> and the title.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>The source is now in your tree. It is attached to the whole record of the person, so every part of the person's page that has a chip now counts one source.</p>
+      <note type="tip">Good practice: cite what you actually saw. If you saw a copy that someone typed out, say so in the title.</note>
+    </result>
+    <postreq>
+      <p>To say which fact a source backs, add it to that fact instead. <xref keyref="look-at-the-sources-of-a-fact"/> shows how. Next: <xref keyref="add-a-research-note"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

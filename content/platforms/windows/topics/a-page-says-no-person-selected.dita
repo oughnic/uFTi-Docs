@@ -2,10 +2,10 @@
 <!DOCTYPE troubleshooting PUBLIC "-//OASIS//DTD DITA Troubleshooting//EN" "troubleshooting.dtd">
 <troubleshooting id="a-page-says-no-person-selected" xml:lang="en-GB">
   <title>A page says no person is selected</title>
-  <shortdesc>What to do when Events, Notes or Family tree ask you to pick a person first.</shortdesc>
+  <shortdesc>What to do when Person, Family tree or Events have nobody to show.</shortdesc>
   <prolog>
     <critdates>
-      <created date="2026-10-24"/>
+      <created date="2026-11-10"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -19,16 +19,19 @@
   </prolog>
   <troublebody>
     <condition>
-      <p>You choose <uicontrol keyref="ui-family-tree"/>, <uicontrol keyref="ui-events"/> or <uicontrol keyref="ui-notes"/>. The page says <q>Select a person</q> or <q>No person selected</q>.</p>
+      <p>You choose <uicontrol keyref="ui-person"/>, <uicontrol keyref="ui-family-tree"/>, <uicontrol keyref="ui-events"/> or <uicontrol keyref="ui-notes"/>. No person is open. The chip at the top starts with <uicontrol keyref="ui-showing"/>, and it reads <q>Showing: the focal person</q> instead of a name.</p>
     </condition>
     <troubleSolution>
       <cause>
-        <p>These pages show one person at a time. You have not opened anyone yet, or you removed the tree that the person came from. The chip that starts with <uicontrol keyref="ui-showing"/> names nobody.</p>
+        <p>These pages show one person at a time. You have not opened anyone yet.</p>
       </cause>
       <remedy>
         <steps>
           <step>
-            <cmd>Type a name in the search box at the top, then choose <uicontrol keyref="ui-search"/>.</cmd>
+            <cmd>Choose <uicontrol keyref="ui-home"/> in the menu.</cmd>
+          </step>
+          <step>
+            <cmd>Type a name in the search box, then choose <uicontrol keyref="ui-search"/>. Or choose <uicontrol keyref="ui-all-people"/>.</cmd>
           </step>
           <step>
             <cmd>Choose the card of the person you want.</cmd>
@@ -41,12 +44,15 @@
     </troubleSolution>
     <troubleSolution>
       <cause>
-        <p>The page is empty because nothing has been added to the tree yet. <uicontrol keyref="ui-where-records-are-kept"/>, <uicontrol keyref="ui-who-made-this-tree"/> and <uicontrol keyref="ui-research-questions-and-notes"/> start empty.</p>
+        <p>The tree has nobody in it yet. On <uicontrol keyref="ui-home"/> the line under its name says <q>0 persons · 0 families · 0 events</q>, and the chip says <q>Showing: the focal person</q>.</p>
       </cause>
       <remedy>
         <steps>
           <step>
-            <cmd>Choose <uicontrol keyref="ui-add"/> and add the first one.</cmd>
+            <cmd>Choose <uicontrol keyref="ui-add-the-first-person"/> on <uicontrol keyref="ui-home"/>.</cmd>
+            <stepresult>
+              <p><xref keyref="add-your-first-person"/> shows how to add the person.</p>
+            </stepresult>
           </step>
         </steps>
       </remedy>

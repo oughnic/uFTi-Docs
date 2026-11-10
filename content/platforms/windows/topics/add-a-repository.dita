@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="add-a-repository" xml:lang="en-GB">
+  <title>Add a repository</title>
+  <shortdesc>Record an archive, a library or a museum that keeps the records you use, so a source can point to it.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>archive</keyword>
+        <keyword>library</keyword>
+        <keyword>museum</keyword>
+        <keyword>where a record is held</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="repositories.edit"/>
+  </prolog>
+  <taskbody>
+    <context>
+      <p>A repository is a place that keeps records: an archive, a library, a website or a family collection. A source can point to the place that holds it. This page adds the Brontë Parsonage Museum.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-where-records-are-kept"/> in the menu.</cmd>
+        <stepresult>
+          <p>The page lists the places you have recorded. Each has a name and an address.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-add"/>.</cmd>
+        <stepresult>
+          <p>The list named <uicontrol keyref="ui-add-a-record"/> opens.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-repository"/> in the part named <uicontrol keyref="ui-add-to-the-workspace"/>, then choose <uicontrol keyref="ui-add-button"/>.</cmd>
+        <info>
+          <p>The list scrolls. Turn the mouse wheel with the pointer on it to find the part.</p>
+        </info>
+        <stepresult>
+          <p>A form opens.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>In <uicontrol keyref="ui-name"/>, type <userinput>Brontë Parsonage Museum, the Brontë Society</userinput>.</cmd>
+        <info>
+          <p>Only this box is needed.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>In <uicontrol keyref="ui-address"/>, type <userinput>Church Street, Haworth</userinput>.</cmd>
+      </step>
+      <step>
+        <cmd>Under <uicontrol keyref="ui-telephone-email-website"/>, choose <uicontrol keyref="ui-add-row"/>.</cmd>
+        <stepresult>
+          <p>A row appears with a list named <uicontrol keyref="ui-kind"/> and a box named <uicontrol keyref="ui-number-or-address"/>.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose the kind that fits, then type the website in <uicontrol keyref="ui-number-or-address"/>.</cmd>
+        <info>
+          <p>For this museum, type <userinput>https://www.bronte.org.uk/</userinput>.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-save"/>.</cmd>
+        <stepresult>
+          <p>The page <uicontrol keyref="ui-where-records-are-kept"/> shows the museum with its address. Each place has <uicontrol keyref="ui-edit"/> and <uicontrol keyref="ui-delete"/>, and a count of its notes.</p>
+          <fig>
+            <image keyref="img-repositories"/>
+          </fig>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>The place is in the list. Add the others the same way, such as The National Archives at Kew.</p>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="add-a-source"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="add-an-event" xml:lang="en-GB">
+  <title>Add an event to a person</title>
+  <shortdesc>Record something that happened in a person's life, such as a baptism, with its date and place.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>baptism</keyword>
+        <keyword>christening</keyword>
+        <keyword>burial</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="events.add"/>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p>Open the page of Branwell Brontë first. <xref keyref="find-a-person"/> shows how.</p>
+    </prereq>
+    <context>
+      <p>An event is something that happened in a person's life. This page adds the baptism of Branwell Brontë, on 23 July 1817 at Thornton.</p>
+      <note type="caution">The list also offers <uicontrol keyref="ui-baptism-record"/>. That form starts with <uicontrol keyref="ui-register-title"/> already filled in as <systemoutput>Parish Baptism Register</systemoutput>. Use it only for a register you have seen. Branwell's date comes from a book about his life, not from the register, so this page uses <uicontrol keyref="ui-other-event"/>.</note>
+    </context>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-add"/>.</cmd>
+        <stepresult>
+          <p>The list named <uicontrol keyref="ui-add-a-record"/> opens.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-other-event"/> in the part that starts <uicontrol keyref="ui-add-an-event-to"/>, then choose <uicontrol keyref="ui-add-button"/>.</cmd>
+        <info>
+          <p>The list scrolls. Turn the mouse wheel with the pointer on it to find the part. The <uicontrol keyref="ui-add-button"/> button stays grey until you choose a form.</p>
+        </info>
+        <stepresult>
+          <p>A form for the event opens.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>In <uicontrol keyref="ui-type"/>, choose <uicontrol keyref="ui-type-baptism"/>.</cmd>
+        <info>
+          <p>This box is needed. The list holds many kinds of event, such as <uicontrol keyref="ui-type-residence"/>.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Under <uicontrol keyref="ui-date"/>, type <userinput>23</userinput> in the day box, choose July as the month, and type <userinput>1817</userinput> as the year.</cmd>
+        <stepresult>
+          <p>A line under the boxes reads <systemoutput>Reads as 23 July 1817</systemoutput>.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>In <uicontrol keyref="ui-place"/>, type <userinput>Thornton</userinput>, then choose the place the app offers.</cmd>
+        <info>
+          <p>The app offers places that are already in your tree. Here it offers <q>Thornton, near Bradford, Yorkshire</q>.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-save"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-events"/> in the menu.</cmd>
+        <stepresult>
+          <p>The baptism is in the list, with its date and place.</p>
+          <fig>
+            <image keyref="img-events"/>
+          </fig>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>The event is part of the person's life. The list shows events in date order, so a birth known only as 1817 comes before a baptism on 23 July 1817.</p>
+      <note type="tip">Good practice: write down only what you have seen. If you read a date in a book, say that, and do not say it came from a register.</note>
+    </result>
+    <postreq>
+      <p>To say where a date came from, see <xref keyref="say-where-you-found-it"/>. Next: <xref keyref="enter-a-period"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

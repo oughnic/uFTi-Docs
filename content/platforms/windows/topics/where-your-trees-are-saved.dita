@@ -6,7 +6,7 @@
   <prolog>
     <critdates>
       <created date="2026-10-26"/>
-      <revised modified="2026-10-27"/>
+      <revised modified="2026-11-10"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -20,10 +20,18 @@
     </metadata>
   </prolog>
   <conbody>
-    <p>When you make a new tree, <keyword keyref="product-name"/> saves it in the folder <filepath>Documents\uFTi</filepath> on your PC.</p>
+    <p>Each workspace is one family tree file. <keyword keyref="product-name"/> saves your changes to that file as you go. When you make a new tree, <keyword keyref="product-name"/> saves it in the folder <filepath>Documents\uFTi</filepath> on your PC.</p>
+    <section>
+      <title>Find the file of a tree</title>
+      <p>Choose <uicontrol keyref="ui-show-details"/> on the card of a tree on <uicontrol keyref="ui-workspaces"/>. It shows the name of the file of that tree.</p>
+    </section>
     <section>
       <title>Your pictures</title>
       <p>The pictures that you add to a tree are saved in the folder <filepath>Documents\uFTi\Media</filepath>, beside your trees. They are kept in the same way.</p>
+    </section>
+    <section>
+      <title>If you remove a tree from the list</title>
+      <p>The file stays in its folder. <xref keyref="remove-a-workspace"/> says how to take a tree off the list, and how to open it again.</p>
     </section>
     <section>
       <title>If you remove the app</title>
@@ -31,7 +39,7 @@
     </section>
     <section>
       <title>If your Documents folder is in OneDrive</title>
-      <p>Some PCs keep the Documents folder in OneDrive. If yours does, your trees go to OneDrive with the rest of that folder. They are kept up to date and copied between your PCs in the way OneDrive does that.</p>
+      <p>Some PCs keep the Documents folder in OneDrive. If yours does, your trees go to OneDrive with the rest of that folder.</p>
     </section>
     <section>
       <title>Trees you open from somewhere else</title>

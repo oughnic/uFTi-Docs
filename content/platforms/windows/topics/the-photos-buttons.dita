@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="the-photos-buttons" xml:lang="en-GB">
+  <title>The Photos buttons</title>
+  <shortdesc>What the buttons in the Photos part of a person's page are for.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Concept</category>
+      <keywords>
+        <keyword>pictures</keyword>
+        <keyword>images</keyword>
+        <keyword>media</keyword>
+        <keyword>scan</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="media.add"/>
+  </prolog>
+  <conbody>
+    <p>A person's page has a part named <uicontrol keyref="ui-photos"/>. In a tree with no pictures, it has three buttons in a row. Each has a small picture on it and no words. The picture shows them at the foot of a page, under <uicontrol keyref="ui-photos"/>.</p>
+    <fig>
+      <image keyref="img-photo-link"/>
+    </fig>
+    <ul>
+      <li>The first button has a camera on it. It is the button for taking a photo.</li>
+      <li>The second button has a folder on it. It is the button for adding a file, such as a photo or a scan from your PC. Windows opens its own window for choosing a file. <xref keyref="add-a-photo"/> shows the steps.</li>
+      <li>The third button has a chain link on it. It is the button for linking media that is already in this tree.</li>
+    </ul>
+    <section>
+      <title>The window for linking media</title>
+      <p>The third button opens a window named <wintitle keyref="ui-link-existing-media"/>. It has a box named <uicontrol keyref="ui-search-media-by-description"/> and a button named <uicontrol keyref="ui-close"/>. When the tree has no pictures, the window says <q>No media in this workspace yet.</q> Choose <uicontrol keyref="ui-close"/> to shut it.</p>
+    </section>
+    <section>
+      <title>When a person has pictures</title>
+      <p>Once a person has pictures, a fourth button shows, for saving them.</p>
+    </section>
+    <section>
+      <title>Sending your pictures</title>
+      <p><xref keyref="which-file-to-send"/> says which file to send to family, and whether the pictures go with it.</p>
+    </section>
+  </conbody>
+</concept>

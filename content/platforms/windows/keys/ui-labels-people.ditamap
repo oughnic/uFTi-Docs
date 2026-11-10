@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!-- Words on screen that the Windows pages of "Work with your tree" use and no other label map holds,
+     exactly as the app prints them, read from the Alpha-2 Windows app on 10 November 2026. It sits
+     beside the Windows label map and follows its shape. The chapter's structure map includes it. -->
+<map id="windows-ui-labels-people" xml:lang="en-GB">
+  <!-- Home -->
+  <keydef keys="ui-all-people"><topicmeta><keywords><keyword>All people</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-open-another-workspace"><topicmeta><keywords><keyword>Open another workspace</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-continue-with"><topicmeta><keywords><keyword>Continue with</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-recent-people"><topicmeta><keywords><keyword>Recent people</keyword></keywords></topicmeta></keydef>
+  <!-- the list of people -->
+  <keydef keys="ui-people"><topicmeta><keywords><keyword>People</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-add-person"><topicmeta><keywords><keyword>Add person</keyword></keywords></topicmeta></keydef>
+  <!-- the Add a record sheet -->
+  <keydef keys="ui-fewer-forms"><topicmeta><keywords><keyword>Fewer forms</keyword></keywords></topicmeta></keydef>
+  <!-- The next six are also defined in the labels of other chapters, with the same words. They are
+       repeated here so that this chapter does not depend on those maps being included. -->
+  <keydef keys="ui-add-to-the-workspace"><topicmeta><keywords><keyword>Add to the workspace</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-existing-person"><topicmeta><keywords><keyword>Existing person</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-open"><topicmeta><keywords><keyword>Open</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-delete"><topicmeta><keywords><keyword>Delete</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-copy"><topicmeta><keywords><keyword>Copy</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-death"><topicmeta><keywords><keyword>Death</keyword></keywords></topicmeta></keydef>
+  <!-- a person's page -->
+  <keydef keys="ui-identity"><topicmeta><keywords><keyword>Identity</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-more-details"><topicmeta><keywords><keyword>More details</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-other-names"><topicmeta><keywords><keyword>Other names</keyword></keywords></topicmeta></keydef>
+  <!-- an event's page, and a family's page -->
+  <keydef keys="ui-event-or-fact"><topicmeta><keywords><keyword>Event or fact</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-partners"><topicmeta><keywords><keyword>Partners</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-marriage"><topicmeta><keywords><keyword>Marriage</keyword></keywords></topicmeta></keydef>
+  <!-- Preferences -->
+  <keydef keys="ui-high-contrast"><topicmeta><keywords><keyword>High contrast</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-ink-and-parchment"><topicmeta><keywords><keyword>Ink and parchment</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-sepia-and-slate"><topicmeta><keywords><keyword>Sepia and slate</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-saving-another-programs-file"><topicmeta><keywords><keyword>Saving another program's file</keyword></keywords></topicmeta></keydef>
+  <!-- About uFTi -->
+  <keydef keys="ui-version"><topicmeta><keywords><keyword>Version</keyword></keywords></topicmeta></keydef>
+</map>

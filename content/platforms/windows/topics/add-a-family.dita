@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="add-a-family" xml:lang="en-GB">
+  <title>Add a family with children</title>
+  <shortdesc>Join two partners who are already in the tree, and add their children.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>married couple</keyword>
+        <keyword>parents</keyword>
+        <keyword>child</keyword>
+        <keyword>husband</keyword>
+        <keyword>wife</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="families.edit"/>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p>The partners and the children must already be in the tree, each with a page of their own. <xref keyref="add-another-person"/> shows how to add a person.</p>
+    </prereq>
+    <context>
+      <p>This page makes a family from people who are already in the tree. It uses Patrick Brontë, Maria Branwell and their six children. You add the marriage afterwards, on the page of the family. The sample tree already has this family, so use this page for people you added yourself.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Open one of the partners, then choose <uicontrol keyref="ui-add"/> at the top.</cmd>
+        <stepresult>
+          <p>The <uicontrol keyref="ui-add-a-record"/> sheet opens.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Scroll to the part named <uicontrol keyref="ui-add-to-the-workspace"/>. Choose <uicontrol keyref="ui-family"/>, then choose <uicontrol keyref="ui-add-button"/>.</cmd>
+        <stepresult>
+          <p>A form opens. The person you came from is already in one of the partner boxes.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Select the empty partner box and type the other partner's name.</cmd>
+        <info>
+          <p>For Patrick, this is <uicontrol keyref="ui-second-partner"/>. Type <userinput>Maria Branwell</userinput>.</p>
+        </info>
+        <stepresult>
+          <p>A short list of people appears under the box. Each line has the name and the years of life, such as <q>Maria Branwell (1783–1821)</q>.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose the person from the list.</cmd>
+        <info>
+          <p>Typing the whole name is not enough. The box takes the person only when you choose the line.</p>
+        </info>
+        <stepresult>
+          <fig>
+            <image keyref="img-family-form"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Leave <uicontrol keyref="ui-marriage-date"/> and <uicontrol keyref="ui-place-of-marriage"/> empty for now.</cmd>
+        <info>
+          <p>You add the marriage on the page of the family. <xref keyref="see-a-familys-page"/> shows how.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Scroll to <uicontrol keyref="ui-children"/> and choose <uicontrol keyref="ui-add-row"/>.</cmd>
+        <stepresult>
+          <p>A row appears for one child.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>For a child who is in the tree, choose <uicontrol keyref="ui-set"/> under <uicontrol keyref="ui-existing-person"/>.</cmd>
+        <info>
+          <p>A window named <wintitle keyref="ui-existing-person"/> opens, with a box. Type the child's name, choose the match, then choose <uicontrol keyref="ui-done"/>. Choose <uicontrol keyref="ui-add-row"/> again for each more child.</p>
+          <p>For a child who is not in the tree, type the names in the row and choose the sex instead.</p>
+        </info>
+        <stepresult>
+          <p>When every child is in, the table has a row for each of them.</p>
+          <fig>
+            <image keyref="img-family-children"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Scroll to the foot of the form and choose <uicontrol keyref="ui-save"/>.</cmd>
+        <stepresult>
+          <p>The page of the family opens. It names both partners and lists the children.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>Choose <uicontrol keyref="ui-view-family-tree"/> to see the family drawn out.</p>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="see-a-familys-page"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

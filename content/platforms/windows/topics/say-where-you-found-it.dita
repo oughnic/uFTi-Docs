@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="say-where-you-found-it" xml:lang="en-GB">
+  <title>Say where you found it</title>
+  <shortdesc>Add a source to a fact, so you always know why you believe it.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Get started</category>
+      <keywords>
+        <keyword>citation</keyword>
+        <keyword>evidence</keyword>
+        <keyword>reference</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="citations.edit"/>
+    <resourceid appname="ufti" appid="sources.sheet"/>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p>Use a tree that already has a source in it. The sample tree has some: choose <uicontrol keyref="ui-workspaces"/> in the menu, then <uicontrol keyref="ui-open"/> on its card. On <uicontrol keyref="ui-home"/>, search for a person who has a birth date, and choose their card.</p>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Choose the chip beside <uicontrol keyref="ui-birth"/>.</cmd>
+        <info>
+          <p>It starts with <uicontrol keyref="ui-sources"/> and ends with +.</p>
+        </info>
+        <stepresult>
+          <p>A sheet named <wintitle keyref="ui-sources"/> opens.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-add-source"/>, then choose a source in the list.</cmd>
+        <stepresult>
+          <p>A second step opens, with the title of the source at the top.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>In <uicontrol keyref="ui-page-or-reference-number"/>, type where to look in the source.</cmd>
+        <info>
+          <p>You can leave the other boxes as they are.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-add-source"/>, then choose <uicontrol keyref="ui-done"/>.</cmd>
+        <stepresult>
+          <p>The chip on the page shows one more source.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>The fact now has a <term keyref="term-source">source</term>. Later, when two records disagree, this is how you will know what to believe.</p>
+      <fig>
+        <image keyref="img-citation-add"/>
+      </fig>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="keep-it-safe"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

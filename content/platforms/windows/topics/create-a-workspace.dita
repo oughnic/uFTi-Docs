@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="create-a-workspace" xml:lang="en-GB">
+  <title>Create a workspace</title>
+  <shortdesc>Start a new, empty family tree and give it a name.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>new tree</keyword>
+        <keyword>start a tree</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="workspaces.new"/>
+  </prolog>
+  <taskbody>
+    <context>
+      <p>A <term keyref="term-workspace">workspace</term> is one family tree and everything kept with it. You can have more than one. Make a new one for each tree you start.</p>
+      <note type="warning">Do not give your new tree the name of a tree you removed in the same session. The new tree mixes up its data with the old one until you close <keyword keyref="product-name"/> and open it again.</note>
+    </context>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-workspaces"/> in the menu, then <uicontrol keyref="ui-create-workspace"/>.</cmd>
+        <info>
+          <p>The picture shows the <uicontrol keyref="ui-workspaces"/> page when no tree is open. It has the buttons <uicontrol keyref="ui-create-workspace"/> and <uicontrol keyref="ui-add-from-file"/>.</p>
+          <fig>
+            <image keyref="img-start-first-run"/>
+          </fig>
+        </info>
+        <stepresult>
+          <p>A small box named <wintitle keyref="ui-new-workspace"/> opens. It says <q>Name your new family tree.</q> The name box already holds the words <q>My family tree</q>.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Clear the words in the name box. Type a name of your own, such as <userinput>My family</userinput>.</cmd>
+        <info>
+          <p>Clear the box first, so that the name you type is the whole name.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-create"/>.</cmd>
+        <info>
+          <p>To stop, choose <uicontrol keyref="ui-cancel"/> instead.</p>
+        </info>
+        <stepresult>
+          <p>Your new tree opens on <uicontrol keyref="ui-home"/>. It says <q>0 persons · 0 families · 0 events</q>. A button named <uicontrol keyref="ui-add-the-first-person"/> is ready.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>You have an empty tree with a name of your own. <keyword keyref="product-name"/> saves your changes as you go.</p>
+      <p>If you want to use the name of a tree you removed, remove that tree first. Close <keyword keyref="product-name"/>, open it again, and only then create the new tree. <xref keyref="remove-a-workspace"/> says more, and says what to do about a tree called default.</p>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="say-who-made-this-tree"/>, or <xref keyref="add-your-first-person"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

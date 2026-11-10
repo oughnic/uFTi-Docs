@@ -5,7 +5,7 @@
   <shortdesc>Write down something you know about a person that does not fit in a date or a place.</shortdesc>
   <prolog>
     <critdates>
-      <created date="2026-10-24"/>
+      <created date="2026-11-10"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -20,8 +20,11 @@
   </prolog>
   <taskbody>
     <prereq>
-      <p>Open the person first. <xref keyref="find-a-person"/> shows how.</p>
+      <p>Open the page of Maria Branwell first. <xref keyref="find-a-person"/> shows how.</p>
     </prereq>
+    <context>
+      <p>A note is your own writing, kept with the person's record. This page adds a note to Maria Branwell.</p>
+    </context>
     <steps>
       <step>
         <cmd>Choose <uicontrol keyref="ui-add"/>.</cmd>
@@ -30,24 +33,30 @@
         </stepresult>
       </step>
       <step>
-        <cmd>Choose <uicontrol keyref="ui-note"/> under the part for a note, then choose <uicontrol keyref="ui-add-button"/>.</cmd>
+        <cmd>Choose <uicontrol keyref="ui-note"/> in the part that starts <uicontrol keyref="ui-add-a-note-to"/>, then choose <uicontrol keyref="ui-add-button"/>.</cmd>
         <info>
           <p>The list scrolls. Turn the mouse wheel with the pointer on it to find the part.</p>
         </info>
         <stepresult>
-          <p>A form opens with one box for the note.</p>
+          <p>A form opens with one big box for the note.</p>
           <fig>
             <image keyref="img-note-form"/>
           </fig>
         </stepresult>
       </step>
       <step>
-        <cmd>Type your note, then choose <uicontrol keyref="ui-save"/>.</cmd>
+        <cmd>Type your note in the box named <uicontrol keyref="ui-note"/>.</cmd>
+        <info>
+          <p>For example, <userinput>Maria Branwell came from Penzance in Cornwall. She married Patrick Brontë in December 1812 and died at Haworth in September 1821.</userinput></p>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-save"/>.</cmd>
       </step>
       <step>
         <cmd>Choose <uicontrol keyref="ui-notes"/> in the menu to read it.</cmd>
         <stepresult>
-          <p>The note shows under <uicontrol keyref="ui-notes"/>, with <uicontrol keyref="ui-edit"/> and a button to delete it.</p>
+          <p>The page lists the note by its first words.</p>
           <fig>
             <image keyref="img-notes"/>
           </fig>
@@ -55,10 +64,11 @@
       </step>
     </steps>
     <result>
-      <p>The note belongs to that person. Write what you know. Say where you read it if you can.</p>
+      <p>The note belongs to that person. On a record, a button that starts with Notes and a number in brackets, such as <systemoutput>Notes (1)</systemoutput>, counts its notes.</p>
+      <note type="tip">Write what you know, and say where you read it if you can.</note>
     </result>
     <postreq>
-      <p>Next: <xref keyref="open-a-family-tree-file"/>.</p>
+      <p>The same page has the buttons <uicontrol keyref="ui-add-note"/> and <uicontrol keyref="ui-use-an-existing-note"/>. To use one note for several people, see <xref keyref="use-one-note-for-several-people"/>.</p>
     </postreq>
   </taskbody>
 </task>
