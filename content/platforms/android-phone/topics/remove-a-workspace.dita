@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="remove-a-workspace" xml:lang="en-GB">
+  <title>Remove a tree from the list</title>
+  <shortdesc>Take a tree off the Workspaces screen without deleting its file.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-27"/>
+      <revised modified="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>delete tree</keyword>
+        <keyword>unlink</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="workspaces.remove"/>
+  </prolog>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-more"/>, then <uicontrol keyref="ui-workspaces"/>, and find the card of the tree.</cmd>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-remove"/> on that card.</cmd>
+        <stepresult>
+          <p>A box named <wintitle keyref="ui-remove-workspace"/> asks you to check. It says the family tree file is not deleted.</p>
+          <fig>
+            <image keyref="img-remove-workspace"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-remove"/> in the box, or <uicontrol keyref="ui-cancel"/> to stop.</cmd>
+        <stepresult>
+          <p>The card is gone. If you removed the tree that was open and you have another, that one opens.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>The file is still on your <keyword keyref="product-device"/>. Open it again with <uicontrol keyref="ui-add-from-file"/> at any time. If you remove your last tree, the screen says <q>No workspace open</q>.</p>
+    </result>
+  </taskbody>
+</task>

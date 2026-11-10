@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="add-an-event" xml:lang="en-GB">
+  <title>Add an event</title>
+  <shortdesc>Record something that happened in a person's life, something that lasted for years, or an event of your own kind.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>baptism</keyword>
+        <keyword>residence</keyword>
+        <keyword>fact</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="events.edit"/>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p>Open the person first. <xref keyref="find-a-person"/> shows how.</p>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-add"/>.</cmd>
+        <stepresult>
+          <p>The sheet named <uicontrol keyref="ui-add-a-record"/> opens. Under <q>Add an event to</q> the person it lists the kinds of event.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-other-event"/>, then <uicontrol keyref="ui-add-button"/>.</cmd>
+        <info>
+          <p>The other choices are forms for a census, a baptism record, a burial record and a marriage register entry. Use one only when you have seen that record. <xref keyref="forms-for-records"/> explains them.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>In <uicontrol keyref="ui-type"/>, choose the kind of event, such as <uicontrol keyref="ui-baptism"/>.</cmd>
+        <info>
+          <p>The list is long. It also has <uicontrol keyref="ui-residence"/> and <uicontrol keyref="ui-occupation"/>.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Enter the date and the place.</cmd>
+        <info>
+          <p>For something that lasted, turn on <uicontrol keyref="ui-edit-as-text"/> and type a period, such as from 25 February 1820 to 7 June 1861. <xref keyref="kinds-of-date"/> explains the choices.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Scroll to the bottom and choose <uicontrol keyref="ui-save"/>.</cmd>
+        <stepresult>
+          <p>The event shows in the list of events for that person.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>For a kind of event that is not on the list, choose <uicontrol keyref="ui-event"/> in <uicontrol keyref="ui-type"/>. Then type your own word in <uicontrol keyref="ui-kind-of-event-in-words"/>, such as Publication. The list of events shows <q>Event</q>. The word you typed shows when you open the event.</p>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="look-at-the-sources-of-a-fact"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

@@ -15,7 +15,8 @@
   <topicref href="../../platforms/android-tablet/topics/add-your-first-person.dita" keys="add-your-first-person" platform="AndroidTablet"/>
   <topicref href="../../platforms/desktop/topics/look-around.dita" keys="look-around" platform="Desktop"/>
   <topicref href="../../platforms/ipad/topics/look-around.dita" keys="look-around" platform="iPad"/>
-  <topicref href="../../platforms/phone/topics/look-around.dita" keys="look-around" platform="Phone"/>
+  <topicref href="../../platforms/phone/topics/look-around.dita" keys="look-around" platform="iPhone"/>
+  <topicref href="../../platforms/android-phone/topics/look-around.dita" keys="look-around" platform="AndroidPhone"/>
   <topicref href="../../platforms/android-tablet/topics/look-around.dita" keys="look-around" platform="AndroidTablet"/>
   <topicref href="../../topics/quick-start/say-where-you-found-it.dita" keys="say-where-you-found-it"/>
   <topicref href="../../platforms/windows/topics/keep-it-safe.dita" keys="keep-it-safe" platform="WindowsWinUI"/>
