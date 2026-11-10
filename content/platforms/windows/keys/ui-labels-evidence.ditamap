@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!-- Words on screen for the chapter "Events, notes and sources" in the Windows manual (authoring
+     standards, section 6), exactly as the app prints them, read from the Alpha-2 walk on 10 November 2026.
+     Included by the chapter's own map, maps/structure/windows-evidence.ditamap, with processing-role
+     resource-only. Each key here still needs a row in the terminology list, section 2 (the lint keeps that
+     list whole): the writer of the terminology list adds them. A label that already has a key in
+     content/keys/ui-labels.ditamap, content/platforms/windows/keys/ui-labels.ditamap or
+     content/platforms/windows/keys/ui-labels-quick-start.ditamap or ui-labels-workspaces.ditamap (which
+     defines ui-add-to-the-workspace, used here) is not repeated here. -->
+<map id="windows-ui-labels-evidence" xml:lang="en-GB">
+  <!-- the Add a record list -->
+  <keydef keys="ui-add-an-event-to"><topicmeta><keywords><keyword>Add an event to</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-other-event"><topicmeta><keywords><keyword>Other event</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-baptism-record"><topicmeta><keywords><keyword>Baptism record</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-census-1841"><topicmeta><keywords><keyword>1841 Census (England &amp; Wales)</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-add-a-note-to"><topicmeta><keywords><keyword>Add a note to</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-add-a-source-to"><topicmeta><keywords><keyword>Add a source to</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-source"><topicmeta><keywords><keyword>Source</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-repository"><topicmeta><keywords><keyword>Repository</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-research-note"><topicmeta><keywords><keyword>Research note</keyword></keywords></topicmeta></keydef>
+  <!-- the form for an event -->
+  <keydef keys="ui-type"><topicmeta><keywords><keyword>Type</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-type-baptism"><topicmeta><keywords><keyword>Baptism</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-type-residence"><topicmeta><keywords><keyword>Residence</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-type-fact"><topicmeta><keywords><keyword>Fact</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-kind-of-event-in-words"><topicmeta><keywords><keyword>Kind of event, in words</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-date"><topicmeta><keywords><keyword>Date</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-description"><topicmeta><keywords><keyword>Description</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-register-title"><topicmeta><keywords><keyword>Register title</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-where-is-it-kept"><topicmeta><keywords><keyword>Where is it kept?</keyword></keywords></topicmeta></keydef>
+  <!-- notes -->
+  <keydef keys="ui-add-note"><topicmeta><keywords><keyword>Add note</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-use-an-existing-note"><topicmeta><keywords><keyword>Use an existing note</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-search-the-notes"><topicmeta><keywords><keyword>Search the notes</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-back-to-all-notes"><topicmeta><keywords><keyword>Back to all notes</keyword></keywords></topicmeta></keydef>
+  <!-- where records are kept -->
+  <keydef keys="ui-name"><topicmeta><keywords><keyword>Name</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-address"><topicmeta><keywords><keyword>Address</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-telephone-email-website"><topicmeta><keywords><keyword>Telephone, email and website</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-kind"><topicmeta><keywords><keyword>Kind</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-number-or-address"><topicmeta><keywords><keyword>Number or address</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-delete"><topicmeta><keywords><keyword>Delete</keyword></keywords></topicmeta></keydef>
+  <!-- sources -->
+  <keydef keys="ui-death"><topicmeta><keywords><keyword>Death</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-attach-source-document"><topicmeta><keywords><keyword>Attach source document</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-page-or-reference-number"><topicmeta><keywords><keyword>Page or reference number</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-words-copied"><topicmeta><keywords><keyword>The words copied from the record</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-where-it-is-kept"><topicmeta><keywords><keyword>Where it is kept</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-search-existing-sources"><topicmeta><keywords><keyword>Search existing sources…</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-how-reliable-it-is"><topicmeta><keywords><keyword>How reliable it is</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-not-stated"><topicmeta><keywords><keyword>Not stated</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-quality-0"><topicmeta><keywords><keyword>0 · Unreliable or estimated</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-quality-1"><topicmeta><keywords><keyword>1 · Questionable</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-quality-2"><topicmeta><keywords><keyword>2 · Secondary evidence</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-quality-3"><topicmeta><keywords><keyword>3 · Direct and primary evidence</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-date-of-the-entry"><topicmeta><keywords><keyword>Date of the entry</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-back-to-the-list"><topicmeta><keywords><keyword>Back to the list</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-copy"><topicmeta><keywords><keyword>Copy</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-citation"><topicmeta><keywords><keyword>Citation</keyword></keywords></topicmeta></keydef>
+  <!-- research notes -->
+  <keydef keys="ui-status"><topicmeta><keywords><keyword>Status</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-status-open"><topicmeta><keywords><keyword>Open</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-people-it-is-about"><topicmeta><keywords><keyword>People it is about</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-existing-person"><topicmeta><keywords><keyword>Existing person</keyword></keywords></topicmeta></keydef>
+  <!-- the census form -->
+  <keydef keys="ui-change"><topicmeta><keywords><keyword>Change…</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-census-date"><topicmeta><keywords><keyword>Census date</keyword></keywords></topicmeta></keydef>
+</map>

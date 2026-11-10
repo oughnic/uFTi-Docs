@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="events-notes-and-sources" xml:lang="en-GB">
+  <title>Events, notes and sources</title>
+  <shortdesc>Record what happened in a life, write down what you know, and say where you found it.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Concept</category>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p>A tree is more than names and dates. This chapter is for the parts that make it trustworthy. You add events, such as a baptism or a home that lasted for years. You write notes. You record where each fact came from, and what you still want to find out.</p>
+    <p>Each page has a few steps. The examples are the Brontë family of Haworth, and they use the sample tree of that name. To follow them, choose <uicontrol keyref="ui-open"/> on its card on <uicontrol keyref="ui-workspaces"/>. <xref keyref="move-between-workspaces"/> shows how. If you removed the sample tree, or you work in a tree of your own, use your own people in place of ours. <xref keyref="add-another-person"/> shows how to add a person.</p>
+    <p>Two ideas run through the chapter. Say where you found a thing, and say what you saw. A copy that someone typed out is not the register itself, so say that it is a copy.</p>
+  </conbody>
+</concept>

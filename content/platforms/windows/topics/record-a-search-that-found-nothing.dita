@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="record-a-search-that-found-nothing" xml:lang="en-GB">
+  <title>Record a search that found nothing</title>
+  <shortdesc>Write down where you looked and what came back, so that you, or someone else, never has to look there again.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>negative search</keyword>
+        <keyword>not found</keyword>
+        <keyword>where I looked</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="research.search-log"/>
+  </prolog>
+  <taskbody>
+    <context>
+      <p>Write the search in a research note. This page records a search for the death of Charlotte Brontë in 1855, which found nothing under her own surname.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Open the form for a research note, as <xref keyref="add-a-research-note"/> shows.</cmd>
+      </step>
+      <step>
+        <cmd>In <uicontrol keyref="ui-note"/>, write where you looked, the name you used and what came back.</cmd>
+        <info>
+          <p>For example, <userinput>Looked for her death in 1855 in an index of deaths, under the name Brontë. Nothing found. Looked again under Nicholls, her married name. Found: June quarter 1855, Keighley.</userinput></p>
+        </info>
+      </step>
+      <step>
+        <cmd>In <uicontrol keyref="ui-status"/>, choose the status that fits.</cmd>
+        <info>
+          <p>If you will look again, choose <uicontrol keyref="ui-status-open"/>.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Under <uicontrol keyref="ui-people-it-is-about"/>, tie the note to Charlotte Brontë, the person you looked for.</cmd>
+        <info>
+          <p>Choose <uicontrol keyref="ui-add-row"/>, then <uicontrol keyref="ui-set"/>. Type <userinput>Charlotte Brontë</userinput>, choose the line with her years, <q>1816–1855</q>, then choose <uicontrol keyref="ui-done"/>.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-save"/>.</cmd>
+        <stepresult>
+          <p>The page <uicontrol keyref="ui-research-questions-and-notes"/> lists the note.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>Your note says where you looked, under what name, and what came back. A later reader can see the search and does not have to repeat it.</p>
+      <note type="tip">Good practice: not finding something tells you about the search. It does not tell you the person was not there.</note>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="use-a-form-for-a-real-record"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

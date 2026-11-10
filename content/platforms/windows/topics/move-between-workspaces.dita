@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="move-between-workspaces" xml:lang="en-GB">
+  <title>Move between workspaces</title>
+  <shortdesc>Open another of your trees, and see which one is open now.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>switch tree</keyword>
+        <keyword>open another tree</keyword>
+        <keyword>change tree</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="workspaces.switch"/>
+  </prolog>
+  <taskbody>
+    <context>
+      <p>You can keep more than one tree. Each one is a <term keyref="term-workspace">workspace</term>, and each has a card on <uicontrol keyref="ui-workspaces"/>. The card of the open tree is marked <uicontrol keyref="ui-active"/>. The sample tree, Brontë family of Haworth, has a card too. Choose <uicontrol keyref="ui-open"/> on it to go back to the family that the examples in this guide use. If you removed the sample tree, make the people of the examples yourself, as <xref keyref="add-another-person"/> shows.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-workspaces"/> in the menu.</cmd>
+        <stepresult>
+          <p>The page says that each workspace is one family tree file, and that your changes are saved to the file as you go. Each tree has a card.</p>
+          <fig>
+            <image keyref="img-workspaces"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Find the card of the tree you want.</cmd>
+        <info>
+          <p>The card shows the name of the tree and how many persons, families and events it holds. It also shows <uicontrol keyref="ui-birth-years"/>, <uicontrol keyref="ui-death-years"/>, <uicontrol keyref="ui-top-surname"/> and <uicontrol keyref="ui-completeness"/>, which is a percentage.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-open"/> on that card.</cmd>
+        <stepresult>
+          <p>That tree is now the open one, and its card is marked <uicontrol keyref="ui-active"/>.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>Everything you see now is from the tree you chose.</p>
+      <p>Choose <uicontrol keyref="ui-show-details"/> on a card to see the name of the file of that tree. The card also shows a line that starts <systemoutput>uFTi</systemoutput> and a version number. The button then reads <uicontrol keyref="ui-hide-details"/>.</p>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="where-your-trees-are-saved"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

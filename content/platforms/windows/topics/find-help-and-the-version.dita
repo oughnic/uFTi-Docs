@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="find-help-and-the-version" xml:lang="en-GB">
+  <title>Find help and the version</title>
+  <shortdesc>Find the Help button on a screen, and read which version of the app you have.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>about</keyword>
+        <keyword>release number</keyword>
+        <keyword>report a problem</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="about.version"/>
+  </prolog>
+  <taskbody>
+    <context>
+      <p><uicontrol keyref="ui-help"/> is a button at the top right of every screen. Its full name is <q>Help about this screen</q>. The sheet named <uicontrol keyref="ui-add-a-record"/> has one too.</p>
+      <p>Many boxes on a form also have a small round button with a question mark. Its full name is <q>Help about this field</q>.</p>
+      <p>The version is the number of your copy of <keyword keyref="product-name"/>. Give it when you ask someone about a problem, so they know which copy you have.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-about-ufti"/> in the menu.</cmd>
+        <stepresult>
+          <p>A page opens with the name of the app and facts about your copy.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Read the line that starts <uicontrol keyref="ui-version"/>.</cmd>
+        <info>
+          <p>The number follows the word. The page also names your version of Windows and lists facts about your computer, such as its memory.</p>
+        </info>
+      </step>
+    </steps>
+    <result>
+      <p>You have the version to quote.</p>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="tour-of-the-screens"/> shows what every other menu item does.</p>
+    </postreq>
+  </taskbody>
+</task>

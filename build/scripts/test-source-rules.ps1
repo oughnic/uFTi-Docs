@@ -598,26 +598,30 @@ if ($Only -contains 'publications') {
         try { $null = Read-UftiPublications -Path $p; [pscustomobject]@{ Ok = $true; Text = '' } } catch { [pscustomobject]@{ Ok = $false; Text = "$_" } }
     }
     function Set-WindowsLine { param([string]$Old, [string]$New) $s = $iniText.IndexOf('[windows]'); $e = $iniText.IndexOf('[android-phone]'); $iniText.Substring(0, $s) + $iniText.Substring($s, $e - $s).Replace($Old, $New) + $iniText.Substring($e) }
+    # the lines the Windows section declares now, so a change of release does not break the cases
+    $winBlock = $iniText.Substring($iniText.IndexOf('[windows]'), $iniText.IndexOf('[android-phone]') - $iniText.IndexOf('[windows]'))
+    $winRel = [regex]::Match($winBlock, '(?m)^release = .*?(?=\r?$)').Value
+    $winApp = [regex]::Match($winBlock, '(?m)^app-version = .*?(?=\r?$)').Value
     $pubCases = @(
         @{ Name = 'the repository''s file'; Pass = $true; Expect = ''; Text = $iniText }
-        @{ Name = 'a release Beta-2'; Pass = $true; Expect = ''; Text = (Set-WindowsLine 'release = Alpha-1' 'release = Beta-2') }
-        @{ Name = 'a release RC-1'; Pass = $true; Expect = ''; Text = (Set-WindowsLine 'release = Alpha-1' 'release = RC-1') }
-        @{ Name = 'a release 1.0'; Pass = $true; Expect = ''; Text = (Set-WindowsLine 'release = Alpha-1' 'release = 1.0') }
-        @{ Name = 'a release 1.2.3'; Pass = $true; Expect = ''; Text = (Set-WindowsLine 'release = Alpha-1' 'release = 1.2.3') }
-        @{ Name = 'a platform with no release'; Pass = $false; Expect = 'release is missing'; Text = (Set-WindowsLine "release = Alpha-1`n" '') }
-        @{ Name = 'a release in lower case'; Pass = $false; Expect = 'not in the agreed form'; Text = (Set-WindowsLine 'release = Alpha-1' 'release = alpha-1') }
-        @{ Name = 'a release numbered from zero'; Pass = $false; Expect = 'not in the agreed form'; Text = (Set-WindowsLine 'release = Alpha-1' 'release = Alpha-0') }
-        @{ Name = 'a release with no number'; Pass = $false; Expect = 'not in the agreed form'; Text = (Set-WindowsLine 'release = Alpha-1' 'release = Alpha') }
-        @{ Name = 'a release that is a repository tag'; Pass = $false; Expect = 'not in the agreed form'; Text = (Set-WindowsLine 'release = Alpha-1' 'release = v1.0.0') }
-        @{ Name = 'a release that is a bare number'; Pass = $false; Expect = 'not in the agreed form'; Text = (Set-WindowsLine 'release = Alpha-1' 'release = 1') }
-        @{ Name = 'an app version the pictures do not record'; Pass = $false; Expect = 'differs from'; Text = (Set-WindowsLine 'app-version = 0.1.0.1 (1)' 'app-version = 0.1.0.2 (1)') }
-        @{ Name = 'no app version where the pictures record one'; Pass = $false; Expect = 'app-version must say so'; Text = (Set-WindowsLine "app-version = 0.1.0.1 (1)`n" '') }
+        @{ Name = 'a release Beta-2'; Pass = $true; Expect = ''; Text = (Set-WindowsLine $winRel 'release = Beta-2') }
+        @{ Name = 'a release RC-1'; Pass = $true; Expect = ''; Text = (Set-WindowsLine $winRel 'release = RC-1') }
+        @{ Name = 'a release 1.0'; Pass = $true; Expect = ''; Text = (Set-WindowsLine $winRel 'release = 1.0') }
+        @{ Name = 'a release 1.2.3'; Pass = $true; Expect = ''; Text = (Set-WindowsLine $winRel 'release = 1.2.3') }
+        @{ Name = 'a platform with no release'; Pass = $false; Expect = 'release is missing'; Text = (Set-WindowsLine "$winRel`n" '') }
+        @{ Name = 'a release in lower case'; Pass = $false; Expect = 'not in the agreed form'; Text = (Set-WindowsLine $winRel 'release = alpha-1') }
+        @{ Name = 'a release numbered from zero'; Pass = $false; Expect = 'not in the agreed form'; Text = (Set-WindowsLine $winRel 'release = Alpha-0') }
+        @{ Name = 'a release with no number'; Pass = $false; Expect = 'not in the agreed form'; Text = (Set-WindowsLine $winRel 'release = Alpha') }
+        @{ Name = 'a release that is a repository tag'; Pass = $false; Expect = 'not in the agreed form'; Text = (Set-WindowsLine $winRel 'release = v1.0.0') }
+        @{ Name = 'a release that is a bare number'; Pass = $false; Expect = 'not in the agreed form'; Text = (Set-WindowsLine $winRel 'release = 1') }
+        @{ Name = 'an app version the pictures do not record'; Pass = $false; Expect = 'differs from'; Text = (Set-WindowsLine $winApp 'app-version = 0.1.0.2 (1)') }
+        @{ Name = 'no app version where the pictures record one'; Pass = $false; Expect = 'app-version must say so'; Text = (Set-WindowsLine "$winApp`n" '') }
         @{ Name = 'a base address without its closing slash'; Pass = $false; Expect = 'closing slash|ends with a slash'; Text = $iniText.Replace('base-url = https://docs.ufti.com/', 'base-url = https://docs.ufti.com') }
         @{ Name = 'a base address that is not https'; Pass = $false; Expect = 'ends with a slash'; Text = $iniText.Replace('base-url = https://docs.ufti.com/', 'base-url = http://docs.ufti.com/') }
         @{ Name = 'a platform name that cannot be a folder'; Pass = $false; Expect = 'lower case letters'; Text = $iniText.Replace('[macos]', '[MacOS]') }
         @{ Name = 'a platform named for something else on the site'; Pass = $false; Expect = 'name the site uses'; Text = $iniText.Replace('[macos]', '[latest]') }
         @{ Name = 'a project file that does not exist'; Pass = $false; Expect = 'has no file'; Text = (Set-WindowsLine 'manual = manual-windows' 'manual = manual-nothing') }
-        @{ Name = 'a key nobody reads'; Pass = $false; Expect = 'unknown key'; Text = (Set-WindowsLine 'release = Alpha-1' "release = Alpha-1`nversion = 2") }
+        @{ Name = 'a key nobody reads'; Pass = $false; Expect = 'unknown key'; Text = (Set-WindowsLine $winRel "$winRel`nversion = 2") }
         @{ Name = 'a platform listed twice'; Pass = $false; Expect = 'more than once'; Text = $iniText + "`n[windows]`ntitle = x`n" }
     )
     foreach ($c in $pubCases) {
@@ -636,7 +640,11 @@ if ($Only -contains 'publications') {
 
 if ($Only -contains 'helpmap') {
     Write-Host '== Help map cases'
-    $ini = "[site]`nbase-url = https://docs.example.org/`n`n[windows]`ntitle = Windows`ndevice = a Windows computer`nrelease = Alpha-1`napp-version = 0.1.0.1 (1)`nmanual = manual-windows`nquick-start = quick-start-windows`n"
+    # the app version the repository's Windows pictures record, so the fixture agrees with them whatever it is
+    $realIni = [System.IO.File]::ReadAllText((Join-Path $root 'build' 'publications.ini'))
+    $realWin = $realIni.Substring($realIni.IndexOf('[windows]'), $realIni.IndexOf('[android-phone]') - $realIni.IndexOf('[windows]'))
+    $winAppVersion = [regex]::Match($realWin, '(?m)^app-version = (.*?)\r?$').Groups[1].Value
+    $ini = "[site]`nbase-url = https://docs.example.org/`n`n[windows]`ntitle = Windows`ndevice = a Windows computer`nrelease = Alpha-1`napp-version = $winAppVersion`nmanual = manual-windows`nquick-start = quick-start-windows`n"
     $inventoryText = "screen_id,screen_name`nthings.edit,Edit a thing`nthings.part,A part of a thing`nthings.list,The list of things`n"
     function New-HelpMapPublication {
         # The small publication, its root map named as the generator wants, a nested topic with its own id,

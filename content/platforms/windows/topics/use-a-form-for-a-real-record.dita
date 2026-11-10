@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="use-a-form-for-a-real-record" xml:lang="en-GB">
+  <title>Use a form for a real record</title>
+  <shortdesc>Choose the form that matches a record you have, such as the 1841 census, and see what it fills in for you.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>census</keyword>
+        <keyword>household</keyword>
+        <keyword>register</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="forms.compose"/>
+    <resourceid appname="ufti" appid="forms.census"/>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p>Open the page of Patrick Brontë first. <xref keyref="find-a-person"/> shows how.</p>
+    </prereq>
+    <context>
+      <p>Some records have a form of their own, with the boxes that the record has. The form for a census already knows the date of the census. This page opens the form for the 1841 census.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-add"/>.</cmd>
+        <stepresult>
+          <p>The list named <uicontrol keyref="ui-add-a-record"/> opens.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-census-1841"/> in the part that starts <uicontrol keyref="ui-add-an-event-to"/>, then choose <uicontrol keyref="ui-add-button"/>.</cmd>
+        <info>
+          <p>The list scrolls. Turn the mouse wheel with the pointer on it to find the part. The list also has a button named <uicontrol keyref="ui-more-forms"/>, with a count in brackets, that shows the other forms, such as the later censuses.</p>
+        </info>
+        <stepresult>
+          <p>The form opens.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Read the line at the top of the form.</cmd>
+        <stepresult>
+          <p>It says <systemoutput>Adding to the household of</systemoutput> and the name of the person, with a link named <uicontrol keyref="ui-change"/>.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Check the date in <uicontrol keyref="ui-census-date"/>.</cmd>
+        <stepresult>
+          <p>The date is already 6 June 1841, the night of the census. A line under it reads <systemoutput>Reads as 6 June 1841</systemoutput>.</p>
+          <fig>
+            <image keyref="img-census-form"/>
+          </fig>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>You have chosen the form that matches the record. The form shows Census as its event type, the date in <uicontrol keyref="ui-census-date"/>, and a <uicontrol keyref="ui-place"/> box that must be filled in.</p>
+      <note type="tip">Good practice: copy what the record says, even if you think it is wrong. Put what you think in a note.</note>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="what-next"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

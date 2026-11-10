@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="remove-a-workspace" xml:lang="en-GB">
+  <title>Remove a tree from the list</title>
+  <shortdesc>Take a tree off the Workspaces page without deleting its file.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>delete workspace</keyword>
+        <keyword>close a tree</keyword>
+        <keyword>default</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="workspaces.remove"/>
+  </prolog>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>On <uicontrol keyref="ui-workspaces"/>, find the card of the tree.</cmd>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-remove"/> on that card.</cmd>
+        <stepresult>
+          <p>A box named <wintitle keyref="ui-remove-workspace"/> asks you to check. It says <q>Remove 'Brontë family of Haworth' from your workspaces? This does not delete the family tree file on disk.</q> The name in the question is the name of your tree.</p>
+          <fig>
+            <image keyref="img-remove-workspace"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-remove"/> in the box, or <uicontrol keyref="ui-cancel"/> to stop.</cmd>
+      </step>
+    </steps>
+    <result>
+      <p>The card is gone. The file is still in its folder. Open it again with <uicontrol keyref="ui-add-from-file"/> at any time.</p>
+      <p>If that was your only tree, the top of the window says <q>No workspace open</q>. The page <uicontrol keyref="ui-workspaces"/> says <q>No workspaces found. Open a family tree file to get started.</q> The buttons <uicontrol keyref="ui-create-workspace"/> and <uicontrol keyref="ui-add-from-file"/> are still there.</p>
+      <note type="warning">Do not make a new tree with the name of a tree you removed in the same session. The new tree mixes up its data with the old one until you close <keyword keyref="product-name"/> and open it again.</note>
+      <p>To start clean with that name, do these things in this order:</p>
+      <ol>
+        <li>Remove the old tree, as above.</li>
+        <li>Close <keyword keyref="product-name"/>.</li>
+        <li>Open <keyword keyref="product-name"/> again.</li>
+        <li>Create the new tree. <xref keyref="create-a-workspace"/> says how.</li>
+      </ol>
+      <p>If you open <keyword keyref="product-name"/> with no tree, it may make an empty tree called <q>default</q>. It holds nobody. You can remove it in the same way.</p>
+    </result>
+  </taskbody>
+</task>

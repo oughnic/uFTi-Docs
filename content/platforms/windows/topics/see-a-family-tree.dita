@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="see-a-family-tree" xml:lang="en-GB">
+  <title>See a family tree</title>
+  <shortdesc>Draw the parents, partners and children of one person, and read the drawing.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>parents</keyword>
+        <keyword>children</keyword>
+        <keyword>pedigree</keyword>
+        <keyword>generations</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="tree.view"/>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p>Open a person first. <xref keyref="find-a-person"/> shows how.</p>
+    </prereq>
+    <context>
+      <p>The same tree also shows beside a person's page, under a heading named <uicontrol keyref="ui-family-tree"/>. This task opens it on a page of its own, at full width.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-family-tree"/> in the menu.</cmd>
+        <stepresult>
+          <p>A drawing opens, with the person you chose in a box with a dark edge. Their parents are in a row above. Their partners are beside them. Their children are in a row below.</p>
+          <fig>
+            <image keyref="img-family-tree"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Read a box.</cmd>
+        <info>
+          <p>A box shows a name, how that person is related, and the years of life. For example, <q>Wife · 1783–1821</q>. A chip on the box counts the events of that person.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Read the oval between two partners.</cmd>
+        <info>
+          <p>The oval shows the year of their marriage, such as <q>m. 1812</q>.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Find the two pairs of buttons above the drawing.</cmd>
+        <info>
+          <p>Each pair has a minus button, a number and a plus button. The pair marked with an up arrow shows 3. The pair marked with a down arrow shows 1. Choose a minus or a plus to see what changes.</p>
+        </info>
+      </step>
+    </steps>
+    <result>
+      <p>In words, the picture shows this. Patrick Brontë is in the box with the dark edge. His wife, Maria Branwell, is beside him. The oval between them says <q>m. 1812</q>. Their six children are in a row below, from Maria to Anne.</p>
+      <p>Beside the number buttons are <uicontrol keyref="ui-return-to-focus"/> and <uicontrol keyref="ui-fit-to-screen"/>. <uicontrol keyref="ui-return-to-focus"/> takes the drawing back to the person in focus. <uicontrol keyref="ui-fit-to-screen"/> fits the drawing to the screen. A big family may go past the edge of the screen.</p>
+      <p>You can also press the drawing itself. The app says what each press does. A person's box <q>re-roots the chart</q>. The round mark between partners <q>opens family events</q>. The box of the person in focus <q>opens their record</q>.</p>
+    </result>
+    <postreq>
+      <p>The same tree is the <term keyref="term-pedigree">pedigree</term> in older manuals.</p>
+      <p>Next: <xref keyref="see-the-events-of-a-person"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

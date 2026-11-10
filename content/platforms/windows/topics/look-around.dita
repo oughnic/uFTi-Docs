@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="look-around" xml:lang="en-GB">
+  <title>Look around</title>
+  <shortdesc>Open uFTi and find the main places: the menu at the left, the plus button, search and Help.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Get started</category>
+      <keywords>
+        <keyword>navigation</keyword>
+        <keyword>menu</keyword>
+        <keyword>sample tree</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="people.view"/>
+  </prolog>
+  <taskbody>
+    <context>
+      <p>The first time you open <keyword keyref="product-name"/>, it opens a sample tree, the Brontë family of Haworth. Use it to look around.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Open <keyword keyref="product-name"/> from the Start menu.</cmd>
+        <stepresult>
+          <p>The <uicontrol keyref="ui-home"/> screen opens, with a search box.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-all-people"/>, then choose the card of one person.</cmd>
+        <info>
+          <p>A chip at the top starts with <uicontrol keyref="ui-showing"/>. Until you open someone it says <q>Showing: the focal person</q>. Then it names the person you chose.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>In the menu at the left, choose <uicontrol keyref="ui-person"/>, then <uicontrol keyref="ui-family-tree"/>, then <uicontrol keyref="ui-events"/>.</cmd>
+        <info>
+          <p>They show that person's page, their family and their <term keyref="term-fact">events and facts</term>.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-add"/> at the top.</cmd>
+        <stepresult>
+          <p>A sheet named <uicontrol keyref="ui-add-a-record"/> lists what you can add. Choose <uicontrol keyref="ui-cancel"/> to close it.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-home"/>. Type a name in the search box and choose <uicontrol keyref="ui-search"/>.</cmd>
+      </step>
+    </steps>
+    <result>
+      <p>You have seen the main places. <uicontrol keyref="ui-help"/> is a button at the top right of every screen. The picture shows <uicontrol keyref="ui-home"/> once a person has been opened. It then has <uicontrol keyref="ui-continue-with"/> and <uicontrol keyref="ui-recent-people"/>.</p>
+      <fig>
+        <image keyref="img-nav-main"/>
+      </fig>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="add-your-first-person"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

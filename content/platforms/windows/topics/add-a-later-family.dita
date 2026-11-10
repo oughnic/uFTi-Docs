@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="add-a-later-family" xml:lang="en-GB">
+  <title>Add a later family</title>
+  <shortdesc>Make a family for a person who is already in the tree, such as a daughter who marries.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>second marriage</keyword>
+        <keyword>another family</keyword>
+        <keyword>husband</keyword>
+        <keyword>wife</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="families.add-later"/>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p>Add both partners to the tree first. <xref keyref="add-another-person"/> shows how.</p>
+    </prereq>
+    <context>
+      <p>Charlotte Brontë is already in the tree, as a child in her parents' family. In 1854 she married Arthur Bell Nicholls. This page makes that second family. Charlotte then shows in both: as a child, and as a partner. The sample tree already has this family, so use this page for people you added yourself.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Open the page of Charlotte Brontë, then choose <uicontrol keyref="ui-add"/> at the top.</cmd>
+        <stepresult>
+          <p>The <uicontrol keyref="ui-add-a-record"/> sheet opens.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Scroll to the part named <uicontrol keyref="ui-add-to-the-workspace"/>. Choose <uicontrol keyref="ui-family"/>, then choose <uicontrol keyref="ui-add-button"/>.</cmd>
+        <stepresult>
+          <p>The family form opens. Charlotte is already in the box <uicontrol keyref="ui-second-partner"/>. The picture shows the same form for another family, with Maria Branwell chosen as the second partner.</p>
+          <fig>
+            <image keyref="img-family-form"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Select the box <uicontrol keyref="ui-first-partner"/> and type <userinput>Arthur Bell</userinput>.</cmd>
+        <stepresult>
+          <p>A list appears under the box. One line reads <q>Arthur Bell Nicholls (1817–1906)</q>.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose that line.</cmd>
+        <info>
+          <p>The box takes the person only when you choose the line from the list.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Leave the marriage boxes and <uicontrol keyref="ui-children"/> empty. Choose <uicontrol keyref="ui-save"/>.</cmd>
+        <info>
+          <p>Charlotte and Arthur had no children. You add the marriage on the page of the family.</p>
+        </info>
+        <stepresult>
+          <p>The page of the family opens.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>Once you add the marriage, the <uicontrol keyref="ui-family-tree"/> of Charlotte shows her husband beside her, with <q>m. 1854</q> between them.</p>
+      <fig>
+        <image keyref="img-family-tree-charlotte"/>
+      </fig>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="see-a-familys-page"/> shows how to add the marriage.</p>
+    </postreq>
+  </taskbody>
+</task>

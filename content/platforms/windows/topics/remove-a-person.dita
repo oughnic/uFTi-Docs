@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="remove-a-person" xml:lang="en-GB">
+  <title>Remove a person</title>
+  <shortdesc>Remove a person from your tree, for example one you added by mistake.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>delete</keyword>
+        <keyword>added by mistake</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="people.remove"/>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p>Open the person first. <xref keyref="find-a-person"/> shows how.</p>
+    </prereq>
+    <context>
+      <p>Use this only for a person who should not be in the tree, such as someone you added twice. To fix a wrong name, date or place, use <xref keyref="change-a-person"/> instead.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Check the name in the trail at the top of the page.</cmd>
+        <info>
+          <p>This is the person who will be removed. The question you are asked also names them.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Scroll to the foot of the page and choose <uicontrol keyref="ui-delete-person"/>.</cmd>
+        <info>
+          <fig>
+            <image keyref="img-person-page"/>
+          </fig>
+        </info>
+        <stepresult>
+          <p>A box titled <wintitle keyref="ui-delete-person"/> opens. For Anne Brontë it asks <systemoutput>Delete Anne Brontë? They will be removed and unlinked from any families, events and relationships. This cannot be undone.</systemoutput> A line under it says what else changes, such as <systemoutput>Also affects: 1 family, 2 events.</systemoutput></p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Read the question. Choose <uicontrol keyref="ui-delete"/> to remove the person, or <uicontrol keyref="ui-cancel"/> to keep them.</cmd>
+        <info>
+          <p><uicontrol keyref="ui-cancel"/> leaves everything as it was.</p>
+        </info>
+      </step>
+    </steps>
+    <result>
+      <p>The app says that removing a person cannot be undone. It also takes them out of their families and events.</p>
+      <note type="caution">Treat this as final. To be safe, <xref keyref="keep-it-safe">save a copy of your tree</xref> first.</note>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="add-another-person"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

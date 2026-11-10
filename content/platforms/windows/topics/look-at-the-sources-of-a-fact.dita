@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="look-at-the-sources-of-a-fact" xml:lang="en-GB">
+  <title>Look at the sources of a fact</title>
+  <shortdesc>See which books and records are listed for a birth, a death or another fact, and add one.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>citation</keyword>
+        <keyword>evidence</keyword>
+        <keyword>reliability</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="sources.view"/>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p>Open the page of Emily Brontë first. <xref keyref="find-a-person"/> shows how.</p>
+    </prereq>
+    <context>
+      <p>Each fact on a person's page has a small chip that counts its <term keyref="term-source">sources</term>. This page adds a source to the death of Emily Brontë.</p>
+      <p>The sheet that the chip opens lists the sources that are already in the tree. The sample tree has some. If your tree has none, the list is empty until you add a source, as <xref keyref="add-a-source"/> shows.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Choose the chip beside <uicontrol keyref="ui-death"/>.</cmd>
+        <info>
+          <p>It starts with <uicontrol keyref="ui-sources"/> and a number, and ends with +. An event has one too.</p>
+        </info>
+        <stepresult>
+          <p>A sheet named <wintitle keyref="ui-sources"/> opens. It lists the sources of that fact. A fact with none says <systemoutput>No sources for this fact yet.</systemoutput></p>
+          <fig>
+            <image keyref="img-sources-empty"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-add-source"/> at the foot of the sheet.</cmd>
+        <stepresult>
+          <p>A list named <wintitle keyref="ui-add-source"/> opens. It has a box named <uicontrol keyref="ui-search-existing-sources"/>, a button named <uicontrol keyref="ui-add-a-new-source"/>, and the sources already in your tree.</p>
+          <fig>
+            <image keyref="img-sources-list"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose the source that backs the fact.</cmd>
+        <info>
+          <p>If it is not in the list, choose <uicontrol keyref="ui-add-a-new-source"/> and fill in the form. <xref keyref="add-a-source"/> shows how to add a source to a person.</p>
+        </info>
+        <stepresult>
+          <p>A second step opens, with the title of the source at the top.</p>
+          <fig>
+            <image keyref="img-source-attach"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>In <uicontrol keyref="ui-page-or-reference-number"/>, type where to look in the source.</cmd>
+        <info>
+          <p>For the Haworth burial register, type <userinput>Burials of December 1848</userinput>.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>In <uicontrol keyref="ui-how-reliable-it-is"/>, choose how much weight the source deserves.</cmd>
+        <choices>
+          <choice><uicontrol keyref="ui-not-stated"/></choice>
+          <choice><uicontrol keyref="ui-quality-0"/></choice>
+          <choice><uicontrol keyref="ui-quality-1"/></choice>
+          <choice><uicontrol keyref="ui-quality-2"/></choice>
+          <choice><uicontrol keyref="ui-quality-3"/></choice>
+        </choices>
+        <info>
+          <p>The box starts at <uicontrol keyref="ui-not-stated"/>. The step also has <uicontrol keyref="ui-date-of-the-entry"/> and boxes for the words of the entry. You can leave them empty. For a copy that someone typed out, <uicontrol keyref="ui-quality-2"/> is a fair choice, as the picture shows.</p>
+        </info>
+        <stepresult>
+          <fig>
+            <image keyref="img-citation-add"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-add-source"/>.</cmd>
+        <stepresult>
+          <p>The sheet shows the source again, now on the list.</p>
+          <fig>
+            <image keyref="img-sources-one"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-done"/>.</cmd>
+        <stepresult>
+          <p>The chip on the page shows one more source.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>Each source on the sheet shows its title. Under it is the page or reference you gave. A source that has an author, or a quality, can show those too, such as <systemoutput>Quality: 2 · Secondary evidence</systemoutput>. What a line shows depends on what you have entered for that source.</p>
+      <p>Each source on the sheet has four buttons, named <uicontrol keyref="ui-copy"/>, <uicontrol keyref="ui-citation"/>, <uicontrol keyref="ui-edit"/> and <uicontrol keyref="ui-remove"/>. The sheet also has a button named <uicontrol keyref="ui-compare-records"/>.</p>
+      <note type="tip">Good practice: give each fact its own source and its own page. Ask two questions about a source. Is it the original or a copy? Was the writer there at the time?</note>
+    </result>
+    <postreq>
+      <p>To add a source to a person, see <xref keyref="add-a-source"/>. Next: <xref keyref="add-a-research-note"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

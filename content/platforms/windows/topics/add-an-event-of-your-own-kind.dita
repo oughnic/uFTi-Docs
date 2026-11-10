@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="add-an-event-of-your-own-kind" xml:lang="en-GB">
+  <title>Add an event of your own kind</title>
+  <shortdesc>Record something that has no word in the list of events, such as the publication of a book, by naming the kind yourself.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>publication</keyword>
+        <keyword>custom event</keyword>
+        <keyword>other kind</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="events.add-own-kind"/>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p>Open the page of Charlotte Brontë first. <xref keyref="find-a-person"/> shows how.</p>
+    </prereq>
+    <context>
+      <p>The <uicontrol keyref="ui-type"/> list has a word for many kinds of event. It has no choice named <q>Event</q>. The last choice is <uicontrol keyref="ui-type-fact"/>, a general word. When the list has no word for your kind, choose <uicontrol keyref="ui-type-fact"/> and name the kind yourself in the box <uicontrol keyref="ui-kind-of-event-in-words"/>. This page adds the publication of <cite>Poems by Currer, Ellis, and Acton Bell</cite> in May 1846 to the page of Charlotte Brontë.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Open the form for an event, as <xref keyref="add-an-event"/> shows: choose <uicontrol keyref="ui-add"/>, then <uicontrol keyref="ui-other-event"/>, then <uicontrol keyref="ui-add-button"/>.</cmd>
+      </step>
+      <step>
+        <cmd>In <uicontrol keyref="ui-type"/>, choose <uicontrol keyref="ui-type-fact"/>.</cmd>
+        <info>
+          <p>It is at the end of the list.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>In <uicontrol keyref="ui-kind-of-event-in-words"/>, type the name of the kind.</cmd>
+        <info>
+          <p>For this event, type <userinput>Publication</userinput>.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Under <uicontrol keyref="ui-date"/>, turn on <uicontrol keyref="ui-edit-as-text"/> and type <userinput>May 1846</userinput>.</cmd>
+        <info>
+          <p>You do not need the day. Choose another box when you have typed the date, then read the line named <systemoutput>How the date reads</systemoutput> to check what the app understood. <xref keyref="enter-a-period"/> says more about typing a date as text.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>In <uicontrol keyref="ui-description"/>, type the title of the book.</cmd>
+        <info>
+          <p>For this event, type <userinput>Poems by Currer, Ellis, and Acton Bell</userinput>.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-save"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-events"/> in the menu.</cmd>
+        <stepresult>
+          <p>Look for the new event in the list, and read its line to check it.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>You have recorded an event of your own kind, with the kind named in your own words.</p>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="add-a-note"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

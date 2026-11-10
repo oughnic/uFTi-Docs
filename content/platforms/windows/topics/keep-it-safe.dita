@@ -6,7 +6,7 @@
   <prolog>
     <critdates>
       <created date="2026-10-17"/>
-      <revised modified="2026-10-24"/>
+      <revised modified="2026-11-10"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -21,53 +21,33 @@
   <taskbody>
     <steps>
       <step>
-        <cmd>Open <uicontrol keyref="ui-workspaces"/>.</cmd>
+        <cmd>Choose <uicontrol keyref="ui-workspaces"/> in the menu.</cmd>
       </step>
       <step>
         <cmd>On the card for your tree, choose <uicontrol keyref="ui-save-as"/>.</cmd>
         <stepresult>
-          <p>A small sheet named <wintitle keyref="ui-save-workspace-as"/> opens.</p>
+          <p>A sheet named <wintitle keyref="ui-save-workspace-as"/> opens.</p>
         </stepresult>
       </step>
       <step>
         <cmd>Choose how to save your tree.</cmd>
         <choices>
-          <choice><uicontrol keyref="ui-gedzip-archive"/> saves everything in one file, with its pictures. Choose this one.</choice>
-          <choice><uicontrol keyref="ui-gedcom-file"/> saves your tree as a <term keyref="term-family-tree-file">family tree file</term>, without pictures. Use it only for a program that cannot read GEDZIP.</choice>
+          <choice><uicontrol keyref="ui-everything-gdz"/> keeps the tree, its notes and its pictures in one file. Choose this one.</choice>
+          <choice><uicontrol keyref="ui-family-tree-only-ged"/> makes a <term keyref="term-family-tree-file">family tree file</term> with no pictures, for other programs.</choice>
         </choices>
-        <stepresult>
-          <fig>
-            <image keyref="img-save-as-choice"/>
-          </fig>
-        </stepresult>
       </step>
       <step>
-        <cmd>If you chose <uicontrol keyref="ui-gedcom-file"/>, choose a version.</cmd>
+        <cmd>If you chose <uicontrol keyref="ui-family-tree-only-ged"/>, choose a version.</cmd>
         <info>
           <p>The box named <wintitle keyref="ui-which-version-of-gedcom"/> offers <uicontrol keyref="ui-gedcom-7"/> and <uicontrol keyref="ui-gedcom-551"/>. Choose the first unless a program you use is old.</p>
         </info>
-        <stepresult>
-          <fig>
-            <image keyref="img-save-as-version"/>
-          </fig>
-        </stepresult>
       </step>
       <step>
-        <cmd>When Windows asks where to put the file, choose a folder you will remember.</cmd>
-        <info>
-          <p>Windows opens your Documents folder first. Choose the folder you want, then choose Save.</p>
-        </info>
-        <stepresult>
-          <p>A message names the file and its folder. It stays until you choose it.</p>
-          <fig>
-            <image keyref="img-save-as-message"/>
-          </fig>
-        </stepresult>
+        <cmd>When Windows opens its own Save window, choose a folder you will remember, then choose <uicontrol keyref="ui-save"/>.</cmd>
       </step>
     </steps>
     <result>
-      <p>You now have a copy. Make a new one after you add a lot. Keep one on another drive too.</p>
-      <note>If you opened a file from another program, <keyword keyref="product-name"/> saves your changes to that file. To leave the original alone, open a copy.</note>
+      <p>Make a new copy after you add a lot. Keep one on another drive too.</p>
     </result>
     <postreq>
       <p>Next: <xref keyref="what-next"/>.</p>

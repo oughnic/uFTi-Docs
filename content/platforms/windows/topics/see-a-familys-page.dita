@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="see-a-familys-page" xml:lang="en-GB">
+  <title>See a family's page</title>
+  <shortdesc>Read the page of a family, and add the marriage to it.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>marriage</keyword>
+        <keyword>partners</keyword>
+        <keyword>couple</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="families.view"/>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p>Make the family first. <xref keyref="add-a-family"/> shows how. Its page opens when you save it.</p>
+    </prereq>
+    <context>
+      <p>This page uses the family of Patrick Brontë and Maria Branwell.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Read the page of the family.</cmd>
+        <stepresult>
+          <p>The title names both partners, such as <q>Patrick Brontë &amp; Maria Branwell</q>. Under it, a line says <q>No events recorded for this family.</q> until a marriage is added. The chip that starts with <uicontrol keyref="ui-showing"/> names the family too.</p>
+          <p>The page has parts for <uicontrol keyref="ui-partners"/>, <uicontrol keyref="ui-marriage"/>, <uicontrol keyref="ui-children"/> and <uicontrol keyref="ui-more-details"/>, and a part for notes. <uicontrol keyref="ui-view-family-tree"/> draws the family.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Scroll to the foot of the page and choose <uicontrol keyref="ui-edit"/>.</cmd>
+        <stepresult>
+          <p>The page turns into a form.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>In <uicontrol keyref="ui-marriage-date"/>, type <userinput>29</userinput> in <uicontrol keyref="ui-day"/>, choose December in <uicontrol keyref="ui-month"/> and type <userinput>1812</userinput> in <uicontrol keyref="ui-year"/>.</cmd>
+        <info>
+          <p>A line under the date starts <q>Reads as</q>. Check it says what you meant. <xref keyref="dates"/> says more.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>In <uicontrol keyref="ui-place-of-marriage"/>, type <userinput>St Oswald's church, Guiseley, Yorkshire</userinput>.</cmd>
+        <info>
+          <p>Places you typed before are offered under the box. <xref keyref="places"/> says more.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-save"/>.</cmd>
+        <stepresult>
+          <p>The line under the title now reads <q>Marriage · 29 December 1812 · St Oswald's church, Guiseley, Yorkshire</q>.</p>
+          <fig>
+            <image keyref="img-family-page"/>
+          </fig>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>The marriage shows in <uicontrol keyref="ui-marriage"/> on the page of the family. The tree of each partner shows the year, such as <q>m. 1812</q>.</p>
+      <p>The chip beside <uicontrol keyref="ui-marriage"/> counts its sources. <xref keyref="look-at-the-sources-of-a-fact"/> shows how to add one.</p>
+      <note>If you typed a marriage date on the family form, check that this page shows it under <uicontrol keyref="ui-marriage"/>. If the line still says <q>No events recorded for this family.</q>, add the marriage with <uicontrol keyref="ui-edit"/>, in the steps of this page.</note>
+    </result>
+    <postreq>
+      <p>The foot of the page also has the buttons <uicontrol keyref="ui-copy"/> and <uicontrol keyref="ui-delete-family"/>. Next: <xref keyref="add-a-later-family"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

@@ -1,7 +1,7 @@
 {
   "manual": "windows",
   "app": {
-    "version": "0.1.0.1 (1)"
+    "version": "0.2.0.989"
   },
   "theme": {
     "name": "oxford-slate",
@@ -12,94 +12,87 @@
     "name": "bronte"
   },
   "device": {
-    "kind": "desktop window (WinUI, unpackaged development build)",
-    "os": "windows 10.0.26200",
+    "kind": "desktop window (WinUI)",
+    "os": "Windows 11",
     "width": 1267,
     "height": 793,
     "orientation": "landscape"
   },
-  "captured": "2026-10-24",
+  "captured": "2026-11-10",
   "images": [
     {
       "key": "img-add-record",
       "file": "add-record.png",
-      "sha256": "6171180f6f8ee8240153ed12aa457b2e94b4503e0146b0044bed636de1dd7726",
+      "sha256": "61ca42e35cefb694c02007e9c62da50946e02f5f2c8f39e1d26c857acdaccc9e",
       "width": 1267,
       "height": 761,
       "stage": 4,
       "workspace": "Brontë family of Haworth",
-      "focus": "Charlotte Brontë",
+      "focus": "Patrick Brontë",
       "capture": "in-app",
       "crop": null,
-      "verifiedAppVersion": "0.1.0.1 (1)"
+      "verifiedAppVersion": "0.2.0.989"
     },
     {
-      "key": "img-add-record-lower",
-      "file": "add-record-lower.png",
-      "sha256": "66bbf43a744680cd8f078f8210971b413f6436d89d4edb495a229b0c27232647",
-      "width": 1267,
-      "height": 761,
-      "stage": 4,
+      "key": "img-census-form",
+      "file": "census-form.png",
+      "sha256": "de45b7f32a73f82e0ddafafba1d1051b5cb7d812f378ea8df6856f3ff5c0de9f",
+      "width": 1047,
+      "height": 413,
+      "stage": 8,
       "workspace": "Brontë family of Haworth",
-      "focus": "Charlotte Brontë",
+      "focus": "Brontë family of Haworth",
       "capture": "in-app",
-      "crop": null,
-      "verifiedAppVersion": "0.1.0.1 (1)"
-    },
-    {
-      "key": "img-add-record-more-forms",
-      "file": "add-record-more-forms.png",
-      "sha256": "6502a69786962b48ae611ade0d53b9cf8433181f671303067a812b1698c4dc79",
-      "width": 1267,
-      "height": 761,
-      "stage": 4,
-      "workspace": "Brontë family of Haworth",
-      "focus": "Charlotte Brontë",
-      "capture": "in-app",
-      "crop": null,
-      "verifiedAppVersion": "0.1.0.1 (1)"
+      "crop": {
+        "x": 220,
+        "y": 380,
+        "width": 1047,
+        "height": 413,
+        "reason": "Removes the black band the in-app capture leaves where the title bar is, and the buttons above Event type that attach a document and fill the form from it, which the manual does not describe."
+      },
+      "verifiedAppVersion": "0.2.0.989"
     },
     {
       "key": "img-citation-add",
       "file": "citation-add.png",
-      "sha256": "19e4d6f4d293c8ed90c525286f44c45f85f68a1eec63950cf597144dfb1addb2",
+      "sha256": "77e18b21dab462a70c8faa72b9a16c8e0bdf1d1fc46db280e2344a3279ea9ecc",
       "width": 1267,
       "height": 761,
       "stage": 6,
       "workspace": "Brontë family of Haworth",
-      "focus": "Patrick Brontë",
-      "capture": "in-app",
-      "crop": null,
-      "verifiedAppVersion": "0.1.0.1 (1)"
-    },
-    {
-      "key": "img-create-workspace-dialog",
-      "file": "create-workspace-dialog.png",
-      "sha256": "58609747479d58a88c3d5ae4ff3b45f1c773305eb97137840c63cb131937756d",
-      "width": 740,
-      "height": 560,
-      "stage": 1,
-      "workspace": "Brontë family of Haworth",
       "focus": "Brontë family of Haworth",
       "capture": "in-app",
+      "crop": null,
+      "verifiedAppVersion": "0.2.0.989"
+    },
+    {
+      "key": "img-date-editor",
+      "file": "date-editor.png",
+      "sha256": "ea967558ef16b0b8a628eecc081e8fdbc7f62b2ad40369dc1d156002f3650244",
+      "width": 1047,
+      "height": 565,
+      "stage": 4,
+      "workspace": "Brontë family of Haworth",
+      "focus": "Patrick Brontë",
+      "capture": "in-app",
       "crop": {
-        "x": 900,
-        "y": 520,
-        "width": 740,
-        "height": 560,
-        "reason": "Keeps the small window that asks for a name; the rest is the screen behind it, dimmed."
+        "x": 220,
+        "y": 228,
+        "width": 1047,
+        "height": 565,
+        "reason": "Removes the black band the in-app capture leaves where the title bar is, and the button that fills a form from a document, which the manual does not describe."
       },
-      "verifiedAppVersion": "0.1.0.1 (1)"
+      "verifiedAppVersion": "0.2.0.989"
     },
     {
       "key": "img-event-detail",
       "file": "event-detail.png",
-      "sha256": "cc04fed0b78234c184239ac3ed882d50957c6675b01e9e18e7c78537423c60f9",
+      "sha256": "a35a6798808bc0b1c856d6d6c0fca6d0429cdcc47f68130789e22bc212f832e3",
       "width": 1267,
       "height": 761,
       "stage": 4,
       "workspace": "Brontë family of Haworth",
-      "focus": "Charlotte Brontë",
+      "focus": "Patrick Branwell Brontë",
       "capture": "in-app",
       "crop": {
         "x": 0,
@@ -108,17 +101,17 @@
         "height": 761,
         "reason": "Removes the black band the in-app capture leaves where the title bar is."
       },
-      "verifiedAppVersion": "0.1.0.1 (1)"
+      "verifiedAppVersion": "0.2.0.989"
     },
     {
       "key": "img-events",
       "file": "events.png",
-      "sha256": "f2410ed2d30d51dc460bd1a47e9e60d1db6cdbbaea8d934470a65c5d162bac40",
+      "sha256": "db64395cd0a44e9534be756ba5994dcfd3ce3e46187508fcb83ef71d0e4abec1",
       "width": 1267,
       "height": 761,
       "stage": 4,
       "workspace": "Brontë family of Haworth",
-      "focus": "Patrick Brontë",
+      "focus": "Patrick Branwell Brontë",
       "capture": "in-app",
       "crop": {
         "x": 0,
@@ -127,12 +120,12 @@
         "height": 761,
         "reason": "Removes the black band the in-app capture leaves where the title bar is."
       },
-      "verifiedAppVersion": "0.1.0.1 (1)"
+      "verifiedAppVersion": "0.2.0.989"
     },
     {
       "key": "img-family-children",
       "file": "family-children.png",
-      "sha256": "45cffed2f47dfb854f092ace4ec413daacfa680147f0f9e69966fef576545cac",
+      "sha256": "f4497ab9c91a1125ffc489985ffba8fb5eb4a26cbdc09e8f3c18177194b3b4e1",
       "width": 1267,
       "height": 761,
       "stage": 3,
@@ -146,12 +139,12 @@
         "height": 761,
         "reason": "Removes the black band the in-app capture leaves where the title bar is."
       },
-      "verifiedAppVersion": "0.1.0.1 (1)"
+      "verifiedAppVersion": "0.2.0.989"
     },
     {
       "key": "img-family-form",
       "file": "family-form.png",
-      "sha256": "a752f734ce5db5a8b6b85895415eec7b2f4a1213442c3663747efca479976cf1",
+      "sha256": "35476e0fe371691b332d39f2b3b6294f2b610afefb8bdb9be6fa0853a3d38e4b",
       "width": 1267,
       "height": 761,
       "stage": 3,
@@ -165,12 +158,12 @@
         "height": 761,
         "reason": "Removes the black band the in-app capture leaves where the title bar is."
       },
-      "verifiedAppVersion": "0.1.0.1 (1)"
+      "verifiedAppVersion": "0.2.0.989"
     },
     {
       "key": "img-family-page",
       "file": "family-page.png",
-      "sha256": "c770c9e4fd7265f1662475f4ea846b647f4129289d5383a816fa0d93aa14d0b1",
+      "sha256": "7e3bf5f6a8d5c0da0a9e8980439a00daa08d9fe499edc180fc38e97e5afa0141",
       "width": 1267,
       "height": 761,
       "stage": 3,
@@ -184,12 +177,12 @@
         "height": 761,
         "reason": "Removes the black band the in-app capture leaves where the title bar is."
       },
-      "verifiedAppVersion": "0.1.0.1 (1)"
+      "verifiedAppVersion": "0.2.0.989"
     },
     {
       "key": "img-family-tree",
       "file": "family-tree.png",
-      "sha256": "171396ab6c1734002e0e3e751776cbaac1af74b798381ce62c499f937190fcde",
+      "sha256": "0080ee4387e17cd974b6c1e7ec646e1ffa4bfe53775c0b7d5cbef3ea47b4a2d9",
       "width": 1267,
       "height": 761,
       "stage": 3,
@@ -203,12 +196,12 @@
         "height": 761,
         "reason": "Removes the black band the in-app capture leaves where the title bar is."
       },
-      "verifiedAppVersion": "0.1.0.1 (1)"
+      "verifiedAppVersion": "0.2.0.989"
     },
     {
       "key": "img-family-tree-charlotte",
       "file": "family-tree-charlotte.png",
-      "sha256": "7780af24770f2541ad0d2b93ff4d0f9e9fb4634df85c385532eb5a88040b4546",
+      "sha256": "267b43731b9f97bc0a1f264708774b40108ed9563c1808379da4f4052b31b0a8",
       "width": 1267,
       "height": 761,
       "stage": 3,
@@ -222,158 +215,12 @@
         "height": 761,
         "reason": "Removes the black band the in-app capture leaves where the title bar is."
       },
-      "verifiedAppVersion": "0.1.0.1 (1)"
+      "verifiedAppVersion": "0.2.0.989"
     },
     {
-      "key": "img-import-summary",
-      "file": "import-summary.png",
-      "sha256": "f812b536ba0d17dc0b67b4d66515d9e96ce1269c6bd4ae592bb4fc6ec9be9766",
-      "width": 1160,
-      "height": 720,
-      "stage": 9,
-      "workspace": "Brontë family of Haworth",
-      "focus": "Brontë family of Haworth",
-      "capture": "in-app",
-      "crop": {
-        "x": 690,
-        "y": 440,
-        "width": 1160,
-        "height": 720,
-        "reason": "Keeps the summary and its button; the rest is the screen behind it, dimmed."
-      },
-      "verifiedAppVersion": "0.1.0.1 (1)"
-    },
-    {
-      "key": "img-note-form",
-      "file": "note-form.png",
-      "sha256": "3826c7a1fd52009a3b394ac522d21a21f3bddf815e584ab022b57a7f729425c6",
-      "width": 1267,
-      "height": 761,
-      "stage": 5,
-      "workspace": "Brontë family of Haworth",
-      "focus": "Patrick Brontë",
-      "capture": "in-app",
-      "crop": {
-        "x": 0,
-        "y": 32,
-        "width": 1267,
-        "height": 761,
-        "reason": "Removes the black band the in-app capture leaves where the title bar is."
-      },
-      "verifiedAppVersion": "0.1.0.1 (1)"
-    },
-    {
-      "key": "img-notes",
-      "file": "notes.png",
-      "sha256": "81747d9b45747fcba2f0236db41d245b224530b18541b7ea908a2711be8d43c1",
-      "width": 1267,
-      "height": 761,
-      "stage": 5,
-      "workspace": "Brontë family of Haworth",
-      "focus": "Patrick Brontë",
-      "capture": "in-app",
-      "crop": {
-        "x": 0,
-        "y": 32,
-        "width": 1267,
-        "height": 761,
-        "reason": "Removes the black band the in-app capture leaves where the title bar is."
-      },
-      "verifiedAppVersion": "0.1.0.1 (1)"
-    },
-    {
-      "key": "img-person-add",
-      "file": "person-add.png",
-      "sha256": "6eaead86f391740d83f87756c1f3a1009db9ebcd1142cd74e366eab838acd8cb",
-      "width": 1267,
-      "height": 761,
-      "stage": 2,
-      "workspace": "Brontë family of Haworth",
-      "focus": "Patrick Brontë",
-      "capture": "in-app",
-      "crop": {
-        "x": 0,
-        "y": 32,
-        "width": 1267,
-        "height": 761,
-        "reason": "Removes the black band the in-app capture leaves where the title bar is."
-      },
-      "verifiedAppVersion": "0.1.0.1 (1)"
-    },
-    {
-      "key": "img-person-edit",
-      "file": "person-edit.png",
-      "sha256": "19394cdee65fbc0ed42e89ca57ba4befbcb9f6efb8a4c462a042df11ae9eb1c4",
-      "width": 1267,
-      "height": 761,
-      "stage": 2,
-      "workspace": "Brontë family of Haworth",
-      "focus": "Charlotte Brontë",
-      "capture": "in-app",
-      "crop": {
-        "x": 0,
-        "y": 32,
-        "width": 1267,
-        "height": 761,
-        "reason": "Removes the black band the in-app capture leaves where the title bar is."
-      },
-      "verifiedAppVersion": "0.1.0.1 (1)"
-    },
-    {
-      "key": "img-person-page",
-      "file": "person-page.png",
-      "sha256": "61c980f70d97295cb8d579386f41e1ea6d902ef5914e46003c650dad2e03720b",
-      "width": 1267,
-      "height": 761,
-      "stage": 3,
-      "workspace": "Brontë family of Haworth",
-      "focus": "Patrick Brontë",
-      "capture": "in-app",
-      "crop": {
-        "x": 0,
-        "y": 32,
-        "width": 1267,
-        "height": 761,
-        "reason": "Removes the black band the in-app capture leaves where the title bar is."
-      },
-      "verifiedAppVersion": "0.1.0.1 (1)"
-    },
-    {
-      "key": "img-person-view",
-      "file": "person-view.png",
-      "sha256": "72dc44088d9639ccc134493248d73432d3167eeb68f147dc1ba56cf3b2b56792",
-      "width": 1267,
-      "height": 761,
-      "stage": 6,
-      "workspace": "Brontë family of Haworth",
-      "focus": "Patrick Brontë",
-      "capture": "in-app",
-      "crop": {
-        "x": 0,
-        "y": 32,
-        "width": 1267,
-        "height": 761,
-        "reason": "Removes the black band the in-app capture leaves where the title bar is."
-      },
-      "verifiedAppVersion": "0.1.0.1 (1)"
-    },
-    {
-      "key": "img-photo-link",
-      "file": "photo-link.png",
-      "sha256": "30ccefdd15ce3133ebf7fec3c36067af370d8abf944a65d97029aa7a373cd5d6",
-      "width": 1267,
-      "height": 761,
-      "stage": 8,
-      "workspace": "Brontë family of Haworth",
-      "focus": "Patrick Brontë",
-      "capture": "in-app",
-      "crop": null,
-      "verifiedAppVersion": "0.1.0.1 (1)"
-    },
-    {
-      "key": "img-preferences",
-      "file": "preferences.png",
-      "sha256": "10ec27f607d1dc6bd724ffc79b47d3fd80b6ed24f5b2a81db4d91f9da398f8eb",
+      "key": "img-nav-main",
+      "file": "nav-main.png",
+      "sha256": "dad92d45a6343dbc6f4fd378d5f808f8f0ecd01d77bcad618c53b67ddacd6900",
       "width": 1267,
       "height": 761,
       "stage": 0,
@@ -387,31 +234,202 @@
         "height": 761,
         "reason": "Removes the black band the in-app capture leaves where the title bar is."
       },
-      "verifiedAppVersion": "0.1.0.1 (1)"
+      "verifiedAppVersion": "0.2.0.989"
     },
     {
-      "key": "img-remove-workspace",
-      "file": "remove-workspace.png",
-      "sha256": "77c203294ac2bb26416e819a16714dfce03733862d678b4cda96661ba68aea57",
-      "width": 1160,
-      "height": 520,
-      "stage": 3,
+      "key": "img-note-form",
+      "file": "note-form.png",
+      "sha256": "cd3d9016a27182a568a416d2f51e133d38bd4819baceedc6423451935081d137",
+      "width": 1047,
+      "height": 565,
+      "stage": 5,
+      "workspace": "Brontë family of Haworth",
+      "focus": "Maria Branwell",
+      "capture": "in-app",
+      "crop": {
+        "x": 220,
+        "y": 228,
+        "width": 1047,
+        "height": 565,
+        "reason": "Removes the black band the in-app capture leaves where the title bar is, and the button that fills a form from a document, which the manual does not describe."
+      },
+      "verifiedAppVersion": "0.2.0.989"
+    },
+    {
+      "key": "img-notes",
+      "file": "notes.png",
+      "sha256": "8f2a82b25a04d9c6948f0066c1ff6fe3419f5a9b3c8532245835b4d82b952641",
+      "width": 1267,
+      "height": 761,
+      "stage": 5,
+      "workspace": "Brontë family of Haworth",
+      "focus": "Maria Branwell",
+      "capture": "in-app",
+      "crop": {
+        "x": 0,
+        "y": 32,
+        "width": 1267,
+        "height": 761,
+        "reason": "Removes the black band the in-app capture leaves where the title bar is."
+      },
+      "verifiedAppVersion": "0.2.0.989"
+    },
+    {
+      "key": "img-people-list",
+      "file": "people-list.png",
+      "sha256": "53587cce36a326079eaab592a675507da1976606c72f1a2b5ee79de8c9ec620e",
+      "width": 1267,
+      "height": 761,
+      "stage": 2,
       "workspace": "Brontë family of Haworth",
       "focus": "Brontë family of Haworth",
       "capture": "in-app",
       "crop": {
-        "x": 690,
-        "y": 540,
-        "width": 1160,
-        "height": 520,
+        "x": 0,
+        "y": 32,
+        "width": 1267,
+        "height": 761,
+        "reason": "Removes the black band the in-app capture leaves where the title bar is."
+      },
+      "verifiedAppVersion": "0.2.0.989"
+    },
+    {
+      "key": "img-person-add",
+      "file": "person-add.png",
+      "sha256": "63dcdc93a5f11c00b5cdb92418fbd9fc5991ea1858981f72f3b8932b6b714cf6",
+      "width": 1267,
+      "height": 761,
+      "stage": 2,
+      "workspace": "Brontë family of Haworth",
+      "focus": "Patrick Brontë",
+      "capture": "in-app",
+      "crop": {
+        "x": 0,
+        "y": 32,
+        "width": 1267,
+        "height": 761,
+        "reason": "Removes the black band the in-app capture leaves where the title bar is."
+      },
+      "verifiedAppVersion": "0.2.0.989"
+    },
+    {
+      "key": "img-person-edit",
+      "file": "person-edit.png",
+      "sha256": "a10cb3eb826180d679ea9ef09b43e21222a6c1e8b148576d8251c9a74c67174f",
+      "width": 1267,
+      "height": 761,
+      "stage": 2,
+      "workspace": "Brontë family of Haworth",
+      "focus": "Charlotte Brontë",
+      "capture": "in-app",
+      "crop": {
+        "x": 0,
+        "y": 32,
+        "width": 1267,
+        "height": 761,
+        "reason": "Removes the black band the in-app capture leaves where the title bar is."
+      },
+      "verifiedAppVersion": "0.2.0.989"
+    },
+    {
+      "key": "img-person-page",
+      "file": "person-page.png",
+      "sha256": "8d6f6e089fd3abc617c4b42ba363be17530fe63162bbaa4494e8d104be83dc3a",
+      "width": 1267,
+      "height": 761,
+      "stage": 3,
+      "workspace": "Brontë family of Haworth",
+      "focus": "Patrick Brontë",
+      "capture": "in-app",
+      "crop": {
+        "x": 0,
+        "y": 32,
+        "width": 1267,
+        "height": 761,
+        "reason": "Removes the black band the in-app capture leaves where the title bar is."
+      },
+      "verifiedAppVersion": "0.2.0.989"
+    },
+    {
+      "key": "img-person-view",
+      "file": "person-view.png",
+      "sha256": "2280f08790d3ec1792463003e7fc0b8b7b9ecd6016cd538903dc88ff5848d4b4",
+      "width": 1267,
+      "height": 761,
+      "stage": 6,
+      "workspace": "Brontë family of Haworth",
+      "focus": "Charlotte Brontë",
+      "capture": "in-app",
+      "crop": {
+        "x": 0,
+        "y": 32,
+        "width": 1267,
+        "height": 761,
+        "reason": "Removes the black band the in-app capture leaves where the title bar is."
+      },
+      "verifiedAppVersion": "0.2.0.989"
+    },
+    {
+      "key": "img-photo-link",
+      "file": "photo-link.png",
+      "sha256": "995702c910f8b13b271066ba2a1dbc5490239c891110309260c78d994786e5b2",
+      "width": 1267,
+      "height": 761,
+      "stage": 8,
+      "workspace": "Brontë family of Haworth",
+      "focus": "Patrick Brontë",
+      "capture": "in-app",
+      "crop": {
+        "x": 0,
+        "y": 32,
+        "width": 1267,
+        "height": 761,
+        "reason": "Removes the black band the in-app capture leaves where the title bar is."
+      },
+      "verifiedAppVersion": "0.2.0.989"
+    },
+    {
+      "key": "img-preferences",
+      "file": "preferences.png",
+      "sha256": "6316906ff014aedbd25110c1d3180fce2e47e6b1096df66d87d39ef31bc13f74",
+      "width": 1267,
+      "height": 761,
+      "stage": 0,
+      "workspace": "Brontë family of Haworth",
+      "focus": "Brontë family of Haworth",
+      "capture": "in-app",
+      "crop": {
+        "x": 0,
+        "y": 32,
+        "width": 1267,
+        "height": 761,
+        "reason": "Removes the black band the in-app capture leaves where the title bar is."
+      },
+      "verifiedAppVersion": "0.2.0.989"
+    },
+    {
+      "key": "img-remove-workspace",
+      "file": "remove-workspace.png",
+      "sha256": "1cf290d92a199ff3a1097a651828531882e97ecdd7b316fa88fc19d539178613",
+      "width": 590,
+      "height": 260,
+      "stage": 3,
+      "workspace": "Brontë family of Haworth",
+      "focus": "Brontë family of Haworth",
+      "capture": "os",
+      "crop": {
+        "x": 340,
+        "y": 270,
+        "width": 590,
+        "height": 260,
         "reason": "Keeps the question and its two buttons; the rest is the screen behind it, dimmed."
       },
-      "verifiedAppVersion": "0.1.0.1 (1)"
+      "verifiedAppVersion": "0.2.0.989"
     },
     {
       "key": "img-repositories",
       "file": "repositories.png",
-      "sha256": "69339ecd3baeb07864fa0af75bab1471a6ac662837339fae54b634cef3e69ab6",
+      "sha256": "cabf8de725eeb518afb43485f30a554957d089e2a964d25bf589e8e4aef2b5b0",
       "width": 1267,
       "height": 761,
       "stage": 6,
@@ -425,12 +443,12 @@
         "height": 761,
         "reason": "Removes the black band the in-app capture leaves where the title bar is."
       },
-      "verifiedAppVersion": "0.1.0.1 (1)"
+      "verifiedAppVersion": "0.2.0.989"
     },
     {
       "key": "img-research-notes",
       "file": "research-notes.png",
-      "sha256": "013ac06361ae1e2fde26f08131b88a50020a947b663c0e06e5d951f76d0ac0db",
+      "sha256": "87b9ff6bfc310e8a61aa5b589d8b29cc30dd8881c02d763b269ac1939dda35c8",
       "width": 1267,
       "height": 761,
       "stage": 7,
@@ -444,71 +462,14 @@
         "height": 761,
         "reason": "Removes the black band the in-app capture leaves where the title bar is."
       },
-      "verifiedAppVersion": "0.1.0.1 (1)"
-    },
-    {
-      "key": "img-save-as-choice",
-      "file": "save-as-choice.png",
-      "sha256": "e2767e28bd96ad54f3ac7fd6e2b626916807401336e43ec58ae92e978e2292e5",
-      "width": 800,
-      "height": 510,
-      "stage": 9,
-      "workspace": "Brontë family of Haworth",
-      "focus": "Brontë family of Haworth",
-      "capture": "in-app",
-      "crop": {
-        "x": 860,
-        "y": 540,
-        "width": 800,
-        "height": 510,
-        "reason": "Keeps the question and its choices; the rest is the screen behind it."
-      },
-      "verifiedAppVersion": "0.1.0.1 (1)"
-    },
-    {
-      "key": "img-save-as-message",
-      "file": "save-as-message.png",
-      "sha256": "00dc80102adcb0cd7606bc737940e816770cf3aea4f8844bcdf46e8f6aa9a059",
-      "width": 1267,
-      "height": 761,
-      "stage": 9,
-      "workspace": "Brontë family of Haworth",
-      "focus": "Brontë family of Haworth",
-      "capture": "in-app",
-      "crop": {
-        "x": 0,
-        "y": 32,
-        "width": 1267,
-        "height": 761,
-        "reason": "Removes the black band the in-app capture leaves where the title bar is."
-      },
-      "verifiedAppVersion": "0.1.0.1 (1)"
-    },
-    {
-      "key": "img-save-as-version",
-      "file": "save-as-version.png",
-      "sha256": "0a3dd50ffd7cf257315940ea790ff3fa9c6a0682b2698964567f36d987beafea",
-      "width": 800,
-      "height": 510,
-      "stage": 9,
-      "workspace": "Brontë family of Haworth",
-      "focus": "Brontë family of Haworth",
-      "capture": "in-app",
-      "crop": {
-        "x": 860,
-        "y": 540,
-        "width": 800,
-        "height": 510,
-        "reason": "Keeps the question and its choices; the rest is the screen behind it."
-      },
-      "verifiedAppVersion": "0.1.0.1 (1)"
+      "verifiedAppVersion": "0.2.0.989"
     },
     {
       "key": "img-search-refine",
       "file": "search-refine.png",
-      "sha256": "1d59048e72ebf21ff945f3a941b8f50a624581e0d95a0e9d2089d3773dd4d91e",
+      "sha256": "9ada7f099eb800f5c739c2a1bfb670ad6d518813de1aef1642fc3e9aa8dae731",
       "width": 1267,
-      "height": 761,
+      "height": 745,
       "stage": 9,
       "workspace": "Brontë family of Haworth",
       "focus": "Brontë family of Haworth",
@@ -517,20 +478,20 @@
         "x": 0,
         "y": 32,
         "width": 1267,
-        "height": 761,
-        "reason": "Removes the black band the in-app capture leaves where the title bar is."
+        "height": 745,
+        "reason": "Removes the black band at the top and the black band the capture leaves at the bottom (the window was taller than the screen), and stops above the heading that the bottom edge cuts in half."
       },
-      "verifiedAppVersion": "0.1.0.1 (1)"
+      "verifiedAppVersion": "0.2.0.989"
     },
     {
       "key": "img-search-results",
       "file": "search-results.png",
-      "sha256": "4df45433229839258399a63963fc1364584a9b93099a3c38fef9cc374d0c77df",
+      "sha256": "8d00b2f457affcdfcb26b8b9bbcfa87554f8bdb449f74895d9c2406cf65fb85e",
       "width": 1267,
       "height": 761,
       "stage": 9,
       "workspace": "Brontë family of Haworth",
-      "focus": "Brontë family of Haworth",
+      "focus": "Patrick Brontë",
       "capture": "in-app",
       "crop": {
         "x": 0,
@@ -539,82 +500,88 @@
         "height": 761,
         "reason": "Removes the black band the in-app capture leaves where the title bar is."
       },
-      "verifiedAppVersion": "0.1.0.1 (1)"
+      "verifiedAppVersion": "0.2.0.989"
     },
     {
       "key": "img-source-attach",
       "file": "source-attach.png",
-      "sha256": "00d861bc747a9335b24e919c42e8c3d82789a710031e46520946712b7a10a773",
+      "sha256": "aafa4aa2e89ea1fd6537cfb0551a00b589a3625d11c0697633d78cb0f3303679",
       "width": 1267,
       "height": 761,
       "stage": 6,
       "workspace": "Brontë family of Haworth",
-      "focus": "Patrick Brontë",
+      "focus": "Brontë family of Haworth",
       "capture": "in-app",
       "crop": null,
-      "verifiedAppVersion": "0.1.0.1 (1)"
+      "verifiedAppVersion": "0.2.0.989"
     },
     {
       "key": "img-source-new",
       "file": "source-new.png",
-      "sha256": "7a4541bc1a4121b25a0e0908aa5c1ae4aae9b21d85a81420505254666995abc3",
-      "width": 1267,
-      "height": 761,
+      "sha256": "40674ebd318b7c58753bb9ce32a502cc8458d97e06eca7c75098497dac3649b5",
+      "width": 1047,
+      "height": 458,
       "stage": 6,
       "workspace": "Brontë family of Haworth",
-      "focus": "Patrick Brontë",
+      "focus": "Brontë family of Haworth",
       "capture": "in-app",
-      "crop": null,
-      "verifiedAppVersion": "0.1.0.1 (1)"
+      "crop": {
+        "x": 220,
+        "y": 335,
+        "width": 1047,
+        "height": 458,
+        "reason": "Removes the black band the in-app capture leaves where the title bar is, and the buttons above the Title box that attach a document and fill the form from it, which the manual does not describe."
+      },
+      "verifiedAppVersion": "0.2.0.989"
     },
     {
       "key": "img-sources-empty",
       "file": "sources-empty.png",
-      "sha256": "2f03fb5e045022ddab76f71fa90c5e61cb9464842b45a784a5ed0a1235eeb2da",
+      "sha256": "413eac709021db82658a525a5c4f318cc911a5a9317373c25c5f9891af4a78b3",
       "width": 1267,
       "height": 761,
       "stage": 6,
       "workspace": "Brontë family of Haworth",
-      "focus": "Patrick Brontë",
+      "focus": "Brontë family of Haworth",
       "capture": "in-app",
       "crop": null,
-      "verifiedAppVersion": "0.1.0.1 (1)"
+      "verifiedAppVersion": "0.2.0.989"
     },
     {
       "key": "img-sources-list",
       "file": "sources-list.png",
-      "sha256": "661cb5d10e4f3bce6471ccb1cdd1cd250faac8ab16e7e246f4239523f6756582",
+      "sha256": "b2f87fcc8d91269f74d78fd92ac08fb63d0de96a401fce4d08417402bd3d2570",
       "width": 1267,
       "height": 761,
       "stage": 6,
       "workspace": "Brontë family of Haworth",
-      "focus": "Charlotte Brontë",
+      "focus": "Brontë family of Haworth",
       "capture": "in-app",
       "crop": null,
-      "verifiedAppVersion": "0.1.0.1 (1)"
+      "verifiedAppVersion": "0.2.0.989"
     },
     {
       "key": "img-sources-one",
       "file": "sources-one.png",
-      "sha256": "4ed12dbec05437a2c2dc6dba1d0bb83c5c0fd6744b45297dd4a2ea95c12f33cb",
+      "sha256": "10c365b3ce7d6d27825dd22af3bd27f2e02a3b457599403e27dd2a3dda16edbe",
       "width": 1267,
       "height": 761,
       "stage": 6,
       "workspace": "Brontë family of Haworth",
-      "focus": "Patrick Brontë",
+      "focus": "Brontë family of Haworth",
       "capture": "in-app",
       "crop": null,
-      "verifiedAppVersion": "0.1.0.1 (1)"
+      "verifiedAppVersion": "0.2.0.989"
     },
     {
       "key": "img-start-first-run",
       "file": "start-first-run.png",
-      "sha256": "fff8c9fd6cfa1ce872c30a2085e904c411c28a815d696033b18fb8fcf3c872e6",
+      "sha256": "b22db0f1ad77c8cf10b9e1d44b7bcae3788987c8258b50584b12e4f2c90dd44b",
       "width": 740,
       "height": 140,
       "stage": 0,
       "workspace": "not shown",
-      "focus": "Brontë family of Haworth",
+      "focus": "none",
       "capture": "in-app",
       "crop": {
         "x": 232,
@@ -623,12 +590,12 @@
         "height": 140,
         "reason": "Keeps the heading and the two buttons. The first launch shows the app's own sample workspaces, and a screen with them removed shows a message about opening a family tree file; neither is the Brontë dataset or the route the page teaches (DEC-040)."
       },
-      "verifiedAppVersion": "0.1.0.1 (1)"
+      "verifiedAppVersion": "0.2.0.989"
     },
     {
       "key": "img-submitters",
       "file": "submitters.png",
-      "sha256": "fc1c7568ea6284c80083cf0a6ef3d0c3d9667784c0178c9c3c3ce08572a24be4",
+      "sha256": "19c5a931ccc1a32de5098fdf0f678b8f7a47623b7b328850a880b986d6a39597",
       "width": 1267,
       "height": 761,
       "stage": 1,
@@ -642,31 +609,12 @@
         "height": 761,
         "reason": "Removes the black band the in-app capture leaves where the title bar is."
       },
-      "verifiedAppVersion": "0.1.0.1 (1)"
-    },
-    {
-      "key": "img-tree-marriage",
-      "file": "tree-marriage.png",
-      "sha256": "65f9d5be13c65fcf51db654bea1122002206d5f8b760b0126ff6885c6d4458da",
-      "width": 1267,
-      "height": 761,
-      "stage": 3,
-      "workspace": "Brontë family of Haworth",
-      "focus": "Patrick Brontë",
-      "capture": "in-app",
-      "crop": {
-        "x": 0,
-        "y": 32,
-        "width": 1267,
-        "height": 761,
-        "reason": "Removes the black band the in-app capture leaves where the title bar is."
-      },
-      "verifiedAppVersion": "0.1.0.1 (1)"
+      "verifiedAppVersion": "0.2.0.989"
     },
     {
       "key": "img-workspaces",
       "file": "workspaces.png",
-      "sha256": "091720d1b58e1cb2a9694aef2e3b8846991b4ceadd97fee40cba0eeec4c1430b",
+      "sha256": "26108e9a6bff1a26df576cc3af684257a86ed735ed3a39d799f97cfab76c5209",
       "width": 1267,
       "height": 761,
       "stage": 3,
@@ -680,7 +628,7 @@
         "height": 761,
         "reason": "Removes the black band the in-app capture leaves where the title bar is."
       },
-      "verifiedAppVersion": "0.1.0.1 (1)"
+      "verifiedAppVersion": "0.2.0.989"
     }
   ]
 }

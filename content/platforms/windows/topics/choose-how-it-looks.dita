@@ -5,7 +5,7 @@
   <shortdesc>Pick a colour theme, and a light or dark look, for this computer.</shortdesc>
   <prolog>
     <critdates>
-      <created date="2026-10-24"/>
+      <created date="2026-11-10"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -15,6 +15,7 @@
         <keyword>colours</keyword>
         <keyword>theme</keyword>
         <keyword>settings</keyword>
+        <keyword>high contrast</keyword>
       </keywords>
     </metadata>
     <resourceid appname="ufti" appid="settings.appearance"/>
@@ -28,7 +29,7 @@
       <step>
         <cmd>Choose <uicontrol keyref="ui-preferences"/> in the menu.</cmd>
         <stepresult>
-          <p>The page shows two groups of choices.</p>
+          <p>The page opens with groups of choices.</p>
           <fig>
             <image keyref="img-preferences"/>
           </fig>
@@ -37,18 +38,21 @@
       <step>
         <cmd>Under <uicontrol keyref="ui-theme"/>, choose a set of colours.</cmd>
         <info>
-          <p>The first group has three themes, and a row of four colour squares shows each one. <uicontrol keyref="ui-oxford-and-slate"/> is the one in the pictures in this manual.</p>
+          <p>There are four themes: <uicontrol keyref="ui-high-contrast"/>, <uicontrol keyref="ui-ink-and-parchment"/>, <uicontrol keyref="ui-oxford-and-slate"/> and <uicontrol keyref="ui-sepia-and-slate"/>. Each has a short line of words and a row of four colour squares. <uicontrol keyref="ui-high-contrast"/> has strong outlines and a thick ring round the control you are on. <uicontrol keyref="ui-oxford-and-slate"/> is the one in the pictures in this manual.</p>
         </info>
       </step>
       <step>
         <cmd>Under <uicontrol keyref="ui-appearance"/>, choose <uicontrol keyref="ui-follow-the-system"/>, <uicontrol keyref="ui-light"/> or <uicontrol keyref="ui-dark"/>.</cmd>
         <info>
-          <p>The first choice copies the setting you made in Windows.</p>
+          <p>Choose <uicontrol keyref="ui-light"/> or <uicontrol keyref="ui-dark"/> to set the look yourself.</p>
         </info>
       </step>
     </steps>
     <result>
-      <p>The change shows at once. The app keeps your choice the next time you open it.</p>
+      <p>The pages change to the look you chose, and they stay that way.</p>
     </result>
+    <postreq>
+      <p>The page has a third group, named <uicontrol keyref="ui-saving-another-programs-file"/>, with two switches. It is about what a save writes beside a file that another program made. <xref keyref="opened-files-and-copies"/> says more.</p>
+    </postreq>
   </taskbody>
 </task>

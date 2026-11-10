@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="add-another-person" xml:lang="en-GB">
+  <title>Add another person</title>
+  <shortdesc>Add a person to a tree that already has someone in it.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>new person</keyword>
+        <keyword>add relative</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="people.add"/>
+    <resourceid appname="ufti" appid="add.record"/>
+    <resourceid appname="ufti" appid="people.list"/>
+  </prolog>
+  <taskbody>
+    <context>
+      <p>The first person comes with a new tree. After that, you add people with <uicontrol keyref="ui-add"/>. This page adds Charlotte Brontë. The sample tree already has her, so follow the steps in a tree of your own, such as the practice tree from the Quick Start.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-add"/> at the top.</cmd>
+        <stepresult>
+          <p>A sheet named <uicontrol keyref="ui-add-a-record"/> opens. It starts with things you can add to the person you are looking at.</p>
+          <fig>
+            <image keyref="img-add-record"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Scroll the sheet to the part named <uicontrol keyref="ui-add-a-new-person"/>.</cmd>
+        <info>
+          <p>The sheet scrolls on its own. Turn the mouse wheel with the pointer on it.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-basic-details"/>, then choose <uicontrol keyref="ui-add-button"/>.</cmd>
+        <info>
+          <p>The <uicontrol keyref="ui-add-button"/> button stays grey until you choose a form.</p>
+        </info>
+        <stepresult>
+          <p>A form for a new person opens. Its trail ends with <uicontrol keyref="ui-new-person"/>.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Type the names and choose the sex.</cmd>
+        <info>
+          <p>Only <uicontrol keyref="ui-given-names"/> is needed. Type <userinput>Charlotte</userinput> there, <userinput>Brontë</userinput> in <uicontrol keyref="ui-surname"/>, and choose Female in <uicontrol keyref="ui-sex"/>.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Add the dates and places you know.</cmd>
+        <info>
+          <p>For <uicontrol keyref="ui-date-of-birth"/>, type <userinput>21</userinput> in <uicontrol keyref="ui-day"/>, choose April in <uicontrol keyref="ui-month"/> and type <userinput>1816</userinput> in <uicontrol keyref="ui-year"/>. A line under the date starts <q>Reads as</q> and shows how the app understood it. <xref keyref="dates"/> says more.</p>
+          <p>For <uicontrol keyref="ui-place-of-birth"/>, type <userinput>Thornton, near Bradford, Yorkshire</userinput>. Places you typed before are offered under the box. <xref keyref="places"/> says more.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Scroll to the foot of the form and choose <uicontrol keyref="ui-save"/>.</cmd>
+        <stepresult>
+          <p>The new person is in your tree.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>To check, choose <uicontrol keyref="ui-home"/>, then <uicontrol keyref="ui-all-people"/>. The new person has a card with the name and the years of life.</p>
+      <fig>
+        <image keyref="img-people-list"/>
+      </fig>
+    </result>
+    <postreq>
+      <p>There is a shorter way to the same form. On <uicontrol keyref="ui-home"/>, choose <uicontrol keyref="ui-all-people"/>, then choose <uicontrol keyref="ui-add-person"/>.</p>
+      <p>The sheet ends with a button that starts <uicontrol keyref="ui-more-forms"/> and has a count in brackets. It shows the other forms, such as the census forms from 1871 to 1921. Choose <uicontrol keyref="ui-fewer-forms"/> to hide them again.</p>
+      <p>Next: <xref keyref="add-a-family"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

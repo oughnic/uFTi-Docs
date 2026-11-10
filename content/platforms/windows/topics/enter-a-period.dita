@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="enter-a-period" xml:lang="en-GB">
+  <title>Enter a period</title>
+  <shortdesc>Record something that lasted for years, such as a home, by typing both dates in one box.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>from and to</keyword>
+        <keyword>years lived</keyword>
+        <keyword>residence</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="events.period"/>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p>Open the page of Patrick Brontë first. <xref keyref="find-a-person"/> shows how.</p>
+    </prereq>
+    <context>
+      <p>Some things last for years, such as living in one house. You can type the dates as text. This page adds the time that Patrick Brontë lived at Haworth, from 25 February 1820 to 7 June 1861.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Open the form for an event, as <xref keyref="add-an-event"/> shows: choose <uicontrol keyref="ui-add"/>, then <uicontrol keyref="ui-other-event"/>, then <uicontrol keyref="ui-add-button"/>.</cmd>
+      </step>
+      <step>
+        <cmd>In <uicontrol keyref="ui-type"/>, choose <uicontrol keyref="ui-type-residence"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Under <uicontrol keyref="ui-date"/>, turn on <uicontrol keyref="ui-edit-as-text"/>.</cmd>
+        <stepresult>
+          <p>The day, month and year boxes give way to one box for text.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>In the box, type <userinput>from 25 February 1820 to 7 June 1861</userinput>.</cmd>
+        <info>
+          <p>The box shows examples of what it reads, such as a whole date, <q>about 1900</q> and <q>between 1850 and 1860</q>.</p>
+        </info>
+        <stepresult>
+          <p>The picture shows the box at this point. The words are typed, and the line under <uicontrol keyref="ui-date"/> still says <systemoutput>No date entered</systemoutput>.</p>
+          <fig>
+            <image keyref="img-date-editor"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Leave the box by choosing another one, such as <uicontrol keyref="ui-place"/>.</cmd>
+        <stepresult>
+          <p>The line named <systemoutput>How the date reads</systemoutput> fills in. It shows what the app understood.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Type the place, then choose <uicontrol keyref="ui-save"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-events"/> in the menu.</cmd>
+        <stepresult>
+          <p>The line for the event reads <systemoutput>Residence, from 25 February 1820 to 7 June 1861</systemoutput>.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>The date now reads as a period, from one date to another.</p>
+    </result>
+    <postreq>
+      <p>For every kind of date, see <xref keyref="kinds-of-date"/>. Next: <xref keyref="add-an-event-of-your-own-kind"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

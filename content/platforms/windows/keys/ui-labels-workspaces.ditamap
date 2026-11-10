@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!-- Words on screen that the Windows pages of "Bring in, share and keep safe" use and no other label map
+     holds, exactly as the app prints them, read from the Alpha-2 Windows app on 10 November 2026. It sits
+     beside the Windows label map and follows its shape. The labels the Quick Start map already holds
+     (Home, Add the first person, Everything (.gdz, recommended), Family tree only (.ged)) are not
+     repeated here. -->
+<map id="windows-ui-labels-workspaces" xml:lang="en-GB">
+  <!-- the Workspaces card -->
+  <keydef keys="ui-open"><topicmeta><keywords><keyword>Open</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-birth-years"><topicmeta><keywords><keyword>Birth years</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-death-years"><topicmeta><keywords><keyword>Death years</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-top-surname"><topicmeta><keywords><keyword>Top surname</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-completeness"><topicmeta><keywords><keyword>Completeness</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-hide-details"><topicmeta><keywords><keyword>Hide details</keyword></keywords></topicmeta></keydef>
+  <!-- the Add a record sheet and the Submitter form -->
+  <keydef keys="ui-add-to-the-workspace"><topicmeta><keywords><keyword>Add to the workspace</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-submitter"><topicmeta><keywords><keyword>Submitter</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-submitter-name"><topicmeta><keywords><keyword>Name</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-submitter-address"><topicmeta><keywords><keyword>Address</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-submitter-contacts"><topicmeta><keywords><keyword>Telephone, email and website</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-submitter-language"><topicmeta><keywords><keyword>Language</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-copyright-of-this-tree"><topicmeta><keywords><keyword>Copyright of this tree</keyword></keywords></topicmeta></keydef>
+  <!-- Who made this tree, after a name is saved -->
+  <keydef keys="ui-delete-name"><topicmeta><keywords><keyword>Delete</keyword></keywords></topicmeta></keydef>
+  <!-- the Photos buttons -->
+  <keydef keys="ui-link-existing-media"><topicmeta><keywords><keyword>Link existing media</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-search-media-by-description"><topicmeta><keywords><keyword>Search media by description</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-close"><topicmeta><keywords><keyword>Close</keyword></keywords></topicmeta></keydef>
+</map>

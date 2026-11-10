@@ -7,18 +7,23 @@
      so a manual sees only its own. The page that is the same everywhere (sources, what next) is shared.
      Keys sit on the topicrefs and match the file names. -->
 <map id="quick-start-structure" xml:lang="en-GB">
-  <topicref href="../../platforms/windows/topics/get-ufti.dita" keys="get-ufti" platform="WindowsWinUI"/>
+  <!-- Windows (Alpha-2): the Quick Start opens with the app already on the PC, so there is no page for getting it. Look around comes first, then the first person. -->
+  <mapref href="../../platforms/windows/keys/ui-labels-quick-start.ditamap" platform="WindowsWinUI" processing-role="resource-only"/>
+  <topicref href="../../platforms/windows/topics/look-around.dita" keys="look-around" platform="WindowsWinUI"/>
+  <topicref href="../../platforms/windows/topics/add-your-first-person.dita" keys="add-your-first-person" platform="WindowsWinUI"/>
   <topicref href="../../platforms/android/topics/get-ufti.dita" keys="get-ufti" platform="Android"/>
-  <topicref href="../../platforms/desktop/topics/add-your-first-person.dita" keys="add-your-first-person" platform="Desktop"/>
+  <topicref href="../../platforms/desktop/topics/add-your-first-person.dita" keys="add-your-first-person" platform="MacAppKit"/>
   <topicref href="../../platforms/ios/topics/add-your-first-person.dita" keys="add-your-first-person" platform="iOS"/>
   <topicref href="../../platforms/android-phone/topics/add-your-first-person.dita" keys="add-your-first-person" platform="AndroidPhone"/>
   <topicref href="../../platforms/android-tablet/topics/add-your-first-person.dita" keys="add-your-first-person" platform="AndroidTablet"/>
-  <topicref href="../../platforms/desktop/topics/look-around.dita" keys="look-around" platform="Desktop"/>
+  <topicref href="../../platforms/desktop/topics/look-around.dita" keys="look-around" platform="MacAppKit"/>
   <topicref href="../../platforms/ipad/topics/look-around.dita" keys="look-around" platform="iPad"/>
   <topicref href="../../platforms/phone/topics/look-around.dita" keys="look-around" platform="iPhone"/>
   <topicref href="../../platforms/android-phone/topics/look-around.dita" keys="look-around" platform="AndroidPhone"/>
   <topicref href="../../platforms/android-tablet/topics/look-around.dita" keys="look-around" platform="AndroidTablet"/>
-  <topicref href="../../topics/quick-start/say-where-you-found-it.dita" keys="say-where-you-found-it"/>
+  <!-- say-where-you-found-it: the shared page is for every manual but Windows. MacAppKit keeps it for the Mac manual, and Mobile keeps it for the four phone and tablet manuals (the filter of each includes Mobile). The Windows page follows it with the same key. -->
+  <topicref href="../../topics/quick-start/say-where-you-found-it.dita" keys="say-where-you-found-it" platform="MacAppKit Mobile"/>
+  <topicref href="../../platforms/windows/topics/say-where-you-found-it.dita" keys="say-where-you-found-it" platform="WindowsWinUI"/>
   <topicref href="../../platforms/windows/topics/keep-it-safe.dita" keys="keep-it-safe" platform="WindowsWinUI"/>
   <topicref href="../../platforms/android/topics/keep-it-safe.dita" keys="keep-it-safe" platform="Android"/>
   <!-- macOS (DEC-125): keep-it-safe is written. Get the app is not written yet: how readers get the Mac app is not decided. -->
