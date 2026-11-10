@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="say-who-made-this-tree" xml:lang="en-GB">
+  <title>Say who made this tree</title>
+  <shortdesc>Record who made the tree, so anyone who gets a copy knows who to ask.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>submitter</keyword>
+        <keyword>author</keyword>
+        <keyword>credit</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="submitters.list"/>
+  </prolog>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-more"/>, then <uicontrol keyref="ui-who-made-this-tree"/>.</cmd>
+        <stepresult>
+          <p>A new tree says <q>Nobody is credited with this tree yet.</q></p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-add"/>, then <uicontrol keyref="ui-submitter"/> under <q>Add to the workspace</q>, then <uicontrol keyref="ui-add-button"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Type a name in <uicontrol keyref="ui-name"/>.</cmd>
+        <info>
+          <p>The other boxes are for an address, a telephone number, an email or a website, a language and a copyright line. They are all optional.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Scroll to the bottom and choose <uicontrol keyref="ui-save"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Leave the list and open it again.</cmd>
+        <info>
+          <p>The list may not show the new name until you do.</p>
+        </info>
+        <stepresult>
+          <p>The name is in the list, marked <q>(default)</q>.</p>
+          <fig>
+            <image keyref="img-submitters"/>
+          </fig>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>Each name has buttons to <uicontrol keyref="ui-edit"/> and delete it. Use the name of your group, or your own name. Never put the details of a private person in a tree that you share.</p>
+    </result>
+  </taskbody>
+</task>

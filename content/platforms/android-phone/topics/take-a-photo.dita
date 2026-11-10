@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="take-a-photo" xml:lang="en-GB">
+  <title>Take a photo of a document</title>
+  <shortdesc>Photograph a page with the camera, straighten it, describe it and attach it to a person.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>camera</keyword>
+        <keyword>scan</keyword>
+        <keyword>deskew</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="media.capture"/>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p>Open the person first. <xref keyref="find-a-person"/> shows how. Put the page on a plain, well lit surface.</p>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Scroll to <uicontrol keyref="ui-photos"/> and choose <uicontrol keyref="ui-take-photo"/>.</cmd>
+        <stepresult>
+          <p>The first time, Android asks if the app may take pictures and record video. Your choices are <q>While using the app</q>, <q>Only this time</q> and <q>Don't allow</q>.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <q>While using the app</q>.</cmd>
+        <info>
+          <p>If you choose <q>Don't allow</q>, the app says that the camera permission is needed to photograph a document. Choose <uicontrol keyref="ui-ok"/>, then choose <uicontrol keyref="ui-take-photo"/> again to be asked again.</p>
+        </info>
+        <stepresult>
+          <p>The camera opens. It has buttons for the flash and for the other camera.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-take-photo"/> on the camera screen.</cmd>
+        <stepresult>
+          <p>A screen named <wintitle keyref="ui-crop-and-deskew"/> opens. It asks you to drag the corners to the edges of the document.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Drag the corners to the edges of the page, then choose <uicontrol keyref="ui-done"/>.</cmd>
+        <info>
+          <p>Use <uicontrol keyref="ui-rotate"/> to turn the picture and <uicontrol keyref="ui-reset"/> to start again.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Type a short description of the picture, then choose <uicontrol keyref="ui-ok"/>.</cmd>
+        <info>
+          <p>The description is needed. It lets a person who cannot see the picture know what it shows.</p>
+        </info>
+        <stepresult>
+          <p>A card for the picture shows under <uicontrol keyref="ui-photos"/>.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>The app keeps the picture in a folder beside your tree. Never photograph a page with private details in it, and say in the description where the page came from. You can take the permission away again in the settings of your <keyword keyref="product-device"/>.</p>
+      <p><xref keyref="the-photos-buttons"/> says how to view, copy or remove a picture.</p>
+    </result>
+  </taskbody>
+</task>

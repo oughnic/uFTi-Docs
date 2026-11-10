@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="add-a-research-note" xml:lang="en-GB">
+  <title>Add a research question</title>
+  <shortdesc>Write down a question before you answer it, link it to the people it is about, and say whether it is still open.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>enquiry</keyword>
+        <keyword>research note</keyword>
+        <keyword>conclusion</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="research.list"/>
+  </prolog>
+  <taskbody>
+    <context>
+      <p>A good researcher writes the question down first. A question can stay open. When you look for something and do not find it, write down where you looked. Not finding a record tells you about the search. It does not tell you about the person.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-more"/>, then <uicontrol keyref="ui-research-questions-and-notes"/>.</cmd>
+        <stepresult>
+          <p>A new tree says <q>No research questions or notes yet.</q></p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-add"/>, then <uicontrol keyref="ui-research-note"/> under <q>Add to the workspace</q>, then <uicontrol keyref="ui-add-button"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Type the question or the note in <uicontrol keyref="ui-note"/>.</cmd>
+        <info>
+          <p>Say what you looked at and what you found. If you found nothing, say where you looked and under what name.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-status"/>, then <q>Open</q>, <q>In progress</q> or <q>Resolved</q>.</cmd>
+      </step>
+      <step>
+        <cmd>Under <uicontrol keyref="ui-people-it-is-about"/>, choose <uicontrol keyref="ui-add-row"/>, then <uicontrol keyref="ui-set"/>.</cmd>
+        <info>
+          <p>Type a name, choose the person from the list, then choose <uicontrol keyref="ui-done"/>.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Scroll to the bottom and choose <uicontrol keyref="ui-save"/>.</cmd>
+        <stepresult>
+          <p>The question shows in the list. A line under it says whether it is open, and how many records link to it.</p>
+          <fig>
+            <image keyref="img-research-notes"/>
+          </fig>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>When you reach a conclusion, edit the note. Write the evidence, your reasoning and how sure you are, so that a stranger could follow it. Never choose between two records without saying why.</p>
+    </result>
+  </taskbody>
+</task>
