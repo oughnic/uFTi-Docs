@@ -1,0 +1,751 @@
+/*
+ * This file is part of the govuk-dita-plugin project.
+ * Copyright 2026 iStandUK. Licensed under the Apache License, Version 2.0.
+ *
+ * Plugin page furniture: masthead, sidebar navigation tree, and styling for
+ * generated markup that has no govuk-frontend component (code blocks, figures).
+ * App-specific classes use the app- prefix, per Design System convention.
+ */
+
+/* ===== Base ===== */
+
+/* govuk-frontend scopes its font to govuk-* classes; give the plugin's own
+ * furniture (masthead, sidebar, generated links) a matching stack. The plugin
+ * never names the restricted GOV.UK typeface itself: neutral builds use the
+ * system stack below, and a future official mode adds the face via its own
+ * overlay. */
+body {
+  font-family: arial, sans-serif;
+}
+
+/* ===== Masthead (neutral) ===== */
+
+.app-masthead {
+  background: #0b0c0c;
+  padding: 15px 0;
+}
+
+.app-masthead__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 15px;
+}
+
+.app-masthead__search {
+  display: flex;
+}
+
+.app-masthead__search-input {
+  width: 220px;
+  max-width: 100%;
+  padding: 6px 10px;
+  border: 0;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.app-masthead__search-input:focus {
+  outline: 3px solid #ffdd00;
+  outline-offset: 0;
+}
+
+.app-masthead__search-button {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border: 0;
+  border-left: 1px solid #b1b4b6;
+  background: #ffffff;
+  color: #0b0c0c;
+  cursor: pointer;
+}
+
+.app-masthead__search-button:focus {
+  background: #ffdd00;
+  outline: 3px solid #ffdd00;
+  outline-offset: 0;
+}
+
+@media (max-width: 48.0624em) {
+  .app-masthead__search {
+    width: 100%;
+  }
+
+  .app-masthead__search-input {
+    width: 100%;
+  }
+}
+
+.app-masthead__title {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-decoration: none;
+}
+
+.app-masthead__title:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0.1em;
+}
+
+.app-masthead__title:focus {
+  color: #0b0c0c;
+  background-color: #ffdd00;
+  box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+  outline: 3px solid transparent;
+  text-decoration: none;
+}
+
+/* ===== Sidebar navigation ===== */
+
+.app-sidebar {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.app-sidebar__nav {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.app-sidebar__nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.app-sidebar__nav ul:empty {
+  display: none;
+}
+
+.app-sidebar__nav ul ul {
+  padding-left: 20px;
+}
+
+.app-sidebar__nav li {
+  margin: 10px 0;
+}
+
+.app-sidebar__nav a {
+  color: #1d70b8;
+  text-decoration: underline;
+  text-decoration-thickness: max(1px, 0.0625rem);
+  text-underline-offset: 0.1578em;
+}
+
+.app-sidebar__nav a:hover {
+  color: #003078;
+  text-decoration-thickness: max(3px, 0.1875rem);
+}
+
+.app-sidebar__nav a:focus {
+  color: #0b0c0c;
+  background-color: #ffdd00;
+  box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+  outline: 3px solid transparent;
+  text-decoration: none;
+}
+
+.app-sidebar__nav li.active > a {
+  color: #0b0c0c;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Unlinked group labels (e.g. bookmap chapters without landing topics) */
+.app-sidebar__nav li > span {
+  color: #0b0c0c;
+  font-weight: 700;
+}
+
+.app-sidebar__nav > ul > li {
+  margin-top: 20px;
+}
+
+@media (min-width: 48.0625em) {
+  .app-sidebar {
+    border-right: 1px solid #b1b4b6;
+  }
+}
+
+/* ===== Navigation enhancements (plugin.js; FR-N2, FR-N4) ===== */
+
+.app-sidebar__toggle {
+  display: none;
+  margin: 0 0 10px;
+  padding: 8px 12px;
+  border: 2px solid #0b0c0c;
+  background: #f3f2f1;
+  color: #0b0c0c;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.app-sidebar__toggle:focus,
+.app-nav__caret:focus {
+  background-color: #ffdd00;
+  box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+  outline: 3px solid transparent;
+}
+
+@media (max-width: 48.0624em) {
+  .app-js-nav .app-sidebar__toggle {
+    display: inline-block;
+  }
+
+  .app-js-nav .app-sidebar__nav {
+    display: none;
+  }
+
+  .app-js-nav .app-sidebar--open .app-sidebar__nav {
+    display: block;
+  }
+}
+
+.app-nav__caret {
+  background: none;
+  border: 0;
+  /* At least a 24x24px target (WCAG 2.2 target-size, #35) */
+  min-width: 24px;
+  min-height: 24px;
+  padding: 0;
+  margin-right: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #505a5f;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.app-nav__caret::before {
+  content: "\25B6";
+  display: inline-block;
+  font-size: 0.7em;
+  transition: transform 0.15s ease-out;
+}
+
+.app-nav__branch:not(.app-nav__branch--closed) > .app-nav__caret::before {
+  transform: rotate(90deg);
+}
+
+.app-nav__branch--closed > ul {
+  display: none;
+}
+
+/* ===== Generated child/related links ===== */
+
+ul.ullinks,
+ul.linklist {
+  list-style: none;
+  margin: 40px 0 20px;
+  padding: 20px 0 0;
+  border-top: 1px solid #b1b4b6;
+}
+
+li.ulchildlink,
+li.olchildlink {
+  margin: 0 0 15px;
+  font-size: 1.125rem;
+  line-height: 1.4;
+}
+
+.ullinks a,
+.linklist a,
+.related-links a,
+.app-contents a {
+  color: #1d70b8;
+  text-decoration: underline;
+  text-decoration-thickness: max(1px, 0.0625rem);
+  text-underline-offset: 0.1578em;
+}
+
+.ullinks a:hover,
+.linklist a:hover,
+.related-links a:hover,
+.app-contents a:hover {
+  color: #003078;
+  text-decoration-thickness: max(3px, 0.1875rem);
+}
+
+.ullinks a:focus,
+.linklist a:focus,
+.related-links a:focus,
+.app-contents a:focus {
+  color: #0b0c0c;
+  background-color: #ffdd00;
+  box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+  outline: 3px solid transparent;
+  text-decoration: none;
+}
+
+/* Related links stand on lines of their own, so each is a target in its own right:
+   at least 24x24px (WCAG 2.2 target-size, #242) */
+.linklist a,
+.related-links a {
+  display: inline-block;
+  min-height: 24px;
+  padding-block: 2px;
+}
+
+/* ===== Utility navigation (search, glossary, index links) ===== */
+
+.app-search-link,
+.app-utility-nav {
+  margin: 0 0 15px;
+}
+
+.app-utility-nav > li {
+  display: inline-block;
+  margin: 0 15px 5px 0;
+}
+
+/* ===== A-Z pages (glossary, index) ===== */
+
+.app-letter-nav {
+  margin: 0 0 20px;
+  font-size: 1.1875rem;
+}
+
+.app-letter-nav a {
+  /* At least a 24x24px target (WCAG 2.2 target-size, #35) */
+  display: inline-block;
+  min-width: 24px;
+  padding: 2px 4px;
+  margin: 0 6px 4px 0;
+  text-align: center;
+}
+
+.app-az-letter {
+  margin-top: 30px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #b1b4b6;
+}
+
+.app-index-list > li {
+  margin-bottom: 10px;
+}
+
+.app-index-term {
+  font-weight: 700;
+}
+
+.app-index-sublist {
+  margin: 5px 0 5px 20px;
+}
+
+.app-index-see {
+  color: #505a5f;
+}
+
+/* Figure list / table list (booklists, #33) */
+.app-itemlist > li {
+  margin-bottom: 10px;
+}
+
+.app-itemlist__num {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Toolkit-generated links (term and abbreviated-form references) carry no
+   class; give them the standard link treatment */
+#main-content a:not([class]) {
+  color: #1d70b8;
+  text-decoration: underline;
+  text-decoration-thickness: max(1px, 0.0625rem);
+  text-underline-offset: 0.1578em;
+}
+
+#main-content a:not([class]):hover {
+  color: #003078;
+  text-decoration-thickness: max(3px, 0.1875rem);
+}
+
+#main-content a:not([class]):focus {
+  color: #0b0c0c;
+  background-color: #ffdd00;
+  box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+  outline: 3px solid transparent;
+  text-decoration: none;
+}
+
+.app-search .pagefind-ui {
+  --pagefind-ui-font: arial, sans-serif;
+  --pagefind-ui-primary: #0b0c0c;
+  --pagefind-ui-text: #0b0c0c;
+  --pagefind-ui-border: #0b0c0c;
+  --pagefind-ui-border-radius: 0;
+  --pagefind-ui-border-width: 2px;
+}
+
+/* ===== Cover (home) page ===== */
+
+.app-entry__heading {
+  margin-bottom: 5px;
+}
+
+.app-entry__desc {
+  margin-top: 0;
+}
+
+.app-topic-grid .app-entry__heading {
+  margin-top: 10px;
+}
+
+.app-group-list > li {
+  margin-bottom: 15px;
+}
+
+.app-group-list__hint {
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+/* Deeper levels (govuk.homepage.depth 3+) nest with a modest indent */
+.app-group-list .app-group-list {
+  margin: 5px 0 5px 20px;
+}
+
+.app-group-list .app-group-list > li {
+  margin-bottom: 5px;
+}
+
+.app-attribution {
+  color: #505a5f;
+}
+
+.app-contents ul {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+.app-contents ul ul {
+  margin: 5px 0 5px 20px;
+  font-size: 1rem;
+}
+
+.app-contents li {
+  margin: 10px 0;
+}
+
+/* ===== Figures and diagrams (issue #10, FR-R5) ===== */
+
+#main-content figure {
+  margin: 30px 0;
+}
+
+#main-content figcaption {
+  margin-bottom: 10px;
+  color: #0b0c0c;
+  font-size: 1.1875rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+#main-content figure img {
+  display: block;
+  background: #ffffff;
+}
+
+/* Screenshots keep a visible edge against the page background */
+figure.app-screenshot img {
+  border: 1px solid #b1b4b6;
+}
+
+/* ===== Hazard statements (safety panels) ===== */
+
+.app-hazard {
+  margin: 30px 0;
+  border: 4px solid #0b0c0c;
+}
+
+.app-hazard__banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  padding: 10px 15px;
+  background: #0b0c0c;
+  color: #ffffff;
+  font-size: 1.1875rem;
+}
+
+.app-hazard__icon {
+  position: static;
+  flex-shrink: 0;
+  border-color: #ffffff;
+}
+
+.app-hazard__panel {
+  padding: 15px;
+}
+
+.app-hazard__hazard {
+  margin: 0 0 10px;
+  font-size: 1.1875rem;
+}
+
+.app-hazard__panel .govuk-body:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== Definition lists (dl, dlhead, parml) — #30 ===== */
+
+#main-content dl.dl,
+#main-content dl.parml {
+  margin: 0 0 20px;
+}
+
+#main-content dl.dl dt,
+#main-content dl.parml dt {
+  margin-top: 15px;
+  font-weight: 700;
+}
+
+#main-content dl.dl dd,
+#main-content dl.parml dd {
+  margin: 0 0 0 30px;
+}
+
+/* dlhead: term/definition column headings */
+#main-content dl.dl dt.dthd,
+#main-content dl.dl dd.ddhd {
+  margin-top: 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #b1b4b6;
+  font-weight: 700;
+}
+
+/* ===== Long quotations (lq) — #30 ===== */
+
+#main-content blockquote.lq {
+  margin: 0 0 20px;
+  padding: 10px 0 10px 20px;
+  border-left: 5px solid #b1b4b6;
+  color: #0b0c0c;
+}
+
+#main-content blockquote.lq cite {
+  display: block;
+  margin-top: 5px;
+  color: #505a5f;
+  font-style: normal;
+}
+
+/* ===== User-interface domain (ui-d) — #30 ===== */
+
+.app-uicontrol {
+  font-weight: 700;
+}
+
+/* menucascade separators between the uicontrols it joins */
+#main-content .menucascade abbr {
+  color: #505a5f;
+  text-decoration: none;
+}
+
+/* ===== Task section labels and step structure (#31) ===== */
+
+#main-content .sectiontitle.tasklabel {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+#main-content .stepsection {
+  margin: 15px 0 10px;
+  font-weight: 700;
+}
+
+#main-content .stepresult,
+#main-content .stepxmp,
+#main-content .info {
+  margin: 5px 0 10px;
+}
+
+/* ===== Troubleshooting topic (#31) ===== */
+
+#main-content .app-trouble-label {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+#main-content .responsibleParty {
+  color: #505a5f;
+}
+
+/* ===== DITAVAL style flags (#29) ===== */
+
+/* The toolkit emits these classes for DITAVAL prop/revprop style flags
+   (audience, rev, etc.); their definitions live in the base commonltr.css,
+   which this plugin does not ship, so they are re-declared here. Colour flags
+   (backcolor/color) arrive as inline style and need no class. Note: revision
+   changebars are not rendered in html5 output upstream. */
+.flag__style--italics { font-style: italic; }
+.flag__style--bold { font-weight: 700; }
+.flag__style--underline { text-decoration: underline; }
+.flag__style--double-underline { text-decoration: underline double; }
+.flag__style--overline { text-decoration: overline; }
+.flag__style--line-through { text-decoration: line-through; }
+
+/* ===== Footer bookmap attribution (#42) ===== */
+
+.app-footer__attribution {
+  display: block;
+  margin-top: 5px;
+  color: #505a5f;
+  font-size: 0.875rem;
+}
+
+/* ===== Content furniture without a govuk-frontend component ===== */
+
+pre.codeblock,
+pre.pre {
+  background: #f3f2f1;
+  border: 1px solid #b1b4b6;
+  padding: 15px;
+  margin: 0 0 20px;
+  overflow-x: auto;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+code,
+samp,
+kbd {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 0.9375em;
+}
+
+#main-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Keep long tables usable on small screens */
+#main-content table {
+  display: block;
+  overflow-x: auto;
+}
+
+@media (min-width: 48.0625em) {
+  #main-content table {
+    display: table;
+  }
+}
+
+/* ===== Print document (FR-P2, D-20): the single-file publication on screen;
+   print.css handles it on paper ===== */
+.app-print .app-print-cover {
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #b1b4b6;
+}
+
+/* Cover details (status, edition, dates, identifiers) and imprint (rights,
+   where the current version is) — #150 */
+.app-print .app-print-meta {
+  margin: 0 0 20px;
+  padding-left: 0;
+}
+
+.app-print .app-print-imprint {
+  margin: 30px 0 20px;
+}
+
+.app-print .app-print-imprint .govuk-body-s {
+  margin-bottom: 5px;
+}
+
+.app-print .app-print-contents {
+  margin-bottom: 40px;
+}
+
+.app-print .app-print-contents__list {
+  margin: 0;
+  padding-left: 0;
+}
+
+.app-print .app-print-contents__list .app-print-contents__list {
+  margin-top: 5px;
+  padding-left: 20px;
+}
+
+.app-print .app-print-contents__list li {
+  margin-bottom: 5px;
+}
+
+.app-print .app-print-chapter {
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #b1b4b6;
+}
+
+.app-print .app-print-topic + .app-print-topic,
+.app-print .app-print-group + .app-print-topic {
+  margin-top: 30px;
+}
+
+.app-print .app-print-endnotes {
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid #b1b4b6;
+  font-size: 1rem;
+}
+
+.app-print .app-print-link {
+  margin-top: 15px;
+}
+
+/* ===== Content policy placeholders (#81) and topic dates (#61) ===== */
+.app-content-stripped {
+  display: inline-block;
+  padding: 2px 8px;
+  border: 1px dashed #505a5f;
+  color: #505a5f;
+  font-size: 1rem;
+}
+
+div.app-content-stripped {
+  display: block;
+  margin: 0 0 20px;
+}
+
+.app-page-dates {
+  color: #505a5f;
+}
+
+.app-page-dates__item + .app-page-dates__item::before {
+  content: " · ";
+}
+
+/* ===== Embedded view (#201, D-28) =====
+ * Set by embed.js on a framed page opened with ?embed=1 (govuk.embed=yes):
+ * the content alone, across the width the furniture took. The skip link
+ * stays, and a publisher's stylesheet can build on .app-embed. */
+.app-embed .app-masthead,
+.app-embed .govuk-phase-banner,
+.app-embed .app-sidebar,
+.app-embed .govuk-pagination,
+.app-embed .govuk-footer {
+  display: none;
+}
+
+.app-embed .govuk-grid-column-two-thirds {
+  float: none;
+  width: 100%;
+}

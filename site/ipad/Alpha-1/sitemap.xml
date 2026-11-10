@@ -7,7 +7,7 @@
       <loc>https://docs.ufti.com/ipad/Alpha-1/topics/quick-start/quick-start.html</loc>
    </url>
    <url>
-      <loc>https://docs.ufti.com/ipad/Alpha-1/platforms/ipad/topics/add-your-first-person.html</loc>
+      <loc>https://docs.ufti.com/ipad/Alpha-1/platforms/ios/topics/add-your-first-person.html</loc>
    </url>
    <url>
       <loc>https://docs.ufti.com/ipad/Alpha-1/platforms/ipad/topics/look-around.html</loc>
@@ -37,31 +37,58 @@
       <loc>https://docs.ufti.com/ipad/Alpha-1/platforms/ipad/topics/see-a-family-tree.html</loc>
    </url>
    <url>
-      <loc>https://docs.ufti.com/ipad/Alpha-1/platforms/ipad/topics/see-the-events-of-a-person.html</loc>
+      <loc>https://docs.ufti.com/ipad/Alpha-1/platforms/tablet/topics/see-the-events-of-a-person.html</loc>
    </url>
    <url>
-      <loc>https://docs.ufti.com/ipad/Alpha-1/platforms/ipad/topics/look-at-the-sources-of-a-fact.html</loc>
+      <loc>https://docs.ufti.com/ipad/Alpha-1/topics/tree/dates.html</loc>
    </url>
    <url>
-      <loc>https://docs.ufti.com/ipad/Alpha-1/platforms/ipad/topics/add-another-person.html</loc>
+      <loc>https://docs.ufti.com/ipad/Alpha-1/topics/tree/kinds-of-date.html</loc>
+   </url>
+   <url>
+      <loc>https://docs.ufti.com/ipad/Alpha-1/topics/tree/typing-a-date.html</loc>
+   </url>
+   <url>
+      <loc>https://docs.ufti.com/ipad/Alpha-1/topics/tree/calendars.html</loc>
+   </url>
+   <url>
+      <loc>https://docs.ufti.com/ipad/Alpha-1/topics/tree/an-old-style-date.html</loc>
+   </url>
+   <url>
+      <loc>https://docs.ufti.com/ipad/Alpha-1/topics/tree/two-calendars-one-life.html</loc>
+   </url>
+   <url>
+      <loc>https://docs.ufti.com/ipad/Alpha-1/topics/tree/dates-in-lists-and-order.html</loc>
+   </url>
+   <url>
+      <loc>https://docs.ufti.com/ipad/Alpha-1/topics/tree/places.html</loc>
+   </url>
+   <url>
+      <loc>https://docs.ufti.com/ipad/Alpha-1/topics/tree/names.html</loc>
+   </url>
+   <url>
+      <loc>https://docs.ufti.com/ipad/Alpha-1/platforms/mobile/topics/look-at-the-sources-of-a-fact.html</loc>
+   </url>
+   <url>
+      <loc>https://docs.ufti.com/ipad/Alpha-1/platforms/tablet/topics/add-another-person.html</loc>
    </url>
    <url>
       <loc>https://docs.ufti.com/ipad/Alpha-1/platforms/ipad/topics/change-a-person.html</loc>
    </url>
    <url>
-      <loc>https://docs.ufti.com/ipad/Alpha-1/platforms/ipad/topics/add-a-family.html</loc>
+      <loc>https://docs.ufti.com/ipad/Alpha-1/platforms/tablet/topics/add-a-family.html</loc>
    </url>
    <url>
       <loc>https://docs.ufti.com/ipad/Alpha-1/platforms/ipad/topics/add-a-note.html</loc>
    </url>
    <url>
-      <loc>https://docs.ufti.com/ipad/Alpha-1/platforms/ipad/topics/the-photos-buttons.html</loc>
+      <loc>https://docs.ufti.com/ipad/Alpha-1/platforms/ios/topics/the-photos-buttons.html</loc>
    </url>
    <url>
       <loc>https://docs.ufti.com/ipad/Alpha-1/platforms/ipad/topics/choose-how-it-looks.html</loc>
    </url>
    <url>
-      <loc>https://docs.ufti.com/ipad/Alpha-1/platforms/ipad/topics/a-page-says-no-person-selected.html</loc>
+      <loc>https://docs.ufti.com/ipad/Alpha-1/platforms/ios/topics/a-page-says-no-person-selected.html</loc>
    </url>
    <url>
       <loc>https://docs.ufti.com/ipad/Alpha-1/topics/workspaces/bring-in-share-and-keep-safe.html</loc>
@@ -73,7 +100,7 @@
       <loc>https://docs.ufti.com/ipad/Alpha-1/platforms/ipad/topics/open-a-family-tree-file.html</loc>
    </url>
    <url>
-      <loc>https://docs.ufti.com/ipad/Alpha-1/platforms/ipad/topics/remove-a-workspace.html</loc>
+      <loc>https://docs.ufti.com/ipad/Alpha-1/platforms/mobile/topics/remove-a-workspace.html</loc>
    </url>
    <url>
       <loc>https://docs.ufti.com/ipad/Alpha-1/platforms/phone/topics/opened-files-and-copies.html</loc>

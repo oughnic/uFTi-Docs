@@ -1,0 +1,20 @@
+# uFTi Quick Start: Windows
+
+> Understanding family tree information
+
+## Quick Start
+
+- [Quick Start](https://docs.ufti.com/windows/Alpha-2/start/topics/quick-start/quick-start.html): Six short pages that take you from opening uFTi to your first person, with its source and a copy.
+- [Look around](https://docs.ufti.com/windows/Alpha-2/start/platforms/windows/topics/look-around.html): Open uFTi and find the main places: the menu at the left, the plus button, search and Help.
+- [Add your first person](https://docs.ufti.com/windows/Alpha-2/start/platforms/windows/topics/add-your-first-person.html): Make a tree of your own and add the first person to it.
+- [Say where you found it](https://docs.ufti.com/windows/Alpha-2/start/platforms/windows/topics/say-where-you-found-it.html): Add a source to a fact, so you always know why you believe it.
+- [Keep it safe](https://docs.ufti.com/windows/Alpha-2/start/platforms/windows/topics/keep-it-safe.html): Save a copy of your tree as a file, and keep it somewhere else too.
+- [What next](https://docs.ufti.com/windows/Alpha-2/start/topics/quick-start/what-next.html): You have a tree, a person, a fact with its source and a copy, so choose where to go from here.
+
+## Contents
+
+- [Five things to know](https://docs.ufti.com/windows/Alpha-2/start/topics/quick-start/five-things-to-know.html): The five ideas behind uFTi, in two minutes.
+
+## Optional
+
+- [Glossary](https://docs.ufti.com/windows/Alpha-2/start/glossary.html)

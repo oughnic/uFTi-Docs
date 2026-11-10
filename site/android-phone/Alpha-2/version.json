@@ -1,0 +1,7 @@
+{
+  "platform": "android-phone",
+  "release": "Alpha-2",
+  "appVersion": "0.2.0.1",
+  "manualPdf": "ufti-user-manual-android-phone-Alpha-2.pdf",
+  "quickStartPdf": "start/ufti-quick-start-android-phone-Alpha-2.pdf"
+}

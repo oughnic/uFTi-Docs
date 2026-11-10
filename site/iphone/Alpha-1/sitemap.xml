@@ -7,10 +7,10 @@
       <loc>https://docs.ufti.com/iphone/Alpha-1/topics/quick-start/quick-start.html</loc>
    </url>
    <url>
-      <loc>https://docs.ufti.com/iphone/Alpha-1/platforms/iphone/topics/add-your-first-person.html</loc>
+      <loc>https://docs.ufti.com/iphone/Alpha-1/platforms/ios/topics/add-your-first-person.html</loc>
    </url>
    <url>
-      <loc>https://docs.ufti.com/iphone/Alpha-1/platforms/iphone/topics/look-around.html</loc>
+      <loc>https://docs.ufti.com/iphone/Alpha-1/platforms/phone/topics/look-around.html</loc>
    </url>
    <url>
       <loc>https://docs.ufti.com/iphone/Alpha-1/topics/quick-start/say-where-you-found-it.html</loc>
@@ -28,19 +28,46 @@
       <loc>https://docs.ufti.com/iphone/Alpha-1/topics/tree/work-with-your-tree.html</loc>
    </url>
    <url>
-      <loc>https://docs.ufti.com/iphone/Alpha-1/platforms/iphone/topics/tour-of-the-screens.html</loc>
+      <loc>https://docs.ufti.com/iphone/Alpha-1/platforms/phone/topics/tour-of-the-screens.html</loc>
    </url>
    <url>
-      <loc>https://docs.ufti.com/iphone/Alpha-1/platforms/iphone/topics/find-a-person.html</loc>
+      <loc>https://docs.ufti.com/iphone/Alpha-1/platforms/phone/topics/find-a-person.html</loc>
    </url>
    <url>
-      <loc>https://docs.ufti.com/iphone/Alpha-1/platforms/iphone/topics/see-a-family-tree.html</loc>
+      <loc>https://docs.ufti.com/iphone/Alpha-1/platforms/phone/topics/see-a-family-tree.html</loc>
    </url>
    <url>
-      <loc>https://docs.ufti.com/iphone/Alpha-1/platforms/iphone/topics/see-the-events-of-a-person.html</loc>
+      <loc>https://docs.ufti.com/iphone/Alpha-1/platforms/phone/topics/see-the-events-of-a-person.html</loc>
    </url>
    <url>
-      <loc>https://docs.ufti.com/iphone/Alpha-1/platforms/iphone/topics/look-at-the-sources-of-a-fact.html</loc>
+      <loc>https://docs.ufti.com/iphone/Alpha-1/topics/tree/dates.html</loc>
+   </url>
+   <url>
+      <loc>https://docs.ufti.com/iphone/Alpha-1/topics/tree/kinds-of-date.html</loc>
+   </url>
+   <url>
+      <loc>https://docs.ufti.com/iphone/Alpha-1/topics/tree/typing-a-date.html</loc>
+   </url>
+   <url>
+      <loc>https://docs.ufti.com/iphone/Alpha-1/topics/tree/calendars.html</loc>
+   </url>
+   <url>
+      <loc>https://docs.ufti.com/iphone/Alpha-1/topics/tree/an-old-style-date.html</loc>
+   </url>
+   <url>
+      <loc>https://docs.ufti.com/iphone/Alpha-1/topics/tree/two-calendars-one-life.html</loc>
+   </url>
+   <url>
+      <loc>https://docs.ufti.com/iphone/Alpha-1/topics/tree/dates-in-lists-and-order.html</loc>
+   </url>
+   <url>
+      <loc>https://docs.ufti.com/iphone/Alpha-1/topics/tree/places.html</loc>
+   </url>
+   <url>
+      <loc>https://docs.ufti.com/iphone/Alpha-1/topics/tree/names.html</loc>
+   </url>
+   <url>
+      <loc>https://docs.ufti.com/iphone/Alpha-1/platforms/mobile/topics/look-at-the-sources-of-a-fact.html</loc>
    </url>
    <url>
       <loc>https://docs.ufti.com/iphone/Alpha-1/platforms/iphone/topics/add-another-person.html</loc>
@@ -49,19 +76,19 @@
       <loc>https://docs.ufti.com/iphone/Alpha-1/platforms/iphone/topics/change-a-person.html</loc>
    </url>
    <url>
-      <loc>https://docs.ufti.com/iphone/Alpha-1/platforms/iphone/topics/add-a-family.html</loc>
+      <loc>https://docs.ufti.com/iphone/Alpha-1/platforms/phone/topics/add-a-family.html</loc>
    </url>
    <url>
-      <loc>https://docs.ufti.com/iphone/Alpha-1/platforms/iphone/topics/add-a-note.html</loc>
+      <loc>https://docs.ufti.com/iphone/Alpha-1/platforms/phone/topics/add-a-note.html</loc>
    </url>
    <url>
-      <loc>https://docs.ufti.com/iphone/Alpha-1/platforms/iphone/topics/the-photos-buttons.html</loc>
+      <loc>https://docs.ufti.com/iphone/Alpha-1/platforms/ios/topics/the-photos-buttons.html</loc>
    </url>
    <url>
-      <loc>https://docs.ufti.com/iphone/Alpha-1/platforms/iphone/topics/choose-how-it-looks.html</loc>
+      <loc>https://docs.ufti.com/iphone/Alpha-1/platforms/phone/topics/choose-how-it-looks.html</loc>
    </url>
    <url>
-      <loc>https://docs.ufti.com/iphone/Alpha-1/platforms/iphone/topics/a-page-says-no-person-selected.html</loc>
+      <loc>https://docs.ufti.com/iphone/Alpha-1/platforms/ios/topics/a-page-says-no-person-selected.html</loc>
    </url>
    <url>
       <loc>https://docs.ufti.com/iphone/Alpha-1/topics/workspaces/bring-in-share-and-keep-safe.html</loc>
@@ -73,7 +100,7 @@
       <loc>https://docs.ufti.com/iphone/Alpha-1/platforms/iphone/topics/open-a-family-tree-file.html</loc>
    </url>
    <url>
-      <loc>https://docs.ufti.com/iphone/Alpha-1/platforms/iphone/topics/remove-a-workspace.html</loc>
+      <loc>https://docs.ufti.com/iphone/Alpha-1/platforms/mobile/topics/remove-a-workspace.html</loc>
    </url>
    <url>
       <loc>https://docs.ufti.com/iphone/Alpha-1/platforms/phone/topics/opened-files-and-copies.html</loc>

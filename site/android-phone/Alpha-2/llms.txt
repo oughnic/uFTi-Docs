@@ -1,0 +1,61 @@
+# uFTi user manual: Android phone
+
+> Understanding family tree information
+
+## Quick Start
+
+- [Quick Start](https://docs.ufti.com/android-phone/Alpha-2/topics/quick-start/quick-start.html): Six short pages that take you from opening uFTi to your first person, with its source and a copy.
+- [Get uFTi](https://docs.ufti.com/android-phone/Alpha-2/platforms/android/topics/get-ufti.html): Open uFTi for the first time.
+- [Add your first person](https://docs.ufti.com/android-phone/Alpha-2/platforms/android-phone/topics/add-your-first-person.html): Make your own workspace and add yourself, or someone you know well.
+- [Look around](https://docs.ufti.com/android-phone/Alpha-2/platforms/android-phone/topics/look-around.html): See what the five places in the bar do for the person you added.
+- [Say where you found it](https://docs.ufti.com/android-phone/Alpha-2/topics/quick-start/say-where-you-found-it.html): Add a source to a fact, so you always know why you believe it.
+- [Keep it safe](https://docs.ufti.com/android-phone/Alpha-2/platforms/android/topics/keep-it-safe.html): Save a copy of your tree as a file, and keep it somewhere else too.
+- [What next](https://docs.ufti.com/android-phone/Alpha-2/topics/quick-start/what-next.html): You have a tree, a person, a fact with its source and a copy, so choose where to go from here.
+
+## Contents
+
+- [Five things to know](https://docs.ufti.com/android-phone/Alpha-2/topics/quick-start/five-things-to-know.html): The five ideas behind uFTi, in two minutes.
+
+## Work with your tree
+
+- [Work with your tree](https://docs.ufti.com/android-phone/Alpha-2/topics/tree/work-with-your-tree.html): Find people, add people and families, read their events and sources, and write notes.
+- [The screens of the app](https://docs.ufti.com/android-phone/Alpha-2/platforms/android-phone/topics/tour-of-the-screens.html): What each place in the bar along the bottom shows, what the top of every screen holds, and what the More list opens.
+- [Find a person](https://docs.ufti.com/android-phone/Alpha-2/platforms/android-phone/topics/find-a-person.html): Search your tree by a name, a place or an event, or list everyone, then open the person you want.
+- [See a family tree](https://docs.ufti.com/android-phone/Alpha-2/platforms/android-phone/topics/see-a-family-tree.html): Draw the parents, partners and children of one person.
+- [See the events of a person](https://docs.ufti.com/android-phone/Alpha-2/platforms/android-phone/topics/see-the-events-of-a-person.html): List what happened in a person's life, such as birth, marriage and death, in date order, and open any one.
+- [Dates](https://docs.ufti.com/android-phone/Alpha-2/topics/tree/dates.html): How uFTi records a date, from one you know in full to one you only know in part.
+- [The kinds of date](https://docs.ufti.com/android-phone/Alpha-2/topics/tree/kinds-of-date.html): Seven ways to say how sure you are of a date, each with an example.
+- [Typing a date](https://docs.ufti.com/android-phone/Alpha-2/topics/tree/typing-a-date.html): What uFTi reads when you type a date in one box, and what it keeps exactly as you typed it.
+- [Calendars and old dates](https://docs.ufti.com/android-phone/Alpha-2/topics/tree/calendars.html): The four calendars uFTi keeps, and what you need to know when a record is from before 1752.
+- [A worked case: a birth in January](https://docs.ufti.com/android-phone/Alpha-2/topics/tree/an-old-style-date.html): How a year that began in March can change a birth year, shown with a diarist born in 1671.
+- [A worked case: two calendars in one life](https://docs.ufti.com/android-phone/Alpha-2/topics/tree/two-calendars-one-life.html): How far apart the Julian and Gregorian calendars were in the life of a diarist who lived from 1671 to 1704.
+- [Dates in lists and in order](https://docs.ufti.com/android-phone/Alpha-2/topics/tree/dates-in-lists-and-order.html): Where you can enter a date, how uFTi shows it, how it puts dates in order and what it checks.
+- [Places](https://docs.ufti.com/android-phone/Alpha-2/topics/tree/places.html): How uFTi records a place, and how it helps you spell a place the same way each time.
+- [Names](https://docs.ufti.com/android-phone/Alpha-2/topics/tree/names.html): What uFTi does when you save a person whose name is already in the tree, and how to choose.
+- [Look at the sources of a fact](https://docs.ufti.com/android-phone/Alpha-2/platforms/android-phone/topics/look-at-the-sources-of-a-fact.html): See which books and records back up a birth, a death or another fact, add a source to it, and say how reliable it is.
+- [Add another person](https://docs.ufti.com/android-phone/Alpha-2/platforms/android-phone/topics/add-another-person.html): Add a person to a tree that already has someone in it.
+- [Change a person](https://docs.ufti.com/android-phone/Alpha-2/platforms/android-phone/topics/change-a-person.html): Correct a name, a date or a place on a person's page, add another name, or remove a person.
+- [Add a family with children](https://docs.ufti.com/android-phone/Alpha-2/platforms/android-phone/topics/add-a-family.html): Join two partners, record their marriage and add their children, from people who are already in your tree.
+- [Add a note to a person](https://docs.ufti.com/android-phone/Alpha-2/platforms/android-phone/topics/add-a-note.html): Write down something you know about a person that does not fit in a date or a place, and use one note for several people.
+- [Enter a date, even one you are not sure of](https://docs.ufti.com/android-phone/Alpha-2/platforms/android-phone/topics/enter-a-date.html): Enter an exact date, a part of a date, or a date you can only guess, and read how the app has understood it.
+- [Add an event](https://docs.ufti.com/android-phone/Alpha-2/platforms/android-phone/topics/add-an-event.html): Record something that happened in a person's life, something that lasted for years, or an event of your own kind.
+- [Forms for records you have seen](https://docs.ufti.com/android-phone/Alpha-2/platforms/android-phone/topics/forms-for-records.html): The forms on the Add a record sheet that match a census, a register or a certificate, and what each one asks for.
+- [Take a photo of a document](https://docs.ufti.com/android-phone/Alpha-2/platforms/android-phone/topics/take-a-photo.html): Photograph a page with the camera, straighten it, describe it and attach it to a person.
+- [Say who made this tree](https://docs.ufti.com/android-phone/Alpha-2/platforms/android-phone/topics/say-who-made-this-tree.html): Record who made the tree, so anyone who gets a copy knows who to ask.
+- [Add a place where records are kept](https://docs.ufti.com/android-phone/Alpha-2/platforms/android-phone/topics/add-a-repository.html): Keep a list of the archives, libraries and websites that hold your records.
+- [Add a research question](https://docs.ufti.com/android-phone/Alpha-2/platforms/android-phone/topics/add-a-research-note.html): Write down a question before you answer it, link it to the people it is about, and say whether it is still open.
+- [The Photos buttons](https://docs.ufti.com/android-phone/Alpha-2/platforms/android-phone/topics/the-photos-buttons.html): What the buttons under Photos are for on a person, an event or a source.
+- [Choose how the app looks](https://docs.ufti.com/android-phone/Alpha-2/platforms/android-phone/topics/choose-how-it-looks.html): Pick a colour theme, and a light or dark look, for this phone.
+- [A page says no person is selected](https://docs.ufti.com/android-phone/Alpha-2/platforms/android-phone/topics/a-page-says-no-person-selected.html): What to do when Events, Notes or Family tree ask you to pick a person first.
+
+## Bring in, share and keep safe
+
+- [Bring in, share and keep safe](https://docs.ufti.com/android-phone/Alpha-2/topics/workspaces/bring-in-share-and-keep-safe.html): What your workspace holds, why a GEDZIP file is the one to keep and send, and when a plain family tree file is better.
+- [Your workspace and its files](https://docs.ufti.com/android-phone/Alpha-2/topics/workspaces/your-workspace-and-its-files.html): A workspace is your family tree and its linked files, and a GEDZIP file holds all of them in one file.
+- [Remove a tree from the list](https://docs.ufti.com/android-phone/Alpha-2/platforms/android-phone/topics/remove-a-workspace.html): Take a tree off the Workspaces screen without deleting its file.
+- [Opened files and copies](https://docs.ufti.com/android-phone/Alpha-2/platforms/phone/topics/opened-files-and-copies.html): On a phone or tablet, uFTi works on its own copy of the file you choose, so the file you chose stays as it was.
+- [Which file to send](https://docs.ufti.com/android-phone/Alpha-2/platforms/phone/topics/which-file-to-send.html): Send a GEDZIP file to anyone who uses uFTi, and a plain family tree file only to an older program.
+
+## Optional
+
+- [Glossary](https://docs.ufti.com/android-phone/Alpha-2/glossary.html)
