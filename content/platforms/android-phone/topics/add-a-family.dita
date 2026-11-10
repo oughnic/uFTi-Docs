@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="add-a-family" xml:lang="en-GB">
+  <title>Add a family with children</title>
+  <shortdesc>Join two partners, record their marriage and add their children, from people who are already in your tree.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-27"/>
+      <revised modified="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>partners</keyword>
+        <keyword>marriage</keyword>
+        <keyword>son</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="families.edit"/>
+    <resourceid appname="ufti" appid="families.view"/>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p>Add the partners and the children first. <xref keyref="add-another-person"/> shows how.</p>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Open one of the partners. Choose <uicontrol keyref="ui-add"/>, then <uicontrol keyref="ui-family"/> under <q>Add to the workspace</q>, then <uicontrol keyref="ui-add-button"/>.</cmd>
+        <info>
+          <p>A page also has the button <uicontrol keyref="ui-add-a-new-family"/>, under the parents and partners of the person.</p>
+        </info>
+        <stepresult>
+          <p>A form opens. The person you came from is already in one of the partner boxes.</p>
+          <fig>
+            <image keyref="img-family-form"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Select the other partner's box and type the name.</cmd>
+        <stepresult>
+          <p>A short list of people appears under the box. Each shows the years of the person.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose the person from the list.</cmd>
+        <info>
+          <p>The name only counts once you choose it from the list. This way the family uses the person who is already in the tree and does not make a copy.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Scroll down and fill in <uicontrol keyref="ui-marriage-date"/> and <uicontrol keyref="ui-place-of-marriage"/>.</cmd>
+        <info>
+          <p>Leave them empty if you do not know them. You can add them later with <uicontrol keyref="ui-edit"/>.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Under <uicontrol keyref="ui-children"/>, choose <uicontrol keyref="ui-add-row"/>, then choose <uicontrol keyref="ui-set"/> under <uicontrol keyref="ui-existing-person"/>.</cmd>
+        <stepresult>
+          <p>A small box opens with a search box.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Type the child's name, choose the person from the list, then choose <uicontrol keyref="ui-done"/>.</cmd>
+        <info>
+          <p>Repeat the last two steps for each child. A row shows the child's name once you have chosen. If you type but do not choose, the row says to choose a person from the list, or to clear the box.</p>
+        </info>
+        <stepresult>
+          <fig>
+            <image keyref="img-family-children"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Scroll to the bottom and choose <uicontrol keyref="ui-save"/>.</cmd>
+        <stepresult>
+          <p>The family is saved. A box may ask whether to discard changes. The family is already saved, so choosing <uicontrol keyref="ui-discard"/> only closes the form. The page of the family opens.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>The page of the family lists the partners, the marriage and the children. Choose <uicontrol keyref="ui-view-family-tree"/> to see the family drawn out.</p>
+      <fig>
+        <image keyref="img-family-page"/>
+      </fig>
+      <p>To change a family later, choose <uicontrol keyref="ui-edit"/> on its page. The page of the family also has <uicontrol keyref="ui-delete-family"/>.</p>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="add-a-note"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

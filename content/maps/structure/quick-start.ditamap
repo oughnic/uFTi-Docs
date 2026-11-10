@@ -18,7 +18,8 @@
   <topicref href="../../platforms/android-tablet/topics/add-your-first-person.dita" keys="add-your-first-person" platform="AndroidTablet"/>
   <topicref href="../../platforms/desktop/topics/look-around.dita" keys="look-around" platform="MacAppKit"/>
   <topicref href="../../platforms/ipad/topics/look-around.dita" keys="look-around" platform="iPad"/>
-  <topicref href="../../platforms/phone/topics/look-around.dita" keys="look-around" platform="Phone"/>
+  <topicref href="../../platforms/phone/topics/look-around.dita" keys="look-around" platform="iPhone"/>
+  <topicref href="../../platforms/android-phone/topics/look-around.dita" keys="look-around" platform="AndroidPhone"/>
   <topicref href="../../platforms/android-tablet/topics/look-around.dita" keys="look-around" platform="AndroidTablet"/>
   <!-- say-where-you-found-it: the shared page is for every manual but Windows. MacAppKit keeps it for the Mac manual, and Mobile keeps it for the four phone and tablet manuals (the filter of each includes Mobile). The Windows page follows it with the same key. -->
   <topicref href="../../topics/quick-start/say-where-you-found-it.dita" keys="say-where-you-found-it" platform="MacAppKit Mobile"/>

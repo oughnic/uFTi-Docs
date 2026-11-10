@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="add-a-note" xml:lang="en-GB">
+  <title>Add a note to a person</title>
+  <shortdesc>Write down something you know about a person that does not fit in a date or a place, and use one note for several people.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-10-27"/>
+      <revised modified="2026-11-10"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>comment</keyword>
+        <keyword>shared note</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="notes.record"/>
+    <resourceid appname="ufti" appid="notes.list"/>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p>Open the person first. <xref keyref="find-a-person"/> shows how.</p>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-add"/>.</cmd>
+        <stepresult>
+          <p>The sheet named <uicontrol keyref="ui-add-a-record"/> opens.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-note"/> under <q>Add a note to</q> the person, then choose <uicontrol keyref="ui-add-button"/> at the bottom.</cmd>
+        <stepresult>
+          <p>A form opens with a box for the note.</p>
+          <fig>
+            <image keyref="img-note-form"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Type your note, then choose <uicontrol keyref="ui-save"/>.</cmd>
+        <info>
+          <p>Write what you know. Say where you read it if you can.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-more"/> in the bar along the bottom, then <uicontrol keyref="ui-notes"/>.</cmd>
+        <stepresult>
+          <p>The note shows in the list of notes for that person.</p>
+          <fig>
+            <image keyref="img-notes"/>
+          </fig>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>To use a note you have already written for another person, open the second person. Choose <uicontrol keyref="ui-more"/>, then <uicontrol keyref="ui-notes"/>, then <uicontrol keyref="ui-use-an-existing-note"/>. Search for the note and choose it. Each note shows how many records use it. The note then says that it is shared with another record.</p>
+      <p>The button <uicontrol keyref="ui-add-note"/> on the same screen writes a new note for the person you have open.</p>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="choose-how-it-looks"/>.</p>
+    </postreq>
+  </taskbody>
+</task>
