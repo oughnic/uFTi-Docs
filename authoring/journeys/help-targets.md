@@ -32,7 +32,7 @@ The Windows manual comes first because it has the most pages that match the app'
 | `people.edit` | Add or change a person | *Add your first person* | Mapped. *Add another person* and *Change a person* have task identifiers. |
 | `people.list` | Everyone in the tree | none | **No page.** An **All people** button on the workspace home opens it, when the open tree has a person. It lists everyone in the tree, with a **New person** button, and you tap a person to open them. Walk it. |
 | `people.merge` | Merge two people | none | **Reserved: no help yet.** A placeholder in the app that nothing opens. The id is kept so a real screen can use it later. |
-| `people.view` | A person's page | *Look around* | Mapped. |
+| `people.view` | A person's page | *The screens of the app*, part *Person* | Mapped (DEC-234). It was *Look around* until the full part had an identifier. |
 | `repositories.list` | Where records are kept | *The screens of the app*, the part on the three lists of the whole tree | Mapped to a short description. Adding one was not walked. |
 | `research.list` | Research questions and notes | *The screens of the app*, the same part | Mapped to a short description. Adding one was not walked. |
 | `search` | Search | *Find a person* | Mapped. |

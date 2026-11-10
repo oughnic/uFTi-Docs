@@ -159,10 +159,13 @@
   </reference>
   <reference id="tour-person" xml:lang="en-GB">
     <title><uicontrol keyref="ui-person"/></title>
+    <prolog>
+      <resourceid appname="ufti" appid="people.view"/>
+    </prolog>
     <refbody>
       <section>
         <p>This is one person's page. It has parts for <uicontrol keyref="ui-identity"/> (the names and the sex), <uicontrol keyref="ui-birth"/>, <uicontrol keyref="ui-death"/>, <uicontrol keyref="ui-more-details"/>, <uicontrol keyref="ui-family"/> and <uicontrol keyref="ui-photos"/>. Each part with facts has a chip that counts its sources.</p>
-        <p>A line above the names says how the person was added. The buttons <uicontrol keyref="ui-edit"/>, <uicontrol keyref="ui-add-a-record"/>, <uicontrol keyref="ui-copy"/> and <uicontrol keyref="ui-delete-person"/> are at the foot of the page. The family tree of the person shows beside the page.</p>
+        <p>A line above the names says how the person was added. The buttons <uicontrol keyref="ui-edit"/>, <uicontrol keyref="ui-add-a-record"/>, <uicontrol keyref="ui-copy"/> and <uicontrol keyref="ui-delete-person"/> are at the foot of the page. When the window is wide enough, the family tree of the person shows beside the page. <xref keyref="see-a-family-tree"/> explains the tree.</p>
         <p><xref keyref="find-a-person"/> shows how to open a person. <xref keyref="change-a-person"/> shows how to correct one.</p>
         <fig>
           <image keyref="img-person-view"/>
