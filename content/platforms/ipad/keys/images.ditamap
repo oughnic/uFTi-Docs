@@ -123,4 +123,31 @@
   <keydef keys="img-note-form" href="../images/note-form.png" format="png" scope="local" platform="iPad">
     <topicmeta><linktext>The note form, with a note about Charlotte's pen name typed under Note, boxes for the format and the language, Translations, and Save and Cancel buttons</linktext></topicmeta>
   </keydef>
+  <keydef keys="img-start-first-run" href="../images/start-first-run.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The Home screen of the sample tree, Brontë family of Haworth, as the app first opens, with the list of places on the left, its counts, a search box, and the All people and Open another workspace buttons</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-home" href="../images/home.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The Home screen of the Brontë family of Haworth tree, with the list of places on the left, a search box, All people and Open another workspace, and Charlotte Brontë under Continue with</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-more-list" href="../images/more-list.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The More list beside the list of places on the left, with Workspaces, Notes, Where records are kept, Who made this tree, Research questions and notes, Preferences, About uFTi and Help</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-people-list" href="../images/people-list.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The list of all the people in the tree, with a card for each that shows the name, the years, the sources and the events</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-date-editor" href="../images/date-editor.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The date of birth in the form for Charlotte Brontë, with the day, the month and the year filled in and the line that says how the app reads the date</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-date-not-sure" href="../images/date-not-sure.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The date of birth in the form for Maria Brontë, set to between two dates, with the years 1813 and 1814 and the line that reads between 1813 and 1814</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-name-question" href="../images/name-question.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The small box that says Patrick Brontë is already in this tree, with a button to use Patrick Brontë and a button to add a new person with the same name</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-compare-records" href="../images/compare-records.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The Evidence page for a place of birth, which gives the conclusion and what the source says, with its quality</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-open-other-program" href="../images/open-other-program.png" format="png" scope="local" platform="iPad">
+    <topicmeta><linktext>The box that opens for a file another program made, with the buttons Make a GEDCOM 7 copy and Just look, a line under each that says what it does, and Cancel</linktext></topicmeta>
+  </keydef>
 </map>

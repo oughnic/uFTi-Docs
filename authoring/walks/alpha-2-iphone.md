@@ -69,10 +69,11 @@ Rows marked as a fault are for the app team, in the one list (DEC-214, changed b
 
 ## 4. What the manual has now
 
-The pictures were taken again on this build, for every key the iPhone manual uses, with new alternative text. Nine new pictures (Home, the More list, all the people, the date editor, a date that is not sure, the name question, the evidence page and the page for another program's file) are kept for the pages that will use them. The pages themselves are corrected next, from this report and the iPad and Mac reports, and most of the Android phone's own pages can serve the iPhone too (DEC-231).
+The pictures were taken again on this build, for every key the iPhone manual uses, with new alternative text, and nine new ones: Home, the first run, the More list, all the people, the date editor, a date that is not sure, the name question, the evidence page and the page for another program's file.
+
+The pages were written from this report (DEC-238). The iPhone now shares the Android phone's pages for rows 1 to 20 and 25: the tour, Look around, Find a person, See a family tree, See the events of a person, Look at the sources of a fact, Add another person, Change a person, Add a family, Add a note, Choose how it looks, Enter a date, Say who made this tree, Add a place where records are kept, Add a research question and Remove a tree. Inside those pages, the iPhone differences are marked: no search button on Home (row 3), the marriage sheet (row 17), **Save source** then the citation step then the attachment step (row 19), the name shown at once in Who made this tree (row 9), and the lists to open again (row 21). *Add your first person* starts from the sample tree's Home, *Keep it safe* starts from **More**, and *Open a family tree file* has the page for another program's file (row 23).
 
 ## 5. Next
 
-- Write the iPhone pages from this report, sharing the Android phone pages where rows 1 to 18 and 20 agree, and saying what is different for rows 3 and 19.
 - Walk stage 4, stage 8 and *Use an existing note* on the iPhone.
 - The faults (rows 21, 22, 24, 26, 27 and 28) go to the app team once, with the other legs' (DEC-214).

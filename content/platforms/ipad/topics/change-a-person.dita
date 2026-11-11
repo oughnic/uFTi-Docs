@@ -6,6 +6,7 @@
   <prolog>
     <critdates>
       <created date="2026-10-31"/>
+      <revised modified="2026-11-11"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -26,7 +27,7 @@
       <step>
         <cmd>Scroll to the bottom of the page and choose <uicontrol keyref="ui-edit"/>.</cmd>
         <stepresult>
-          <p>The page turns into a form. The names and the sex are on the left. The dates and places of birth and death are on the right.</p>
+          <p>The page turns into a form, in one column on the left. With the iPad on its side, the family tree stays on the right. The form may open part of the way down, so scroll up to see the names.</p>
           <fig>
             <image keyref="img-person-edit"/>
           </fig>
@@ -34,6 +35,9 @@
       </step>
       <step>
         <cmd>Change what is wrong.</cmd>
+        <info>
+          <p>To record another name, choose <uicontrol keyref="ui-add-row"/> under <uicontrol keyref="ui-other-names"/>. Choose a <uicontrol keyref="ui-kind-of-name"/> such as <uicontrol keyref="ui-married-name"/> or <uicontrol keyref="ui-pen-name"/>. Then type the names. <xref keyref="enter-a-date"/> shows how to change a date.</p>
+        </info>
       </step>
       <step>
         <cmd>Under the form, choose <uicontrol keyref="ui-save"/> to keep your changes, or <uicontrol keyref="ui-cancel"/> to leave the form as it was.</cmd>

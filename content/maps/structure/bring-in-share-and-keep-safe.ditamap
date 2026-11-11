@@ -25,8 +25,8 @@
   <topicref href="../../platforms/ipad/topics/open-a-family-tree-file.dita" keys="open-a-family-tree-file" platform="iPad"/>
   <topicref href="../../platforms/desktop/topics/remove-a-workspace.dita" keys="remove-a-workspace" platform="MacAppKit"/>
   <topicref href="../../platforms/windows/topics/remove-a-workspace.dita" keys="remove-a-workspace" platform="WindowsWinUI"/>
-  <topicref href="../../platforms/mobile/topics/remove-a-workspace.dita" keys="remove-a-workspace" platform="iPhone AndroidTablet iPad"/>
-  <topicref href="../../platforms/android-phone/topics/remove-a-workspace.dita" keys="remove-a-workspace" platform="AndroidPhone"/>
+  <topicref href="../../platforms/mobile/topics/remove-a-workspace.dita" keys="remove-a-workspace" platform="AndroidTablet"/>
+  <topicref href="../../platforms/android-phone/topics/remove-a-workspace.dita" keys="remove-a-workspace" platform="AndroidPhone iPhone iPad"/>
   <topicref href="../../platforms/phone/topics/opened-files-and-copies.dita" keys="opened-files-and-copies" platform="Mobile"/>
   <topicref href="../../platforms/desktop/topics/which-file-to-send.dita" keys="which-file-to-send" platform="Desktop"/>
   <topicref href="../../platforms/phone/topics/which-file-to-send.dita" keys="which-file-to-send" platform="Mobile"/>

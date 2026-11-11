@@ -6,6 +6,7 @@
   <prolog>
     <critdates>
       <created date="2026-10-31"/>
+      <revised modified="2026-11-11"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -24,7 +25,7 @@
     </context>
     <steps>
       <step>
-        <cmd>On <uicontrol keyref="ui-workspaces"/>, choose <uicontrol keyref="ui-add-from-file"/>.</cmd>
+        <cmd>Choose <uicontrol keyref="ui-more"/>, then <uicontrol keyref="ui-workspaces"/>, then <uicontrol keyref="ui-add-from-file"/>.</cmd>
         <stepresult>
           <p>The iPad's own Files screen opens.</p>
         </stepresult>
@@ -32,11 +33,25 @@
       <step>
         <cmd>Find the file, for example under On My iPad, and choose it.</cmd>
         <stepresult>
-          <p>A box names the tree and counts the people, families, events, sources and notes in it. It says <q>uFTi keeps its own copy; the file you chose is left as it was.</q></p>
+          <p>If <keyword keyref="product-name"/> wrote the file, a box names the tree and counts the people, families, events, sources and notes in it. It says <q>uFTi keeps its own copy; the file you chose is left as it was.</q></p>
           <fig>
             <image keyref="img-import-summary"/>
           </fig>
+          <p>If another program made the file, a box opens first. It says the file was not made by <keyword keyref="product-name"/>, and asks what the app may do with it.</p>
+          <fig>
+            <image keyref="img-open-other-program"/>
+          </fig>
         </stepresult>
+        <steptroubleshooting>
+          <p>If the Files screen closes and nothing opens, choose <uicontrol keyref="ui-add-from-file"/> and the file again.</p>
+        </steptroubleshooting>
+      </step>
+      <step importance="optional">
+        <cmd>For a file that another program made, choose <uicontrol keyref="ui-make-a-gedcom-7-copy"/> or <uicontrol keyref="ui-just-look"/>.</cmd>
+        <choices>
+          <choice><uicontrol keyref="ui-make-a-gedcom-7-copy"/> keeps a copy of its own in GEDCOM 7, and saves your changes there. The file you chose is not touched.</choice>
+          <choice><uicontrol keyref="ui-just-look"/> opens the tree to look at. Nothing is saved, and the file is not touched. The box that follows says <q>Opened to look at: uFTi will not change this file.</q> To change the tree later, choose <uicontrol keyref="ui-save-as"/> on its card to make a copy you can edit.</choice>
+        </choices>
       </step>
       <step>
         <cmd>Choose <uicontrol keyref="ui-ok"/>.</cmd>

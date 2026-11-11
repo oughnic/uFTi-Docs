@@ -6,6 +6,7 @@
   <prolog>
     <critdates>
       <created date="2026-10-27"/>
+      <revised modified="2026-11-11"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -62,6 +63,10 @@
       </step>
     </steps>
     <result>
+      <p platform="iPad">If the name is already in the tree, a small box asks first, beside the form. It has a button for the person who is there, written <uicontrol keyref="ui-use"/> with their name and years, and a button that starts <uicontrol keyref="ui-add-a-new-person-called"/>. Choose <uicontrol keyref="ui-use"/> if you meant the same person. Choose the other button if two people share a name. To close the box without choosing, choose a place outside it. The form stays as it was.</p>
+      <fig platform="iPad">
+        <image keyref="img-name-question"/>
+      </fig>
       <p>To open the new person, <xref keyref="find-a-person"/>.</p>
       <p>The sheet ends with <uicontrol keyref="ui-more-forms"/>, with a count in brackets. Choose it to see the forms that do not fit this person. Each one has a line under it that says why. For example, <q>This form covers 1871, and going by the dates in the tree, nobody here was alive then.</q></p>
       <fig>

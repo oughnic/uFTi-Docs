@@ -9,6 +9,7 @@
   <prolog>
     <critdates>
       <created date="2026-10-24"/>
+      <revised modified="2026-11-11"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -23,7 +24,7 @@
   <taskbody>
     <steps>
       <step>
-        <cmd>Open <uicontrol keyref="ui-workspaces"/>.</cmd>
+        <cmd>Choose <uicontrol keyref="ui-more"/>, then <uicontrol keyref="ui-workspaces"/>.</cmd>
       </step>
       <step>
         <cmd>On the card for your tree, choose <uicontrol keyref="ui-save-as"/>.</cmd>
@@ -41,7 +42,7 @@
           <choice><uicontrol keyref="ui-gedcom-file"/> saves your tree as a <term keyref="term-family-tree-file">family tree file</term>, without pictures. Use it only for a program that cannot read GEDZIP. If asked which version, choose GEDCOM 7 unless that program is old.</choice>
         </choices>
         <info>
-          <p>A second box asks <wintitle keyref="ui-which-version-of-gedcom"/>.</p>
+          <p>For a family tree file, a second box asks <wintitle keyref="ui-which-version-of-gedcom"/>.</p>
           <fig>
             <image keyref="img-save-as-version"/>
           </fig>

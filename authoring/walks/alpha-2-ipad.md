@@ -51,10 +51,11 @@ This report is public. It names no machine, no account, no serial number and no 
 
 ## 4. What the manual has now
 
-The pictures were taken again on this build, for every key the iPad manual uses, with new alternative text. The new pictures for Home, the More list, all the people, the dates, the name question, the evidence page and another program's file are kept for the pages that will use them. The pages are corrected next: the tour, Look around, Find a person, See a family tree, Change a person, Add a family and Look at the sources of a fact all change for rows 1 to 7 and 12.
+The pictures were taken again on this build, for every key the iPad manual uses, with new alternative text, and nine new ones: Home, the first run, the More list, all the people, the date editor, a date that is not sure, the name question, the evidence page and the box for another program's file.
+
+The pages were written from this report (DEC-238). The tour is new for rows 1, 2, 4, 9 and 10. Look around, Find a person, See a family tree and Change a person are corrected for rows 3 to 5 and 8. Add another person has the name question (row 6), and Add a family the two columns and the existing child (row 7). The iPad now shares the Android phone's pages for the sources (row 12), the dates, places where records are kept, research questions and removing a tree. *Open a family tree file* starts from **More**, has the box for another program's file and says what to do when the first choice of a file opens nothing (row 14).
 
 ## 5. Next
 
-- Write the iPad pages from this report.
 - Walk stage 4, stage 8, saving a copy and removing a tree on the iPad.
 - The faults (rows 8 and 14) go to the app team once, with the other legs' (DEC-214).

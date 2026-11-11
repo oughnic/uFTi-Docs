@@ -6,7 +6,7 @@
   <prolog>
     <critdates>
       <created date="2026-10-27"/>
-      <revised modified="2026-11-10"/>
+      <revised modified="2026-11-11"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -46,7 +46,7 @@
       </step>
     </steps>
     <result>
-      <p>A marriage opens the page of the family. To add an event, choose <uicontrol keyref="ui-add-event"/> under the list. <xref keyref="add-an-event"/> shows how.</p>
+      <p>A marriage opens the page of the family. To add an event, choose <uicontrol keyref="ui-add-event"/> under the list.<ph platform="AndroidPhone"> <xref keyref="add-an-event"/> shows how.</ph></p>
     </result>
     <postreq>
       <p>Next: <xref keyref="look-at-the-sources-of-a-fact"/>.</p>

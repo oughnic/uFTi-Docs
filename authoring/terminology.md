@@ -359,6 +359,15 @@ Read from the Windows app (version 0.2.0.989) on 10 November 2026. The labels ar
 | `ui-search-the-notes` | Search the notes | The box on the Use an existing note list for finding a note. | none |
 | `ui-type-fact` | Fact | The last choice in the Type list on an event form, a general word for a kind that has no word of its own. The list has no choice named Event. | none |
 
+### 2.11 iPhone and iPad Alpha-2 additions
+
+Read from the iPhone and iPad apps on 11 November 2026, in the Alpha-2 walk ([`content/platforms/iphone/keys/ui-labels.ditamap`](../content/platforms/iphone/keys/ui-labels.ditamap) and [`content/platforms/ipad/keys/ui-labels.ditamap`](../content/platforms/ipad/keys/ui-labels.ditamap)). The other labels these pages use are the Android phone's, listed above.
+
+| Key | Label as printed | What we say around it | Change |
+|---|---|---|---|
+| `ui-make-a-gedcom-7-copy` | Make a GEDCOM 7 copy | The choice, for a file another program made, that keeps a copy of its own in GEDCOM 7 and saves changes there. | none |
+| `ui-just-look` | Just look | The choice, for a file another program made, that opens it to look at and saves nothing. | none |
+
 ## 3. Domain terms
 
 The words the documentation uses for the ideas behind the app. A term in bold needs a glossary entry before a topic uses it. The seven entries that exist are in [`content/glossary/`](../content/glossary/).

@@ -6,6 +6,7 @@
   <prolog>
     <critdates>
       <created date="2026-11-10"/>
+      <revised modified="2026-11-11"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -44,7 +45,7 @@
       <step>
         <cmd>Scroll to the bottom and choose <uicontrol keyref="ui-save"/>.</cmd>
         <stepresult>
-          <p>A box may ask whether to discard changes. The place is already saved. Leave the list and open it again to see it.</p>
+          <p><ph platform="AndroidPhone">A box may ask whether to discard changes. </ph>The place is already saved. Leave the list and open it again to see it.<ph platform="iPhone"> Going back with the arrow is not enough: choose <uicontrol keyref="ui-home"/>, then <uicontrol keyref="ui-more"/>, then <uicontrol keyref="ui-where-records-are-kept"/>.</ph></p>
           <fig>
             <image keyref="img-repositories"/>
           </fig>

@@ -6,6 +6,7 @@
   <prolog>
     <critdates>
       <created date="2026-11-10"/>
+      <revised modified="2026-11-11"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -37,8 +38,14 @@
       </step>
       <step>
         <cmd>Scroll to the bottom and choose <uicontrol keyref="ui-save"/>.</cmd>
+        <stepresult platform="iPhone">
+          <p>The list shows the name at once, marked <q>(default)</q>. A line above it says what the tree states about its copyright.</p>
+          <fig>
+            <image keyref="img-submitters"/>
+          </fig>
+        </stepresult>
       </step>
-      <step>
+      <step platform="AndroidPhone">
         <cmd>Leave the list and open it again.</cmd>
         <info>
           <p>The list may not show the new name until you do.</p>

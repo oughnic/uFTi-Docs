@@ -73,6 +73,19 @@
       "verifiedAppVersion": "0.2.0.993"
     },
     {
+      "key": "img-compare-records",
+      "file": "compare-records.png",
+      "sha256": "b67a3c5ad1b8a8564a9f965048338d1b73453c08696a3f987bd54ce7c99648ed",
+      "width": 1573,
+      "height": 240,
+      "stage": 0,
+      "workspace": "not shown",
+      "focus": "none",
+      "capture": "simctl screenshot, simulator status bar overridden; cut and scaled before import (sips)",
+      "crop": null,
+      "verifiedAppVersion": "0.2.0.993"
+    },
+    {
       "key": "img-create-workspace-dialog",
       "file": "create-workspace-dialog.png",
       "sha256": "01a53047322ec639b860d02f1a950b56d84238fd296dc67dd1debcccfbc838e8",
@@ -81,6 +94,32 @@
       "stage": 0,
       "workspace": "not shown",
       "focus": "none",
+      "capture": "simctl screenshot, simulator status bar overridden; cut and scaled before import (sips)",
+      "crop": null,
+      "verifiedAppVersion": "0.2.0.993"
+    },
+    {
+      "key": "img-date-editor",
+      "file": "date-editor.png",
+      "sha256": "836717f6773024513406143efe96cbd0a09a692345700e6e3d75188120ca06f5",
+      "width": 533,
+      "height": 599,
+      "stage": 0,
+      "workspace": "not shown",
+      "focus": "Charlotte Brontë",
+      "capture": "simctl screenshot, simulator status bar overridden; cut and scaled before import (sips)",
+      "crop": null,
+      "verifiedAppVersion": "0.2.0.993"
+    },
+    {
+      "key": "img-date-not-sure",
+      "file": "date-not-sure.png",
+      "sha256": "b82d5121dfae4f864e4cf6f72220916797fcf84acabb239cfc1b50afa67a504d",
+      "width": 533,
+      "height": 586,
+      "stage": 0,
+      "workspace": "not shown",
+      "focus": "Maria Brontë",
       "capture": "simctl screenshot, simulator status bar overridden; cut and scaled before import (sips)",
       "crop": null,
       "verifiedAppVersion": "0.2.0.993"
@@ -177,6 +216,19 @@
       "verifiedAppVersion": "0.2.0.993"
     },
     {
+      "key": "img-home",
+      "file": "home.png",
+      "sha256": "7b1a1dc7bc60a85561033bf8f9e1c61e902681528a6e88195488ba1f80e83c7c",
+      "width": 1573,
+      "height": 1018,
+      "stage": 0,
+      "workspace": "Brontë family of Haworth",
+      "focus": "Charlotte Brontë",
+      "capture": "simctl screenshot, simulator status bar overridden; cut and scaled before import (sips)",
+      "crop": null,
+      "verifiedAppVersion": "0.2.0.993"
+    },
+    {
       "key": "img-import-summary",
       "file": "import-summary.png",
       "sha256": "8d72d976074fdb45efa9b88bf3625b99f11978c0397b82a942bb7348d8eb29a8",
@@ -185,6 +237,32 @@
       "stage": 0,
       "workspace": "not shown",
       "focus": "Brontë family of Haworth",
+      "capture": "simctl screenshot, simulator status bar overridden; cut and scaled before import (sips)",
+      "crop": null,
+      "verifiedAppVersion": "0.2.0.993"
+    },
+    {
+      "key": "img-more-list",
+      "file": "more-list.png",
+      "sha256": "15c545ae05465874b292daa1ff6c2af536753c41fec85f4bd0b460f837effed4",
+      "width": 1573,
+      "height": 666,
+      "stage": 0,
+      "workspace": "Brontë family of Haworth",
+      "focus": "Charlotte Brontë",
+      "capture": "simctl screenshot, simulator status bar overridden; cut and scaled before import (sips)",
+      "crop": null,
+      "verifiedAppVersion": "0.2.0.993"
+    },
+    {
+      "key": "img-name-question",
+      "file": "name-question.png",
+      "sha256": "64e59f0d98f38472c84530315cec0b26e716bbf96903463d3164dde25a046d74",
+      "width": 400,
+      "height": 273,
+      "stage": 0,
+      "workspace": "not shown",
+      "focus": "Patrick Brontë",
       "capture": "simctl screenshot, simulator status bar overridden; cut and scaled before import (sips)",
       "crop": null,
       "verifiedAppVersion": "0.2.0.993"
@@ -224,6 +302,32 @@
       "stage": 0,
       "workspace": "Brontë family of Haworth",
       "focus": "Patrick Brontë",
+      "capture": "simctl screenshot, simulator status bar overridden; cut and scaled before import (sips)",
+      "crop": null,
+      "verifiedAppVersion": "0.2.0.993"
+    },
+    {
+      "key": "img-open-other-program",
+      "file": "open-other-program.png",
+      "sha256": "832d45534c9b8cd033100eee15e866708550cf2e4f697d6dafa0127d0c183411",
+      "width": 688,
+      "height": 400,
+      "stage": 0,
+      "workspace": "not shown",
+      "focus": "none",
+      "capture": "simctl screenshot, simulator status bar overridden; cut and scaled before import (sips)",
+      "crop": null,
+      "verifiedAppVersion": "0.2.0.993"
+    },
+    {
+      "key": "img-people-list",
+      "file": "people-list.png",
+      "sha256": "236571782364113438fdd84ecd4c0eb4f15bcddb1cdf142c5f9ecf03cf3e9ab1",
+      "width": 1573,
+      "height": 1018,
+      "stage": 0,
+      "workspace": "Brontë family of Haworth",
+      "focus": "none",
       "capture": "simctl screenshot, simulator status bar overridden; cut and scaled before import (sips)",
       "crop": null,
       "verifiedAppVersion": "0.2.0.993"
@@ -444,6 +548,19 @@
       "height": 333,
       "stage": 0,
       "workspace": "not shown",
+      "focus": "none",
+      "capture": "simctl screenshot, simulator status bar overridden; cut and scaled before import (sips)",
+      "crop": null,
+      "verifiedAppVersion": "0.2.0.993"
+    },
+    {
+      "key": "img-start-first-run",
+      "file": "start-first-run.png",
+      "sha256": "354d90535ad9f485a2d22784e85c767eb67b585f0e844ab1859093efa17fc4f1",
+      "width": 1573,
+      "height": 1018,
+      "stage": 0,
+      "workspace": "Brontë family of Haworth",
       "focus": "none",
       "capture": "simctl screenshot, simulator status bar overridden; cut and scaled before import (sips)",
       "crop": null,
