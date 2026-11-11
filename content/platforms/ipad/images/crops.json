@@ -75,8 +75,7 @@
     "reason": "Cut before import to the top of the screen: the sheet covers the whole screen, so the name of the workspace is not on it. The subject is the one book in the list."
   },
   "img-note-form": {
-    "noFocus": true,
     "workspaceHidden": true,
-    "reason": "Cut before import below the button that fills the form from a document (an AI feature, which the documentation leaves out, DEC-020), which also leaves out the name of the workspace."
+    "reason": "Cut before import to the form, below the trail, so the name of the workspace is not shown; the note names Charlotte."
   }
 }
