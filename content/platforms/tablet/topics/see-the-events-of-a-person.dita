@@ -47,7 +47,7 @@
       </step>
     </steps>
     <result>
-      <p>To add an event, choose <uicontrol keyref="ui-add-event"/> under the list.<ph platform="MacCatalyst"> <xref keyref="add-an-event"/> shows how.</ph></p>
+      <p>To add an event, choose <uicontrol keyref="ui-add-event"/> under the list.<ph platform="iPad MacCatalyst"> <xref keyref="add-an-event"/> shows how.</ph></p>
     </result>
     <postreq>
       <p>Next: <xref keyref="look-at-the-sources-of-a-fact"/>.</p>

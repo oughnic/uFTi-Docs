@@ -22,7 +22,7 @@ This report is public. It names no machine, no account, no serial number and no 
 | 7 | Research questions and notes. |
 | 9 | Search and Refine by, Save as… as far as the version question, opening a saved copy, opening a file another program made, the Remove question. |
 
-**Not walked.** Stage 4, stage 8, saving a copy to the iPad's files, removing a tree, and the help rows on fields.
+**Not walked.** Stage 8, saving a copy to the iPad's files, removing a tree, and the help rows on fields.
 
 ## 2. What was found
 
@@ -43,6 +43,7 @@ This report is public. It names no machine, no account, no serial number and no 
 | 13 | Save as… | The same words as on the iPhone, in small boxes beside the card with no **Cancel**: tap outside to close them. | Same as Alpha-1 |
 | 14 | Opening a file | The first choice of a file in the iPad's file screen closed the screen and opened nothing; choosing it again worked. A file another program made opens the same page as on the iPhone (**Make a GEDCOM 7 copy**, **Just look**, **Cancel**). | The first choice: a fault |
 | 15 | Events | The event's page is in two columns: **Event or fact** on the left and **More details** on the right. | Changed |
+| 16 | Adding events (stage 4, 12 November, on a second iPad Air 11-inch (M4) simulator with the same build, on its side) | With Anne Brontë open, **+** then **Other event** then **Add** opens the event form, the same as on the iPhone and the Mac. A baptism (25 March 1820, Thornton) saved and went back to her page. **Add event** under her events opens the form directly. A residence typed with **Edit as text** turned on ("from 25 February 1820 to 28 May 1849") reads back the same and saves; an **Event** with "Publication" in **Kind of event, in words** shows as "Event" in the list and as Publication when opened. | Same as the iPhone |
 
 ## 3. What the tooling could not do
 
@@ -53,9 +54,9 @@ This report is public. It names no machine, no account, no serial number and no 
 
 The pictures were taken again on this build, for every key the iPad manual uses, with new alternative text, and nine new ones: Home, the first run, the More list, all the people, the date editor, a date that is not sure, the name question, the evidence page and the box for another program's file.
 
-The pages were written from this report (DEC-238). The tour is new for rows 1, 2, 4, 9 and 10. Look around, Find a person, See a family tree and Change a person are corrected for rows 3 to 5 and 8. Add another person has the name question (row 6), and Add a family the two columns and the existing child (row 7). The iPad now shares the Android phone's pages for the sources (row 12), the dates, places where records are kept, research questions and removing a tree. *Open a family tree file* starts from **More**, has the box for another program's file and says what to do when the first choice of a file opens nothing (row 14).
+The pages were written from this report (DEC-238). The tour is new for rows 1, 2, 4, 9 and 10. Look around, Find a person, See a family tree and Change a person are corrected for rows 3 to 5 and 8. Add another person has the name question (row 6), and Add a family the two columns and the existing child (row 7). The iPad now shares the Android phone's pages for the sources (row 12), the dates, places where records are kept, research questions and removing a tree, and since 12 November for adding an event (row 16) and the forms for records. *Open a family tree file* starts from **More**, has the box for another program's file and says what to do when the first choice of a file opens nothing (row 14).
 
 ## 5. Next
 
-- Walk stage 4, stage 8, saving a copy and removing a tree on the iPad.
+- Walk stage 8, saving a copy and removing a tree on the iPad.
 - The faults (rows 8 and 14) go to the app team once, with the other legs' (DEC-214).
