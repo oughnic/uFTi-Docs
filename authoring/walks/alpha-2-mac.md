@@ -72,4 +72,4 @@ The pages for the AppKit Mac, written before the walk, were removed: no manual u
 
 - Walk the photos buttons and **Just look** on the Mac, and write the Mac page for the photos buttons.
 - Check the **Currer** search on the Android phone, in the sample tree that the app opens with. If it finds nothing there, the Android phone needs another example too, and a new picture.
-- Send rows 5, 10, 12, 13 and 17 to the app team, and ask whether the sample tree should give Charlotte her pen name, with the other legs' findings (DEC-214).
+- On 12 November, at the maintainer's request, rows 5, 10, 12, 13 and 17, the path word "Submitter", the "Tap to manage sources" names and the sample's missing pen name were sent to the app team, with the iPhone's and the iPad's.

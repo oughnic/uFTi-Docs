@@ -80,4 +80,4 @@ The pages were written from this report (DEC-238). The iPhone now shares the And
 
 - Walk the pictures and the camera of stage 8, and *Use an existing note* on the iPhone.
 - Walk stage 4 on the iPad and the Mac, which do not share *Add an event* yet.
-- The faults (rows 21, 22, 24, 26, 27 and 28) and row 30 go to the app team once, with the other legs' (DEC-214).
+- On 12 November, at the maintainer's request, the faults (rows 21, 22, 24, 26, 27 and 28), row 30, the New workspace box and the sample's missing pen name were sent to the app team, with the Mac's and the iPad's.
