@@ -79,6 +79,7 @@ The pages for the AppKit Mac, written before the walk, were removed: no manual u
 
 - Check rows 23 and 24 on the iPhone and iPad: their *Open a family tree file* pages still say that **Save as…** on the card makes a copy you can edit.
 - Walk the camera on the Mac. It needs the maintainer's word, because answering its question changes the Mac's privacy settings.
+- On 12 November, at the maintainer's request, rows 22 to 24 were sent to the app team: rows 22 and 23 as a fault, row 24 as a request.
 - On 12 November, at the maintainer's request, row 21 was sent to the app team as a fault, and row 20 was added to the iPad's report of the chain button closing the app.
 - Check the **Currer** search on the Android phone, in the sample tree that the app opens with. If it finds nothing there, the Android phone needs another example too, and a new picture.
 - On 12 November, at the maintainer's request, rows 5, 10, 12, 13 and 17, the path word "Submitter", the "Tap to manage sources" names and the sample's missing pen name were sent to the app team, with the iPhone's and the iPad's.
