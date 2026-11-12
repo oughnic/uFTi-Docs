@@ -24,7 +24,7 @@ The walk followed [the Brontë walkthrough](../bronte-build-walkthrough.md) by s
 | 7 | A research question that names a person. |
 | 9 | Search and Refine by, Save as… to the phone, opening the saved copy, opening a file another program made, removing a tree. |
 
-**Not walked.** Stage 4 (a baptism, a period, an event of your own kind), stage 8 (pictures, the camera and the census form), *Use an existing note*, a saved copy that includes pictures, sharing, rotation, and the help rows on fields.
+**Not walked.** Stage 4 (a baptism, a period, an event of your own kind), stage 8 apart from the census form (pictures and the camera), *Use an existing note*, a saved copy that includes pictures, sharing, rotation, and the help rows on fields.
 
 ## 2. What was found
 
@@ -60,6 +60,8 @@ Rows marked as a fault are for the app team, in the one list (DEC-214, changed b
 | 26 | The path at the top | Going to Home from a page under More, or from **All people**, showed Home with the old path still at the top, such as "… › Where records are kept", and the first tap left **More** lit. | A fault |
 | 27 | Leaving a form | Tapping the lit **Person** tab dropped a half-filled form from **Add the first person** with no question. From the **+** sheet the same tap asks **Discard changes?**. | A fault |
 | 28 | After a delete | The chip still read "Showing: Test Person" after Test Person was deleted. | A fault |
+| 29 | The forms for records (12 November, on a second iPhone 17 Pro simulator with the same build) | With Charlotte open, the **+** sheet lists the 1841 and 1851 censuses, **Baptism record**, **Burial record** and **Marriage register entry** under her events, and **More forms (10)**: the later censuses, each with a line that nobody here was alive then, the 1939 register, **Birth record** ("already recorded here") and **Family note**. The 1841 census form says "Adding to the household of" with **Change…**, fills in the census date (6 June 1841), and asks for the source's title and place, where it is kept (class HO 107 filled in, then piece, folio, page and schedule), the registration district, sub-district and enumeration district, and a row for each household member, linked to the person. | Same as the Android phone page |
+| 30 | The household of a census | For the 1841 census, the form chose the household of Arthur Bell Nicholls and Charlotte, a marriage of 1854, though Charlotte lived with her father in 1841. | For the app team |
 
 ## 3. What the tooling could not do
 
@@ -71,9 +73,9 @@ Rows marked as a fault are for the app team, in the one list (DEC-214, changed b
 
 The pictures were taken again on this build, for every key the iPhone manual uses, with new alternative text, and nine new ones: Home, the first run, the More list, all the people, the date editor, a date that is not sure, the name question, the evidence page and the page for another program's file.
 
-The pages were written from this report (DEC-238). The iPhone now shares the Android phone's pages for rows 1 to 20 and 25: the tour, Look around, Find a person, See a family tree, See the events of a person, Look at the sources of a fact, Add another person, Change a person, Add a family, Add a note, Choose how it looks, Enter a date, Say who made this tree, Add a place where records are kept, Add a research question and Remove a tree. Inside those pages, the iPhone differences are marked: no search button on Home (row 3), the marriage sheet (row 17), **Save source** then the citation step then the attachment step (row 19), the name shown at once in Who made this tree (row 9), and the lists to open again (row 21). *Add your first person* starts from the sample tree's Home, *Keep it safe* starts from **More**, and *Open a family tree file* has the page for another program's file (row 23).
+The pages were written from this report (DEC-238). The iPhone now shares the Android phone's pages for rows 1 to 20 and 25: the tour, Look around, Find a person, See a family tree, See the events of a person, Look at the sources of a fact, Add another person, Change a person, Add a family, Add a note, Choose how it looks, Enter a date, Say who made this tree, Add a place where records are kept, Add a research question and Remove a tree. Inside those pages, the iPhone differences are marked: no search button on Home (row 3), the marriage sheet (row 17), **Save source** then the citation step then the attachment step (row 19), the name shown at once in Who made this tree (row 9), and the lists to open again (row 21). *Add your first person* starts from the sample tree's Home, *Keep it safe* starts from **More**, and *Open a family tree file* has the page for another program's file (row 23). Since 12 November the iPhone, the iPad and the Mac also share *Forms for records you have seen* (row 29), and a page of their own, *Find help and the version*, answers About uFTi.
 
 ## 5. Next
 
-- Walk stage 4, stage 8 and *Use an existing note* on the iPhone.
-- The faults (rows 21, 22, 24, 26, 27 and 28) go to the app team once, with the other legs' (DEC-214).
+- Walk stage 4, the pictures and the camera of stage 8, and *Use an existing note* on the iPhone.
+- The faults (rows 21, 22, 24, 26, 27 and 28) and row 30 go to the app team once, with the other legs' (DEC-214).

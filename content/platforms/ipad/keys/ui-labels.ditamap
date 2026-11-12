@@ -115,4 +115,11 @@
   <keydef keys="ui-attach-source-document"><topicmeta><keywords><keyword>Attach source document</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-just-look"><topicmeta><keywords><keyword>Just look</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-make-a-gedcom-7-copy"><topicmeta><keywords><keyword>Make a GEDCOM 7 copy</keyword></keywords></topicmeta></keydef>
+  <!-- the forms that match a record, on the Add a record sheet, read on the iPhone and the Mac on 12 November 2026 -->
+  <keydef keys="ui-baptism-record"><topicmeta><keywords><keyword>Baptism record</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-birth-record"><topicmeta><keywords><keyword>Birth record</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-burial-record"><topicmeta><keywords><keyword>Burial record</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-death-record"><topicmeta><keywords><keyword>Death record</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-marriage-register-entry"><topicmeta><keywords><keyword>Marriage register entry</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-family-note"><topicmeta><keywords><keyword>Family note</keyword></keywords></topicmeta></keydef>
 </map>

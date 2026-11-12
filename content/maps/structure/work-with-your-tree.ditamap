@@ -54,7 +54,7 @@
   <topicref href="../../platforms/ipad/topics/add-a-note.dita" keys="add-a-note" platform="iPad MacCatalyst"/>
   <topicref href="../../platforms/android-phone/topics/enter-a-date.dita" keys="enter-a-date" platform="AndroidPhone iPhone iPad MacCatalyst"/>
   <topicref href="../../platforms/android-phone/topics/add-an-event.dita" keys="add-an-event" platform="AndroidPhone"/>
-  <topicref href="../../platforms/android-phone/topics/forms-for-records.dita" keys="forms-for-records" platform="AndroidPhone"/>
+  <topicref href="../../platforms/android-phone/topics/forms-for-records.dita" keys="forms-for-records" platform="AndroidPhone iPhone iPad MacCatalyst"/>
   <topicref href="../../platforms/android-phone/topics/take-a-photo.dita" keys="take-a-photo" platform="AndroidPhone"/>
   <topicref href="../../platforms/android-phone/topics/say-who-made-this-tree.dita" keys="say-who-made-this-tree" platform="AndroidPhone iPhone MacCatalyst"/>
   <topicref href="../../platforms/android-phone/topics/add-a-repository.dita" keys="add-a-repository" platform="AndroidPhone iPhone iPad MacCatalyst"/>
