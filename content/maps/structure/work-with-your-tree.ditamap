@@ -59,11 +59,11 @@
   <topicref href="../../platforms/android-phone/topics/say-who-made-this-tree.dita" keys="say-who-made-this-tree" platform="AndroidPhone iPhone MacCatalyst"/>
   <topicref href="../../platforms/android-phone/topics/add-a-repository.dita" keys="add-a-repository" platform="AndroidPhone iPhone iPad MacCatalyst"/>
   <topicref href="../../platforms/android-phone/topics/add-a-research-note.dita" keys="add-a-research-note" platform="AndroidPhone iPhone iPad MacCatalyst"/>
-  <!-- the-photos-buttons: the Windows topicref is in bring-in-share-and-keep-safe.ditamap. The Mac has no
-       page for it yet: the buttons were not walked on the Mac (DEC-239). -->
+  <!-- the-photos-buttons: the Windows topicref is in bring-in-share-and-keep-safe.ditamap. The Mac shares
+       the iOS page since its walk of 12 November 2026 (DEC-239). -->
   <topicref href="../../platforms/android-phone/topics/the-photos-buttons.dita" keys="the-photos-buttons" platform="AndroidPhone"/>
   <topicref href="../../platforms/android-tablet/topics/the-photos-buttons.dita" keys="the-photos-buttons" platform="AndroidTablet"/>
-  <topicref href="../../platforms/ios/topics/the-photos-buttons.dita" keys="the-photos-buttons" platform="iOS"/>
+  <topicref href="../../platforms/ios/topics/the-photos-buttons.dita" keys="the-photos-buttons" platform="iOS MacCatalyst"/>
   <topicref href="../../platforms/windows/topics/choose-how-it-looks.dita" keys="choose-how-it-looks" platform="WindowsWinUI"/>
   <topicref href="../../platforms/android-phone/topics/choose-how-it-looks.dita" keys="choose-how-it-looks" platform="AndroidPhone iPhone"/>
   <topicref href="../../platforms/android-tablet/topics/choose-how-it-looks.dita" keys="choose-how-it-looks" platform="AndroidTablet"/>

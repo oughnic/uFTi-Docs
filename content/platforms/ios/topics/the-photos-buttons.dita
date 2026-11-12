@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<!-- Shared by the iPhone, the iPad and the Mac. The Mac's buttons were walked on 12 November 2026: the folder,
+     the Describe this image box, the chain with and without a picture, and the folder chooser of the fourth
+     button. The Mac's camera was not tried, so the camera's question is not described for the Mac. -->
 <concept id="the-photos-buttons" xml:lang="en-GB">
   <title>The Photos buttons</title>
   <shortdesc>What the buttons under Photos are for on a person, an event or a source.</shortdesc>
@@ -26,13 +29,14 @@
     <section>
       <title>The camera button</title>
       <p>The first button has a camera on it. It is for a new photo, such as a photo of a certificate.</p>
-      <p>The first time, the <keyword keyref="product-device"/> asks if <keyword keyref="product-name"/> may use the camera. Choose <uicontrol keyref="ui-allow"/> to take photos in the app. If you do not allow it, a box says that the camera is needed to photograph a document.</p>
+      <p platform="iOS">The first time, the <keyword keyref="product-device"/> asks if <keyword keyref="product-name"/> may use the camera. Choose <uicontrol keyref="ui-allow"/> to take photos in the app. If you do not allow it, a box says that the camera is needed to photograph a document.</p>
     </section>
     <section>
       <title>The folder button</title>
-      <p>The second button has a folder on it. It is for a picture or a scan that is already on your <keyword keyref="product-device"/>. Your <keyword keyref="product-device"/> opens its own Files screen. Choose a picture, or choose the cross at the top to leave it.</p>
-      <p platform="iPad">A box named <wintitle keyref="ui-describe-this-image"/> then asks for a few words about the picture, for people who cannot see it. Type them and choose <uicontrol keyref="ui-ok"/>. The picture shows under the buttons.</p>
+      <p>The second button has a folder on it. It is for a picture or a scan that is already on your <keyword keyref="product-device"/>.<ph platform="iOS"> Your <keyword keyref="product-device"/> opens its own Files screen. Choose a picture, or choose the cross at the top to leave it.</ph><ph platform="MacCatalyst"> A panel for opening a file opens. Choose a picture, then <uicontrol keyref="ui-open"/>, or choose <uicontrol keyref="ui-cancel"/> to leave it.</ph></p>
+      <p platform="iPad MacCatalyst">A box named <wintitle keyref="ui-describe-this-image"/> then asks for a few words about the picture, for people who cannot see it. Type them and choose <uicontrol keyref="ui-ok"/>. The picture shows under the buttons.</p>
       <p platform="iPad">If the Files screen closes and nothing is added, choose the folder button and the picture again.</p>
+      <p platform="MacCatalyst">If the picture shows only as a thin strip, open the page again. The buttons under the picture, such as <uicontrol keyref="ui-edit"/>, can then be a long way down the page. Keep scrolling to reach them.</p>
     </section>
     <section>
       <title>The chain button</title>

@@ -24,9 +24,10 @@ The first try stopped after Preferences because the Mac's screen was locked: wit
 | 5 | The Notes screen and the note form. |
 | 6 | Where records are kept, a source with its citation and attachment step, the evidence page. |
 | 7 | Research questions and notes, Who made this tree. |
+| 8 | On 12 November, the photos buttons on a person's page: the folder, the **Describe this image** box, the chain with and without a picture in the tree, and the fourth button. |
 | 9 | Save as… with the macOS Save panel, Add from file… with the macOS Open panel for a uFTi file and for another program's file, removing a tree and removing the tree in use, About uFTi. |
 
-**Not walked.** Stage 8 apart from the forms (walked on the iPhone), the help rows on fields, and the address that **Help** opens (it opened the web browser, but the address was not read).
+**Not walked.** Stage 8 apart from the forms (walked on the iPhone) and the photos buttons, the camera (its question would change the Mac's privacy settings), the help rows on fields, and the address that **Help** opens (it opened the web browser, but the address was not read).
 
 ## 2. What was found
 
@@ -50,6 +51,9 @@ The first try stopped after Preferences because the Mac's screen was locked: wit
 | 16 | Home | After a person has been opened, Home shows **Continue with** and that person. | Same as the iPhone |
 | 17 | Cancel on the edit form | Once, after the tree in use had been removed, **Cancel** on the edit form did nothing: no question, and the form stayed open. | A fault, to check |
 | 18 | Events | The event form is the iPhone's, in a centred column. **Type** is a wheel with **Done**, ending with **Event**. A baptism saved and went back to the screen it started from. **Add event** under the events opens the form directly. A period typed with **Edit as text** turned on reads back and saves; an **Event** with its own words shows as "Event" in the list and with its words when opened. | Same as the iPhone |
+| 19 | The photos buttons | Three buttons and "No attachments yet." The folder opens the macOS Open panel. The first choice of a picture opened the **Describe this image** box, "A short description is required for accessibility.", with **OK** and **Cancel**; after **OK**, "Saved" and a fourth button with a down arrow. That button opens the macOS panel for choosing a folder, with **Open** and **Cancel**. | The first choice works on the Mac. On the iPad it added nothing |
+| 20 | The chain button | With no picture in the tree: **Link existing media**, "Search media by description", "No media in this workspace yet." and **Close**. With one picture: the picture, its description and "Used by 1 record(s)". The app did not close. | The iPad closed when a picture was in the tree |
+| 21 | The picture on the page | Just after it was added, the picture showed only as a thin strip under the buttons. After the page was opened again it showed full size, but **Edit**, **Add a record**, **Copy** and **Delete person** were about two screens further down, after an empty space. | The iPad showed the picture full size at once |
 
 **Currer.** On 12 November the iPhone, with the same build, also found nothing for **Currer**. The sample tree that the app opens with gives Charlotte Brontë one name only, with no pen name, so the search is right and the page was wrong. The shared *Find a person* page now gives the iPhone the example of **Patrick**, which finds Patrick Brontë and his son Patrick Branwell Brontë, as its picture shows. The Android phone keeps the Currer example, which its walk saw; whether its walk used the sample the app opens with is to be checked.
 
@@ -66,10 +70,11 @@ The Mac manual documents Mac Catalyst under its own token, `MacCatalyst` (DEC-23
 
 The 45 pictures the Mac manual uses were taken of the app's window in this walk and cut below its title bar, with new alternative text. Four were taken for the pages after the walk: all the people, the middle of a person's page, **More forms**, and the version question of **Save as…** for a family tree file. The pictures of About uFTi and of the macOS Open and Save panels are not used.
 
-The pages for the AppKit Mac, written before the walk, were removed: no manual uses them any more. The photos buttons were not walked on the Mac, so the Mac has no page for them yet. Since 12 November the Mac also shares *Add an event* (row 18), *Forms for records you have seen* and *Find help and the version*.
+The pages for the AppKit Mac, written before the walk, were removed: no manual uses them any more. Since 12 November the Mac also shares *The Photos buttons* (rows 19 to 21), with the macOS panel in place of the Files screen, the **Describe this image** box, and how to reach the buttons past a picture. The camera's question is not described for the Mac. It also shares *Add an event* (row 18), *Forms for records you have seen* and *Find help and the version*.
 
 ## 5. Next
 
-- Walk the photos buttons and **Just look** on the Mac, and write the Mac page for the photos buttons.
+- Walk **Just look** and the camera on the Mac. The camera needs the maintainer's word, because answering its question changes the Mac's privacy settings.
+- Send rows 20 and 21 to the app team, if the maintainer agrees.
 - Check the **Currer** search on the Android phone, in the sample tree that the app opens with. If it finds nothing there, the Android phone needs another example too, and a new picture.
 - On 12 November, at the maintainer's request, rows 5, 10, 12, 13 and 17, the path word "Submitter", the "Tap to manage sources" names and the sample's missing pen name were sent to the app team, with the iPhone's and the iPad's.
