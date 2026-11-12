@@ -3,8 +3,9 @@
 <!-- Open a family tree file on the Mac (DEC-239). Written from the Mac Catalyst walk of 12 November 2026:
      Add from file… opens the Mac's own window for choosing a file. A uFTi file opened at once with a box that
      counts what it holds; a file that another program made opened the page that asks what the app may do,
-     filling the window. The file chosen was left unchanged. Just look was not walked on the Mac: its line is
-     the one the page shows. -->
+     filling the window. The file chosen was left unchanged. Just look was walked the same day: a form opens,
+     but Save says the tree cannot be changed; Save as… writes a copy without adding a card, and the copy
+     opened with Add from file… could be changed. The file chosen was left unchanged. -->
 <task id="open-a-family-tree-file" xml:lang="en-GB">
   <title>Open a family tree file</title>
   <shortdesc>Bring a tree from another program, or a copy from a relative, into uFTi.</shortdesc>
@@ -50,7 +51,7 @@
         <cmd>For a file that another program made, choose <uicontrol keyref="ui-make-a-gedcom-7-copy"/> or <uicontrol keyref="ui-just-look"/>.</cmd>
         <choices>
           <choice><uicontrol keyref="ui-make-a-gedcom-7-copy"/> keeps a copy of its own in GEDCOM 7, and saves your changes there. The file you chose is not touched. A box then counts what the tree holds.</choice>
-          <choice><uicontrol keyref="ui-just-look"/> opens the tree to look at. Nothing is saved, and the file is not touched. To change the tree later, choose <uicontrol keyref="ui-save-as"/> on its card to make a copy you can edit.</choice>
+          <choice><uicontrol keyref="ui-just-look"/> opens the tree to look at, and the file is not touched. A form still opens, but when you save it, a box says the tree cannot be changed. To change the tree later, choose <uicontrol keyref="ui-save-as"/> on its card to make a copy. Then open the copy with <uicontrol keyref="ui-add-from-file"/>.</choice>
         </choices>
       </step>
       <step>

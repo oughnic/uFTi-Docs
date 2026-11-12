@@ -25,7 +25,7 @@ The first try stopped after Preferences because the Mac's screen was locked: wit
 | 6 | Where records are kept, a source with its citation and attachment step, the evidence page. |
 | 7 | Research questions and notes, Who made this tree. |
 | 8 | On 12 November, the photos buttons on a person's page: the folder, the **Describe this image** box, the chain with and without a picture in the tree, and the fourth button. |
-| 9 | Save as… with the macOS Save panel, Add from file… with the macOS Open panel for a uFTi file and for another program's file, removing a tree and removing the tree in use, About uFTi. |
+| 9 | Save as… with the macOS Save panel, Add from file… with the macOS Open panel for a uFTi file and for another program's file, removing a tree and removing the tree in use, About uFTi. On 12 November, **Just look** for another program's file, and **Save as…** from that tree. |
 
 **Not walked.** Stage 8 apart from the forms (walked on the iPhone) and the photos buttons, the camera (its question would change the Mac's privacy settings), the help rows on fields, and the address that **Help** opens (it opened the web browser, but the address was not read).
 
@@ -54,6 +54,9 @@ The first try stopped after Preferences because the Mac's screen was locked: wit
 | 19 | The photos buttons | Three buttons and "No attachments yet." The folder opens the macOS Open panel. The first choice of a picture opened the **Describe this image** box, "A short description is required for accessibility.", with **OK** and **Cancel**; after **OK**, "Saved" and a fourth button with a down arrow. That button opens the macOS panel for choosing a folder, with **Open** and **Cancel**. | The first choice works on the Mac. On the iPad it added nothing |
 | 20 | The chain button | With no picture in the tree: **Link existing media**, "Search media by description", "No media in this workspace yet." and **Close**. With one picture: the picture, its description and "Used by 1 record(s)". The app did not close. | The iPad closed when a picture was in the tree |
 | 21 | The picture on the page | Just after it was added, the picture showed only as a thin strip under the buttons. After the page was opened again it showed full size, but **Edit**, **Add a record**, **Copy** and **Delete person** were about two screens further down, after an empty space. | The iPad showed the picture full size at once |
+| 22 | **Just look** | The box counts what the file holds and says "Opened to look at: uFTi will not change this file." The tree opens on Home. Nothing on Home, the card or **Show details** says that the tree is only for looking at, and the line under **Workspaces** still says that changes are saved as you go. | As the iPhone's box |
+| 23 | Changing a tree opened with **Just look** | **Edit** opens the form as usual. **Save** then gives a box "Couldn't save", which names the tree differently from its card and suggests opening the file again "in place", a choice the page does not offer. **Cancel** then closes the form without the **Discard changes?** question. Nothing was kept, and the chosen file was left unchanged. | Not walked on the iPhone or iPad |
+| 24 | **Save as…** from a tree opened with **Just look** | Writes a copy in the folder chosen, with the message of row 13, but adds no card. The copy, opened with **Add from file…**, has a card of its own and can be changed. | Not walked on the iPhone or iPad |
 
 **Currer.** On 12 November the iPhone, with the same build, also found nothing for **Currer**. The sample tree that the app opens with gives Charlotte Brontë one name only, with no pen name, so the search is right and the page was wrong. The shared *Find a person* page now gives the iPhone the example of **Patrick**, which finds Patrick Brontë and his son Patrick Branwell Brontë, as its picture shows. The Android phone keeps the Currer example, which its walk saw; whether its walk used the sample the app opens with is to be checked.
 
@@ -70,11 +73,12 @@ The Mac manual documents Mac Catalyst under its own token, `MacCatalyst` (DEC-23
 
 The 45 pictures the Mac manual uses were taken of the app's window in this walk and cut below its title bar, with new alternative text. Four were taken for the pages after the walk: all the people, the middle of a person's page, **More forms**, and the version question of **Save as…** for a family tree file. The pictures of About uFTi and of the macOS Open and Save panels are not used.
 
-The pages for the AppKit Mac, written before the walk, were removed: no manual uses them any more. Since 12 November the Mac also shares *The Photos buttons* (rows 19 to 21), with the macOS panel in place of the Files screen, the **Describe this image** box, and how to reach the buttons past a picture. The camera's question is not described for the Mac. It also shares *Add an event* (row 18), *Forms for records you have seen* and *Find help and the version*.
+The pages for the AppKit Mac, written before the walk, were removed: no manual uses them any more. Since 12 November the Mac also shares *The Photos buttons* (rows 19 to 21), with the macOS panel in place of the Files screen, the **Describe this image** box, and how to reach the buttons past a picture. The camera's question is not described for the Mac. *Open a family tree file* now says what **Just look** does when you try to change the tree, and that the copy from **Save as…** must be opened before it can be changed (rows 22 to 24). It also shares *Add an event* (row 18), *Forms for records you have seen* and *Find help and the version*.
 
 ## 5. Next
 
-- Walk **Just look** and the camera on the Mac. The camera needs the maintainer's word, because answering its question changes the Mac's privacy settings.
+- Check rows 23 and 24 on the iPhone and iPad: their *Open a family tree file* pages still say that **Save as…** on the card makes a copy you can edit.
+- Walk the camera on the Mac. It needs the maintainer's word, because answering its question changes the Mac's privacy settings.
 - On 12 November, at the maintainer's request, row 21 was sent to the app team as a fault, and row 20 was added to the iPad's report of the chain button closing the app.
 - Check the **Currer** search on the Android phone, in the sample tree that the app opens with. If it finds nothing there, the Android phone needs another example too, and a new picture.
 - On 12 November, at the maintainer's request, rows 5, 10, 12, 13 and 17, the path word "Submitter", the "Tap to manage sources" names and the sample's missing pen name were sent to the app team, with the iPhone's and the iPad's.
