@@ -20,13 +20,13 @@ The first try stopped after Preferences because the Mac's screen was locked: wit
 | 1 | Workspaces, the New workspace box, the new tree's Home. |
 | 2 | The new person form, the date editor, the **+** sheet, the edit form, a date that is not sure. |
 | 3 | The family form with a partner and an existing child, the family page, the tree. |
-| 4 | The name question and the Discard question. |
+| 4 | The name question and the Discard question. On 12 November, events: a baptism from **Other event**, a residence typed as a period, and an event of its own kind. |
 | 5 | The Notes screen and the note form. |
 | 6 | Where records are kept, a source with its citation and attachment step, the evidence page. |
 | 7 | Research questions and notes, Who made this tree. |
 | 9 | Save as… with the macOS Save panel, Add from file… with the macOS Open panel for a uFTi file and for another program's file, removing a tree and removing the tree in use, About uFTi. |
 
-**Not walked.** Stage 8, the help rows on fields, and the address that **Help** opens (it opened the web browser, but the address was not read).
+**Not walked.** Stage 8 apart from the forms (walked on the iPhone), the help rows on fields, and the address that **Help** opens (it opened the web browser, but the address was not read).
 
 ## 2. What was found
 
@@ -49,6 +49,7 @@ The first try stopped after Preferences because the Mac's screen was locked: wit
 | 15 | Remove | A box: "Remove '…' from your workspaces? This does not delete the family tree file on disk." with **Cancel** and **Remove**. Removing the tree in use makes another tree the one in use. | Walked on the Mac only |
 | 16 | Home | After a person has been opened, Home shows **Continue with** and that person. | Same as the iPhone |
 | 17 | Cancel on the edit form | Once, after the tree in use had been removed, **Cancel** on the edit form did nothing: no question, and the form stayed open. | A fault, to check |
+| 18 | Events | The event form is the iPhone's, in a centred column. **Type** is a wheel with **Done**, ending with **Event**. A baptism saved and went back to the screen it started from. **Add event** under the events opens the form directly. A period typed with **Edit as text** turned on reads back and saves; an **Event** with its own words shows as "Event" in the list and with its words when opened. | Same as the iPhone |
 
 **Currer.** On 12 November the iPhone, with the same build, also found nothing for **Currer**. The sample tree that the app opens with gives Charlotte Brontë one name only, with no pen name, so the search is right and the page was wrong. The shared *Find a person* page now gives the iPhone the example of **Patrick**, which finds Patrick Brontë and his son Patrick Branwell Brontë, as its picture shows. The Android phone keeps the Currer example, which its walk saw; whether its walk used the sample the app opens with is to be checked.
 
@@ -65,7 +66,7 @@ The Mac manual documents Mac Catalyst under its own token, `MacCatalyst` (DEC-23
 
 The 45 pictures the Mac manual uses were taken of the app's window in this walk and cut below its title bar, with new alternative text. Four were taken for the pages after the walk: all the people, the middle of a person's page, **More forms**, and the version question of **Save as…** for a family tree file. The pictures of About uFTi and of the macOS Open and Save panels are not used.
 
-The pages for the AppKit Mac, written before the walk, were removed: no manual uses them any more. The photos buttons were not walked on the Mac, so the Mac has no page for them yet.
+The pages for the AppKit Mac, written before the walk, were removed: no manual uses them any more. The photos buttons were not walked on the Mac, so the Mac has no page for them yet. Since 12 November the Mac also shares *Add an event* (row 18), *Forms for records you have seen* and *Find help and the version*.
 
 ## 5. Next
 

@@ -122,4 +122,12 @@
   <keydef keys="ui-death-record"><topicmeta><keywords><keyword>Death record</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-marriage-register-entry"><topicmeta><keywords><keyword>Marriage register entry</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-family-note"><topicmeta><keywords><keyword>Family note</keyword></keywords></topicmeta></keydef>
+  <!-- the event form, read on the iPhone and the Mac on 12 November 2026 (stage 4) -->
+  <keydef keys="ui-type"><topicmeta><keywords><keyword>Type</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-baptism"><topicmeta><keywords><keyword>Baptism</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-residence"><topicmeta><keywords><keyword>Residence</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-occupation"><topicmeta><keywords><keyword>Occupation</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-event"><topicmeta><keywords><keyword>Event</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-kind-of-event-in-words"><topicmeta><keywords><keyword>Kind of event, in words</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-other-event"><topicmeta><keywords><keyword>Other event</keyword></keywords></topicmeta></keydef>
 </map>
