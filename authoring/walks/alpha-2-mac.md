@@ -33,7 +33,7 @@ The first try stopped after Preferences because the Mac's screen was locked: wit
 | # | Where | What a reader sees | Compared with the iPad |
 |---|---|---|---|
 | 1 | The window | The list on the left (**Home**, **Person**, **Family tree**, **Events**, **More**), the path at the top, a search button under the back arrow (not on Home), **+** and **Help** with its word. | Same as the iPad on its side |
-| 2 | Search | Results in two columns, people on the left and events on the right. **Refine by** has Dates, Sex, Place, Event type, Approximate (sound-alike) matches and Clear filters. Searching **Currer** finds nothing; searching **Charlotte** finds her. | Same layout. Currer: see section 4 |
+| 2 | Search | Results in two columns, people on the left and events on the right. **Refine by** has Dates, Sex, Place, Event type, Approximate (sound-alike) matches and Clear filters. Searching **Currer** finds nothing; searching **Charlotte** finds her. | Same layout. Currer: see below |
 | 3 | A person's page | The person on the left and the **Family tree** on the right, with the divider. **Edit** opens a one-column form on the left. | Same |
 | 4 | The tree | The marriage mark opens a sheet from the bottom, with the marriage line and each child. | Same |
 | 5 | Create workspace | The box opens with **My family tree** selected, so typing replaces it. | On the iPhone, typing adds to it |
@@ -49,6 +49,8 @@ The first try stopped after Preferences because the Mac's screen was locked: wit
 | 15 | Remove | A box: "Remove '…' from your workspaces? This does not delete the family tree file on disk." with **Cancel** and **Remove**. Removing the tree in use makes another tree the one in use. | Walked on the Mac only |
 | 16 | Home | After a person has been opened, Home shows **Continue with** and that person. | Same as the iPhone |
 | 17 | Cancel on the edit form | Once, after the tree in use had been removed, **Cancel** on the edit form did nothing: no question, and the form stayed open. | A fault, to check |
+
+**Currer.** On 12 November the iPhone, with the same build, also found nothing for **Currer**. The sample tree that the app opens with gives Charlotte Brontë one name only, with no pen name, so the search is right and the page was wrong. The shared *Find a person* page now gives the iPhone the example of **Patrick**, which finds Patrick Brontë and his son Patrick Branwell Brontë, as its picture shows. The Android phone keeps the Currer example, which its walk saw; whether its walk used the sample the app opens with is to be checked.
 
 ## 3. What the tooling could not do
 
@@ -68,5 +70,5 @@ The pages for the AppKit Mac, written before the walk, were removed: no manual u
 ## 5. Next
 
 - Walk the photos buttons and **Just look** on the Mac, and write the Mac page for the photos buttons.
-- Check the **Currer** search on the iPhone: the shared Android phone and iPhone page *Find a person* says that searching her pen name finds Charlotte.
-- Send rows 2, 5, 10, 12, 13 and 17 to the app team with the other legs' findings (DEC-214).
+- Check the **Currer** search on the Android phone, in the sample tree that the app opens with. If it finds nothing there, the Android phone needs another example too, and a new picture.
+- Send rows 5, 10, 12, 13 and 17 to the app team, and ask whether the sample tree should give Charlotte her pen name, with the other legs' findings (DEC-214).

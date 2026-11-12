@@ -31,7 +31,8 @@
       <step>
         <cmd>Type a name, a place or an event in the search box.</cmd>
         <info>
-          <p>For example, type Currer to find Charlotte Brontë by her pen name.</p>
+          <p platform="AndroidPhone">For example, type Currer to find Charlotte Brontë by her pen name.</p>
+          <p platform="iPhone">For example, type Patrick to find Patrick Brontë and his son Patrick Branwell Brontë.</p>
         </info>
       </step>
       <step>
