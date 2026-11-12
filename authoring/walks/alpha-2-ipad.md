@@ -22,7 +22,7 @@ This report is public. It names no machine, no account, no serial number and no 
 | 7 | Research questions and notes. |
 | 9 | Search and Refine by, Save as… as far as the version question, opening a saved copy, opening a file another program made, the Remove question. |
 
-**Not walked.** Saving a copy to the iPad's files, removing a tree, and the help rows on fields.
+**Not walked.** The help rows on fields.
 
 ## 2. What was found
 
@@ -48,6 +48,10 @@ This report is public. It names no machine, no account, no serial number and no 
 | 18 | The photos buttons (stage 8) | Three buttons and "No attachments yet." The camera asks "“uFTi” would like to access the Camera" with the app's reason; **Don't Allow** gives "Camera permission is required to photograph a document." with **OK**. The folder opens the iPad's Files screen with a cross. The first choice of a picture closed the screen and added nothing; the second opened a box **Describe this image**, "A short description is required for accessibility.", with **Cancel** and **OK**, then the picture showed, "Saved", and a fourth button with a down arrow appeared. That button opens a screen for choosing a folder, with **Open**. | The first choice: a fault, as row 14. The box: new |
 | 19 | The chain button (stage 8) | With a picture in the tree, choosing the chain button closed the app at once, twice. The crash report shows an exception from the app's own code during a layout pass. | A fault: a crash |
 | 20 | Search on its side | After the app was opened again on its side, a search for Anne showed one column with **All**, **People** and **Events** buttons, not the two columns of row 3. There were no event results. | To check |
+| 21 | Save as… (12 November) | **Save as…** on the card, then **Everything (.gdz, recommended)**, opens the iPad's Files screen in On My iPad with "Save as" and the tree's name, and **Save**. The message afterwards says the copy is "in the folder File Provider Storage", the iPad's own name for the place a reader sees as On My iPad, and "Written as GEDCOM 7.0: 3 change(s) to fit that version, 1 to check, 0 left out.", with nothing to show what to check. It stayed on screen for more than a minute. | A fault |
+| 22 | Opening the saved copy | **Add from file…** and the saved .gdz (the first choice opened nothing, as row 14; the second worked): the box counts 9 people, 2 families, 23 events, 22 sources and 3 notes, and says "Pictures: 4 listed, 1 not found. A family tree file lists its pictures but does not hold them; a .gdz archive does." and "Items with tags uFTi does not show, kept as they are: 1". The archive holds the picture attached in row 18, and the copy shows it on Anne Brontë's page, so the sentence about family tree files is wrong for a .gdz. | A fault |
+| 23 | Two trees of the same name | The copy's card has the same name as the sample's, with no "(2)". **Show details** tells them apart only by the file name: the copy shows "uFTi 0.2.0 · 19 October 2026", the date of the original, though it was saved today, and the sample "0.1.0 · 19 October 2026". The **Remove workspace** box names the tree, so it cannot say which of the two it will remove. | A fault |
+| 24 | Removing a tree | Removing the open tree opened the other one, and the file stayed in On My iPad, as the page says. Removing the last tree: the path reads "No workspace open", Workspaces says "No workspaces found. Open a family tree file to get started.", and Home says "Your family tree", "Open a family tree to start.", with **Open a workspace** and a search box. Nothing offers the sample tree again once it is removed. | Same as the page. The sample: for the app team |
 
 ## 3. What the tooling could not do
 
@@ -62,6 +66,7 @@ The pages were written from this report (DEC-238). The tour is new for rows 1, 2
 
 ## 5. Next
 
-- Walk saving a copy and removing a tree on the iPad.
-- Send rows 18 and 19 to the app team with the other faults (DEC-214); check row 20.
+- Check row 20.
+
+On 12 November, at the maintainer's request, rows 14, 18, 19 and 21 to 24 were sent to the app team as five faults and one request, ahead of the one list that DEC-214 plans for the other legs.
 - The faults (rows 8 and 14) go to the app team once, with the other legs' (DEC-214).
