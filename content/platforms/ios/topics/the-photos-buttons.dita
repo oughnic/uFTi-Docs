@@ -6,6 +6,7 @@
   <prolog>
     <critdates>
       <created date="2026-10-29"/>
+      <revised modified="2026-11-12"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -30,10 +31,13 @@
     <section>
       <title>The folder button</title>
       <p>The second button has a folder on it. It is for a picture or a scan that is already on your <keyword keyref="product-device"/>. Your <keyword keyref="product-device"/> opens its own Files screen. Choose a picture, or choose the cross at the top to leave it.</p>
+      <p platform="iPad">A box named <wintitle keyref="ui-describe-this-image"/> then asks for a few words about the picture, for people who cannot see it. Type them and choose <uicontrol keyref="ui-ok"/>. The picture shows under the buttons.</p>
+      <p platform="iPad">If the Files screen closes and nothing is added, choose the folder button and the picture again.</p>
     </section>
     <section>
       <title>The chain button</title>
       <p>The third button has a chain link on it. It is for a picture that is already in this tree, so you can use it again on a second person. A list named <wintitle keyref="ui-link-existing-media"/> opens, with a box to search the pictures by what they show. A new tree has none yet. Choose <uicontrol keyref="ui-close"/> to leave it.</p>
+      <p platform="iPad">If the app closes when you choose this button, open it again. Your tree and its pictures are kept.</p>
     </section>
     <section>
       <title>The fourth button</title>

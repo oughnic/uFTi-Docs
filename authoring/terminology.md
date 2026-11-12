@@ -376,6 +376,14 @@ Read from the Mac Catalyst app on 11 and 12 November 2026, in the Alpha-2 walk (
 |---|---|---|---|
 | `ui-open` | Open | On the Mac: the button on a tree's card that makes it the open tree, and the button in the Mac's window for choosing a file. | none |
 
+### 2.13 iPad stage 8 additions
+
+Read from the iPad on 12 November 2026 ([`content/platforms/ipad/keys/ui-labels.ditamap`](../content/platforms/ipad/keys/ui-labels.ditamap)).
+
+| Key | Label as printed | What we say around it | Change |
+|---|---|---|---|
+| `ui-describe-this-image` | Describe this image | The box that asks for a short description of a picture after it is chosen, for people who cannot see it. | none |
+
 ## 3. Domain terms
 
 The words the documentation uses for the ideas behind the app. A term in bold needs a glossary entry before a topic uses it. The seven entries that exist are in [`content/glossary/`](../content/glossary/).

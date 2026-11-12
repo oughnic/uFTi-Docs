@@ -130,4 +130,6 @@
   <keydef keys="ui-event"><topicmeta><keywords><keyword>Event</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-kind-of-event-in-words"><topicmeta><keywords><keyword>Kind of event, in words</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-other-event"><topicmeta><keywords><keyword>Other event</keyword></keywords></topicmeta></keydef>
+  <!-- the box after a picture is chosen with the folder button, read on the iPad on 12 November 2026 (stage 8) -->
+  <keydef keys="ui-describe-this-image"><topicmeta><keywords><keyword>Describe this image</keyword></keywords></topicmeta></keydef>
 </map>

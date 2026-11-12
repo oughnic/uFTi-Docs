@@ -22,7 +22,7 @@ This report is public. It names no machine, no account, no serial number and no 
 | 7 | Research questions and notes. |
 | 9 | Search and Refine by, Save as… as far as the version question, opening a saved copy, opening a file another program made, the Remove question. |
 
-**Not walked.** Stage 8, saving a copy to the iPad's files, removing a tree, and the help rows on fields.
+**Not walked.** Saving a copy to the iPad's files, removing a tree, and the help rows on fields.
 
 ## 2. What was found
 
@@ -44,6 +44,10 @@ This report is public. It names no machine, no account, no serial number and no 
 | 14 | Opening a file | The first choice of a file in the iPad's file screen closed the screen and opened nothing; choosing it again worked. A file another program made opens the same page as on the iPhone (**Make a GEDCOM 7 copy**, **Just look**, **Cancel**). | The first choice: a fault |
 | 15 | Events | The event's page is in two columns: **Event or fact** on the left and **More details** on the right. | Changed |
 | 16 | Adding events (stage 4, 12 November, on a second iPad Air 11-inch (M4) simulator with the same build, on its side) | With Anne Brontë open, **+** then **Other event** then **Add** opens the event form, the same as on the iPhone and the Mac. A baptism (25 March 1820, Thornton) saved and went back to her page. **Add event** under her events opens the form directly. A residence typed with **Edit as text** turned on ("from 25 February 1820 to 28 May 1849") reads back the same and saves; an **Event** with "Publication" in **Kind of event, in words** shows as "Event" in the list and as Publication when opened. | Same as the iPhone |
+| 17 | The forms for records (stage 8, 12 November) | With Anne Brontë open, the **+** sheet adapts to her: Baptism record leaves her events once she has a baptism, and **More forms** counts 12. The 1841 census form says "Adding to the household of Patrick Brontë" with **Change…**, fills in 6 June 1841, has class HO 107 filled in, and lists Patrick, Charlotte, Patrick Branwell, Emily and Anne, leaving out those who had died. Its **Attach source document** has the camera and folder buttons only. | Same as the iPhone |
+| 18 | The photos buttons (stage 8) | Three buttons and "No attachments yet." The camera asks "“uFTi” would like to access the Camera" with the app's reason; **Don't Allow** gives "Camera permission is required to photograph a document." with **OK**. The folder opens the iPad's Files screen with a cross. The first choice of a picture closed the screen and added nothing; the second opened a box **Describe this image**, "A short description is required for accessibility.", with **Cancel** and **OK**, then the picture showed, "Saved", and a fourth button with a down arrow appeared. That button opens a screen for choosing a folder, with **Open**. | The first choice: a fault, as row 14. The box: new |
+| 19 | The chain button (stage 8) | With a picture in the tree, choosing the chain button closed the app at once, twice. The crash report shows an exception from the app's own code during a layout pass. | A fault: a crash |
+| 20 | Search on its side | After the app was opened again on its side, a search for Anne showed one column with **All**, **People** and **Events** buttons, not the two columns of row 3. There were no event results. | To check |
 
 ## 3. What the tooling could not do
 
@@ -58,5 +62,6 @@ The pages were written from this report (DEC-238). The tour is new for rows 1, 2
 
 ## 5. Next
 
-- Walk stage 8, saving a copy and removing a tree on the iPad.
+- Walk saving a copy and removing a tree on the iPad.
+- Send rows 18 and 19 to the app team with the other faults (DEC-214); check row 20.
 - The faults (rows 8 and 14) go to the app team once, with the other legs' (DEC-214).
