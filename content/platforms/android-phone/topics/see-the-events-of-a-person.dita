@@ -46,7 +46,7 @@
       </step>
     </steps>
     <result>
-      <p>A marriage opens the page of the family. To add an event, choose <uicontrol keyref="ui-add-event"/> under the list.<ph platform="AndroidPhone"> <xref keyref="add-an-event"/> shows how.</ph></p>
+      <p>A marriage opens the page of the family. To add an event, choose <uicontrol keyref="ui-add-event"/> under the list.<ph platform="AndroidPhone iPhone"> <xref keyref="add-an-event"/> shows how.</ph></p>
     </result>
     <postreq>
       <p>Next: <xref keyref="look-at-the-sources-of-a-fact"/>.</p>
