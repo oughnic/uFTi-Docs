@@ -1,6 +1,6 @@
 # The Alpha-2 Mac walk, on Mac Catalyst
 
-What was walked on the Mac, what was found, and what is left. Part of the [authoring plan](../authoring-plan.md) and the [walk plan](walk-plan.md). Written 11 and 12 November 2026 for [issue 169](https://github.com/oughnic/uFTi-Docs/issues/169) and [issue 172](https://github.com/oughnic/uFTi-Docs/issues/172). Decision: DEC-236. The legs before it are [alpha-2-iphone.md](alpha-2-iphone.md) and [alpha-2-ipad.md](alpha-2-ipad.md).
+What was walked on the Mac, what was found, and what is left. Part of the [authoring plan](../authoring-plan.md) and the [walk plan](walk-plan.md). Written 11 and 12 November 2026 for [issue 169](https://github.com/oughnic/uFTi-Docs/issues/169) and [issue 172](https://github.com/oughnic/uFTi-Docs/issues/172). Decisions: DEC-236 and DEC-239. The legs before it are [alpha-2-iphone.md](alpha-2-iphone.md) and [alpha-2-ipad.md](alpha-2-ipad.md).
 
 This report is public. It names no machine, no account, no serial number and no build number of a build that is not released. It says only what a reader can see.
 
@@ -59,10 +59,14 @@ The first try stopped after Preferences because the Mac's screen was locked: wit
 
 ## 4. What the manual has now
 
-Nothing yet. The Mac manual has no places for pictures, and its platform token is not decided (DEC-236). The pictures from this walk are kept with the walk, ready for when it does. Pictures of About uFTi and of the macOS Open and Save panels are not for the site, because they show the build and the computer's own files.
+The Mac manual documents Mac Catalyst under its own token, `MacCatalyst` (DEC-239). It shares the iPad pages, and the shared Android phone pages that the iPad uses, and it has its own tour, *Look around*, *Keep it safe* and *Open a family tree file*, because those pages are full of the iPad and its Files app. The manual now has the chapter *Work with your tree*. The places where the Mac differs are marked inside the shared pages: the name question with **Cancel** (row 8), the lists that need opening again (row 12), and the name in the New workspace box that typing replaces (row 5). *Say who made this tree* is shared with the Android phone, whose list also needs opening again.
+
+The 45 pictures the Mac manual uses were taken of the app's window in this walk and cut below its title bar, with new alternative text. Four were taken for the pages after the walk: all the people, the middle of a person's page, **More forms**, and the version question of **Save as…** for a family tree file. The pictures of About uFTi and of the macOS Open and Save panels are not used.
+
+The pages for the AppKit Mac, written before the walk, were removed: no manual uses them any more. The photos buttons were not walked on the Mac, so the Mac has no page for them yet.
 
 ## 5. Next
 
-- Decide the Mac's platform token and give the Mac manual places for its pictures (DEC-236), then write the Mac pages from this report.
+- Walk the photos buttons and **Just look** on the Mac, and write the Mac page for the photos buttons.
 - Check the **Currer** search on the iPhone: the shared Android phone and iPhone page *Find a person* says that searching her pen name finds Charlotte.
 - Send rows 2, 5, 10, 12, 13 and 17 to the app team with the other legs' findings (DEC-214).

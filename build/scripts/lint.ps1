@@ -52,7 +52,7 @@ function Rel { param([string]$Path) [System.IO.Path]::GetRelativePath($root, $Pa
 
 # ---- The platform catalogue, read from the DITAVAL filters (one per manual) -------------------
 
-$deviceTokens = @('AndroidPhone', 'AndroidTablet', 'iPhone', 'iPad', 'MacAppKit', 'WindowsWinUI')
+$deviceTokens = @('AndroidPhone', 'AndroidTablet', 'iPhone', 'iPad', 'MacAppKit', 'MacCatalyst', 'WindowsWinUI')
 $osTokens = @('Android', 'iOS')
 $groupTokens = @('Phone', 'Tablet', 'Mobile', 'Touch', 'Desktop', 'Pointer')
 $catalogue = $deviceTokens + $osTokens + $groupTokens

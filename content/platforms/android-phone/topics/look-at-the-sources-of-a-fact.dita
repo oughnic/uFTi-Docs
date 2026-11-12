@@ -40,7 +40,7 @@
           <fig platform="AndroidPhone">
             <image keyref="img-source-attach"/>
           </fig>
-          <p platform="iOS">A sheet named <uicontrol keyref="ui-add-source"/> opens. Under <uicontrol keyref="ui-add-a-new-source"/> it lists the sources already in the tree. Choose one of them when one book backs up many facts.</p>
+          <p platform="iOS MacCatalyst">A sheet named <uicontrol keyref="ui-add-source"/> opens. Under <uicontrol keyref="ui-add-a-new-source"/> it lists the sources already in the tree. Choose one of them when one book backs up many facts.</p>
         </stepresult>
       </step>
       <step>
@@ -59,11 +59,11 @@
           <fig platform="AndroidPhone">
             <image keyref="img-sources-list"/>
           </fig>
-          <p platform="iOS">The source is not attached yet. The next step opens. Its heading says <q>Add</q>, then the title of the source, then <q>to this fact</q>.</p>
+          <p platform="iOS MacCatalyst">The source is not attached yet. The next step opens. Its heading says <q>Add</q>, then the title of the source, then <q>to this fact</q>.</p>
         </stepresult>
       </step>
       <step>
-        <cmd><ph platform="AndroidPhone">Choose <uicontrol keyref="ui-citation"/>, then fill</ph><ph platform="iOS">Fill</ph> in the page and how reliable the source is.</cmd>
+        <cmd><ph platform="AndroidPhone">Choose <uicontrol keyref="ui-citation"/>, then fill</ph><ph platform="iOS MacCatalyst">Fill</ph> in the page and how reliable the source is.</cmd>
         <info>
           <p>A citation says where in the source you found the fact. Enter the page, folio or entry in <uicontrol keyref="ui-page-or-reference-number"/>. Choose how good the evidence is in <uicontrol keyref="ui-how-reliable-it-is"/>. If the entry has a date, enter it in <uicontrol keyref="ui-date-of-the-entry"/>.</p>
           <fig>
@@ -72,19 +72,19 @@
         </info>
       </step>
       <step>
-        <cmd><ph platform="AndroidPhone">Choose <uicontrol keyref="ui-save"/>, then <uicontrol keyref="ui-done"/>.</ph><ph platform="iOS">Choose <uicontrol keyref="ui-add-source"/> at the bottom of the step.</ph></cmd>
+        <cmd><ph platform="AndroidPhone">Choose <uicontrol keyref="ui-save"/>, then <uicontrol keyref="ui-done"/>.</ph><ph platform="iOS MacCatalyst">Choose <uicontrol keyref="ui-add-source"/> at the bottom of the step.</ph></cmd>
         <stepresult>
           <p platform="AndroidPhone">The sheet shows the title, the page and a line that starts <q>Quality</q>. The chip on the person's page shows the new count.</p>
           <fig platform="AndroidPhone">
             <image keyref="img-sources-one"/>
           </fig>
-          <p platform="iOS">The step named <uicontrol keyref="ui-attach-source-document"/> opens. Its buttons, a camera, a folder and a chain, attach a photo, a file or a link to a copy of the record. You can leave it empty.</p>
-          <fig platform="iOS">
+          <p platform="iOS MacCatalyst">The step named <uicontrol keyref="ui-attach-source-document"/> opens. Its buttons, a camera, a folder and a chain, attach a photo, a file or a link to a copy of the record. You can leave it empty.</p>
+          <fig platform="iOS MacCatalyst">
             <image keyref="img-source-attach"/>
           </fig>
         </stepresult>
       </step>
-      <step platform="iOS">
+      <step platform="iOS MacCatalyst">
         <cmd>Choose <uicontrol keyref="ui-done"/>.</cmd>
         <stepresult>
           <p>The sheet shows the title, the author and the page, and the buttons <uicontrol keyref="ui-copy"/>, <uicontrol keyref="ui-citation"/>, <uicontrol keyref="ui-edit"/> and <uicontrol keyref="ui-remove"/>. If you chose how reliable the source is, a line that starts <q>Quality</q> shows too. The chip on the person's page shows the new count.</p>
@@ -96,8 +96,8 @@
     </steps>
     <result>
       <p>The choices for how reliable a source is start with <q>Not stated</q>. They run from unreliable or worked out up to direct and primary evidence. They rate how good the evidence is. They do not say that the fact is true. A copy of a record, such as a transcription, is second-hand evidence.</p>
-      <p platform="iOS">A fact can have many sources. In the sample tree, the birth of Charlotte Brontë has five books, each with its author and a line for its quality.</p>
-      <fig platform="iOS">
+      <p platform="iOS MacCatalyst">A fact can have many sources. In the sample tree, the birth of Charlotte Brontë has five books, each with its author and a line for its quality.</p>
+      <fig platform="iOS MacCatalyst">
         <image keyref="img-sources-list"/>
       </fig>
       <p>When a fact has one place, such as a birth place or a death place, <uicontrol keyref="ui-compare-records"/> shows on the sheet. It opens a page that lists what each source says about the place and how good each source is. Use it when two records give different answers.</p>

@@ -64,7 +64,7 @@
     </result>
     <postreq>
       <p>Choose a person's box to draw the tree again around that person. They become the person the chip that starts with <uicontrol keyref="ui-showing"/> names.</p>
-      <p>With the iPad on its side, a person's page shows the same tree beside it, with the same buttons. Drag the divider between them to make the tree wider. <uicontrol keyref="ui-family-tree"/> in the list on the left shows the tree alone, filling the screen. To read the page of the person in the middle of the tree, choose <uicontrol keyref="ui-person"/>.</p>
+      <p><ph platform="iPad">With the iPad on its side, a</ph><ph platform="MacCatalyst">A</ph> person's page shows the same tree beside it, with the same buttons. Drag the divider between them to make the tree wider. <uicontrol keyref="ui-family-tree"/> in the list on the left shows the tree alone, filling the screen. To read the page of the person in the middle of the tree, choose <uicontrol keyref="ui-person"/>.</p>
       <p>The same tree is the <term keyref="term-pedigree">pedigree</term> in older manuals. Next: <xref keyref="see-the-events-of-a-person"/>.</p>
     </postreq>
   </taskbody>

@@ -37,7 +37,7 @@
       <step>
         <cmd>Choose <uicontrol keyref="ui-search"/>.</cmd>
         <stepresult>
-          <p>The results come in two columns. The people are on the left. The events are on the right. A small badge on each person, such as <q>Sources: 10</q>, says how many sources back that person up. When the iPad is upright, the results are in one column, with buttons above them to show everything, only the people or only the events.</p>
+          <p>The results come in two columns. The people are on the left. The events are on the right. A small badge on each person, such as <q>Sources: 10</q>, says how many sources back that person up.<ph platform="iPad"> When the iPad is upright, the results are in one column, with buttons above them to show everything, only the people or only the events.</ph></p>
           <fig>
             <image keyref="img-search-results"/>
           </fig>

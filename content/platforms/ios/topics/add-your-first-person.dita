@@ -40,7 +40,7 @@
         </stepresult>
       </step>
       <step>
-        <cmd>Clear the box. Type a name for your tree, such as <userinput>My family</userinput>, then choose <uicontrol keyref="ui-create"/>.</cmd>
+        <cmd><ph platform="iOS">Clear the box. </ph>Type a name for your tree, such as <userinput>My family</userinput>, then choose <uicontrol keyref="ui-create"/>.</cmd>
         <stepresult>
           <p>The new tree opens on <uicontrol keyref="ui-home"/>. It has no people yet.</p>
         </stepresult>

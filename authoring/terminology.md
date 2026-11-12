@@ -368,6 +368,14 @@ Read from the iPhone and iPad apps on 11 November 2026, in the Alpha-2 walk ([`c
 | `ui-make-a-gedcom-7-copy` | Make a GEDCOM 7 copy | The choice, for a file another program made, that keeps a copy of its own in GEDCOM 7 and saves changes there. | none |
 | `ui-just-look` | Just look | The choice, for a file another program made, that opens it to look at and saves nothing. | none |
 
+### 2.12 Mac Alpha-2 additions
+
+Read from the Mac Catalyst app on 11 and 12 November 2026, in the Alpha-2 walk ([`content/platforms/macos/keys/ui-labels.ditamap`](../content/platforms/macos/keys/ui-labels.ditamap)). The Mac shows the iPad's words, so its map repeats the iPad's, with *Mac* as the word for the device (DEC-239). The one label the iPad map does not have is already listed above.
+
+| Key | Label as printed | What we say around it | Change |
+|---|---|---|---|
+| `ui-open` | Open | On the Mac: the button on a tree's card that makes it the open tree, and the button in the Mac's window for choosing a file. | none |
+
 ## 3. Domain terms
 
 The words the documentation uses for the ideas behind the app. A term in bold needs a glossary entry before a topic uses it. The seven entries that exist are in [`content/glossary/`](../content/glossary/).

@@ -45,7 +45,7 @@
           </fig>
         </stepresult>
       </step>
-      <step platform="AndroidPhone">
+      <step platform="AndroidPhone MacCatalyst">
         <cmd>Leave the list and open it again.</cmd>
         <info>
           <p>The list may not show the new name until you do.</p>

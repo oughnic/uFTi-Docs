@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<!-- The tour of the Mac app (DEC-239), written from the Mac Catalyst walk of 11 and 12 November 2026. The
+     window is the iPad layout on its side, so this page follows the iPad tour, without the upright iPad. -->
+<reference id="tour-of-the-screens" xml:lang="en-GB">
+  <title>The screens of the app</title>
+  <shortdesc>What each place in the list on the left shows, what the top of every screen holds, and what the More list opens.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-12"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Reference</category>
+      <keywords>
+        <keyword>app layout</keyword>
+        <keyword>side list</keyword>
+        <keyword>menu</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="home"/>
+    <resourceid appname="ufti" appid="more"/>
+    <resourceid appname="ufti" appid="workspaces.view"/>
+  </prolog>
+  <refbody>
+    <section>
+      <title>The list on the left</title>
+      <p>A list of five places runs down the left side of the window. The place you are in is shaded. Some places show your whole tree. Others show one person, the person named in the chip that starts with <uicontrol keyref="ui-showing"/>. The chip shows once you open someone.</p>
+      <table>
+        <title>The places in the list and what they show</title>
+        <tgroup cols="3">
+          <colspec colname="c1" colwidth="2*"/>
+          <colspec colname="c2" colwidth="3*"/>
+          <colspec colname="c3" colwidth="2*"/>
+          <thead>
+            <row>
+              <entry>Place</entry>
+              <entry>What it shows</entry>
+              <entry>Needs a person</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><uicontrol keyref="ui-home"/></entry>
+              <entry>The tree that is open, with a search box and the people you opened last.</entry>
+              <entry>No</entry>
+            </row>
+            <row>
+              <entry><uicontrol keyref="ui-person"/></entry>
+              <entry>The page of one person, with the family tree beside it.</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry><uicontrol keyref="ui-family-tree"/></entry>
+              <entry>A drawing of the person with parents, partners and children.</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry><uicontrol keyref="ui-events"/></entry>
+              <entry>The things that happened in that person's life.</entry>
+              <entry>Yes</entry>
+            </row>
+            <row>
+              <entry><uicontrol keyref="ui-more"/></entry>
+              <entry>A list of other places, such as your trees, your notes and the colours.</entry>
+              <entry>Some</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <note>If a page says <q>Select a person</q> or shows only the search box, it needs a person first. Search for someone, then open them. <xref keyref="a-page-says-no-person-selected"/> shows how.</note>
+    </section>
+    <section>
+      <title>The top of every screen</title>
+      <p>A line at the top names the tree and the page you are on. Choose a name in that line to go back to that page. A back arrow at the top left takes you back one screen. Below the line are three buttons.</p>
+      <ul>
+        <li><uicontrol keyref="ui-search"/>, with a magnifying glass, opens the search. It is not on <uicontrol keyref="ui-home"/>, because <uicontrol keyref="ui-home"/> has a search box of its own.</li>
+        <li><uicontrol keyref="ui-add"/> opens the sheet that adds something new. It fills the window. <xref keyref="add-another-person"/> shows it.</li>
+        <li><uicontrol keyref="ui-help"/>, with a question mark, opens the guide to the screen you are on in your web browser.</li>
+      </ul>
+      <p>Every field of a form also has a small help button of its own.</p>
+    </section>
+    <section>
+      <title><uicontrol keyref="ui-home"/></title>
+      <p>This is the first screen. It names the tree that is open and counts its people, families and events. It has a search box, two buttons and, once you have opened people, the names you can go back to. <xref keyref="find-a-person"/> shows how to search.</p>
+      <ul>
+        <li><uicontrol keyref="ui-all-people"/> lists everyone in the tree.</li>
+        <li><uicontrol keyref="ui-open-another-workspace"/> shows your trees. <xref keyref="remove-a-workspace"/> starts there.</li>
+        <li><uicontrol keyref="ui-continue-with"/> lists the people you opened last.</li>
+      </ul>
+      <fig>
+        <image keyref="img-home"/>
+      </fig>
+    </section>
+    <section>
+      <title><uicontrol keyref="ui-person"/></title>
+      <p>This is one person's page: their names, their birth and death, their family and their photos. The page is in two parts. The person is on the left, and their <uicontrol keyref="ui-family-tree"/> is on the right, with its own buttons. Drag the divider between the two parts to make one wider. <xref keyref="find-a-person"/> shows how to open a person.</p>
+      <fig>
+        <image keyref="img-person-page"/>
+      </fig>
+    </section>
+    <section>
+      <title><uicontrol keyref="ui-family-tree"/> and <uicontrol keyref="ui-events"/></title>
+      <p><xref keyref="see-a-family-tree"/> explains the tree. <xref keyref="see-the-events-of-a-person"/> explains the list of events.</p>
+      <fig>
+        <image keyref="img-events"/>
+      </fig>
+    </section>
+    <section>
+      <title>The <uicontrol keyref="ui-more"/> list</title>
+      <p>Choose <uicontrol keyref="ui-more"/> to see eight places. Each one opens a screen of its own, with a line under its heading that says what it is for.</p>
+      <ul>
+        <li><uicontrol keyref="ui-workspaces"/> lists your family trees, one card for each.</li>
+        <li><uicontrol keyref="ui-notes"/> shows your own notes about the person you are looking at. <xref keyref="add-a-note"/> shows how to write one.</li>
+        <li><uicontrol keyref="ui-where-records-are-kept"/> lists the archives, libraries and websites that your sources come from. <xref keyref="add-a-repository"/> shows how to add one.</li>
+        <li><uicontrol keyref="ui-who-made-this-tree"/> lists the people credited with the tree.</li>
+        <li><uicontrol keyref="ui-research-questions-and-notes"/> is your list of questions and ideas. <xref keyref="add-a-research-note"/> shows how to add one.</li>
+        <li><uicontrol keyref="ui-preferences"/> sets the colours and the light or dark look. <xref keyref="choose-how-it-looks"/> explains it.</li>
+        <li><uicontrol keyref="ui-about-ufti"/> shows the version of the app.</li>
+        <li><uicontrol keyref="ui-help"/> opens the guide to the screen you are on in your web browser.</li>
+      </ul>
+      <p>The lists for the whole tree are empty until you add something with <uicontrol keyref="ui-add"/>.</p>
+      <fig>
+        <image keyref="img-more-list"/>
+      </fig>
+      <fig>
+        <image keyref="img-submitters"/>
+      </fig>
+    </section>
+    <section>
+      <title>Your trees</title>
+      <p>Choose <uicontrol keyref="ui-workspaces"/> in the <uicontrol keyref="ui-more"/> list. Each card is one family tree. It tells you how many people, families and events the tree holds, and which tree is <uicontrol keyref="ui-active"/>. The cards sit side by side, as many to a row as fit in the window.</p>
+      <fig>
+        <image keyref="img-workspaces"/>
+      </fig>
+    </section>
+  </refbody>
+</reference>

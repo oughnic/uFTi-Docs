@@ -27,7 +27,7 @@
       <step>
         <cmd>Scroll to the bottom of the page and choose <uicontrol keyref="ui-edit"/>.</cmd>
         <stepresult>
-          <p>The page turns into a form, in one column on the left. With the iPad on its side, the family tree stays on the right. The form may open part of the way down, so scroll up to see the names.</p>
+          <p>The page turns into a form, in one column on the left. <ph platform="iPad">With the iPad on its side, the family tree stays on the right. The form may open part of the way down, so scroll up to see the names.</ph><ph platform="MacCatalyst">The family tree stays on the right.</ph></p>
           <fig>
             <image keyref="img-person-edit"/>
           </fig>
