@@ -18,6 +18,7 @@
       </keywords>
     </metadata>
     <resourceid appname="ufti" appid="workspaces.import"/>
+    <resourceid appname="ufti" appid="workspaces.list"/>
   </prolog>
   <taskbody>
     <context>

@@ -87,6 +87,8 @@
   <keydef keys="ui-discard"><topicmeta><keywords><keyword>Discard</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-existing-person"><topicmeta><keywords><keyword>Existing person</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-help"><topicmeta><keywords><keyword>Help</keyword></keywords></topicmeta></keydef>
+  <!-- the first line under the app's name on About uFTi, read on the iPhone and the Mac on 12 November 2026 -->
+  <keydef keys="ui-version"><topicmeta><keywords><keyword>Version</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-help-about-this-screen"><topicmeta><keywords><keyword>Help about this screen</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-high-contrast"><topicmeta><keywords><keyword>High contrast</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-home"><topicmeta><keywords><keyword>Home</keyword></keywords></topicmeta></keydef>

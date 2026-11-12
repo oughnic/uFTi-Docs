@@ -20,6 +20,7 @@
       </keywords>
     </metadata>
     <resourceid appname="ufti" appid="families.edit"/>
+    <resourceid appname="ufti" appid="families.view"/>
   </prolog>
   <taskbody>
     <prereq>

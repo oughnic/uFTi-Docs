@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!-- Find help and the version on the iPhone, the iPad and the Mac (help screen "about"). Written from the
+     Alpha-2 walks: About uFTi was read on the Mac on 12 November 2026 and on the iPhone the same day; the
+     iPad shows the iPhone's screens. Help opened the web browser on the Mac. -->
+<task id="find-help-and-the-version" xml:lang="en-GB">
+  <title>Find help and the version</title>
+  <shortdesc>Open the guide to the screen you are on, and read which version of the app you have.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-12"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>guide</keyword>
+        <keyword>About uFTi</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="about"/>
+  </prolog>
+  <taskbody>
+    <context>
+      <p>The button with a question mark at the top of a screen opens the guide to that screen in your web browser. Its full name is <q><keyword keyref="ui-help-about-this-screen"/></q>. <uicontrol keyref="ui-help"/> at the end of the <uicontrol keyref="ui-more"/> list does the same.</p>
+      <p>Many boxes on a form also have a small round button with a question mark. It explains that box.</p>
+      <p>The version is the number of your copy of <keyword keyref="product-name"/>. Give it when you ask someone about a problem, so they know which copy you have.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-more"/>, then <uicontrol keyref="ui-about-ufti"/>.</cmd>
+        <stepresult>
+          <p>A page opens with the name of the app and facts about your copy.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Read the line that starts <uicontrol keyref="ui-version"/>.</cmd>
+        <info>
+          <p>The number follows the word. The page also lists facts about your <keyword keyref="product-device"/>.</p>
+        </info>
+      </step>
+    </steps>
+    <result>
+      <p>You have the version to quote.</p>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="tour-of-the-screens"/> shows what the other places do.</p>
+    </postreq>
+  </taskbody>
+</task>

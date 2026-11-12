@@ -69,6 +69,7 @@
   <topicref href="../../platforms/android-tablet/topics/choose-how-it-looks.dita" keys="choose-how-it-looks" platform="AndroidTablet"/>
   <topicref href="../../platforms/ipad/topics/choose-how-it-looks.dita" keys="choose-how-it-looks" platform="iPad MacCatalyst"/>
   <topicref href="../../platforms/windows/topics/find-help-and-the-version.dita" keys="find-help-and-the-version" platform="WindowsWinUI"/>
+  <topicref href="../../platforms/ios/topics/find-help-and-the-version.dita" keys="find-help-and-the-version" platform="iOS MacCatalyst"/>
   <topicref href="../../platforms/windows/topics/a-page-says-no-person-selected.dita" keys="a-page-says-no-person-selected" platform="WindowsWinUI"/>
   <topicref href="../../platforms/android-phone/topics/a-page-says-no-person-selected.dita" keys="a-page-says-no-person-selected" platform="AndroidPhone"/>
   <topicref href="../../platforms/android-tablet/topics/a-page-says-no-person-selected.dita" keys="a-page-says-no-person-selected" platform="AndroidTablet"/>

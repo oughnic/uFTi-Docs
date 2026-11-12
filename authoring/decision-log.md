@@ -340,3 +340,4 @@ Part of the [authoring plan](authoring-plan.md). Status: Draft 0.4, 16 October 2
 | 11 November 2026 | The maintainer asked for the Mac leg on Mac Catalyst (DEC-236); the first walk stopped because the screen was locked. |
 | 11 November 2026 | The iPhone and iPad pages were written from the Alpha-2 reports: the iPhone shares the Android phone pages, and the iPad shares five of them (DEC-238). |
 | 12 November 2026 | The Mac Catalyst walk was finished, and the Mac pages were written from it: the Mac shares the iPad pages under the token MacCatalyst, and the AppKit pages were removed (DEC-239). |
+| 12 November 2026 | The iPhone, iPad and Mac help maps were filled: their pages now carry the identifiers for Workspaces, a family, the notes and who made the tree, and a new shared page, *Find help and the version*, answers About uFTi. Each has two gaps left: a form for a new record (stage 8 is not walked) and merging two people (DEC-195). |

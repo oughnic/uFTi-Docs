@@ -20,7 +20,7 @@
     </metadata>
     <resourceid appname="ufti" appid="home"/>
     <resourceid appname="ufti" appid="more"/>
-    <resourceid appname="ufti" appid="workspaces.view"/>
+    <resourceid appname="ufti" appid="workspaces.list"/>
   </prolog>
   <refbody>
     <section>
