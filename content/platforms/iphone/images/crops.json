@@ -78,5 +78,35 @@
     "noFocus": true,
     "workspaceHidden": true,
     "reason": "Cut before import below the button that fills the form from a document (an AI feature, which the documentation leaves out, DEC-020), which also leaves out the name of the workspace."
+  },
+  "img-start-first-run": {
+    "noFocus": true,
+    "reason": "The Home screen of the sample workspace as the app first opens. No one person is the subject."
+  },
+  "img-people-list": {
+    "workspaceHidden": true,
+    "reason": "Cut before import to the list, below the path at the top, which names the workspace."
+  },
+  "img-name-question": {
+    "noFocus": true,
+    "workspaceHidden": true,
+    "reason": "Cut before import to the box, which names a test person made for the walk and deleted after it."
+  },
+  "img-compare-records": {
+    "noFocus": true,
+    "workspaceHidden": true,
+    "reason": "Cut before import to the Evidence page, which names a place, not a person."
+  },
+  "img-open-other-program": {
+    "shows": "controls only",
+    "reason": "Cut before import to the page and its three buttons. It names a test file, not a person."
+  },
+  "img-date-editor": {
+    "workspaceHidden": true,
+    "reason": "Cut before import to the date in the form, which does not show the name of the workspace."
+  },
+  "img-date-not-sure": {
+    "workspaceHidden": true,
+    "reason": "Cut before import to the date in the form, which does not show the name of the workspace."
   }
 }

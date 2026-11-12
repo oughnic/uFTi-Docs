@@ -6,6 +6,7 @@
   <prolog>
     <critdates>
       <created date="2026-11-10"/>
+      <revised modified="2026-11-11"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -50,6 +51,7 @@
       <step>
         <cmd>Scroll to the bottom and choose <uicontrol keyref="ui-save"/>.</cmd>
         <stepresult>
+          <p platform="iPhone MacCatalyst">The list may not show the question at once. Choose <uicontrol keyref="ui-home"/>, then <uicontrol keyref="ui-more"/>, then <uicontrol keyref="ui-research-questions-and-notes"/> again.</p>
           <p>The question shows in the list. A line under it says whether it is open, and how many records link to it.</p>
           <fig>
             <image keyref="img-research-notes"/>

@@ -47,6 +47,9 @@
         <cmd>Choose <uicontrol keyref="ui-save-source"/>.</cmd>
       </step>
       <step>
+        <cmd>If the next step asks where in the source you found the fact, choose <uicontrol keyref="ui-add-source"/> at its bottom.</cmd>
+      </step>
+      <step>
         <cmd>Choose <uicontrol keyref="ui-done"/>, then <uicontrol keyref="ui-done"/> again.</cmd>
         <stepresult>
           <p>The number on the chip goes up by one.</p>

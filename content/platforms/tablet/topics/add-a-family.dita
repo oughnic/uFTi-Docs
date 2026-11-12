@@ -6,6 +6,7 @@
   <prolog>
     <critdates>
       <created date="2026-10-27"/>
+      <revised modified="2026-11-11"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -19,6 +20,7 @@
       </keywords>
     </metadata>
     <resourceid appname="ufti" appid="families.edit"/>
+    <resourceid appname="ufti" appid="families.view"/>
   </prolog>
   <taskbody>
     <prereq>
@@ -31,7 +33,7 @@
           <p>A person who is not in a family yet shows this button under <uicontrol keyref="ui-family"/>. The sheet that opens has the choice <q>Family</q> ticked for you.</p>
         </info>
         <stepresult>
-          <p>A form opens. The person you came from is already in one of the partner boxes.</p>
+          <p>A form opens. The person you came from is already in one of the partner boxes.<ph platform="iPad MacCatalyst"> The partners are on the left, and the date and place of the marriage and the ages are on the right.</ph></p>
         </stepresult>
       </step>
       <step>
@@ -58,11 +60,20 @@
           <p>A row appears for one child, with boxes for the names and the sex.</p>
         </stepresult>
       </step>
+      <step platform="iPad MacCatalyst">
+        <cmd>For a child who is already in the tree, choose <uicontrol keyref="ui-set"/> under <uicontrol keyref="ui-existing-person"/>. Type the name, choose the person from the list, then choose <uicontrol keyref="ui-done"/>.</cmd>
+        <stepresult>
+          <p>The row shows the child's name. Boxes for a new child run across the rest of the row. Leave them empty.</p>
+          <fig>
+            <image keyref="img-family-children"/>
+          </fig>
+        </stepresult>
+      </step>
       <step>
-        <cmd>Type the child's names and choose the sex. Then choose <uicontrol keyref="ui-set"/> for the birth date and for the birthplace.</cmd>
+        <cmd><ph platform="iPad MacCatalyst">For a new child, type</ph><ph platform="AndroidTablet">Type</ph> the child's names and choose the sex. Then choose <uicontrol keyref="ui-set"/> for the birth date and for the birthplace.</cmd>
         <stepresult>
           <p>A small window opens for each. Fill it in and choose <uicontrol keyref="ui-done"/>. The button then shows what you typed, or the start of it.</p>
-          <fig>
+          <fig platform="AndroidTablet">
             <image keyref="img-family-children"/>
           </fig>
         </stepresult>
@@ -70,7 +81,7 @@
       <step>
         <cmd>Scroll to the bottom and choose <uicontrol keyref="ui-save"/>.</cmd>
         <stepresult>
-          <p>The page of the family opens. It lists the partners, the marriage and the children.</p>
+          <p>The page of the family opens. It lists the partners, the marriage and the children.<ph platform="iPad MacCatalyst"> The list on the left lights <uicontrol keyref="ui-family-tree"/> while it is open.</ph></p>
           <fig>
             <image keyref="img-family-page"/>
           </fig>

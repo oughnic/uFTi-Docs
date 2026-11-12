@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
-<!-- The phone pages written from the Android walk carry the token AndroidPhone (issue 103). The tablet twins written from the Android tablet walk carry AndroidTablet (issue 20). The iPhone pages, written from the iPhone walk, carry iPhone (issue 21). The iPad pages, written from the iPad walk, carry iPad (issue 22), so the iPad no longer shares the computer pages (DEC-186). -->
+<!-- The phone pages written from the Android walk carry the token AndroidPhone (issue 103). The tablet twins written from the Android tablet walk carry AndroidTablet (issue 20). The iPhone pages, written from the iPhone walk, carry iPhone (issue 21); since the Alpha-2 walk the iPhone shares the Android phone's Look around (DEC-238). The iPad pages, written from the iPad walk, carry iPad (issue 22), so the iPad no longer shares the computer pages (DEC-186). The Mac manual documents Mac Catalyst, which is the iPad layout in a window: it shares the iOS and iPad pages by the token MacCatalyst, and has its own Look around and Keep it safe (DEC-239). The AppKit pages (token MacAppKit) were removed, because no manual used them any more. -->
 <!-- The Quick Start in order, shared by every manual (content model, section 3). A page that depends
      on the platform (getting the app, keeping a copy) or on the device idiom (adding a person, looking
      around) has one topic per platform or idiom, each topicref carrying its token and the same key,
@@ -12,22 +12,20 @@
   <topicref href="../../platforms/windows/topics/look-around.dita" keys="look-around" platform="WindowsWinUI"/>
   <topicref href="../../platforms/windows/topics/add-your-first-person.dita" keys="add-your-first-person" platform="WindowsWinUI"/>
   <topicref href="../../platforms/android/topics/get-ufti.dita" keys="get-ufti" platform="Android"/>
-  <topicref href="../../platforms/desktop/topics/add-your-first-person.dita" keys="add-your-first-person" platform="MacAppKit"/>
-  <topicref href="../../platforms/ios/topics/add-your-first-person.dita" keys="add-your-first-person" platform="iOS"/>
+  <topicref href="../../platforms/ios/topics/add-your-first-person.dita" keys="add-your-first-person" platform="iOS MacCatalyst"/>
   <topicref href="../../platforms/android-phone/topics/add-your-first-person.dita" keys="add-your-first-person" platform="AndroidPhone"/>
   <topicref href="../../platforms/android-tablet/topics/add-your-first-person.dita" keys="add-your-first-person" platform="AndroidTablet"/>
-  <topicref href="../../platforms/desktop/topics/look-around.dita" keys="look-around" platform="MacAppKit"/>
+  <topicref href="../../platforms/macos/topics/look-around.dita" keys="look-around" platform="MacCatalyst"/>
   <topicref href="../../platforms/ipad/topics/look-around.dita" keys="look-around" platform="iPad"/>
-  <topicref href="../../platforms/phone/topics/look-around.dita" keys="look-around" platform="iPhone"/>
-  <topicref href="../../platforms/android-phone/topics/look-around.dita" keys="look-around" platform="AndroidPhone"/>
+  <topicref href="../../platforms/android-phone/topics/look-around.dita" keys="look-around" platform="AndroidPhone iPhone"/>
   <topicref href="../../platforms/android-tablet/topics/look-around.dita" keys="look-around" platform="AndroidTablet"/>
-  <!-- say-where-you-found-it: the shared page is for every manual but Windows. MacAppKit keeps it for the Mac manual, and Mobile keeps it for the four phone and tablet manuals (the filter of each includes Mobile). The Windows page follows it with the same key. -->
-  <topicref href="../../topics/quick-start/say-where-you-found-it.dita" keys="say-where-you-found-it" platform="MacAppKit Mobile"/>
+  <!-- say-where-you-found-it: the shared page is for every manual but Windows. MacCatalyst keeps it for the Mac manual, and Mobile keeps it for the four phone and tablet manuals (the filter of each includes Mobile). The Windows page follows it with the same key. -->
+  <topicref href="../../topics/quick-start/say-where-you-found-it.dita" keys="say-where-you-found-it" platform="MacCatalyst Mobile"/>
   <topicref href="../../platforms/windows/topics/say-where-you-found-it.dita" keys="say-where-you-found-it" platform="WindowsWinUI"/>
   <topicref href="../../platforms/windows/topics/keep-it-safe.dita" keys="keep-it-safe" platform="WindowsWinUI"/>
   <topicref href="../../platforms/android/topics/keep-it-safe.dita" keys="keep-it-safe" platform="Android"/>
-  <!-- macOS (DEC-125): keep-it-safe is written. Get the app is not written yet: how readers get the Mac app is not decided. -->
-  <topicref href="../../platforms/macos/topics/keep-it-safe.dita" keys="keep-it-safe" platform="MacAppKit"/>
+  <!-- macOS (DEC-125, DEC-239): keep-it-safe is written from the Mac Catalyst walk. Get the app is not written yet: how readers get the Mac app is not decided. -->
+  <topicref href="../../platforms/macos/topics/keep-it-safe.dita" keys="keep-it-safe" platform="MacCatalyst"/>
   <!-- iPhone and iPad (DEC-130): keep-it-safe is written from the walk. Get the app is not written: how readers get the iOS apps is not decided. -->
   <topicref href="../../platforms/ios/topics/keep-it-safe.dita" keys="keep-it-safe" platform="iOS"/>
   <topicref href="../../topics/quick-start/what-next.dita" keys="what-next"/>

@@ -75,8 +75,36 @@
     "reason": "Cut before import to the top of the screen: the sheet covers the whole screen, so the name of the workspace is not on it. The subject is the one book in the list."
   },
   "img-note-form": {
+    "workspaceHidden": true,
+    "reason": "Cut before import to the form, below the trail, so the name of the workspace is not shown; the note names Charlotte."
+  },
+  "img-start-first-run": {
+    "noFocus": true,
+    "reason": "The Home screen of the sample workspace as the app first opens. No one person is the subject."
+  },
+  "img-people-list": {
+    "noFocus": true,
+    "reason": "The list of everyone in the tree. No one person is the subject."
+  },
+  "img-compare-records": {
     "noFocus": true,
     "workspaceHidden": true,
-    "reason": "Cut before import below the button that fills the form from a document (an AI feature, which the documentation leaves out, DEC-020), which also leaves out the name of the workspace."
+    "reason": "Cut before import to the Evidence page, which names a place, not a person."
+  },
+  "img-open-other-program": {
+    "shows": "controls only",
+    "reason": "Cut before import to the box and its three buttons. It names a test file, not a person."
+  },
+  "img-date-editor": {
+    "workspaceHidden": true,
+    "reason": "Cut before import to the date in the form, which does not show the name of the workspace."
+  },
+  "img-date-not-sure": {
+    "workspaceHidden": true,
+    "reason": "Cut before import to the date in the form, which does not show the name of the workspace."
+  },
+  "img-name-question": {
+    "workspaceHidden": true,
+    "reason": "Cut before import to the small box beside the form, which does not show the name of the workspace."
   }
 }

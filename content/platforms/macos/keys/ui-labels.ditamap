@@ -1,17 +1,134 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
-<!-- Words on screen that only the macOS app shows (authoring standards, section 6). The labels both
-     devices show are in content/keys/ui-labels.ditamap. This map is included first, so a definition
-     here wins. The menu and the Workspaces screen use the wording of the computer app (the Windows map
-     has the same keys), so the Mac keys repeat it. Family tree and Events were read on the Mac on 24
-     October 2026. -->
+<!-- Words on screen that the Mac app shows and the shared map does not, exactly as the app prints them
+     (DEC-239). The Mac manual documents Mac Catalyst, which shows the iPad's words: these labels were
+     read on the Mac in the Alpha-2 walk of 11 and 12 November 2026 and match the iPad map, so this map
+     repeats it, with Mac as the word for this device. The labels every device shows are in
+     content/keys/ui-labels.ditamap. This map is included first, so a definition here wins. -->
 <map id="macos-ui-labels" xml:lang="en-GB">
+  <!-- the word for this device in a topic that is shared with other devices (platform strategy, section 3.1) -->
+  <keydef keys="product-device"><topicmeta><keywords><keyword>Mac</keyword></keywords></topicmeta></keydef>
+  <!-- the list of places down the left side, and the list its last place opens -->
+  <keydef keys="ui-more"><topicmeta><keywords><keyword>More</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-gedzip-archive"><topicmeta><keywords><keyword>Everything (.gdz, recommended)</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-gedcom-file"><topicmeta><keywords><keyword>Family tree only (.ged)</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-family-tree"><topicmeta><keywords><keyword>Family tree</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-events"><topicmeta><keywords><keyword>Events</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-where-records-are-kept"><topicmeta><keywords><keyword>Where records are kept</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-who-made-this-tree"><topicmeta><keywords><keyword>Who made this tree</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-research-questions-and-notes"><topicmeta><keywords><keyword>Research questions and notes</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-preferences"><topicmeta><keywords><keyword>Preferences</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-about-ufti"><topicmeta><keywords><keyword>About uFTi</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-showing"><topicmeta><keywords><keyword>Showing</keyword></keywords></topicmeta></keydef>
+  <!-- the Workspaces screen and its boxes -->
   <keydef keys="ui-show-details"><topicmeta><keywords><keyword>Show details</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-remove"><topicmeta><keywords><keyword>Remove</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-cancel"><topicmeta><keywords><keyword>Cancel</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-ok"><topicmeta><keywords><keyword>OK</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-active"><topicmeta><keywords><keyword>Active</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-remove-workspace"><topicmeta><keywords><keyword>Remove workspace</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-which-version-of-gedcom"><topicmeta><keywords><keyword>Which version of GEDCOM?</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-gedcom-7"><topicmeta><keywords><keyword>GEDCOM 7 (recommended)</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-gedcom-551"><topicmeta><keywords><keyword>GEDCOM 5.5.1 (for older programs)</keyword></keywords></topicmeta></keydef>
+  <!-- search -->
+  <keydef keys="ui-refine-by"><topicmeta><keywords><keyword>Refine by</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-dates"><topicmeta><keywords><keyword>Dates</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-place"><topicmeta><keywords><keyword>Place</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-event-type"><topicmeta><keywords><keyword>Event type</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-sound-alike"><topicmeta><keywords><keyword>Approximate (sound-alike) matches</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-clear-filters"><topicmeta><keywords><keyword>Clear filters</keyword></keywords></topicmeta></keydef>
+  <!-- a person's page -->
+  <keydef keys="ui-edit"><topicmeta><keywords><keyword>Edit</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-delete-person"><topicmeta><keywords><keyword>Delete person</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-photos"><topicmeta><keywords><keyword>Photos</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-add-a-new-family"><topicmeta><keywords><keyword>Add a new family</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-add-event"><topicmeta><keywords><keyword>Add event</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-all-events"><topicmeta><keywords><keyword>All events</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-delete-event"><topicmeta><keywords><keyword>Delete event</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-note"><topicmeta><keywords><keyword>Note</keyword></keywords></topicmeta></keydef>
+  <!-- the family form and the family tree -->
+  <keydef keys="ui-first-partner"><topicmeta><keywords><keyword>Husband / partner 1</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-second-partner"><topicmeta><keywords><keyword>Wife / partner 2</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-marriage-date"><topicmeta><keywords><keyword>Marriage date</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-place-of-marriage"><topicmeta><keywords><keyword>Place of marriage</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-children"><topicmeta><keywords><keyword>Children</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-add-row"><topicmeta><keywords><keyword>Add row</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-set"><topicmeta><keywords><keyword>Set…</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-view-family-tree"><topicmeta><keywords><keyword>View family tree</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-delete-family"><topicmeta><keywords><keyword>Delete family</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-return-to-focus"><topicmeta><keywords><keyword>Return to focus</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-fit-to-screen"><topicmeta><keywords><keyword>Fit to screen</keyword></keywords></topicmeta></keydef>
+  <!-- the Add a record list -->
+  <!-- sources -->
+  <keydef keys="ui-compare-records"><topicmeta><keywords><keyword>Compare records that disagree</keyword></keywords></topicmeta></keydef>
+  <!-- the Photos buttons, and the iPad's own question about the camera -->
+  <keydef keys="ui-link-existing-media"><topicmeta><keywords><keyword>Link existing media</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-close"><topicmeta><keywords><keyword>Close</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-allow"><topicmeta><keywords><keyword>Allow</keyword></keywords></topicmeta></keydef>
+  <!-- preferences -->
+  <keydef keys="ui-theme"><topicmeta><keywords><keyword>Theme</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-oxford-and-slate"><topicmeta><keywords><keyword>Oxford and slate</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-appearance"><topicmeta><keywords><keyword>Appearance</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-follow-the-system"><topicmeta><keywords><keyword>Follow the system</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-light"><topicmeta><keywords><keyword>Light</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-dark"><topicmeta><keywords><keyword>Dark</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-more-forms"><topicmeta><keywords><keyword>More forms</keyword></keywords></topicmeta></keydef>
+  <!-- the Alpha-2 walk on 11 November 2026: the labels of the pages this manual now shares with the Android phone, and the source and file steps -->
+  <keydef keys="ui-add-note"><topicmeta><keywords><keyword>Add note</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-all-people"><topicmeta><keywords><keyword>All people</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-citation"><topicmeta><keywords><keyword>Citation</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-continue-with"><topicmeta><keywords><keyword>Continue with</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-copy"><topicmeta><keywords><keyword>Copy</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-date-of-the-entry"><topicmeta><keywords><keyword>Date of the entry</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-death"><topicmeta><keywords><keyword>Death</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-delete"><topicmeta><keywords><keyword>Delete</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-discard"><topicmeta><keywords><keyword>Discard</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-existing-person"><topicmeta><keywords><keyword>Existing person</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-help"><topicmeta><keywords><keyword>Help</keyword></keywords></topicmeta></keydef>
+  <!-- the first line under the app's name on About uFTi, read on the iPhone and the Mac on 12 November 2026 -->
+  <keydef keys="ui-version"><topicmeta><keywords><keyword>Version</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-help-about-this-screen"><topicmeta><keywords><keyword>Help about this screen</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-high-contrast"><topicmeta><keywords><keyword>High contrast</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-home"><topicmeta><keywords><keyword>Home</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-how-reliable-it-is"><topicmeta><keywords><keyword>How reliable it is</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-ink-and-parchment"><topicmeta><keywords><keyword>Ink and parchment</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-kind-of-name"><topicmeta><keywords><keyword>Kind of name</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-married-name"><topicmeta><keywords><keyword>Married name</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-more-details"><topicmeta><keywords><keyword>More details</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-more-other-calendars"><topicmeta><keywords><keyword>More: other calendars</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-name"><topicmeta><keywords><keyword>Name</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-open-another-workspace"><topicmeta><keywords><keyword>Open another workspace</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-other-names"><topicmeta><keywords><keyword>Other names</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-page-or-reference-number"><topicmeta><keywords><keyword>Page or reference number</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-pen-name"><topicmeta><keywords><keyword>Pen name</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-people-it-is-about"><topicmeta><keywords><keyword>People it is about</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-recent-people"><topicmeta><keywords><keyword>Recent people</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-repository"><topicmeta><keywords><keyword>Repository</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-research-note"><topicmeta><keywords><keyword>Research note</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-saving-another-programs-file"><topicmeta><keywords><keyword>Saving another program's file</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-status"><topicmeta><keywords><keyword>Status</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-submitter"><topicmeta><keywords><keyword>Submitter</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-use-an-existing-note"><topicmeta><keywords><keyword>Use an existing note</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-add-the-first-person"><topicmeta><keywords><keyword>Add the first person</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-attach-source-document"><topicmeta><keywords><keyword>Attach source document</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-just-look"><topicmeta><keywords><keyword>Just look</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-make-a-gedcom-7-copy"><topicmeta><keywords><keyword>Make a GEDCOM 7 copy</keyword></keywords></topicmeta></keydef>
+  <!-- the button on a tree's card, and the button in the Mac's window for choosing a file (Mac Catalyst walk, 12 November 2026) -->
+  <keydef keys="ui-open"><topicmeta><keywords><keyword>Open</keyword></keywords></topicmeta></keydef>
+  <!-- the forms that match a record, on the Add a record sheet, read on the iPhone and the Mac on 12 November 2026 -->
+  <keydef keys="ui-baptism-record"><topicmeta><keywords><keyword>Baptism record</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-birth-record"><topicmeta><keywords><keyword>Birth record</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-burial-record"><topicmeta><keywords><keyword>Burial record</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-death-record"><topicmeta><keywords><keyword>Death record</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-marriage-register-entry"><topicmeta><keywords><keyword>Marriage register entry</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-family-note"><topicmeta><keywords><keyword>Family note</keyword></keywords></topicmeta></keydef>
+  <!-- the event form, read on the iPhone and the Mac on 12 November 2026 (stage 4) -->
+  <keydef keys="ui-type"><topicmeta><keywords><keyword>Type</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-baptism"><topicmeta><keywords><keyword>Baptism</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-residence"><topicmeta><keywords><keyword>Residence</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-occupation"><topicmeta><keywords><keyword>Occupation</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-event"><topicmeta><keywords><keyword>Event</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-kind-of-event-in-words"><topicmeta><keywords><keyword>Kind of event, in words</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-other-event"><topicmeta><keywords><keyword>Other event</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-describe-this-image"><topicmeta><keywords><keyword>Describe this image</keyword></keywords></topicmeta></keydef>
 </map>

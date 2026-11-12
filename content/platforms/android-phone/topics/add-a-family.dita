@@ -6,7 +6,7 @@
   <prolog>
     <critdates>
       <created date="2026-10-27"/>
-      <revised modified="2026-11-10"/>
+      <revised modified="2026-11-11"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -75,7 +75,7 @@
       <step>
         <cmd>Scroll to the bottom and choose <uicontrol keyref="ui-save"/>.</cmd>
         <stepresult>
-          <p>The family is saved. A box may ask whether to discard changes. The family is already saved, so choosing <uicontrol keyref="ui-discard"/> only closes the form. The page of the family opens.</p>
+          <p>The family is saved. <ph platform="AndroidPhone">A box may ask whether to discard changes. The family is already saved, so choosing <uicontrol keyref="ui-discard"/> only closes the form. </ph>The page of the family opens.</p>
         </stepresult>
       </step>
     </steps>
