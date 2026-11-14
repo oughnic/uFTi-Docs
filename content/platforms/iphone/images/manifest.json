@@ -242,6 +242,19 @@
       "verifiedAppVersion": "0.2.0.993"
     },
     {
+      "key": "img-link-existing-media",
+      "file": "link-existing-media.png",
+      "sha256": "fe4dd7c715a557dd00e3b0425c4b4d6dcaed79798da7d6ddb597aefac089958b",
+      "width": 804,
+      "height": 600,
+      "stage": 0,
+      "workspace": "Brontë family of Haworth",
+      "focus": "Maria Branwell",
+      "capture": "simctl screenshot, simulator status bar overridden; cut and scaled before import (sips)",
+      "crop": null,
+      "verifiedAppVersion": "0.2.0.993"
+    },
+    {
       "key": "img-more-list",
       "file": "more-list.png",
       "sha256": "f59c8ceb890684fef51049f9a5ae8d54fb5014720fde12f7c913722a9982c4e3",
@@ -380,6 +393,32 @@
       "stage": 0,
       "workspace": "Brontë family of Haworth",
       "focus": "Patrick Brontë",
+      "capture": "simctl screenshot, simulator status bar overridden; cut and scaled before import (sips)",
+      "crop": null,
+      "verifiedAppVersion": "0.2.0.993"
+    },
+    {
+      "key": "img-photos-describe",
+      "file": "photos-describe.png",
+      "sha256": "77fc79b3f12a05b49e9974f24e7957a54e8833560bdde06dd7e1e45c4a20527d",
+      "width": 640,
+      "height": 472,
+      "stage": 0,
+      "workspace": "not shown",
+      "focus": "none",
+      "capture": "simctl screenshot, simulator status bar overridden; cut and scaled before import (sips)",
+      "crop": null,
+      "verifiedAppVersion": "0.2.0.993"
+    },
+    {
+      "key": "img-photos-with-picture",
+      "file": "photos-with-picture.png",
+      "sha256": "1ed372e2d96cdc2121d5e85e404a57a393ccef7637b0219109da3a8c6c075102",
+      "width": 804,
+      "height": 320,
+      "stage": 0,
+      "workspace": "Brontë family of Haworth",
+      "focus": "Maria Branwell",
       "capture": "simctl screenshot, simulator status bar overridden; cut and scaled before import (sips)",
       "crop": null,
       "verifiedAppVersion": "0.2.0.993"

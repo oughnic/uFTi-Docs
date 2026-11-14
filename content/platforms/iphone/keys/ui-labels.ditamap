@@ -128,4 +128,5 @@
   <keydef keys="ui-event"><topicmeta><keywords><keyword>Event</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-kind-of-event-in-words"><topicmeta><keywords><keyword>Kind of event, in words</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-other-event"><topicmeta><keywords><keyword>Other event</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-describe-this-image"><topicmeta><keywords><keyword>Describe this image</keyword></keywords></topicmeta></keydef>
 </map>

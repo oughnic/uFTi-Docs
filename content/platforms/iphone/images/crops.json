@@ -108,5 +108,10 @@
   "img-date-not-sure": {
     "workspaceHidden": true,
     "reason": "Cut before import to the date in the form, which does not show the name of the workspace."
+  },
+  "img-photos-describe": {
+    "shows": "controls only",
+    "workspaceHidden": true,
+    "reason": "Cut before import to the box, its typed description and its two buttons; the page behind it is dimmed and left out."
   }
 }

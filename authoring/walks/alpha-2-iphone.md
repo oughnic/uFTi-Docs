@@ -9,7 +9,7 @@ This report is public. It names no machine, no account, no serial number and no 
 - **The build.** The Alpha-2 build of the app, version 0.2.0, as a Release configuration build with the DevFlow agent (DEC-213), installed under a separate application identity, from a first run with its own empty data.
 - **The device.** The iPhone 17 Pro simulator, iOS 26.5, 1206 by 2622 pixels, portrait, in English (United Kingdom). The status bar was set to a fixed time and is cut off every picture.
 - **The look.** Oxford and slate, Light, chosen in Preferences before any picture.
-- **The data.** The Brontë sample, and a second tree built in the app by the manual's own tasks: Patrick Brontë, Maria Branwell, Charlotte Brontë and Arthur Bell Nicholls, the family of Patrick and Maria with Charlotte, a note, a place where records are kept, a maker of the tree, a source with its citation and a research question. A scratch person, Test Person, was added and deleted.
+- **The data.** The Brontë sample, and a second tree built in the app by the manual's own tasks: Patrick Brontë, Maria Branwell, Charlotte Brontë and Arthur Bell Nicholls, the family of Patrick and Maria with Charlotte, a note, a place where records are kept, a maker of the tree, a source with its citation and a research question. A scratch person, Test Person, was added and deleted. For the pictures, a drawing of Charlotte Brontë in silhouette was made for the walk and put in On My iPhone.
 
 The walk followed [the Brontë walkthrough](../bronte-build-walkthrough.md) by stage.
 
@@ -22,9 +22,10 @@ The walk followed [the Brontë walkthrough](../bronte-build-walkthrough.md) by s
 | 5 | A note. |
 | 6 | A place where records are kept, a source, its citation, the evidence page. |
 | 7 | A research question that names a person. |
+| 8 | The Photos buttons (14 November): the camera's question, the folder, the chain and the fourth button. |
 | 9 | Search and Refine by, Save as… to the phone, opening the saved copy, opening a file another program made, removing a tree. |
 
-**Not walked.** Stage 8 apart from the census form (pictures and the camera), *Use an existing note*, a saved copy that includes pictures, sharing, rotation, and the help rows on fields.
+**Not walked.** Taking a photo (a simulator has no camera), *Use an existing note*, a saved copy that includes pictures, sharing, rotation, and the help rows on fields.
 
 ## 2. What was found
 
@@ -64,20 +65,26 @@ Rows marked as a fault are for the app team, in the one list (DEC-214, changed b
 | 30 | The household of a census | For the 1841 census, the form chose the household of Arthur Bell Nicholls and Charlotte, a marriage of 1854, though Charlotte lived with her father in 1841. | For the app team |
 | 31 | Events (stage 4, 12 November) | With Charlotte open, **+** then **Other event** then **Add** opens the event form: **Type** (a list from Birth to Fact, ending with **Event**), **Kind of event, in words**, the date, **Time of day**, **Place** with matches from the tree, and more. A baptism (29 June 1816, Thornton) saved, went back to Home, and showed in her events between her birth and her marriage. **Add event** under the events opens the same form directly. A residence with **Edit as text** turned on and "from 25 February 1820 to 31 March 1855" reads back the same and shows in the list at once. **Event** with "Publication" in **Kind of event, in words** shows as "Event" in the list, and as Publication when opened. | Same as the Android phone page |
 | 32 | **Just look** (12 November) | As on the Mac (its rows 22 to 24): the box says "Opened to look at: uFTi will not change this file."; Home and the card do not say the tree is only for looking at; **Edit** opens the form, and **Save** gives "Couldn't save", which names the tree differently from its card and suggests opening the file again "in place", which a phone does not offer; **Cancel** then closes the form without the **Discard changes?** question. **Save as…** wrote a copy in On My iPhone but added no card; the copy, opened with **Add from file…**, could be changed. The chosen file was left unchanged. | As the Mac |
+| 33 | The Photos buttons (stage 8, 14 November) | Three buttons and "No attachments yet." The camera asks "“uFTi” would like to access the Camera" with the app's reason, as on the iPad. The folder opens the Files screen at **On My iPhone**, with a cross. The first choice of a picture opens **Describe this image**, "A short description is required for accessibility.", with **Cancel** and **OK**. | As the iPad, without its fault at the first choice |
+| 34 | A picture from the folder | After **OK**, or the keyboard's return key, the page still said "No attachments yet.", and no message showed. Five tries, on the sample and on a second tree, for three people, and after opening the page again. The picture was not in the chain's list afterwards. | A fault |
+| 35 | The camera with no camera | **Allow**, and every later tap of the camera button, closed the app. The app had found no camera. A simulator has none, so a reader's iPhone will not see this, but a Mac without a camera may. | A fault |
+| 36 | The chain and the fourth button | The chain opens **Link existing media** with the sample's three pictures, each with its description and "Used by 1 record(s)". One showed an empty frame in place of its picture. Choosing a picture adds it at once, and the fourth button, with a down arrow, shows. That button opens the iPhone's screen for choosing a folder at **On My iPhone**, with **Open** and no cross; the back arrow, then the cross, leaves it. | As the iPad and the Mac |
 
 ## 3. What the tooling could not do
 
 - The month, sex and other lists are the phone's own wheels. They were turned by hand, not by the driver.
 - The boxes the phone draws (the name question, **Discard changes?**, the Save as questions, **Remove workspace**) are cut from a copy of the simulator's screen.
-- The camera does not exist on a simulator.
+- The camera does not exist on a simulator. Choosing it closes the app (row 35), so taking a photo was not walked.
+- The **Describe this image** box is the phone's own. Its description was typed with the simulator's keyboard, without the ë.
 
 ## 4. What the manual has now
 
 The pictures were taken again on this build, for every key the iPhone manual uses, with new alternative text, and nine new ones: Home, the first run, the More list, all the people, the date editor, a date that is not sure, the name question, the evidence page and the page for another program's file.
 
-The pages were written from this report (DEC-238). The iPhone now shares the Android phone's pages for rows 1 to 20 and 25: the tour, Look around, Find a person, See a family tree, See the events of a person, Look at the sources of a fact, Add another person, Change a person, Add a family, Add a note, Choose how it looks, Enter a date, Say who made this tree, Add a place where records are kept, Add a research question and Remove a tree. Inside those pages, the iPhone differences are marked: no search button on Home (row 3), the marriage sheet (row 17), **Save source** then the citation step then the attachment step (row 19), the name shown at once in Who made this tree (row 9), and the lists to open again (row 21). *Add your first person* starts from the sample tree's Home, *Keep it safe* starts from **More**, and *Open a family tree file* has the page for another program's file (row 23). Since 12 November the iPhone also shares *Add an event* (row 31), and the iPhone, the iPad and the Mac share *Forms for records you have seen* (row 29), and a page of their own, *Find help and the version*, answers About uFTi. *Open a family tree file* now says what **Just look** does when you try to change the tree, and that the copy from **Save as…** must be opened before it can be changed (row 32).
+The pages were written from this report (DEC-238). The iPhone now shares the Android phone's pages for rows 1 to 20 and 25: the tour, Look around, Find a person, See a family tree, See the events of a person, Look at the sources of a fact, Add another person, Change a person, Add a family, Add a note, Choose how it looks, Enter a date, Say who made this tree, Add a place where records are kept, Add a research question and Remove a tree. Inside those pages, the iPhone differences are marked: no search button on Home (row 3), the marriage sheet (row 17), **Save source** then the citation step then the attachment step (row 19), the name shown at once in Who made this tree (row 9), and the lists to open again (row 21). *Add your first person* starts from the sample tree's Home, *Keep it safe* starts from **More**, and *Open a family tree file* has the page for another program's file (row 23). Since 12 November the iPhone also shares *Add an event* (row 31), and the iPhone, the iPad and the Mac share *Forms for records you have seen* (row 29), and a page of their own, *Find help and the version*, answers About uFTi. *Open a family tree file* now says what **Just look** does when you try to change the tree, and that the copy from **Save as…** must be opened before it can be changed (row 32). Since 14 November the iPhone shares *The Photos buttons* with the iPad and the Mac (rows 33 to 36), with three new pictures: the **Describe this image** box, the **Link existing media** list and the Photos part with a picture. The page tells the reader to look for the picture after **OK**, because of row 34.
 
 ## 5. Next
 
-- Walk the pictures and the camera of stage 8, and *Use an existing note* on the iPhone.
+- Walk *Use an existing note* on the iPhone. Taking a photo needs a device with a camera.
+- When row 34 is mended, walk the folder button again and take away the page's line about looking for the picture.
 - On 12 November, at the maintainer's request, the faults (rows 21, 22, 24, 26, 27 and 28), row 30, the New workspace box and the sample's missing pen name were sent to the app team, with the Mac's and the iPad's.

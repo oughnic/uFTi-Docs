@@ -150,4 +150,13 @@
   <keydef keys="img-open-other-program" href="../images/open-other-program.png" format="png" scope="local" platform="iPhone">
     <topicmeta><linktext>The page that opens for a file another program made, with the buttons Make a GEDCOM 7 copy and Just look, a line under each that says what it does, and Cancel</linktext></topicmeta>
   </keydef>
+  <keydef keys="img-photos-describe" href="../images/photos-describe.png" format="png" scope="local" platform="iPhone">
+    <topicmeta><linktext>The Describe this image box, which says a short description is required for accessibility, with a description typed in and the Cancel and OK buttons</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-photos-with-picture" href="../images/photos-with-picture.png" format="png" scope="local" platform="iPhone">
+    <topicmeta><linktext>The Photos part of Maria Branwell's page, with the camera, folder, chain and down-arrow buttons, and a picture of Haworth parsonage under them</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-link-existing-media" href="../images/link-existing-media.png" format="png" scope="local" platform="iPhone">
+    <topicmeta><linktext>The Link existing media list, with a box to search by description and two pictures from the tree, each with its description and how many records use it, and a Close button</linktext></topicmeta>
+  </keydef>
 </map>

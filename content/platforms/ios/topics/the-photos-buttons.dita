@@ -2,7 +2,11 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <!-- Shared by the iPhone, the iPad and the Mac. The Mac's buttons were walked on 12 November 2026: the folder,
      the Describe this image box, the chain with and without a picture, and the folder chooser of the fourth
-     button. The Mac's camera was not tried, so the camera's question is not described for the Mac. -->
+     button. The Mac's camera was not tried, so the camera's question is not described for the Mac.
+     The iPhone's were walked on 14 November 2026 on a simulator, with a drawing of Charlotte Brontë: the
+     camera's question; the folder, whose box opened at the first choice but whose picture was not added in
+     five tries; the chain, which added a picture from the tree; and the fourth button's folder chooser. A
+     simulator has no camera, so taking a photo was not tried. -->
 <concept id="the-photos-buttons" xml:lang="en-GB">
   <title>The Photos buttons</title>
   <shortdesc>What the buttons under Photos are for on a person, an event or a source.</shortdesc>
@@ -10,6 +14,7 @@
     <critdates>
       <created date="2026-10-29"/>
       <revised modified="2026-11-12"/>
+      <revised modified="2026-11-14"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -29,23 +34,33 @@
     <section>
       <title>The camera button</title>
       <p>The first button has a camera on it. It is for a new photo, such as a photo of a certificate.</p>
-      <p platform="iOS">The first time, the <keyword keyref="product-device"/> asks if <keyword keyref="product-name"/> may use the camera. Choose <uicontrol keyref="ui-allow"/> to take photos in the app. If you do not allow it, a box says that the camera is needed to photograph a document.</p>
+      <p platform="iPad iPhone">The first time, the <keyword keyref="product-device"/> asks if <keyword keyref="product-name"/> may use the camera. Choose <uicontrol keyref="ui-allow"/> to take photos in the app. If you do not allow it, a box says that the camera is needed to photograph a document.</p>
     </section>
     <section>
       <title>The folder button</title>
-      <p>The second button has a folder on it. It is for a picture or a scan that is already on your <keyword keyref="product-device"/>.<ph platform="iOS"> Your <keyword keyref="product-device"/> opens its own Files screen. Choose a picture, or choose the cross at the top to leave it.</ph><ph platform="MacCatalyst"> A panel for opening a file opens. Choose a picture, then <uicontrol keyref="ui-open"/>, or choose <uicontrol keyref="ui-cancel"/> to leave it.</ph></p>
-      <p platform="iPad MacCatalyst">A box named <wintitle keyref="ui-describe-this-image"/> then asks for a few words about the picture, for people who cannot see it. Type them and choose <uicontrol keyref="ui-ok"/>. The picture shows under the buttons.</p>
+      <p>The second button has a folder on it. It is for a picture or a scan that is already on your <keyword keyref="product-device"/>.<ph platform="iPad iPhone"> Your <keyword keyref="product-device"/> opens its own Files screen. Choose a picture, or choose the cross at the top to leave it.</ph><ph platform="MacCatalyst"> A panel for opening a file opens. Choose a picture, then <uicontrol keyref="ui-open"/>, or choose <uicontrol keyref="ui-cancel"/> to leave it.</ph></p>
+      <p>A box named <wintitle keyref="ui-describe-this-image"/> then asks for a few words about the picture, for people who cannot see it. Type them and choose <uicontrol keyref="ui-ok"/>.<ph platform="iPad MacCatalyst"> The picture shows under the buttons.</ph></p>
+      <fig platform="iPhone">
+        <image keyref="img-photos-describe"/>
+      </fig>
+      <p platform="iPhone">Look under the buttons. If they still say <q>No attachments yet</q>, the picture was not added, though no message says so. A picture that is already in the tree can be added with the chain button.</p>
       <p platform="iPad">If the Files screen closes and nothing is added, choose the folder button and the picture again.</p>
       <p platform="MacCatalyst">If the picture shows only as a thin strip, open the page again. The buttons under the picture, such as <uicontrol keyref="ui-edit"/>, can then be a long way down the page. Keep scrolling to reach them.</p>
     </section>
     <section>
       <title>The chain button</title>
-      <p>The third button has a chain link on it. It is for a picture that is already in this tree, so you can use it again on a second person. A list named <wintitle keyref="ui-link-existing-media"/> opens, with a box to search the pictures by what they show. A new tree has none yet. Choose <uicontrol keyref="ui-close"/> to leave it.</p>
+      <p>The third button has a chain link on it. It is for a picture that is already in this tree, so you can use it again on a second person. A list named <wintitle keyref="ui-link-existing-media"/> opens, with a box to search the pictures by what they show. A new tree has none yet. Choose <uicontrol keyref="ui-close"/> to leave it.<ph platform="iPhone"> Choose a picture to add it to the page. It shows under the buttons at once.</ph></p>
+      <fig platform="iPhone">
+        <image keyref="img-link-existing-media"/>
+      </fig>
       <p platform="iPad">If the app closes when you choose this button, open it again. Your tree and its pictures are kept.</p>
     </section>
     <section>
       <title>The fourth button</title>
-      <p>When a page already has pictures, a fourth button shows, with an arrow that points down. It copies all the pictures of that page to a folder. Your <keyword keyref="product-device"/> opens its own screen for choosing a folder.</p>
+      <p>When a page already has pictures, a fourth button shows, with an arrow that points down. It copies all the pictures of that page to a folder. Your <keyword keyref="product-device"/> opens its own screen for choosing a folder.<ph platform="iPhone"> To leave it without copying, choose the back arrow at the top, then the cross.</ph></p>
+      <fig platform="iPhone">
+        <image keyref="img-photos-with-picture"/>
+      </fig>
     </section>
   </conbody>
 </concept>
