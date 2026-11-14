@@ -6,6 +6,7 @@
   <prolog>
     <critdates>
       <created date="2026-10-31"/>
+      <revised modified="2026-11-11"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -17,15 +18,18 @@
       </keywords>
     </metadata>
     <resourceid appname="ufti" appid="search"/>
-    <resourceid appname="ufti" appid="home"/>
+    <resourceid appname="ufti" appid="people.list"/>
   </prolog>
   <taskbody>
     <context>
-      <p>The search box is at the top of every screen. It searches the tree that is open. There is no list of all your people: search is how you find one.</p>
+      <p>The search box is on <uicontrol keyref="ui-home"/>. It searches the tree that is open, and it also looks at the other names a person has. On other screens, the button with a magnifying glass at the top opens the search.</p>
     </context>
     <steps>
       <step>
-        <cmd>Type a name, a place or an event in the box at the top.</cmd>
+        <cmd>Choose <uicontrol keyref="ui-home"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Type a name, a place or an event in the search box.</cmd>
         <info>
           <p>For example, type <userinput>Patrick</userinput>.</p>
         </info>
@@ -33,7 +37,7 @@
       <step>
         <cmd>Choose <uicontrol keyref="ui-search"/>.</cmd>
         <stepresult>
-          <p>The results come in two columns. The people are on the left. The events are on the right. A small badge on each person, such as <q>Sources: 10</q>, says how many sources back that person up. When the iPad is upright, the results are in one column, with buttons above them to show everything, only the people or only the events.</p>
+          <p>The results come in two columns. The people are on the left. The events are on the right. A small badge on each person, such as <q>Sources: 10</q>, says how many sources back that person up.<ph platform="iPad"> When the iPad is upright, the results are in one column, with buttons above them to show everything, only the people or only the events.</ph></p>
           <fig>
             <image keyref="img-search-results"/>
           </fig>
@@ -48,6 +52,10 @@
     </steps>
     <result>
       <p>Now <uicontrol keyref="ui-family-tree"/>, <uicontrol keyref="ui-events"/> and <uicontrol keyref="ui-notes"/> all show that person.</p>
+      <p>To see everyone without a search, choose <uicontrol keyref="ui-all-people"/> on <uicontrol keyref="ui-home"/>. The list gives each person's name, years, sources and events.</p>
+      <fig>
+        <image keyref="img-people-list"/>
+      </fig>
     </result>
     <postreq>
       <p>To narrow the results, choose the button with the sliders next to <uicontrol keyref="ui-search"/>. A list named <uicontrol keyref="ui-refine-by"/> opens. Tick <uicontrol keyref="ui-dates"/>, <uicontrol keyref="ui-sex"/>, <uicontrol keyref="ui-place"/> or <uicontrol keyref="ui-event-type"/> to add a filter. Tick <uicontrol keyref="ui-sound-alike"/> to also find names that sound alike. Choose <uicontrol keyref="ui-clear-filters"/> to start again.</p>

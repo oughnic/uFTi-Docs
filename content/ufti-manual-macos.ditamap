@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
 <!-- The macOS manual (platform strategy, section 7; DEC-125): one bookmap at the root of the content
-     folder (DEC-045). Shared topics come from the Desktop idiom, which the Windows manual also uses. The
-     platform topics here carry MacAppKit. Chapters not yet written are left out, not stubbed. -->
+     folder (DEC-045). It documents Mac Catalyst (DEC-236). The app is the iPad layout in a window, so
+     the manual shares the iPad pages, and has its own pages where the Mac differs, under the token
+     MacCatalyst (DEC-239). Chapters not yet written are left out, not stubbed. -->
 <bookmap id="ufti-manual-macos" xml:lang="en-GB">
   <booktitle>
     <mainbooktitle>uFTi user manual: macOS</mainbooktitle>
@@ -23,13 +24,16 @@
     </booklists>
   </frontmatter>
   <chapter href="topics/quick-start/quick-start.dita" keys="quick-start">
-    <mapref href="platforms/macos/keys/images.ditamap" platform="MacAppKit" processing-role="resource-only"/>
-    <mapref href="platforms/macos/keys/ui-labels.ditamap" platform="MacAppKit" processing-role="resource-only"/>
+    <mapref href="platforms/macos/keys/images.ditamap" platform="MacCatalyst" processing-role="resource-only"/>
+    <mapref href="platforms/macos/keys/ui-labels.ditamap" platform="MacCatalyst" processing-role="resource-only"/>
     <mapref href="keys/ui-labels.ditamap" processing-role="resource-only"/>
     <mapref href="keys/product.ditamap" processing-role="resource-only"/>
     <mapref href="maps/structure/quick-start.ditamap"/>
   </chapter>
   <chapter href="topics/quick-start/five-things-to-know.dita" keys="five-things-to-know"/>
+  <chapter href="topics/tree/work-with-your-tree.dita" keys="work-with-your-tree">
+    <mapref href="maps/structure/work-with-your-tree.ditamap"/>
+  </chapter>
   <chapter href="topics/workspaces/bring-in-share-and-keep-safe.dita" keys="bring-in-share-and-keep-safe">
     <mapref href="maps/structure/bring-in-share-and-keep-safe.ditamap"/>
   </chapter>

@@ -6,9 +6,10 @@
      Mobile is the widest true one: a phone and a tablet behave alike. The reference for the files
      beside a tree exists on a computer only, because a phone keeps nothing a reader can see beside
      the tree. Keys sit on the topicrefs and match the file names. The Windows manual (Alpha-2) has its
-     own pages for the tasks it walked: where the shared computer page is no longer true of the Windows
-     app, the shared topicref carries MacAppKit and the Windows page follows it with the same key
-     and WindowsWinUI. -->
+     own pages for the tasks it walked: those pages carry WindowsWinUI. The shared computer pages that
+     only the AppKit Mac pages still used were removed with them (DEC-239). The Mac manual documents Mac Catalyst (DEC-239): like a phone or tablet, it
+     keeps its own copy of a file you open, so it shares the phone pages for files by the token
+     MacCatalyst, and has its own page for opening a file. -->
 <map id="bring-in-share-and-keep-safe-structure" xml:lang="en-GB">
   <mapref href="../../platforms/windows/keys/ui-labels-workspaces.ditamap" platform="WindowsWinUI" processing-role="resource-only"/>
   <topicref href="../../platforms/windows/topics/create-a-workspace.dita" keys="create-a-workspace" platform="WindowsWinUI"/>
@@ -16,20 +17,18 @@
   <topicref href="../../platforms/windows/topics/move-between-workspaces.dita" keys="move-between-workspaces" platform="WindowsWinUI"/>
   <topicref href="../../topics/workspaces/your-workspace-and-its-files.dita" keys="your-workspace-and-its-files"/>
   <topicref href="../../platforms/windows/topics/where-your-trees-are-saved.dita" keys="where-your-trees-are-saved" platform="WindowsWinUI"/>
-  <topicref href="../../platforms/desktop/topics/opened-files-and-copies.dita" keys="opened-files-and-copies" platform="MacAppKit"/>
   <topicref href="../../platforms/windows/topics/opened-files-and-copies.dita" keys="opened-files-and-copies" platform="WindowsWinUI"/>
-  <topicref href="../../platforms/desktop/topics/open-a-family-tree-file.dita" keys="open-a-family-tree-file" platform="MacAppKit"/>
   <topicref href="../../platforms/windows/topics/open-a-family-tree-file.dita" keys="open-a-family-tree-file" platform="WindowsWinUI"/>
   <topicref href="../../platforms/android-tablet/topics/open-a-family-tree-file.dita" keys="open-a-family-tree-file" platform="AndroidTablet"/>
   <topicref href="../../platforms/iphone/topics/open-a-family-tree-file.dita" keys="open-a-family-tree-file" platform="iPhone"/>
   <topicref href="../../platforms/ipad/topics/open-a-family-tree-file.dita" keys="open-a-family-tree-file" platform="iPad"/>
-  <topicref href="../../platforms/desktop/topics/remove-a-workspace.dita" keys="remove-a-workspace" platform="MacAppKit"/>
+  <topicref href="../../platforms/macos/topics/open-a-family-tree-file.dita" keys="open-a-family-tree-file" platform="MacCatalyst"/>
   <topicref href="../../platforms/windows/topics/remove-a-workspace.dita" keys="remove-a-workspace" platform="WindowsWinUI"/>
-  <topicref href="../../platforms/mobile/topics/remove-a-workspace.dita" keys="remove-a-workspace" platform="iPhone AndroidTablet iPad"/>
-  <topicref href="../../platforms/android-phone/topics/remove-a-workspace.dita" keys="remove-a-workspace" platform="AndroidPhone"/>
-  <topicref href="../../platforms/phone/topics/opened-files-and-copies.dita" keys="opened-files-and-copies" platform="Mobile"/>
+  <topicref href="../../platforms/mobile/topics/remove-a-workspace.dita" keys="remove-a-workspace" platform="AndroidTablet"/>
+  <topicref href="../../platforms/android-phone/topics/remove-a-workspace.dita" keys="remove-a-workspace" platform="AndroidPhone iPhone iPad MacCatalyst"/>
+  <topicref href="../../platforms/phone/topics/opened-files-and-copies.dita" keys="opened-files-and-copies" platform="Mobile MacCatalyst"/>
   <topicref href="../../platforms/desktop/topics/which-file-to-send.dita" keys="which-file-to-send" platform="Desktop"/>
-  <topicref href="../../platforms/phone/topics/which-file-to-send.dita" keys="which-file-to-send" platform="Mobile"/>
+  <topicref href="../../platforms/phone/topics/which-file-to-send.dita" keys="which-file-to-send" platform="Mobile MacCatalyst"/>
   <topicref href="../../platforms/desktop/topics/files-beside-your-tree.dita" keys="files-beside-your-tree" platform="Desktop"/>
   <topicref href="../../platforms/windows/topics/add-a-photo.dita" keys="add-a-photo" platform="WindowsWinUI"/>
   <topicref href="../../platforms/windows/topics/the-photos-buttons.dita" keys="the-photos-buttons" platform="WindowsWinUI"/>

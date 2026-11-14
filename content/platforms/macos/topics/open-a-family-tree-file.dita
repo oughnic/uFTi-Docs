@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!-- Open a family tree file on the Mac (DEC-239). Written from the Mac Catalyst walk of 12 November 2026:
+     Add from file… opens the Mac's own window for choosing a file. A uFTi file opened at once with a box that
+     counts what it holds; a file that another program made opened the page that asks what the app may do,
+     filling the window. The file chosen was left unchanged. Just look was walked the same day: a form opens,
+     but Save says the tree cannot be changed; Save as… writes a copy without adding a card, and the copy
+     opened with Add from file… could be changed. The file chosen was left unchanged. -->
+<task id="open-a-family-tree-file" xml:lang="en-GB">
+  <title>Open a family tree file</title>
+  <shortdesc>Bring a tree from another program, or a copy from a relative, into uFTi.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-12"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>import</keyword>
+        <keyword>GEDCOM</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="workspaces.import"/>
+  </prolog>
+  <taskbody>
+    <context>
+      <p>A <term keyref="term-family-tree-file">family tree file</term> ends in .ged or .gdz. Put the file in a folder on your Mac first, such as Documents. <keyword keyref="product-name"/> works on its own copy, so the file you choose stays as it was. <xref keyref="opened-files-and-copies"/> says more.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-more"/>, then <uicontrol keyref="ui-workspaces"/>, then <uicontrol keyref="ui-add-from-file"/>.</cmd>
+        <stepresult>
+          <p>The Mac's own window for choosing a file opens.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Find the file, choose it, then choose <uicontrol keyref="ui-open"/>.</cmd>
+        <stepresult>
+          <p>If <keyword keyref="product-name"/> wrote the file, a box names the tree and counts the people, families, events, sources and notes in it. It says <q>uFTi keeps its own copy; the file you chose is left as it was.</q></p>
+          <fig>
+            <image keyref="img-import-summary"/>
+          </fig>
+          <p>If another program made the file, a page opens first. It says the file was not made by <keyword keyref="product-name"/>, and asks what the app may do with it.</p>
+          <fig>
+            <image keyref="img-open-other-program"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step importance="optional">
+        <cmd>For a file that another program made, choose <uicontrol keyref="ui-make-a-gedcom-7-copy"/> or <uicontrol keyref="ui-just-look"/>.</cmd>
+        <choices>
+          <choice><uicontrol keyref="ui-make-a-gedcom-7-copy"/> keeps a copy of its own in GEDCOM 7, and saves your changes there. The file you chose is not touched. A box then counts what the tree holds.</choice>
+          <choice><uicontrol keyref="ui-just-look"/> opens the tree to look at, and the file is not touched. The box that follows says <q>Opened to look at: uFTi will not change this file.</q> A form still opens, but when you save it, a box says the tree cannot be changed. To change the tree later, choose <uicontrol keyref="ui-save-as"/> on its card to make a copy. Then open the copy with <uicontrol keyref="ui-add-from-file"/>.</choice>
+        </choices>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-ok"/>.</cmd>
+        <stepresult>
+          <p>The tree opens on <uicontrol keyref="ui-home"/>, and it has a new card on <uicontrol keyref="ui-workspaces"/>.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>The cards sit side by side, as many to a row as fit in the window. Choose <uicontrol keyref="ui-open"/> on a card to make that tree the open one. Choose <uicontrol keyref="ui-show-details"/> on a card to see which file it is.</p>
+      <fig>
+        <image keyref="img-workspaces"/>
+      </fig>
+      <note>A card takes its name from the file. If two cards have the same name, choose <uicontrol keyref="ui-show-details"/> on each to tell them apart.</note>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="keep-it-safe"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

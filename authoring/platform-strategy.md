@@ -24,7 +24,8 @@ uFTi is one .NET MAUI application. Three platforms are supported (DEC-019): **An
 | `AndroidTablet` | `android-tablet` | uFTi user manual: Android tablet | Android, tablet | None | 2 |
 | `iPhone` | `iphone` | uFTi user manual: iPhone | iOS, phone | None | 2 |
 | `iPad` | `ipad` | uFTi user manual: iPad | iOS, tablet | None | 2 |
-| `MacAppKit` | `macos` | uFTi user manual: macOS | macOS, desktop | No key map yet | 3 |
+| `MacAppKit` | `macos` | uFTi user manual: macOS | macOS, desktop (AppKit) | Retired: no filter includes it (DEC-239) | 3 |
+| `MacCatalyst` | `macos` | uFTi user manual: macOS | macOS, Mac Catalyst (the iPad layout in a window) | Key map and screenshot set (DEC-239) | 3 |
 
 **Reference devices.** The device or machine each manual's pictures are captured on. The key map records it (section 4).
 
@@ -60,7 +61,7 @@ Notes:
 | iPhone | `iPhone`, `iOS`, `Phone`, `Mobile`, `Touch` |
 | iPad | `iPad`, `iOS`, `Tablet`, `Mobile`, `Touch` |
 | Windows | `WindowsWinUI`, `Desktop`, `Pointer` |
-| macOS | `MacAppKit`, `Desktop`, `Pointer` |
+| macOS | `MacCatalyst` (DEC-239) |
 
 **Use the widest token that is true.** Android permissions: `Android`. Behaviour of the tablet idiom on both operating systems: `Tablet`. Swipe gestures: `Touch`. A feature of the iPad alone: `iPad`. Keeping to group tokens means a new manual never needs edits throughout the source. Add a token beyond the starting set only when it would be used in at least two places.
 

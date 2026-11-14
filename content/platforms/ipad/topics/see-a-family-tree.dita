@@ -6,6 +6,7 @@
   <prolog>
     <critdates>
       <created date="2026-10-31"/>
+      <revised modified="2026-11-11"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -45,7 +46,7 @@
       <step>
         <cmd>Choose a line in the sheet.</cmd>
         <info>
-          <p>The marriage line opens the page of that family. A child's line shows the tree of that child. <q>Open family record</q> is another way to open the family page. To close the sheet without choosing, choose the cross at its top right.</p>
+          <p>The marriage line opens the page of that family. A child's line shows the tree of that child. <q>Open family record</q> is another way to open the family page. To close the sheet without choosing, choose the cross at its top right. Close it before you leave the tree, or it may still be open when you come back.</p>
         </info>
       </step>
       <step>
@@ -63,7 +64,7 @@
     </result>
     <postreq>
       <p>Choose a person's box to draw the tree again around that person. They become the person the chip that starts with <uicontrol keyref="ui-showing"/> names.</p>
-      <p>The tree and a person's page are two screens. The tree never shows the page beside it, even with the iPad on its side. To read the page of the person in the middle of the tree, choose <uicontrol keyref="ui-person"/> in the list on the left. To go back to the tree, choose <uicontrol keyref="ui-family-tree"/>.</p>
+      <p><ph platform="iPad">With the iPad on its side, a</ph><ph platform="MacCatalyst">A</ph> person's page shows the same tree beside it, with the same buttons. Drag the divider between them to make the tree wider. <uicontrol keyref="ui-family-tree"/> in the list on the left shows the tree alone, filling the screen. To read the page of the person in the middle of the tree, choose <uicontrol keyref="ui-person"/>.</p>
       <p>The same tree is the <term keyref="term-pedigree">pedigree</term> in older manuals. Next: <xref keyref="see-the-events-of-a-person"/>.</p>
     </postreq>
   </taskbody>

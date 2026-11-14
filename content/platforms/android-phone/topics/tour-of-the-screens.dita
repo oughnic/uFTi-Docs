@@ -6,6 +6,7 @@
   <prolog>
     <critdates>
       <created date="2026-11-10"/>
+      <revised modified="2026-11-11"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -75,6 +76,7 @@
         <li><uicontrol keyref="ui-add"/> opens the sheet that adds something new. <xref keyref="add-another-person"/> shows it.</li>
         <li><uicontrol keyref="ui-help-about-this-screen"/>, with a question mark, opens the guide to the screen you are on in the web browser of your <keyword keyref="product-device"/>.</li>
       </ul>
+      <p platform="iPhone">On <uicontrol keyref="ui-home"/> the search button is not shown, because <uicontrol keyref="ui-home"/> has a search box of its own.</p>
       <p>The chip that starts with <uicontrol keyref="ui-showing"/> names the person the bar is showing. Every field of a form also has a small help button of its own.</p>
     </section>
     <section>

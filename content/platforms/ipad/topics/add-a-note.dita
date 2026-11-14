@@ -17,6 +17,8 @@
       </keywords>
     </metadata>
     <resourceid appname="ufti" appid="notes.edit"/>
+    <resourceid appname="ufti" appid="notes.list"/>
+    <resourceid appname="ufti" appid="notes.record"/>
   </prolog>
   <taskbody>
     <prereq>

@@ -1,0 +1,128 @@
+{
+  "img-start-first-run": {
+    "noFocus": true,
+    "reason": "Cut before import below the title bar: no person is open, or the subject names no person."
+  },
+  "img-home": {
+    "noFocus": true,
+    "reason": "Cut before import below the title bar: no person is open, or the subject names no person."
+  },
+  "img-person-add": {
+    "noFocus": true,
+    "reason": "Cut before import below the title bar: no person is open, or the subject names no person."
+  },
+  "img-people-list": {
+    "noFocus": true,
+    "reason": "Cut before import below the title bar: no person is open, or the subject names no person."
+  },
+  "img-date-editor": {
+    "workspaceHidden": true,
+    "noFocus": true,
+    "reason": "Cut before import below the title bar: the name of the workspace is not on it (a box, a sheet or a part of a form, cut before import below the window's title bar); no person is open, or the subject names no person."
+  },
+  "img-date-not-sure": {
+    "workspaceHidden": true,
+    "reason": "Cut before import below the title bar: the name of the workspace is not on it (a box, a sheet or a part of a form, cut before import below the window's title bar)."
+  },
+  "img-name-question": {
+    "workspaceHidden": true,
+    "reason": "Cut before import below the title bar: the name of the workspace is not on it (a box, a sheet or a part of a form, cut before import below the window's title bar)."
+  },
+  "img-add-record": {
+    "workspaceHidden": true,
+    "reason": "Cut before import below the title bar: the name of the workspace is not on it (a box, a sheet or a part of a form, cut before import below the window's title bar)."
+  },
+  "img-add-record-lower": {
+    "workspaceHidden": true,
+    "reason": "Cut before import below the title bar: the name of the workspace is not on it (a box, a sheet or a part of a form, cut before import below the window's title bar)."
+  },
+  "img-add-record-more-forms": {
+    "workspaceHidden": true,
+    "reason": "Cut before import below the title bar: the name of the workspace is not on it (a box, a sheet or a part of a form, cut before import below the window's title bar)."
+  },
+  "img-create-workspace-dialog": {
+    "shows": "controls only",
+    "workspaceHidden": true,
+    "reason": "Cut before import below the title bar: the name of the workspace is not on it (a box, a sheet or a part of a form, cut before import below the window's title bar); no person is open, or the subject names no person."
+  },
+  "img-remove-workspace": {
+    "workspaceHidden": true,
+    "noFocus": true,
+    "reason": "Cut before import below the title bar: the name of the workspace is not on it (a box, a sheet or a part of a form, cut before import below the window's title bar); no person is open, or the subject names no person."
+  },
+  "img-save-as-choice": {
+    "shows": "controls only",
+    "workspaceHidden": true,
+    "reason": "Cut before import below the title bar: the name of the workspace is not on it (a box, a sheet or a part of a form, cut before import below the window's title bar); no person is open, or the subject names no person."
+  },
+  "img-save-as-version": {
+    "shows": "controls only",
+    "workspaceHidden": true,
+    "reason": "Cut before import below the title bar: the name of the workspace is not on it (a box, a sheet or a part of a form, cut before import below the window's title bar); no person is open, or the subject names no person."
+  },
+  "img-import-summary": {
+    "workspaceHidden": true,
+    "noFocus": true,
+    "reason": "Cut before import below the title bar: the name of the workspace is not on it (a box, a sheet or a part of a form, cut before import below the window's title bar); no person is open, or the subject names no person."
+  },
+  "img-open-other-program": {
+    "shows": "controls only",
+    "workspaceHidden": true,
+    "reason": "Cut before import below the title bar: the name of the workspace is not on it (a box, a sheet or a part of a form, cut before import below the window's title bar); no person is open, or the subject names no person."
+  },
+  "img-search-results": {
+    "noFocus": true,
+    "reason": "Cut before import below the title bar: no person is open, or the subject names no person."
+  },
+  "img-search-refine": {
+    "shows": "controls only",
+    "reason": "Cut before import below the title bar: no person is open, or the subject names no person."
+  },
+  "img-family-children": {
+    "workspaceHidden": true,
+    "reason": "Cut before import below the title bar: the name of the workspace is not on it (a box, a sheet or a part of a form, cut before import below the window's title bar)."
+  },
+  "img-tree-marriage": {
+    "workspaceHidden": true,
+    "reason": "Cut before import below the title bar: the name of the workspace is not on it (a box, a sheet or a part of a form, cut before import below the window's title bar)."
+  },
+  "img-sources-list": {
+    "workspaceHidden": true,
+    "noFocus": true,
+    "reason": "Cut before import below the title bar: the name of the workspace is not on it (a box, a sheet or a part of a form, cut before import below the window's title bar); no person is open, or the subject names no person."
+  },
+  "img-sources-empty": {
+    "shows": "controls only",
+    "workspaceHidden": true,
+    "reason": "Cut before import below the title bar: the name of the workspace is not on it (a box, a sheet or a part of a form, cut before import below the window's title bar); no person is open, or the subject names no person."
+  },
+  "img-source-new": {
+    "shows": "controls only",
+    "workspaceHidden": true,
+    "reason": "Cut before import below the title bar: the name of the workspace is not on it (a box, a sheet or a part of a form, cut before import below the window's title bar); no person is open, or the subject names no person."
+  },
+  "img-source-attach": {
+    "shows": "controls only",
+    "workspaceHidden": true,
+    "reason": "Cut before import below the title bar: the name of the workspace is not on it (a box, a sheet or a part of a form, cut before import below the window's title bar); no person is open, or the subject names no person."
+  },
+  "img-sources-one": {
+    "workspaceHidden": true,
+    "noFocus": true,
+    "reason": "Cut before import below the title bar: the name of the workspace is not on it (a box, a sheet or a part of a form, cut before import below the window's title bar); no person is open, or the subject names no person."
+  },
+  "img-citation-add": {
+    "workspaceHidden": true,
+    "noFocus": true,
+    "reason": "Cut before import below the title bar: the name of the workspace is not on it (a box, a sheet or a part of a form, cut before import below the window's title bar); no person is open, or the subject names no person."
+  },
+  "img-compare-records": {
+    "workspaceHidden": true,
+    "noFocus": true,
+    "reason": "Cut before import below the title bar: the name of the workspace is not on it (a box, a sheet or a part of a form, cut before import below the window's title bar); no person is open, or the subject names no person."
+  },
+  "img-preferences": {
+    "noFocus": true,
+    "reason": "Cut before import below the title bar: no person is open, or the subject names no person."
+  }
+}

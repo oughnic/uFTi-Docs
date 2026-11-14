@@ -2,7 +2,7 @@
 <!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
 <!-- The iPhone manual (platform strategy, section 7; DEC-080): one bookmap at the root of the content
      folder (DEC-045). The pages written from the iPhone walk carry iPhone (DEC-183); the pages a phone and
-     a tablet share carry Mobile or iOS. Chapters not yet written are left out, not stubbed. -->
+     a tablet share carry Mobile or iOS. Since the Alpha-2 walk, most pages are the Android phone's, shared (DEC-238). Chapters not yet written are left out, not stubbed. -->
 <bookmap id="ufti-manual-iphone" xml:lang="en-GB">
   <booktitle>
     <mainbooktitle>uFTi user manual: iPhone</mainbooktitle>
