@@ -88,3 +88,4 @@ The pages were written from this report (DEC-238). The iPhone now shares the And
 - Walk *Use an existing note* on the iPhone. Taking a photo needs a device with a camera.
 - When row 34 is mended, walk the folder button again and take away the page's line about looking for the picture.
 - On 12 November, at the maintainer's request, the faults (rows 21, 22, 24, 26, 27 and 28), row 30, the New workspace box and the sample's missing pen name were sent to the app team, with the Mac's and the iPad's.
+- On 14 November, at the maintainer's request, rows 34 and 35 were sent to the app team as two faults.
