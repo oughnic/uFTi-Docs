@@ -2,7 +2,7 @@
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <!-- The chapter "Work with your tree" (authoring plan, section 3.4, chapters 3 to 8 in brief): what a
      reader does once a tree is open. These pages describe the computer idiom, so each topicref carries
-     the token Desktop (DEC-093); the phone twins written from the Android walk carry AndroidPhone, the tablet twins written from the Android tablet walk carry AndroidTablet, and the iPad twins written from the iPad walk carry iPad. Since the Alpha-2 walk (DEC-238), the iPhone shares the Android phone pages: their topicrefs carry both tokens, and the few iPhone differences are marked inside the pages. The iPad shares the Android phone pages for the sources, dates, places where records are kept and research questions, with the iOS differences marked the same way. Keys sit on the topicrefs and match the file names.
+     the token Desktop (DEC-093); the phone twins written from the Android walk carry AndroidPhone, the tablet twins written from the Android tablet walk carry AndroidTablet, and the iPad twins written from the iPad walk carry iPad. Since the Alpha-2 walk (DEC-238), the iPhone shares the Android phone pages: their topicrefs carry both tokens, and the few iPhone differences are marked inside the pages. The iPad shares the Android phone pages for the sources, dates, places where records are kept and research questions, with the iOS differences marked the same way. Since the Alpha-2 tablet walk (DEC-241) the Android tablet has its own pages for the sources, who made the tree, where records are kept and research questions, and shares the pages for a person, a family and events with the iPad and the Mac. Keys sit on the topicrefs and match the file names.
      The Windows manual (Alpha-2) has its own pages, written from the Windows walk of 10 November 2026, each carrying the token WindowsWinUI. The shared computer pages (token Desktop) that this chapter used to list have been deleted, so no topicref here carries Desktop any more, and the Mac manual lists no page for these keys until Mac pages are written. Since the Mac Catalyst walk (DEC-239) the Mac manual shares the iPad pages and the shared Android phone pages that the iPad uses, by the token MacCatalyst, with its own tour; it also shares Say who made this tree. The photos buttons were not walked on the Mac, so it has no page for them yet. The page for the photos buttons is the exception: its Windows topicref is in the chapter "Bring in, share and keep safe". Three Windows pages have no shared page: remove-a-person, add-a-later-family and see-a-familys-page. A fourth, find-help-and-the-version, is Windows only too. The words on screen that only these pages use are in the label map included first. -->
 <map id="work-with-your-tree-structure" xml:lang="en-GB">
   <mapref href="../../platforms/windows/keys/ui-labels-people.ditamap" platform="WindowsWinUI" processing-role="resource-only"/>
@@ -33,7 +33,7 @@
   <topicref href="../../topics/tree/places.dita" keys="places"/>
   <topicref href="../../topics/tree/names.dita" keys="names"/>
   <topicref href="../../platforms/windows/topics/look-at-the-sources-of-a-fact.dita" keys="look-at-the-sources-of-a-fact" platform="WindowsWinUI"/>
-  <topicref href="../../platforms/mobile/topics/look-at-the-sources-of-a-fact.dita" keys="look-at-the-sources-of-a-fact" platform="AndroidTablet"/>
+  <topicref href="../../platforms/android-tablet/topics/look-at-the-sources-of-a-fact.dita" keys="look-at-the-sources-of-a-fact" platform="AndroidTablet"/>
   <topicref href="../../platforms/android-phone/topics/look-at-the-sources-of-a-fact.dita" keys="look-at-the-sources-of-a-fact" platform="AndroidPhone iPhone iPad MacCatalyst"/>
   <topicref href="../../platforms/windows/topics/add-another-person.dita" keys="add-another-person" platform="WindowsWinUI"/>
   <topicref href="../../platforms/android-phone/topics/add-another-person.dita" keys="add-another-person" platform="AndroidPhone iPhone"/>
@@ -57,8 +57,11 @@
   <topicref href="../../platforms/android-phone/topics/forms-for-records.dita" keys="forms-for-records" platform="AndroidPhone iPhone iPad MacCatalyst"/>
   <topicref href="../../platforms/android-phone/topics/take-a-photo.dita" keys="take-a-photo" platform="AndroidPhone"/>
   <topicref href="../../platforms/android-phone/topics/say-who-made-this-tree.dita" keys="say-who-made-this-tree" platform="AndroidPhone iPhone MacCatalyst"/>
+  <topicref href="../../platforms/android-tablet/topics/say-who-made-this-tree.dita" keys="say-who-made-this-tree" platform="AndroidTablet"/>
   <topicref href="../../platforms/android-phone/topics/add-a-repository.dita" keys="add-a-repository" platform="AndroidPhone iPhone iPad MacCatalyst"/>
+  <topicref href="../../platforms/android-tablet/topics/add-a-repository.dita" keys="add-a-repository" platform="AndroidTablet"/>
   <topicref href="../../platforms/android-phone/topics/add-a-research-note.dita" keys="add-a-research-note" platform="AndroidPhone iPhone iPad MacCatalyst"/>
+  <topicref href="../../platforms/android-tablet/topics/add-a-research-note.dita" keys="add-a-research-note" platform="AndroidTablet"/>
   <!-- the-photos-buttons: the Windows topicref is in bring-in-share-and-keep-safe.ditamap. The Mac shares
        the iOS page since its walk of 12 November 2026 (DEC-239). -->
   <topicref href="../../platforms/android-phone/topics/the-photos-buttons.dita" keys="the-photos-buttons" platform="AndroidPhone"/>

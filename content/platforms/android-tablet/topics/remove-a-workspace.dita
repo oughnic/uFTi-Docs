@@ -6,6 +6,7 @@
   <prolog>
     <critdates>
       <created date="2026-10-29"/>
+      <revised modified="2026-11-15"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -21,7 +22,7 @@
   <taskbody>
     <steps>
       <step>
-        <cmd>On <uicontrol keyref="ui-workspaces"/>, find the card of the tree.</cmd>
+        <cmd>Choose <uicontrol keyref="ui-workspaces"/> in the list on the left, and find the card of the tree.</cmd>
       </step>
       <step>
         <cmd>Choose <uicontrol keyref="ui-remove"/> on that card.</cmd>
@@ -34,10 +35,13 @@
       </step>
       <step>
         <cmd>Choose <uicontrol keyref="ui-remove"/> in the box, or <uicontrol keyref="ui-cancel"/> to stop.</cmd>
+        <stepresult>
+          <p>The card is gone. If you removed the tree that was open and you have another, that one opens.</p>
+        </stepresult>
       </step>
     </steps>
     <result>
-      <p>The card is gone, and a line at the bottom says the tree was removed. The file is still on your <keyword keyref="product-device"/>. Open it again with <uicontrol keyref="ui-add-from-file"/> at any time.</p>
+      <p>The file is still on your tablet. Open it again with <uicontrol keyref="ui-add-from-file"/> at any time. If you remove your only tree, the app makes an empty tree named <q>default</q> and opens it.</p>
     </result>
   </taskbody>
 </task>

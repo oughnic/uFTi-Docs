@@ -6,6 +6,7 @@
   <prolog>
     <critdates>
       <created date="2026-10-27"/>
+      <revised modified="2026-11-15"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -26,16 +27,16 @@
       <step>
         <cmd>Choose <uicontrol keyref="ui-add"/> at the top right.</cmd>
         <stepresult>
-          <p>The sheet named <uicontrol keyref="ui-add-a-record"/> opens.</p>
+          <p>The sheet named <uicontrol keyref="ui-add-a-record"/> opens in the middle of the screen.</p>
         </stepresult>
       </step>
       <step>
         <cmd>Choose <uicontrol keyref="ui-note"/> under the part for a note, then choose <uicontrol keyref="ui-add-button"/> at the bottom.</cmd>
         <info>
-          <p>Scroll the sheet to find the part.</p>
+          <p>The part is headed <q>Add a note to</q> and the name of the person. The button stays grey until you choose a form.</p>
         </info>
         <stepresult>
-          <p>A form opens with one box for the note.</p>
+          <p>A form opens. It has a box for the note, and lists for <uicontrol keyref="ui-format"/> and <uicontrol keyref="ui-language"/>.</p>
           <fig>
             <image keyref="img-note-form"/>
           </fig>
@@ -47,7 +48,7 @@
       <step>
         <cmd>Choose <uicontrol keyref="ui-notes"/> in the list on the left.</cmd>
         <stepresult>
-          <p>The note shows under <uicontrol keyref="ui-notes"/>, with <uicontrol keyref="ui-edit"/> and a button to delete it.</p>
+          <p>Each note of that person is a row, with <uicontrol keyref="ui-edit"/> and a button to delete it. <uicontrol keyref="ui-add-note"/> writes another one. <uicontrol keyref="ui-use-an-existing-note"/> adds a note that is already in the tree.</p>
           <fig>
             <image keyref="img-notes"/>
           </fig>

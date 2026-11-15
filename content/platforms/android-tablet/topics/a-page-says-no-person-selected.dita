@@ -6,6 +6,7 @@
   <prolog>
     <critdates>
       <created date="2026-10-27"/>
+      <revised modified="2026-11-15"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -18,7 +19,7 @@
   </prolog>
   <troublebody>
     <condition>
-      <p>You choose <uicontrol keyref="ui-family-tree"/> and the page says <q>Select a person to view their family tree.</q> Or you choose <uicontrol keyref="ui-events"/> or <uicontrol keyref="ui-notes"/> and the page is empty under the search box.</p>
+      <p>You choose <uicontrol keyref="ui-family-tree"/> and the page says <q>Pick a person</q>, with a button named <uicontrol keyref="ui-find-a-person"/>. You may see the same words on <uicontrol keyref="ui-person"/>, <uicontrol keyref="ui-events"/> or <uicontrol keyref="ui-notes"/>.</p>
     </condition>
     <troubleSolution>
       <cause>
@@ -27,7 +28,7 @@
       <remedy>
         <steps>
           <step>
-            <cmd>Type a name in the search box at the top, then choose <uicontrol keyref="ui-search"/>.</cmd>
+            <cmd>Choose <uicontrol keyref="ui-find-a-person"/>, or choose <uicontrol keyref="ui-home"/>. Type a name in the search box, then choose <uicontrol keyref="ui-search"/>.</cmd>
           </step>
           <step>
             <cmd>Choose the card of the person you want.</cmd>

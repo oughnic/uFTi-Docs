@@ -6,6 +6,7 @@
   <prolog>
     <critdates>
       <created date="2026-10-27"/>
+      <revised modified="2026-11-15"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -27,7 +28,7 @@
       <step>
         <cmd>Choose <uicontrol keyref="ui-preferences"/> in the list on the left.</cmd>
         <stepresult>
-          <p>The screen shows two groups of choices.</p>
+          <p>The screen shows three groups of choices. This page is about the first two.</p>
           <fig>
             <image keyref="img-preferences"/>
           </fig>
@@ -36,7 +37,7 @@
       <step>
         <cmd>Under <uicontrol keyref="ui-theme"/>, choose a set of colours.</cmd>
         <info>
-          <p>The first group has three themes, and a row of four colour squares shows each one. <uicontrol keyref="ui-oxford-and-slate"/> is the one in the pictures in this manual.</p>
+          <p>The first group has four themes, and a row of four colour squares shows each one. <uicontrol keyref="ui-oxford-and-slate"/> is the one in the pictures in this manual.</p>
         </info>
       </step>
       <step>
