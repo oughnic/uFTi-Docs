@@ -19,6 +19,7 @@
     </metadata>
     <resourceid appname="ufti" appid="search"/>
     <resourceid appname="ufti" appid="home"/>
+    <resourceid appname="ufti" appid="people.list"/>
   </prolog>
   <taskbody>
     <context>
