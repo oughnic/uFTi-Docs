@@ -1,0 +1,43 @@
+/*
+ * This file is part of the govuk-dita-plugin project.
+ * Copyright 2026 iStandUK. Licensed under the Apache License, Version 2.0.
+ *
+ * Neutral-branding overlay (FR-T1): loaded after the govuk-frontend stylesheet
+ * whenever govuk.branding is not 'official'.
+ *
+ * GDS Transport and the crown are legally restricted to official GOV.UK
+ * services. Neutral builds ship no font or crown assets; these rules make sure
+ * nothing is ever requested either.
+ */
+
+/* The vendored govuk-frontend stylesheet's own rules still name GDS Transport
+ * in their font stacks (we do not edit the vendored file). These declarations
+ * make that name resolve to a locally installed system font, so the restricted
+ * face is never fetched and never rendered - the name survives only inside the
+ * vendored file, defused here. */
+@font-face {
+  font-family: "GDS Transport";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Arial");
+}
+
+@font-face {
+  font-family: "GDS Transport";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Arial Bold"), local("Arial");
+}
+
+/* Belt and braces: the plugin's neutral footer never emits these elements,
+ * but suppress the crest/crown imagery even if a publisher adds them. */
+.govuk-footer__copyright-logo::before {
+  content: none !important;
+  background: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+
+.govuk-footer__crown {
+  display: none !important;
+}
