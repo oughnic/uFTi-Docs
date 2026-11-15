@@ -93,6 +93,12 @@
   <keydef keys="img-event-detail" href="../images/event-detail.png" format="png" scope="local" platform="AndroidTablet">
     <topicmeta><linktext>The page for Charlotte Brontë's birth, with its type, date and place, a source count and a part for more details</linktext></topicmeta>
   </keydef>
+  <keydef keys="img-date-editor" href="../images/date-editor.png" format="png" scope="local" platform="AndroidTablet">
+    <topicmeta><linktext>The form for an event of Charlotte Brontë, with the date boxes filled in as 21 April 1816 and the line under them that says Reads as 21 April 1816</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-date-not-sure" href="../images/date-not-sure.png" format="png" scope="local" platform="AndroidTablet">
+    <topicmeta><linktext>The date in the form for an event, with Not sure of the date turned on and set to between two dates, with the years 1813 and 1814 and the line that reads between 1813 and 1814</linktext></topicmeta>
+  </keydef>
   <keydef keys="img-sources-list" href="../images/sources-list.png" format="png" scope="local" platform="AndroidTablet">
     <topicmeta><linktext>The Sources screen for Charlotte's birth, with two sources, each with Copy, Citation, Edit and Remove buttons, and below them the Add source and Compare records that disagree buttons</linktext></topicmeta>
   </keydef>

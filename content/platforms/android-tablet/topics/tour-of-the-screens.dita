@@ -18,6 +18,7 @@
       </keywords>
     </metadata>
     <resourceid appname="ufti" appid="workspaces.view"/>
+    <resourceid appname="ufti" appid="about"/>
   </prolog>
   <refbody>
     <section>

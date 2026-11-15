@@ -86,6 +86,32 @@
       "verifiedAppVersion": "0.2.0.993"
     },
     {
+      "key": "img-date-editor",
+      "file": "date-editor.png",
+      "sha256": "cb8b1799d23e79b611c78f5ae21fcec506b9e389b89642b9a6f32d4775b0a01b",
+      "width": 1280,
+      "height": 800,
+      "stage": 0,
+      "workspace": "Brontë family of Haworth",
+      "focus": "Charlotte Brontë",
+      "capture": "in-app capture (DevFlow agent)",
+      "crop": null,
+      "verifiedAppVersion": "0.2.0.993"
+    },
+    {
+      "key": "img-date-not-sure",
+      "file": "date-not-sure.png",
+      "sha256": "afb2da6668eeefcf02f62d8a97e79d5a2a28d4bc1665fb51f8bc0a924dbfffa3",
+      "width": 1280,
+      "height": 800,
+      "stage": 0,
+      "workspace": "Brontë family of Haworth",
+      "focus": "Charlotte Brontë",
+      "capture": "in-app capture (DevFlow agent)",
+      "crop": null,
+      "verifiedAppVersion": "0.2.0.993"
+    },
+    {
       "key": "img-event-detail",
       "file": "event-detail.png",
       "sha256": "659345a00ae65b6f1f11f933ef0c240583b5660299a7a9ab0c43c96c761ac6e8",
