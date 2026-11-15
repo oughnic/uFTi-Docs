@@ -109,7 +109,7 @@ Only these four lines changed, two in each file, and no line was added or remove
 
 ## Added after publication: the sisters' other names (15 November 2026)
 
-A search for "Currer" found nothing in the app, because Charlotte had only her birth name ([issue 182](https://github.com/oughnic/uFTi-Docs/issues/182), DEC-243). Four names were added to each of the four files, after the person's own name and before their sex:
+A search for "Currer" found nothing in the app, because Charlotte had only her birth name ([issue 182](https://github.com/oughnic/uFTi-Docs/issues/182), DEC-245). Four names were added to each of the four files, after the person's own name and before their sex:
 
 | Person | Name | Kind of name | Evidence |
 |---|---|---|---|
