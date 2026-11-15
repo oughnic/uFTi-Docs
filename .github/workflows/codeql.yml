@@ -28,6 +28,11 @@ jobs:
     if: github.repository == 'oughnic/uFTi-Docs' && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
     runs-on: [self-hosted, windows, x64, sirhandel]
     timeout-minutes: 30
+    env:
+      # The runner's service account (DEC-242) has no PowerShell execution policy of its own, so Windows refuses scripts,
+      # and CodeQL's extractor for workflows runs one. This lets local scripts run in this job's processes only; it
+      # changes no setting on the computer.
+      PSExecutionPolicyPreference: RemoteSigned
     permissions:
       contents: read
       actions: read

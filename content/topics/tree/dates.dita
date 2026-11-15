@@ -31,12 +31,12 @@
     <p>A line under the date starts with <q>Reads as</q>. It shows how uFTi has understood the date. Look at it each time. If it is not what you meant, change the date.</p>
     <section>
       <title>When you know less</title>
-      <p>The date editor asks <uicontrol keyref="ui-how-much-do-you-know"/>. Choose <uicontrol keyref="ui-the-year"/>, <uicontrol keyref="ui-the-month-and-year"/> or <uicontrol keyref="ui-the-whole-date"/>, to match what the record gives you.</p>
+      <p>At first the date editor shows only the day, the month and the year. If the record gives less, turn on <uicontrol keyref="ui-not-sure-of-the-date"/>. The editor then asks <uicontrol keyref="ui-how-much-do-you-know"/>. Choose <uicontrol keyref="ui-the-year"/>, <uicontrol keyref="ui-the-month-and-year"/> or <uicontrol keyref="ui-the-whole-date"/>, to match what the record gives you.</p>
       <p>Do not make up a day or a month to fill the gap. A newspaper may say that a book came out in December 1847. Then choose the month and the year, and stop there.</p>
     </section>
     <section>
       <title>When you are not sure</title>
-      <p>Choose <uicontrol keyref="ui-not-sure-of-the-date"/> to say how sure you are. You can say that a date is about right, worked out by you, or a limit. You can also give a span of time. <xref keyref="kinds-of-date"/> lists each choice, with an example.</p>
+      <p>With <uicontrol keyref="ui-not-sure-of-the-date"/> on, <uicontrol keyref="ui-kind-of-date"/> says how sure you are. You can say that a date is about right, worked out by you, or a limit. You can also give a span of time. <xref keyref="kinds-of-date"/> lists each choice, with an example.</p>
     </section>
     <section>
       <title>Typing the date</title>

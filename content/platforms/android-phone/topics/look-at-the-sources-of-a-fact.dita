@@ -100,7 +100,7 @@
       <fig platform="iOS MacCatalyst">
         <image keyref="img-sources-list"/>
       </fig>
-      <p>When a fact has one place, such as a birth place or a death place, <uicontrol keyref="ui-compare-records"/> shows on the sheet. It opens a page that lists what each source says about the place and how good each source is. Use it when two records give different answers.</p>
+      <p>On a birth or a death, <uicontrol keyref="ui-compare-records"/> shows on the sheet, however many sources the fact has. It opens a page that lists what each source says about the place and how good each source is. Use it when two records give different answers.</p>
       <fig>
         <image keyref="img-compare-records"/>
       </fig>

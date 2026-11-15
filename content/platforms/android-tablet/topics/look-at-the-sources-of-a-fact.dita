@@ -84,7 +84,7 @@
     </steps>
     <result>
       <p>The choices for how reliable a source is start with <q>Not stated</q>. They run from unreliable or worked out up to direct and primary evidence. They rate how good the evidence is. They do not say that the fact is true. A copy of a record, such as a transcription, is second-hand evidence.</p>
-      <p>A fact can have many sources. Each one has its own row. Once a fact has more than one, <uicontrol keyref="ui-compare-records"/> shows below <uicontrol keyref="ui-add-source"/>. Use it when two records give different answers.</p>
+      <p>A fact can have many sources. Each one has its own row. On a birth or a death, <uicontrol keyref="ui-compare-records"/> shows below <uicontrol keyref="ui-add-source"/>, however many sources the fact has. Use it when two records give different answers.</p>
       <fig>
         <image keyref="img-sources-list"/>
       </fig>
