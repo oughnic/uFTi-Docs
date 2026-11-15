@@ -303,6 +303,9 @@ Read from the Windows app (version 0.2.0.989) on 10 November 2026. The labels ar
 | `ui-help` | Help | The button in the top bar that explains the screen you are on. | none |
 | `ui-high-contrast` | High contrast | One of the four themes on the Preferences page, with strong outlines. | none |
 | `ui-home` | Home | The menu item and page you meet when a tree is open, with the search box and the buttons to start. | none |
+| `ui-find-a-person` | Find a person | The button on a page that needs a person first. It starts the search. | none |
+| `ui-format` | Format | The list on a note that says how its words are laid out. | none |
+| `ui-language` | Language | The list on a note that says which language it is written in. | none |
 | `ui-how-reliable-it-is` | How reliable it is | The list on the source step that says how much weight the source deserves. | none |
 | `ui-identity` | Identity | The part of a person's page that holds the names and the sex. | none |
 | `ui-ink-and-parchment` | Ink and parchment | One of the four themes on the Preferences page. | none |

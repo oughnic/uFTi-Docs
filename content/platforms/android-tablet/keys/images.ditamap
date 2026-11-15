@@ -94,7 +94,7 @@
     <topicmeta><linktext>The page for Charlotte Brontë's birth, with its type, date and place, a source count and a part for more details</linktext></topicmeta>
   </keydef>
   <keydef keys="img-sources-list" href="../images/sources-list.png" format="png" scope="local" platform="AndroidTablet">
-    <topicmeta><linktext>The Sources screen for Charlotte's birth, with one book and its page, the Copy, Citation, Edit and Remove buttons, and an Add source button</linktext></topicmeta>
+    <topicmeta><linktext>The Sources screen for Charlotte's birth, with two sources, each with Copy, Citation, Edit and Remove buttons, and below them the Add source and Compare records that disagree buttons</linktext></topicmeta>
   </keydef>
   <keydef keys="img-sources-empty" href="../images/sources-empty.png" format="png" scope="local" platform="AndroidTablet">
     <topicmeta><linktext>The Sources screen for a birth with no sources, with the words No sources for this fact yet, an Add source button and a Done button</linktext></topicmeta>

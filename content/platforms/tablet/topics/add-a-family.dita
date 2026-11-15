@@ -6,7 +6,7 @@
   <prolog>
     <critdates>
       <created date="2026-10-27"/>
-      <revised modified="2026-11-11"/>
+      <revised modified="2026-11-15"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -60,7 +60,7 @@
           <p>A row appears for one child, with boxes for the names and the sex.</p>
         </stepresult>
       </step>
-      <step platform="iPad MacCatalyst">
+      <step platform="iPad MacCatalyst AndroidTablet">
         <cmd>For a child who is already in the tree, choose <uicontrol keyref="ui-set"/> under <uicontrol keyref="ui-existing-person"/>. Type the name, choose the person from the list, then choose <uicontrol keyref="ui-done"/>.</cmd>
         <stepresult>
           <p>The row shows the child's name. Boxes for a new child run across the rest of the row. Leave them empty.</p>
@@ -70,12 +70,9 @@
         </stepresult>
       </step>
       <step>
-        <cmd><ph platform="iPad MacCatalyst">For a new child, type</ph><ph platform="AndroidTablet">Type</ph> the child's names and choose the sex. Then choose <uicontrol keyref="ui-set"/> for the birth date and for the birthplace.</cmd>
+        <cmd>For a new child, type the child's names and choose the sex. Then choose <uicontrol keyref="ui-set"/> for the birth date and for the birthplace.</cmd>
         <stepresult>
           <p>A small window opens for each. Fill it in and choose <uicontrol keyref="ui-done"/>. The button then shows what you typed, or the start of it.</p>
-          <fig platform="AndroidTablet">
-            <image keyref="img-family-children"/>
-          </fig>
         </stepresult>
       </step>
       <step>
