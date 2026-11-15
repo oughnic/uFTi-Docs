@@ -51,7 +51,7 @@
       <step>
         <cmd>Choose the source that backs the fact.</cmd>
         <info>
-          <p>If it is not in the list, choose <uicontrol keyref="ui-add-a-new-source"/> and fill in the form. <xref keyref="add-a-source"/> shows how to add a source to a person.</p>
+          <p>If it is not in the list, choose <uicontrol keyref="ui-add-a-new-source"/> and fill in the form. Started from a fact, the form has no box for the page: the next step asks for it. <xref keyref="add-a-source"/> shows how to add a source to a person.</p>
         </info>
         <stepresult>
           <p>A second step opens, with the title of the source at the top.</p>
@@ -102,7 +102,7 @@
     </steps>
     <result>
       <p>Each source on the sheet shows its title. Under it is the page or reference you gave. A source that has an author, or a quality, can show those too, such as <systemoutput>Quality: 2 · Secondary evidence</systemoutput>. What a line shows depends on what you have entered for that source.</p>
-      <p>Each source on the sheet has four buttons, named <uicontrol keyref="ui-copy"/>, <uicontrol keyref="ui-citation"/>, <uicontrol keyref="ui-edit"/> and <uicontrol keyref="ui-remove"/>. The sheet also has a button named <uicontrol keyref="ui-compare-records"/>.</p>
+      <p>Each source on the sheet has four buttons, named <uicontrol keyref="ui-copy"/>, <uicontrol keyref="ui-citation"/>, <uicontrol keyref="ui-edit"/> and <uicontrol keyref="ui-remove"/>. On a birth or a death, the sheet also has a button named <uicontrol keyref="ui-compare-records"/>. Use it when two records give different answers.</p>
       <note type="tip">Good practice: give each fact its own source and its own page. Ask two questions about a source. Is it the original or a copy? Was the writer there at the time?</note>
     </result>
     <postreq>
