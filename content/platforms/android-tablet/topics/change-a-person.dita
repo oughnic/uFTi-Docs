@@ -6,6 +6,7 @@
   <prolog>
     <critdates>
       <created date="2026-10-27"/>
+      <revised modified="2026-11-15"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -26,7 +27,7 @@
       <step>
         <cmd>Scroll to the bottom of the page and choose <uicontrol keyref="ui-edit"/>.</cmd>
         <stepresult>
-          <p>The page turns into a form. The names and the sex are on the left. The dates and places of birth and death are on the right. The form may open part of the way down: scroll up to see the top.</p>
+          <p>The page turns into a form, in one column on the left. With the tablet on its side, the family tree stays on the right. The form may open part of the way down, so scroll up to see the names. A round help button sits beside most boxes.</p>
           <fig>
             <image keyref="img-person-edit"/>
           </fig>
@@ -34,9 +35,15 @@
       </step>
       <step>
         <cmd>Change what is wrong.</cmd>
+        <info>
+          <p><uicontrol keyref="ui-kind-of-name"/> is a list. For a date, type the day and the year and choose the month from the list. A line under the date says how the app reads it, such as <q>Reads as 17 March 1777</q>.</p>
+        </info>
       </step>
       <step>
         <cmd>Scroll to the bottom of the form. Choose <uicontrol keyref="ui-save"/> to keep your changes, or <uicontrol keyref="ui-cancel"/> to leave the form as it was.</cmd>
+        <info>
+          <p>If you go back with the back arrow after you started to change a box, a box asks <q>Discard changes?</q> Choose <uicontrol keyref="ui-discard"/> to leave, or <q>Keep editing</q> to go on.</p>
+        </info>
       </step>
     </steps>
     <result>

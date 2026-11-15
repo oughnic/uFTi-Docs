@@ -6,6 +6,7 @@
   <prolog>
     <critdates>
       <created date="2026-10-27"/>
+      <revised modified="2026-11-15"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -28,7 +29,7 @@
       <step>
         <cmd>Choose <uicontrol keyref="ui-person"/>.</cmd>
         <info>
-          <p>It shows that person's page.</p>
+          <p>It shows that person's page. With the tablet on its side, the family tree of that person is beside the page.</p>
         </info>
         <stepresult>
           <fig>
@@ -51,13 +52,13 @@
       <step>
         <cmd>Look further down the list.</cmd>
         <info>
-          <p>It has <uicontrol keyref="ui-notes"/> and some other places. They are for later.</p>
+          <p>Below the line it has <uicontrol keyref="ui-notes"/> and some other places. They are for later.</p>
         </info>
       </step>
       <step>
-        <cmd>Type a few letters of a name in the search box, then choose <uicontrol keyref="ui-search"/>.</cmd>
+        <cmd>Choose <uicontrol keyref="ui-home"/>, type a few letters of a name in the search box, then choose <uicontrol keyref="ui-search"/>.</cmd>
         <info>
-          <p>The results are the only list of people. Choose a card to open that person.</p>
+          <p>Choose a card in the results to open that person.</p>
         </info>
       </step>
     </steps>
