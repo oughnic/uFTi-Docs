@@ -25,7 +25,7 @@ The walk followed [the Brontë walkthrough](../bronte-build-walkthrough.md) by s
 | 7 | A research question. |
 | 9 | **Save as…** with both choices, as far as Android's own save screen; **Add from file…** with the saved copy; remove a tree. |
 
-**Not walked.** Taking and adding a picture (the emulator has no camera scene), a census form and the register forms, an event of your own kind, a baptism, the date editor's other calendars, the name prompt and the place lists, **Other names**, portrait, the dark look beyond one picture. The rows of [the dates, places and names sheet](dates-places-names.md) for this leg were not marked: this walk covered the tablet's layout and the task steps, and the sheet is still to be walked on the tablet.
+**Not walked.** Taking and adding a picture (the emulator has no camera scene), the register forms, a baptism, the name prompt and the place lists, **Other names**, portrait, the dark look beyond one picture. The rows of [the dates, places and names sheet](dates-places-names.md) for this leg were not marked: this walk covered the tablet's layout and the task steps, and the sheet is still to be walked on the tablet.
 
 ## 2. What was found
 
@@ -57,6 +57,9 @@ Rows marked **Different** are where the Alpha-1 tablet pages, or the Alpha-1 wal
 | 22 | **Preferences** | Four themes (**High contrast**, **Ink and parchment**, **Oxford and slate**, **Sepia and slate**), three looks, and a part named **Saving another program's file** with two switches. | Different: **High contrast** is new. |
 | 23 | **Back** on a main screen | A box asks **Exit the app?** with **Cancel** and **Exit**. | New. |
 | 24 | **About uFTi** | The version of the app. | Same. |
+| 25 | The date editor | In a form for an event, the date at first shows **Day**, **Month** and **Year** and a line that reads **Reads as…** (**No date entered** until something is typed). **Not sure of the date?** adds **Kind of date** (**On**, **About**, **Estimated**, **Before**, **After**, **Between two dates**, **From a date to a date**) and **How much do you know?** (**The year**, **The month and year**, **The whole date**), and the button **More: other calendars**. That button adds a **Calendar** list, set to **Gregorian**, with the line **Leave it on Gregorian unless the record says otherwise.** **Between two dates** with **The year** shows two year boxes with the word **and** between them. **Edit as text** is a second switch. | New: Alpha-1 had none of this. |
+| 26 | An event of your own kind | **Other event** opens a form with **Type** (a list that runs from **Birth** to **Fact** and **Event**, with **Baptism**, **Residence** and **Occupation** in it), **Kind of event, in words**, the date, **Time of day**, **Place**, **Description**, **Witnesses and others there**, the age boxes and more details, **Note**, **Save** and **Cancel**. **Fill from document…** is at the top. With **Event** chosen and the word Publication typed, the list of events shows **Event** and the event's page shows the word. The test event was deleted afterwards. | New. |
+| 27 | The forms for records | The **+** sheet shows **1841 Census (England & Wales)** and **1851 Census (England & Wales)**, **Baptism record**, **Burial record** and **Marriage register entry** under the events, and **Baptism record**, **Birth record**, **Burial record** and **Death record** under a new person. **More forms** adds the later censuses, the 1939 register, **Birth record** and **Family note**. The 1841 census form says **Adding to the household of** the family, with **Change…**, fills in the census date (6 June 1841), and asks for the place, the source title, where it is kept, the class, piece, folio, page and schedule, the district and a row for each person in the household. The form was not saved. | New. |
 
 ## 3. What the tooling could not do
 
@@ -68,11 +71,11 @@ Rows marked **Different** are where the Alpha-1 tablet pages, or the Alpha-1 wal
 
 ## 4. What the manual has now
 
-The pictures are new. All 37 pictures of the Android tablet manual were taken again on this build, and each has new alternative text. The pages were then corrected from section 2 (DEC-241, issue 178): the tour, Look around, the first person, finding and changing a person, the family tree, notes, Preferences, opening a file, sources, who made the tree, where records are kept, research questions and removing a tree are the tablet's own, and the pages for adding a person, a family and the events of a person are shared with the iPad and the Mac. There are no pages yet for a date, an event of your own, the forms for records or taking a photo, because this walk did not cover them.
+The pictures are new. All 37 pictures of the Android tablet manual were taken again on this build, and each has new alternative text. The pages were then corrected from section 2 (DEC-241, issue 178): the tour, Look around, the first person, finding and changing a person, the family tree, notes, Preferences, opening a file, sources, who made the tree, where records are kept, research questions and removing a tree are the tablet's own, and the pages for adding a person, a family and the events of a person are shared with the iPad and the Mac. A second pass on the same build walked the date editor, an event of your own kind and the forms for records (rows 25 to 27), so the tablet now also has the pages for a date, an event and the forms for records, shared with the phone, the iPhone, the iPad and the Mac, and two new pictures of the date editor (39 pictures in all). There is no page for taking a photo, because the emulator has no camera scene (DEC-246).
 
 ## 5. Next
 
-- Write the pages for a date, an event of your own, the forms for records and taking a photo, once a tablet walk covers them.
+- Write the page for taking a photo, once a tablet with a camera has been walked.
 - Walk the dates, places and names sheet and the rows not walked here, on a tablet or an emulator with a camera scene.
-- Walk the Help rows again once the Android tablet Alpha-2 pages are published, and when the app carries a help map for the tablet.
+- Walk the Help rows again on the published Alpha-2 pages. The tablet pages now carry the identifiers for 23 of the app's 25 screens (not **More**, which the tablet does not have, and merging people, which no manual has a page for yet), so the app can ask for them once it carries a help map for the tablet.
 - Settle with the Android phone which pages can be shared again with the tablet (DEC-197, DEC-238).
