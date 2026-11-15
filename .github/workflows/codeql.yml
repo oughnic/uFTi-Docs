@@ -1,5 +1,6 @@
 # CodeQL code scanning (DEC-215). It covers the JavaScript in build/scripts and the workflows in .github/workflows. It does not
 # cover PowerShell, shell or DITA. The job runs on a self-hosted runner on the maintainer's workstation, labelled `sirhandel`.
+# The runner is a Windows service, running as NETWORK SERVICE (DEC-242).
 # On a public repository a self-hosted runner runs whatever a workflow tells it, so this workflow never reaches the runner from a
 # fork: pull_request runs only for a branch in this repository, there is no pull_request_target, and no secret is used.
 # Third-party actions are pinned to full commit SHAs.
