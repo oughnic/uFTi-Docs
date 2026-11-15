@@ -249,6 +249,15 @@
 1 NAME Charlotte /Brontë/
 2 GIVN Charlotte
 2 SURN Brontë
+1 NAME Currer /Bell/
+2 TYPE OTHER
+3 PHRASE Pen name
+2 GIVN Currer
+2 SURN Bell
+1 NAME Charlotte /Nicholls/
+2 TYPE MARRIED
+2 GIVN Charlotte
+2 SURN Nicholls
 1 SEX F
 1 @EEECEA9B32E87@ BIRT
 2 DATE 21 APR 1816
@@ -381,6 +390,11 @@
 1 NAME Emily Jane /Brontë/
 2 GIVN Emily Jane
 2 SURN Brontë
+1 NAME Ellis /Bell/
+2 TYPE OTHER
+3 PHRASE Pen name
+2 GIVN Ellis
+2 SURN Bell
 1 SEX F
 1 @E549EECE6A4D5@ BIRT
 2 DATE 1818
@@ -449,6 +463,11 @@
 1 NAME Anne /Brontë/
 2 GIVN Anne
 2 SURN Brontë
+1 NAME Acton /Bell/
+2 TYPE OTHER
+3 PHRASE Pen name
+2 GIVN Acton
+2 SURN Bell
 1 SEX F
 1 @EB96E8565CE59@ BIRT
 2 DATE BET 1819 AND 1820

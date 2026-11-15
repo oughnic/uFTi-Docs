@@ -6,16 +6,16 @@ The saved stage files of the Brontë dataset ([specification](../README.md)). Th
 
 | File | What it is | Size | SHA-256 |
 |---|---|---|---|
-| `stage-3-families.ged` | The sample, as GEDCOM 5.5.1. This is the file for the app to register. | 3,331 bytes | `85b0f0c84a3968ea48a946fc849b14d5fc878ab0756adbca33d2c802d29de137` |
-| `stage-3-families.V7.ged` | The same tree as GEDCOM 7, which the app writes beside the first. | 4,478 bytes | `40fa06dfbab0d8eb6d8af983837c2a6b7ddb3c21479ea435c7f328730d1cb0ae` |
+| `stage-3-families.ged` | The sample, as GEDCOM 5.5.1. This is the file for the app to register. | 3,608 bytes | `08e16b649a5eccd3676de39d5846b2e263b8c589e45f8ea8cdd058adbf0aec8e` |
+| `stage-3-families.V7.ged` | The same tree as GEDCOM 7, which the app writes beside the first. | 4,803 bytes | `622a4d1a846cda8519780c80c68ea8af424afdf5b042856d0f06030bfa6633ea` |
 
-Both are kept byte for byte, with the line endings the app wrote (`.gitattributes`), so the checksums hold on every machine. The GEDCOM 7 file had its header fixed on 24 October 2026 (see below); the size is the same.
+Both are kept byte for byte, with the line endings the app wrote (`.gitattributes`), so the checksums hold on every machine. The GEDCOM 7 file had its header fixed on 24 October 2026, and all four files gained the sisters' other names on 15 November 2026 (see below).
 
 **The name to show on screen:** Brontë family of Haworth.
 
-**What it holds.** The nine people of the core specification, with their births, deaths and places. The family of Patrick Brontë and Maria Branwell, with their six children and their marriage of 29 December 1812. The family of Charlotte Brontë and Arthur Bell Nicholls, with their marriage of 29 June 1854. Twenty events in all: nine births, nine deaths and two marriages. Where the sources disagree about a year, the birth is a range (Maria, Elizabeth, Anne and Arthur). Arthur's death is in December 1906, with no day, at Banagher. The register entry gives 2 December 1906 at Banagher (C147), which a later stage can use.
+**What it holds.** The nine people of the core specification, with their births, deaths and places. The family of Patrick Brontë and Maria Branwell, with their six children and their marriage of 29 December 1812. The family of Charlotte Brontë and Arthur Bell Nicholls, with their marriage of 29 June 1854. Twenty events in all: nine births, nine deaths and two marriages. Where the sources disagree about a year, the birth is a range (Maria, Elizabeth, Anne and Arthur). Arthur's death is in December 1906, with no day, at Banagher. The register entry gives 2 December 1906 at Banagher (C147), which a later stage can use. Charlotte also has her pen name, Currer Bell, and her married name, Charlotte Nicholls; Emily and Anne have their pen names, Ellis Bell and Acton Bell (C062, C037, C074, N07).
 
-**What it leaves out.** Baptisms and burials, notes, repositories, sources and the evidence for each fact, the alternative dates in the specification, and the other names the family used (Brunty, Currer Bell and so on). Maria is entered under the name Maria Branwell, and each place has its county added. This is stage 3 of the journey, not the finished workspace. A fuller file from a later stage replaces it as a data change (DEC-112).
+**What it leaves out.** Baptisms and burials, notes, repositories, sources and the evidence for each fact, the alternative dates in the specification, and the family's other names apart from the sisters' (Brunty, Branwell Brontë and so on). Maria is entered under the name Maria Branwell, and each place has its county added. This is stage 3 of the journey, not the finished workspace. A fuller file from a later stage replaces it as a data change (DEC-112).
 
 **How it was made.** The Windows walker typed it into the app on 19 October 2026, from the specification, on a development build with a fresh data folder: about 180 actions, with no file edited. The app wrote the file. One change was made afterwards, by editing the file, as the maintainer asked: the five lines of one source, "England and Wales Marriage Register", were taken out of each file. The marriage form fills that title in by default, so it is not evidence anyone checked, and the walker's tool could not reach the source in the app. A person can remove it there: the marriage row in Charlotte's Facts list, then Remove on the Sources sheet. Nothing else differs from what the app wrote. The 5.5.1 file before the change had 3,431 bytes and the SHA-256 `70fde23d08219b0eeece88fbfc8d616a5507c2e32f5955b632e8a7f82bdc7682`.
 
@@ -29,10 +29,10 @@ Both are kept byte for byte, with the line endings the app wrote (`.gitattribute
 
 | File | What it is | Size | SHA-256 |
 |---|---|---|---|
-| `stage-3-families-with-sources.ged` | The stage 3 tree with its sources and three media links, as GEDCOM 5.5.1. | 24,620 bytes | `2f641c11b076051626742cc78818063401b6144b2053f40570c7b4de986d8707` |
-| `stage-3-families-with-sources.V7.ged` | The same file as GEDCOM 7. | 24,672 bytes | `a20bd7718a1c90491ec6e0568fd6c5320ec2498b18afea2a3753e7c36f94d9cf` |
+| `stage-3-families-with-sources.ged` | The stage 3 tree with its sources and three media links, as GEDCOM 5.5.1. | 24,897 bytes | `b9b28c0aefa226f869a0e8243f138f25d01681776452305b2acfdbc3f074dace` |
+| `stage-3-families-with-sources.V7.ged` | The same file as GEDCOM 7. | 24,997 bytes | `ca5259d3d9d27e960dcc47389d92b130a106e77e130cb993b0a7af84b079ec42` |
 
-The stage 3 pair above is not changed by the sourced pair. These two were written by the app's tools, then changed by hand on 21 October 2026 to add three media links (DEC-120). The sizes and checksums above are after that change and after the header fix below.
+The stage 3 pair above is not changed by the sourced pair. These two were written by the app's tools, then changed by hand on 21 October 2026 to add three media links (DEC-120). The sizes and checksums above are after that change, the header fix and the other names below.
 
 **The name to show on screen:** Brontë family of Haworth, as for stage 3.
 
@@ -88,7 +88,7 @@ One citation is rated 3, 49 are rated 2 and 69 are rated 1. Most of what we coul
 | Patrick and Maria, their children | C018 | S01, S03, S06 | 3 |
 | Charlotte and Arthur, husband and wife | C150 | S03, S08, S12 | 3 |
 
-**What it leaves out.** What stage 3 left out, apart from sources: baptisms and burials, notes, the other names the family used, the census, and the second marriage. Repositories are not records of their own either. The body that holds a source (a church, an archive, a registry office) is named in the source, and stage 6 adds repositories as records. The web addresses in the specification are not in the file. The only addresses in the file are the three Wikimedia Commons links on the media records, the one kind of file line the gate allows (DEC-120).
+**What it leaves out.** What stage 3 left out, apart from sources: baptisms and burials, notes, the family's other names apart from the sisters', the census, and the second marriage. Repositories are not records of their own either. The body that holds a source (a church, an archive, a registry office) is named in the source, and stage 6 adds repositories as records. The web addresses in the specification are not in the file. The only addresses in the file are the three Wikimedia Commons links on the media records, the one kind of file line the gate allows (DEC-120).
 
 **How it was made.** On 20 October 2026, with the app's own tools (DEC-039), from the stage 3 file. The file was loaded, Arthur's death date was changed, the 22 sources and 119 citations were added one at a time, and the workspace was exported twice, as GEDCOM 5.5.1 and as GEDCOM 7. No file was edited by hand until 21 October 2026. The stage 3 file was loaded without its header copyright line, because the export writes that line itself. The header of the new file is the same as stage 3's, and so is every person, family and event except Arthur's death date. The tools mark each record they make or change with a date and a note naming the tool, so the sources and the two families carry one. The header date is stage 3's. The GEDCOM 7 file has no per-record external identifiers, which stage 3's GEDCOM 7 file has, because the 5.5.1 file it was built from does not hold them. On 21 October 2026 the three media records were added by hand, as the owner asked: three public-domain images from Wikimedia Commons, linked by their addresses, each with a change note. Patrick's record links the parsonage photograph of about 1863 and the view of St John's College, Cambridge. The family record links the parsonage as the museum is now, and its change date and time were updated. The header and the people are unchanged. The licences are in [media.md](../media.md) (M05 to M07).
 
@@ -106,6 +106,19 @@ The app team found two places where both GEDCOM 7 files departed from the GEDCOM
 - **The copyright line.** It sat under the header's source structure. GEDCOM 7 puts it directly under the header, so it moved up one level and now follows the source structure. Its words are unchanged.
 
 Only these four lines changed, two in each file, and no line was added or removed. The sizes are the same. The two GEDCOM 5.5.1 files are not changed. The files were edited by hand rather than made again by the app, because a new export would lose the three media links of 21 October 2026. The checksums before the fix were `00e4b202e4047d8ab208079cbfdd1718346389bea03225ea2a2fa4022cd8fda6` for `stage-3-families.V7.ged` and `8d9643d61976b9dd34818815ed9dff75eece6e616342265ccf05813b808b7829` for `stage-3-families-with-sources.V7.ged`. The tables above give the checksums now. The CI publishes the files to the `bronte-sample-latest` release (DEC-121), so the app swaps its copy for the new one and checks the checksum.
+
+## Added after publication: the sisters' other names (15 November 2026)
+
+A search for "Currer" found nothing in the app, because Charlotte had only her birth name ([issue 182](https://github.com/oughnic/uFTi-Docs/issues/182), DEC-243). Four names were added to each of the four files, after the person's own name and before their sex:
+
+| Person | Name | Kind of name | Evidence |
+|---|---|---|---|
+| Charlotte Brontë (P05) | Currer Bell | Pen name | C062 |
+| Charlotte Brontë (P05) | Charlotte Nicholls | Married name | C037, C074, N07 |
+| Emily Jane Brontë (P07) | Ellis Bell | Pen name | C062 |
+| Anne Brontë (P08) | Acton Bell | Pen name | C062 |
+
+Each is written as the app writes a name of that kind, with its given name and surname, in the lines the app uses for a GEDCOM 5.5.1 file and for a GEDCOM 7 file. The names cite no source in the file: the evidence is in the register. Nothing else changed, and every line keeps the line ending the app wrote. The files were edited by hand rather than made again by the app, because a new export would lose the media links of 21 October 2026 and the header fix of 24 October 2026. The checksums before the change are the ones the tables gave on 14 November 2026: `85b0f0c84a3968ea48a946fc849b14d5fc878ab0756adbca33d2c802d29de137`, `40fa06dfbab0d8eb6d8af983837c2a6b7ddb3c21479ea435c7f328730d1cb0ae`, `2f641c11b076051626742cc78818063401b6144b2053f40570c7b4de986d8707` and `a20bd7718a1c90491ec6e0568fd6c5320ec2498b18afea2a3753e7c36f94d9cf`, in the order of the tables.
 
 ## For the app
 
