@@ -56,6 +56,7 @@
   <!-- the Add a record list -->
   <!-- sources -->
   <keydef keys="ui-compare-records"><topicmeta><keywords><keyword>Compare records that disagree</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-more-other-calendars"><topicmeta><keywords><keyword>More: other calendars</keyword></keywords></topicmeta></keydef>
   <!-- preferences -->
   <keydef keys="ui-theme"><topicmeta><keywords><keyword>Theme</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-oxford-and-slate"><topicmeta><keywords><keyword>Oxford and slate</keyword></keywords></topicmeta></keydef>

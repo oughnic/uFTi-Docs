@@ -55,12 +55,13 @@
         <cmd>In <uicontrol keyref="ui-page-or-reference-number"/>, type where to look in the source.</cmd>
         <info>
           <p>For this source, type <userinput>Burials of December 1848</userinput>.</p>
+          <p>This box is on the form because the source was started from the <uicontrol keyref="ui-add-a-record"/> list. A source started from a fact asks for the page on the next step instead.</p>
         </info>
       </step>
       <step>
         <cmd>Fill in the other boxes if you can, then choose <uicontrol keyref="ui-save"/>.</cmd>
         <info>
-          <p>The form has <uicontrol keyref="ui-words-copied"/>, <uicontrol keyref="ui-note"/> and <uicontrol keyref="ui-where-it-is-kept"/>. You can leave them empty.</p>
+          <p>The form has <uicontrol keyref="ui-words-copied"/>, <uicontrol keyref="ui-note"/> and <uicontrol keyref="ui-where-it-is-kept"/>. <uicontrol keyref="ui-more-details"/> adds the author and the publisher. You can leave them all empty.</p>
         </info>
         <stepresult>
           <p>The page of the person opens again. A line at the top says <systemoutput>Sourced by</systemoutput> and the title.</p>
