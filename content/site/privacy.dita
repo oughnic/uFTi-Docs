@@ -70,6 +70,7 @@
       <ul>
         <li>An Android phone or tablet has its own backup. If it is on, Android may copy the files of apps to the backup that Google runs for Android.</li>
         <li>An iPhone or iPad can back up the files of apps to iCloud, or to a computer. Your settings decide which.</li>
+        <li>A Mac works in the same way, and you have more control over it. Your settings decide what it copies, and where.</li>
         <li>On a PC, a folder such as Documents may be kept in OneDrive. If yours is, your trees go there with the rest of the folder.</li>
       </ul>
       <p>To stop this, change the backup settings on your device.</p>
@@ -78,7 +79,8 @@
       <title>Keeping and deleting your trees</title>
       <p>Your trees are files. They stay on your device until you delete them. We never receive them, so we cannot delete them for you.</p>
       <p>You can take a tree off the list in uFTi. The file stays where it is. To delete a tree for good, delete its file.</p>
-      <p>If you remove uFTi from a PC, your trees stay in your Documents folder. If you remove it from a phone or tablet, the folder that belongs to the app goes too. On a phone or tablet, a tree that you opened from somewhere else is kept as a copy in that folder. The file that you opened is not changed.</p>
+      <p>If you remove uFTi from a PC, your trees stay in your Documents folder. If you remove it from a phone, a tablet or a Mac, the folder that belongs to the app goes too. On a phone, a tablet or a Mac, a tree that you opened from somewhere else is kept as a copy in that folder. The file that you opened is not changed.</p>
+      <p>A Mac gives you more control over its files. You can choose which of them to keep, to copy and to delete.</p>
       <p>Keep a copy of a tree somewhere else before you delete it, if you may want it again.</p>
     </section>
     <section id="your-tree">
