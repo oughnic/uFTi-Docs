@@ -10,11 +10,13 @@ Where the app does the same thing on two devices, each device's manual has a pag
 
 Parity does not mean the same pages. A computer has files beside a tree, and a phone does not. A phone has a camera, and most computers do not. These are differences of the device. They are listed in section 5, and they are not gaps.
 
+**How a gap is closed (DEC-251).** The maintainer's direction of 17 November 2026: reuse DITA content, and use DITAVAL for the differences between platforms, pictures included. So a missing page is written once and shared, and what differs on a device is a variant that its DITAVAL file keeps or drops. A copy for one device is the last resort. The caps in the platform strategy on variants and on when a topic is split are under review (DEC-251), and until the maintainer decides, they stand.
+
 ## 2. How it was made, and how to keep it
 
 - **The pages.** For each manual, the pages in the Alpha-2 publication, found by title. A page counts for a task when its title names the task, or when the notes below say which page covers it.
 - **The help screens.** The help map of each device (`pwsh build/scripts/new-help-map.ps1`), against the screens in `build/help/screens.csv`.
-- **Keeping it.** Make the table again when a manual gains or loses a page, and when the app team changes the list of screens. A row marked *check* needs a read of the pages. A row marked *walk* needs the app on the device.
+- **Keeping it.** Make the table again when a manual gains or loses a page, and when the app team changes the list of screens. A row marked *read* needs a read of the pages. A row marked *walk* needs the app on the device.
 
 ## 3. What is at parity
 
@@ -41,9 +43,9 @@ The privacy policy is one source. The components page is generated for each devi
 | Get the app | No | Yes | Yes | No | No | No | Decision, then pages (issue 66) |
 | Open a family tree file | Yes | No | Yes | Yes | Yes | Yes | Walk (issue 194) |
 | Find help and the version | Yes | No | No | Yes | Yes | Yes | Walk |
-| Say who made this tree | Yes | Yes | Yes | Yes | No | Yes | Check, then walk |
+| Say who made this tree | Yes | Yes | Yes | Yes | No | Yes | Read, then walk |
 | Take a photo of a document | No | Yes | No | No | No | No | Decision (issue 68) |
-| Where your trees are saved | Yes | No | No | No | No | No | Check: DEC-168 allows it on every device |
+| Where your trees are saved | Yes | No | No | No | No | No | Read: DEC-168 allows it on every device |
 
 Notes:
 
@@ -53,24 +55,24 @@ Notes:
 
 ### 4.2 Tasks that the Windows manual has as pages of their own
 
-The other five manuals cover some of these inside other pages. The last column says where, from a search of the pages. *Check* means that the page has to be read to see whether the task is really covered.
+Read on 17 November 2026: each Windows page against the pages of the other five manuals. Most of these tasks are covered inside a page that the mobile manuals share, so they are not gaps. Three are.
 
-| Windows page | On the other devices | Needs |
+| Windows page | On the other five devices | Result |
 |---|---|---|
-| Create a workspace | Not found as a task. *Add your first person* may start a tree | Check, then walk |
-| Move between workspaces | Not found | Walk |
-| Remove a person | Inside *Change a person* on the Android phone only | Check, then walk |
-| See a family's page | Inside *See a family tree* on the iPad only | Check, then walk |
-| Add a later family | Inside *Add a family with children* | Check |
-| Add a source to a person | Inside *Look at the sources of a fact* | Check |
-| Use one note for several people | Inside *Add a note to a person* on the Android phone only | Check |
-| Add an event of your own kind | Inside *Add an event* on the Android phone only | Check |
-| Enter a period | Inside *Enter a date, even one you are not sure of* | Check |
-| Add a photo to a person | Inside *The Photos buttons* | Check |
-| Events, notes and sources | The three tasks are separate pages | None: a chapter page on Windows |
-| Use a form for a real record | *Forms for records you have seen* | None: the same task |
-| Add a repository | *Add a place where records are kept* | None: the same task |
-| Add an event to a person | *Add an event* | None: the same task |
+| Create a workspace | Steps inside *Add your first person*, in every mobile manual | Covered |
+| Move between workspaces | Not covered. *The screens of the app* only says that **Open another workspace** shows your trees. The walk reports name the screen, its cards and a line about switching, but not the button on a card | **Gap.** Walk, or ask the app team |
+| Remove a person | Inside *Change a person*. The phone page has the full warning (it cannot be undone, and the person leaves every family and event). The tablet, iPad and Mac pages say only "removes the person. Check before you choose it" | **Thin** on the Android tablet, iPad and Mac. DEC-199 says the app does the same on all four, so the phone's lines can be reused. No walk |
+| Use one note for several people | Inside *Add a note to a person* on the Android phone and the iPhone. Not in the tablet, iPad and Mac pages | **Gap** on the Android tablet, iPad and Mac. Reuse the phone's lines. No walk |
+| See a family's page | Inside *Add a family with children*: the page lists the partners, the marriage and the children, and says how to change them. The help screen `families.view` opens it | Covered, shorter than Windows |
+| Add a later family | *Add a family with children* starts from a person who is already in the tree | Covered |
+| Add a source to a person | Inside *Look at the sources of a fact* | Covered |
+| Add an event of your own kind | Inside *Add an event*, shared by all five | Covered |
+| Enter a period | Inside *Add an event*, shared by all five | Covered |
+| Add a photo to a person | *The Photos buttons*: the folder and the camera. The Mac's camera is not described, because the walk did not try it | Covered |
+| Events, notes and sources | A chapter page on Windows. The three tasks have their own pages elsewhere | Not a gap |
+| Use a form for a real record | *Forms for records you have seen* | The same task |
+| Add a repository | *Add a place where records are kept* | The same task |
+| Add an event to a person | *Add an event* | The same task |
 
 ### 4.3 Help screens
 
@@ -101,8 +103,12 @@ Every manual says it was checked against Alpha-2. The version that each manual's
 
 ## 6. Work to do, in order
 
-1. **Read the pages** for each *Check* row, and say for each whether the task is covered. This needs no app and no walk. It turns most of section 4.2 into done or into a *Walk* row.
-2. **Write what a read can settle:** the pages that need only what the other devices already say, with the device's own words, once the maintainer agrees.
-3. **Walk what is left,** device by device, and write the pages from the walk (the walk plan; DEC-213).
-4. **Get the app** pages, when the maintainer has decided how readers get each app (issue 66).
-5. **Make the table again,** and close the epic when no row says No without a reason in section 5.
+1. **Done (17 November 2026): the read of section 4.2.** Of the Windows-only tasks, two are thin or missing on some devices and one is a gap on all five.
+2. **Close what a read settles, by reuse, with no walk (DEC-199, DEC-251).**
+   - *Change a person*: give the Android tablet, iPad and Mac the phone's lines on removing a person.
+   - *Add a note to a person*: give the Android tablet, iPad and Mac the phone's lines on using one note for several people.
+   - Do each by sharing the lines, with a variant only where a device differs. Do not make a copy for a device.
+3. **Read the rest of section 4.1:** *Say who made this tree* on the iPad, and *Where your trees are saved* on every device but Windows. Say for each whether a read settles it.
+4. **Walk what is left,** device by device, and write the pages once, with variants for the differences (the walk plan; DEC-213). The walks are: *Move between workspaces*, *Find help and the version* on the two Android manuals, and *Open a family tree file* on the Android phone (issue 194).
+5. **Get the app** pages, when the maintainer has decided how readers get each app (issue 66).
+6. **Make the table again,** and close the epic when no row says No without a reason in section 5.
