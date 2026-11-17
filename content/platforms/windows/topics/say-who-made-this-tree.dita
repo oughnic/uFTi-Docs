@@ -60,7 +60,7 @@
     <result>
       <p>The page now lists your name, with <q>(default)</q> after it. Beside it are a button for notes, and the buttons <uicontrol keyref="ui-edit"/> and <uicontrol keyref="ui-delete-name"/>.</p>
       <p>Until you fill in <uicontrol keyref="ui-copyright-of-this-tree"/>, the page says <q>This tree states no copyright.</q> To add one later, choose <uicontrol keyref="ui-edit"/> beside a name and fill in that box.</p>
-      <p>The picture shows the page with one name listed, <q>uFTi documentation (default)</q>, and that line about copyright.</p>
+      <p>The picture shows the page of the sample tree, which has nobody credited yet, so it shows the line that starts <q>Nobody is credited</q>.</p>
       <fig>
         <image keyref="img-submitters"/>
       </fig>

@@ -39,7 +39,7 @@
           </fig>
         </info>
         <stepresult>
-          <p>A box titled <wintitle keyref="ui-delete-person"/> opens. For Anne Brontë it asks <systemoutput>Delete Anne Brontë? They will be removed and unlinked from any families, events and relationships. This cannot be undone.</systemoutput> A line under it says what else changes, such as <systemoutput>Also affects: 1 family, 2 events.</systemoutput></p>
+          <p>A box titled <wintitle keyref="ui-delete-person"/> opens. For Anne Brontë it asks <systemoutput>Delete Anne Brontë? They will be removed and unlinked from any families, events and relationships. This cannot be undone.</systemoutput> A line under it says what else changes, such as <systemoutput>Also affects: 1 family, 11 events.</systemoutput></p>
         </stepresult>
       </step>
       <step>
