@@ -6,6 +6,7 @@
   <prolog>
     <critdates>
       <created date="2026-11-17"/>
+      <revised modified="2026-11-17"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -26,8 +27,8 @@
     </section>
     <section>
       <title>Where the picture is kept</title>
-      <p><keyword keyref="product-name"/> keeps the picture with the other pictures of your tree. After that, it shows even when your device is not online.</p>
-      <p>It is kept as the rest of your tree is. So copies that your device makes of your tree include it. <xref keyref="who-can-see-your-tree"/> says more about those copies.</p>
+      <p><keyword keyref="product-name"/> keeps the picture on your device, in a folder of its own. After that, it shows even when your device is not online.</p>
+      <p>The picture is not kept with your tree. So a copy of your tree does not carry it, even in a folder that syncs. <xref keyref="who-can-see-your-tree"/> says more about copies.</p>
     </section>
     <section>
       <title>If the picture does not come</title>
