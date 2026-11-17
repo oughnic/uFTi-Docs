@@ -67,8 +67,25 @@ The pages were written from this report (DEC-238). The tour is new for rows 1, 2
 
 ## 5. Next
 
+- When the iPhone report's row 40 is mended, walk the chain button again and take away the page's line about the app closing.
 - Check row 20.
 - Watch for the end of row 25 again: a copy added with **Add from file…** whose card is marked **Active** while another tree stays in use. Two tries on 14 November did not repeat it.
 
 On 12 November, at the maintainer's request, rows 14, 18, 19 and 21 to 24 were sent to the app team as five faults and one request, ahead of the one list that DEC-214 plans for the other legs.
 - The faults (rows 8 and 14) go to the app team once, with the other legs' (DEC-214).
+- On 17 November, at the maintainer's request, row 27 was sent to the app team as a fault, with the iPhone's row 40.
+
+## 6. Walked again (17 November)
+
+On 17 November the mended places were walked again on a newer build from the app's development line, a Release build with the DevFlow agent, from a fresh install, on its side, in Oxford and slate, Light.
+
+| # | Where | What a reader sees now | Then |
+|---|---|---|---|
+| 26 | The folder's first choice (rows 14 and 18) | Choosing a picture once opens **Describe this image**. After **OK** the picture shows under the buttons, "Saved" shows for a moment, and the fourth button appears. | Mended |
+| 27 | The chain button (row 19) | Once the sample held that picture, the chain button closed the app again, as on the iPhone (the iPhone report, row 40). | A fault, still |
+| 28 | **Save as…** (row 21) | The format box offers **Everything (.gdz, recommended)** and **Family tree only (.ged)**. With a file of that name already there, the Files screen asked to replace it; **Keep Both** saved a second. The message: "Saved a copy as Brontë family of Haworth 2.gdz in On My iPad.", gone after a few seconds. | Mended |
+| 29 | **Remove workspace**, and the page for another program's file | The box now names the file. Under **Just look** the page says "Nothing is saved, and the file is not touched. Make a copy to edit, on its card, gives you a copy you can change." | New words; pictures taken again |
+
+**Not walked again on the iPad.** Opening the saved copy (row 22), two trees of the same name (row 23) and the tree's sheet (row 8). Rows 22 and 23 were seen mended on the iPhone and the Mac.
+
+**The pages.** The lines that worked round rows 14 and 18 are gone from *The Photos buttons* and *Open a family tree file*: **Add from file…** opened the file at the first choice both times. Its line about the chain button closing the app stays, because of row 27.

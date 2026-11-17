@@ -6,7 +6,12 @@
      The iPhone's were walked on 14 November 2026 on a simulator, with a drawing of Charlotte Brontë: the
      camera's question; the folder, whose box opened at the first choice but whose picture was not added in
      five tries; the chain, which added a picture from the tree; and the fourth button's folder chooser. A
-     simulator has no camera, so taking a photo was not tried. -->
+     simulator has no camera, so taking a photo was not tried.
+     Walked again on 17 November 2026 on a newer build: on the iPhone and the iPad a picture from the folder is
+     added at the first choice and shows under the buttons; the Mac's strip is the height of the pictures. On a
+     device with no camera, the camera button says the camera is not available. Once the sample tree holds a
+     picture from the folder, the chain button still closed the app on both simulators. -->
+
 <concept id="the-photos-buttons" xml:lang="en-GB">
   <title>The Photos buttons</title>
   <shortdesc>What the buttons under Photos are for on a person, an event or a source.</shortdesc>
@@ -15,6 +20,7 @@
       <created date="2026-10-29"/>
       <revised modified="2026-11-12"/>
       <revised modified="2026-11-14"/>
+      <revised modified="2026-11-17"/>
       <revised modified="2026-11-17"/>
     </critdates>
     <metadata>
@@ -40,13 +46,10 @@
     <section>
       <title>The folder button</title>
       <p>The second button has a folder on it. It is for a picture or a scan that is already on your <keyword keyref="product-device"/>.<ph platform="iPad iPhone"> Your <keyword keyref="product-device"/> opens its own Files screen. Choose a picture, or choose the cross at the top to leave it.</ph><ph platform="MacCatalyst"> A panel for opening a file opens. Choose a picture, then <uicontrol keyref="ui-open"/>, or choose <uicontrol keyref="ui-cancel"/> to leave it.</ph></p>
-      <p>A box named <wintitle keyref="ui-describe-this-image"/> then asks for a few words about the picture, for people who cannot see it. Type them and choose <uicontrol keyref="ui-ok"/>.<ph platform="iPad MacCatalyst"> The picture shows under the buttons.</ph></p>
+      <p>A box named <wintitle keyref="ui-describe-this-image"/> then asks for a few words about the picture, for people who cannot see it. Type them and choose <uicontrol keyref="ui-ok"/>. The picture shows under the buttons.</p>
       <fig platform="iPhone">
         <image keyref="img-photos-describe"/>
       </fig>
-      <p platform="iPhone">Look under the buttons. If they still say <q>No attachments yet</q>, the picture was not added, though no message says so. A picture that is already in the tree can be added with the chain button.</p>
-      <p platform="iPad">If the Files screen closes and nothing is added, choose the folder button and the picture again.</p>
-      <p platform="MacCatalyst">If the picture shows only as a thin strip, open the page again. The buttons under the picture, such as <uicontrol keyref="ui-edit"/>, can then be a long way down the page. Keep scrolling to reach them.</p>
     </section>
     <section>
       <title>The chain button</title>

@@ -2,13 +2,17 @@
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
 <!-- Find help and the version on the iPhone, the iPad and the Mac (help screen "about"). Written from the
      Alpha-2 walks: About uFTi was read on the Mac on 12 November 2026 and on the iPhone the same day; the
-     iPad shows the iPhone's screens. Help opened the web browser on the Mac. -->
+     iPad shows the iPhone's screens. Help opened the web browser on the Mac.
+     On 17 November 2026 About had two new buttons on the iPhone and the Mac, Privacy policy and Software
+     components and licences. They were not chosen in the walk. -->
+
 <task id="find-help-and-the-version" xml:lang="en-GB">
   <title>Find help and the version</title>
   <shortdesc>Open the guide to the screen you are on, and read which version of the app you have.</shortdesc>
   <prolog>
     <critdates>
       <created date="2026-11-12"/>
+      <revised modified="2026-11-17"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -37,6 +41,7 @@
         <cmd>Read the line that starts <uicontrol keyref="ui-version"/>.</cmd>
         <info>
           <p>The number follows the word. The page also lists facts about your <keyword keyref="product-device"/>.</p>
+          <p>Two buttons at the top, <uicontrol keyref="ui-privacy-policy"/> and <uicontrol keyref="ui-software-components-and-licences"/>, are for the privacy policy and for the software that <keyword keyref="product-name"/> is built with.</p>
         </info>
       </step>
     </steps>
