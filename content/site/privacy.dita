@@ -57,7 +57,7 @@
       <p>We cannot see the family trees that people make with uFTi. We do not collect, receive or have access to what you record in it.</p>
       <p>If you ask us for help, you may choose to send us a message or a file. We then have what you send. We use it only to help you.</p>
       <p>Your phone, tablet or computer may send crash reports to the company that makes its system. Your settings on the device decide this. It is part of the device, not part of uFTi, and we do not control it.</p>
-      <p>A family tree can hold a picture that lives on a website. When it does, uFTi asks that website for the picture so that it can show it. That website can see the internet address of your device, as any website that you visit can. The request also names the app, as a browser names itself. It says nothing else about you. We do not see this. The app does not use the internet for anything else.</p>
+      <p>A family tree can hold a picture that lives on a website. When it does, uFTi asks that website for the picture so that it can show it. That website can see the internet address of your device, and which picture was asked for, as any website that you visit can. The request also names the app, as a browser names itself. It says nothing else about you. We do not see this. The app does not use the internet for anything else.</p>
     </section>
     <section id="camera">
       <title>The camera and your pictures</title>
@@ -68,7 +68,7 @@
       <title>Copies that your device makes</title>
       <p>Your device may make its own copy of the files of apps, and so of your trees. This is part of the device, set by you. It is not part of uFTi, and we do not control it. We do not receive these copies.</p>
       <ul>
-        <li>An Android phone or tablet has its own backup. If it is on, Android may copy the files of apps to the backup that Google runs for Android.</li>
+        <li>An Android phone or tablet has its own backup. If it is on, Android may copy the files of apps, with your trees, to the backup in your Google account. Google keeps that backup for you. We receive nothing.</li>
         <li>An iPhone or iPad can back up the files of apps to iCloud, or to a computer. Your settings decide which.</li>
         <li>A Mac works in the same way, and you have more control over it. Your settings decide what it copies, and where.</li>
         <li>On a PC, a folder such as Documents may be kept in OneDrive. If yours is, your trees go there with the rest of the folder.</li>
