@@ -607,6 +607,44 @@
       "capture": "in-app (MAUI DevFlow screenshot)",
       "crop": null,
       "verifiedAppVersion": "0.2.0.1"
+    },
+    {
+      "key": "img-import-summary",
+      "file": "import-summary.png",
+      "sha256": "4cf8ad1fd591ac5817af86815aea75a9c7697a87e8a1631e25d270d76d876520",
+      "width": 929,
+      "height": 614,
+      "stage": 9,
+      "workspace": "not shown",
+      "focus": "Brontë family of Haworth",
+      "capture": "adb screencap of an Android 16 emulator, clock set in demo mode; cut before import",
+      "crop": {
+        "x": 74,
+        "y": 892,
+        "width": 929,
+        "height": 614,
+        "reason": "Keeps the box that counts what the file holds. The screen behind it is dimmed."
+      },
+      "verifiedAppVersion": "0.2.0.1014"
+    },
+    {
+      "key": "img-open-other-program",
+      "file": "open-other-program.png",
+      "sha256": "c7563d295f551f25f1fd25c834107f44b451e417adf6d9b7ce7514ab5d06c8f5",
+      "width": 1080,
+      "height": 928,
+      "stage": 9,
+      "workspace": "not shown",
+      "focus": "none",
+      "capture": "adb screencap of an Android 16 emulator, clock set in demo mode; cut before import",
+      "crop": {
+        "x": 0,
+        "y": 722,
+        "width": 1080,
+        "height": 928,
+        "reason": "Keeps the title, the two choices with their words, and Cancel. Nothing of a tree shows."
+      },
+      "verifiedAppVersion": "0.2.0.1014"
     }
   ]
 }

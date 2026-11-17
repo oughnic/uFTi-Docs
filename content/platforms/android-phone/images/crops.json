@@ -31,5 +31,15 @@
   "img-note-form": {
     "x": 0, "y": 650, "width": 1080, "height": 1532,
     "reason": "Leaves out the top of the screen: the button that fills the form from a document (an AI feature, which the documentation leaves out, DEC-020)."
+  },
+  "img-import-summary": {
+    "x": 74, "y": 892, "width": 929, "height": 614,
+    "shows": "controls only",
+    "reason": "Keeps the box that counts what the file holds. The screen behind it is dimmed."
+  },
+  "img-open-other-program": {
+    "x": 0, "y": 722, "width": 1080, "height": 928,
+    "shows": "controls only",
+    "reason": "Keeps the title, the two choices with their words, and Cancel. Nothing of a tree shows."
   }
 }

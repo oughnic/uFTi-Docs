@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!-- Open a family tree file, shared by the Android phone and tablet (issue 194, issue 200). Walked on
+     17 November 2026 on a phone emulator and a tablet emulator: Add from file opens Android's own screen for
+     choosing a file, at Recent, with Downloads in its menu. A uFTi .gdz opened with a box that counts what it
+     holds; a file another program made opened the page that asks what the app may do. Just look gave a card
+     marked Just looking, with Make a copy to edit. The file chosen in Downloads stayed as it was. -->
 <task id="open-a-family-tree-file" xml:lang="en-GB">
   <title>Open a family tree file</title>
   <shortdesc>Bring a tree from another program, or a copy from a relative, into uFTi.</shortdesc>
@@ -7,6 +12,7 @@
     <critdates>
       <created date="2026-10-27"/>
       <revised modified="2026-11-15"/>
+      <revised modified="2026-11-17"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -21,37 +27,48 @@
   </prolog>
   <taskbody>
     <context>
-      <p>A <term keyref="term-family-tree-file">family tree file</term> ends in .ged or .gdz. Put the file on your tablet first, for example in Downloads. <keyword keyref="product-name"/> works on its own copy, so the file you choose stays as it was. <xref keyref="opened-files-and-copies"/> says more.</p>
+      <p>A <term keyref="term-family-tree-file">family tree file</term> ends in .ged or .gdz. Put the file on your <keyword keyref="product-device"/> first, for example in Downloads. <keyword keyref="product-name"/> works on its own copy, so the file you choose stays as it was. <xref keyref="opened-files-and-copies"/> says more.</p>
     </context>
     <steps>
       <step>
-        <cmd>On <uicontrol keyref="ui-workspaces"/>, choose <uicontrol keyref="ui-add-from-file"/>.</cmd>
+        <cmd><ph platform="AndroidPhone">Choose <uicontrol keyref="ui-more"/>, then <uicontrol keyref="ui-workspaces"/>, then <uicontrol keyref="ui-add-from-file"/>.</ph><ph platform="AndroidTablet">Choose <uicontrol keyref="ui-workspaces"/> in the list on the left, then <uicontrol keyref="ui-add-from-file"/>.</ph></cmd>
         <stepresult>
-          <p>Android's own screen for choosing a file opens. It shows the folders on your tablet.</p>
+          <p>Android's own screen for choosing a file opens. It starts at Recent. Its menu, the three lines at the top left, has Downloads.</p>
         </stepresult>
       </step>
       <step>
-        <cmd>Open the folder that holds the file, such as Download, and choose the file.</cmd>
+        <cmd>Open the folder that holds the file, such as Downloads, and choose the file.</cmd>
         <stepresult>
-          <p>A box names the tree and counts the people, families, events, sources and notes in it. It says there are no pictures in the file, and that <q>uFTi keeps its own copy; the file you chose is left as it was.</q></p>
+          <p>If <keyword keyref="product-name"/> made the file, a box names the tree and counts the people, families, events, sources and notes in it, and its pictures. It says <q>uFTi keeps its own copy; the file you chose is left as it was.</q></p>
           <fig>
             <image keyref="img-import-summary"/>
           </fig>
+          <p>If another program made the file, a page opens first. It says the file was not made by <keyword keyref="product-name"/>, and asks what the app may do with it.</p>
+          <fig platform="AndroidPhone">
+            <image keyref="img-open-other-program"/>
+          </fig>
         </stepresult>
+      </step>
+      <step importance="optional">
+        <cmd>For a file that another program made, choose <uicontrol keyref="ui-make-a-gedcom-7-copy"/> or <uicontrol keyref="ui-just-look"/>.</cmd>
+        <choices>
+          <choice><uicontrol keyref="ui-make-a-gedcom-7-copy"/> keeps a copy of its own in GEDCOM 7, and saves your changes there. The file you chose is not touched.</choice>
+          <choice><uicontrol keyref="ui-just-look"/> opens the tree to look at, and the file is not touched. The box that follows says <q>Opened to look at: uFTi will not change this file.</q> Home then says that nothing in the tree can be changed, and the <uicontrol keyref="ui-add"/> button is gone. On <uicontrol keyref="ui-workspaces"/>, its card is marked <uicontrol keyref="ui-just-looking"/>. To change the tree, choose <uicontrol keyref="ui-make-a-copy-to-edit"/> on its card. The copy opens at once, and you can change it.</choice>
+        </choices>
       </step>
       <step>
         <cmd>Choose <uicontrol keyref="ui-ok"/>.</cmd>
         <stepresult>
-          <p><uicontrol keyref="ui-home"/> opens for the new tree. It takes its name from the file. If a tree with that name is already open, the new name ends with <q>(2)</q>. The tree has a card on <uicontrol keyref="ui-workspaces"/>, marked <uicontrol keyref="ui-active"/>.</p>
+          <p><uicontrol keyref="ui-home"/> opens for the new tree, and it has a card on <uicontrol keyref="ui-workspaces"/>, marked <uicontrol keyref="ui-active"/>.</p>
         </stepresult>
       </step>
     </steps>
     <result>
-      <p>The cards sit side by side. Choose a card to make that tree the open one. Choose <uicontrol keyref="ui-show-details"/> on a card to see which file it is.</p>
+      <p>The card of the tree in use comes first.<ph platform="AndroidTablet"> The cards sit side by side.</ph> To use another tree, choose <uicontrol keyref="ui-open"/> on its card; <xref keyref="move-between-workspaces"/> says more. Choose <uicontrol keyref="ui-show-details"/> on a card to see which file it is.</p>
       <fig>
         <image keyref="img-workspaces"/>
       </fig>
-      <note>If two cards have the same name, choose <uicontrol keyref="ui-show-details"/> on each to tell them apart.</note>
+      <note>A card takes its name from the file. If you already have a tree of that name, the new card's name ends in a number, such as (2).</note>
     </result>
     <postreq>
       <p>Next: <xref keyref="keep-it-safe"/>.</p>
