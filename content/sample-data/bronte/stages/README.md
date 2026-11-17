@@ -124,6 +124,48 @@ Each is written as the app writes a name of that kind, with its given name and s
 
 Register `stage-3-families.ged` as the first-run sample, under the name above, as before. `stage-3-families-with-sources.ged` is the fuller sample the owner asked for on 20 October 2026. Whether the app registers it in place of stage 3 is the app project's decision (DEC-112, DEC-114). The owner has said that the GEDCOM 7 file of this second sample is the basis for the app's seed in due course (DEC-116). Use the first sample's GEDCOM 7 file only if the app prefers GEDCOM 7. Its three image links point to Wikimedia Commons. Whether the app fetches them is for the media tests to show.
 
+## The finished sample: stage 9
+
+| File | What it is | Size | SHA-256 |
+|---|---|---|---|
+| `stage-9-finished.ged` | The finished tree, as GEDCOM 5.5.1. | 43,556 bytes | `01b8aee4e18c5979d026343733d1c7b12f2d7a14764919d7ad46d19065fd1347` |
+| `stage-9-finished.V7.ged` | The same tree as GEDCOM 7. This is the file for the app to bundle. | 43,733 bytes | `8871e27222bcea8ba5720ed8de957132d641ec97b9e7dfdd16f147f0c8ef3dc5` |
+
+**The name to show on screen:** Brontë family of Haworth, with the diaeresis.
+
+**What it is.** The stage 3 sourced tree with everything that [the walkthrough](../../../../authoring/bronte-build-walkthrough.md) adds in stages 4 to 8. Stage 9 of the walkthrough does not change the data, so the finished file is the stage 8 tree. It was built on 17 November 2026 with the app's own tools (DEC-039, DEC-114) from `stage-3-families-with-sources.ged`, and no file was edited by hand (DEC-253).
+
+| | Stage 3 sourced | Finished |
+|---|---|---|
+| People and families | 9 and 2 | 9 and 2 |
+| Events | 20 | 88 |
+| Sources and citations | 22 and 119 | 22 and 121 |
+| Shared notes | 0 | 13 |
+| Research notes | 0 | 6 |
+| Places where records are kept | 0 | 10 |
+| Media links | 3 | 4 |
+
+**What it adds.**
+
+- **Stage 4:** the 66 events marked stage 4 in [events.md](../events.md) (baptisms, burials, education, occupations, residences, publications, the wills and probates, and the 1864 marriage of Arthur Bell Nicholls). Where events.md names a period, the event is a period.
+- **Stage 5:** the shared note N01, linked from P01 to P08, and the person and family notes N02 to N10, N16 and N17, in the words of [notes.md](../notes.md).
+- **Stage 6:** the repositories R01 to R10, with seven of the 22 sources linked to the repository that holds them, and two citations of the Haworth burial register (S13) for the burials of Branwell and Emily, each with its entry, at quality 2 because the register was seen as a volunteer transcription.
+- **Stage 7:** the research notes for threads T01 to T05 and the negative search NS1, in the words of the research threads.
+- **Stage 8:** the portrait of Patrick (M08), as a link, the 1841 census event, with Patrick's age as the census gives it, and E120, Anne's gravestone and plaque.
+
+**What it leaves out, and why.**
+
+- No new person. The 1864 marriage is an event on Arthur with no bride named in the event, and the households of the census are not entered, because the gate allows only the nine people of the allow-list. The note about Arthur names his second wife, who married in 1864.
+- The source citations of the notes, the negative searches NS2 to NS6, and citations on the stage 4 events other than the two burials.
+- The websites and place lines of the repositories, which the gate refuses.
+- A kind of its own for an event of your own kind. The app's tool could not write one, so a publication is an event with its title in the description, such as "Publication: Jane Eyre".
+- A link from each research note to the person it is about. The tool cannot make one, so each note names its person in its text.
+- The licence of M08. The tool has no licence field, so the licence is the note N18, which is linked to M08 in the app but shows as a note of its own in the file.
+
+**Choices the second reader (Q20) should check.** Patrick's Hartshead residence is "from 1811 to 1815", not "about 1811", because the app's validator refuses "about" in a period. M08 uses the `upload.wikimedia.org` address, because the gate accepts no other. R10 is entered at stage 6, though repositories.md marks it stage 8. Dates are read from the specification's rows, as the common value where sources differ: the curacy of Haworth is "1820 to 1861", not 25 February 1820, and Charlotte's posts as a governess and her two stays in Brussels are one event each, with a range. A burial with no date in the sources has no date. The baptisms E021 and E031 are not entered, because they are findings that nothing was found.
+
+**The saved states of stages 4 to 8 are not published yet.** The first run left a period in those files that the validator refuses. They will be built again, stage by stage, and added here (issue 206).
+
 ## Changing these files
 
 A new file comes from a later stage built with the app's own tools, or from an earlier file changed with them (DEC-114), with the specification and the register updated in the same change. Add it here, update this README and the decision log, and run `pwsh build/scripts/check-source.ps1`. Never force-add a family tree file anywhere else.
