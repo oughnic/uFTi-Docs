@@ -1,6 +1,6 @@
 screen_id,screen_name,status
 about,About uFTi,
-about.components,Software components and licences,gap
+about.components,Software components and licences,
 about.privacy,Privacy policy,
 add.record,Add a record,
 events.date,The date editor,

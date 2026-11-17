@@ -344,7 +344,13 @@ function Test-Topic {
     if ($platforms.Count -gt 3) { Fail "more than three @platform variants in one topic ($($platforms.Count)): split it (variant budget)" $rel }
     # disclosure patterns, in text and comments alike
     $raw = $rawText
-    foreach ($d in $disclosure) { $mm = [regex]::Match($raw, $d.Pattern); if ($mm.Success) { Fail "looks like $($d.Why): '$($mm.Value)'" $rel } }
+    # the generated components topics link to the project of each library (DEC-248): a link to a project that is not ours is their point,
+    # but a link to either of our own accounts, other than this repository, is still a disclosure
+    $componentsTopic = $rel -match '(^|/)software-components\.dita$'
+    foreach ($d in $disclosure) {
+        $pattern = if ($componentsTopic -and $d.Why -eq 'another repository') { 'github\.com/(?!oughnic/uFTi-Docs)(oughnic|oughtibridge)/[A-Za-z0-9_.-]+' } else { $d.Pattern }
+        $mm = [regex]::Match($raw, $pattern); if ($mm.Success) { Fail "looks like $($d.Why): '$($mm.Value)'" $rel }
+    }
     # what the topic needs: keys, diagrams
     $keyrefs = @($rootEl.SelectNodes('//*[@keyref]') | ForEach-Object { $_.GetAttribute('keyref') -replace '/.*$', '' } | Sort-Object -Unique)
     # where each key is used: under which @platform values, so a manual that filters the element out does not need the key (DEC-129)
@@ -584,6 +590,11 @@ foreach ($src in $Source) {
     if ((Rel $srcRoot) -eq 'content') {
         $near = @(& (Join-Path $PSScriptRoot 'measure-reuse.ps1') -Root $root -Max 2 -PassThru)
         if ($near) { Note "$($near.Count) pair(s) of mobile topics differ by at most two lines once the device word is a key: write each once in platforms/mobile/topics (pwsh build/scripts/measure-reuse.ps1 -Max 2 lists them)" }
+    }
+    # the software components topics are generated from the copied inventory (DEC-248): a hand edit or a changed data file fails
+    if ((Rel $srcRoot) -eq 'content') {
+        $drift = @(& pwsh -NoProfile -File (Join-Path $PSScriptRoot 'new-components-topics.ps1') -Check 2>&1 | Where-Object { "$_" -like 'FAIL:*' })
+        foreach ($d in $drift) { Fail ("$d" -replace '^FAIL: ', '') }
     }
     # help-map coverage (DEC-028): every screen in the inventory has a topic with its identifier
     # A source may hold its own screens.csv (the fixture does); the real content uses build/help/screens.csv (DEC-194).
