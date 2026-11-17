@@ -5,7 +5,7 @@
        1. Name the file for a noun phrase: workspaces.dita. Make the id the same.
        2. Title: a noun phrase in sentence case. Short description: one sentence.
        3. Open with one paragraph that says what the idea is and why the reader cares.
-       4. Use titled sections. Aim for 500 words or fewer. Split anything longer.
+       4. Use titled sections. Aim for 800 words or fewer in each manual. Split anything longer.
        5. Explain each hard word once, in plain words, and link it to its glossary entry on first use
           with <term keyref="term-..."/>.
        6. A diagram needs a title, a description, and a text list of the same links (see the diagram

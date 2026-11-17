@@ -44,7 +44,7 @@ A `category` is a kind of page for the reader: it drives search filters and page
 
 | Category | A page that | Usually a |
 |---|---|---|
-| **Get started** | Is on the Quick Start route, or helps a first-time reader succeed in minutes. Under 150 words (lint). | `task` or a short `concept` |
+| **Get started** | Is on the Quick Start route, or helps a first-time reader succeed in minutes. Under 200 words (lint). | `task` or a short `concept` |
 | **How-to** | Helps the reader do one thing. | `task` |
 | **Concept** | Explains an idea. | `concept` |
 | **Reference** | Is for looking something up, or is a checklist. | `reference` |

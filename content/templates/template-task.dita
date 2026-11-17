@@ -4,7 +4,7 @@
        1. Name the file for the verb and the thing: add-a-person.dita. Make the id the same, without .dita.
        2. Title: an imperative verb, in sentence case, no number, 70 characters or fewer.
        3. Short description: one sentence, 25 words or fewer. Do not begin "This topic". Do not repeat the title.
-       4. Steps come first. One action in each cmd, in the imperative, 25 words or fewer. At most nine steps.
+       4. Steps come first. One action in each cmd, in the imperative, 40 words or fewer. At most nine steps.
           Name every control by key: <uicontrol keyref="ui-..."/>. Never type a label. Say what the
           reader will see in stepresult, and put essential detail in info. No tables inside steps.
        5. Delete prereq if there is no real prerequisite. Keep context to one or two sentences.

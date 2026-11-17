@@ -245,7 +245,7 @@ A topic is done when:
 - [ ] It stands alone: it makes sense when reached from search or the help button, with no positional references.
 - [ ] It meets the reading-level targets, or every exception is a term with a glossary entry.
 - [ ] Every image has alternative text (for screenshots, the key's link text) and a caption where one helps. Every diagram has a title, a description and a text route to what it links.
-- [ ] Idiom and platform differences are handled at the right level, with no more than three inline variants.
+- [ ] Idiom and platform differences are handled at the right level, by reuse first, with variants for what differs and a copy only as a last resort (DEC-251, DEC-252).
 - [ ] Links use keys. Related links come from the relationship table. Link text makes sense out of context.
 - [ ] Every step has been performed on each device it applies to, on a released or release-candidate build, by someone other than the author.
 - [ ] Technical review is done, and genealogy review where it applies.

@@ -98,7 +98,7 @@ Other languages measure differently. English measures do not apply to Spanish, w
 
 - **One idea in each sentence,** in the order it happens. Put the thing the reader needs first: "In **Title**, type where you know this from", not "Where you know this from should be typed in **Title**".
 - **Second person, active voice, present tense.** "You choose **Save**", not "**Save** is chosen". A step is an order: "Choose **Save**."
-- **Steps.** One action in each, 25 words or fewer, nine steps at most. After it, say what the reader will see: "A screen named **Sources** opens." Put detail the reader needs in `info`, after the step. Never put an explanation of an idea inside a step.
+- **Steps.** One action in each, 40 words or fewer, nine steps at most. After it, say what the reader will see: "A screen named **Sources** opens." Put detail the reader needs in `info`, after the step. Never put an explanation of an idea inside a step.
 - **Tasks answer the question first.** The title and the first sentence say what the reader will be able to do. Steps come before any background.
 - **Prefer a list to a long sentence,** and a table to a list of pairs. A list item is a short sentence of its own.
 - **Do not hedge.** Say what happens. Where the app does not do it yet, say nothing about it (DEC-084, DEC-092).

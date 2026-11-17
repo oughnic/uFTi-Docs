@@ -27,7 +27,7 @@ Rules that follow:
 
 ## 3. The Quick Start
 
-One Quick Start per device (DEC-026). Ten minutes. Seven pages, each under 150 words with one picture:
+One Quick Start per device (DEC-026). Ten minutes. Seven pages, each under 200 words (DEC-252) with one picture:
 
 1. **Get uFTi** on this device (platform-specific).
 2. **Look around**: what the main screens are for (idiom-specific).

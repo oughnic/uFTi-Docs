@@ -295,7 +295,7 @@ $lintCases = @(
     @{ Name = 'nested-topic-inside-a-nested-topic'; Expect = 'one level only'; Do = { param($d) Edit-File $d 'topics/know-it.dita' '</conbody>' ('</conbody>' + $nestedConcept.Replace('</concept>', '<concept id="part-deeper" xml:lang="en-GB"><title>Deeper</title><conbody><p>Deeper.</p></conbody></concept></concept>')) } }
     @{ Name = 'nested-topic-help-id-claimed-by-another-topic'; Expect = "help identifier 'things.edit' is also claimed by"; Do = { param($d) Edit-File $d 'topics/know-it.dita' '</conbody>' ('</conbody>' + $nestedConcept.Replace('things.part', 'things.edit')) } }
     @{ Name = 'nested-topic-help-id-format'; Expect = "is not area.screen in lower case with hyphens (nested topic 'part-one')"; Do = { param($d) Edit-File $d 'topics/know-it.dita' '</conbody>' ('</conbody>' + $nestedConcept.Replace('things.part', 'Things Part')) } }
-    @{ Name = 'a concept with a nested topic over 500 words'; Expect = 'a concept of'; Do = { param($d) Edit-File $d 'topics/know-it.dita' '</conbody>' ('</conbody>' + $nestedConcept.Replace('<p>Part one.</p>', "<p>$(Words 520)</p>")) } }
+    @{ Name = 'a concept with a nested topic over 800 words'; Expect = 'a concept of'; Do = { param($d) Edit-File $d 'topics/know-it.dita' '</conbody>' ('</conbody>' + $nestedConcept.Replace('<p>Part one.</p>', "<p>$(Words 820)</p>")) } }
     @{ Name = 'screen-with-no-topic'; Expect = "screen 'things.gone' (A thing nobody wrote) has no topic with resourceid"; Do = { param($d) Write-File $d 'screens.csv' "screen_id,screen_name,status`nthings.edit,Edit a thing,`nthings.gone,A thing nobody wrote,`n" } }
     @{ Name = 'screen-marked-gap-that-now-has-a-topic'; Expect = "screen 'things.edit' is marked 'gap' but a topic now carries its identifier"; Do = { param($d) Write-File $d 'screens.csv' "screen_id,screen_name,status`nthings.edit,Edit a thing,gap`n" } }
     @{ Name = 'screen-status-that-is-not-gap'; Expect = "screen 'things.edit': status 'later' is not blank or 'gap'"; Do = { param($d) Write-File $d 'screens.csv' "screen_id,screen_name,status`nthings.edit,Edit a thing,later`n" } }
@@ -310,11 +310,6 @@ $lintCases = @(
       </fig>' '<fig>
         <image keyref="img-shot"/>
       </fig><fig><image keyref="img-elsewhere"/></fig>' } }
-    @{ Name = 'device-token-on-text-in-a-shared-topic'; Expect = 'used outside platforms/'; Do = { param($d) Edit-File $d 'topics/do-it.dita' '<fig>
-        <image keyref="img-shot"/>
-      </fig>' '<p platform="AndroidPhone">Only on an Android phone.</p><fig>
-        <image keyref="img-shot"/>
-      </fig>' } }
     @{ Name = 'image-by-href'; Expect = 'pictures are referenced by key'; Do = { param($d) Edit-File $d 'topics/do-it.dita' '<image keyref="img-shot"/>' '<image href="../platforms/windows/images/shot.png"><alt>A form</alt></image>' } }
     @{ Name = 'table-without-title'; Expect = 'table without a title'; Do = { param($d) Edit-File $d 'topics/look-it-up.dita' '<title>Things you can save</title>' '' } }
     @{ Name = 'table-without-header-row'; Expect = 'table without a header row'; Do = { param($d) Edit-File $d 'topics/look-it-up.dita' '<thead>
@@ -329,10 +324,11 @@ $lintCases = @(
       </step>
     </steps>' '<context><p>Choose Save.</p></context>' } }
     @{ Name = 'task-with-ten-steps'; Expect = '10 steps'; Do = { param($d) Edit-File $d 'topics/do-it.dita' '</steps>' (((1..9 | ForEach-Object { '<step><cmd>Choose <uicontrol keyref="ui-save"/>.</cmd></step>' }) -join '') + '</steps>') } }
-    @{ Name = 'step-command-too-long'; Expect = 'a step command of'; Do = { param($d) Edit-File $d 'topics/do-it.dita' '<cmd>Choose <uicontrol keyref="ui-save"/>.</cmd>' ('<cmd>Choose <uicontrol keyref="ui-save"/> ' + (Words 26) + '</cmd>') } }
+    @{ Name = 'step-command-too-long'; Expect = 'a step command of'; Do = { param($d) Edit-File $d 'topics/do-it.dita' '<cmd>Choose <uicontrol keyref="ui-save"/>.</cmd>' ('<cmd>Choose <uicontrol keyref="ui-save"/> ' + (Words 41) + '</cmd>') } }
     @{ Name = 'table-inside-a-step'; Expect = 'a table inside a step'; Do = { param($d) Edit-File $d 'topics/do-it.dita' '<stepresult>' '<info><simpletable><sthead><stentry>A</stentry></sthead><strow><stentry>B</stentry></strow></simpletable></info><stepresult>' } }
-    @{ Name = 'concept-too-long'; Expect = 'a concept of'; Do = { param($d) Edit-File $d 'topics/know-it.dita' '<p>A thing is kept when you save it.</p>' ('<p>' + (Words 520) + '</p>') } }
-    @{ Name = 'quick-start-page-too-long'; Expect = 'Quick Start pages stay under 150'; Do = { param($d) Edit-File $d 'topics/know-it.dita' '<category>Concept</category>' '<category>Get started</category>'; Edit-File $d 'topics/know-it.dita' '<p>A thing is kept when you save it.</p>' ('<p>' + (Words 160) + '</p>') } }
+    @{ Name = 'concept-too-long'; Expect = 'a concept of'; Do = { param($d) Edit-File $d 'topics/know-it.dita' '<p>A thing is kept when you save it.</p>' ('<p>' + (Words 820) + '</p>') } }
+    @{ Name = 'a concept over 800 words in one manual, with variants for others'; Expect = 'a concept of'; Do = { param($d) Edit-File $d 'topics/know-it.dita' '<p>A thing is kept when you save it.</p>' ('<p>A thing is kept when you save it.</p><p platform="iPhone">' + (Words 820) + '</p>') } }
+    @{ Name = 'quick-start-page-too-long'; Expect = 'Quick Start pages stay under 200'; Do = { param($d) Edit-File $d 'topics/know-it.dita' '<category>Concept</category>' '<category>Get started</category>'; Edit-File $d 'topics/know-it.dita' '<p>A thing is kept when you save it.</p>' ('<p>' + (Words 210) + '</p>') } }
     @{ Name = 'good-practice-section-title'; Expect = 'good practice section title'; Do = { param($d) Edit-File $d 'topics/know-it.dita' '<category>Concept</category>' '<category>Good practice</category>'; Edit-File $d 'topics/know-it.dita' '<p>A thing is kept when you save it.</p>' '<section><title>Overview</title><p>A thing is kept when you save it.</p></section>' } }
     @{ Name = 'troubleshooting-without-condition'; Expect = 'needs a condition'; Do = { param($d) Edit-File $d 'topics/fix-it.dita' '<condition>
       <p>You make a change, and it is gone later.</p>
@@ -370,6 +366,15 @@ $lintPass = @(
         <image keyref="img-shot"/>
       </fig><fig platform="AndroidPhone"><image keyref="img-elsewhere"/></fig>' } }
     @{ Name = 'a template in no map passes'; Do = { param($d) $dest = Join-Path $d 'templates/know-it-too.dita'; New-Item -ItemType Directory -Path (Split-Path $dest) -Force | Out-Null; (Get-Content (Join-Path $d 'topics/know-it.dita') -Raw).Replace('id="know-it"', 'id="know-it-too"').Replace('<title>Know it</title>', '<title>Know it too</title>') | Set-Content $dest -NoNewline } }
+    @{ Name = 'a device token on text in a shared topic passes (DEC-252)'; Do = { param($d) Edit-File $d 'topics/do-it.dita' '<fig>
+        <image keyref="img-shot"/>
+      </fig>' '<p platform="AndroidPhone">Only on an Android phone.</p><fig>
+        <image keyref="img-shot"/>
+      </fig>' } }
+    @{ Name = 'more than three platform values in one topic pass (DEC-252)'; Do = { param($d) Edit-File $d 'topics/know-it.dita' '<p>A thing is kept when you save it.</p>' '<p>A thing is kept when you save it.</p><p platform="AndroidPhone">On an Android phone.</p><p platform="AndroidTablet">On an Android tablet.</p><p platform="iPhone">On an iPhone.</p><p platform="iPad">On an iPad.</p>' } }
+    @{ Name = 'a concept over 800 words in all, but under 800 in each manual, passes (DEC-252)'; Do = { param($d) Edit-File $d 'topics/know-it.dita' '<p>A thing is kept when you save it.</p>' ('<p>A thing is kept when you save it.</p><p platform="WindowsWinUI">' + (Words 500) + '</p><p platform="iPhone">' + (Words 500) + '</p>') } }
+    @{ Name = 'a step command of 40 words passes (DEC-252)'; Do = { param($d) Edit-File $d 'topics/do-it.dita' '<cmd>Choose <uicontrol keyref="ui-save"/>.</cmd>' ('<cmd>Choose <uicontrol keyref="ui-save"/> ' + (Words 39) + '</cmd>') } }
+    @{ Name = 'a Quick Start page of 190 words passes (DEC-252)'; Do = { param($d) Edit-File $d 'topics/know-it.dita' '<category>Concept</category>' '<category>Get started</category>'; Edit-File $d 'topics/know-it.dita' '<p>A thing is kept when you save it.</p>' ('<p>' + (Words 190) + '</p>') } }
 )
 
 if ($Only -contains 'lint') {

@@ -10,8 +10,8 @@
          backup only: windows (WindowsWinUI), android (Android), ios (iOS).
        - Write for the idiom. Say "choose", never "click" or "tap" (the pointer and touch differ only
          in the words of the steps). Mention the keyboard in a desktop topic.
-       - A page that differs by less than a third is not two topics. Keep one topic and put at most
-         three inline variants in it, with platform="Touch" or platform="Pointer" on a phrase.
+       - A page that differs a little is not two topics. Keep one topic and put what differs in variants
+         (DEC-252), with platform="Touch" or platform="Pointer" on a whole sentence, step or item.
      Copy this file and its pair together, and keep their ids, titles and keys the same. -->
 <task id="template-variant" xml:lang="en-GB">
   <title>Find a thing</title>
