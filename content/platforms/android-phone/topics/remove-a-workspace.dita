@@ -7,6 +7,7 @@
     <critdates>
       <created date="2026-10-27"/>
       <revised modified="2026-11-10"/>
+      <revised modified="2026-11-17"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -26,7 +27,7 @@
       <step>
         <cmd>Choose <uicontrol keyref="ui-remove"/> on that card.</cmd>
         <stepresult>
-          <p>A box named <wintitle keyref="ui-remove-workspace"/> asks you to check. It says the family tree file is not deleted.</p>
+          <p>A box named <wintitle keyref="ui-remove-workspace"/> asks you to check. It says the family tree file is not deleted.<ph platform="iPhone iPad"> It also names the file, so you can tell two trees of the same name apart.</ph></p>
           <fig>
             <image keyref="img-remove-workspace"/>
           </fig>
@@ -40,7 +41,7 @@
       </step>
     </steps>
     <result>
-      <p>The file is still on your <keyword keyref="product-device"/>. Open it again with <uicontrol keyref="ui-add-from-file"/> at any time. If you remove your last tree, the screen says <q>No workspace open</q>.</p>
+      <p>The file is still on your <keyword keyref="product-device"/>. Open it again with <uicontrol keyref="ui-add-from-file"/> at any time. If you remove your last tree, the screen says <q>No workspace open</q>.<ph platform="iPhone"> <uicontrol keyref="ui-home"/> and <uicontrol keyref="ui-workspaces"/> then offer <uicontrol keyref="ui-open-the-sample-tree"/>, which brings back the Brontë sample.</ph></p>
     </result>
   </taskbody>
 </task>

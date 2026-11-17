@@ -322,7 +322,7 @@
     {
       "key": "img-open-other-program",
       "file": "open-other-program.png",
-      "sha256": "a769d009948549dba0f0bae5dd7a4325c171071110f288e42340a31ec06f7470",
+      "sha256": "f44b94235e1b8401504b87408a41a6bee2d4dedefe254f93d88efad3ce63dfd5",
       "width": 804,
       "height": 740,
       "stage": 0,
@@ -439,9 +439,9 @@
     {
       "key": "img-remove-workspace",
       "file": "remove-workspace.png",
-      "sha256": "3eedf54b99b82230b0b753f5205b5d02d1f50b9427c01f5add3b5a08f66064b9",
+      "sha256": "632baf8b78dd04d606c6a977812df2df6054b3a454f4d8bd1060ca9bf64d0757",
       "width": 660,
-      "height": 396,
+      "height": 474,
       "stage": 0,
       "workspace": "not shown",
       "focus": "Brontë family of Haworth",

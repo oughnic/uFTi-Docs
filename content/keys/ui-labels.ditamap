@@ -27,6 +27,13 @@
   <keydef keys="ui-add-from-file"><topicmeta><keywords><keyword>Add from file…</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-new-workspace"><topicmeta><keywords><keyword>New workspace</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-create"><topicmeta><keywords><keyword>Create</keyword></keywords></topicmeta></keydef>
+  <!-- a tree opened with Just look, and the sample tree, read on the iPhone and the Mac on 17 November 2026 -->
+  <keydef keys="ui-just-looking"><topicmeta><keywords><keyword>Just looking</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-make-a-copy-to-edit"><topicmeta><keywords><keyword>Make a copy to edit</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-open-the-sample-tree"><topicmeta><keywords><keyword>Open the sample tree</keyword></keywords></topicmeta></keydef>
+  <!-- About uFTi, read on the iPhone and the Mac on 17 November 2026 -->
+  <keydef keys="ui-privacy-policy"><topicmeta><keywords><keyword>Privacy policy</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-software-components-and-licences"><topicmeta><keywords><keyword>Software components and licences</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-new-person"><topicmeta><keywords><keyword>New person</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-save-as"><topicmeta><keywords><keyword>Save as…</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-save-workspace-as"><topicmeta><keywords><keyword>Save workspace as</keyword></keywords></topicmeta></keydef>

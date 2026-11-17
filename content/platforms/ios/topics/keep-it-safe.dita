@@ -2,7 +2,10 @@
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
 <!-- Keep it safe on iPhone and iPad (platform strategy, section 2.3). Written from the walk of 24 October 2026:
      Save as on a workspace card, the format sheet, the version question, then the Files save sheet. The
-     iPad's format sheet has no Cancel button and the iPhone's has; the page does not mention either. -->
+     iPad's format sheet has no Cancel button and the iPhone's has; the page does not mention either.
+     On 17 November 2026 the message after Save was read on both: "Saved a copy as … in On My iPhone." and
+     "… in On My iPad.", which goes after a few seconds. -->
+
 <task id="keep-it-safe" xml:lang="en-GB">
   <title>Keep it safe</title>
   <shortdesc>Save a copy of your tree as a file, and keep it somewhere else too.</shortdesc>
@@ -10,6 +13,7 @@
     <critdates>
       <created date="2026-10-24"/>
       <revised modified="2026-11-11"/>
+      <revised modified="2026-11-17"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -50,6 +54,9 @@
       </step>
       <step>
         <cmd>In the Files screen, choose where to put the file, then choose <uicontrol keyref="ui-save"/>.</cmd>
+        <stepresult>
+          <p>A message says where the copy went.</p>
+        </stepresult>
       </step>
     </steps>
     <result>
