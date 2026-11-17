@@ -37,6 +37,8 @@
   <chapter href="topics/workspaces/bring-in-share-and-keep-safe.dita" keys="bring-in-share-and-keep-safe">
     <mapref href="maps/structure/bring-in-share-and-keep-safe.ditamap"/>
   </chapter>
+  <appendix href="site/privacy.dita" keys="privacy"/>
+  <appendix href="platforms/android/topics/software-components.dita" keys="software-components"/>
   <backmatter>
     <booklists>
       <!-- toc="no": the print document and PDF make their own Glossary part, so the terms are not also printed as pages of their own (DEC-170). -->

@@ -23,7 +23,7 @@
 #>
 [CmdletBinding()]
 param(
-    [ValidateSet('lint', 'vale', 'templates', 'samples', 'publications', 'helpmap', 'reuse', 'walks')][string[]]$Only = @('lint', 'vale', 'templates', 'samples', 'publications', 'helpmap', 'reuse', 'walks'),
+    [ValidateSet('lint', 'vale', 'templates', 'samples', 'publications', 'helpmap', 'reuse', 'walks', 'components')][string[]]$Only = @('lint', 'vale', 'templates', 'samples', 'publications', 'helpmap', 'reuse', 'walks', 'components'),
     [string]$Filter = '',
     [string]$ToolsDir
 )
@@ -784,6 +784,52 @@ $Comment
     foreach ($c in $cases) {
         if ($Filter -and $c.Name -notlike "*$Filter*") { continue }
         Record 'reuse' $c.Name ([bool](& $c.Ok)) 'the measurement is not what the strategy says it is'
+    }
+}
+# ---- The software components topics: imported as data, generated, and checked for drift (DEC-248) ----
+
+if ($Only -contains 'components') {
+    Write-UftiStep 'Components: the import, the generated topics and the drift check'
+    $comp = Join-Path $work 'components'
+    $inv = Join-Path $comp 'inventory'
+    $copy = Join-Path $comp 'content/components'
+    $contentRoot = Join-Path $comp 'content'
+    foreach ($plat in 'windows', 'android', 'ios', 'maccatalyst') {
+        Write-File $inv "$plat.components.json" (@{
+            '$comment' = 'from the app'; platform = $plat; targetFramework = 'net10.0'
+            app = @{ name = 'uFTi'; copyright = 'Copyright Oughtibridge Ltd. All rights reserved.'; projectUrl = 'https://github.com/oughtibridge/uFTi-2' }
+            packages = @(
+                @{ id = 'Some.Library'; version = '1.2.3'; licence = @{ expression = 'MIT' }; copyright = 'c Someone. All rights reserved.'; authors = 'Someone'; projectUrl = 'https://github.com/someone/library' }
+                @{ id = 'Other.Library'; version = '4.5.6'; licence = @{ file = 'LICENSE' }; copyright = 'c Someone. All rights reserved.'; authors = 'Someone'; projectUrl = 'https://example.org/other' }
+            )
+            fonts = @(@{ name = 'A Font'; files = @('a.ttf'); licence = 'OFL-1.1'; licenceFile = 'uFTi.app/Resources/Fonts/licences/a.txt'; copyright = 'Copyright The Authors'; projectUrl = 'https://example.org/font' })
+            content = @(
+                @{ name = 'A sample tree'; file = 'uFTi.app/Resources/Raw/SampleData/a.ged'; licence = $null; copyright = 'Copyright 2026 Oughtibridge Ltd'; note = 'n'; media = @(@{ title = 'A picture'; url = 'https://example.org/p.jpg'; note = 'Public domain.' }) }
+                @{ name = 'A debug-only tree'; file = 'uFTi.app/Resources/Raw/SampleData/b.ged'; licence = $null; copyright = $null; note = 'Bundled but not installed for the reader.'; media = @() }
+            )
+            runtimes = @(@{ name = 'A runtime'; licence = 'MIT'; copyright = 'Copyright The Foundation'; projectUrl = 'https://example.org/runtime'; noticesUrl = 'https://example.org/notices' })
+        } | ConvertTo-Json -Depth 10)
+    }
+    $null = & (Join-Path $PSScriptRoot 'import-components.ps1') -From $inv -Output $copy
+    $null = & (Join-Path $PSScriptRoot 'new-components-topics.ps1') -Data $copy -Root $contentRoot
+    $topic = Join-Path $contentRoot 'platforms/windows/topics/software-components.dita'
+    $checkRun = { $o = & pwsh -NoProfile -File (Join-Path $PSScriptRoot 'new-components-topics.ps1') -Check -Data $copy -Root $contentRoot 2>&1; [pscustomobject]@{ Exit = $LASTEXITCODE; Text = ($o -join "`n") } }
+    $copied = [System.IO.File]::ReadAllText((Join-Path $copy 'windows.json'))
+    $generated = [System.IO.File]::ReadAllText($topic)
+    $cases = @(
+        @{ Name = 'the copy leaves out the private repository address and source paths'; Ok = { $copied -cnotmatch 'oughtibridge|uFTi\.app/|licenceFile' } }
+        @{ Name = 'the copy leaves out content with neither a licence nor a copyright'; Ok = { $copied -notmatch 'debug-only' -and $copied -match 'A sample tree' } }
+        @{ Name = 'the copy puts the copyright sign back'; Ok = { $copied -match ([string][char]0x00A9) + ' Someone' } }
+        @{ Name = 'every device family gets a topic with the help identifier'; Ok = { (@('windows', 'android', 'ios', 'macos') | Where-Object { [System.IO.File]::ReadAllText((Join-Path $contentRoot "platforms/$_/topics/software-components.dita")) -match 'appid="about\.components"' }).Count -eq 4 } }
+        @{ Name = 'the topic carries the licence, the version and a link to the project'; Ok = { $generated -match 'MIT' -and $generated -match '1\.2\.3' -and $generated -match 'href="https://github.com/someone/library"' } }
+        @{ Name = 'a copyright that every library shares is said once'; Ok = { ([regex]::Matches($generated, 'Someone\. All rights reserved')).Count -eq 1 } }
+        @{ Name = 'a topic that matches its data passes the check'; Ok = { (& $checkRun).Exit -eq 0 } }
+        @{ Name = 'a topic edited by hand fails the check'; Ok = { [System.IO.File]::WriteAllText($topic, $generated.Replace('Some.Library', 'Edited.Library')); $r = & $checkRun; [System.IO.File]::WriteAllText($topic, $generated); $r.Exit -eq 1 -and $r.Text -match 'does not match' } }
+        @{ Name = 'data changed without a new run fails the check'; Ok = { $d = Join-Path $copy 'android.json'; $was = [System.IO.File]::ReadAllText($d); [System.IO.File]::WriteAllText($d, $was.Replace('1.2.3', '9.9.9')); $r = & $checkRun; [System.IO.File]::WriteAllText($d, $was); $r.Exit -eq 1 } }
+    )
+    foreach ($c in $cases) {
+        if ($Filter -and $c.Name -notlike "*$Filter*") { continue }
+        Record 'components' $c.Name ([bool](& $c.Ok)) 'the import or the generator is not what DEC-248 says'
     }
 }
 # ---- The walk tooling: a run is collected only when every leg is there, on one build, with no identifiers (DEC-209) ----

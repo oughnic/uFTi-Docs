@@ -1,0 +1,397 @@
+{
+  "$comment": "A copy of the app's component inventory for this platform, made by build/scripts/import-components.ps1. Do not edit by hand: import again, then run new-components-topics.ps1.",
+  "platform": "ios",
+  "app": {
+    "name": "uFTi",
+    "copyright": "Copyright Oughtibridge Ltd. All rights reserved."
+  },
+  "packages": [
+    {
+      "id": "CommunityToolkit.Maui",
+      "version": "15.0.1",
+      "licence": {
+        "expression": "MIT"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://github.com/CommunityToolkit/Maui"
+    },
+    {
+      "id": "CommunityToolkit.Maui.Camera",
+      "version": "6.1.0",
+      "licence": {
+        "expression": "MIT"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://github.com/CommunityToolkit/Maui"
+    },
+    {
+      "id": "CommunityToolkit.Maui.Core",
+      "version": "15.0.1",
+      "licence": {
+        "expression": "MIT"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://github.com/CommunityToolkit/Maui"
+    },
+    {
+      "id": "Microsoft.Extensions.Configuration",
+      "version": "10.0.0",
+      "licence": {
+        "expression": "MIT"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://dot.net/"
+    },
+    {
+      "id": "Microsoft.Extensions.Configuration.Abstractions",
+      "version": "10.0.13",
+      "licence": {
+        "expression": "MIT"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://dot.net/"
+    },
+    {
+      "id": "Microsoft.Extensions.DependencyInjection",
+      "version": "10.0.13",
+      "licence": {
+        "expression": "MIT"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://dot.net/"
+    },
+    {
+      "id": "Microsoft.Extensions.DependencyInjection.Abstractions",
+      "version": "10.0.13",
+      "licence": {
+        "expression": "MIT"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://dot.net/"
+    },
+    {
+      "id": "Microsoft.Extensions.Diagnostics.Abstractions",
+      "version": "10.0.13",
+      "licence": {
+        "expression": "MIT"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://dot.net/"
+    },
+    {
+      "id": "Microsoft.Extensions.FileProviders.Abstractions",
+      "version": "10.0.13",
+      "licence": {
+        "expression": "MIT"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://dot.net/"
+    },
+    {
+      "id": "Microsoft.Extensions.Hosting.Abstractions",
+      "version": "10.0.13",
+      "licence": {
+        "expression": "MIT"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://dot.net/"
+    },
+    {
+      "id": "Microsoft.Extensions.Localization",
+      "version": "10.0.13",
+      "licence": {
+        "expression": "MIT"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://asp.net/"
+    },
+    {
+      "id": "Microsoft.Extensions.Localization.Abstractions",
+      "version": "10.0.13",
+      "licence": {
+        "expression": "MIT"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://asp.net/"
+    },
+    {
+      "id": "Microsoft.Extensions.Logging",
+      "version": "10.0.13",
+      "licence": {
+        "expression": "MIT"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://dot.net/"
+    },
+    {
+      "id": "Microsoft.Extensions.Logging.Abstractions",
+      "version": "10.0.13",
+      "licence": {
+        "expression": "MIT"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://dot.net/"
+    },
+    {
+      "id": "Microsoft.Extensions.Logging.Debug",
+      "version": "10.0.13",
+      "licence": {
+        "expression": "MIT"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://dot.net/"
+    },
+    {
+      "id": "Microsoft.Extensions.Options",
+      "version": "10.0.13",
+      "licence": {
+        "expression": "MIT"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://dot.net/"
+    },
+    {
+      "id": "Microsoft.Extensions.Primitives",
+      "version": "10.0.13",
+      "licence": {
+        "expression": "MIT"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://dot.net/"
+    },
+    {
+      "id": "Microsoft.Maui.Controls",
+      "version": "10.0.110",
+      "licence": {
+        "expression": "MIT"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://github.com/dotnet/maui"
+    },
+    {
+      "id": "Microsoft.Maui.Controls.Core",
+      "version": "10.0.110",
+      "licence": {
+        "expression": "MIT"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://github.com/dotnet/maui"
+    },
+    {
+      "id": "Microsoft.Maui.Controls.Xaml",
+      "version": "10.0.110",
+      "licence": {
+        "expression": "MIT"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://github.com/dotnet/maui"
+    },
+    {
+      "id": "Microsoft.Maui.Core",
+      "version": "10.0.110",
+      "licence": {
+        "expression": "MIT"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://github.com/dotnet/maui"
+    },
+    {
+      "id": "Microsoft.Maui.Essentials",
+      "version": "10.0.110",
+      "licence": {
+        "expression": "MIT"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://github.com/dotnet/maui"
+    },
+    {
+      "id": "Microsoft.Maui.Graphics",
+      "version": "10.0.110",
+      "licence": {
+        "expression": "MIT"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://github.com/dotnet/maui"
+    },
+    {
+      "id": "Microsoft.ML.OnnxRuntime",
+      "version": "1.27.0",
+      "licence": {
+        "file": "LICENSE"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://github.com/Microsoft/onnxruntime"
+    },
+    {
+      "id": "Microsoft.ML.OnnxRuntime.Extensions",
+      "version": "0.14.0",
+      "licence": {
+        "file": "LICENSE.txt"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://github.com/Microsoft/onnxruntime-extensions"
+    },
+    {
+      "id": "Microsoft.ML.OnnxRuntime.Managed",
+      "version": "1.27.0",
+      "licence": {
+        "file": "LICENSE.txt"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://github.com/Microsoft/onnxruntime"
+    },
+    {
+      "id": "SkiaSharp",
+      "version": "4.153.1",
+      "licence": {
+        "expression": "MIT"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://go.microsoft.com/fwlink/?linkid=868515"
+    },
+    {
+      "id": "SkiaSharp.NativeAssets.iOS",
+      "version": "4.153.1",
+      "licence": {
+        "expression": "MIT"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://go.microsoft.com/fwlink/?linkid=868515"
+    },
+    {
+      "id": "SkiaSharp.Views",
+      "version": "4.153.1",
+      "licence": {
+        "expression": "MIT"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://go.microsoft.com/fwlink/?linkid=868515"
+    },
+    {
+      "id": "SkiaSharp.Views.Maui.Controls",
+      "version": "4.153.1",
+      "licence": {
+        "expression": "MIT"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://go.microsoft.com/fwlink/?linkid=868515"
+    },
+    {
+      "id": "SkiaSharp.Views.Maui.Core",
+      "version": "4.153.1",
+      "licence": {
+        "expression": "MIT"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://go.microsoft.com/fwlink/?linkid=868515"
+    },
+    {
+      "id": "System.Numerics.Tensors",
+      "version": "9.0.0",
+      "licence": {
+        "expression": "MIT"
+      },
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "authors": "Microsoft",
+      "projectUrl": "https://dot.net/"
+    }
+  ],
+  "fonts": [
+    {
+      "name": "Atkinson Hyperlegible Next",
+      "licence": "OFL-1.1",
+      "copyright": "Copyright 2020-2024 The Atkinson Hyperlegible Next Project Authors",
+      "projectUrl": "https://github.com/googlefonts/atkinson-hyperlegible-next"
+    },
+    {
+      "name": "Source Serif 4",
+      "licence": "OFL-1.1",
+      "copyright": "Copyright 2014-2023 Adobe, with Reserved Font Name 'Source'",
+      "projectUrl": "https://github.com/adobe-fonts/source-serif"
+    },
+    {
+      "name": "Material Icons",
+      "licence": "Apache-2.0",
+      "copyright": "Copyright Google LLC",
+      "projectUrl": "https://github.com/google/material-design-icons"
+    }
+  ],
+  "content": [
+    {
+      "name": "Brontë family of Haworth (sample tree)",
+      "licence": null,
+      "copyright": "Copyright 2026 Oughtibridge Ltd",
+      "media": [
+        {
+          "title": "St John's College, Cambridge: the rear buildings",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/St_johns_rear_buildings.jpg",
+          "note": "Public domain. The photographer released it. From Wikimedia Commons."
+        },
+        {
+          "title": "Haworth parsonage soon after Patrick Brontë's death, circa 1863",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Haworth_parsonage_soon_after_Patrick_Bront%C3%AB%27s_death.jpg",
+          "note": "Public domain. From Wikimedia Commons, where the licence is stated."
+        },
+        {
+          "title": "The parsonage in Haworth, now the Brontë Parsonage Museum",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Bronte_Parsonage_Museum.JPG",
+          "note": "Public domain, as released by its uploader on English Wikipedia. From Wikimedia Commons."
+        }
+      ]
+    }
+  ],
+  "runtimes": [
+    {
+      "name": ".NET runtime",
+      "licence": "MIT",
+      "copyright": "Copyright .NET Foundation and Contributors",
+      "projectUrl": "https://github.com/dotnet/runtime",
+      "noticesUrl": "https://github.com/dotnet/runtime/blob/main/THIRD-PARTY-NOTICES.TXT"
+    },
+    {
+      "name": ".NET for iOS and Mac Catalyst",
+      "licence": "MIT",
+      "copyright": "Copyright .NET Foundation and Contributors",
+      "projectUrl": "https://github.com/dotnet/macios",
+      "noticesUrl": "https://github.com/dotnet/macios/blob/main/LICENSE"
+    },
+    {
+      "name": ".NET MAUI",
+      "licence": "MIT",
+      "copyright": "Copyright .NET Foundation and Contributors",
+      "projectUrl": "https://github.com/dotnet/maui",
+      "noticesUrl": "https://github.com/dotnet/maui/blob/main/THIRD-PARTY-NOTICES.TXT"
+    }
+  ]
+}

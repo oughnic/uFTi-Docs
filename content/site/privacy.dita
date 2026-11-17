@@ -6,6 +6,7 @@
   <prolog>
     <critdates>
       <created date="2026-10-25"/>
+      <revised modified="2026-11-16"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -15,8 +16,11 @@
         <keyword>personal data</keyword>
         <keyword>cookies</keyword>
         <keyword>data controller</keyword>
+        <keyword>backup</keyword>
+        <keyword>delete my trees</keyword>
       </keywords>
     </metadata>
+    <resourceid appname="ufti" appid="about.privacy"/>
   </prolog>
   <refbody>
     <section id="short-version">
@@ -26,9 +30,11 @@
         <li>We cannot see the family trees that you make.</li>
         <li>This website and its PDFs do not use cookies, analytics or tracking scripts.</li>
         <li>A store may pass some personal data to us. This policy says what.</li>
+        <li>Your phone, tablet or computer may make its own copy of your trees. That is set by you and your device.</li>
+        <li>You can delete your trees at any time. They are files on your device.</li>
         <li>If you record information about other people in uFTi, you are the data controller for it.</li>
       </ul>
-      <p>This policy describes how uFTi and this website work on 25 October 2026. That is the early test version of uFTi, called Alpha-1.</p>
+      <p>This policy describes how uFTi and this website work on 16 November 2026. That is the second early test version of uFTi, called Alpha-2.</p>
     </section>
     <section id="who-we-are">
       <title>Who we are</title>
@@ -51,7 +57,31 @@
       <p>We cannot see the family trees that people make with uFTi. We do not collect, receive or have access to what you record in it.</p>
       <p>If you ask us for help, you may choose to send us a message or a file. We then have what you send. We use it only to help you.</p>
       <p>Your phone, tablet or computer may send crash reports to the company that makes its system. Your settings on the device decide this. It is part of the device, not part of uFTi, and we do not control it.</p>
-      <p>A family tree can hold a picture that lives on a website. When it does, uFTi asks that website for the picture so that it can show it. That website can see the internet address of your device, as any website that you visit can. We do not see this. The app does not use the internet for anything else.</p>
+      <p>A family tree can hold a picture that lives on a website. When it does, uFTi asks that website for the picture so that it can show it. That website can see the internet address of your device, and which picture was asked for, as any website that you visit can. The request also names the app, as a browser names itself. It says nothing else about you. We do not see this. The app does not use the internet for anything else.</p>
+    </section>
+    <section id="camera">
+      <title>The camera and your pictures</title>
+      <p>uFTi uses the camera only when you choose to take a photograph of a document. The picture stays on your device. We do not receive it.</p>
+      <p>A picture that you add to a tree is kept with that tree, on your device.</p>
+    </section>
+    <section id="backups">
+      <title>Copies that your device makes</title>
+      <p>Your device may make its own copy of the files of apps, and so of your trees. This is part of the device, set by you. It is not part of uFTi, and we do not control it. We do not receive these copies.</p>
+      <ul>
+        <li>An Android phone or tablet has its own backup. If it is on, Android may copy the files of apps, with your trees, to the backup that Google keeps for you. We receive nothing.</li>
+        <li>An iPhone or iPad can back up the files of apps to iCloud, or to a computer. Your settings decide which.</li>
+        <li>A Mac works in the same way, and you have more control over it. Your settings decide what it copies, and where.</li>
+        <li>On a PC, a folder such as Documents may be kept in OneDrive. If yours is, your trees go there with the rest of the folder.</li>
+      </ul>
+      <p>To stop this, change the backup settings on your device.</p>
+    </section>
+    <section id="keeping-and-deleting">
+      <title>Keeping and deleting your trees</title>
+      <p>Your trees are files. They stay on your device until you delete them. We never receive them, so we cannot delete them for you.</p>
+      <p>You can take a tree off the list in uFTi. The file stays where it is. To delete a tree for good, delete its file.</p>
+      <p>If you remove uFTi from a PC, your trees stay in your Documents folder. If you remove it from a phone, a tablet or a Mac, the folder that belongs to the app goes too. On a phone, a tablet or a Mac, a tree that you opened from somewhere else is kept as a copy in that folder. The file that you opened is not changed.</p>
+      <p>A Mac gives you more control over its files. You can choose which of them to keep, to copy and to delete.</p>
+      <p>Keep a copy of a tree somewhere else before you delete it, if you may want it again.</p>
     </section>
     <section id="your-tree">
       <title>Your tree and other people's information</title>
@@ -91,7 +121,7 @@
     </section>
     <section id="changes">
       <title>Changes to this policy</title>
-      <p>We last checked this policy on 25 October 2026. We change it when uFTi or this website changes.</p>
+      <p>We last checked this policy on 16 November 2026. We change it when uFTi or this website changes.</p>
     </section>
     <section id="words-we-use">
       <title>Words we use</title>
@@ -99,6 +129,10 @@
         <dlentry>
           <dt>Analytics</dt>
           <dd>Counting how many people use something, and how they use it.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Backup</dt>
+          <dd>A copy of your files, kept in another place in case the first copy is lost.</dd>
         </dlentry>
         <dlentry>
           <dt>Cookie</dt>
