@@ -14,6 +14,8 @@
 ## Contents
 
 - [Five things to know](https://docs.ufti.com/windows/Alpha-2/topics/quick-start/five-things-to-know.html): The five ideas behind uFTi, in two minutes.
+- [Privacy policy](https://docs.ufti.com/windows/Alpha-2/site/privacy.html): How Oughtibridge Ltd treats personal data in the uFTi app and on this website, and what you can ask us.
+- [Components and licences](https://docs.ufti.com/windows/Alpha-2/platforms/windows/topics/software-components.html): The parts of uFTi for Windows that other people made, and the licence of each.
 
 ## Work with your tree
 
@@ -39,6 +41,7 @@
 - [Add a later family](https://docs.ufti.com/windows/Alpha-2/platforms/windows/topics/add-a-later-family.html): Make a family for a person who is already in the tree, such as a daughter who marries.
 - [See a family's page](https://docs.ufti.com/windows/Alpha-2/platforms/windows/topics/see-a-familys-page.html): Read the page of a family, and add the marriage to it.
 - [Add a note to a person](https://docs.ufti.com/windows/Alpha-2/platforms/windows/topics/add-a-note.html): Write down something you know about a person that does not fit in a date or a place.
+- [Pictures from a website](https://docs.ufti.com/windows/Alpha-2/topics/tree/pictures-from-a-website.html): A tree can point to a picture on a website, and uFTi asks that website for it.
 - [Choose how the app looks](https://docs.ufti.com/windows/Alpha-2/platforms/windows/topics/choose-how-it-looks.html): Pick a colour theme, and a light or dark look, for this computer.
 - [Find help and the version](https://docs.ufti.com/windows/Alpha-2/platforms/windows/topics/find-help-and-the-version.html): Find the Help button on a screen, and read which version of the app you have.
 - [A page says no person is selected](https://docs.ufti.com/windows/Alpha-2/platforms/windows/topics/a-page-says-no-person-selected.html): What to do when Person, Family tree or Events have nobody to show.
@@ -69,6 +72,7 @@
 - [Remove a tree from the list](https://docs.ufti.com/windows/Alpha-2/platforms/windows/topics/remove-a-workspace.html): Take a tree off the Workspaces page without deleting its file.
 - [Which file to send](https://docs.ufti.com/windows/Alpha-2/platforms/desktop/topics/which-file-to-send.html): Send a GEDZIP file to anyone who uses uFTi, and a plain family tree file only to an older program.
 - [Files beside your tree](https://docs.ufti.com/windows/Alpha-2/platforms/desktop/topics/files-beside-your-tree.html): The files you may see beside your tree: the tree itself and its backup.
+- [Who can see your tree](https://docs.ufti.com/windows/Alpha-2/platforms/windows/topics/who-can-see-your-tree.html): Your tree is yours: you decide who gets a copy, and your PC keeps it safe.
 - [Add a photo to a person](https://docs.ufti.com/windows/Alpha-2/platforms/windows/topics/add-a-photo.html): Choose a photo or a scan from your PC for a person's page.
 - [The Photos buttons](https://docs.ufti.com/windows/Alpha-2/platforms/windows/topics/the-photos-buttons.html): What the buttons in the Photos part of a person's page are for.
 
