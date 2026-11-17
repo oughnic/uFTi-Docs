@@ -89,6 +89,7 @@ The pages were written from this report (DEC-238). The iPhone now shares the And
 - When row 40 is mended, walk the chain button again after adding a picture from the folder.
 - On 12 November, at the maintainer's request, the faults (rows 21, 22, 24, 26, 27 and 28), row 30, the New workspace box and the sample's missing pen name were sent to the app team, with the Mac's and the iPad's.
 - On 14 November, at the maintainer's request, rows 34 and 35 were sent to the app team as two faults, and the empty frame in row 36 as a third.
+- On 17 November, at the maintainer's request, row 40 was sent to the app team as a fault, with the iPad's row 27.
 
 ## 6. Walked again (17 November)
 

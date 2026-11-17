@@ -73,6 +73,7 @@ The pages were written from this report (DEC-238). The tour is new for rows 1, 2
 
 On 12 November, at the maintainer's request, rows 14, 18, 19 and 21 to 24 were sent to the app team as five faults and one request, ahead of the one list that DEC-214 plans for the other legs.
 - The faults (rows 8 and 14) go to the app team once, with the other legs' (DEC-214).
+- On 17 November, at the maintainer's request, row 27 was sent to the app team as a fault, with the iPhone's row 40.
 
 ## 6. Walked again (17 November)
 
