@@ -10,7 +10,7 @@ Where the app does the same thing on two devices, each device's manual has a pag
 
 Parity does not mean the same pages. A computer has files beside a tree, and a phone does not. A phone has a camera, and most computers do not. These are differences of the device. They are listed in section 5, and they are not gaps.
 
-**How a gap is closed (DEC-251).** The maintainer's direction of 17 November 2026: reuse DITA content, and use DITAVAL for the differences between platforms, pictures included. So a missing page is written once and shared, and what differs on a device is a variant that its DITAVAL file keeps or drops. A copy for one device is the last resort. The caps in the platform strategy on variants and on when a topic is split are under review (DEC-251), and until the maintainer decides, they stand.
+**How a gap is closed (DEC-251).** The maintainer's direction of 17 November 2026: reuse DITA content, and use DITAVAL for the differences between platforms, pictures included. So a missing page is written once and shared, and what differs on a device is a variant that its DITAVAL file keeps or drops. A copy for one device is the last resort. DEC-252 proposes new limits on variants and on when a topic is split; until the maintainer decides, the caps in the platform strategy stand.
 
 ## 2. How it was made, and how to keep it
 
