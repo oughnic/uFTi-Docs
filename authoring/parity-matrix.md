@@ -49,7 +49,7 @@ The privacy policy is one source. The components page is generated for each devi
 
 Notes:
 
-- **Get the app.** Windows had a page and lost it in the Alpha-2 rewrite. The iPhone, iPad and Mac pages wait for the maintainer's decision on how readers get each app. None may name a store listing that is not public, or say who may get a build before release.
+- **Get the app.** The Windows manual leaves it out on purpose: the Windows Alpha-2 manual "leaves out getting the app from the store" until the maintainer says that the Store listing is public (DEC-221, DEC-169). The Windows page is in git history and can come back then. The iPhone, iPad and Mac pages wait for the maintainer's decision on how readers get each app. None may name a store listing that is not public, or say who may get a build before release.
 - **Find help and the version.** On the Android phone this is also the missing `about` help target.
 - **Take a photo of a document.** The other mobile manuals cover the camera inside *The Photos buttons*. Whether the Android phone's page should be shared, or the others should have one, is for the maintainer.
 
@@ -85,11 +85,25 @@ The app has 27 screens. This is the state of their help pages, from the maps for
 | `more` | No | Yes | No | Yes | Yes | Yes |
 | The other 24 | Yes | Yes | Yes | Yes | Yes | Yes |
 
-`people.merge` is a known gap on the app side too. The Android tablet has a page for `about`, and it has no page called *Find help and the version*, so check what that page is. Whether the screen `more` exists on Windows and on the Android tablet is for the app team.
+`people.merge` is a known gap on the app side too. The Android tablet has a page for `about`, and it has no page called *Find help and the version*, so check what that page is. `more` is not a gap on Windows: the Windows menu stays at the left of every screen and has no More list, so a Windows manual has no page for it. The app team is asked to confirm. Whether the screen exists on the Android tablet is also for the app team.
 
 ### 4.4 Builds and pictures
 
 Every manual says it was checked against Alpha-2. The version that each manual's pictures record is in `build/publications.ini`. The Windows manual's pictures come from an earlier build of Alpha-2 than the other five. Decide whether to take them again before the next publication.
+
+### 4.5 The Windows leg (issue 201)
+
+The Windows manual was walked on 10 November, before the other five, and the walk report lists what is still open (`authoring/walks/alpha-2-windows.md`, sections 4 and 5).
+
+| Item | State | Needs |
+|---|---|---|
+| Get the app | Left out on purpose (DEC-221) until the Store listing is public | The maintainer's word that the listing is public |
+| The `more` help screen | By design: Windows has no More list | The app team's confirmation |
+| Five picture keys removed (the New workspace box, the Save as sheets, the summary) | The walk could not capture separate windows or sheets | A person with a Windows PC |
+| Pictures from an earlier build than the other five | Open | A decision, then a walk of the Windows app on the same build |
+| The walk's list to check by hand (the Save and Open windows, what Delete person leaves, Compare records, the census household, an event of your own kind, the camera and fourth Photos button) | Open | A person with a Windows PC |
+| Shared pages that the walk found different for Windows (report, section 5) | Most were corrected by the later walks, because the app does the same on every device. Still to check: *Names* (the Prefix, Nickname, Surname prefix and Suffix boxes, and the rows for other names), the *How the date reads* line in text mode, and the extra place boxes on a family form | A read of each page against the walk |
+| Windows copies that a shared page could replace (issue 115) | Not started | Waits for the Apple and Android work to land, because it edits the same pages |
 
 ## 5. Differences that are not gaps
 
