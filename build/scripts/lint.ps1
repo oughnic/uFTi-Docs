@@ -163,6 +163,28 @@ $disclosure = @(
 
 function Get-Words { param([string]$Text) @(($Text -split '\s+') | Where-Object { $_ }).Count }
 
+function Get-MaxManualWords {
+    # Words as each manual shows them (DEC-252): the text that the manual's filter keeps, with the text of
+    # another manual's variants taken out. The size limits apply to the largest manual, so a variant costs
+    # the others nothing. Several elements (a concept and its nested topics) are summed within a manual.
+    param([System.Xml.XmlElement[]]$Elements)
+    if ($manuals.Count -eq 0) { return (($Elements | ForEach-Object { Get-Words $_.InnerText } | Measure-Object -Sum).Sum) }
+    $max = 0
+    foreach ($tokens in $manuals.Values) {
+        $sum = 0
+        foreach ($el in $Elements) {
+            $copy = $el.CloneNode($true)
+            foreach ($e in @($copy.SelectNodes('.//*[@platform]'))) {
+                if ($null -eq $e.ParentNode) { continue }
+                if (-not (Test-Included $e $tokens)) { [void]$e.ParentNode.RemoveChild($e) }
+            }
+            $sum += Get-Words $copy.InnerText
+        }
+        if ($sum -gt $max) { $max = $sum }
+    }
+    $max
+}
+
 # the colours a diagram may use: the theme's tokens block, and nowhere else
 $tokensPath = if ([System.IO.Path]::IsPathRooted($ThemeCss)) { $ThemeCss } else { Join-Path $root $ThemeCss }
 $tokenColours = @()
@@ -305,14 +327,14 @@ function Test-Topic {
             if (-not $rootEl.SelectSingleNode('taskbody/steps | taskbody/steps-unordered')) { Fail "a task has steps: put them first (authoring standards, section 5)" $rel }
             if ($steps.Count -gt 9) { Fail "$($steps.Count) steps: at most nine, so split the task" $rel }
             foreach ($cmd in $rootEl.SelectNodes('taskbody/steps/step/cmd | taskbody/steps-unordered/step/cmd')) {
-                $n = Get-Words $cmd.InnerText
-                if ($n -gt 25) { Fail "a step command of $n words: keep it to 25 or fewer and move detail to info" $rel }
+                $n = Get-MaxManualWords @($cmd)
+                if ($n -gt 40) { Fail "a step command of $n words in one manual: keep it to 40 or fewer and move detail to info (DEC-252)" $rel }
             }
             foreach ($tb in $rootEl.SelectNodes('taskbody/steps//table | taskbody/steps//simpletable')) { Fail "a table inside a step (authoring standards, section 5)" $rel; break }
         }
         'concept' {
-            $conWords = (@($rootEl.SelectNodes('descendant-or-self::*/conbody')) | ForEach-Object { Get-Words $_.InnerText } | Measure-Object -Sum).Sum   # nested topics count too
-            if ($body -and $conWords -gt 500) { Fail "a concept of $conWords words: aim for 500 or fewer, and split it" $rel }
+            $conWords = Get-MaxManualWords @($rootEl.SelectNodes('descendant-or-self::*/conbody'))   # nested topics count too; counted as the largest manual shows it (DEC-252)
+            if ($body -and $conWords -gt 800) { Fail "a concept of $conWords words in one manual: aim for 800 or fewer, and split it (DEC-252)" $rel }
             if ($category -eq 'Good practice') {
                 foreach ($s in $rootEl.SelectNodes('conbody/section/title')) { if ($guideSections -notcontains $s.InnerText.Trim()) { Fail "good practice section title '$($s.InnerText.Trim())' is not one of: $($guideSections -join ', ')" $rel } }
             }
@@ -323,25 +345,33 @@ function Test-Topic {
         }
         'glossentry' { if (-not $rootEl.SelectSingleNode('glossdef')) { Fail "a glossary entry needs a glossdef" $rel } }
     }
-    if ($category -eq 'Get started' -and $body -and (Get-Words $body.InnerText) -gt 150) { Fail "a Get started page of $(Get-Words $body.InnerText) words: Quick Start pages stay under 150" $rel }
+    if ($category -eq 'Get started' -and $body) {
+        $qsWords = Get-MaxManualWords @($body)
+        if ($qsWords -gt 200) { Fail "a Get started page of $qsWords words in one manual: Quick Start pages stay under 200 (DEC-252)" $rel }
+    }
     # a task that tells the reader what to select on a screen documents that screen: it carries the help identifier (DEC-028)
     if ($rootEl.LocalName -eq 'task' -and $helpIds.Count -eq 0 -and $rootEl.SelectSingleNode('//uicontrol | //wintitle')) { Fail "a task that names controls on a screen has no resourceid help identifier (DEC-028)" $rel }
     # labels come from keys, so a label that changes is corrected once (DEC-090)
     if ($IsStrict) {
         foreach ($u in $rootEl.SelectNodes('//uicontrol[not(@keyref)] | //wintitle[not(@keyref)]')) { Fail "label typed inline ('$($u.InnerText.Trim())'): use a keyref to ui-* (DEC-090)" $rel; break }
     }
-    # platform tokens (a picture differs by device whatever the text says, so a fig may carry a device token in a shared topic: DEC-129)
+    # platform tokens: any token of the catalogue may be used in any topic, and there is no cap on variants (DEC-252)
     $platforms = [System.Collections.Generic.HashSet[string]]::new()
-    $underPlatforms = $rel -match '/platforms/'
     foreach ($e in $rootEl.SelectNodes('//*[@platform]')) {
         foreach ($t in ($e.GetAttribute('platform') -split '\s+' | Where-Object { $_ })) {
             [void]$platforms.Add($t)
             if ($catalogue -notcontains $t) { Fail "platform token '$t' is not in the catalogue" $rel }
-            elseif (($deviceTokens + $osTokens) -contains $t -and -not $underPlatforms -and $e.LocalName -ne 'fig') { Fail "platform or device token '$t' used outside platforms/ (DEC-032: idiom first, platform at the edges)" $rel }
         }
     }
     foreach ($e in $rootEl.SelectNodes('//*[@props or @otherprops or @audience or @rev]')) { Fail "conditional attribute other than @platform on <$($e.LocalName)> (platform strategy, section 2.1)" $rel }
-    if ($platforms.Count -gt 3) { Fail "more than three @platform variants in one topic ($($platforms.Count)): split it (variant budget)" $rel }
+    # a note, not a failure, when a topic is mostly condition: a reviewer looks at whether each manual reads as one text (DEC-252)
+    if ($platforms.Count -gt 6) { Note "$rel has $($platforms.Count) distinct @platform values: check that each manual reads as one text" }
+    $allWords = Get-Words $rootEl.InnerText
+    if ($allWords -ge 60) {
+        $condWords = 0
+        foreach ($e in $rootEl.SelectNodes('//*[@platform and not(ancestor::*[@platform])]')) { $condWords += Get-Words $e.InnerText }
+        if ($condWords * 2 -gt $allWords) { Note "$rel is $condWords words of $allWords under @platform: check that each manual reads as one text" }
+    }
     # disclosure patterns, in text and comments alike
     $raw = $rawText
     # the generated components topics link to the project of each library (DEC-248): a link to a project that is not ours is their point,

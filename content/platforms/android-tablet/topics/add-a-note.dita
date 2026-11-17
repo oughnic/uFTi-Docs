@@ -59,6 +59,7 @@
     </steps>
     <result>
       <p>The note belongs to that person. Write what you know. Say where you read it if you can.</p>
+      <p>You can use one note for more than one person. Open the second person, choose <uicontrol keyref="ui-notes"/>, then <uicontrol keyref="ui-use-an-existing-note"/>. Search for the note and choose it. Each note shows how many records use it. The note then says that it is shared with another record.</p>
     </result>
     <postreq>
       <p>Next: <xref keyref="choose-how-it-looks"/>.</p>

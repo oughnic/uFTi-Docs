@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <!-- KEY CONCEPT SET TEMPLATE, the READ piece (DEC-035). The concept in words: what it is and why it
-     matters, in 500 words or fewer, with no procedure. It follows the concept template. -->
+     matters, in 800 words or fewer, with no procedure. It follows the concept template. -->
 <concept id="template-key-concept-read" xml:lang="en-GB">
   <title>The idea in words</title>
   <shortdesc>What the idea is, and why it helps you.</shortdesc>

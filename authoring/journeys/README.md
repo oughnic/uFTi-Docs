@@ -35,7 +35,7 @@ WP0 is done when all six steps are done ([plan, section 8](../authoring-plan.md#
 
 ## 3. What is fixed, and what is provisional
 
-**Fixed by the plan.** Seven Quick Start pages of under 150 words with one picture each (DEC-026). Journeys before build (DEC-027). The reading level (DEC-029). No GEDCOM tags (DEC-030). Nothing about price, accounts or where data lives (DEC-040). The Brontë dataset for every example (DEC-025). Idiom first, platform at the edges (DEC-032).
+**Fixed by the plan.** Seven Quick Start pages of under 200 words with one picture each (DEC-026). Journeys before build (DEC-027). The reading level (DEC-029). No GEDCOM tags (DEC-030). Nothing about price, accounts or where data lives (DEC-040). The Brontë dataset for every example (DEC-025). Idiom first, platform at the edges (DEC-032).
 
 **Provisional until WP4.** Every screen name, label and route through the app. These documents say what we expect to see. Each one marks what is **to confirm**. Nobody has yet walked a release build with these pages in hand: that is what the sessions are for.
 

@@ -48,7 +48,7 @@
     </steps>
     <result>
       <p>Your changes are saved to the file as you go. The page shows the new words.</p>
-      <note>The button <uicontrol keyref="ui-delete-person"/> sits below <uicontrol keyref="ui-edit"/>. It removes the person. Check before you choose it.</note>
+      <note>The button <uicontrol keyref="ui-delete-person"/> sits below <uicontrol keyref="ui-edit"/>. It removes the person, and takes them out of any family or event. A box names the person and asks you to check. You cannot undo it, so check before you choose <uicontrol keyref="ui-delete"/>.</note>
     </result>
     <postreq>
       <p>Next: <xref keyref="look-at-the-sources-of-a-fact"/>.</p>

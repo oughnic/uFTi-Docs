@@ -91,14 +91,14 @@ Q16, whether phone and tablet get separate manuals, is unchanged: this decides h
 
 ## 3. Reuse levels
 
-Use the first level that works. Idiom differences use the same ladder as platform differences.
+Use the first level that works. Idiom differences use the same ladder as platform differences. The direction is to reuse content, and to use DITAVAL for what differs by platform, pictures included (DEC-251). The limits are the ones of DEC-252, set so that a limit never costs the reader something useful.
 
 | Level | Use when | Mechanism | Limit |
 |---|---|---|---|
 | **0. Neutral wording** | The instruction is the same everywhere once worded neutrally. | Plain text: "select", "open", "enter", not "tap" or "click". | Preferred. Most text lives here. |
 | **1. Keys** | Only a name, label or picture differs. | `keyref` for screenshots, UI labels and product facts. | No limit. |
-| **2. Inline variant** | One or two steps, sentences or list items differ. | `@platform` on `step`, `li`, `p`, `ph`, `note` or table `row`. | At most three per topic. Never inside a sentence. Never nested. |
-| **3. Platform-specific topic** | More than about a third of a topic differs, or the task exists on one platform or idiom only. | A topic under `content/platforms/`, referenced from the shared map position with `@platform` on its `topicref`. | Put what is common in a shared concept and link to it. |
+| **2. Variant** | A step, a sentence, a list, a paragraph, a note, a table row, a section or a picture differs. | `@platform` on `section`, `p`, `ul`, `ol`, `li`, `step`, `note`, a table `row`, `fig` or `image`, with any token of the catalogue, in any topic. A variant may sit inside another when its tokens are among the outer ones. | No cap. Whole sentences only, never inside a sentence. Lint notes a topic with more than six distinct values, or more than half of its words under `@platform`, for a reviewer. |
+| **3. Platform-specific topic** | The task differs: other steps, in another order, or one device has none of it. | A topic under `content/platforms/`, referenced from the shared map position with `@platform` on its `topicref`. | Put what is common in a shared concept and link to it. |
 | **4. Platform-specific chapter** | A whole area exists on some platforms only, such as camera capture on phones and tablets. | A chapter map with `@platform`. | Rare. |
 
 Rules:
@@ -106,8 +106,10 @@ Rules:
 - **Never use a condition to hide a different idea.** If the concept differs, write separate topics.
 - **Keep whole sentences inside a condition,** so translated text is never stitched together.
 - **Prefer a group token to a list of platform tokens.**
-- **Prefer a platform-specific topic to a fourth variant.**
+- **Prefer a variant to a copy.** Make a platform-specific topic only when the task differs (level 3).
 - **Do not use conditions for version differences.** Tagged releases hold earlier versions (DEC-013).
+- **Each manual must read as one text.** Check the manual's own words, not the source with every variant in it. Sizes are counted that way: a concept may have 800 words, a step command 40 and a Quick Start page 200 in the manual that shows the most (DEC-252).
+- **A picture differs by key or by condition,** whichever leaves one topic. A key map for each manual (section 4) is the usual way. `@platform` on an `image` or `fig` is allowed in a shared topic. The alternative text comes from the key of the manual.
 
 ### 3.1 One topic for several mobile manuals
 
@@ -115,8 +117,8 @@ The four mobile manuals (Android phone, Android tablet, iPhone and iPad) say muc
 
 - **Where it goes.** In the folder named for the group token that governs it (section 7): `content/platforms/mobile/topics/` for all four manuals, `phone/topics/` for the two phones, `tablet/topics/` for the two tablets, `ios/topics/` for the iPhone and iPad, `android/topics/` for the Android phone and tablet. The map's `topicref` carries the same token (`platform="Mobile"`, `"Phone"`, `"Tablet"`). When a topic moves there, the device copies and their `topicref` elements are removed in the same change. A topic that two phones share and a tablet later joins moves from `phone/topics/` to `mobile/topics/`.
 - **The device word is a key.** `product-device` is "phone", "tablet", "iPhone" or "iPad", defined in each of the four manual key maps. A shared sentence uses `<keyword keyref="product-device"/>`. Word it so the key works wherever it falls: "your <keyword keyref="product-device"/>", never at the start of a sentence.
-- **What remains different uses the ladder** (section 3). Navigation and layout that differ between phone and tablet are inline variants on `Phone` and `Tablet`: at most three, never inside a sentence. A topic that needs more is two topics, one for each idiom (`platforms/phone/topics/`, `platforms/tablet/topics/`), not one for each device.
-- **Merge a difference only when its kind is known.** A difference may be real: a screen that one device has and another has not, found by walking the app. Do not erase it to make a merge. Merge when every differing line is navigation, layout or the device word.
+- **What remains different uses the ladder** (section 3). Navigation and layout that differ between phone and tablet are variants on `Phone` and `Tablet`, never inside a sentence, with no cap on their number (DEC-252). A topic is split into one for each idiom (`platforms/phone/topics/`, `platforms/tablet/topics/`) only when the task differs, and never into one for each device.
+- **Merge a difference when it can be a whole-block variant.** A difference may be real: a screen that one device has and another has not, found by walking the app. Do not erase it to make a merge: keep it as a variant. Merge when every differing line is navigation, layout, the device word, or a block that one device shows and another does not (DEC-252, which relaxes DEC-198). A copy that DEC-231 gave the Android phone merges back one topic at a time, each checked against its walk.
 - **Measure first.** `build/scripts/measure-reuse.ps1` counts the lines that differ between the copies of a topic, with and without the device word. A figure of 0 in the second column means the pair can be one topic. `lint.ps1` notes a pair that differs by at most two lines, so a copy that should be shared does not come back unseen.
 
 ## 4. Screenshots as keys
@@ -261,7 +263,7 @@ CI generates these. Failures block a release unless noted.
 | Image coverage | Every `img-*` key a topic uses is defined, with an existing file, in every manual that includes the topic. |
 | Applicability matrix | Topic by manual (included or excluded) as a CSV artefact. Reviewed at release. Does not block. |
 | Idiom parity | Topics in one idiom's manual but not in the other's for the same operating system. Expected only for idiom-specific topics. |
-| Variant budget | Topics with more than three `@platform` variants are flagged. |
+| Variant share | A topic with more than six distinct `@platform` values, or more than half of its words under `@platform`, gets a note for a reviewer (DEC-252). It is not a failure. |
 | Near-identical siblings | Copies of a topic in two mobile manuals' folders that differ by at most two lines (section 3.1). A note: it does not block. |
 | Orphans | Topics in no map, platform-specific topics nobody references, and screenshots no key uses. |
 | Vocabulary | Every `@platform` value is in the catalogue or the group token set. |

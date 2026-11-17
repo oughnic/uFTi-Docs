@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
 <!-- QUICK START PAGE TEMPLATE (content model, section 3; DEC-057, DEC-080, DEC-082). One page, one job,
-     under 150 words in the body, in the Quick Start bookmap. Copy this file, then:
+     under 200 words in the body, in the Quick Start bookmap. Copy this file, then:
        1. Steps first. Add a context only when the reader needs a reason; most pages need none.
        2. One picture, in a fig with no title, and a result that says what has changed.
        3. One "Next:" link at the end, by key, to the next page of the Quick Start. The pages are not

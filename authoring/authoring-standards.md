@@ -30,7 +30,7 @@ Much of this follows the plugin's own guide for people who write DITA for it, [S
 4. **No numbers in titles.** The build numbers chapters and sections.
 5. **State prerequisites** in `prereq`. Do not assume them.
 6. **Links by key.** Order and hierarchy come from the map, not the topic.
-7. **Size.** Aim for a concept of about 500 words or fewer and a task of nine steps or fewer. Split anything longer.
+7. **Size.** Aim for a concept of about 800 words or fewer, as each manual shows it, and a task of nine steps or fewer. Split anything longer (DEC-252).
 8. **Every topic has** a title, a short description, `xml:lang` and metadata.
 9. **Reuse by reference.** Keys for words and facts. Content references only for fragments that must stay identical.
 10. **Minimalism.** Do not explain the obvious. Show the result of an action. Help readers recover from mistakes.
@@ -82,13 +82,13 @@ A screen's help sometimes needs one part of a page, not the whole page: the part
 
 | Topic | Pattern |
 |---|---|
-| **Task** | `prereq` only for real prerequisites. `context`: one or two sentences on when and why. `steps`: one action per `step`, `cmd` in the imperative and no longer than about 25 words, `info` for essential detail, `stepresult` for what the reader will see. At most nine steps. `choices` for alternatives of equal standing. `result`. `postreq` for next steps with links. No tables inside steps. |
+| **Task** | `prereq` only for real prerequisites. `context`: one or two sentences on when and why. `steps`: one action per `step`, `cmd` in the imperative and no longer than about 40 words, `info` for essential detail, `stepresult` for what the reader will see. At most nine steps. `choices` for alternatives of equal standing. `result`. `postreq` for next steps with links. No tables inside steps. |
 | **Concept** | An opening paragraph saying what it is and why it matters. Titled sections. No procedures. Diagrams carry a title and alternative text. Related links come from the relationship table. |
 | **Reference** | A table with a header row, or a `properties` list for field descriptions. Ordered in a way a reader can scan. |
 | **Troubleshooting** | One problem per topic. `condition` for what the reader sees, then `troubleSolution` with `cause` and `remedy`. |
 | **Glossary entry** | `glossterm`, a one- or two-sentence `glossdef`, and `glossAlt` for acronyms and abbreviations. Singular form. Synonyms as keywords. |
 | **Chapter introduction** | A short concept saying what the chapter covers. Its short description doubles as the home page summary. |
-| **Quick Start page** | A `task` (or a short `concept`) under 150 words with one picture, in the Quick Start bookmap. Steps first. One link at the end. |
+| **Quick Start page** | A `task` (or a short `concept`) under 200 words with one picture, in the Quick Start bookmap. Steps first. One link at the end. |
 | **Key concept set** | For each key concept, four linked pieces: a diagram (see), the concept (read), a task on the Brontë dataset (do) and a checklist (check) (DEC-035). The relationship table links them. |
 
 Good practice concepts add a fixed set of section titles ([good practice strategy, section 8](good-practice-strategy.md#8-writing-and-review-rules)).
@@ -252,7 +252,7 @@ The checks run locally with `pwsh build/scripts/check-source.ps1` and in CI ([bu
 | 2 | No positional references | Vale `Positional` (before) |
 | 2 | No numbers in titles | Lint (WP3) |
 | 2 | Links by key | Lint (before) |
-| 2 | Size: a task of nine steps or fewer, a concept of 500 words or fewer (nested topics included) | Lint (WP3; nested topics counted from DEC-190) |
+| 2 | Size: a task of nine steps or fewer, a concept of 800 words or fewer (nested topics included), counted as each manual shows it (DEC-252) | Lint (WP3; nested topics counted from DEC-190) |
 | 2.1 | Nested topics: only in a concept or a reference, one level, a unique anchor id, a title, `xml:lang`, a valid `resourceid` | Lint (DEC-190) |
 | 2 | Every topic has a title, a short description, `xml:lang` and metadata | Lint (before) |
 | 2 | Standalone; one purpose; prerequisites; reuse; minimalism | Review |
@@ -266,10 +266,10 @@ The checks run locally with `pwsh build/scripts/check-source.ps1` and in CI ([bu
 | 4 | Short description present and 30 words or fewer | Lint (before) |
 | 4 | Short description is one sentence, does not begin "This topic", does not repeat the title | Lint (WP3) |
 | 4 | Sentence case; imperative task titles | Review |
-| 5 | A task has steps; each `cmd` is 25 words or fewer; no table in a step | Lint (WP3) |
+| 5 | A task has steps; each `cmd` is 40 words or fewer in every manual; no table in a step | Lint (WP3) |
 | 5 | A reference table has a title and a header row | Lint (WP3) |
 | 5 | A troubleshooting topic has a condition, a cause and a remedy; a glossary entry has a definition | Lint (WP3) |
-| 5 | A Quick Start ("Get started") page is under 150 words | Lint (WP3) |
+| 5 | A Quick Start ("Get started") page is under 200 words in every manual | Lint (WP3) |
 | 5 | Good practice concepts use the fixed section titles | Lint (WP3) |
 | 6 | Labels by key, never typed (DEC-090) | Lint, in real content (WP3) |
 | 6 | Product name written uFTi | Vale `ProductName` (WP3) |

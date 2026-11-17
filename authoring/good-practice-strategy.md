@@ -109,7 +109,7 @@ Rules:
 - **Reading level.** The same targets as the manual (DEC-029): plain words, short sentences, and a glossary entry for every term.
 - **Four routes.** Each key idea has a diagram, the concept, a task on the dataset and a checklist (DEC-035).
 - **Examples** come from the Brontë dataset ([dataset strategy](dataset-strategy.md)), so a reader meets the same people in the guide as in the tutorial. Where an idea needs a case the dataset does not have, use a plainly fictional example. Never use a real private individual.
-- **Length.** Aim for 500 words or fewer per concept.
+- **Length.** Aim for 800 words or fewer per concept, as each manual shows it (DEC-252).
 - **Terms.** Link the first use of a research term in a topic to its glossary entry.
 - **Accessibility.** Worked examples are text, not images. Tables have header rows.
 - **Review.** A named, experienced genealogist reviews every guide topic and every cue (Q8). The review is recorded in the pull request.
