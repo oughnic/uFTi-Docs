@@ -78,3 +78,17 @@ The manual's Android phone pages are written from this walk. Where a page is sha
 - Walk the help rows again once the Alpha-2 pages are published.
 - Settle with the iPhone and the tablets which Android phone copies can become shared pages again (DEC-197).
 - The other findings go to the app team once, with the other legs' (DEC-214).
+
+## 7. Parity walk (17 November)
+
+For the parity epic (issues 194, 196 and 200), on a phone emulator (not the phone of the first walk), Android 16, 1080 by 2400, on a newer build from the app's development line, a Release build with the DevFlow agent, in Oxford and slate, Light. Its pictures of the opening box and of the page for another program's file are new to this manual.
+
+| What | What a reader sees | For the pages |
+|---|---|---|
+| **More**, then **About uFTi** | **Copy diagnostics**, **Re-run hardware check**, **Privacy policy**, **Software components and licences**, then the version and facts about the phone. **Help**, at the end of **More**, was not chosen | *Find help and the version*, shared; the phone now has the `about` help target |
+| **Add from file…** | Android's own screen for choosing a file, at Recent; its menu has Downloads. A uFTi .gdz opened with a box that names it, counts what it holds and says "uFTi keeps its own copy; the file you chose is left as it was." **OK** opens its Home | *Open a family tree file*, shared with the tablet (issue 194) |
+| A file another program made | The page with **Make a GEDCOM 7 copy** and **Just look**. **Just look** gives a card marked **Just looking**, with **Make a copy to edit**, which opens a copy that can be changed | The same page |
+| Moving between trees | **Open** on a card goes straight to that tree's Home | *Move between workspaces*, shared |
+| Where a tree is | **Show details** says "Patrick from another program.ged in workspaces", or "Brontë family of Haworth.ged in uFTi" for the sample. Removing the app and putting it back left only the sample; the files in Downloads stayed | *Where your trees are saved*, shared |
+| **Who made this tree** | **+** names the form **Add a name**; after **Save** the list shows the name at once | *Say who made this tree*: the step to open the list again is gone |
+| The **New workspace** box | As on the tablet, the starting name is not selected | For the app team |

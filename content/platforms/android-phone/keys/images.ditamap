@@ -141,4 +141,10 @@
   <keydef keys="img-compare-records" href="../images/compare-records.png" format="png" scope="local" platform="AndroidPhone">
     <topicmeta><linktext>The Evidence page for a place, which gives the conclusion and what the source says, with its quality</linktext></topicmeta>
   </keydef>
+  <keydef keys="img-import-summary" href="../images/import-summary.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The box that opens after a uFTi file is opened, which names the tree, counts the people, families, events, sources and notes and the pictures linked on the web, and says the chosen file is left as it was</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-open-other-program" href="../images/open-other-program.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>The page that opens for a file another program made, with the buttons Make a GEDCOM 7 copy and Just look, the words under each, and Cancel</linktext></topicmeta>
+  </keydef>
 </map>

@@ -41,16 +41,16 @@ The privacy policy is one source. The components page is generated for each devi
 | Task | Windows | Android phone | Android tablet | iPhone | iPad | Mac | Needs |
 |---|---|---|---|---|---|---|---|
 | Get the app | No | Yes | Yes | No | No | No | Decision, then pages (issue 66) |
-| Open a family tree file | Yes | No | Yes | Yes | Yes | Yes | Walk (issue 194) |
-| Find help and the version | Yes | No | No | Yes | Yes | Yes | Walk |
-| Say who made this tree | Yes | Yes | Yes | Yes | No | Yes | Read, then walk |
+| Open a family tree file | Yes | Yes | Yes | Yes | Yes | Yes | Done 17 November 2026: the phone shares the tablet's page (issues 194, 200) |
+| Find help and the version | Yes | Yes | Yes | Yes | Yes | Yes | Done 17 November 2026: one page for all but Windows (issue 200) |
+| Say who made this tree | Yes | Yes | Yes | Yes | Yes | Yes | Done 17 November 2026: one page for all but Windows; the tablet's copy folded in (issue 200) |
 | Take a photo of a document | No | Yes | No | No | No | No | Decision (issue 68) |
-| Where your trees are saved | Yes | No | No | No | No | No | Read: DEC-168 allows it on every device |
+| Where your trees are saved | Yes | Yes | Yes | Yes | Yes | Yes | Done 17 November 2026: one page for all but Windows (DEC-168, issue 200) |
 
 Notes:
 
 - **Get the app.** Windows had a page and lost it in the Alpha-2 rewrite. The iPhone, iPad and Mac pages wait for the maintainer's decision on how readers get each app. None may name a store listing that is not public, or say who may get a build before release.
-- **Find help and the version.** On the Android phone this is also the missing `about` help target.
+- **Find help and the version.** It carries the `about` help target, so the Android phone has one now. The Android tablet's `about` target moved here from *The screens of the app*.
 - **Take a photo of a document.** The other mobile manuals cover the camera inside *The Photos buttons*. Whether the Android phone's page should be shared, or the others should have one, is for the maintainer.
 
 ### 4.2 Tasks that the Windows manual has as pages of their own
@@ -60,7 +60,7 @@ Read on 17 November 2026: each Windows page against the pages of the other five 
 | Windows page | On the other five devices | Result |
 |---|---|---|
 | Create a workspace | Steps inside *Add your first person*, in every mobile manual | Covered |
-| Move between workspaces | Not covered. *The screens of the app* only says that **Open another workspace** shows your trees. The walk reports name the screen, its cards and a line about switching, but not the button on a card | **Gap.** Walk, or ask the app team |
+| Move between workspaces | One page, *Move between workspaces*, for the Android phone and tablet, iPhone, iPad and Mac, walked on 17 November 2026: **Open** on a card goes straight to that tree's Home | Covered (issue 200) |
 | Remove a person | Inside *Change a person*, with the warning that it cannot be undone and that the person leaves every family and event, on the Android phone and iPhone, and from 17 November 2026 on the Android tablet, iPad and Mac too | Covered. Closed by reuse of the phone's lines (DEC-199, DEC-251) |
 | Use one note for several people | Inside *Add a note to a person*. The Android tablet had the button; from 17 November 2026 the Android tablet, iPad and Mac also say how to use one note for more than one person, as the phone does | Covered. Closed by reuse of the phone's lines. The iPhone and Mac buttons were not walked (DEC-199) |
 | See a family's page | Inside *Add a family with children*: the page lists the partners, the marriage and the children, and says how to change them. The help screen `families.view` opens it | Covered, shorter than Windows |
@@ -81,11 +81,11 @@ The app has 27 screens. This is the state of their help pages, from the maps for
 | Screen | Windows | Android phone | Android tablet | iPhone | iPad | Mac |
 |---|---|---|---|---|---|---|
 | `people.merge` | No | No | No | No | No | No |
-| `about` | Yes | No | Yes | Yes | Yes | Yes |
-| `more` | No | Yes | No | Yes | Yes | Yes |
+| `about` | Yes | Yes | Yes | Yes | Yes | Yes |
+| `more` | No (no such screen) | Yes | No (no such screen) | Yes | Yes | Yes |
 | The other 24 | Yes | Yes | Yes | Yes | Yes | Yes |
 
-`people.merge` is a known gap on the app side too. The Android tablet has a page for `about`, and it has no page called *Find help and the version*, so check what that page is. Whether the screen `more` exists on Windows and on the Android tablet is for the app team.
+Read and walked on 17 November 2026 (issue 200). `people.merge` is a screen the app has not built yet: it is a skeleton that only a deep link opens, and the app lists it as reserved, not missing. `more` does not exist on the Android tablet, whose list on the left holds what More holds elsewhere, or on Windows, which the app's own list of known gaps says has no such menu. All three are in section 5. The Android tablet's `about` page was *The screens of the app*; the target is now on *Find help and the version*.
 
 ### 4.4 Builds and pictures
 
@@ -100,6 +100,9 @@ Every manual says it was checked against Alpha-2. The version that each manual's
 | Different words for the same task | Each manual is written for its device (DEC-032) |
 | The tablet and iPad pages for the person beside the tree | The screen shows two things at once |
 | *Keep it safe* and *Who can see your tree* once for each device family | The backup, sync and file rules of each system are different (DEC-249) |
+| `people.merge` has no page | The app has not built the screen yet; when it does, the page comes with it |
+| `more` has no page on Windows or the Android tablet | Neither has a More screen |
+| *Where your trees are saved* once for Windows and once for the rest | Windows keeps new trees in Documents; the others keep them inside the app (DEC-168) |
 
 ## 6. Work to do, in order
 
@@ -108,7 +111,7 @@ Every manual says it was checked against Alpha-2. The version that each manual's
    - *Change a person*: give the Android tablet, iPad and Mac the phone's lines on removing a person.
    - *Add a note to a person*: give the Android tablet, iPad and Mac the phone's lines on using one note for several people.
    - Do each by sharing the lines, with a variant only where a device differs. Do not make a copy for a device.
-3. **Read the rest of section 4.1:** *Say who made this tree* on the iPad, and *Where your trees are saved* on every device but Windows. Say for each whether a read settles it.
-4. **Walk what is left,** device by device, and write the pages once, with variants for the differences (the walk plan; DEC-213). The walks are: *Move between workspaces*, *Find help and the version* on the two Android manuals, and *Open a family tree file* on the Android phone (issue 194).
+3. **Done (17 November 2026, issue 200): the read of the rest of section 4.1.** *Say who made this tree* needed a short walk on the iPad and the Android tablet, and is now one page. *Where your trees are saved* needed a read of the app and a walk of **Show details** and of removing the app; it is one page for the five devices.
+4. **Done (17 November 2026, issue 200): the walks**, on an Android phone emulator, an Android tablet emulator, the iPhone and iPad simulators and the Mac, on a newer build from the app's development line. Each page was written once, with variants: *Move between workspaces*, *Find help and the version* and *Open a family tree file* on the Android phone. Windows was not walked.
 5. **Get the app** pages, when the maintainer has decided how readers get each app (issue 66).
 6. **Make the table again,** and close the epic when no row says No without a reason in section 5.

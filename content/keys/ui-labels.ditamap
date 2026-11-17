@@ -27,6 +27,13 @@
   <keydef keys="ui-add-from-file"><topicmeta><keywords><keyword>Add from file…</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-new-workspace"><topicmeta><keywords><keyword>New workspace</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-create"><topicmeta><keywords><keyword>Create</keyword></keywords></topicmeta></keydef>
+  <!-- cards, opening a file and the tree maker, read on the Android phone and tablet, iPhone, iPad and Mac on 17 November 2026 -->
+  <keydef keys="ui-open"><topicmeta><keywords><keyword>Open</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-hide-details"><topicmeta><keywords><keyword>Hide details</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-version"><topicmeta><keywords><keyword>Version</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-just-look"><topicmeta><keywords><keyword>Just look</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-make-a-gedcom-7-copy"><topicmeta><keywords><keyword>Make a GEDCOM 7 copy</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-add-a-name"><topicmeta><keywords><keyword>Add a name</keyword></keywords></topicmeta></keydef>
   <!-- a tree opened with Just look, and the sample tree, read on the iPhone and the Mac on 17 November 2026 -->
   <keydef keys="ui-just-looking"><topicmeta><keywords><keyword>Just looking</keyword></keywords></topicmeta></keydef>
   <keydef keys="ui-make-a-copy-to-edit"><topicmeta><keywords><keyword>Make a copy to edit</keyword></keywords></topicmeta></keydef>

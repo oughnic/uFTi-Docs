@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!-- Move between workspaces, shared by the Android phone and tablet, iPhone, iPad and Mac (issue 196, issue 200).
+     Walked on 17 November 2026: on each, Open another workspace on Home and Workspaces itself list a card for
+     each tree, the tree in use first and marked Active. Open on another card goes straight to that tree's Home,
+     with no message. The tablet, iPad and Mac show the cards side by side. On the Mac the screen was locked, so
+     it was read through the app's own tree, not seen. -->
+<task id="move-between-workspaces" xml:lang="en-GB">
+  <title>Move between workspaces</title>
+  <shortdesc>Open another of your trees, and see which one is in use now.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-17"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>How-to</category>
+      <keywords>
+        <keyword>switch tree</keyword>
+        <keyword>open another tree</keyword>
+        <keyword>change tree</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="workspaces.switch"/>
+  </prolog>
+  <taskbody>
+    <context>
+      <p>You can keep more than one tree. Each one is a <term keyref="term-workspace">workspace</term>, and each has a card on <uicontrol keyref="ui-workspaces"/>. Only one tree is in use at a time.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>On <uicontrol keyref="ui-home"/>, choose <uicontrol keyref="ui-open-another-workspace"/>.</cmd>
+        <info>
+          <p><ph platform="AndroidPhone iPhone iPad MacCatalyst">Or choose <uicontrol keyref="ui-more"/>, then <uicontrol keyref="ui-workspaces"/>.</ph><ph platform="AndroidTablet">Or choose <uicontrol keyref="ui-workspaces"/> in the list on the left.</ph></p>
+        </info>
+        <stepresult>
+          <p>Each tree has a card. The card of the tree in use comes first, with a dark border, and is marked <uicontrol keyref="ui-active"/>.<ph platform="AndroidTablet iPad MacCatalyst"> The cards sit side by side.</ph></p>
+          <fig>
+            <image keyref="img-workspaces"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Choose <uicontrol keyref="ui-open"/> on the card of the tree you want.</cmd>
+        <stepresult>
+          <p><uicontrol keyref="ui-home"/> opens for that tree at once. Its name is at the top, and its card is now marked <uicontrol keyref="ui-active"/>.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>Everything you see now is from the tree you chose. Your changes to the other tree were saved as you made them, so nothing is lost when you move.</p>
+      <p>To see which file a tree is, choose <uicontrol keyref="ui-show-details"/> on its card. The button then reads <uicontrol keyref="ui-hide-details"/>.</p>
+    </result>
+    <postreq>
+      <p>Next: <xref keyref="where-your-trees-are-saved"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

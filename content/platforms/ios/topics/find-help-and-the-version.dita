@@ -4,7 +4,10 @@
      Alpha-2 walks: About uFTi was read on the Mac on 12 November 2026 and on the iPhone the same day; the
      iPad shows the iPhone's screens. Help opened the web browser on the Mac.
      On 17 November 2026 About had two new buttons on the iPhone and the Mac, Privacy policy and Software
-     components and licences. They were not chosen in the walk. -->
+     components and licences. They were not chosen in the walk.
+     Shared with the Android phone and tablet from 17 November 2026 (issue 200): About was read on both
+     emulators. The phone has Help at the end of More; the tablet has no More, and its button at the top
+     says Help. Help itself was not chosen on Android. -->
 
 <task id="find-help-and-the-version" xml:lang="en-GB">
   <title>Find help and the version</title>
@@ -26,13 +29,13 @@
   </prolog>
   <taskbody>
     <context>
-      <p>The button with a question mark at the top of a screen opens the guide to that screen in your web browser. Its full name is <q><keyword keyref="ui-help-about-this-screen"/></q>. <uicontrol keyref="ui-help"/> at the end of the <uicontrol keyref="ui-more"/> list does the same.</p>
+      <p>The button with a question mark at the top of a screen opens the guide to that screen in your web browser. <ph platform="iOS MacCatalyst">Its full name is <q><keyword keyref="ui-help-about-this-screen"/></q>.</ph><ph platform="AndroidTablet">On a tablet it also says <uicontrol keyref="ui-help"/>.</ph><ph platform="iOS MacCatalyst AndroidPhone"> <uicontrol keyref="ui-help"/> at the end of the <uicontrol keyref="ui-more"/> list does the same.</ph></p>
       <p>Many boxes on a form also have a small round button with a question mark. It explains that box.</p>
       <p>The version is the number of your copy of <keyword keyref="product-name"/>. Give it when you ask someone about a problem, so they know which copy you have.</p>
     </context>
     <steps>
       <step>
-        <cmd>Choose <uicontrol keyref="ui-more"/>, then <uicontrol keyref="ui-about-ufti"/>.</cmd>
+        <cmd><ph platform="iOS MacCatalyst AndroidPhone">Choose <uicontrol keyref="ui-more"/>, then <uicontrol keyref="ui-about-ufti"/>.</ph><ph platform="AndroidTablet">Choose <uicontrol keyref="ui-about-ufti"/> in the list on the left.</ph></cmd>
         <stepresult>
           <p>A page opens with the name of the app and facts about your copy.</p>
         </stepresult>

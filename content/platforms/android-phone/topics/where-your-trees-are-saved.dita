@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<!-- Where your trees are saved, shared by the Android phone and tablet, iPhone, iPad and Mac (DEC-168,
+     issue 196, issue 200). Read and walked on 17 November 2026: Show details on a new tree's card says
+     "<name>.ged in workspaces", and on the sample "Brontë family of Haworth.ged in uFTi". A file opened with
+     Add from file is copied in too. The app's folder does not show in Files on the iPhone and iPad, or in
+     Android's file chooser. Removing the app and putting it back left only the sample, on an Android emulator
+     and the iPhone simulator, while the files in Downloads stayed. Removing the Mac app was not tried, so the
+     page says nothing about it. -->
+<concept id="where-your-trees-are-saved" xml:lang="en-GB">
+  <title>Where your trees are saved</title>
+  <shortdesc>Your trees are kept inside uFTi on your <keyword keyref="product-device"/>, so save a copy as a file to keep one where you can find it.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-17"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Concept</category>
+      <keywords>
+        <keyword>where my files are</keyword>
+        <keyword>uninstall</keyword>
+        <keyword>backup</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p>Each workspace is one family tree file. <keyword keyref="product-name"/> saves your changes to that file as you go. A new tree is kept in a folder named workspaces, which belongs to <keyword keyref="product-name"/>. So is the copy that <keyword keyref="product-name"/> makes when you open a file.</p>
+    <section>
+      <title>Find the file of a tree</title>
+      <p>Choose <uicontrol keyref="ui-show-details"/> on the card of a tree on <uicontrol keyref="ui-workspaces"/>. It gives the name of the file, the folder, and the day it was last saved, such as <q>My family tree.ged in workspaces</q>. The sample tree says <q>in uFTi</q>.</p>
+    </section>
+    <section>
+      <title>You cannot see the folder from outside the app</title>
+      <p platform="iPhone iPad">The Files app does not show it.</p>
+      <p platform="AndroidPhone AndroidTablet">Android's screen for choosing a file does not show it.</p>
+      <p platform="MacCatalyst">It is inside the Library folder of your Mac, which the Finder hides. You do not need to go there.</p>
+      <p>To have a file of your tree that you can see, send or keep somewhere else, choose <uicontrol keyref="ui-save-as"/> on its card. <xref keyref="keep-it-safe"/> says how.</p>
+    </section>
+    <section platform="AndroidPhone AndroidTablet iPhone iPad">
+      <title>If you remove the app</title>
+      <p>Removing <keyword keyref="product-name"/> removes the trees kept inside it. Before you remove it, save a copy of each tree you want to keep with <uicontrol keyref="ui-save-as"/>, and put the copy somewhere else. A file you opened from elsewhere, such as Downloads, stays where it was.</p>
+    </section>
+    <section>
+      <title>Trees you open from a file</title>
+      <p>The file you choose stays where it was, and <keyword keyref="product-name"/> works on its own copy. <xref keyref="opened-files-and-copies"/> says what happens to each.</p>
+    </section>
+  </conbody>
+</concept>

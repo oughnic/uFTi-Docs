@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<!-- Say who made this tree, shared by the Android phone and tablet, iPhone, iPad and Mac. On 17 November 2026
+     (issue 200) it was walked on the Android phone and tablet and the iPad: the + sheet names the form Add a
+     name, and the list shows the new name at once, so the step to leave the list and open it again is gone.
+     The tablet's own copy was folded in here; its only difference is the list on the left. -->
 <task id="say-who-made-this-tree" xml:lang="en-GB">
   <title>Say who made this tree</title>
   <shortdesc>Record who made the tree, so anyone who gets a copy knows who to ask.</shortdesc>
@@ -7,6 +11,7 @@
     <critdates>
       <created date="2026-11-10"/>
       <revised modified="2026-11-11"/>
+      <revised modified="2026-11-17"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -22,13 +27,13 @@
   <taskbody>
     <steps>
       <step>
-        <cmd>Choose <uicontrol keyref="ui-more"/>, then <uicontrol keyref="ui-who-made-this-tree"/>.</cmd>
+        <cmd><ph platform="AndroidPhone iPhone iPad MacCatalyst">Choose <uicontrol keyref="ui-more"/>, then <uicontrol keyref="ui-who-made-this-tree"/>.</ph><ph platform="AndroidTablet">Choose <uicontrol keyref="ui-who-made-this-tree"/> in the list on the left.</ph></cmd>
         <stepresult>
           <p>A new tree says <q>Nobody is credited with this tree yet.</q></p>
         </stepresult>
       </step>
       <step>
-        <cmd>Choose <uicontrol keyref="ui-add"/>, then <uicontrol keyref="ui-submitter"/> under <q>Add to the workspace</q>, then <uicontrol keyref="ui-add-button"/>.</cmd>
+        <cmd>Choose <uicontrol keyref="ui-add"/>, then <uicontrol keyref="ui-add-a-name"/> under <q>Add to the workspace</q>, then <uicontrol keyref="ui-add-button"/>.</cmd>
       </step>
       <step>
         <cmd>Type a name in <uicontrol keyref="ui-name"/>.</cmd>
@@ -38,20 +43,8 @@
       </step>
       <step>
         <cmd>Scroll to the bottom and choose <uicontrol keyref="ui-save"/>.</cmd>
-        <stepresult platform="iPhone">
-          <p>The list shows the name at once, marked <q>(default)</q>. A line above it says what the tree states about its copyright.</p>
-          <fig>
-            <image keyref="img-submitters"/>
-          </fig>
-        </stepresult>
-      </step>
-      <step platform="AndroidPhone MacCatalyst">
-        <cmd>Leave the list and open it again.</cmd>
-        <info>
-          <p>The list may not show the new name until you do.</p>
-        </info>
         <stepresult>
-          <p>The name is in the list, marked <q>(default)</q>.</p>
+          <p>The list shows the name at once, marked <q>(default)</q>. A line above it says what the tree states about its copyright.</p>
           <fig>
             <image keyref="img-submitters"/>
           </fig>

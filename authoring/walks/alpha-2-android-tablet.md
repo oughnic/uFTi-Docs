@@ -79,3 +79,16 @@ The pictures are new. All 37 pictures of the Android tablet manual were taken ag
 - Walk the dates, places and names sheet and the rows not walked here, on a tablet or an emulator with a camera scene.
 - Walk the Help rows again on the published Alpha-2 pages. The tablet pages now carry the identifiers for 23 of the app's 25 screens (not **More**, which the tablet does not have, and merging people, which no manual has a page for yet), so the app can ask for them once it carries a help map for the tablet.
 - Settle with the Android phone which pages can be shared again with the tablet (DEC-197, DEC-238).
+
+## 6. Parity walk (17 November)
+
+For the parity epic (issues 196 and 200), on a tablet emulator, Android 16, on its side, on a newer build from the app's development line, a Release build with the DevFlow agent, in Oxford and slate, Light.
+
+| What | What a reader sees | For the pages |
+|---|---|---|
+| The list on the left | Home, Person, Family tree, Events, then Workspaces, Notes, Where records are kept, Who made this tree, Research questions and notes, Preferences and About uFTi. No **More**, and no Help in the list: **Help** is the button at the top right | The help screen `more` does not exist here |
+| **About uFTi** | The same page as the phone: **Copy diagnostics**, **Re-run hardware check**, **Privacy policy**, **Software components and licences**, then the version | *Find help and the version*, shared |
+| Moving between trees | Two cards side by side, the tree in use first and marked **Active**. **Open** on the other goes straight to its Home | *Move between workspaces*, shared |
+| The **New workspace** box | The starting name, "My family tree", is not selected: the cursor sits after it, so typing adds to it. The iPhone, iPad and Mac select it | For the app team |
+| **Add from file…** with a file another program made | The same page and **Just look** box as the phone. While a look-only tree is in use, Workspaces says "The tree in use is open just to look at, so nothing in it is changed or saved." | *Open a family tree file*, now shared with the phone |
+| **Who made this tree** | **+** names the form **Add a name**; after **Save**, the list shows the name at once | *Say who made this tree*, now one page for five devices |
