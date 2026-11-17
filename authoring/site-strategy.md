@@ -69,7 +69,7 @@ The client is free today. Revenue may come later from AI models or a record-sync
 |---|---|
 | Topics never say "free", "always", "forever", "no account", "no sign-in" or where data is or is not stored. | Each becomes false the day a service ships. |
 | Pricing, plans and account facts live on marketing pages, and in the manuals only through keys that can be changed in one place. | One edit, every manual. |
-| The privacy policy states current behaviour, with the date and the app release it describes, and never says where family tree data is kept. | True today, honestly dated tomorrow. |
+| The privacy policy states current behaviour, with the date and the app release it describes, and never says where any service of ours keeps family tree data. It may say what the reader's own device, or a service the reader uses, copies (DEC-249). | True today, honestly dated tomorrow. |
 | Sync and AI do not appear in the manuals until they ship. The chapter structure leaves room: "Keep your tree in step across devices" and "Assistants" are reserved chapter names. | No rewriting, no broken promises. |
 | Nothing in the documentation describes what the app does with data beyond what a user can observe. | Observable behaviour only, and nothing that constrains a future design. |
 

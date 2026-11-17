@@ -30,6 +30,10 @@
   <topicref href="../../platforms/desktop/topics/which-file-to-send.dita" keys="which-file-to-send" platform="Desktop"/>
   <topicref href="../../platforms/phone/topics/which-file-to-send.dita" keys="which-file-to-send" platform="Mobile MacCatalyst"/>
   <topicref href="../../platforms/desktop/topics/files-beside-your-tree.dita" keys="files-beside-your-tree" platform="Desktop"/>
+  <topicref href="../../platforms/windows/topics/who-can-see-your-tree.dita" keys="who-can-see-your-tree" platform="WindowsWinUI"/>
+  <topicref href="../../platforms/android/topics/who-can-see-your-tree.dita" keys="who-can-see-your-tree" platform="Android"/>
+  <topicref href="../../platforms/ios/topics/who-can-see-your-tree.dita" keys="who-can-see-your-tree" platform="iOS"/>
+  <topicref href="../../platforms/macos/topics/who-can-see-your-tree.dita" keys="who-can-see-your-tree" platform="MacCatalyst"/>
   <topicref href="../../platforms/windows/topics/add-a-photo.dita" keys="add-a-photo" platform="WindowsWinUI"/>
   <topicref href="../../platforms/windows/topics/the-photos-buttons.dita" keys="the-photos-buttons" platform="WindowsWinUI"/>
 </map>

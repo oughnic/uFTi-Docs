@@ -22,7 +22,8 @@ Both licences are recorded in the repository's `NOTICE`.
 | `Spelling` | error | British English, with the vocabulary | DEC-010 |
 | `Avoid` | error | "simply", "just", "easy", "please", "via", "e.g." and the like | Standards, section 11 |
 | `Positional` | error | "above", "below", "the previous section" | Standards, section 2 |
-| `BusinessModel` | error | Price, "free", accounts, sign-in, where data is kept | DEC-040 |
+| `BusinessModel` | error | Price, "free", sign-in, where data is kept | DEC-040 |
+| `Accounts` | error | An account. Only the pages that say what a device's own backup or sync copies may switch it off (`.vale.ini`) | DEC-040, DEC-249 |
 | `GedcomTags` | error | A file tag, structure or line | DEC-030 |
 | `ProductName` | error | uFTi in any other capital pattern | Style guide, section 5 |
 | `Dates` | error | A date not written 1 January 2026 | Style guide, section 6 |

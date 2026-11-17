@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="who-can-see-your-tree" xml:lang="en-GB">
+  <title>Who can see your tree</title>
+  <shortdesc>Your tree is yours: you decide who gets a copy, and your Mac keeps it safe.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-17"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Concept</category>
+      <keywords>
+        <keyword>privacy</keyword>
+        <keyword>backup</keyword>
+        <keyword>data controller</keyword>
+        <keyword>encryption</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p>Your tree is yours. <keyword keyref="product-name"/> does not send it anywhere. Nobody who makes <keyword keyref="product-name"/> can see it.</p>
+    <p>You decide what goes in your tree, where you keep it and who gets a copy. That makes you the <term keyref="term-data-controller">data controller</term> for the people in it. This includes any who are still alive.</p>
+    <section>
+      <title>Copies that your Mac makes</title>
+      <p>Time Machine can copy the files on your Mac to a backup drive. Your trees go with them. Your Mac makes this copy, not <keyword keyref="product-name"/>. Nobody who makes <keyword keyref="product-name"/> can see it.</p>
+      <p>To see whether it is on, open System Settings. Choose General, then Time Machine.</p>
+    </section>
+    <section>
+      <title>Copies that you save</title>
+      <p>A copy that you save goes where you choose. <xref keyref="keep-it-safe"/> shows how. If you save it in iCloud Drive, or in another folder that is kept in step with a service, that service keeps a copy too. It keeps it under your own account.</p>
+    </section>
+    <section>
+      <title>Your files are not locked by <keyword keyref="product-name"/></title>
+      <p><keyword keyref="product-name"/> does not <term keyref="term-encrypt">encrypt</term> your trees. They are ordinary files. What keeps them safe is your Mac.</p>
+      <p>FileVault encrypts the files on your Mac. To see whether it is on, open System Settings. Choose Privacy &amp; Security, then FileVault. Keep a password on your Mac too.</p>
+      <p>If you give someone a copy of a tree, they can read all of it.</p>
+    </section>
+    <section>
+      <title>Pictures from a website</title>
+      <p>A tree can point to a picture on a website. <xref keyref="the-photos-buttons"/> says what that website can see.</p>
+    </section>
+    <section>
+      <title>The privacy policy</title>
+      <p><xref keyref="privacy"/> says what the people who make <keyword keyref="product-name"/> collect, and what they do not.</p>
+    </section>
+  </conbody>
+</concept>

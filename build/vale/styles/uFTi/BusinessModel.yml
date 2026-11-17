@@ -1,4 +1,5 @@
 # DEC-040: topics never state price, "free", "forever", accounts, sign-in or where data lives.
+# The words for an account are in Accounts.yml (DEC-249), so a page can switch off only them.
 extends: existence
 message: "'%s' is a business-model word. Topics never state price, 'free', accounts, sign-in or where data lives (DEC-040)."
 level: error
@@ -11,8 +12,6 @@ tokens:
   - pricing
   - subscription
   - subscribe
-  - account
-  - accounts
   - sign in
   - sign-in
   - signin
