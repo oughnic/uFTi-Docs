@@ -26,7 +26,7 @@
       <step>
         <cmd>Choose <uicontrol keyref="ui-research-questions-and-notes"/> in the menu.</cmd>
         <stepresult>
-          <p>The page lists your research notes. Each shows its first words, its status and how many records it is linked from.</p>
+          <p>The page lists your research notes. Each shows its first words and its status. A note that is tied to people also says how many records it is linked from.</p>
         </stepresult>
       </step>
       <step>
@@ -62,7 +62,7 @@
       <step>
         <cmd>Choose <uicontrol keyref="ui-save"/>.</cmd>
         <stepresult>
-          <p>The page <uicontrol keyref="ui-research-questions-and-notes"/> lists the note by its first words. Under them it says <systemoutput>Open · linked from 1 record(s)</systemoutput>.</p>
+          <p>The page <uicontrol keyref="ui-research-questions-and-notes"/> lists the note by its first words. Under them it says <systemoutput>Open · linked from 1 record(s)</systemoutput>. The picture shows the finished sample tree, whose six notes are not tied to people, so each shows only its status.</p>
           <fig>
             <image keyref="img-research-notes"/>
           </fig>

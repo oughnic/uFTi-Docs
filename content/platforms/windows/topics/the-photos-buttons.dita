@@ -21,7 +21,7 @@
     <resourceid appname="ufti" appid="media.add"/>
   </prolog>
   <conbody>
-    <p>A person's page has a part named <uicontrol keyref="ui-photos"/>. In a tree with no pictures, it has three buttons in a row. Each has a small picture on it and no words. The picture shows them at the foot of a page, under <uicontrol keyref="ui-photos"/>.</p>
+    <p>A person's page has a part named <uicontrol keyref="ui-photos"/>. In a tree with no pictures, it has three buttons in a row. Each has a small picture on it and no words. The picture shows them under <uicontrol keyref="ui-photos"/> on the page of a person who has three pictures. It also shows a fourth button, and the pictures below.</p>
     <fig>
       <image keyref="img-photo-link"/>
     </fig>

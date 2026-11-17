@@ -56,7 +56,7 @@
       <step>
         <cmd>Choose <uicontrol keyref="ui-notes"/> in the menu to read it.</cmd>
         <stepresult>
-          <p>The page lists the note by its first words.</p>
+          <p>The page lists each note by its first words. In the picture, Maria Branwell has three notes, because the sample tree is finished. Your tree shows the notes you have added.</p>
           <fig>
             <image keyref="img-notes"/>
           </fig>

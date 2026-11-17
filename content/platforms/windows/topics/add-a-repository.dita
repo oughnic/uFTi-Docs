@@ -27,7 +27,7 @@
       <step>
         <cmd>Choose <uicontrol keyref="ui-where-records-are-kept"/> in the menu.</cmd>
         <stepresult>
-          <p>The page lists the places you have recorded. Each has a name and an address.</p>
+          <p>The page lists the places you have recorded. Each has a name, and an address if you gave one.</p>
         </stepresult>
       </step>
       <step>

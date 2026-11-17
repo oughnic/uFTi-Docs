@@ -27,6 +27,9 @@
         <cmd>On the card for your tree, choose <uicontrol keyref="ui-save-as"/>.</cmd>
         <stepresult>
           <p>A sheet named <wintitle keyref="ui-save-workspace-as"/> opens.</p>
+          <fig>
+            <image keyref="img-save-as-choice"/>
+          </fig>
         </stepresult>
       </step>
       <step>
@@ -40,6 +43,9 @@
         <cmd>If you chose <uicontrol keyref="ui-family-tree-only-ged"/>, choose a version.</cmd>
         <info>
           <p>The box named <wintitle keyref="ui-which-version-of-gedcom"/> offers <uicontrol keyref="ui-gedcom-7"/> and <uicontrol keyref="ui-gedcom-551"/>. Choose the first unless a program you use is old.</p>
+          <fig>
+            <image keyref="img-save-as-version"/>
+          </fig>
         </info>
       </step>
       <step>

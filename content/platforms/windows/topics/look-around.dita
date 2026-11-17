@@ -32,7 +32,7 @@
       <step>
         <cmd>Choose <uicontrol keyref="ui-all-people"/>, then choose the card of one person.</cmd>
         <info>
-          <p>A chip at the top starts with <uicontrol keyref="ui-showing"/>. Until you open someone it says <q>Showing: the focal person</q>. Then it names the person you chose.</p>
+          <p>A chip at the top starts with <uicontrol keyref="ui-showing"/>. It names the person you chose.</p>
         </info>
       </step>
       <step>

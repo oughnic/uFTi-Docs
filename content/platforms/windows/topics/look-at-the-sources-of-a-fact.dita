@@ -40,7 +40,7 @@
         </stepresult>
       </step>
       <step>
-        <cmd>Choose <uicontrol keyref="ui-add-source"/> at the foot of the sheet.</cmd>
+        <cmd>Choose <uicontrol keyref="ui-add-source"/> on the sheet.</cmd>
         <stepresult>
           <p>A list named <wintitle keyref="ui-add-source"/> opens. It has a box named <uicontrol keyref="ui-search-existing-sources"/>, a button named <uicontrol keyref="ui-add-a-new-source"/>, and the sources already in your tree.</p>
           <fig>

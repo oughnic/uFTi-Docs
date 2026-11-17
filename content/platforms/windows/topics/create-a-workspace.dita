@@ -26,13 +26,16 @@
       <step>
         <cmd>Choose <uicontrol keyref="ui-workspaces"/> in the menu, then <uicontrol keyref="ui-create-workspace"/>.</cmd>
         <info>
-          <p>The picture shows the <uicontrol keyref="ui-workspaces"/> page when no tree is open. It has the buttons <uicontrol keyref="ui-create-workspace"/> and <uicontrol keyref="ui-add-from-file"/>.</p>
+          <p>The picture shows the top of the <uicontrol keyref="ui-workspaces"/> page. It has the buttons <uicontrol keyref="ui-create-workspace"/> and <uicontrol keyref="ui-add-from-file"/>.</p>
           <fig>
             <image keyref="img-start-first-run"/>
           </fig>
         </info>
         <stepresult>
           <p>A small box named <wintitle keyref="ui-new-workspace"/> opens. It says <q>Name your new family tree.</q> The name box already holds the words <q>My family tree</q>.</p>
+          <fig>
+            <image keyref="img-create-workspace-dialog"/>
+          </fig>
         </stepresult>
       </step>
       <step>

@@ -158,22 +158,22 @@
     "x": 0,
     "y": 32,
     "width": 1267,
-    "height": 745,
-    "reason": "Removes the black band at the top and the black band the capture leaves at the bottom (the window was taller than the screen), and stops above the heading that the bottom edge cuts in half."
+    "height": 735,
+    "reason": "Removes the black band at the top and the black band the capture leaves at the bottom (the Refine by panel makes the page taller than the window), and stops above the heading that the bottom edge cuts in half."
   },
   "img-remove-workspace": {
-    "x": 340,
-    "y": 270,
-    "width": 590,
-    "height": 260,
+    "x": 360,
+    "y": 288,
+    "width": 550,
+    "height": 216,
     "reason": "Keeps the question and its two buttons; the rest is the screen behind it, dimmed."
   },
   "img-note-form": {
-    "x": 220,
-    "y": 228,
-    "width": 1047,
-    "height": 565,
-    "reason": "Removes the black band the in-app capture leaves where the title bar is, and the button that fills a form from a document, which the manual does not describe."
+    "x": 0,
+    "y": 32,
+    "width": 1267,
+    "height": 761,
+    "reason": "Removes the black band the in-app capture leaves where the title bar is."
   },
   "img-date-editor": {
     "x": 220,
@@ -182,18 +182,39 @@
     "height": 565,
     "reason": "Removes the black band the in-app capture leaves where the title bar is, and the button that fills a form from a document, which the manual does not describe."
   },
-  "img-source-new": {
-    "x": 220,
-    "y": 335,
-    "width": 1047,
-    "height": 458,
-    "reason": "Removes the black band the in-app capture leaves where the title bar is, and the buttons above the Title box that attach a document and fill the form from it, which the manual does not describe."
-  },
   "img-census-form": {
     "x": 220,
     "y": 380,
     "width": 1047,
     "height": 413,
     "reason": "Removes the black band the in-app capture leaves where the title bar is, and the buttons above Event type that attach a document and fill the form from it, which the manual does not describe."
+  },
+  "img-create-workspace-dialog": {
+    "x": 471,
+    "y": 284,
+    "width": 332,
+    "height": 232,
+    "reason": "Keeps the question and its buttons; the rest is the screen behind it, dimmed."
+  },
+  "img-save-as-choice": {
+    "x": 124,
+    "y": 290,
+    "width": 1020,
+    "height": 214,
+    "reason": "Keeps the question and its buttons; the rest is the screen behind it, dimmed."
+  },
+  "img-save-as-version": {
+    "x": 454,
+    "y": 290,
+    "width": 360,
+    "height": 214,
+    "reason": "Keeps the question and its buttons; the rest is the screen behind it, dimmed."
+  },
+  "img-source-new": {
+    "x": 220,
+    "y": 335,
+    "width": 1047,
+    "height": 458,
+    "reason": "Removes the black band the in-app capture leaves where the title bar is, and the buttons above the Title box that attach a document and fill the form from it, which the manual does not describe."
   }
 }

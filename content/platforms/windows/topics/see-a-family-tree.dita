@@ -39,7 +39,7 @@
       <step>
         <cmd>Read a box.</cmd>
         <info>
-          <p>A box shows a name, how that person is related, and the years of life. For example, <q>Wife · 1783–1821</q>. A chip on the box counts the events of that person.</p>
+          <p>A box shows a name, how that person is related, and the years of life. For example, <q>Wife · 1783–1821</q>. Chips on the box count the events and the notes of that person.</p>
         </info>
       </step>
       <step>
