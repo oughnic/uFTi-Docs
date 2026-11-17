@@ -92,3 +92,5 @@ For the parity epic (issues 196 and 200), on a tablet emulator, Android 16, on i
 | The **New workspace** box | The starting name, "My family tree", is not selected: the cursor sits after it, so typing adds to it. The iPhone, iPad and Mac select it | For the app team |
 | **Add from file…** with a file another program made | The same page and **Just look** box as the phone. While a look-only tree is in use, Workspaces says "The tree in use is open just to look at, so nothing in it is changed or saved." | *Open a family tree file*, now shared with the phone |
 | **Who made this tree** | **+** names the form **Add a name**; after **Save**, the list shows the name at once | *Say who made this tree*, now one page for five devices |
+
+On 17 November, at the maintainer's request, the New workspace box was sent to the app team as a fault, with the phone's.

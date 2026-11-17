@@ -92,3 +92,5 @@ For the parity epic (issues 194, 196 and 200), on a phone emulator (not the phon
 | Where a tree is | **Show details** says "Patrick from another program.ged in workspaces", or "Brontë family of Haworth.ged in uFTi" for the sample. Removing the app and putting it back left only the sample; the files in Downloads stayed | *Where your trees are saved*, shared |
 | **Who made this tree** | **+** names the form **Add a name**; after **Save** the list shows the name at once | *Say who made this tree*: the step to open the list again is gone |
 | The **New workspace** box | As on the tablet, the starting name is not selected | For the app team |
+
+On 17 November, at the maintainer's request, the New workspace box was sent to the app team as a fault, with the tablet's.
