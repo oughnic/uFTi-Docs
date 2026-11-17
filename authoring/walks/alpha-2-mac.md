@@ -83,6 +83,7 @@ The pages for the AppKit Mac, written before the walk, were removed: no manual u
 - On 12 November, at the maintainer's request, row 21 was sent to the app team as a fault, and row 20 was added to the iPad's report of the chain button closing the app.
 - Check the **Currer** search on the Android phone, in the sample tree that the app opens with. If it finds nothing there, the Android phone needs another example too, and a new picture.
 - On 12 November, at the maintainer's request, rows 5, 10, 12, 13 and 17, the path word "Submitter", the "Tap to manage sources" names and the sample's missing pen name were sent to the app team, with the iPhone's and the iPad's.
+- On 17 November, at the maintainer's request, row 25 was sent to the app team: every control that changes a tree should be hidden while a tree opened with **Just look** is in use, on every device.
 
 ## 6. Walked again (17 November)
 
