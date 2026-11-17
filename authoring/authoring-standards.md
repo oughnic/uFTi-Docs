@@ -246,7 +246,7 @@ The checks run locally with `pwsh build/scripts/check-source.ps1` and in CI ([bu
 | 1 | `id` matches the file name | Lint (before) |
 | 1 | `outputclass` only `search-ignore`, `search-demote`, `landscape` | Lint (WP3) |
 | 1 | No `mapref` by key, no key that names a map, no `chunk="to-content"` | Lint (before) |
-| 1 | No GEDCOM tags; no price, accounts or "free" | Vale `GedcomTags`, `BusinessModel` (before) |
+| 1 | No GEDCOM tags; no price, accounts or "free" | Vale `GedcomTags`, `BusinessModel`, `Accounts` (before) |
 | 1 | No workflow in the source | Lint rejects `@rev` (before) and `@status`, `draft-comment`, `required-cleanup` (WP3) |
 | 1 | No Markdown topics, no Lightweight DITA | Review |
 | 2 | No positional references | Vale `Positional` (before) |

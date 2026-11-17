@@ -7,6 +7,7 @@
     <critdates>
       <created date="2026-10-27"/>
       <revised modified="2026-11-10"/>
+      <revised modified="2026-11-17"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -56,6 +57,10 @@
       <title>A picture that is attached</title>
       <p>A picture shows as a card. Choose the card to see a short list. It offers <uicontrol keyref="ui-view"/>, <uicontrol keyref="ui-details"/>, <uicontrol keyref="ui-copy"/>, <uicontrol keyref="ui-export"/> and <uicontrol keyref="ui-remove"/>. <uicontrol keyref="ui-details"/> opens a form with the name of the file, its type and your description. <uicontrol keyref="ui-remove"/> asks if you want to delete the photo and its file. It says so when the photo is only attached to that one record.</p>
       <p>The same three buttons appear when you attach a copy of a source. <xref keyref="which-file-to-send"/> says which file to send to family, and whether the pictures go with it.</p>
+    </section>
+    <section>
+      <title>Pictures from a website</title>
+      <p>A tree from another program can point to a picture on a website. <xref keyref="pictures-from-a-website"/> says what that website sees, and where the picture is kept.</p>
     </section>
   </refbody>
 </reference>

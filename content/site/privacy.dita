@@ -7,6 +7,7 @@
     <critdates>
       <created date="2026-10-25"/>
       <revised modified="2026-11-16"/>
+      <revised modified="2026-11-17"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -18,6 +19,7 @@
         <keyword>data controller</keyword>
         <keyword>backup</keyword>
         <keyword>delete my trees</keyword>
+        <keyword>encryption</keyword>
       </keywords>
     </metadata>
     <resourceid appname="ufti" appid="about.privacy"/>
@@ -31,10 +33,11 @@
         <li>This website and its PDFs do not use cookies, analytics or tracking scripts.</li>
         <li>A store may pass some personal data to us. This policy says what.</li>
         <li>Your phone, tablet or computer may make its own copy of your trees. That is set by you and your device.</li>
+        <li>uFTi does not encrypt your trees. The lock on your device keeps them safe.</li>
         <li>You can delete your trees at any time. They are files on your device.</li>
         <li>If you record information about other people in uFTi, you are the data controller for it.</li>
       </ul>
-      <p>This policy describes how uFTi and this website work on 16 November 2026. That is the second early test version of uFTi, called Alpha-2.</p>
+      <p>This policy describes how uFTi and this website work on 17 November 2026. That is the second early test version of uFTi, called Alpha-2.</p>
     </section>
     <section id="who-we-are">
       <title>Who we are</title>
@@ -57,7 +60,7 @@
       <p>We cannot see the family trees that people make with uFTi. We do not collect, receive or have access to what you record in it.</p>
       <p>If you ask us for help, you may choose to send us a message or a file. We then have what you send. We use it only to help you.</p>
       <p>Your phone, tablet or computer may send crash reports to the company that makes its system. Your settings on the device decide this. It is part of the device, not part of uFTi, and we do not control it.</p>
-      <p>A family tree can hold a picture that lives on a website. When it does, uFTi asks that website for the picture so that it can show it. That website can see the internet address of your device, and which picture was asked for, as any website that you visit can. The request also names the app, as a browser names itself. It says nothing else about you. We do not see this. The app does not use the internet for anything else.</p>
+      <p>A family tree can hold a picture that lives on a website. When it does, uFTi asks that website for the picture so that it can show it. That website can see the internet address of your device, and which picture was asked for, as any website that you visit can. The request also names the app and its version, as a browser names itself. It says nothing else about you. We do not see this. uFTi then keeps the picture on your device, with the other pictures of that tree, so it does not ask again. If the website does not send it, the app says that the picture is missing. The app does not use the internet for anything else.</p>
     </section>
     <section id="camera">
       <title>The camera and your pictures</title>
@@ -66,14 +69,21 @@
     </section>
     <section id="backups">
       <title>Copies that your device makes</title>
-      <p>Your device may make its own copy of the files of apps, and so of your trees. This is part of the device, set by you. It is not part of uFTi, and we do not control it. We do not receive these copies.</p>
+      <p>Your device, or a service that you use, may make its own copy of your trees. It makes the copy under your own account, with your settings. uFTi does not make these copies, and we cannot see them. You decide whether they are made.</p>
       <ul>
-        <li>An Android phone or tablet has its own backup. If it is on, Android may copy the files of apps, with your trees, to the backup that Google keeps for you. We receive nothing.</li>
+        <li>An Android phone or tablet has its own backup. If it is on, Android may copy the files of apps, with your trees, to your Google account.</li>
         <li>An iPhone or iPad can back up the files of apps to iCloud, or to a computer. Your settings decide which.</li>
-        <li>A Mac works in the same way, and you have more control over it. Your settings decide what it copies, and where.</li>
-        <li>On a PC, a folder such as Documents may be kept in OneDrive. If yours is, your trees go there with the rest of the folder.</li>
+        <li>A Mac can copy its files, with your trees, to a backup drive with Time Machine.</li>
+        <li>On a PC, your Documents folder may be kept in OneDrive. If it is, your trees go there with the rest of the folder. File History can also copy them to another drive.</li>
+        <li>If you save a copy of a tree in a folder that is kept in step with a service, that service keeps a copy too. iCloud Drive, Google Drive, OneDrive and Dropbox all work like this.</li>
       </ul>
-      <p>To stop this, change the backup settings on your device.</p>
+      <p>To stop this, change the backup settings on your device, or save your trees somewhere else. The manual for your device says where those settings are.</p>
+    </section>
+    <section id="not-encrypted">
+      <title>Your trees are not encrypted</title>
+      <p>Your trees are ordinary files, in formats that other programs can read. uFTi does not encrypt them.</p>
+      <p>What keeps them safe is your device. Keep a lock on it, such as a passcode, a PIN or a password. Keep its own encryption on too: on a PC, BitLocker or device encryption, and on a Mac, FileVault. An Android phone or tablet, an iPhone and an iPad encrypt their files once they have a lock.</p>
+      <p>If you give someone a copy of a tree, they can read all of it. So can anyone who can open the folder that you keep it in.</p>
     </section>
     <section id="keeping-and-deleting">
       <title>Keeping and deleting your trees</title>
@@ -121,7 +131,7 @@
     </section>
     <section id="changes">
       <title>Changes to this policy</title>
-      <p>We last checked this policy on 16 November 2026. We change it when uFTi or this website changes.</p>
+      <p>We last checked this policy on 17 November 2026. We change it when uFTi or this website changes.</p>
     </section>
     <section id="words-we-use">
       <title>Words we use</title>
@@ -141,6 +151,10 @@
         <dlentry>
           <dt>Data controller</dt>
           <dd>The person or group that decides what personal data are collected, and why. The controller is responsible for looking after them.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Encrypt</dt>
+          <dd>To lock a file with a secret code, so that only someone with the key can read it.</dd>
         </dlentry>
         <dlentry>
           <dt>Information Commissioner's Office</dt>

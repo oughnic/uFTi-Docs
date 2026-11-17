@@ -25,7 +25,7 @@ A rule nobody checks drifts. Each rule in this guide and the standards says who 
 | Reading level and sentence length | Vale `uFTi.ReadingEase`, `uFTi.GradeLevel`, `uFTi.AverageSentence` and `uFTi.LongSentence` | `check-source.ps1`, CI `lint` job |
 | Spelling | Vale `uFTi.Spelling` (British dictionary, plus the vocabulary) | the same |
 | Words and phrases | Vale `uFTi.Avoid`, `uFTi.NeutralVerbs`, `uFTi.Positional`, `uFTi.PlainWords`, `uFTi.Terminology`, `uFTi.ProductName`, `uFTi.Dates`, `uFTi.ColourCues`, `uFTi.PositionCues` | the same |
-| What must not be said | Vale `uFTi.BusinessModel` (DEC-040), `uFTi.GedcomTags` (DEC-030) | the same |
+| What must not be said | Vale `uFTi.BusinessModel` and `uFTi.Accounts` (DEC-040), `uFTi.GedcomTags` (DEC-030) | the same |
 | Structure, metadata, keys, pictures, diagrams | [`lint.ps1`](../build/scripts/lint.ps1) | the same |
 | Sense, tone, accuracy | A person: the reviewers in the [plan, section 7.1](authoring-plan.md#71-roles), using the checklist in section 11 | The pull request |
 
@@ -114,7 +114,7 @@ Other languages measure differently. English measures do not apply to Spanish, w
 - **Explain a hard word once,** where the reader first meets it, in plain words, and link its glossary entry with `<term keyref="term-..."/>`. Every term in the glossary has a definition an 11-year-old can read.
 - **No jargon without a reason.** If you cannot explain a word in the topic, the topic is too hard. Expand an abbreviation the first time, or link it.
 - **Never show a file tag, a structure or a line of a file** (DEC-030). Say what the thing is for: "a family tree file", "a person", "a fact". Vale `uFTi.GedcomTags`.
-- **Never state price, "free", "forever", accounts, sign-in or where data are kept** (DEC-040). Vale `uFTi.BusinessModel`.
+- **Never state price, "free", "forever", accounts, sign-in or where data are kept** (DEC-040). Vale `uFTi.BusinessModel` and `uFTi.Accounts`. The one exception: the pages that say a device's own backup or sync copies a tree under the reader's own account, and name where its setting is (DEC-249).
 - **Avoid** *simply*, *just*, *easy*, *obviously*, *please*, *via*, *e.g.*, *i.e.* and *etc.* They tell a reader who is stuck that they should not be. Vale `uFTi.Avoid`.
 - **Verbs that work for touch and for a pointer:** *choose*, *select*, *open*, *enter*, *type*. Use *click*, *tap* and *press* only in text for one kind of device (Vale `uFTi.NeutralVerbs`, a warning).
 - **Name the control, not its colour or its place** (Vale `uFTi.ColourCues`, an error, and `uFTi.PositionCues`, a warning). Say "choose **Delete**", not "choose the red button on the right". Position changes with the screen and a screen reader does not give it. Say where a control is only when its name alone would not find it, as for the **+** button.

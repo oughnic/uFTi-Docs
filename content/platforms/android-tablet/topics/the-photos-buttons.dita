@@ -6,6 +6,7 @@
   <prolog>
     <critdates>
       <created date="2026-10-27"/>
+      <revised modified="2026-11-17"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -34,6 +35,10 @@
     <section>
       <title>The chain button</title>
       <p>The third button has a chain link on it. It is for a picture that is already in this tree, so you can use it again on a second person. A list of the tree's pictures opens, with a box to search them by what they show. A new tree has none yet.</p>
+    </section>
+    <section>
+      <title>Pictures from a website</title>
+      <p>A tree from another program can point to a picture on a website. <xref keyref="pictures-from-a-website"/> says what that website sees, and where the picture is kept.</p>
     </section>
   </conbody>
 </concept>

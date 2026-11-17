@@ -7,6 +7,7 @@
     <critdates>
       <created date="2026-10-26"/>
       <revised modified="2026-11-10"/>
+      <revised modified="2026-11-17"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -39,7 +40,7 @@
     </section>
     <section>
       <title>If your Documents folder is in OneDrive</title>
-      <p>Some PCs keep the Documents folder in OneDrive. If yours does, your trees go to OneDrive with the rest of that folder.</p>
+      <p>Some PCs keep the Documents folder in OneDrive. If yours does, your trees go to OneDrive with the rest of that folder. <xref keyref="who-can-see-your-tree"/> says more about copies like this.</p>
     </section>
     <section>
       <title>Trees you open from somewhere else</title>

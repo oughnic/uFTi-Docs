@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="pictures-from-a-website" xml:lang="en-GB">
+  <title>Pictures from a website</title>
+  <shortdesc>A tree can point to a picture on a website, and <keyword keyref="product-name"/> asks that website for it.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-17"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Concept</category>
+      <keywords>
+        <keyword>images</keyword>
+        <keyword>privacy</keyword>
+        <keyword>internet address</keyword>
+        <keyword>missing picture</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <p>A tree from another program can point to a picture on a website, rather than hold it. To show the picture, <keyword keyref="product-name"/> asks that website for it.</p>
+    <section>
+      <title>What the website sees</title>
+      <p>The website sees your device's <term keyref="term-internet-address">internet address</term> and which picture was asked for. It also sees that <keyword keyref="product-name"/> asked, and which version. Nothing else about you is sent. Nobody who makes <keyword keyref="product-name"/> sees the request.</p>
+    </section>
+    <section>
+      <title>Where the picture is kept</title>
+      <p><keyword keyref="product-name"/> keeps the picture with the other pictures of your tree. After that, it shows even when your device is not online.</p>
+      <p>It is kept as the rest of your tree is. So copies that your device makes of your tree include it. <xref keyref="who-can-see-your-tree"/> says more about those copies.</p>
+    </section>
+    <section>
+      <title>If the picture does not come</title>
+      <p>If the website does not send the picture, a frame shows in its place. It says that the picture is missing, and why. Choose the frame to try again.</p>
+    </section>
+  </conbody>
+</concept>

@@ -406,6 +406,7 @@ $valeCases = @(
     @{ Name = 'a long word for a plain one'; Check = 'uFTi.PlainWords'; Text = 'You can utilise the search box.' }
     @{ Name = 'a word the terminology list replaces'; Check = 'uFTi.Terminology'; Text = 'The app is a database of your family.' }
     @{ Name = 'a business-model word'; Check = 'uFTi.BusinessModel'; Text = 'Your tree is kept in the cloud.' }
+    @{ Name = 'an account'; Check = 'uFTi.Accounts'; Text = 'Make an account before you start.' }
     @{ Name = 'a GEDCOM tag'; Check = 'uFTi.GedcomTags'; Text = 'The line starts with INDI.' }
     @{ Name = 'a word to avoid'; Check = 'uFTi.Avoid'; Text = 'Just choose Save.' }
     @{ Name = 'a positional reference'; Check = 'uFTi.Positional'; Text = 'As described above, choose Save.' }

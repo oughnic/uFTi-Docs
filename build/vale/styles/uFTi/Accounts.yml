@@ -1,0 +1,9 @@
+# DEC-040: topics never mention accounts. DEC-249: the pages that say a device's own backup or sync
+# copies a tree under the reader's own account switch off this rule only, each in a section of .vale.ini.
+extends: existence
+message: "'%s': topics never mention accounts (DEC-040). Only the pages DEC-249 names may, under the reader's own device or service."
+level: error
+ignorecase: true
+tokens:
+  - account
+  - accounts

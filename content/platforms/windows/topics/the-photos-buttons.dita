@@ -6,6 +6,7 @@
   <prolog>
     <critdates>
       <created date="2026-11-10"/>
+      <revised modified="2026-11-17"/>
     </critdates>
     <metadata>
       <audience type="user" experiencelevel="novice"/>
@@ -40,6 +41,10 @@
     <section>
       <title>Sending your pictures</title>
       <p><xref keyref="which-file-to-send"/> says which file to send to family, and whether the pictures go with it.</p>
+    </section>
+    <section>
+      <title>Pictures from a website</title>
+      <p>A tree from another program can point to a picture on a website. <xref keyref="pictures-from-a-website"/> says what that website sees, and where the picture is kept.</p>
     </section>
   </conbody>
 </concept>
