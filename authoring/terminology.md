@@ -370,6 +370,11 @@ Read from the iPhone and iPad apps on 11 November 2026, in the Alpha-2 walk ([`c
 |---|---|---|---|
 | `ui-make-a-gedcom-7-copy` | Make a GEDCOM 7 copy | The choice, for a file another program made, that keeps a copy of its own in GEDCOM 7 and saves changes there. | none |
 | `ui-just-look` | Just look | The choice, for a file another program made, that opens it to look at and saves nothing. | none |
+| `ui-just-looking` | Just looking | The mark on the card of a tree opened with Just look. | none |
+| `ui-make-a-copy-to-edit` | Make a copy to edit | The button on a Just looking card that opens a copy you can change. | none |
+| `ui-open-the-sample-tree` | Open the sample tree | The button on an empty Home and Workspaces that opens the Brontë sample again. | none |
+| `ui-privacy-policy` | Privacy policy | The button on About uFTi for the privacy policy. | none |
+| `ui-software-components-and-licences` | Software components and licences | The button on About uFTi for the software that uFTi is built with. | none |
 
 ### 2.12 Mac Alpha-2 additions
 

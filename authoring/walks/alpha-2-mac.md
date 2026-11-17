@@ -77,9 +77,27 @@ The pages for the AppKit Mac, written before the walk, were removed: no manual u
 
 ## 5. Next
 
-- Check rows 23 and 24 on the iPhone and iPad: their *Open a family tree file* pages still say that **Save as…** on the card makes a copy you can edit.
-- Walk the camera on the Mac. It needs the maintainer's word, because answering its question changes the Mac's privacy settings. On the iPhone simulator, which has no camera, choosing **Allow** closed the app (the iPhone report, row 35); a Mac without a camera may do the same, so walk it on a Mac with one.
+- Take again the pictures of the **Remove workspace** box and of the page for another program's file, which has new words under **Just look**.
+- Walk the camera on the Mac. It needs the maintainer's word, because answering its question changes the Mac's privacy settings. On the iPhone simulator, which has no camera, the button now says "The camera is not available on this device." (the iPhone report, row 37); a Mac without a camera should do the same. Walk the camera on a Mac with one.
 - On 12 November, at the maintainer's request, rows 22 to 24 were sent to the app team: rows 22 and 23 as a fault, row 24 as a request.
 - On 12 November, at the maintainer's request, row 21 was sent to the app team as a fault, and row 20 was added to the iPad's report of the chain button closing the app.
 - Check the **Currer** search on the Android phone, in the sample tree that the app opens with. If it finds nothing there, the Android phone needs another example too, and a new picture.
 - On 12 November, at the maintainer's request, rows 5, 10, 12, 13 and 17, the path word "Submitter", the "Tap to manage sources" names and the sample's missing pen name were sent to the app team, with the iPhone's and the iPad's.
+
+## 6. Walked again (17 November)
+
+On 17 November the mended places were walked again on a newer build from the app's development line, a Release build with the DevFlow agent, in the walk's own trees.
+
+| # | Where | What a reader sees now | Then |
+|---|---|---|---|
+| 25 | **Just look** (rows 22 to 24) | The card is marked **Just looking** and has **Make a copy to edit**, which opens a copy that can be changed at once. Home says "Open just to look at: nothing in this tree can be changed. To change it, use Make a copy to edit on its card under Workspaces.", and **+** is gone. A person's page has no **Edit** and no Photos buttons, but still offers **Add parents to**, **Add a new family** and the **Sources** chips. **Add a new family** opens **Add a record** and then a family form; only **Save** is refused, with "'uFTi walk look 551 (2)' is open just to look at, so nothing in it can be changed. Make a copy to edit it." | Mended, but the forms are still offered: a fault |
+| 26 | **Cancel** on a form (row 17) | **Cancel** asks first, with **Keep editing** and **Discard**. The case of row 17, after removing the tree in use, was not repeated. | Mended |
+| 27 | The picture on the page (row 21) | The strip is the height of the pictures, and **Edit** is just under it. **Link existing media** shows all three of the sample's pictures, the museum's too. | Mended |
+| 28 | The side list, and the tree maker's form | With a research note's form opened from **+**, **Home** stays lit. The tree maker's form from **+** is named **Add a name** on the sheet and **Name** on the path, and **More** stays lit. | Mended |
+| 29 | Lists after a save from **+** | A research note saved from **+** shows in **Research questions and notes** at once. | Mended |
+| 30 | Words | The **Sources** chips are read as "0 sources. Manage sources.". **About uFTi** has two new buttons, **Privacy policy** and **Software components and licences**; they were not chosen. | Mended; new |
+| 31 | Two trees of the same name | The second card shows (2). | Mended |
+
+**Not taken again.** The pictures of the **Remove workspace** box and of the page for another program's file: the Mac's screen locked before they were taken.
+
+**The pages.** *The Photos buttons* loses its line about the thin strip. *Open a family tree file* describes **Just looking**, **Make a copy to edit** and the (2) on a second card of the same name.

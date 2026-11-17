@@ -86,6 +86,27 @@ The pages were written from this report (DEC-238). The iPhone now shares the And
 ## 5. Next
 
 - Walk *Use an existing note* on the iPhone. Taking a photo needs a device with a camera.
-- When row 34 is mended, walk the folder button again and take away the page's line about looking for the picture.
+- When row 40 is mended, walk the chain button again after adding a picture from the folder.
 - On 12 November, at the maintainer's request, the faults (rows 21, 22, 24, 26, 27 and 28), row 30, the New workspace box and the sample's missing pen name were sent to the app team, with the Mac's and the iPad's.
 - On 14 November, at the maintainer's request, rows 34 and 35 were sent to the app team as two faults, and the empty frame in row 36 as a third.
+
+## 6. Walked again (17 November)
+
+The app team mended most of the faults above. On 17 November the mended places were walked again on a newer build from the app's development line, a Release build with the DevFlow agent (as DEC-221 allowed on Windows), from a fresh install, in Oxford and slate, Light.
+
+| # | Where | What a reader sees now | Then |
+|---|---|---|---|
+| 37 | The camera with no camera (row 35) | A box says "The camera is not available on this device." with **OK**. There is no question about the camera, and the app stays open. | Mended |
+| 38 | A picture from the folder (row 34) | After **OK** in **Describe this image**, the picture shows under the buttons at once, "Saved" shows for a moment, and the fourth button appears. | Mended |
+| 39 | The chain's pictures (row 36) | All three of the sample's pictures show, the museum's too. | Mended |
+| 40 | The chain, once the sample holds a picture from the folder | The app closed, twice. The other way round, the chain first and then the folder, the folder said "The picture could not be added. Please try again." The two kinds of picture are kept in folders whose names differ only by a capital letter, which this simulator's disk does not tell apart. A reader's iPhone may not see this; a Mac may. | A fault |
+| 41 | **Save as…** (row 22) | "Saved a copy as Brontë family of Haworth.gdz in On My iPhone." at the foot of the screen, gone after a few seconds. | Mended |
+| 42 | Opening the saved copy (rows 22 and 24) | The box names it "Brontë family of Haworth (2)" and says "Pictures linked on the web: 3", with nothing about family tree files. The card shows (2), and **Show details** gives "Made by uFTi 0.2.0", the file and "Saved 17 November 2026". | Mended |
+| 43 | **Just look** | Under **Just look** the page now says "Nothing is saved, and the file is not touched. Make a copy to edit, on its card, gives you a copy you can change." Home says "Open just to look at: nothing in this tree can be changed. To change it, use Make a copy to edit on its card under Workspaces.", and **+** is gone. The card is marked **Just looking** and has **Make a copy to edit**, which opens a copy that can be changed at once. The file chosen kept its date. | New |
+| 44 | The path and the New workspace box (rows 26 and 21) | On **More** the path ends in **More**. The **New workspace** box has "My family tree" selected, so typing replaces it. | Mended |
+| 45 | Removing the only tree | The **Remove workspace** box now names the file. Afterwards **Home** and **Workspaces** offer **Open the sample tree**, which opens the sample again. | New |
+| 46 | **About uFTi** | Two new buttons, **Privacy policy** and **Software components and licences**; they were not chosen. About still says "Camera: Available" on a simulator with no camera. | New; the camera line is for the app team |
+
+**Not walked again.** Leaving a form by the lit tab (row 27) and the chip after a delete (row 28). The app team reports both mended; walk them at the next pass.
+
+**The pages.** *The Photos buttons* loses its line about looking for the picture; the picture now shows under the buttons on every device. *Open a family tree file* describes **Just looking** and **Make a copy to edit**, and the (2) on a second card of the same name. *Keep it safe* gives the message after **Save**. *Remove a tree* adds **Open the sample tree**, and *Find help and the version* the two new buttons. The pictures of the **Remove workspace** box and of the page for another program's file were taken again.
