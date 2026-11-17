@@ -67,6 +67,7 @@
   <topicref href="../../platforms/android-phone/topics/the-photos-buttons.dita" keys="the-photos-buttons" platform="AndroidPhone"/>
   <topicref href="../../platforms/android-tablet/topics/the-photos-buttons.dita" keys="the-photos-buttons" platform="AndroidTablet"/>
   <topicref href="../../platforms/ios/topics/the-photos-buttons.dita" keys="the-photos-buttons" platform="iOS MacCatalyst"/>
+  <topicref href="../../topics/tree/pictures-from-a-website.dita" keys="pictures-from-a-website"/>
   <topicref href="../../platforms/windows/topics/choose-how-it-looks.dita" keys="choose-how-it-looks" platform="WindowsWinUI"/>
   <topicref href="../../platforms/android-phone/topics/choose-how-it-looks.dita" keys="choose-how-it-looks" platform="AndroidPhone iPhone"/>
   <topicref href="../../platforms/android-tablet/topics/choose-how-it-looks.dita" keys="choose-how-it-looks" platform="AndroidTablet"/>

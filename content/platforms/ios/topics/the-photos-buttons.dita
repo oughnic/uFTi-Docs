@@ -65,9 +65,7 @@
     </section>
     <section>
       <title>Pictures from a website</title>
-      <p>A tree from another program can point to a picture on a website. To show it, <keyword keyref="product-name"/> asks that website for it.</p>
-      <p>The website then sees your device's <term keyref="term-internet-address">internet address</term> and which picture was asked for. It also sees that <keyword keyref="product-name"/> asked, and which version. Nothing else about you is sent.</p>
-      <p><keyword keyref="product-name"/> then keeps the picture on your device. If the website does not send it, the picture is missing.</p>
+      <p>A tree from another program can point to a picture on a website. <xref keyref="pictures-from-a-website"/> says what that website sees, and where the picture is kept.</p>
     </section>
   </conbody>
 </concept>
