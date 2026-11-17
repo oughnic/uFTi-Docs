@@ -10,7 +10,7 @@ Where the app does the same thing on two devices, each device's manual has a pag
 
 Parity does not mean the same pages. A computer has files beside a tree, and a phone does not. A phone has a camera, and most computers do not. These are differences of the device. They are listed in section 5, and they are not gaps.
 
-**How a gap is closed (DEC-251).** The maintainer's direction of 17 November 2026: reuse DITA content, and use DITAVAL for the differences between platforms, pictures included. So a missing page is written once and shared, and what differs on a device is a variant that its DITAVAL file keeps or drops. A copy for one device is the last resort. DEC-252 proposes new limits on variants and on when a topic is split; until the maintainer decides, the caps in the platform strategy stand.
+**How a gap is closed (DEC-251).** The maintainer's direction of 17 November 2026: reuse DITA content, and use DITAVAL for the differences between platforms, pictures included. So a missing page is written once and shared, and what differs on a device is a variant that its DITAVAL file keeps or drops. A copy for one device is the last resort. DEC-252 sets the limits on variants: no cap, any token in any topic, and sizes counted for each manual.
 
 ## 2. How it was made, and how to keep it
 
@@ -61,8 +61,8 @@ Read on 17 November 2026: each Windows page against the pages of the other five 
 |---|---|---|
 | Create a workspace | Steps inside *Add your first person*, in every mobile manual | Covered |
 | Move between workspaces | Not covered. *The screens of the app* only says that **Open another workspace** shows your trees. The walk reports name the screen, its cards and a line about switching, but not the button on a card | **Gap.** Walk, or ask the app team |
-| Remove a person | Inside *Change a person*. The phone page has the full warning (it cannot be undone, and the person leaves every family and event). The tablet, iPad and Mac pages say only "removes the person. Check before you choose it" | **Thin** on the Android tablet, iPad and Mac. DEC-199 says the app does the same on all four, so the phone's lines can be reused. No walk |
-| Use one note for several people | Inside *Add a note to a person* on the Android phone and the iPhone. Not in the tablet, iPad and Mac pages | **Gap** on the Android tablet, iPad and Mac. Reuse the phone's lines. No walk |
+| Remove a person | Inside *Change a person*, with the warning that it cannot be undone and that the person leaves every family and event, on the Android phone and iPhone, and from 17 November 2026 on the Android tablet, iPad and Mac too | Covered. Closed by reuse of the phone's lines (DEC-199, DEC-251) |
+| Use one note for several people | Inside *Add a note to a person*. The Android tablet had the button; from 17 November 2026 the Android tablet, iPad and Mac also say how to use one note for more than one person, as the phone does | Covered. Closed by reuse of the phone's lines. The iPhone and Mac buttons were not walked (DEC-199) |
 | See a family's page | Inside *Add a family with children*: the page lists the partners, the marriage and the children, and says how to change them. The help screen `families.view` opens it | Covered, shorter than Windows |
 | Add a later family | *Add a family with children* starts from a person who is already in the tree | Covered |
 | Add a source to a person | Inside *Look at the sources of a fact* | Covered |
@@ -103,8 +103,8 @@ Every manual says it was checked against Alpha-2. The version that each manual's
 
 ## 6. Work to do, in order
 
-1. **Done (17 November 2026): the read of section 4.2.** Of the Windows-only tasks, two are thin or missing on some devices and one is a gap on all five.
-2. **Close what a read settles, by reuse, with no walk (DEC-199, DEC-251).**
+1. **Done (17 November 2026): the read of section 4.2.** Of the Windows-only tasks, two were thin or missing on some devices, and one is a gap on all five.
+2. **Done (17 November 2026): what a read settled, closed by reuse with no walk (DEC-199, DEC-251).**
    - *Change a person*: give the Android tablet, iPad and Mac the phone's lines on removing a person.
    - *Add a note to a person*: give the Android tablet, iPad and Mac the phone's lines on using one note for several people.
    - Do each by sharing the lines, with a variant only where a device differs. Do not make a copy for a device.
