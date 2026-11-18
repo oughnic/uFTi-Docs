@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary Entry//EN" "glossentry.dtd">
+<glossentry id="family-tree-file" xml:lang="es">
+  <glossterm>archivo de árbol genealógico</glossterm>
+  <glossdef>Un archivo GEDCOM que guarda un árbol genealógico entero, con sus personas, familias, hechos, fuentes y notas de investigación. No guarda imágenes ni otros archivos añadidos. Puede abrir uno, guardar uno y enviar uno.</glossdef>
+</glossentry>

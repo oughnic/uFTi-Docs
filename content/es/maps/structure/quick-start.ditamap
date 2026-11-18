@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!-- The Spanish Quick Start in order (DEC-257). Only the Android phone pages are written in Spanish so far,
+     so this map lists those, with the same keys and platform tokens as the English structure map. -->
+<map id="es-quick-start-structure" xml:lang="es">
+  <topicref href="../../platforms/android/topics/get-ufti.dita" keys="get-ufti" platform="Android"/>
+  <topicref href="../../platforms/android-phone/topics/add-your-first-person.dita" keys="add-your-first-person" platform="AndroidPhone"/>
+  <topicref href="../../platforms/android-phone/topics/look-around.dita" keys="look-around" platform="AndroidPhone"/>
+  <topicref href="../../topics/quick-start/say-where-you-found-it.dita" keys="say-where-you-found-it" platform="Mobile"/>
+  <topicref href="../../platforms/android/topics/keep-it-safe.dita" keys="keep-it-safe" platform="Android"/>
+  <topicref href="../../topics/quick-start/what-next.dita" keys="what-next"/>
+</map>

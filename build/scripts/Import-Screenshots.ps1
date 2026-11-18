@@ -9,7 +9,8 @@
   application repository, never here) leaves a folder with a screens/ folder of PNG files and a
   manifest.json. This script:
 
-    1. validates the manifest: the manual, the Oxford and slate theme (light), en-GB, the Brontë
+    1. validates the manifest: the manual, the Oxford and slate theme (light), en-GB (or es, with
+       -Language es), the Brontë
        dataset, and for every picture its key, its file, its size and its checksum;
     2. checks that every key is one the manual expects (an img-* key in its key map), that every
        expected key is present, and that every key has alternative text in the key map;
@@ -41,6 +42,11 @@
 .PARAMETER Manual
   The manual's folder slug (windows, android-phone, ...). Default: the manifest's "manual".
 
+.PARAMETER Language
+  The language of the pictures: en-GB (the default) or es. A Spanish capture (DEC-257) is checked for
+  the locale es and goes to the Spanish edition's folders, content/es/platforms/<manual>/, with its own
+  key map, crops.json and manifest.
+
 .PARAMETER MaxWidth
   The widest a picture may be, in pixels. Default: 1080 for the phone manuals, 1600 for the others.
 
@@ -64,6 +70,7 @@
 param(
     [string]$Capture = (Join-Path ([Environment]::GetFolderPath('LocalApplicationData')) 'ufti-docs-work' 'handoff' 'windows'),
     [string]$Manual,
+    [ValidateSet('en-GB', 'es')][string]$Language = 'en-GB',
     [int]$MaxWidth,
     [string[]]$Only,
     [switch]$AddNewKeys,
@@ -252,7 +259,7 @@ if ($Manual -notmatch '^[a-z0-9-]+$') { Write-UftiProblem "'$Manual' is not a ma
 if ((Get-Prop $manifest 'manual') -and (Get-Prop $manifest 'manual') -ne $Manual) { Fail "the manifest is for '$(Get-Prop $manifest 'manual')', not '$Manual'" }
 if (-not $MaxWidth) { $MaxWidth = if ($Manual -in 'android-phone', 'iphone') { 1080 } else { 1600 } }
 
-$platformDir = Join-Path $root 'content' 'platforms' $Manual
+$platformDir = if ($Language -eq 'es') { Join-Path $root 'content' 'es' 'platforms' $Manual } else { Join-Path $root 'content' 'platforms' $Manual }
 $keyMapPath = Join-Path $platformDir 'keys' 'images.ditamap'
 $imagesDir = Join-Path $platformDir 'images'
 if (-not (Test-Path -LiteralPath $keyMapPath)) { Write-UftiProblem "No key map at $(Rel $keyMapPath)"; exit 1 }
@@ -299,7 +306,7 @@ $allow = Get-AllowList
 $theme = Get-Prop $manifest 'theme'
 if ((Get-Prop $theme 'name') -ne 'oxford-slate') { Fail "theme is '$(Get-Prop $theme 'name')': pictures are captured in the oxford-slate theme (DEC-024)" }
 if ((Get-Prop $theme 'variant') -ne 'light') { Fail "theme variant is '$(Get-Prop $theme 'variant')': pictures are captured in the light variant (DEC-024)" }
-if ((Get-Prop $manifest 'locale') -ne 'en-GB') { Fail "locale is '$(Get-Prop $manifest 'locale')': pictures are captured in en-GB" }
+if ((Get-Prop $manifest 'locale') -ne $Language) { Fail "locale is '$(Get-Prop $manifest 'locale')': this import is for $Language pictures (-Language)" }
 if ((Get-Prop (Get-Prop $manifest 'dataset') 'name') -ne 'bronte') { Fail "dataset is '$(Get-Prop (Get-Prop $manifest 'dataset') 'name')': pictures show the Brontë dataset only (DEC-025)" }
 $deviceInfo = Get-Prop $manifest 'device'
 if ($deviceInfo) {
@@ -334,7 +341,7 @@ foreach ($im in $images) {
         if ($expected[$key].File -ne $file) { Fail "$key`: the key map points at '$($expected[$key].File)', not '$file'" ; continue }
         $alt = $expected[$key].Alt
         if (-not $alt) { Fail "$key has no alternative text (linktext) in the key map" }
-        elseif ($alt -match '\bTODO\b') { Fail "$key still has placeholder alternative text" }
+        elseif ($alt -cmatch '\bTODO\b') { Fail "$key still has placeholder alternative text" }   # case matters: "Todo" is a Spanish word
         elseif ($alt -match '^\s*(Image|Screenshot|Picture) of') { Fail "$key`: the alternative text starts 'Image of' or 'Screenshot of'" }
         elseif (($alt -split '(?<=[.!?])\s+').Count -gt 1) { Fail "$key`: the alternative text is more than one sentence" }
     }

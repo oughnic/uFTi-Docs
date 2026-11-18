@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!-- The pictures of the Spanish Quick Start for the Android phone (DEC-257): the same keys as the English
+     manual, captured on the same phone set to Español (España). A key's link text is the picture's
+     alternative text, in Spanish (DEC-011). The importer (build/scripts/Import-Screenshots.ps1 -Language es)
+     writes the files and keeps this map in step; it never rewrites alternative text. -->
+<map id="es-android-phone-images" xml:lang="es">
+  <topicmeta>
+    <prodinfo>
+      <prodname>uFTi</prodname>
+      <vrmlist><vrm version="0.2.0.1025"/></vrmlist>
+      <platform>Android phone</platform>
+    </prodinfo>
+    <data name="reference-device" value="physical, 1080 x 2400, portrait"/>
+    <data name="dataset" value="bronte"/>
+  </topicmeta>
+  <keydef keys="img-start-first-run" href="../images/start-first-run.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>La pantalla Inicio del árbol de ejemplo, Brontë family of Haworth, con sus cifras de personas, familias y eventos, un cuadro de búsqueda y la barra de cinco lugares abajo</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-create-workspace-dialog" href="../images/create-workspace-dialog.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>El cuadro Nuevo espacio de trabajo, con Brontë family of Haworth escrito como nombre y los botones Cancelar y Crear debajo</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-person-add" href="../images/person-add.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>El formulario Nueva persona rellenado para Patrick Brontë, con sus nombres y su sexo</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-person-view" href="../images/person-view.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>La parte de arriba de la página de Charlotte Brontë, con su nombre, sus otros nombres, su nacimiento y su defunción, y en cada parte una pequeña etiqueta que cuenta sus fuentes</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-nav-main" href="../images/nav-main.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>La pantalla Inicio de un árbol con personas, con un cuadro de búsqueda, los botones Todas las personas y Abrir otro espacio de trabajo, las personas con las que continuar y la barra de cinco lugares abajo</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-save-as-choice" href="../images/save-as-choice.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>La elección Guardar espacio de trabajo como, con Todo marcado como recomendado, Solo el árbol y un botón Cancelar</linktext></topicmeta>
+  </keydef>
+  <keydef keys="img-save-as-version" href="../images/save-as-version.png" format="png" scope="local" platform="AndroidPhone">
+    <topicmeta><linktext>La pregunta Qué versión de GEDCOM, con GEDCOM 7 marcado como recomendado, GEDCOM 5.5.1 para programas antiguos y un botón Cancelar</linktext></topicmeta>
+  </keydef>
+</map>

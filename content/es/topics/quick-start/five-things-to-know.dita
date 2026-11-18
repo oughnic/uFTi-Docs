@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="five-things-to-know" xml:lang="es">
+  <title>Cinco cosas que debe saber</title>
+  <shortdesc>Las cinco ideas en las que se basa uFTi, en dos minutos.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-18"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Concept</category>
+      <keywords>
+        <keyword>ideas básicas</keyword>
+      </keywords>
+    </metadata>
+  </prolog>
+  <conbody>
+    <section>
+      <title>Un espacio de trabajo es un árbol genealógico</title>
+      <p>Puede tener más de uno. Para verlos, elija <uicontrol keyref="ui-more"/> y luego <uicontrol keyref="ui-workspaces"/>. Cada uno es una tarjeta. Cree un espacio de trabajo nuevo para cada árbol.</p>
+    </section>
+    <section>
+      <title>Personas y familias</title>
+      <p>Añada una persona por cada pariente. Una familia une a una pareja. <keyword keyref="product-name"/> dibuja un árbol con sus familias. Elija <uicontrol keyref="ui-family-tree"/> para verlo.</p>
+    </section>
+    <section>
+      <title>Hechos y fuentes</title>
+      <p>Un hecho es algo que usted anota, como un nacimiento con su fecha. Una fuente es donde lo encontró. Puede ser un certificado, una hoja de un censo o lo que alguien le contó. En la página de una persona, junto a cada título, una pequeña etiqueta cuenta las fuentes. Elija la etiqueta para añadir una. Así siempre sabrá por qué cree un hecho.</p>
+    </section>
+    <section>
+      <title>Guardar y hacer copias</title>
+      <p><keyword keyref="product-name"/> guarda su trabajo mientras usted trabaja. Para tener una copia, elija <uicontrol keyref="ui-save-as"/> en la tarjeta de su espacio de trabajo. Guarde el archivo también en otro sitio. Hágalo de nuevo después de una sesión larga.</p>
+    </section>
+    <section>
+      <title>Buscar ayuda</title>
+      <p>Mire esta guía cuando no sepa seguir. Use su cuadro de búsqueda y escriba las palabras que usted diría. Practique en un espacio de trabajo que cree para eso.</p>
+    </section>
+  </conbody>
+</concept>

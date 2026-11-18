@@ -147,6 +147,13 @@ function Read-Manual {
 $categories = @('Get started', 'How-to', 'Concept', 'Reference', 'Troubleshooting', 'Good practice', 'Glossary')
 $topicTypes = @('concept', 'task', 'reference', 'troubleshooting', 'glossentry')
 $doctypes = @{ concept = 'DITA Concept'; task = 'DITA Task'; reference = 'DITA Reference'; troubleshooting = 'DITA Troubleshooting'; glossentry = 'DITA Glossary Entry'; map = 'DITA Map'; bookmap = 'DITA BookMap' }
+# The language of a source: Spanish in the source root's es/ folder and a Spanish edition's root map (ufti-*-es-*.ditamap at
+# the source root), British English everywhere else (authoring standards, section 1; DEC-257).
+function Get-SourceLanguage {
+    param([string]$Path, [string]$SourceRoot)
+    $r = [System.IO.Path]::GetRelativePath($SourceRoot, $Path) -replace '\\', '/'
+    if ($r -like 'es/*' -or $r -match '^ufti-[a-z-]+-es-[a-z-]+\.ditamap$') { 'es' } else { 'en-GB' }
+}
 $outputclasses = @('search-ignore', 'search-demote', 'landscape')                       # authoring standards, section 1
 $experienceLevels = @('novice', 'general', 'expert')                                    # metadata vocabulary
 $guideSections = @('Why it matters', 'What to do', 'Example', 'Common mistakes', 'In uFTi', 'Further reading')   # good practice strategy, section 8
@@ -215,7 +222,8 @@ function Test-Topic {
     $rawText = Get-Content -LiteralPath $Path -Raw
     Test-FileHeader $rawText $rootEl.LocalName $rel
     if ($rootEl.GetAttribute('id') -ne $stem) { Fail "id '$($rootEl.GetAttribute('id'))' does not match the file name '$stem'" $rel }
-    if ($rootEl.GetAttribute('xml:lang') -ne 'en-GB') { Fail "xml:lang is not en-GB on the root element" $rel }
+    $lang = Get-SourceLanguage $Path $SourceRoot
+    if ($rootEl.GetAttribute('xml:lang') -ne $lang) { Fail "xml:lang is not $lang on the root element" $rel }
     $isGloss = $rootEl.LocalName -eq 'glossentry'
     $titleNode = if ($isGloss) { $rootEl.SelectSingleNode('glossterm') } else { $rootEl.SelectSingleNode('title') }
     $titleText = ''
@@ -280,7 +288,7 @@ function Test-Topic {
         if ($nt.SelectNodes('ancestor::*[self::concept or self::task or self::reference or self::troubleshooting or self::glossentry]').Count -gt 1) { Fail "nested topic '$ntId' is inside another nested topic: one level only" $rel }
         if ($ntId -notmatch '^[a-z][a-z0-9-]*$') { Fail "nested topic id '$ntId' is the page anchor: lower case letters, digits and hyphens, starting with a letter" $rel }
         elseif (-not $nestedSeen.Add($ntId)) { Fail "nested topic id '$ntId' is used twice in this file" $rel }
-        if ($nt.GetAttribute('xml:lang') -ne 'en-GB') { Fail "xml:lang is not en-GB on nested topic '$ntId'" $rel }
+        if ($nt.GetAttribute('xml:lang') -ne $lang) { Fail "xml:lang is not $lang on nested topic '$ntId'" $rel }
         $ntTitle = $nt.SelectSingleNode('title')
         if (-not $ntTitle -or (-not $ntTitle.InnerText.Trim() -and -not $ntTitle.SelectSingleNode('.//*[@keyref]'))) { Fail "nested topic '$ntId' has no title" $rel }
         elseif ($ntTitle.InnerText.Trim().Length -gt 70) { Fail "title of nested topic '$ntId' is longer than 70 characters" $rel }
@@ -498,9 +506,10 @@ foreach ($src in $Source) {
         $raw = Get-Content -LiteralPath $mp.FullName -Raw
         if ($raw -match 'chunk="[^"]*to-content') { Fail "chunk='to-content' is forbidden" (Rel $mp.FullName) }
         if ($raw -match '<mapref[^>]*\skeyref=') { Fail "mapref by key is forbidden" (Rel $mp.FullName) }
-        if ($raw -match 'xml:lang="(?!en-GB)') { Fail "xml:lang is not en-GB" (Rel $mp.FullName) }
+        $mapLang = Get-SourceLanguage $mp.FullName $srcRoot
+        if ($raw -match ('xml:lang="(?!' + [regex]::Escape($mapLang) + '")')) { Fail "xml:lang is not $mapLang" (Rel $mp.FullName) }
         $mapDoc = Read-Xml $mp.FullName
-        if ($mapDoc.DocumentElement.GetAttribute('xml:lang') -ne 'en-GB') { Fail "the root element has no xml:lang=""en-GB""" (Rel $mp.FullName) }
+        if ($mapDoc.DocumentElement.GetAttribute('xml:lang') -ne $mapLang) { Fail "the root element has no xml:lang=""$mapLang""" (Rel $mp.FullName) }
         Test-FileHeader $raw $mapDoc.DocumentElement.LocalName (Rel $mp.FullName)
         Test-KeyNames $mp.FullName
         if ($mapDoc.SelectSingleNode('//authorinformation | //person | //personname')) { Fail "a person in a map's metadata: metadata names nobody (authoring standards, section 9.3)" (Rel $mp.FullName) }

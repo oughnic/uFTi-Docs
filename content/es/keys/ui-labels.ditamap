@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<!-- The words on screen that the Spanish Quick Start for the Android phone uses, exactly as the app
+     prints them on a phone set to Español (España), read from Android app version 0.2.0.1025 on
+     18 November 2026 (DEC-257). The keys are the English ones, so the pages keep the same key references.
+     "Titulo" is written without its accent because the app prints it that way. -->
+<map id="es-ui-labels" xml:lang="es">
+  <keydef keys="ui-more"><topicmeta><keywords><keyword>Más</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-workspaces"><topicmeta><keywords><keyword>Espacios</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-create-workspace"><topicmeta><keywords><keyword>Crear espacio de trabajo</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-create"><topicmeta><keywords><keyword>Crear</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-home"><topicmeta><keywords><keyword>Inicio</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-add-the-first-person"><topicmeta><keywords><keyword>Añadir la primera persona</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-new-person"><topicmeta><keywords><keyword>Nueva persona</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-given-names"><topicmeta><keywords><keyword>Nombre(s) de pila</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-surname"><topicmeta><keywords><keyword>Apellido</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-save"><topicmeta><keywords><keyword>Guardar</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-person"><topicmeta><keywords><keyword>Persona</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-events"><topicmeta><keywords><keyword>Eventos</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-family-tree"><topicmeta><keywords><keyword>Árbol</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-notes"><topicmeta><keywords><keyword>Notas</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-search"><topicmeta><keywords><keyword>Buscar</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-birth"><topicmeta><keywords><keyword>Nacimiento</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-sources"><topicmeta><keywords><keyword>Fuentes</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-add-source"><topicmeta><keywords><keyword>Añadir fuente</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-add-a-new-source"><topicmeta><keywords><keyword>Añadir una fuente nueva</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-title"><topicmeta><keywords><keyword>Titulo</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-save-source"><topicmeta><keywords><keyword>Guardar fuente</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-done"><topicmeta><keywords><keyword>Hecho</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-save-as"><topicmeta><keywords><keyword>Guardar como…</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-save-workspace-as"><topicmeta><keywords><keyword>Guardar espacio de trabajo como</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-gedzip-archive"><topicmeta><keywords><keyword>Todo (.gdz, recomendado)</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-gedcom-file"><topicmeta><keywords><keyword>Solo el árbol (.ged)</keyword></keywords></topicmeta></keydef>
+  <keydef keys="ui-which-version-of-gedcom"><topicmeta><keywords><keyword>¿Qué versión de GEDCOM?</keyword></keywords></topicmeta></keydef>
+</map>

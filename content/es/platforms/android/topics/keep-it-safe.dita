@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="keep-it-safe" xml:lang="es">
+  <title>Guardar una copia</title>
+  <shortdesc>Guarde una copia de su árbol en un archivo, y guárdela también en otro sitio.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-18"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Get started</category>
+      <keywords>
+        <keyword>copia de seguridad</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="workspaces.export"/>
+  </prolog>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>Elija <uicontrol keyref="ui-more"/> y luego <uicontrol keyref="ui-workspaces"/>.</cmd>
+      </step>
+      <step>
+        <cmd>En la tarjeta de su árbol, elija <uicontrol keyref="ui-save-as"/>.</cmd>
+        <stepresult>
+          <p>Se abre un cuadro pequeño llamado <wintitle keyref="ui-save-workspace-as"/>.</p>
+          <fig>
+            <image keyref="img-save-as-choice"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Elija cómo guardar su árbol.</cmd>
+        <choices>
+          <choice><uicontrol keyref="ui-gedzip-archive"/> lo guarda todo en un archivo, con sus imágenes. Elija esta.</choice>
+          <choice><uicontrol keyref="ui-gedcom-file"/> guarda el árbol y sus notas de investigación como un <term keyref="term-family-tree-file">archivo de árbol genealógico</term>, sin imágenes. Elíjala solo para un programa que no lea un archivo GEDZIP.</choice>
+        </choices>
+        <info>
+          <p>Con <uicontrol keyref="ui-gedcom-file"/>, un segundo cuadro pregunta <wintitle keyref="ui-which-version-of-gedcom"/>. Elija GEDCOM 7, salvo que el otro programa sea antiguo.</p>
+          <fig>
+            <image keyref="img-save-as-version"/>
+          </fig>
+        </info>
+      </step>
+      <step>
+        <cmd>Cuando Android pregunte dónde poner el archivo, elija un sitio que recuerde, como Download. Luego elija Guardar.</cmd>
+      </step>
+    </steps>
+    <result>
+      <p>Ya tiene una copia. Haga otra después de añadir mucho. Para enviarla por correo, búsquela en la aplicación Archivos. Guarde también una copia fuera de su teléfono.</p>
+      <note>Si abrió un archivo de otro programa, <keyword keyref="product-name"/> guarda su propia copia. El archivo que eligió no cambia.</note>
+    </result>
+    <postreq>
+      <p>Siguiente: <xref keyref="what-next"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

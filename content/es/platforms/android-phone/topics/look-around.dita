@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="look-around" xml:lang="es">
+  <title>Echar un vistazo</title>
+  <shortdesc>Vea qué hacen los cinco lugares de la barra con la persona que añadió.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-18"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Get started</category>
+      <keywords>
+        <keyword>navegación</keyword>
+        <keyword>pestañas</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="people.view"/>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p>Antes, añada una persona.</p>
+    </prereq>
+    <context>
+      <p>La barra de abajo de la pantalla muestra los lugares principales. Casi todos muestran a la persona que está mirando.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Elija <uicontrol keyref="ui-person"/>.</cmd>
+        <info>
+          <p>Muestra la página de esa persona.</p>
+        </info>
+        <stepresult>
+          <fig>
+            <image keyref="img-person-view"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Elija <uicontrol keyref="ui-events"/>.</cmd>
+        <info>
+          <p>Muestra lo que pasó en la vida de esa persona, como un nacimiento. Cada cosa es un <term keyref="term-fact">hecho</term>.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Elija <uicontrol keyref="ui-family-tree"/>.</cmd>
+        <info>
+          <p>Dibuja un árbol de esa persona, con los padres arriba y los hijos abajo.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Elija <uicontrol keyref="ui-more"/>.</cmd>
+        <info>
+          <p>Muestra <uicontrol keyref="ui-notes"/> y otros lugares. Son para más adelante.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Elija <uicontrol keyref="ui-home"/>, escriba unas letras de un nombre en el cuadro de búsqueda y elija <uicontrol keyref="ui-search"/>.</cmd>
+        <info>
+          <p>Elija una tarjeta de los resultados para abrir a esa persona.</p>
+        </info>
+      </step>
+    </steps>
+    <result>
+      <p>Para volver una pantalla atrás, elija la flecha de volver.</p>
+      <fig>
+        <image keyref="img-nav-main"/>
+      </fig>
+    </result>
+    <postreq>
+      <p>Siguiente: <xref keyref="say-where-you-found-it"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

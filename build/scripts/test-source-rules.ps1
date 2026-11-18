@@ -272,6 +272,7 @@ $lintCases = @(
     @{ Name = 'doctype-not-standard'; Expect = 'is not the standard one'; Do = { param($d) Edit-File $d 'topics/do-it.dita' '-//OASIS//DTD DITA Task//EN' '-//EXAMPLE//DTD Special Task//EN' } }
     @{ Name = 'doctype-names-another-root'; Expect = 'but the root element is'; Do = { param($d) Edit-File $d 'topics/know-it.dita' '<!DOCTYPE concept PUBLIC' '<!DOCTYPE task PUBLIC' } }
     @{ Name = 'map-without-language'; Expect = 'no xml:lang'; Do = { param($d) Edit-File $d 'keys/ui-labels.ditamap' ' xml:lang="en-GB"' '' } }
+    @{ Name = 'spanish-topic-in-english'; Expect = 'xml:lang is not es'; Do = { param($d) New-Item -ItemType Directory -Force -Path (Join-Path $d 'es/topics') | Out-Null; Copy-Item (Join-Path $d 'topics/know-it.dita') (Join-Path $d 'es/topics/know-it.dita') } }
     @{ Name = 'outputclass-not-documented'; Expect = "outputclass 'fancy'"; Do = { param($d) Edit-File $d 'topics/know-it.dita' '<p>A thing' '<p outputclass="fancy">A thing' } }
     @{ Name = 'status-attribute'; Expect = '@status'; Do = { param($d) Edit-File $d 'topics/know-it.dita' '<conbody>' '<conbody status="reviewed">' } }
     @{ Name = 'title-starts-with-number'; Expect = 'starts with a number'; Do = { param($d) Edit-File $d 'topics/know-it.dita' '<title>Know it</title>' '<title>3. Know it</title>' } }
@@ -412,6 +413,7 @@ $valeCases = @(
     @{ Name = 'a word the terminology list replaces'; Check = 'uFTi.Terminology'; Text = 'The app is a database of your family.' }
     @{ Name = 'a business-model word'; Check = 'uFTi.BusinessModel'; Text = 'Your tree is kept in the cloud.' }
     @{ Name = 'an account'; Check = 'uFTi.Accounts'; Text = 'Make an account before you start.' }
+    @{ Name = 'a business-model word in Spanish'; Check = 'uFTi.SpanishBusinessModel'; Text = 'La aplicación es gratis.' }
     @{ Name = 'a GEDCOM tag'; Check = 'uFTi.GedcomTags'; Text = 'The line starts with INDI.' }
     @{ Name = 'a word to avoid'; Check = 'uFTi.Avoid'; Text = 'Just choose Save.' }
     @{ Name = 'a positional reference'; Check = 'uFTi.Positional'; Text = 'As described above, choose Save.' }

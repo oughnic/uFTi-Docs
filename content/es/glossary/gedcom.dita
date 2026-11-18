@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary Entry//EN" "glossentry.dtd">
+<glossentry id="gedcom" xml:lang="es">
+  <glossterm>GEDCOM</glossterm>
+  <glossdef>El formato estándar de los archivos de árboles genealógicos. Muchos programas de genealogía lo leen. GEDCOM 5.5.1 se publicó en 1999. Ha sido el formato común durante más de veinte años. GEDCOM 7, publicado en 2021, es la versión nueva. Una versión es del estándar, no de uFTi.</glossdef>
+</glossentry>

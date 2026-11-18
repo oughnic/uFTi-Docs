@@ -1,0 +1,133 @@
+{
+  "manual": "android-phone",
+  "app": {
+    "version": "0.2.0.1025"
+  },
+  "theme": {
+    "name": "oxford-slate",
+    "variant": "light"
+  },
+  "locale": "es",
+  "dataset": {
+    "name": "bronte"
+  },
+  "device": {
+    "kind": "physical",
+    "os": "android 12 (SDK 31)",
+    "width": 1080,
+    "height": 2400,
+    "orientation": "portrait"
+  },
+  "captured": "2026-11-18",
+  "images": [
+    {
+      "key": "img-create-workspace-dialog",
+      "file": "create-workspace-dialog.png",
+      "sha256": "80581fbd096f297e53ad412f0fa7691c9f5460cda7bc0d73b7abe5ddbc987019",
+      "width": 960,
+      "height": 560,
+      "stage": 1,
+      "workspace": "not shown",
+      "focus": "none",
+      "capture": "adb screencap (sheets, dialogs)",
+      "crop": {
+        "x": 60,
+        "y": 378,
+        "width": 960,
+        "height": 560,
+        "reason": "Keeps the box and its two buttons. The screen behind it is dimmed, and the keyboard below it shows the keys of the phone."
+      },
+      "verifiedAppVersion": "0.2.0.1025"
+    },
+    {
+      "key": "img-nav-main",
+      "file": "nav-main.png",
+      "sha256": "6eb7e8ae850e75eabecd4dbdd2a8c337d22a662132f169b5ddb4752b3efc6d26",
+      "width": 1080,
+      "height": 2182,
+      "stage": 0,
+      "workspace": "Brontë family of Haworth",
+      "focus": "Brontë family of Haworth",
+      "capture": "in-app (MAUI DevFlow screenshot)",
+      "crop": null,
+      "verifiedAppVersion": "0.2.0.1025"
+    },
+    {
+      "key": "img-person-add",
+      "file": "person-add.png",
+      "sha256": "adf6ece93b8eaa4c006c9298b2fafc6a026afd50bb342b06622ba5a4e9753a1a",
+      "width": 1080,
+      "height": 2182,
+      "stage": 2,
+      "workspace": "Brontë family of Haworth",
+      "focus": "Patrick Brontë",
+      "capture": "in-app (MAUI DevFlow screenshot)",
+      "crop": null,
+      "verifiedAppVersion": "0.2.0.1025"
+    },
+    {
+      "key": "img-person-view",
+      "file": "person-view.png",
+      "sha256": "a3f0cba5a08a5cf7d10e3d1f3a3f2381b97256835aa051c4b1f82f1173cec77a",
+      "width": 1080,
+      "height": 2182,
+      "stage": 0,
+      "workspace": "Brontë family of Haworth",
+      "focus": "Charlotte Brontë",
+      "capture": "in-app (MAUI DevFlow screenshot)",
+      "crop": null,
+      "verifiedAppVersion": "0.2.0.1025"
+    },
+    {
+      "key": "img-save-as-choice",
+      "file": "save-as-choice.png",
+      "sha256": "cd9a44d832ddc31fce8c34d41c49838e3a2cdfc96884c9be11635017cd63fbf1",
+      "width": 960,
+      "height": 640,
+      "stage": 9,
+      "workspace": "not shown",
+      "focus": "none",
+      "capture": "adb screencap (sheets, dialogs)",
+      "crop": {
+        "x": 60,
+        "y": 786,
+        "width": 960,
+        "height": 640,
+        "reason": "Keeps the choice and its button. The Workspaces screen behind it is dimmed."
+      },
+      "verifiedAppVersion": "0.2.0.1025"
+    },
+    {
+      "key": "img-save-as-version",
+      "file": "save-as-version.png",
+      "sha256": "c3bc9197b7063791c9e03a7aeac572241d9e63227d2c35b764c8041309a84cb2",
+      "width": 960,
+      "height": 560,
+      "stage": 9,
+      "workspace": "not shown",
+      "focus": "none",
+      "capture": "adb screencap (sheets, dialogs)",
+      "crop": {
+        "x": 60,
+        "y": 821,
+        "width": 960,
+        "height": 560,
+        "reason": "Keeps the choice and its button. The Workspaces screen behind it is dimmed."
+      },
+      "verifiedAppVersion": "0.2.0.1025"
+    },
+    {
+      "key": "img-start-first-run",
+      "file": "start-first-run.png",
+      "sha256": "26e58382898c248caea51dbfbb0692480eaf87e7a0bb8578381b3712b7d0beb8",
+      "width": 1080,
+      "height": 2182,
+      "stage": 0,
+      "workspace": "Brontë family of Haworth",
+      "focus": "Brontë family of Haworth",
+      "capture": "in-app (MAUI DevFlow screenshot)",
+      "crop": null,
+      "verifiedAppVersion": "0.2.0.1025"
+    }
+  ]
+}

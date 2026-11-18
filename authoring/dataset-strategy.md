@@ -155,7 +155,7 @@ This is a teaching dataset, so it has to be honest about what is known and how. 
 
 ## 13. Other languages, other families
 
-Each language edition has its own family, chosen by the same criteria, so that examples feel local and the records are in the reader's language (DEC-038). The journey stages, the screen catalogue and the evidence register are shared, and a second dataset slots into the same structure. The English edition leans towards the United Kingdom. A Spanish edition leans towards Latin America.
+Each language edition has its own family, chosen by the same criteria, so that examples feel local and the records are in the reader's language (DEC-038). The journey stages, the screen catalogue and the evidence register are shared, and a second dataset slots into the same structure. The English edition leans towards the United Kingdom. A Spanish edition leans towards Latin America. Until a Spanish family is chosen (Q23), the Spanish Quick Start shows the Brontës, so its pictures come from the same walk as the English ones (DEC-257).
 
 **Criteria for a family**
 

@@ -1,0 +1,17 @@
+{
+  "img-create-workspace-dialog": {
+    "x": 60, "y": 378, "width": 960, "height": 560,
+    "shows": "controls only",
+    "reason": "Keeps the box and its two buttons. The screen behind it is dimmed, and the keyboard below it shows the keys of the phone."
+  },
+  "img-save-as-choice": {
+    "x": 60, "y": 786, "width": 960, "height": 640,
+    "shows": "controls only",
+    "reason": "Keeps the choice and its button. The Workspaces screen behind it is dimmed."
+  },
+  "img-save-as-version": {
+    "x": 60, "y": 821, "width": 960, "height": 560,
+    "shows": "controls only",
+    "reason": "Keeps the choice and its button. The Workspaces screen behind it is dimmed."
+  }
+}

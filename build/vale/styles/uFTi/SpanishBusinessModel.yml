@@ -1,0 +1,23 @@
+# DEC-040 in Spanish (DEC-256): the Spanish pages never state price, "free", "forever", accounts,
+# sign-in or the cloud. "cuenta" alone is also the verb "counts", so only its account forms are listed.
+extends: existence
+message: "'%s' is a business-model word. The Spanish pages never state price, 'free', accounts, sign-in or the cloud (DEC-040, DEC-256)."
+level: error
+ignorecase: true
+tokens:
+  - gratis
+  - gratuito
+  - gratuita
+  - gratuitos
+  - gratuitas
+  - precio
+  - precios
+  - para siempre
+  - suscripción
+  - iniciar sesión
+  - inicia sesión
+  - la nube
+  - una cuenta
+  - tu cuenta
+  - su cuenta
+  - cuentas de usuario
