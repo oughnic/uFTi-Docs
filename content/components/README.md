@@ -25,3 +25,7 @@ Commit the data and the four generated topics together. `lint.ps1` fails when a 
 This repository is public and the application repository is private, so the import keeps only what the page needs. It drops the app's repository address and the paths of its source files. It also drops content that has neither a licence nor a copyright: those are the test trees that only a Debug build carries, and no build a reader installs ships them. If the app ever ships a third-party file, the app team must record its licence in the inventory, and it then appears here.
 
 Never edit these files or the generated topics by hand.
+
+## When an address in the inventory is dead
+
+The page links to the project of each library, to the notices of each runtime, and to the licence of a library that has an address for it. These come from the packages' own records, and some of those records go out of date. Check them with a request to each address. When one answers 404, or an error page, add it to `url-corrections.json` with the address to use instead and the reason. `new-components-topics.ps1` applies the file, so the data stays as the app team gave it and an import does not bring the dead address back. Remove an entry when the inventory carries a working address (DEC-256).

@@ -1,0 +1,20 @@
+{
+  "$comment": "Addresses in the app's inventory that no longer work, and the address that the Components and licences page links to instead. Read by build/scripts/new-components-topics.ps1, so that importing the inventory again does not bring the dead address back. Checked 17 November 2026 (issue 209). Remove an entry when the app team's inventory carries a working address.",
+  "corrections": [
+    {
+      "from": "https://github.com/Microsoft/onnxruntime",
+      "to": "https://onnxruntime.ai/",
+      "why": "The repository address answers 404. The project's own website works."
+    },
+    {
+      "from": "https://github.com/Microsoft/onnxruntime-extensions",
+      "to": "https://onnxruntime.ai/docs/extensions/",
+      "why": "The repository address answers 404. The project's page on its own website works."
+    },
+    {
+      "from": "http://www.microsoft.com/web/webpi/eula/eula_win2d_10012014.htm",
+      "to": "https://github.com/microsoft/Win2D/blob/master/LICENSE.txt",
+      "why": "The licence address answers 403 and then an error page. The licence file in the Win2D project works."
+    }
+  ]
+}

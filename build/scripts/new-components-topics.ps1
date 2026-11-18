@@ -49,7 +49,10 @@ $targets = @(
 )
 
 function X([string]$s) { if ($null -eq $s) { return '' }; [System.Security.SecurityElement]::Escape($s) }
+# Addresses in the inventory that no longer work, and what to link to instead (content/components/url-corrections.json, issue 209).
+$script:Fixes = @{}
 function Link([string]$url, [string]$text) {
+    if ($script:Fixes.ContainsKey($url)) { $url = $script:Fixes[$url] }
     if ($url -match '^https?://') { return '<xref href="{0}" scope="external" format="html">{1}</xref>' -f (X $url), (X $text) }
     return (X $text)
 }
@@ -189,6 +192,10 @@ function New-Topic($j, [string]$device) {
 }
 
 $differ = 0
+$fixFile = Join-Path $Data 'url-corrections.json'
+if (Test-Path -LiteralPath $fixFile) {
+    foreach ($c in ([System.IO.File]::ReadAllText($fixFile, [System.Text.Encoding]::UTF8) | ConvertFrom-Json -Depth 5).corrections) { $script:Fixes[$c.from] = $c.to }
+}
 foreach ($t in $targets) {
     $src = Join-Path $Data "$($t.Data).json"
     if (-not (Test-Path -LiteralPath $src)) { throw "No inventory data at $src (run import-components.ps1)" }

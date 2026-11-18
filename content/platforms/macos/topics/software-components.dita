@@ -87,9 +87,9 @@
             <row><entry><xref href="https://github.com/dotnet/maui" scope="external" format="html">Microsoft.Maui.Core</xref></entry><entry>10.0.110</entry><entry>MIT</entry></row>
             <row><entry><xref href="https://github.com/dotnet/maui" scope="external" format="html">Microsoft.Maui.Essentials</xref></entry><entry>10.0.110</entry><entry>MIT</entry></row>
             <row><entry><xref href="https://github.com/dotnet/maui" scope="external" format="html">Microsoft.Maui.Graphics</xref></entry><entry>10.0.110</entry><entry>MIT</entry></row>
-            <row><entry><xref href="https://github.com/Microsoft/onnxruntime" scope="external" format="html">Microsoft.ML.OnnxRuntime</xref></entry><entry>1.27.0</entry><entry>The licence file that comes with the package</entry></row>
-            <row><entry><xref href="https://github.com/Microsoft/onnxruntime-extensions" scope="external" format="html">Microsoft.ML.OnnxRuntime.Extensions</xref></entry><entry>0.14.0</entry><entry>The licence file that comes with the package</entry></row>
-            <row><entry><xref href="https://github.com/Microsoft/onnxruntime" scope="external" format="html">Microsoft.ML.OnnxRuntime.Managed</xref></entry><entry>1.27.0</entry><entry>The licence file that comes with the package</entry></row>
+            <row><entry><xref href="https://onnxruntime.ai/" scope="external" format="html">Microsoft.ML.OnnxRuntime</xref></entry><entry>1.27.0</entry><entry>The licence file that comes with the package</entry></row>
+            <row><entry><xref href="https://onnxruntime.ai/docs/extensions/" scope="external" format="html">Microsoft.ML.OnnxRuntime.Extensions</xref></entry><entry>0.14.0</entry><entry>The licence file that comes with the package</entry></row>
+            <row><entry><xref href="https://onnxruntime.ai/" scope="external" format="html">Microsoft.ML.OnnxRuntime.Managed</xref></entry><entry>1.27.0</entry><entry>The licence file that comes with the package</entry></row>
             <row><entry><xref href="https://go.microsoft.com/fwlink/?linkid=868515" scope="external" format="html">SkiaSharp</xref></entry><entry>4.153.1</entry><entry>MIT</entry></row>
             <row><entry><xref href="https://go.microsoft.com/fwlink/?linkid=868515" scope="external" format="html">SkiaSharp.NativeAssets.MacCatalyst</xref></entry><entry>4.153.1</entry><entry>MIT</entry></row>
             <row><entry><xref href="https://go.microsoft.com/fwlink/?linkid=868515" scope="external" format="html">SkiaSharp.Views</xref></entry><entry>4.153.1</entry><entry>MIT</entry></row>
