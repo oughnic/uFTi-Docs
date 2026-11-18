@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The words that the GOV.UK plugin generates (Contents, Skip to main content and so on), in Spanish, for the
+     Spanish Quick Start (DEC-258). The plugin has no Spanish file; its string registry takes further
+     languages from other plugins through this extension point. bootstrap installs this folder after the
+     GOV.UK plugin and again whenever a file in it changes.
+     Copyright 2026 Oughtibridge Ltd, Apache-2.0. -->
+<plugin id="ufti.strings-es" version="1.0.0">
+  <feature extension="dita.xsl.strings" file="strings/strings.xml"/>
+</plugin>

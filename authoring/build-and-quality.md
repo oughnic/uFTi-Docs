@@ -196,6 +196,9 @@ out/site/                                  the whole tree: this folder is what t
       start/                               the Quick Start for the same release
         index.html ...
         ufti-quick-start-windows-Alpha-1.pdf
+      inicio-rapido/                       the Quick Start in Spanish, where the platform has one (DEC-258)
+        index.html ...
+        ufti-inicio-rapido-android-phone-Alpha-2.pdf
   android-phone/  iphone/  ipad/  macos/   the same shape
 ```
 
@@ -207,9 +210,9 @@ out/site/                                  the whole tree: this folder is what t
 
 | Derived from the release | Value |
 |---|---|
-| Folder in the tree | `<platform>/<release>/`, and `start/` below it for the Quick Start |
+| Folder in the tree | `<platform>/<release>/`, `start/` below it for the Quick Start, and `inicio-rapido/` for the Quick Start in Spanish where the section names one (`quick-start-es`, DEC-258) |
 | `govuk.site.url` | `<base-url><platform>/<release>/` (and `.../start/`), so canonical links, Open Graph addresses, `sitemap.xml` and `llms.txt` agree with the folder |
-| `govuk.pdf.name` | `ufti-user-manual-<platform>-<release>` and `ufti-quick-start-<platform>-<release>` |
+| `govuk.pdf.name` | `ufti-user-manual-<platform>-<release>`, `ufti-quick-start-<platform>-<release>` and `ufti-inicio-rapido-<platform>-<release>` |
 | `govuk.footer.links` | The chooser, the other versions of the platform, the Quick Start or the manual beside this one, and the accessibility statement and privacy policy at `<base-url>accessibility/` and `<base-url>privacy/` |
 
 `build.ps1` and `build.sh` add these to the toolkit's command line for any project named in the file, so a project file for a published manual holds no address and no PDF name. The build fails, with a message that lists every problem, when:

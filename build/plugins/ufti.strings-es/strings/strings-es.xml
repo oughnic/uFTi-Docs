@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Spanish, as used in Spain and Latin America, addressing the reader as usted like the app (DEC-257).
+     The ids are the plugin's own (strings-en-gb.xml in org.istanduk.gov-uk). Not yet read by a Spanish-speaking reviewer. -->
+<variables>
+  <variable id="govuk-dita.skip-link">Saltar al contenido principal</variable>
+  <variable id="govuk-dita.contents">Contenido</variable>
+  <variable id="govuk-dita.menu">Menú</variable>
+  <variable id="govuk-dita.toggle-section">Mostrar u ocultar la sección</variable>
+  <variable id="govuk-dita.start-now">Empezar ahora</variable>
+  <variable id="govuk-dita.search">Buscar</variable>
+  <variable id="govuk-dita.search-this-site">Buscar en este sitio</variable>
+  <variable id="govuk-dita.search-unavailable">La búsqueda no está disponible en esta versión.</variable>
+  <variable id="govuk-dita.glossary">Glosario</variable>
+  <variable id="govuk-dita.index">Índice</variable>
+  <variable id="govuk-dita.see">véase</variable>
+  <variable id="govuk-dita.see-also">véase también</variable>
+  <variable id="govuk-dita.support-links">Enlaces de ayuda</variable>
+  <variable id="govuk-dita.cause">Causa</variable>
+  <variable id="govuk-dita.remedy">Solución</variable>
+  <variable id="govuk-dita.figures">Figuras</variable>
+  <variable id="govuk-dita.tables">Tablas</variable>
+  <variable id="govuk-dita.print-version">Toda la publicación (versión para imprimir)</variable>
+  <variable id="govuk-dita.pdf-version-prefix">Toda la publicación (PDF, </variable>
+  <variable id="govuk-dita.pdf-version-suffix">)</variable>
+  <variable id="govuk-dita.books">Libros de esta publicación</variable>
+  <variable id="govuk-dita.book-print-suffix">(versión para imprimir)</variable>
+  <variable id="govuk-dita.book-pdf-prefix">(PDF, </variable>
+  <variable id="govuk-dita.print-page">Versión para imprimir</variable>
+  <variable id="govuk-dita.print-website">Versión web</variable>
+  <variable id="govuk-dita.page">página</variable>
+  <variable id="govuk-dita.status">Estado:</variable>
+  <variable id="govuk-dita.edition">Edición</variable>
+  <variable id="govuk-dita.isbn">ISBN</variable>
+  <variable id="govuk-dita.reference">Referencia</variable>
+  <variable id="govuk-dita.available-at">Esta publicación está disponible en</variable>
+  <variable id="govuk-dita.published">Publicado</variable>
+  <variable id="govuk-dita.updated">Última actualización</variable>
+  <variable id="govuk-dita.content-removed">Contenido retirado por la política de contenido del editor</variable>
+  <variable id="govuk-dita.copyright">©</variable>
+  <variable id="govuk-dita.published-by">Publicado por</variable>
+  <variable id="govuk-dita.authored-by">Por</variable>
+  <variable id="govuk-dita.ogl-prefix">Todo el contenido está disponible bajo la </variable>
+  <variable id="govuk-dita.ogl-name">Open Government Licence v3.0</variable>
+  <variable id="govuk-dita.ogl-suffix">, salvo que se indique otra cosa</variable>
+  <variable id="govuk-dita.crown-copyright">© Derechos de autor de la Corona</variable>
+  <variable id="govuk-dita.phase-prefix">Este es un servicio nuevo: su </variable>
+  <variable id="govuk-dita.phase-feedback">opinión</variable>
+  <variable id="govuk-dita.phase-suffix"> nos ayudará a mejorarlo.</variable>
+  <variable id="govuk-dita.phase-plain">Este es un servicio nuevo.</variable>
+</variables>

@@ -89,10 +89,21 @@ foreach ($p in $pub.Platforms) {
         if (-not (Test-Path -LiteralPath $vf)) { Bad "$dir/version.json is missing"; continue }
         try { $j = Get-Content -LiteralPath $vf -Raw | ConvertFrom-Json } catch { Bad "$dir/version.json is not valid JSON"; continue }
         if ($j.platform -cne $s -or $j.release -cne $r) { Bad "$dir/version.json says $($j.platform) $($j.release)" }
-        foreach ($need in 'index.html', 'start/index.html', 'sitemap.xml', 'start/sitemap.xml', [string]$j.manualPdf, [string]$j.quickStartPdf) {
+        # the Spanish Quick Start (DEC-258), where the release has one: its pages and PDF, in inicio-rapido/
+        $esPdf = if ($j.PSObject.Properties['quickStartEsPdf']) { [string]$j.quickStartEsPdf } else { $null }
+        if ($r -ceq $p.Release -and $p.QuickStartEs -and -not $esPdf) { Bad "$dir/version.json has no quickStartEsPdf, but build/publications.ini names a Spanish Quick Start" }
+        if ($r -ceq $p.Release -and -not $p.QuickStartEs -and $esPdf) { Bad "$dir/version.json names a Spanish Quick Start that build/publications.ini does not" }
+        $needs = @('index.html', 'start/index.html', 'sitemap.xml', 'start/sitemap.xml', [string]$j.manualPdf, [string]$j.quickStartPdf)
+        $pdfs = @([string]$j.manualPdf, [string]$j.quickStartPdf)
+        if ($esPdf) {
+            $needs += 'inicio-rapido/index.html', 'inicio-rapido/sitemap.xml', $esPdf; $pdfs += $esPdf
+            $esIndex = Join-Path $v.FullName 'inicio-rapido' 'index.html'
+            if ((Test-Path -LiteralPath $esIndex) -and [System.IO.File]::ReadAllText($esIndex) -notmatch '<html[^>]*\blang="es"') { Bad "$dir/inicio-rapido/index.html is not marked as Spanish (lang=""es"")" }
+        }
+        foreach ($need in $needs) {
             if (-not $files.Contains("$dir/$need")) { Bad "$dir/$need is missing" }
         }
-        foreach ($pdf in [string]$j.manualPdf, [string]$j.quickStartPdf) {
+        foreach ($pdf in $pdfs) {
             $path = Join-Path $v.FullName $pdf
             if (-not (Test-Path -LiteralPath $path)) { continue }
             $fs = [System.IO.File]::OpenRead($path); try { $buf = [byte[]]::new(5); [void]$fs.Read($buf, 0, 5); $len = $fs.Length } finally { $fs.Dispose() }

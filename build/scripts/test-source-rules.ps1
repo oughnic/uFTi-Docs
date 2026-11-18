@@ -631,13 +631,21 @@ if ($Only -contains 'publications') {
         @{ Name = 'a project file that does not exist'; Pass = $false; Expect = 'has no file'; Text = (Set-WindowsLine 'manual = manual-windows' 'manual = manual-nothing') }
         @{ Name = 'a key nobody reads'; Pass = $false; Expect = 'unknown key'; Text = (Set-WindowsLine $winRel "$winRel`nversion = 2") }
         @{ Name = 'a platform listed twice'; Pass = $false; Expect = 'more than once'; Text = $iniText + "`n[windows]`ntitle = x`n" }
-    )
+        @{ Name = 'a Spanish Quick Start that has a project file'; Pass = $true; Expect = ''; Text = (Set-WindowsLine 'manual = manual-windows' "manual = manual-windows`nquick-start-es = quick-start-es-android-phone") }
+        @{ Name = 'a Spanish Quick Start with no project file'; Pass = $false; Expect = 'has no file'; Text = (Set-WindowsLine 'manual = manual-windows' "manual = manual-windows`nquick-start-es = quick-start-es-nothing") }    )
     foreach ($c in $pubCases) {
         if ($Filter -and $c.Name -notlike "*$Filter*") { continue }
         $r = Test-Publications $c.Text
         if ($c.Pass) { Record 'publications' "$($c.Name) is accepted" $r.Ok "expected it to be read; it failed:`n$($r.Text)" }
         else { Record 'publications' "$($c.Name) fails the build" (-not $r.Ok -and $r.Text -match $c.Expect) "expected a failure matching '$($c.Expect)'; got: $(if ($r.Ok) { 'no failure' } else { $r.Text })" }
     }
+    # the Spanish Quick Start of the Android phone (DEC-258): where it goes, what its PDF is called, and a footer in Spanish
+    $pubNow = Read-UftiPublications
+    $es = Get-UftiPublishedDeliverable -Publications $pubNow -Project 'quick-start-es-android-phone'
+    $phone = $pubNow.Platforms | Where-Object Slug -ceq 'android-phone'
+    Record 'publications' 'the Spanish Quick Start is published beside start/, in inicio-rapido/' ($es -and $es.Kind -eq 'quick-start-es' -and $es.SiteUrl -ceq "$($pubNow.BaseUrl)android-phone/$($phone.Release)/inicio-rapido/") "got: $($es | ConvertTo-Json -Compress)"
+    Record 'publications' 'the Spanish Quick Start has its own PDF name' ($es -and $es.PdfName -ceq "ufti-inicio-rapido-android-phone-$($phone.Release)") "got: $($es.PdfName)"
+    Record 'publications' 'the footer of the Spanish Quick Start is in Spanish and still links the two site pages' ($es -and $es.FooterLinks -match 'Elegir su dispositivo\|' -and $es.FooterLinks -match [regex]::Escape("|$($pubNow.BaseUrl)accessibility/") -and $es.FooterLinks -match [regex]::Escape("|$($pubNow.BaseUrl)privacy/") -and $es.FooterLinks -notmatch 'Choose your device') "got: $($es.FooterLinks)"
     $order = 'Alpha-1', 'Alpha-2', 'Alpha-10', 'Beta-1', 'RC-1', '1.0', '1.0.1', '1.1', '2.0'
     $keys = @($order | ForEach-Object { Get-UftiReleaseSortKey $_ })
     $inOrder = $true; for ($i = 1; $i -lt $keys.Count; $i++) { if ([string]::CompareOrdinal($keys[$i - 1], $keys[$i]) -ge 0) { $inOrder = $false } }

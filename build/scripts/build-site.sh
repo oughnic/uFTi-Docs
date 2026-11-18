@@ -58,7 +58,7 @@ for slug in $platforms; do printf '  %-14s %s\n' "$slug" "$(ini_get "$slug" rele
 # ---- 1. The manuals and Quick Starts --------------------------------------------------------------
 
 for slug in $platforms; do
-  for d in "$(ini_get "$slug" manual)" "$(ini_get "$slug" quick-start)"; do
+  for d in "$(ini_get "$slug" manual)" "$(ini_get "$slug" quick-start)" $(ini_get "$slug" quick-start-es); do
     if [ -n "$reuse" ]; then [ -d "$out_dir/$d" ] || fail "--reuse: no build of $d under $out_dir"
     else "$here/build.sh" --project "$d" --output "$out_dir" ${tool_args[@]+"${tool_args[@]}"} || fail "$d did not build cleanly: the tree is not built"; fi
   done
@@ -67,7 +67,7 @@ done
 # ---- 2. A fresh tree, with the earlier releases put back --------------------------------------------
 
 rm -rf "$site_dir"; mkdir -p "$site_dir"
-kept_list="$out_dir/temp/kept.list"; mkdir -p "$out_dir/temp"; : > "$kept_list"   # slug|release|appVersion|manualPdf|quickStartPdf
+kept_list="$out_dir/temp/kept.list"; mkdir -p "$out_dir/temp"; : > "$kept_list"   # slug|release|appVersion|manualPdf|quickStartPdf|quickStartEsPdf
 if [ -n "$keep" ]; then
   [ -d "$keep" ] || fail "--keep: $keep does not exist"
   command -v unzip > /dev/null || fail "--keep needs unzip"
@@ -87,7 +87,7 @@ if [ -n "$keep" ]; then
     if [ "$a" = "$b" ]; then echo "  $name.zip: $slug $rel is the release being built, so the new build replaces it"; continue; fi
     [ ! -e "$site_dir/$slug/$rel" ] || fail "$name.zip: $slug $rel is in more than one archive"
     mkdir -p "$site_dir/$slug"; mv "$dest/$slug/$rel" "$site_dir/$slug/$rel"
-    echo "$slug|$rel|$(json_get "$site_dir/$slug/$rel/version.json" appVersion)|$(json_get "$site_dir/$slug/$rel/version.json" manualPdf)|$(json_get "$site_dir/$slug/$rel/version.json" quickStartPdf)" >> "$kept_list"
+    echo "$slug|$rel|$(json_get "$site_dir/$slug/$rel/version.json" appVersion)|$(json_get "$site_dir/$slug/$rel/version.json" manualPdf)|$(json_get "$site_dir/$slug/$rel/version.json" quickStartPdf)|$(json_get "$site_dir/$slug/$rel/version.json" quickStartEsPdf)" >> "$kept_list"
     echo "  kept: $slug $rel (from $name.zip)"
   done
   rm -rf "$scratch"
@@ -95,17 +95,18 @@ fi
 
 # ---- 3. The root and the platform pages, as DITA, built the same way -------------------------------
 
-rows_for() { # slug -> release|appVersion|manualPdf|quickStartPdf|current, newest first
-  local slug=$1 rel app
+rows_for() { # slug -> release|appVersion|manualPdf|quickStartPdf|quickStartEsPdf|current, newest first
+  local slug=$1 rel app es=""
   rel=$(ini_get "$slug" release); app=$(ini_get "$slug" app-version)
+  [ -z "$(ini_get "$slug" quick-start-es)" ] || es="inicio-rapido/ufti-inicio-rapido-$slug-$rel.pdf"
   {
-    echo "$(release_key "$rel")|$rel|$app|ufti-user-manual-$slug-$rel.pdf|start/ufti-quick-start-$slug-$rel.pdf|1"
-    awk -F'|' -v s="$slug" '$1 == s { print $2 "|" $3 "|" $4 "|" $5 }' "$kept_list" | while IFS='|' read -r r a m q; do echo "$(release_key "$r")|$r|$a|$m|$q|0"; done
+    echo "$(release_key "$rel")|$rel|$app|ufti-user-manual-$slug-$rel.pdf|start/ufti-quick-start-$slug-$rel.pdf|$es|1"
+    awk -F'|' -v s="$slug" '$1 == s { print $2 "|" $3 "|" $4 "|" $5 "|" $6 }' "$kept_list" | while IFS='|' read -r r a m q e; do echo "$(release_key "$r")|$r|$a|$m|$q|$e|0"; done
   } | sort -r | cut -d'|' -f2-
 }
 
 platform_topic() { # slug
-  local slug=$1 title device latest i=0 rel app mpdf spdf cur
+  local slug=$1 title device latest i=0 rel app mpdf spdf espdf cur
   title=$(xml "$(ini_get "$slug" title)"); device=$(xml "$(ini_get "$slug" device)")
   latest=$(xml "$(ini_get "$slug" release)")
   cat <<EOF
@@ -117,7 +118,7 @@ platform_topic() { # slug
   <conbody>
     <p>Choose the version of uFTi that you use. The newest version is first. Each version has its own Quick Start and manual, as a website and as a PDF.</p>
 EOF
-  rows_for "$slug" | while IFS='|' read -r rel app mpdf spdf cur; do
+  rows_for "$slug" | while IFS='|' read -r rel app mpdf spdf espdf cur; do
     i=$((i + 1)); rel=$(xml "$rel")
     if [ "$cur" = 1 ]; then t="Version $rel (the latest)"; else t="Version $rel"; fi
     echo "    <section id=\"version-$i\">"
@@ -126,6 +127,10 @@ EOF
     echo "      <ul>"
     echo "        <li><xref href=\"$rel/start/\" scope=\"peer\" format=\"html\">Read the Quick Start for version $rel on the website</xref></li>"
     echo "        <li><xref href=\"$rel/$(xml "$spdf")\" scope=\"peer\" format=\"pdf\">Download the Quick Start for version $rel as a PDF</xref></li>"
+    if [ -n "$espdf" ]; then   # the Spanish Quick Start (DEC-258): two links, written in Spanish and marked as Spanish
+      echo "        <li xml:lang=\"es\"><xref href=\"$rel/inicio-rapido/\" scope=\"peer\" format=\"html\">Leer el Inicio rápido de la versión $rel en el sitio web (en español)</xref></li>"
+      echo "        <li xml:lang=\"es\"><xref href=\"$rel/$(xml "$espdf")\" scope=\"peer\" format=\"pdf\">Descargar el Inicio rápido de la versión $rel en PDF (en español)</xref></li>"
+    fi
     echo "        <li><xref href=\"$rel/\" scope=\"peer\" format=\"html\">Read the manual for version $rel on the website</xref></li>"
     echo "        <li><xref href=\"$rel/$(xml "$mpdf")\" scope=\"peer\" format=\"pdf\">Download the manual for version $rel as a PDF</xref></li>"
     echo "      </ul>"
@@ -205,15 +210,20 @@ for slug in $platforms; do
   cp -R "$out_dir/$(ini_get "$slug" manual)/." "$ver_dir/"
   [ ! -e "$ver_dir/start" ] || fail "$(ini_get "$slug" manual) has a start folder of its own, where the Quick Start goes"
   mkdir -p "$ver_dir/start"; cp -R "$out_dir/$(ini_get "$slug" quick-start)/." "$ver_dir/start/"
-  mpdf="ufti-user-manual-$slug-$rel.pdf"; spdf="start/ufti-quick-start-$slug-$rel.pdf"
-  for pdf in "$mpdf" "$spdf"; do [ -f "$ver_dir/$pdf" ] || fail "$slug $rel: the PDF $pdf was not built"; done
+  mpdf="ufti-user-manual-$slug-$rel.pdf"; spdf="start/ufti-quick-start-$slug-$rel.pdf"; espdf=""
+  if [ -n "$(ini_get "$slug" quick-start-es)" ]; then
+    [ ! -e "$ver_dir/inicio-rapido" ] || fail "$(ini_get "$slug" manual) has an inicio-rapido folder of its own, where the Spanish Quick Start goes"
+    mkdir -p "$ver_dir/inicio-rapido"; cp -R "$out_dir/$(ini_get "$slug" quick-start-es)/." "$ver_dir/inicio-rapido/"
+    espdf="inicio-rapido/ufti-inicio-rapido-$slug-$rel.pdf"
+  fi
+  for pdf in "$mpdf" "$spdf" $espdf; do [ -f "$ver_dir/$pdf" ] || fail "$slug $rel: the PDF $pdf was not built"; done
   {
     echo "{"
     echo "  \"platform\": \"$slug\","
     echo "  \"release\": \"$rel\","
     [ -z "$app" ] || echo "  \"appVersion\": \"$app\","
     echo "  \"manualPdf\": \"$mpdf\","
-    echo "  \"quickStartPdf\": \"$spdf\""
+    if [ -n "$espdf" ]; then echo "  \"quickStartPdf\": \"$spdf\","; echo "  \"quickStartEsPdf\": \"$espdf\""; else echo "  \"quickStartPdf\": \"$spdf\""; fi
     echo "}"
   } > "$ver_dir/version.json"
   echo "  $slug/$rel/ and $slug/$rel/start/"
@@ -231,9 +241,10 @@ done
     c=$(ini_get "$slug" release)
     for from in "/$slug/latest"; do route "    { \"route\": \"$from\", \"redirect\": \"/$slug/$c/\", \"statusCode\": 302 }"; done
     for from in "/$slug/latest/start"; do route "    { \"route\": \"$from\", \"redirect\": \"/$slug/$c/start/\", \"statusCode\": 302 }"; done
+    if [ -n "$(ini_get "$slug" quick-start-es)" ]; then route "    { \"route\": \"/$slug/latest/inicio-rapido\", \"redirect\": \"/$slug/$c/inicio-rapido/\", \"statusCode\": 302 }"; fi
     route "    { \"route\": \"/$slug/latest/*\", \"redirect\": \"/$slug/$c/\", \"statusCode\": 302 }"
     # an earlier release does not change, so it may be cached for longer than the one being worked on
-    rows_for "$slug" | while IFS='|' read -r r a m q cur; do [ "$cur" = 1 ] || echo "$r"; done > "$out_dir/temp/older.list"
+    rows_for "$slug" | while IFS='|' read -r r a m q e cur; do [ "$cur" = 1 ] || echo "$r"; done > "$out_dir/temp/older.list"
     while IFS= read -r r; do route "    { \"route\": \"/$slug/$r/*\", \"headers\": { \"cache-control\": \"public, max-age=86400\" } }"; done < "$out_dir/temp/older.list"
   done
   echo ""

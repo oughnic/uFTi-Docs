@@ -279,10 +279,10 @@ function Read-UftiPublications {
         if ($slug -cnotmatch '^[a-z0-9]+(-[a-z0-9]+)*$') { $problems.Add("$where the section name is the platform's folder: lower case letters, digits and single hyphens only") }
         if ($reserved -contains $slug) { $problems.Add("$where '$slug' is a name the site uses for something else") }
         foreach ($k in 'title', 'device', 'release', 'manual', 'quick-start') { if (-not $s.Contains($k) -or -not $s[$k]) { $problems.Add("$where $k is missing") } }
-        foreach ($k in $s.Keys) { if ('title', 'device', 'release', 'app-version', 'manual', 'quick-start' -notcontains $k) { $problems.Add("$where unknown key '$k'") } }
+        foreach ($k in $s.Keys) { if ('title', 'device', 'release', 'app-version', 'manual', 'quick-start', 'quick-start-es' -notcontains $k) { $problems.Add("$where unknown key '$k'") } }
         $release = if ($s.Contains('release')) { $s['release'] } else { '' }
         if ($release -and -not (Test-UftiReleaseLabel $release)) { $problems.Add("$where release '$release' is not in the agreed form (Alpha-N, Beta-N, RC-N, or a number such as 1.0 or 1.2.3)") }
-        foreach ($k in 'manual', 'quick-start') {
+        foreach ($k in 'manual', 'quick-start', 'quick-start-es') {
             if ($s.Contains($k) -and $s[$k] -and -not (Test-Path -LiteralPath (Join-Path $root 'build' 'projects' "$($s[$k]).xml"))) { $problems.Add("$where $k '$($s[$k])' has no file build/projects/$($s[$k]).xml") }
         }
         # The version the app prints, wherever the platform's pictures recorded one.
@@ -296,7 +296,7 @@ function Read-UftiPublications {
         foreach ($v in $recorded) { if ($appVersion -and $v -ne $appVersion) { $problems.Add("$where app-version '$appVersion' differs from '$v' recorded with the pictures: they change together") } }
         $platforms.Add([pscustomobject]@{
             Slug = $slug; Title = $s['title']; Device = $s['device']; Release = $release; AppVersion = $appVersion
-            Manual = $s['manual']; QuickStart = $s['quick-start']
+            Manual = $s['manual']; QuickStart = $s['quick-start']; QuickStartEs = $(if ($s.Contains('quick-start-es')) { $s['quick-start-es'] } else { '' })
         })
     }
     if ($platforms.Count -eq 0) { $problems.Add('no platform is declared') }
@@ -309,7 +309,7 @@ function Get-UftiFooterLinks {
     # statement, privacy policy, source, licence) are read from common.xml; its "Choose your device"
     # pair is replaced, and the addresses of the two site pages are made from base-url (they are
     # pages of the root of the tree, DEC-150).
-    param([Parameter(Mandatory)]$Publications, [Parameter(Mandatory)][ValidateSet('root', 'manual', 'quick-start')][string]$Kind, $Platform)
+    param([Parameter(Mandatory)]$Publications, [Parameter(Mandatory)][ValidateSet('root', 'manual', 'quick-start', 'quick-start-es')][string]$Kind, $Platform)
     $common = Get-Content -LiteralPath (Join-Path (Get-UftiRepoRoot) 'build' 'projects' 'common.xml') -Raw
     $b = $Publications.BaseUrl
     $sitePages = @{ 'Accessibility statement' = "${b}accessibility/"; 'Privacy policy' = "${b}privacy/" }
@@ -319,6 +319,14 @@ function Get-UftiFooterLinks {
             if ($sitePages.ContainsKey($label)) { "$label|$($sitePages[$label])" } else { $_ }
         })
     } else { @() }
+    if ($Kind -eq 'quick-start-es') {
+        # The Spanish Quick Start (DEC-258): its own links in Spanish. The accessibility statement and the privacy policy are
+        # pages of the root and are in English, so the labels say so.
+        $es = @{ 'Accessibility statement' = 'Declaración de accesibilidad (en inglés)'; 'Privacy policy' = 'Política de privacidad (en inglés)'; 'Source' = 'Código fuente'; 'Licence' = 'Licencia' }
+        $shared = @($shared | ForEach-Object { $p = $_ -split '\|', 2; if ($es.ContainsKey($p[0])) { "$($es[$p[0]])|$($p[1])" } else { $_ } })
+        $own = @("Elegir su dispositivo|$b", "Versión $($Platform.Release): otras versiones|$b$($Platform.Slug)/", "Manual completo (en inglés)|$b$($Platform.Slug)/$($Platform.Release)/", "Inicio rápido en inglés|$b$($Platform.Slug)/$($Platform.Release)/start/")
+        return ($own + $shared) -join ';'
+    }
     $own = @("Choose your device|$b")
     if ($Kind -ne 'root') {
         $own += "Version $($Platform.Release): other versions|$b$($Platform.Slug)/"
@@ -343,6 +351,9 @@ function Get-UftiPublishedDeliverable {
     foreach ($p in $Publications.Platforms) {
         if ($Project -ceq $p.Manual) {
             return [pscustomobject]@{ Kind = 'manual'; Platform = $p; Release = $p.Release; SiteUrl = "$b$($p.Slug)/$($p.Release)/"; PdfName = "ufti-user-manual-$($p.Slug)-$($p.Release)"; FooterLinks = (Get-UftiFooterLinks -Publications $Publications -Kind manual -Platform $p) }
+        }
+        if ($p.QuickStartEs -and $Project -ceq $p.QuickStartEs) {
+            return [pscustomobject]@{ Kind = 'quick-start-es'; Platform = $p; Release = $p.Release; SiteUrl = "$b$($p.Slug)/$($p.Release)/inicio-rapido/"; PdfName = "ufti-inicio-rapido-$($p.Slug)-$($p.Release)"; FooterLinks = (Get-UftiFooterLinks -Publications $Publications -Kind quick-start-es -Platform $p) }
         }
         if ($Project -ceq $p.QuickStart) {
             return [pscustomobject]@{ Kind = 'quick-start'; Platform = $p; Release = $p.Release; SiteUrl = "$b$($p.Slug)/$($p.Release)/start/"; PdfName = "ufti-quick-start-$($p.Slug)-$($p.Release)"; FooterLinks = (Get-UftiFooterLinks -Publications $Publications -Kind quick-start -Platform $p) }

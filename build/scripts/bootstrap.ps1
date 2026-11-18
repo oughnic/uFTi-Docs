@@ -147,7 +147,7 @@ function Install-DitaOt {
 
 function Get-InstalledPluginVersion {
     $px = Join-Path $P.PluginDir 'plugin.xml'
-    if (Test-Path -LiteralPath $px) { if ((Get-Content -LiteralPath $px -Raw) -match 'version="(?<v>[^"]+)"') { return $Matches['v'] } }
+    if (Test-Path -LiteralPath $px) { if ((Get-Content -LiteralPath $px -Raw) -match '<plugin\b[^>]*\bversion="(?<v>[^"]+)"') { return $Matches['v'] } }
     $null
 }
 
@@ -174,6 +174,33 @@ function Install-Plugin {
     Set-Marker 'govuk-plugin' $stamp
 }
 
+function Install-LocalPlugins {
+    # The plugins in build/plugins/ (DEC-258): installed after the GOV.UK plugin, and again when a file in one changes.
+    $src = Join-Path $root 'build' 'plugins'
+    if (-not (Test-Path -LiteralPath $src)) { return }
+    foreach ($dir in Get-ChildItem -LiteralPath $src -Directory | Sort-Object Name) {
+        $id = $dir.Name
+        $files = @(Get-ChildItem -LiteralPath $dir.FullName -Recurse -File | Sort-Object { $_.FullName.Substring($dir.FullName.Length) })
+        $text = [System.Text.StringBuilder]::new()
+        foreach ($f in $files) { [void]$text.Append($f.FullName.Substring($dir.FullName.Length).Replace([string][char]92, '/')).Append("`n").Append(([System.IO.File]::ReadAllText($f.FullName) -replace "`r`n", "`n")).Append("`n") }
+        $stamp = Get-UftiFileHash256 (New-TemporaryFile | ForEach-Object { [System.IO.File]::WriteAllText($_.FullName, $text.ToString(), [System.Text.UTF8Encoding]::new($false)); $_.FullName })
+        Write-UftiStep "Local plugin $id"
+        $have = Test-Path -LiteralPath (Join-Path $P.DitaHome 'plugins' $id 'plugin.xml')
+        if ((-not $Force) -and $have -and (Get-Marker "local-$id") -eq $stamp) { Write-Host "  installed in the toolkit"; continue }
+        if ($have) { & $P.Dita uninstall $id 2>&1 | ForEach-Object { Write-Host "    $_" }; if ($LASTEXITCODE -ne 0) { throw "dita uninstall $id failed" } }
+        $zipPath = Join-Path $P.Downloads "$id.zip"
+        Remove-Tree $zipPath
+        Add-Type -AssemblyName System.IO.Compression.FileSystem
+        $zip = [System.IO.Compression.ZipFile]::Open($zipPath, 'Create')
+        try { foreach ($f in $files) { [void][System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile($zip, $f.FullName, [System.IO.Path]::GetRelativePath($dir.FullName, $f.FullName).Replace([string][char]92, '/'), 'Optimal') } } finally { $zip.Dispose() }
+        Push-Location -LiteralPath $P.Downloads
+        try { & $P.Dita install $zipPath 2>&1 | ForEach-Object { Write-Host "    $_" }; $code = $LASTEXITCODE } finally { Pop-Location }
+        if ($code -ne 0) { throw "dita install $id failed" }
+        if (-not (Test-Path -LiteralPath (Join-Path $P.DitaHome 'plugins' $id 'plugin.xml'))) { throw "$id is not in the toolkit after installing" }
+        Write-Host "  $id installed"
+        Set-Marker "local-$id" $stamp
+    }
+}
 function Install-DesignSystemPdf {
     $t = $lock['designsystempdf']; $stamp = "$($t['version']) $($t['sha256'])"
     Write-UftiStep "DesignSystemPDF $($t['version'])"
@@ -278,7 +305,7 @@ function Install-PluginTools {
 foreach ($tool in $wanted) {
     switch ($tool) {
         'dita-ot' { Install-DitaOt }
-        'govuk-plugin' { Install-Plugin }
+        'govuk-plugin' { Install-Plugin; Install-LocalPlugins }
         'designsystempdf' { Install-DesignSystemPdf }
         'pagefind' { Install-Pagefind }
         'verapdf' { Install-VeraPdf }
