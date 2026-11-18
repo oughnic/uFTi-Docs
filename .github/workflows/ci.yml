@@ -71,7 +71,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        deliverable: [fixture-android-phone, fixture-android-tablet, fixture-windows, quick-start-windows, manual-windows, quick-start-android-phone, manual-android-phone, quick-start-android-tablet, manual-android-tablet, quick-start-iphone, manual-iphone, quick-start-ipad, manual-ipad, quick-start-macos, manual-macos]
+        deliverable: [fixture-android-phone, fixture-android-tablet, fixture-windows, quick-start-windows, manual-windows, quick-start-android-phone, quick-start-es-android-phone, manual-android-phone, quick-start-android-tablet, manual-android-tablet, quick-start-iphone, manual-iphone, quick-start-ipad, manual-ipad, quick-start-macos, manual-macos]
     steps:
       - name: Check out
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -115,7 +115,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        deliverable: [fixture-android-phone, fixture-android-tablet, fixture-windows, quick-start-windows, manual-windows, quick-start-android-phone, manual-android-phone, quick-start-android-tablet, manual-android-tablet, quick-start-iphone, manual-iphone, quick-start-ipad, manual-ipad]
+        deliverable: [fixture-android-phone, fixture-android-tablet, fixture-windows, quick-start-windows, manual-windows, quick-start-android-phone, quick-start-es-android-phone, manual-android-phone, quick-start-android-tablet, manual-android-tablet, quick-start-iphone, manual-iphone, quick-start-ipad, manual-ipad]
     steps:
       - name: Check out
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -187,7 +187,7 @@ jobs:
           - group: windows
             deliverables: fixture-windows quick-start-windows manual-windows
           - group: android-phone
-            deliverables: fixture-android-phone quick-start-android-phone manual-android-phone
+            deliverables: fixture-android-phone quick-start-android-phone quick-start-es-android-phone manual-android-phone
           - group: android-tablet
             deliverables: fixture-android-tablet quick-start-android-tablet manual-android-tablet
           - group: iphone
@@ -332,8 +332,10 @@ jobs:
           . build/scripts/publications.sh
           for slug in windows android-phone android-tablet iphone ipad; do
             rel=$(ini_get "$slug" release)
-            diff -rq "out/$(ini_get "$slug" manual)" "out/site/$slug/$rel" -x start -x version.json
+            diff -rq "out/$(ini_get "$slug" manual)" "out/site/$slug/$rel" -x start -x inicio-rapido -x version.json
             diff -rq "out/$(ini_get "$slug" quick-start)" "out/site/$slug/$rel/start"
+            # the Spanish Quick Start of a platform that has one (DEC-258)
+            if [ -n "$(ini_get "$slug" quick-start-es)" ]; then diff -rq "out/$(ini_get "$slug" quick-start-es)" "out/site/$slug/$rel/inicio-rapido"; fi
           done
           echo "the release folders of five platforms are byte for byte the deliverables that were checked"
       - name: The pages of the tree that no deliverable checks

@@ -79,7 +79,7 @@ foreach ($p in $pub.Platforms) { Write-Host ("  {0,-14} {1}" -f $p.Slug, $p.Rele
 
 # ---- 1. The manuals and Quick Starts ---------------------------------------------------------------
 
-$deliverables = @($pub.Platforms | ForEach-Object { $_.Manual; $_.QuickStart })
+$deliverables = @($pub.Platforms | ForEach-Object { $_.Manual; $_.QuickStart; if ($_.QuickStartEs) { $_.QuickStartEs } })
 if ($Reuse) {
     foreach ($d in $deliverables) { if (-not (Test-Path -LiteralPath (Join-Path $outDir $d))) { Fail "-Reuse: no build of $d under $outDir" } }
 }
@@ -136,9 +136,10 @@ $listing = @{}
 foreach ($p in $pub.Platforms) {
     $mpdf = "ufti-user-manual-$($p.Slug)-$($p.Release).pdf"; $spdf = "start/ufti-quick-start-$($p.Slug)-$($p.Release).pdf"
     $rows = [System.Collections.Generic.List[object]]::new()
-    $rows.Add([pscustomobject]@{ Release = $p.Release; AppVersion = $p.AppVersion; ManualPdf = $mpdf; QuickStartPdf = $spdf; Current = $true })
+    $espdf = if ($p.QuickStartEs) { "inicio-rapido/ufti-inicio-rapido-$($p.Slug)-$($p.Release).pdf" } else { '' }
+    $rows.Add([pscustomobject]@{ Release = $p.Release; AppVersion = $p.AppVersion; ManualPdf = $mpdf; QuickStartPdf = $spdf; QuickStartEsPdf = $espdf; Current = $true })
     foreach ($v in $kept | Where-Object { $_.platform -ceq $p.Slug }) {
-        $rows.Add([pscustomobject]@{ Release = [string]$v.release; AppVersion = [string]$v.appVersion; ManualPdf = [string]$v.manualPdf; QuickStartPdf = [string]$v.quickStartPdf; Current = $false })
+        $rows.Add([pscustomobject]@{ Release = [string]$v.release; AppVersion = [string]$v.appVersion; ManualPdf = [string]$v.manualPdf; QuickStartPdf = [string]$v.quickStartPdf; QuickStartEsPdf = $(if ($v.PSObject.Properties['quickStartEsPdf']) { [string]$v.quickStartEsPdf } else { '' }); Current = $false })
     }
     $listing[$p.Slug] = @($rows | Sort-Object { Get-UftiReleaseSortKey $_.Release } -Descending)
 }
@@ -166,6 +167,11 @@ function New-PlatformTopic {
         [void]$sb.AppendLine('      <ul>')
         [void]$sb.AppendLine("        <li><xref href=""$rel/start/"" scope=""peer"" format=""html"">Read the Quick Start for version $rel on the website</xref></li>")
         [void]$sb.AppendLine("        <li><xref href=""$rel/$(Format-Xml $r.QuickStartPdf)"" scope=""peer"" format=""pdf"">Download the Quick Start for version $rel as a PDF</xref></li>")
+        if ($r.QuickStartEsPdf) {
+            # the Spanish Quick Start (DEC-258): two links, written in Spanish and marked as Spanish
+            [void]$sb.AppendLine("        <li xml:lang=""es""><xref href=""$rel/inicio-rapido/"" scope=""peer"" format=""html"">Leer el Inicio rápido de la versión $rel en el sitio web (en español)</xref></li>")
+            [void]$sb.AppendLine("        <li xml:lang=""es""><xref href=""$rel/$(Format-Xml $r.QuickStartEsPdf)"" scope=""peer"" format=""pdf"">Descargar el Inicio rápido de la versión $rel en PDF (en español)</xref></li>")
+        }
         [void]$sb.AppendLine("        <li><xref href=""$rel/"" scope=""peer"" format=""html"">Read the manual for version $rel on the website</xref></li>")
         [void]$sb.AppendLine("        <li><xref href=""$rel/$(Format-Xml $r.ManualPdf)"" scope=""peer"" format=""pdf"">Download the manual for version $rel as a PDF</xref></li>")
         [void]$sb.AppendLine('      </ul>')
@@ -264,10 +270,16 @@ foreach ($p in $pub.Platforms) {
     if (Test-Path -LiteralPath (Join-Path $verDir 'start')) { Fail "$($p.Manual) has a start folder of its own, where the Quick Start goes" }
     Copy-Item -LiteralPath (Join-Path $outDir $p.QuickStart) -Destination (Join-Path $verDir 'start') -Recurse -Force
     $v = $listing[$p.Slug] | Where-Object Current
+    if ($p.QuickStartEs) {
+        if (Test-Path -LiteralPath (Join-Path $verDir 'inicio-rapido')) { Fail "$($p.Manual) has an inicio-rapido folder of its own, where the Spanish Quick Start goes" }
+        Copy-Item -LiteralPath (Join-Path $outDir $p.QuickStartEs) -Destination (Join-Path $verDir 'inicio-rapido') -Recurse -Force
+        if (-not (Test-Path -LiteralPath (Join-Path $verDir $v.QuickStartEsPdf))) { Fail "$($p.Slug) $($p.Release): the PDF $($v.QuickStartEsPdf) was not built" }
+    }
     foreach ($pdf in $v.ManualPdf, $v.QuickStartPdf) { if (-not (Test-Path -LiteralPath (Join-Path $verDir $pdf))) { Fail "$($p.Slug) $($p.Release): the PDF $pdf was not built" } }
     $json = [ordered]@{ platform = $p.Slug; release = $p.Release }
     if ($p.AppVersion) { $json['appVersion'] = $p.AppVersion }
     $json['manualPdf'] = $v.ManualPdf; $json['quickStartPdf'] = $v.QuickStartPdf
+    if ($p.QuickStartEs) { $json['quickStartEsPdf'] = $v.QuickStartEsPdf }
     Write-Text (Join-Path $verDir 'version.json') ($json | ConvertTo-Json)
     Write-Host "  $($p.Slug)/$($p.Release)/ and $($p.Slug)/$($p.Release)/start/"
 }
@@ -279,6 +291,7 @@ foreach ($p in $pub.Platforms) {
     $s = $p.Slug; $c = $p.Release
     foreach ($from in "/$s/latest") { $routes.Add([ordered]@{ route = $from; redirect = "/$s/$c/"; statusCode = 302 }) }
     foreach ($from in "/$s/latest/start") { $routes.Add([ordered]@{ route = $from; redirect = "/$s/$c/start/"; statusCode = 302 }) }
+    if ($p.QuickStartEs) { $routes.Add([ordered]@{ route = "/$s/latest/inicio-rapido"; redirect = "/$s/$c/inicio-rapido/"; statusCode = 302 }) }
     $routes.Add([ordered]@{ route = "/$s/latest/*"; redirect = "/$s/$c/"; statusCode = 302 })
     # an earlier release does not change, so it may be cached for longer than the one being worked on
     foreach ($r in $listing[$s] | Where-Object { -not $_.Current }) { $routes.Add([ordered]@{ route = "/$s/$($r.Release)/*"; headers = [ordered]@{ 'cache-control' = 'public, max-age=86400' } }) }

@@ -54,10 +54,10 @@ pub_validate() { # prints every problem; returns 1 if there is one
     [[ $slug =~ $PUB_SLUG_RE ]] || bad "[$slug] the section name is the platform's folder: lower case letters, digits and single hyphens only"
     case $slug in govuk | theme | pagefind | latest | start | logs | temp | reports | accessibility | privacy) bad "[$slug] '$slug' is a name the site uses for something else" ;; esac
     for k in title device release manual quick-start; do [ -n "$(ini_get "$slug" "$k")" ] || bad "[$slug] $k is missing"; done
-    for k in $(ini_keys "$slug"); do case $k in title | device | release | app-version | manual | quick-start) ;; *) bad "[$slug] unknown key '$k'" ;; esac; done
+    for k in $(ini_keys "$slug"); do case $k in title | device | release | app-version | manual | quick-start | quick-start-es) ;; *) bad "[$slug] unknown key '$k'" ;; esac; done
     rel=$(ini_get "$slug" release)
     if [ -n "$rel" ] && ! release_ok "$rel"; then bad "[$slug] release '$rel' is not in the agreed form (Alpha-N, Beta-N, RC-N, or a number such as 1.0 or 1.2.3)"; fi
-    for k in manual quick-start; do
+    for k in manual quick-start quick-start-es; do
       v=$(ini_get "$slug" "$k")
       if [ -n "$v" ] && [ ! -f "$PUB_ROOT/build/projects/$v.xml" ]; then bad "[$slug] $k '$v' has no file build/projects/$v.xml"; fi
     done
@@ -88,6 +88,12 @@ pub_footer() { # kind (root|manual|quick-start) slug release -> the footer link 
   # the two site pages are pages of the root of the tree: their addresses are made from base-url (DEC-150)
   shared=$(sed -n 's/.*name="govuk\.footer\.links"[[:space:]]*value="\([^"]*\)".*/\1/p' "$PUB_ROOT/build/projects/common.xml" | tr ';' '\n' | grep -v '^Choose your device|' \
     | sed -e "s#^Accessibility statement|.*#Accessibility statement|${base}accessibility/#" -e "s#^Privacy policy|.*#Privacy policy|${base}privacy/#" | paste -sd ';' -)
+  if [ "$kind" = quick-start-es ]; then
+    # the Spanish Quick Start (DEC-258): its own links in Spanish; the two site pages are in English, and the labels say so
+    shared=$(printf '%s' "$shared" | sed -e 's#^Accessibility statement|#Declaración de accesibilidad (en inglés)|#' -e 's#;Accessibility statement|#;Declaración de accesibilidad (en inglés)|#' -e 's#;Privacy policy|#;Política de privacidad (en inglés)|#' -e 's#;Source|#;Código fuente|#' -e 's#;Licence|#;Licencia|#')
+    printf '%s' "Elegir su dispositivo|$base;Versión $rel: otras versiones|$base$slug/;Manual completo (en inglés)|$base$slug/$rel/;Inicio rápido en inglés|$base$slug/$rel/start/;$shared"
+    return 0
+  fi
   own="Choose your device|$base"
   if [ "$kind" = manual ]; then own="$own;Version $rel: other versions|$base$slug/;Quick Start|$base$slug/$rel/start/"
   elif [ "$kind" = quick-start ]; then own="$own;Version $rel: other versions|$base$slug/;Full manual|$base$slug/$rel/"; fi
@@ -108,6 +114,10 @@ pub_resolve() {
     if [ "$project" = "$(ini_get "$slug" manual)" ]; then
       PUB_KIND=manual; PUB_SLUG=$slug; PUB_SITE_URL="$base$slug/$PUB_RELEASE/"; PUB_PDF_NAME="ufti-user-manual-$slug-$PUB_RELEASE"
       PUB_FOOTER=$(pub_footer manual "$slug" "$PUB_RELEASE"); return 0
+    fi
+    if [ -n "$(ini_get "$slug" quick-start-es)" ] && [ "$project" = "$(ini_get "$slug" quick-start-es)" ]; then
+      PUB_KIND=quick-start-es; PUB_SLUG=$slug; PUB_SITE_URL="$base$slug/$PUB_RELEASE/inicio-rapido/"; PUB_PDF_NAME="ufti-inicio-rapido-$slug-$PUB_RELEASE"
+      PUB_FOOTER=$(pub_footer quick-start-es "$slug" "$PUB_RELEASE"); return 0
     fi
     if [ "$project" = "$(ini_get "$slug" quick-start)" ]; then
       PUB_KIND=quick-start; PUB_SLUG=$slug; PUB_SITE_URL="$base$slug/$PUB_RELEASE/start/"; PUB_PDF_NAME="ufti-quick-start-$slug-$PUB_RELEASE"

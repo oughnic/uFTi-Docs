@@ -123,6 +123,24 @@ install_plugin() {
   echo "  govuk transtype available"
   printf '%s' "$s" > "$MARK/govuk-plugin"
 }
+install_local_plugins() { # the plugins in build/plugins/ (DEC-258): installed after the GOV.UK plugin, and again when a file in one changes
+  local d id s have zip
+  [ -d "$root/build/plugins" ] || return 0
+  for d in "$root"/build/plugins/*/; do
+    [ -f "${d}plugin.xml" ] || continue
+    id=$(basename "$d"); echo; echo "== Local plugin $id"
+    s=$(cd "$d" && find . -type f | LC_ALL=C sort | while read -r f; do printf '%s\n' "${f#./}"; tr -d '\r' < "$f"; printf '\n'; done | { sha256sum 2> /dev/null || shasum -a 256; } | cut -c1-64)
+    have=""; [ -f "$DITA_HOME/plugins/$id/plugin.xml" ] && have=yes
+    if [ -z "$force" ] && [ -n "$have" ] && [ "$(marker "local-$id")" = "$s" ]; then echo "  installed in the toolkit"; continue; fi
+    if [ -n "$have" ]; then "$DITA" uninstall "$id"; fi
+    zip="$DL/$id.zip"; rm -f "$zip"
+    if command -v zip > /dev/null; then (cd "$d" && zip -qr "$zip" .); else jar --create --file "$zip" --no-manifest -C "$d" .; fi
+    (cd "$DL" && "$DITA" install "$zip")
+    [ -f "$DITA_HOME/plugins/$id/plugin.xml" ] || { echo "$id is not in the toolkit after installing" >&2; exit 1; }
+    echo "  $id installed"
+    printf '%s' "$s" > "$MARK/local-$id"
+  done
+}
 install_dspdf() {
   local s; s=$(stamp designsystempdf); echo; echo "== DesignSystemPDF $(lock_get designsystempdf version)"
   if installed designsystempdf "$s" "$DSPDF"; then echo "  installed at $DSPDF_HOME"; return; fi
@@ -194,7 +212,7 @@ if [ -n "$only" ]; then wanted=${only//,/ }; elif [ "$mode" = build ]; then want
 for tool in $wanted; do
   case "$tool" in
     dita-ot) install_dita_ot ;;
-    govuk-plugin) install_plugin ;;
+    govuk-plugin) install_plugin; install_local_plugins ;;
     designsystempdf) install_dspdf ;;
     pagefind) install_pagefind ;;
     verapdf) install_verapdf ;;
