@@ -17,6 +17,7 @@ The plan, the toolchain and the first content (the Windows and Android phone Qui
 - **Reading level.** Write for an average 11-year-old: short sentences, plain words, a glossary entry for every term (DEC-029).
 - **Never show GEDCOM tags, structures or file contents** (DEC-030). Describe people, families, facts and sources in human terms.
 - **Never state** price, "free", "forever", accounts or sign-in (DEC-040). Where a tree is saved on the reader's own device may be stated (DEC-168); where any service keeps data may not. Never publish the address of a store listing that is not public, or anything about who may get a build before release: that is managed separately. Sync and AI do not appear until they ship.
+- **The privacy policy is in English only** (DEC-259): the company is governed by English law. A policy in another language, if one is ever published, must say that it is for information only and that the English policy is the one that counts.
 - **DNA:** one topic on risks and issues, nothing more (DEC-037). **Video:** never embedded (DEC-034).
 - **Idiom first, then reuse.** Write for phone, tablet or desktop (DEC-032). Reuse DITA content, and use DITAVAL variants for what differs by platform, pictures included, with no cap on variants and any platform token in any topic (DEC-251, DEC-252). Sizes are counted as each manual shows them: a concept 800 words, a step command 40, a Quick Start page 200.
 - **Keep the decision log in sync.** Any decision made or changed goes into `authoring/decision-log.md` in the same change.
