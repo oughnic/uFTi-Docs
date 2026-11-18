@@ -1,0 +1,21 @@
+# uFTi Inicio rápido: teléfono Android
+
+> Entender la información de los árboles genealógicos
+
+## Inicio rápido
+
+- [Inicio rápido](https://docs.ufti.com/android-phone/Alpha-2/inicio-rapido/es/topics/quick-start/quick-start.html): Seis páginas cortas que le llevan desde abrir uFTi hasta su primera persona, con su fuente y una copia.
+- [Obtener uFTi](https://docs.ufti.com/android-phone/Alpha-2/inicio-rapido/es/platforms/android/topics/get-ufti.html): Abra uFTi por primera vez.
+- [Añadir su primera persona](https://docs.ufti.com/android-phone/Alpha-2/inicio-rapido/es/platforms/android-phone/topics/add-your-first-person.html): Cree su propio espacio de trabajo y añádase a usted, o a alguien que conozca bien.
+- [Echar un vistazo](https://docs.ufti.com/android-phone/Alpha-2/inicio-rapido/es/platforms/android-phone/topics/look-around.html): Vea qué hacen los cinco lugares de la barra con la persona que añadió.
+- [Decir dónde lo encontró](https://docs.ufti.com/android-phone/Alpha-2/inicio-rapido/es/topics/quick-start/say-where-you-found-it.html): Añada una fuente a un hecho, para saber siempre por qué lo cree.
+- [Guardar una copia](https://docs.ufti.com/android-phone/Alpha-2/inicio-rapido/es/platforms/android/topics/keep-it-safe.html): Guarde una copia de su árbol en un archivo, y guárdela también en otro sitio.
+- [Qué hacer ahora](https://docs.ufti.com/android-phone/Alpha-2/inicio-rapido/es/topics/quick-start/what-next.html): Ya tiene un árbol, una persona, un hecho con su fuente y una copia, así que elija por dónde seguir.
+
+## Contenido
+
+- [Cinco cosas que debe saber](https://docs.ufti.com/android-phone/Alpha-2/inicio-rapido/es/topics/quick-start/five-things-to-know.html): Las cinco ideas en las que se basa uFTi, en dos minutos.
+
+## Optional
+
+- [Glosario](https://docs.ufti.com/android-phone/Alpha-2/inicio-rapido/glossary.html)
