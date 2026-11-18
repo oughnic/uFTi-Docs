@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary Entry//EN" "glossentry.dtd">
+<glossentry id="pedigree" xml:lang="es">
+  <glossterm>árbol de antepasados</glossterm>
+  <glossdef>Un árbol genealógico dibujado para una persona. Muestra a sus padres encima, y a sus parejas e hijos.</glossdef>
+</glossentry>

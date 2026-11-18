@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary Entry//EN" "glossentry.dtd">
+<glossentry id="gedzip" xml:lang="es">
+  <glossterm>GEDZIP</glossterm>
+  <glossdef>Un archivo que guarda un espacio de trabajo entero. Tiene el árbol genealógico con sus notas de investigación, y las imágenes y otros archivos. Es la mejor forma de guardar y enviar su trabajo.</glossdef>
+</glossentry>

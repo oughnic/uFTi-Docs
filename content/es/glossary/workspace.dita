@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glossentry PUBLIC "-//OASIS//DTD DITA Glossary Entry//EN" "glossentry.dtd">
+<glossentry id="workspace" xml:lang="es">
+  <glossterm>espacio de trabajo</glossterm>
+  <glossdef>Un árbol genealógico y todo lo que se guarda con él. Es decir, el archivo del árbol con sus notas de investigación, y las imágenes y otros archivos que añade. Un archivo GEDZIP lo guarda todo. Puede tener más de uno.</glossdef>
+</glossentry>

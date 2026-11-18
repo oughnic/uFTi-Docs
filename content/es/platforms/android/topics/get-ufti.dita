@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="get-ufti" xml:lang="es">
+  <title>Obtener uFTi</title>
+  <shortdesc>Abra uFTi por primera vez.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-18"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Get started</category>
+    </metadata>
+    <resourceid appname="ufti" appid="workspaces.list"/>
+  </prolog>
+  <taskbody>
+    <context>
+      <p>Un <term keyref="term-workspace">espacio de trabajo</term> es un árbol genealógico.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Abra <keyword keyref="product-name"/> desde su lista de aplicaciones.</cmd>
+        <stepresult>
+          <p>Se abre en <uicontrol keyref="ui-home"/>, con un árbol de ejemplo.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>El árbol de ejemplo es la familia Brontë. Sirve para practicar. No lo necesita para su propio árbol.</p>
+      <fig>
+        <image keyref="img-start-first-run"/>
+      </fig>
+    </result>
+    <postreq>
+      <p>Siguiente: <xref keyref="add-your-first-person"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

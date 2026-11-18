@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="add-your-first-person" xml:lang="es">
+  <title>Añadir su primera persona</title>
+  <shortdesc>Cree su propio espacio de trabajo y añádase a usted, o a alguien que conozca bien.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-18"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Get started</category>
+      <keywords>
+        <keyword>árbol nuevo</keyword>
+        <keyword>persona nueva</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="workspaces.create"/>
+    <resourceid appname="ufti" appid="people.edit"/>
+  </prolog>
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>Elija <uicontrol keyref="ui-more"/> y luego <uicontrol keyref="ui-workspaces"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Elija <uicontrol keyref="ui-create-workspace"/>.</cmd>
+        <stepresult>
+          <p>Se abre un cuadro pequeño. Ya trae un nombre, marcado.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Escriba un nombre para su árbol, como Mi familia. Luego elija <uicontrol keyref="ui-create"/>.</cmd>
+        <info>
+          <p>Lo que escriba sustituye al nombre marcado.</p>
+        </info>
+        <stepresult>
+          <fig>
+            <image keyref="img-create-workspace-dialog"/>
+          </fig>
+          <p>El árbol nuevo se abre en <uicontrol keyref="ui-home"/>. Dice que tiene 0 personas.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Elija <uicontrol keyref="ui-add-the-first-person"/>.</cmd>
+        <stepresult>
+          <p>Se abre el formulario <uicontrol keyref="ui-new-person"/>.</p>
+          <fig>
+            <image keyref="img-person-add"/>
+          </fig>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Escriba un nombre en <uicontrol keyref="ui-given-names"/> y un apellido en <uicontrol keyref="ui-surname"/>.</cmd>
+        <info>
+          <p>Empiece por usted, o por alguien que conozca bien. Solo hace falta el nombre.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Baje hasta el final y elija <uicontrol keyref="ui-save"/>.</cmd>
+        <stepresult>
+          <p>Se abre la página de esa persona. Es su primera persona.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <postreq>
+      <p>Siguiente: <xref keyref="look-around"/>.</p>
+    </postreq>
+  </taskbody>
+</task>

@@ -59,7 +59,7 @@ The scenario scripts need the app's automation identifiers and routes. Those are
 Every capture run sets these explicitly. It never relies on the machine's defaults:
 
 - the **Oxford and slate theme, light variant**, chosen in the app's preferences (the dark variant appears once per manual, in the appearance topic);
-- **en-GB**, and default text size and display scaling;
+- **en-GB**, and default text size and display scaling (the Spanish edition: the device set to Español (España), imported with `-Language es`, DEC-257);
 - a **throwaway app-data folder** that starts empty, or at the saved state of the stage being captured, so the app starts in a known state;
 - a **normalised status bar** on an emulator or simulator, using its status-bar override (a fixed clock, full battery and signal, no notifications). A physical phone has no override, so it is captured **in the app** (section 4.3), which leaves out the status bar, notifications and any other app;
 - screens whose content does not depend on today's date or on random order. The catalogue flags any that do.

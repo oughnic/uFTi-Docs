@@ -14,7 +14,7 @@ Much of this follows the plugin's own guide for people who write DITA for it, [S
 - **No Markdown topics, no Lightweight DITA, no DITA 2.0.** The plugin targets DITA 1.3.
 - **Domains.** The standard DTDs include the user interface, software and highlight domains. Use highlight elements (`b`, `i`) only when no semantic element fits.
 - **Encoding.** UTF-8, with an XML declaration.
-- **Language.** `xml:lang="en-GB"` on every map and topic.
+- **Language.** `xml:lang="en-GB"` on every map and topic. The one exception is the Spanish edition: `xml:lang="es"` on every topic and map in `content/es/`, and on its root maps (`ufti-*-es-*.ditamap`) (DEC-257).
 - **One topic per file.** The root element's `id` matches the file name. The one exception is a nested topic in a concept or a reference (section 2.1).
 - **`outputclass`** only for effects the plugin documents, currently `search-ignore`, `search-demote` and `landscape`. Classes carry styling, not meaning. Never record a topic's type or status in `outputclass`.
 - **Forbidden:** `mapref` by key, keys that name maps, and `chunk="to-content"` (both trigger known DITA-OT 4.4 defects).
@@ -241,7 +241,7 @@ The checks run locally with `pwsh build/scripts/check-source.ps1` and in CI ([bu
 | 1 | DITA 1.3 DTD; the toolkit validates every file | Build (before); lint also fails a DOCTYPE that is not the standard one for the root (WP3) |
 | 1 | Topic types limited to the five; no specialisation | Lint (before); the DOCTYPE check (WP3) |
 | 1 | UTF-8 with an XML declaration | Lint (WP3) |
-| 1 | `xml:lang="en-GB"` on every topic | Lint (before) |
+| 1 | `xml:lang="en-GB"` on every topic, `es` in the Spanish edition | Lint (before; Spanish, DEC-257) |
 | 1 | `xml:lang="en-GB"` on every map | Lint rejects a wrong value (before) and a missing one (WP3) |
 | 1 | `id` matches the file name | Lint (before) |
 | 1 | `outputclass` only `search-ignore`, `search-demote`, `landscape` | Lint (WP3) |

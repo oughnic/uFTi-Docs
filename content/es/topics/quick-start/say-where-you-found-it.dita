@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="say-where-you-found-it" xml:lang="es">
+  <title>Decir dónde lo encontró</title>
+  <shortdesc>Añada una fuente a un hecho, para saber siempre por qué lo cree.</shortdesc>
+  <prolog>
+    <critdates>
+      <created date="2026-11-18"/>
+    </critdates>
+    <metadata>
+      <audience type="user" experiencelevel="novice"/>
+      <category>Get started</category>
+      <keywords>
+        <keyword>cita</keyword>
+        <keyword>prueba</keyword>
+        <keyword>referencia</keyword>
+      </keywords>
+    </metadata>
+    <resourceid appname="ufti" appid="citations.edit"/>
+    <resourceid appname="ufti" appid="sources.sheet"/>
+  </prolog>
+  <taskbody>
+    <prereq>
+      <p>Abra la página de una persona.</p>
+      <p>Para buscar a una persona, escriba su nombre en el cuadro de búsqueda y elija <uicontrol keyref="ui-search"/>. Luego elija la tarjeta con su nombre.</p>
+    </prereq>
+    <steps>
+      <step>
+        <cmd>Elija la pequeña etiqueta junto a <uicontrol keyref="ui-birth"/>.</cmd>
+        <info>
+          <p>Muestra un número y un signo más, como 0 +.</p>
+        </info>
+        <stepresult>
+          <p>Se abre una pantalla llamada <uicontrol keyref="ui-sources"/>.</p>
+        </stepresult>
+      </step>
+      <step>
+        <cmd>Elija <uicontrol keyref="ui-add-source"/> y luego <uicontrol keyref="ui-add-a-new-source"/>.</cmd>
+      </step>
+      <step>
+        <cmd>En <uicontrol keyref="ui-title"/>, escriba cómo lo sabe.</cmd>
+        <info>
+          <p>Por ejemplo, <userinput>Mi partida de nacimiento</userinput> o <userinput>Me lo contó mi madre</userinput>. Solo hace falta este cuadro.</p>
+        </info>
+      </step>
+      <step>
+        <cmd>Elija <uicontrol keyref="ui-save-source"/>.</cmd>
+      </step>
+      <step>
+        <cmd>El paso siguiente pregunta en qué parte de la fuente encontró el hecho. Baje hasta el final y elija <uicontrol keyref="ui-add-source"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Elija <uicontrol keyref="ui-done"/> y luego <uicontrol keyref="ui-done"/> otra vez.</cmd>
+        <stepresult>
+          <p>El número de la etiqueta sube en uno.</p>
+        </stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>El hecho ya tiene una <term keyref="term-source">fuente</term>. Más adelante, cuando dos registros no coincidan, así sabrá qué creer.</p>
+    </result>
+    <postreq>
+      <p>Siguiente: <xref keyref="keep-it-safe"/>.</p>
+    </postreq>
+  </taskbody>
+</task>
